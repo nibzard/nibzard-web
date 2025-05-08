@@ -1,0 +1,100 @@
+/*
+ * Main CSS file
+ * Imports all component styles and sets up global styles
+ */
+
+/* Base styles */
+@import './variables.css';
+@import './typography.css';
+@import './utilities.css';
+
+/* Component styles */
+@import './components/log-entry.css';
+@import './components/tags.css';
+@import './components/elements.css';
+
+/* Global styles */
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  line-height: var(--line-height-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-md);
+}
+
+a {
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover,
+a:focus {
+  color: var(--color-accent1);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-mono);
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-sm);
+  line-height: var(--line-height-tight);
+  font-weight: 500;
+}
+
+h1 { font-size: var(--font-size-2xl); }
+h2 { font-size: var(--font-size-xl); }
+h3 { font-size: var(--font-size-lg); }
+
+p {
+  margin-top: 0;
+  margin-bottom: var(--space-md);
+}
+
+/* Basic code styling */
+code, pre {
+  font-family: var(--font-mono);
+  background-color: var(--color-background-alt);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-sm);
+  border: 1px solid var(--color-border);
+}
+
+pre {
+  padding: var(--space-sm);
+  overflow-x: auto;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Simple fade-in animation */
+.fade-in {
+  animation: fadeIn var(--animation-duration-normal) var(--ease-out);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

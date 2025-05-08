@@ -1,0 +1,107 @@
+/* Styles for index page - more compact */
+
+.hero {
+  margin: var(--space-lg) 0;
+  text-align: center;
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: var(--space-xs);
+    
+    /* Create a subtle Japanese/Scandinavian feel with minimal decoration */
+    &::before, &::after {
+      content: "―";
+      color: var(--color-accent1);
+      display: inline-block;
+      margin: 0 var(--space-sm);
+      font-weight: normal;
+      opacity: 0.8;
+    }
+  }
+  
+  p {
+    max-width: 32rem;
+    margin: 0 auto var(--space-md);
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    line-height: 1.4;
+  }
+}
+
+/* Style the CTA button with Scandinavian simplicity */
+.cta-button {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  background-color: var(--color-background);
+  color: var(--color-accent1);
+  border: 1px solid var(--color-accent1);
+  border-radius: var(--border-radius);
+  padding: var(--space-xs) var(--space-md);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  
+  &:hover {
+    background-color: var(--color-accent1);
+    color: white;
+    transform: translateY(-1px);
+  }
+}
+
+/* Recent posts section */
+.recent-posts {
+  margin: var(--space-xl) 0;
+  
+  h2 {
+    font-size: 1.3rem;
+    margin-bottom: var(--space-md);
+    
+    /* Terminal-inspired heading indicator */
+    &::before {
+      content: "> ";
+      color: var(--color-accent2);
+    }
+  }
+  
+  em {
+    color: var(--color-text-muted);
+  }
+  
+  a {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+  }
+}
+
+/* ASCII-inspired decorative elements */
+.ascii-decoration {
+  font-family: var(--font-mono);
+  color: var(--color-text-muted);
+  text-align: center;
+  line-height: 1.2;
+  margin: var(--space-lg) 0;
+  font-size: 0.9rem;
+}
+
+/* Media Queries for Different Screen Sizes */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 1.7rem;
+    
+    &::before, &::after {
+      margin: 0 var(--space-xs);
+    }
+  }
+  
+  .hero p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    &::before, &::after {
+      display: none;
+    }
+  }
+}

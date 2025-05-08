@@ -1,0 +1,80 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+const { frontmatter } = Astro.props;
+---
+<BaseLayout title={`${frontmatter.title} - Log - nibzard`} description={`Log entry: ${frontmatter.title}`}>
+  <style>
+    .log-entry-header {
+      margin-bottom: var(--space-lg);
+      padding-bottom: var(--space-md);
+      border-bottom: 1px solid var(--color-subtle);
+    }
+    .log-entry-header h1 {
+      font-size: 2.5rem; /* Consistent with log index */
+      margin-bottom: var(--space-xs);
+    }
+    .log-entry-meta {
+      font-size: 0.9rem;
+      color: #777;
+      font-family: var(--font-mono);
+      margin-bottom: var(--space-md);
+    }
+    .tags {
+      display: flex;
+      gap: var(--space-sm);
+      margin-top: var(--space-md); /* Added from specs */
+    }
+    .tag {
+      background-color: var(--color-subtle);
+      padding: var(--space-xs) var(--space-sm);
+      border-radius: var(--border-radius);
+      font-size: 0.8rem;
+      font-family: var(--font-mono);
+      text-decoration: none;
+    }
+    .tag:hover {
+      background-color: var(--color-accent-3);
+      color: var(--color-text);
+    }
+    .log-content {
+      padding-top: var(--space-md);
+    }
+    .log-content h2 {
+      font-size: 1.8rem;
+      margin-top: var(--space-lg);
+      margin-bottom: var(--space-md);
+    }
+    .log-content p {
+      margin-bottom: var(--space-md);
+    }
+    .log-content ul, .log-content ol {
+      margin-bottom: var(--space-md);
+      padding-left: var(--space-lg); /* Indent lists */
+    }
+    .log-content li {
+      margin-bottom: var(--space-sm);
+    }
+    /* Styles for code blocks are in typography.css, but you can add more specific ones here */
+  </style>
+  <article class="fade-in">
+    <header class="log-entry-header">
+      <h1>{frontmatter.title}</h1>
+      <p class="log-entry-meta">
+        Published on <time datetime={frontmatter.date.toISOString()}>
+          {new Date(frontmatter.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+        </time>
+      </p>
+      {frontmatter.tags && frontmatter.tags.length > 0 && (
+        <div class="tags">
+          {frontmatter.tags.map((tag: string) => (
+            <a href={`/tags/${tag.toLowerCase()}`} class="tag">{tag}</a>
+          ))}
+        </div>
+      )}
+    </header>
+    <div class="log-content">
+      <slot /> {/* Content from the Markdown file will be rendered here */}
+    </div>
+  </article>
+</BaseLayout>

@@ -1,0 +1,263 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FadeIn from '../components/animations/FadeIn.jsx';
+// No need to import styles as they're included in main.css
+---
+
+<BaseLayout title="UI Elements - nibzard" description="A showcase of UI elements used across nibzard.">
+
+  <FadeIn client:visible>
+    <section class="element-section">
+      <h2>Color System</h2>
+      <p>The color system uses CSS variables for consistent theming across the site.</p>
+
+      <div class="color-palette">
+        <div class="color-swatch" style="background-color: var(--color-accent1);">
+          --color-accent1<br>#E45B5F
+        </div>
+        <div class="color-swatch" style="background-color: var(--color-accent2);">
+          --color-accent2<br>#4BA3C3
+        </div>
+        <div class="color-swatch" style="background-color: var(--color-accent3);">
+          --color-accent3<br>#FFB865
+        </div>
+        <div class="color-swatch light" style="background-color: var(--color-background);">
+          --color-background<br>#FFFFFF
+        </div>
+        <div class="color-swatch light" style="background-color: var(--color-border);">
+          --color-border<br>#f0f0f0
+        </div>
+        <div class="color-swatch" style="background-color: var(--color-text);">
+          --color-text<br>#2D3032
+        </div>
+        <div class="color-swatch" style="background-color: var(--color-text-muted);">
+          --color-text-muted<br>#757F8C
+        </div>
+      </div>
+    </section>
+  </FadeIn>
+
+  <FadeIn client:visible delay={0.1}>
+    <section class="element-section">
+      <h2>Typography</h2>
+      <div class="typography-sample">
+        <h1>Heading 1 (--font-size-2xl)</h1>
+        <h2>Heading 2 (--font-size-xl)</h2>
+        <h3>Heading 3 (--font-size-lg)</h3>
+        <h4>Heading 4</h4>
+        <h5>Heading 5</h5>
+        <h6>Heading 6</h6>
+
+        <p>This is a paragraph with <strong>bold text</strong>, <em>italic text</em>, and <a href="#">a link</a>. The base font size is 16px (1rem) with a line height of 1.5.</p>
+
+        <p>Code elements like <code>const example = "hello world";</code> use the monospace font.</p>
+
+        <div class="font-sample" style="font-family: var(--font-sans);">
+          <div class="font-sample-name">Sans-serif Font (--font-sans)</div>
+          <p>The quick brown fox jumps over the lazy dog. 1234567890</p>
+        </div>
+
+        <div class="font-sample" style="font-family: var(--font-mono);">
+          <div class="font-sample-name">Monospace Font (--font-mono)</div>
+          <p>The quick brown fox jumps over the lazy dog. 1234567890</p>
+        </div>
+      </div>
+    </section>
+  </FadeIn>
+
+  <FadeIn client:visible delay={0.2}>
+    <section class="element-section">
+      <h2>Buttons</h2>
+      <div class="button-container">
+        <button class="button-primary">Primary Button</button>
+        <button class="button-secondary">Secondary Button</button>
+        <button class="button-text">Text Button</button>
+      </div>
+
+      <p>Buttons can also be used as links:</p>
+
+      <div class="button-container">
+        <a href="#" class="button-primary">Primary Link</a>
+        <a href="#" class="button-secondary">Secondary Link</a>
+        <a href="#" class="button-text">Text Link</a>
+      </div>
+    </section>
+  </FadeIn>
+
+  <FadeIn client:visible delay={0.3}>
+    <section class="element-section">
+      <h2>Cards</h2>
+      <div class="card-container">
+        <div class="card">
+          <h3>Card Title</h3>
+          <p>This is a simple card with some content. Cards are used to group related information.</p>
+          <a href="#" class="button-text">Learn More</a>
+        </div>
+
+        <div class="card">
+          <h3>Another Card</h3>
+          <p>Cards can contain various elements like text, images, buttons, and more.</p>
+          <a href="#" class="button-text">View Details</a>
+        </div>
+
+        <div class="card">
+          <h3>Third Card</h3>
+          <p>The card layout is responsive and will adjust based on screen size.</p>
+          <a href="#" class="button-text">Explore</a>
+        </div>
+      </div>
+    </section>
+  </FadeIn>
+
+  <FadeIn client:visible delay={0.4}>
+    <section class="element-section">
+      <h2>Tags</h2>
+      <p>Tags are used for categorization and filtering content.</p>
+
+      <div class="tag-container">
+        <a href="#" class="tag">design</a>
+        <a href="#" class="tag">development</a>
+        <a href="#" class="tag">javascript</a>
+        <a href="#" class="tag">css</a>
+        <a href="#" class="tag">html</a>
+        <a href="#" class="tag">react</a>
+        <a href="#" class="tag">astro</a>
+        <a href="#" class="tag active">active tag</a>
+      </div>
+    </section>
+  </FadeIn>
+
+  <FadeIn client:visible delay={0.5}>
+    <section class="element-section">
+      <h2>Alerts</h2>
+      <p>Alerts are used to provide feedback to the user.</p>
+
+      <div class="alert alert-info">
+        <strong>Info:</strong> This is an informational message.
+      </div>
+
+      <div class="alert alert-success">
+        <strong>Success:</strong> Your action was completed successfully!
+      </div>
+
+      <div class="alert alert-warning">
+        <strong>Warning:</strong> This action might have consequences.
+      </div>
+
+      <div class="alert alert-error">
+        <strong>Error:</strong> Something went wrong. Please try again.
+      </div>
+    </section>
+  </FadeIn>
+
+  <FadeIn client:visible delay={0.6}>
+    <section class="element-section">
+      <h2>Forms</h2>
+      <form class="form-sample" onsubmit="event.preventDefault(); alert('Form submitted (demo)');">
+        <div class="form-group">
+          <label class="form-label" for="name">Name</label>
+          <input class="form-input" type="text" id="name" placeholder="Enter your name">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="email">Email</label>
+          <input class="form-input" type="email" id="email" placeholder="Enter your email">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="message">Message</label>
+          <textarea class="form-input" id="message" rows="4" placeholder="Enter your message"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">
+            <input type="checkbox"> Subscribe to newsletter
+          </label>
+        </div>
+
+        <button type="submit" class="button-primary">Submit</button>
+      </form>
+    </section>
+  </FadeIn>
+
+  <FadeIn client:visible delay={0.7}>
+    <section class="element-section">
+      <h2>Tables</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>John Doe</td>
+            <td>john@example.com</td>
+            <td>Developer</td>
+            <td>Active</td>
+          </tr>
+          <tr>
+            <td>Jane Smith</td>
+            <td>jane@example.com</td>
+            <td>Designer</td>
+            <td>Active</td>
+          </tr>
+          <tr>
+            <td>Bob Johnson</td>
+            <td>bob@example.com</td>
+            <td>Manager</td>
+            <td>Inactive</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </FadeIn>
+
+  <FadeIn client:visible delay={0.8}>
+    <section class="element-section">
+      <h2>Log Item Component</h2>
+      <p>The log item component is used to display entries in the log.</p>
+
+      <ul class="log-list">
+        <li class="log-item">
+          <div class="log-item-meta">
+            <p class="log-item-date">
+              <time datetime="2025-06-20T00:00:00.000Z">
+                June 20, 2025
+              </time>
+            </p>
+            <div class="tags-container">
+              <div class="tags">
+                <a href="#" class="tag">design</a>
+                <a href="#" class="tag">development</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="log-item-header">
+            <div class="log-item-title-container">
+              <h2 class="log-item-title">
+                <a href="#">Sample Log Entry Title</a>
+              </h2>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </FadeIn>
+
+  <FadeIn client:visible delay={0.9}>
+    <section class="element-section">
+      <h2>Hero Section</h2>
+      <div class="hero-sample">
+        <h1>Welcome to nibzard</h1>
+        <p>A minimalist blog and personal site built with Astro.</p>
+        <a href="#" class="button-primary">Get Started</a>
+      </div>
+    </section>
+  </FadeIn>
+
+</BaseLayout>

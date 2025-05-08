@@ -1,0 +1,57 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FadeIn from '../../components/animations/FadeIn.jsx';
+import LogItem from '../../components/LogItem.astro';
+
+export async function getStaticPaths() {
+  const logEntries = await getCollection('log', ({ data }) => data.draft !== true);
+  const allTags = logEntries.flatMap((entry: any) => entry.data.tags || []);
+  const uniqueTags = [...new Set(allTags)];
+
+  return uniqueTags.map((tag: string) => ({
+    params: { tag: tag.toLowerCase() }, // Ensure params are lowercase for URL consistency
+    props: { tagName: tag }, // Pass original tag name for display
+  }));
+}
+
+const { tag } = Astro.params; // This will be the lowercase tag from the URL
+const { tagName } = Astro.props; // This is the original casing tag name for display
+
+// Get all log entries with this tag
+const allLogEntries = await getCollection('log', ({ data }) => {
+  // Ensure tag matching is case-insensitive and handles undefined tags array
+  const entryTags = (data.tags || []).map((t: string) => t.toLowerCase());
+  return data.draft !== true && entryTags.includes(tag);
+});
+
+// Sort entries by date (newest first)
+const logEntries = allLogEntries.sort((a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf());
+---
+
+<BaseLayout title={`Tag: ${tagName} - nibzard`} description={`Log entries tagged with "${tagName}".`}>
+  {/* The <style> tag has been removed */}
+  <FadeIn client:visible>
+    <section class="log-header">
+      <h1>Entries tagged with: <span class="tag-highlight">{tagName}</span></h1>
+    </section>
+  </FadeIn>
+
+  <ul class="log-list">
+    {logEntries.length === 0 && (
+      <FadeIn client:visible delay={0.1}>
+        <p class="no-entries">No log entries found for this tag.</p>
+      </FadeIn>
+    )}
+    {logEntries.map((entry, index) => (
+      <FadeIn client:visible delay={0.05 * (index + 1)}>
+        <LogItem entry={entry} currentTag={tag} />
+      </FadeIn>
+    ))}
+  </ul>
+  <FadeIn client:visible delay={0.05 * (logEntries.length + 1)}>
+    <div class="back-link-container">
+      <a href="/tags" class="back-link">&larr; All Tags</a>
+    </div>
+  </FadeIn>
+</BaseLayout>

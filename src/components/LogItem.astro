@@ -1,0 +1,53 @@
+---
+/**
+ * LogItem Component
+ * Displays a single log entry in a list
+ */
+
+interface Props {
+  entry: any;
+  currentTag?: string;
+  maxTags?: number;
+}
+
+const { entry, currentTag = '', maxTags = 3 } = Astro.props;
+const entryTags = entry.data.tags || [];
+const tagsToDisplay = entryTags.slice(0, maxTags);
+---
+
+<li class="log-item">
+  {/* Date and tags on the same line */}
+  <div class="log-item-meta">
+    <p class="log-item-date">
+      <time datetime={entry.data.date.toISOString()}>
+        {new Date(entry.data.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+      </time>
+    </p>
+    {tagsToDisplay.length > 0 && (
+      <div class="tags-container">
+        <div class="tags">
+          {tagsToDisplay.map((tag: string) => (
+            <a 
+              href={`/tags/${tag.toLowerCase()}`} 
+              class:list={[
+                "tag", 
+                { active: tag.toLowerCase() === currentTag.toLowerCase() }
+              ]}
+            >
+              {tag}
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+  </div>
+
+  {/* Title */}
+  <div class="log-item-header">
+    <div class="log-item-title-container">
+      <h2 class="log-item-title">
+        <a href={`/log/${entry.slug}`}>{entry.data.title}</a>
+      </h2>
+    </div>
+  </div>
+</li>

@@ -1,0 +1,116 @@
+:root {
+  /*
+   * Color System
+   * Consistent naming convention for better maintainability
+   */
+
+  /* Base colors */
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+
+  /* Background colors */
+  --color-background: var(--color-white);
+  --color-background-alt: #FAFAFA;
+
+  /* Text colors */
+  --color-text: #2D3032;       /* Dark charcoal, not pure black */
+  --color-text-muted: #757F8C; /* Slightly darker for better contrast */
+  --color-text-light: #9CA3AF;
+
+  /* Accent colors */
+  --color-accent1: #E45B5F;    /* Soft red accent */
+  --color-accent2: #4BA3C3;    /* Light blue accent */
+  --color-accent3: #FFB865;    /* Warm amber accent */
+
+  /* UI colors */
+  --color-border: #f0f0f0;     /* Very subtle light grey border */
+  --color-subtle-bg: var(--color-white);  /* Pure white background */
+
+  /*
+   * Typography System
+   * Consistent font families and sizes
+   */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+
+  /* Font sizes - using a modular scale */
+  --font-size-xs: 0.75rem;   /* 12px */
+  --font-size-sm: 0.875rem;  /* 14px */
+  --font-size-base: 1rem;    /* 16px */
+  --font-size-md: 1.125rem;  /* 18px */
+  --font-size-lg: 1.25rem;   /* 20px */
+  --font-size-xl: 1.5rem;    /* 24px */
+  --font-size-2xl: 1.875rem; /* 30px */
+  --font-size-3xl: 2.25rem;  /* 36px */
+
+  /* Line heights */
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  /*
+   * Spacing System
+   * Consistent spacing values
+   */
+  --space-3xs: 0.125rem; /* 2px */
+  --space-2xs: 0.25rem;  /* 4px */
+  --space-xs: 0.375rem;  /* 6px */
+  --space-sm: 0.5rem;    /* 8px */
+  --space-md: 0.75rem;   /* 12px */
+  --space-lg: 1rem;      /* 16px */
+  --space-xl: 1.5rem;    /* 24px */
+  --space-2xl: 2rem;     /* 32px */
+  --space-3xl: 3rem;     /* 48px */
+
+  /*
+   * UI Elements
+   * Consistent values for UI components
+   */
+  --border-radius-sm: 2px;
+  --border-radius: 4px;
+  --border-radius-md: 6px;
+  --border-radius-lg: 8px;
+  --border-radius-full: 9999px;
+
+  /* Pico CSS Custom Properties */
+  --font-family: var(--font-sans);
+  --font-family-heading: var(--font-mono);
+  --font-family-monospace: var(--font-mono);
+  --spacing: 0.75rem;
+  --typography-spacing-vertical: 1.2rem;
+  --form-element-spacing-vertical: 0.75rem;
+  --form-element-spacing-horizontal: 0.75rem;
+
+  /* Pico CSS Colors */
+  --primary: var(--color-accent1);
+  --primary-hover: #c8484c; /* Slightly darker red */
+  --primary-focus: #f5d4d5; /* Very light red for focus rings */
+  --secondary: var(--color-accent2);
+  --secondary-hover: #3d8aa6; /* Slightly darker blue */
+  --secondary-focus: #daeef5; /* Very light blue for focus rings */
+  --contrast: var(--color-text);
+  --contrast-hover: #000000; /* Pure black on hover */
+  --contrast-focus: #ECEEF2; /* Very light gray for focus rings */
+  --muted: var(--color-border);
+
+  /*
+   * Animation and Transitions
+   * Consistent timing functions and durations
+   */
+  --transition-fast: 0.15s ease-out;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+
+  --animation-duration-fast: 0.15s;
+  --animation-duration-normal: 0.3s;
+  --animation-duration-slow: 0.5s;
+
+  /* Easing functions */
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+
+  /* Legacy variables - kept for compatibility */
+  --line-height: var(--line-height-normal);
+  --line-height-headings: var(--line-height-tight);
+}

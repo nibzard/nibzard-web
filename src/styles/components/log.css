@@ -1,0 +1,161 @@
+/* 
+ * Shared styles for log components
+ * Used across log index and tag pages
+ */
+
+/* Log header styles */
+.log-header {
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.log-header h1 {
+  font-size: 1.8rem;
+  margin-top: 0;
+  margin-bottom: var(--space-xs);
+}
+
+.log-header p {
+  margin-bottom: 0;
+  color: var(--color-text-muted);
+}
+
+/* Log list styles */
+.log-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.log-list li {
+  list-style-type: none;
+}
+
+.log-list li::marker {
+  display: none;
+  content: "";
+}
+
+.log-item {
+  margin-bottom: var(--space-md);
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.log-item:last-child {
+  border-bottom: none;
+}
+
+/* Meta information row (date and tags) */
+.log-item-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-2xs);
+}
+
+.log-item-date {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  margin: 0;
+  opacity: 0.8;
+}
+
+/* Title section */
+.log-item-header {
+  margin-bottom: var(--space-xs);
+}
+
+.log-item-title {
+  font-size: 1.2rem;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.log-item-title a {
+  text-decoration: none;
+  color: var(--color-text);
+  transition: color var(--transition-fast);
+}
+
+.log-item-title a:hover {
+  color: var(--color-accent1);
+}
+
+/* Tags styling */
+.tags-container {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs);
+}
+
+.tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  background-color: transparent;
+  color: var(--color-text-muted);
+  padding: 0.15rem 0.4rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.tag:hover {
+  background-color: transparent;
+  border-color: var(--color-accent2);
+  color: var(--color-accent2);
+}
+
+.tag.active {
+  background-color: transparent;
+  color: var(--color-accent2);
+  border: 1px solid var(--color-accent2);
+}
+
+/* Tag page specific styles */
+.tag-highlight {
+  color: var(--color-accent1);
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: var(--space-md);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+
+.no-entries {
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+/* Responsive styles */
+@media (max-width: 480px) {
+  .log-item-meta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .tags-container {
+    margin-top: var(--space-2xs);
+    width: 100%;
+  }
+
+  .log-item-date {
+    font-size: 0.7rem;
+  }
+
+  .log-item-title {
+    font-size: 1.1rem;
+  }
+}

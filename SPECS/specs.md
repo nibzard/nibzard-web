@@ -31,7 +31,7 @@ npm install framer-motion
 npm install -D @astrojs/react react react-dom
 ```
 
-### Step 4: Configure Astro
+### Step 3: Configure Astro
 1. Update `astro.config.mjs`:
    ```javascript
    import { defineConfig } from 'astro/config';
@@ -39,15 +39,15 @@ npm install -D @astrojs/react react react-dom
 
    export default defineConfig({
      integrations: [react()],
-     site: 'https://your-domain.com',
+     site: 'https://nibzard.com',
      output: 'static',
    });
    ```
 
 ### Step 5: Project Structure Setup
-Create the following file structure:
+Check the following file structure:
 ```
-personal-site/
+nibzard/
 ├── public/
 │   ├── fonts/
 │   └── favicon.svg
@@ -225,7 +225,7 @@ personal-site/
 
    <header>
      <div class="header-container">
-       <a href="/" class="logo">YourName</a>
+       <a href="/" class="logo">nibzard</a>
        <Navigation />
      </div>
    </header>
@@ -290,37 +290,65 @@ personal-site/
 
 ### Step 8: Create Pages
 
-1. Create homepage in `src/pages/index.astro`:
+1. Create homepage in `src/pages/index.astro`: [DONE]
    ```astro
    ---
    import BaseLayout from '../layouts/BaseLayout.astro';
-   import { FadeIn } from '../components/animations/FadeIn';
+   // Assuming FadeIn component might be added later or is optional
+   // import { FadeIn } from '../components/animations/FadeIn';
    ---
 
-   <BaseLayout title="Home | YourName">
-     <FadeIn client:load>
-       <section class="hero">
-         <h1>Hello, I'm <span class="accent">YourName</span>.</h1>
-         <p class="subtitle">Brief tagline about yourself or your work.</p>
-       </section>
-     </FadeIn>
-     
-     <FadeIn client:load delay={0.2}>
-       <section class="recent">
-         <h2>Recent Entries</h2>
-         <ul class="entry-list">
-           <li>
-             <time>2025-05-01</time>
-             <a href="/log/entry-1">Title of your most recent log entry</a>
-           </li>
-           <li>
-             <time>2025-04-25</time>
-             <a href="/log/entry-2">Another log entry title</a>
-           </li>
-         </ul>
-         <a href="/log" class="view-all">View all entries →</a>
-       </section>
-     </FadeIn>
+   <BaseLayout title="nibzard - Home" description="Welcome to nibzard, a minimal personal website and log.">
+     <style>
+       .hero {
+         text-align: center;
+         padding: var(--space-xl) 0;
+       }
+       .hero h1 {
+         font-size: 3rem; /* Larger for hero */
+         margin-bottom: var(--space-sm);
+       }
+       .hero p {
+         font-size: 1.2rem;
+         color: #555; /* Slightly muted text for tagline */
+         font-family: var(--font-sans);
+         max-width: 60ch;
+         margin: 0 auto var(--space-lg) auto;
+       }
+       .cta-button {
+         display: inline-block;
+         padding: var(--space-sm) var(--space-lg);
+         background-color: var(--color-accent-1);
+         color: var(--color-background); /* White text on accent color */
+         text-decoration: none;
+         font-family: var(--font-mono);
+         border-radius: var(--border-radius);
+         transition: background-color var(--transition-normal);
+       }
+       .cta-button:hover {
+         background-color: var(--color-accent-2);
+         color: var(--color-background);
+       }
+       .recent-posts { /* Added based on current index.astro */
+         /* Styles for recent posts section if needed */
+         margin-top: var(--space-xl);
+         text-align: center; /* Or as desired */
+       }
+       .recent-posts h2 {
+          margin-bottom: var(--space-md);
+       }
+     </style>
+     <section class="hero fade-in"> {/* Assuming fade-in class is handled by global CSS or a component */}
+       <h1>nibzard</h1>
+       <p>A minimal personal website and log. Exploring ideas, projects, and everything in between.</p>
+       <a href="/log" class="cta-button">View Log</a>
+     </section>
+
+     <section class="recent-posts">
+       <h2>Recent Thoughts</h2>
+       <p><em>(Content for recent posts will be dynamically populated here later)</em></p>
+       <p><a href="/log">Browse all entries &rarr;</a></p>
+     </section>
    </BaseLayout>
 
    <style>
@@ -497,7 +525,7 @@ personal-site/
 
 1. Create a `wrangler.toml` file in the project root:
    ```toml
-   name = "personal-site"
+   name = "nibzard"
    type = "webpack"
    account_id = "your-account-id"
    workers_dev = true
@@ -538,7 +566,7 @@ personal-site/
    ```bash
    git add .
    git commit -m "Initial commit"
-   git remote add origin https://github.com/yourusername/personal-site.git
+   git remote add origin https://github.com/nkkko/nibzard.git
    git push -u origin main
    ```
 

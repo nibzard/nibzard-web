@@ -1,0 +1,54 @@
+/* 
+ * Shared tag component styles
+ * Used across the site for consistent tag styling
+ */
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs);
+}
+
+.tags-container {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  background-color: transparent;
+  color: var(--color-text-muted);
+  padding: 0.15rem 0.4rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.tag:hover {
+  background-color: transparent;
+  border-color: var(--color-accent2);
+  color: var(--color-accent2);
+}
+
+.tag.active {
+  background-color: transparent;
+  color: var(--color-accent2);
+  border: 1px solid var(--color-accent2);
+}
+
+/* Tag page specific styles */
+.tag-highlight {
+  color: var(--color-accent1);
+}
+
+/* Responsive styles */
+@media (max-width: 480px) {
+  .tags-container {
+    margin-top: var(--space-2xs);
+    width: 100%;
+  }
+}

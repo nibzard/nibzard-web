@@ -1,0 +1,35 @@
+/* Styles for /Users/nikola/dev/nibzard/src/pages/tags/index.astro */
+.tags-header {
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--color-subtle);
+}
+.tags-header h1 {
+  font-size: 2.5rem;
+}
+.tags-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+.tag-item a {
+  display: inline-block;
+  background-color: var(--color-subtle);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--border-radius);
+  font-size: 0.9rem;
+  font-family: var(--font-mono);
+  text-decoration: none;
+  color: #555;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.tag-item a:hover {
+  background-color: var(--color-accent-3);
+  color: var(--color-text);
+}
+.no-tags {
+  font-style: italic;
+  color: #777;
+}

@@ -1,0 +1,21 @@
+---
+import { getCollection } from 'astro:content';
+import LogEntryLayout from '../../layouts/LogEntryLayout.astro'; // Import the layout
+
+export async function getStaticPaths() {
+  const logEntries = await getCollection('log', ({ data }) => {
+    return data.draft !== true; // Filter out drafts
+  });
+
+  return logEntries.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+<LogEntryLayout frontmatter={entry.data}>
+  <Content />
+</LogEntryLayout>

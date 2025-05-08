@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import FadeIn from '../../components/animations/FadeIn.jsx';
+import '../../styles/tags-index.less'; // Import the Less file
+
+const logEntries = await getCollection('log', ({ data }) => {
+  return data.draft !== true;
+});
+
+const allTags = logEntries.flatMap(entry => entry.data.tags || []);
+const uniqueTags = [...new Set(allTags)].sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+---
+
+<BaseLayout title="Tags - nibzard" description="Browse content by tags.">
+  {/* The <style> tag has been removed */}
+  <FadeIn client:visible>
+    <section class="tags-header">
+      <h1>All Tags</h1>
+      <p>Browse articles and logs by topic.</p>
+    </section>
+  </FadeIn>
+
+  <FadeIn client:visible delay={0.1}>
+    {uniqueTags.length > 0 ? (
+      <ul class="tags-list">
+        {uniqueTags.map((tag, index) => (
+          <FadeIn client:visible delay={0.1 + index * 0.05}>
+            <li class="tag-item">
+              <a href={`/tags/${tag.toLowerCase()}`}>{tag}</a>
+            </li>
+          </FadeIn>
+        ))}
+      </ul>
+    ) : (
+      <p class="no-tags">No tags found yet. Add tags to your log entries to see them here.</p>
+    )}
+  </FadeIn>
+</BaseLayout>

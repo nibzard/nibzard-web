@@ -1,0 +1,84 @@
+---
+// Import our main CSS file which includes all styles
+import '../styles/main.css';
+
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const { title = "nibzard", description = "A minimal personal website and log." } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content={description}>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- Import Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <title>{title}</title>
+
+  <!-- View Transitions -->
+  <meta name="view-transition" content="same-origin" />
+</head>
+<body>
+  <Header />
+  <main class="content-container">
+    <slot /> <!-- Page content will be injected here -->
+  </main>
+  <Footer />
+</body>
+</html>
+<style is:global>
+  /* Global styles for our Japanese/Scandinavian minimalist theme */
+  /* We can't include this in pico-custom.css because we need is:global */
+
+  /* Custom selection styling */
+  ::selection {
+    background-color: var(--color-accent1);
+    color: white;
+  }
+
+  /* ASCII-style horizontal divider */
+  .divider {
+    font-family: var(--font-mono);
+    text-align: center;
+    margin: var(--space-lg) auto;
+    color: var(--color-text-muted);
+    font-size: 0.8rem;
+    letter-spacing: 0.5em;
+  }
+
+  /* Default container should be narrower for better readability */
+  .content-container {
+    max-width: 70ch;
+    margin: 0 auto;
+    padding: 0 var(--space-xl);
+  }
+
+  /* Full-width container for header and footer */
+  .full-width {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  /* Container for content within full-width containers */
+  .inner-container {
+    max-width: 65ch;
+    margin: 0 auto;
+    padding: 0 var(--space-xl);
+  }
+
+  /* Accent color utilities */
+  .accent1 { color: var(--color-accent1); }
+  .accent2 { color: var(--color-accent2); }
+  .accent3 { color: var(--color-accent3); }
+
+  /* Monospace text class */
+  .mono { font-family: var(--font-mono); }
+</style>
