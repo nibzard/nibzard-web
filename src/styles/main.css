@@ -12,6 +12,7 @@
 @import './components/log-entry.css';
 @import './components/tags.css';
 @import './components/elements.css';
+@import './components/standardized-tags.css';
 
 /* Global styles */
 html {

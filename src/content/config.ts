@@ -3,13 +3,43 @@ import { defineCollection, z } from 'astro:content';
 const logCollection = defineCollection({
   type: 'content', // 'content' for Markdown files
   schema: z.object({
-    title: z.string(),
+    title: z.string().max(60, "Title must be 60 characters or less"),
+    description: z.string().max(130, "Description must be 130 characters or less"),
+    tldr: z.string().max(333, "Description must be 333 characters or less").optional(),
     date: z.date(),
     tags: z.array(z.string()),
     draft: z.boolean().optional().default(false),
   }),
 });
 
+const nowCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    date: z.date(),
+    draft: z.boolean().optional().default(false),
+  }),
+});
+
+const thoughtsCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    date: z.date(),
+    draft: z.boolean().optional().default(false),
+  }),
+});
+
+const imagesCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    date: z.date(),
+    imageUrl: z.string(),
+    draft: z.boolean().optional().default(false),
+  }),
+});
+
 export const collections = {
   log: logCollection,
+  now: nowCollection,
+  thoughts: thoughtsCollection,
+  images: imagesCollection,
 };

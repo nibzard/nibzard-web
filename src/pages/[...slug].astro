@@ -1,10 +1,10 @@
 ---
-// This file handles redirects from the old /log/entry-x paths to the new /entry-x paths
 import { getCollection, type CollectionEntry } from 'astro:content';
+import LogEntryLayout from '../layouts/LogEntryLayout.astro';
 
 export async function getStaticPaths() {
   const logEntries = await getCollection('log', ({ data }) => {
-    return data.draft !== true;
+    return data.draft !== true; // Filter out drafts
   });
 
   return logEntries.map((entry: CollectionEntry<'log'>) => ({
@@ -18,9 +18,8 @@ interface Props {
 }
 
 const { entry } = Astro.props;
+const { Content } = await entry.render();
 ---
-
-<meta http-equiv="refresh" content={`0;url=/${entry.slug}`} />
-<script is:inline define:vars={{ slug: entry.slug }}>
-  window.location.href = `/${slug}`;
-</script>
+<LogEntryLayout frontmatter={entry.data}>
+  <Content />
+</LogEntryLayout>

@@ -2,6 +2,8 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import FadeIn from '../../components/animations/FadeIn.jsx';
+import AnimatedTag from '../../components/animations/AnimatedTag.jsx';
+import { formatTagForDisplay, sortTags } from '../../utils/tagUtils';
 import '../../styles/tags-index.less'; // Import the Less file
 
 const logEntries = await getCollection('log', ({ data }) => {
@@ -9,7 +11,9 @@ const logEntries = await getCollection('log', ({ data }) => {
 });
 
 const allTags = logEntries.flatMap(entry => entry.data.tags || []);
-const uniqueTags = [...new Set(allTags)].sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+const uniqueTags = [...new Set(allTags)];
+// Sort tags with standardized tags first
+const sortedTags = sortTags(uniqueTags);
 ---
 
 <BaseLayout title="Tags - nibzard" description="Browse content by tags.">
@@ -22,15 +26,22 @@ const uniqueTags = [...new Set(allTags)].sort((a, b) => a.toLowerCase().localeCo
   </FadeIn>
 
   <FadeIn client:visible delay={0.1}>
-    {uniqueTags.length > 0 ? (
+    {sortedTags.length > 0 ? (
       <ul class="tags-list">
-        {uniqueTags.map((tag, index) => (
-          <FadeIn client:visible delay={0.1 + index * 0.05}>
-            <li class="tag-item">
-              <a href={`/tags/${tag.toLowerCase()}`}>{tag}</a>
-            </li>
-          </FadeIn>
-        ))}
+        {sortedTags.map((tag, index) => {
+          const formattedTag = formatTagForDisplay(tag);
+          return (
+            <FadeIn client:visible delay={0.1 + index * 0.05}>
+              <li class="tag-item">
+                <AnimatedTag
+                  client:visible
+                  href={`/tags/${tag.toLowerCase()}`}
+                  tagText={formattedTag}
+                />
+              </li>
+            </FadeIn>
+          );
+        })}
       </ul>
     ) : (
       <p class="no-tags">No tags found yet. Add tags to your log entries to see them here.</p>

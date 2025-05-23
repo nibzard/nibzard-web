@@ -1,4 +1,4 @@
-/* 
+/*
  * Shared styles for log components
  * Used across log index and tag pages
  */
@@ -82,6 +82,14 @@
 
 .log-item-title a:hover {
   color: var(--color-accent1);
+}
+
+/* Description styling */
+.log-item-description {
+  margin: var(--space-2xs) 0 0;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.4;
 }
 
 /* Tags styling */

@@ -1,9 +1,29 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import AnimatedTag from '../components/animations/AnimatedTag.jsx';
+import AnimatedTagsContainer from '../components/animations/AnimatedTagsContainer.jsx';
+import { formatTagForDisplay, sortTags } from '../utils/tagUtils';
+import { getCollection, type CollectionEntry } from 'astro:content';
+import FadeIn from '../components/animations/FadeIn.jsx';
 
 const { frontmatter } = Astro.props;
+const sortedTags = frontmatter.tags ? sortTags(frontmatter.tags) : [];
+
+// Get random log entries for the "Read More" section
+const allEntries = await getCollection('log', ({ data }) => !data.draft);
+// Filter out the current entry using the title (since we don't have the slug/id)
+const otherEntries = allEntries.filter(entry => entry.data.title !== frontmatter.title);
+
+// Randomly select two entries
+let randomEntries: CollectionEntry<'log'>[] = [];
+if (otherEntries.length > 0) {
+  // Shuffle array and take first two entries (or all if less than 2)
+  randomEntries = [...otherEntries]
+    .sort(() => Math.random() - 0.5)
+    .slice(0, Math.min(2, otherEntries.length));
+}
 ---
-<BaseLayout title={`${frontmatter.title} - Log - nibzard`} description={`Log entry: ${frontmatter.title}`}>
+<BaseLayout title={`${frontmatter.title} - Log - nibzard`} description={frontmatter.description || `Log entry: ${frontmatter.title}`}>
   <style>
     .log-entry-header {
       margin-bottom: var(--space-lg);
@@ -13,6 +33,21 @@ const { frontmatter } = Astro.props;
     .log-entry-header h1 {
       font-size: 2.5rem; /* Consistent with log index */
       margin-bottom: var(--space-xs);
+    }
+    .log-entry-description {
+      font-size: 1.1rem;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-sm);
+      line-height: 1.4;
+    }
+    .log-entry-tldr {
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-sm);
+      line-height: 1.4;
+      border-left: 3px solid var(--color-accent-2);
+      padding-top: var(--space-sm);
     }
     .log-entry-meta {
       font-size: 0.9rem;
@@ -56,25 +91,102 @@ const { frontmatter } = Astro.props;
       margin-bottom: var(--space-sm);
     }
     /* Styles for code blocks are in typography.css, but you can add more specific ones here */
+    
+    /* Read More section */
+    .read-more-section {
+      margin-top: var(--space-xl);
+      padding-top: var(--space-lg);
+      border-top: 1px solid var(--color-subtle);
+    }
+    .read-more-title {
+      font-size: 1.5rem;
+      margin-bottom: var(--space-md);
+    }
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: var(--space-md);
+      margin-top: var(--space-md);
+    }
+    .card {
+      background-color: var(--color-background);
+      border: 1px solid var(--color-subtle);
+      border-radius: var(--border-radius);
+      padding: var(--space-md);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: var(--space-xs);
+      font-size: 1.2rem;
+    }
+    .card p {
+      color: var(--color-text-muted);
+      font-size: 0.9rem;
+      margin-bottom: var(--space-sm);
+    }
+    .card-date {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-xs);
+    }
   </style>
   <article class="fade-in">
     <header class="log-entry-header">
-      <h1>{frontmatter.title}</h1>
       <p class="log-entry-meta">
         Published on <time datetime={frontmatter.date.toISOString()}>
           {new Date(frontmatter.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
         </time>
       </p>
-      {frontmatter.tags && frontmatter.tags.length > 0 && (
-        <div class="tags">
-          {frontmatter.tags.map((tag: string) => (
-            <a href={`/tags/${tag.toLowerCase()}`} class="tag">{tag}</a>
-          ))}
-        </div>
+      <h1>{frontmatter.title}</h1>
+      {frontmatter.tldr && (
+        <p class="log-entry-tldr">TL;DR &gt;&gt; {frontmatter.tldr} &lt;&lt;</p>
       )}
     </header>
     <div class="log-content">
       <slot /> {/* Content from the Markdown file will be rendered here */}
     </div>
+    {sortedTags.length > 0 && (
+      <AnimatedTagsContainer client:visible className="tags">
+        {sortedTags.map((tag: string) => {
+          const formattedTag = formatTagForDisplay(tag);
+          return (
+            <AnimatedTag
+              client:visible
+              href={`/tags/${tag.toLowerCase()}`}
+              tagText={formattedTag}
+            />
+          );
+        })}
+      </AnimatedTagsContainer>
+    )}
+    
+    {randomEntries.length > 0 && (
+      <FadeIn client:visible>
+        <section class="read-more-section">
+          <h2 class="read-more-title">Continue Reading</h2>
+          <div class="card-container">
+            {randomEntries.map((entry) => (
+              <a href={`/${entry.slug}`} class="card">
+                <p class="card-date">
+                  <time datetime={entry.data.date.toISOString()}>
+                    {new Date(entry.data.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                  </time>
+                </p>
+                <h3>{entry.data.title}</h3>
+                {entry.data.description && (
+                  <p>{entry.data.description}</p>
+                )}
+              </a>
+            ))}
+          </div>
+        </section>
+      </FadeIn>
+    )}
   </article>
 </BaseLayout>

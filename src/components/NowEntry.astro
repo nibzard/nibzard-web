@@ -1,0 +1,45 @@
+---
+/**
+ * NowEntry Component
+ * Displays the current "now" entry
+ */
+
+interface Props {
+  entry: any;
+}
+
+const { entry } = Astro.props;
+---
+
+<div class="now-entry">
+  <h1>What I'm Currently Focused On</h1>
+  <p>This page outlines what I'm currently up to, inspired by <a href="https://nownownow.com/about" target="_blank" rel="noopener noreferrer">nownownow.com</a>.</p>
+  
+  <div class="now-content">
+    <slot />
+  </div>
+  
+  <div class="now-meta">
+    <p class="now-updated">
+      Last updated: <time datetime={entry.data.date.toISOString()}>
+        {new Date(entry.data.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+      </time>
+    </p>
+  </div>
+</div>
+
+<style>
+  .now-entry {
+    margin-bottom: 2rem;
+  }
+  
+  .now-meta {
+    margin-top: 2rem;
+    font-style: italic;
+    color: var(--color-text-muted);
+  }
+  
+  .now-updated {
+    font-size: 0.9rem;
+  }
+</style>

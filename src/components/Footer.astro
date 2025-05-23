@@ -1,7 +1,14 @@
 <footer class="full-width">
   <div class="inner-container footer-content">
     <div class="ascii-divider">+-+-+</div>
-    <p>&copy; {new Date().getFullYear()} <span class="monospace">n<span class="accent1">i</span>bzard</span></p>
+    <div class="footer-main">
+      <p>&copy; {new Date().getFullYear()} <span class="monospace">n<span class="accent1">i</span>bzard</span></p>
+      <div class="footer-links">
+        <a href="/log">Log</a>
+        <a href="/about">About</a>
+        <a href="/elements">Elements</a>
+      </div>
+    </div>
   </div>
 </footer>
 
@@ -29,6 +36,29 @@
     color: var(--color-border);
   }
   
+  .footer-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+  }
+  
+  .footer-links {
+    display: flex;
+    gap: var(--space-md);
+  }
+  
+  .footer-links a {
+    color: var(--color-accent2);
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  
+  .footer-links a:hover {
+    text-decoration: underline;
+  }
+  
   .monospace {
     font-family: var(--font-mono);
   }
@@ -39,5 +69,13 @@
   
   p {
     margin: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .footer-main {
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-sm);
+    }
   }
 </style>

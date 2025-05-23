@@ -1,0 +1,68 @@
+---
+/**
+ * NowItemRenderer Component
+ * Renders a now entry with proper markdown processing
+ */
+
+interface Props {
+  entry: any;
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<div class="now-item">
+  <div class="entry-meta">
+    <time datetime={entry.data.date.toISOString()}>
+      {new Date(entry.data.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+    </time>
+    <span class="entry-type">Now</span>
+  </div>
+  <div class="now-item-content">
+    <Content />
+  </div>
+</div>
+
+<style>
+  .now-item {
+    position: relative;
+    padding: 1.5rem;
+    background-color: var(--color-background-alt);
+    border-radius: var(--border-radius-lg);
+    border-left: 4px solid var(--color-accent2);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform var(--transition-normal);
+  }
+  
+  .now-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+  
+  .entry-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-md);
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+  }
+  
+  .entry-type {
+    background-color: var(--color-accent2);
+    color: white;
+    font-size: var(--font-size-xs);
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: var(--border-radius);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .now-item-content {
+    line-height: var(--line-height-relaxed);
+    color: var(--color-text);
+  }
+</style>

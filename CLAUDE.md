@@ -3,11 +3,11 @@
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Commands
-- `npm install`: Install dependencies
-- `npm run dev`: Start development server at localhost:4321
-- `npm run build`: Build production site to ./dist/
-- `npm run preview`: Preview production build locally
-- `npm run astro`: Run Astro CLI commands
+- `pnpm install`: Install dependencies
+- `pnpm run dev`: Start development server at localhost:4321
+- `pnpm run build`: Build production site to ./dist/
+- `pnpm run preview`: Preview production build locally
+- `pnpm run astro`: Run Astro CLI commands
 
 ## Code Style Guidelines
 - **Framework**: Astro with React islands for animations

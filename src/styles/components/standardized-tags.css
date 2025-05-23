@@ -1,0 +1,40 @@
+/**
+ * Standardized Tags Styling
+ *
+ * This file contains styles for standardized tags that have predefined colors.
+ */
+
+/* Higher specificity to override default tag styles */
+a.tag.standardized-tag {
+  font-weight: 500;
+  font-size: 0.7rem;
+  letter-spacing: 0.03em;
+  padding: 0.2rem 0.5rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  border-width: 1px;
+  border-style: solid;
+  text-transform: uppercase;
+  /* Don't use inherit as it's not working correctly */
+  /* Instead, let the inline styles handle the colors */
+}
+
+/* Hover effect for standardized tags */
+a.tag.standardized-tag:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  opacity: 0.9;
+}
+
+/* Active state for standardized tags */
+a.tag.standardized-tag.active {
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  a.tag.standardized-tag {
+    padding: 0.15rem 0.4rem;
+    font-size: 0.65rem;
+  }
+}

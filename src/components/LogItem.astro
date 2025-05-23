@@ -3,6 +3,9 @@
  * LogItem Component
  * Displays a single log entry in a list
  */
+import AnimatedTag from './animations/AnimatedTag.jsx';
+import AnimatedTagsContainer from './animations/AnimatedTagsContainer.jsx';
+import { formatTagForDisplay, sortTags } from '../utils/tagUtils';
 
 interface Props {
   entry: any;
@@ -12,8 +15,19 @@ interface Props {
 
 const { entry, currentTag = '', maxTags = 3 } = Astro.props;
 const entryTags = entry.data.tags || [];
-const tagsToDisplay = entryTags.slice(0, maxTags);
+// Sort tags with standardized tags first
+const sortedTags = sortTags(entryTags);
+const tagsToDisplay = sortedTags.slice(0, maxTags);
 ---
+
+<style>
+  .log-item-tldr {
+    margin-top: 0.5rem;
+    font-style: italic;
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+  }
+</style>
 
 <li class="log-item">
   {/* Date and tags on the same line */}
@@ -25,19 +39,19 @@ const tagsToDisplay = entryTags.slice(0, maxTags);
     </p>
     {tagsToDisplay.length > 0 && (
       <div class="tags-container">
-        <div class="tags">
-          {tagsToDisplay.map((tag: string) => (
-            <a 
-              href={`/tags/${tag.toLowerCase()}`} 
-              class:list={[
-                "tag", 
-                { active: tag.toLowerCase() === currentTag.toLowerCase() }
-              ]}
-            >
-              {tag}
-            </a>
-          ))}
-        </div>
+        <AnimatedTagsContainer client:visible className="tags">
+          {tagsToDisplay.map((tag: string) => {
+            const formattedTag = formatTagForDisplay(tag);
+            return (
+              <AnimatedTag
+                client:visible
+                href={`/tags/${tag.toLowerCase()}`}
+                isActive={tag.toLowerCase() === currentTag.toLowerCase()}
+                tagText={formattedTag}
+              />
+            );
+          })}
+        </AnimatedTagsContainer>
       </div>
     )}
   </div>
@@ -46,8 +60,11 @@ const tagsToDisplay = entryTags.slice(0, maxTags);
   <div class="log-item-header">
     <div class="log-item-title-container">
       <h2 class="log-item-title">
-        <a href={`/log/${entry.slug}`}>{entry.data.title}</a>
+        <a href={`/${entry.slug}`}>{entry.data.title}</a>
       </h2>
     </div>
+    {entry.data.description && (
+      <p class="log-item-description">{entry.data.description}</p>
+    )}
   </div>
 </li>

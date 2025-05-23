@@ -116,7 +116,7 @@ article, .container {
 }
 
 /* Tags styling - improved */
-.tag {
+.tag:not(.standardized-tag) {
   display: inline-block;
   font-family: var(--font-mono);
   font-size: 0.65rem;
@@ -131,7 +131,7 @@ article, .container {
   transition: all var(--transition-fast);
 }
 
-.tag:hover {
+.tag:not(.standardized-tag):hover {
   background-color: var(--color-accent2);
   color: white;
   transform: translateY(-1px);
