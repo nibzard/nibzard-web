@@ -63,23 +63,23 @@ while (feedEntries.length < 20 && feedEntries.length < totalEntries) {
   const nextThoughtDate = thoughtIndex < thoughts.length ? thoughts[thoughtIndex].data.date : null;
   const nextNowDate = nowIndex < nowEntries.length ? nowEntries[nowIndex].data.date : null;
   const nextImageDate = imageIndex < imageEntries.length ? imageEntries[imageIndex].data.date : null;
-  
+
   // Find the most recent date among available entries
   let mostRecentType: string | null = null;
   let mostRecentValue = 0;
-  
+
   const logDateValue = getDateValue(nextLogDate);
   if (logDateValue > mostRecentValue) {
     mostRecentType = 'log';
     mostRecentValue = logDateValue;
   }
-  
+
   const thoughtDateValue = getDateValue(nextThoughtDate);
   if (thoughtDateValue > mostRecentValue) {
     mostRecentType = 'thought';
     mostRecentValue = thoughtDateValue;
   }
-  
+
   const nowDateValue = getDateValue(nextNowDate);
   if (nowDateValue > mostRecentValue) {
     mostRecentType = 'now';
@@ -91,7 +91,7 @@ while (feedEntries.length < 20 && feedEntries.length < totalEntries) {
     mostRecentType = 'image';
     mostRecentValue = imageDateValue;
   }
-  
+
   // Add the most recent entry to the feed
   if (mostRecentType === 'log') {
     feedEntries.push({ type: 'log', entry: logEntries[logIndex] });
@@ -113,54 +113,62 @@ while (feedEntries.length < 20 && feedEntries.length < totalEntries) {
 ---
 
 <BaseLayout title="nibzard - Home" description="Welcome to nibzard, a minimal personal website and log.">
+  <form
+    class="search-bar-container form-group"
+    action="/search"
+    method="get"
+    style="margin-bottom: var(--space-lg); display: flex; align-items: center; width: 100%; margin-left: calc(-1 * var(--space-xl)); margin-right: calc(-1 * var(--space-xl)); padding-left: var(--space-xl); padding-right: var(--space-xl);">
+    <input
+      class="form-input search-bar"
+      type="text"
+      name="q"
+      placeholder="Search..."
+      autocomplete="off"
+      style="flex-grow: 1; margin-right: var(--space-sm);"
+    />
+    <button type="submit" class="button-primary">Search</button>
+  </form>
   <div class="feed-timeline">
     {feedEntries.map((item, index) => {
       // Insert newsletter after 10th post
       const showNewsletter = index === 10;
-      
       // Render appropriate entry based on type
       return (
         <>
           {item.type === 'thought' ? (
-            <FadeIn client:visible delay={index * 0.05} yOffset={5}>
+            <FadeIn client:visible delay={index * 0.01} yOffset={5}>
               <ThoughtRenderer entry={item.entry} />
             </FadeIn>
           ) : item.type === 'now' ? (
-            <FadeIn client:visible delay={index * 0.05} yOffset={5}>
+            <FadeIn client:visible delay={index * 0.01} yOffset={5}>
               <NowItemRenderer entry={item.entry} />
             </FadeIn>
           ) : item.type === 'image' ? (
-            <FadeIn client:visible delay={index * 0.05} yOffset={5}>
-              <div class="image-container"> {/* Added wrapper div with its own class */}
+            <FadeIn client:visible delay={index * 0.01} yOffset={5}>
+              <div class="image-container">
                 <ImageRenderer entry={item.entry} />
               </div>
             </FadeIn>
           ) : (
-            <FadeIn client:visible delay={index * 0.05} yOffset={5}>
-              {/* Cast to any to access log-specific properties */}
+            <FadeIn client:visible delay={index * 0.01} yOffset={5}>
               {(() => {
-                // Get log entry
                 const logEntry = item.entry;
-                // Get tag colors for the first tag if available
                 const firstTag = 'tags' in logEntry.data ? logEntry.data.tags?.[0] || null : null;
                 const tagColor = firstTag ? getTagColors(firstTag) : null;
                 const borderStyle = tagColor ? `border-left-color: ${tagColor.borderColor}` : '';
-                
                 return (
                   <article class="log-entry" style={borderStyle}>
                     <div class="entry-meta">
                       <time datetime={logEntry.data.date.toISOString()}>
                         {new Date(logEntry.data.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
                       </time>
-                      
                       <div class="entry-tags">
                         {'tags' in logEntry.data && logEntry.data.tags && logEntry.data.tags.length > 0 && (
                           <div class="tag-container">
                             {logEntry.data.tags.map((tag: string) => {
                               const colors = getTagColors(tag);
-                              const tagStyle = colors ? 
+                              const tagStyle = colors ?
                                 `background-color: ${colors.backgroundColor}; color: ${colors.textColor}; border-color: ${colors.borderColor}` : '';
-                                
                               return (
                                 <a href={`/tags/${tag.toLowerCase()}`} class="tag" style={tagStyle}>
                                   {tag}
@@ -171,12 +179,10 @@ while (feedEntries.length < 20 && feedEntries.length < totalEntries) {
                         )}
                       </div>
                     </div>
-                    
                     <div class="log-entry-content">
                       <h2>
                         <a href={`/${logEntry.slug}`}>{'title' in logEntry.data ? logEntry.data.title : 'Log Entry'}</a>
                       </h2>
-                      
                       {'tldr' in logEntry.data && logEntry.data.tldr && (
                         <p class="log-entry-tldr">{logEntry.data.tldr}</p>
                       )}
@@ -186,24 +192,14 @@ while (feedEntries.length < 20 && feedEntries.length < totalEntries) {
               })()}
             </FadeIn>
           )}
-          
-          {/* Newsletter section */}
           {showNewsletter && (
-            <FadeIn client:visible delay={0.5} yOffset={5}>
+            <FadeIn client:visible delay={0} yOffset={5}>
               <div class="newsletter-section">
-                <NewsletterSubscribe 
-                  title="Stay Updated" 
+                <NewsletterSubscribe
+                  title="Stay Updated"
                   description="Subscribe to receive the latest updates and articles directly in your inbox."
-                  showButton={false}
+                  showButton={true}
                 />
-                <div class="newsletter-cta">
-                  <CtaButton 
-                    text="Subscribe Now" 
-                    type="primary" 
-                    size="medium" 
-                    class="subscribe-button"
-                  />
-                </div>
               </div>
             </FadeIn>
           )}
@@ -211,8 +207,16 @@ while (feedEntries.length < 20 && feedEntries.length < totalEntries) {
       );
     })}
   </div>
-  
-
+  {/* Insert newsletter at the bottom */}
+  <FadeIn client:visible delay={0} yOffset={5}>
+    <div class="newsletter-section">
+      <NewsletterSubscribe
+        title="Stay Updated"
+        description="Subscribe to receive the latest updates and articles directly in your inbox."
+        showButton={true}
+      />
+    </div>
+  </FadeIn>
 </BaseLayout>
 
 <style>
@@ -223,21 +227,33 @@ while (feedEntries.length < 20 && feedEntries.length < totalEntries) {
     flex-direction: column;
     gap: var(--space-lg);
   }
-  
 
-  
+  .search-bar-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--space-lg);
+  }
+  .search-bar {
+    width: 100%;
+    max-width: 500px;
+    padding: var(--space-sm) var(--space-md);
+    font-size: 1.1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
 
-  
   /* Image container - prevents border from log-entry */
   .image-container {
     border-left: none !important;
   }
-  
+
   /* Log Timeline */
   .log-timeline {
     margin: var(--space-xl) 0;
   }
-  
+
   .log-entry {
     padding: var(--space-md) 0;
     padding-left: var(--space-md);
@@ -245,11 +261,11 @@ while (feedEntries.length < 20 && feedEntries.length < totalEntries) {
     border-left: 3px solid var(--color-subtle);
     transition: transform 0.2s ease-in-out;
   }
-  
+
   .log-entry:hover {
     transform: translateX(4px);
   }
-  
+
   .entry-meta {
     display: flex;
     justify-content: space-between;
@@ -261,18 +277,18 @@ while (feedEntries.length < 20 && feedEntries.length < totalEntries) {
     font-size: 0.85rem;
     color: var(--color-text-muted);
   }
-  
+
   .entry-tags {
     display: flex;
     justify-content: flex-end;
   }
-  
+
   .tag-container {
     display: flex;
     gap: var(--space-xs);
     flex-wrap: wrap;
   }
-  
+
   .tag {
     font-size: 0.7rem;
     padding: 2px var(--space-xs);
@@ -281,66 +297,60 @@ while (feedEntries.length < 20 && feedEntries.length < totalEntries) {
     border: 1px solid transparent;
     font-family: var(--font-mono);
   }
-  
+
   .log-entry-content h2 {
     font-size: 1.6rem;
     margin-bottom: var(--space-sm);
     line-height: 1.3;
   }
-  
+
   .log-entry-content h2 a {
     text-decoration: none;
     color: var(--color-text);
     transition: color 0.2s ease;
   }
-  
+
   .log-entry-content h2 a:hover {
     color: var(--color-accent-2);
   }
-  
+
   .log-entry-tldr {
     color: var(--color-text-muted);
     line-height: 1.5;
     margin: 0;
   }
-  
+
   /* Newsletter section */
   .newsletter-section {
     margin: var(--space-xl) 0;
   }
-  
-  .newsletter-cta {
-    display: flex;
-    justify-content: center;
-    margin-top: var(--space-md);
-  }
-  
+
   .subscribe-button {
     min-width: 180px;
   }
-  
+
   .newsletter-card {
     background-color: var(--color-subtle);
     border-radius: var(--border-radius);
     padding: var(--space-lg);
   }
-  
+
   .newsletter-card h3 {
     margin-top: 0;
     margin-bottom: var(--space-sm);
   }
-  
+
   .newsletter-form {
     margin-top: var(--space-md);
   }
-  
+
   .newsletter-input-group {
     display: flex;
     gap: var(--space-xs);
     margin-bottom: var(--space-sm);
     flex-wrap: wrap;
   }
-  
+
   .newsletter-input {
     flex: 1;
     min-width: 250px;
@@ -349,7 +359,7 @@ while (feedEntries.length < 20 && feedEntries.length < totalEntries) {
     border-radius: var(--border-radius);
     font-size: 1rem;
   }
-  
+
   .newsletter-button {
     background-color: var(--color-accent-2);
     color: white;
@@ -359,7 +369,7 @@ while (feedEntries.length < 20 && feedEntries.length < totalEntries) {
     cursor: pointer;
     font-weight: 500;
   }
-  
+
   .newsletter-privacy {
     display: flex;
     align-items: flex-start;
@@ -367,18 +377,18 @@ while (feedEntries.length < 20 && feedEntries.length < totalEntries) {
     font-size: 0.8rem;
     color: var(--color-text-muted);
   }
-  
+
   .newsletter-privacy input {
     margin-top: 3px;
   }
-  
+
   /* Footer */
   .footer-simple {
     margin-top: var(--space-xl);
     padding: var(--space-md);
     border-top: 1px solid var(--color-subtle);
   }
-  
+
   .footer-content {
     display: flex;
     justify-content: space-between;
@@ -386,28 +396,28 @@ while (feedEntries.length < 20 && feedEntries.length < totalEntries) {
     flex-wrap: wrap;
     gap: var(--space-md);
   }
-  
+
   .footer-content p {
     color: var(--color-text-muted);
     font-size: 0.9rem;
     margin: 0;
   }
-  
+
   .footer-links {
     display: flex;
     gap: var(--space-md);
   }
-  
+
   .footer-links a {
     color: var(--color-accent-2);
     text-decoration: none;
     font-size: 0.9rem;
   }
-  
+
   .footer-links a:hover {
     text-decoration: underline;
   }
-  
+
   /* Responsive adjustments */
   @media (max-width: 768px) {
     .entry-meta {
@@ -415,35 +425,35 @@ while (feedEntries.length < 20 && feedEntries.length < totalEntries) {
       align-items: flex-start;
       gap: var(--space-sm);
     }
-    
+
     .entry-tags {
       width: 100%;
       justify-content: flex-start;
       margin-top: var(--space-xs);
     }
-    
+
     .newsletter-input-group {
       flex-direction: column;
     }
-    
+
     .newsletter-input {
       width: 100%;
     }
-    
+
     .newsletter-button {
       width: 100%;
     }
-    
+
     .footer-content {
       flex-direction: column;
       align-items: flex-start;
       gap: var(--space-sm);
     }
-    
+
     .thought-content blockquote {
       font-size: var(--font-size-base);
     }
-    
+
     .thought-content blockquote::before {
       font-size: 2.5rem;
       left: -0.25rem;
@@ -453,6 +463,19 @@ while (feedEntries.length < 20 && feedEntries.length < totalEntries) {
 </style>
 
 <script>
+  // @ts-nocheck
+  // Render feed entries dynamically (client-side)
+  window.renderFeed = function(entries, container) {
+    // This function should clear and re-render the feedTimeline div
+    // For brevity, we'll just reload the page if search is cleared, or show a message if no results
+    if (!entries.length) {
+      container.innerHTML = '<div style="text-align:center;color:var(--color-text-muted);padding:2rem;">No results found.</div>';
+      return;
+    }
+    // Optionally, you can render a simplified version or re-use server-rendered HTML snippets
+    // For now, reload page if search is cleared (fallback)
+    location.reload();
+  };
   // @ts-nocheck
   // Initialize functionality for the interactive elements
   document.addEventListener('DOMContentLoaded', () => {

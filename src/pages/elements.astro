@@ -418,19 +418,19 @@ console.log(message, sum);`;
         <h3>Default Newsletter</h3>
         <NewsletterSubscribe />
       </div>
-      
+
       <div class="component-demo">
         <h3>Newsletter with Custom Button</h3>
-        <NewsletterSubscribe 
-          title="Join Our Community" 
+        <NewsletterSubscribe
+          title="Join Our Community"
           description="Get weekly updates on new articles and resources."
           showButton={false}
         />
         <div class="newsletter-cta">
-          <CtaButton 
-            text="Join Now" 
-            type="secondary" 
-            size="medium" 
+          <CtaButton
+            text="Join Now"
+            type="secondary"
+            size="medium"
           />
         </div>
       </div>
@@ -441,9 +441,9 @@ console.log(message, sum);`;
     <section class="element-section">
       <h2>Card Component</h2>
       <p>Reusable card layout system for organizing content.</p>
-      
-      <CardSection 
-        title="Example Card Section" 
+
+      <CardSection
+        title="Example Card Section"
         description="A flexible grid system for displaying cards"
         columns={3}
       >
@@ -451,19 +451,19 @@ console.log(message, sum);`;
         <div class="demo-card">Card 2</div>
         <div class="demo-card">Card 3</div>
       </CardSection>
-      
+
       <CardSection columns={2}>
         <div class="demo-card">Card A (2-column)</div>
         <div class="demo-card">Card B (2-column)</div>
       </CardSection>
     </section>
   </FadeIn>
-  
+
   <FadeIn client:visible delay={1.7}>
     <section class="element-section">
       <h2>Buttons</h2>
       <p>Call-to-action buttons in different styles and sizes.</p>
-      
+
       <div class="button-demo">
         <h3>Button Types</h3>
         <div class="button-group">
@@ -471,7 +471,7 @@ console.log(message, sum);`;
           <CtaButton text="Secondary Button" type="secondary" />
           <CtaButton text="Accent Button" type="accent" />
         </div>
-        
+
         <h3>Button Sizes</h3>
         <div class="button-group">
           <CtaButton text="Small Button" size="small" />
@@ -637,24 +637,24 @@ console.log(message, sum);`;
       transition: all var(--transition-normal);
       margin-bottom: 2rem;
     }
-    
+
     .log-entry {
       border-left-color: var(--color-accent2);
     }
-    
+
     .thought-item {
       border-left-color: var(--color-accent3);
     }
-    
+
     .now-item {
       border-left-color: var(--color-accent2);
     }
-    
+
     .log-entry:hover, .thought-item:hover, .now-item:hover {
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     }
-    
+
     .entry-meta {
       display: flex;
       justify-content: space-between;
@@ -666,12 +666,12 @@ console.log(message, sum);`;
       font-size: 0.85rem;
       color: var(--color-text-muted);
     }
-    
+
     .entry-tags {
       display: flex;
       justify-content: flex-end;
     }
-    
+
     .entry-type {
       background-color: var(--color-accent2);
       color: white;
@@ -682,33 +682,33 @@ console.log(message, sum);`;
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
-    
+
     .log-entry-content h2 {
       font-size: 1.6rem;
       margin-bottom: var(--space-sm);
       line-height: 1.3;
     }
-    
+
     .log-entry-content h2 a {
       text-decoration: none;
       color: var(--color-text);
       transition: color 0.2s ease;
     }
-    
+
     .log-entry-content h2 a:hover {
       color: var(--color-accent-2);
     }
-    
+
     .log-entry-tldr {
       color: var(--color-text-muted);
       line-height: 1.5;
       margin: 0;
     }
-    
+
     .thought-content {
       position: relative;
     }
-    
+
     .thought-content blockquote {
       margin: 0;
       padding: 0;
@@ -718,7 +718,7 @@ console.log(message, sum);`;
       color: var(--color-text);
       font-size: var(--font-size-md);
     }
-    
+
     .thought-content blockquote::before {
       content: '"';
       position: absolute;
@@ -729,26 +729,26 @@ console.log(message, sum);`;
       opacity: 0.3;
       font-family: serif;
     }
-    
+
     .now-item-content {
       line-height: var(--line-height-relaxed);
       color: var(--color-text);
     }
-    
+
     @media (max-width: 768px) {
       .entry-meta {
         flex-direction: column;
         align-items: flex-start;
         gap: var(--space-sm);
       }
-      
+
       .entry-tags {
         width: 100%;
         justify-content: flex-start;
         margin-top: var(--space-xs);
       }
     }
-    
+
     /* Demo Components */
     .component-demo {
       margin-bottom: var(--space-xl);
@@ -756,13 +756,13 @@ console.log(message, sum);`;
       padding: var(--space-lg);
       border-radius: var(--border-radius);
     }
-    
+
     .component-demo h3 {
       margin-top: 0;
       margin-bottom: var(--space-md);
       font-size: 1.1rem;
     }
-    
+
     /* Newsletter Subscription */
     .newsletter-card {
       background-color: var(--color-subtle);
@@ -770,13 +770,17 @@ console.log(message, sum);`;
       padding: var(--space-lg);
       margin-top: var(--space-md);
     }
-    
+
     .newsletter-cta {
       display: flex;
       justify-content: center;
       margin-top: var(--space-md);
     }
-    
+
+    .newsletter-cta .button-secondary {
+      border: 1px solid var(--color-border);
+    }
+
     /* Demo cards */
     .demo-card {
       background-color: var(--color-subtle);
@@ -789,7 +793,7 @@ console.log(message, sum);`;
       justify-content: center;
       font-family: var(--font-mono);
     }
-    
+
     /* Button demos */
     .button-group {
       display: flex;

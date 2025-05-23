@@ -43,14 +43,16 @@ main {
 }
 
 a {
-  color: var(--color-text);
+  color: var(--color-accent2);
   text-decoration: none;
-  transition: color var(--transition-fast);
+  transition: color var(--transition-fast), text-decoration-color var(--transition-fast);
 }
 
 a:hover,
 a:focus {
   color: var(--color-accent1);
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent1);
 }
 
 h1, h2, h3, h4, h5, h6 {

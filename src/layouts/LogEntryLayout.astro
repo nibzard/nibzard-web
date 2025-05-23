@@ -80,18 +80,19 @@ if (otherEntries.length > 0) {
       margin-top: var(--space-lg);
       margin-bottom: var(--space-md);
     }
-    .log-content p {
+    .log-content :global(p) {
       margin-bottom: var(--space-md);
+      font-size: var(--font-size-md); /* Increased font size for readability */
     }
-    .log-content ul, .log-content ol {
+    .log-content :global(ul), .log-content :global(ol) {
       margin-bottom: var(--space-md);
       padding-left: var(--space-lg); /* Indent lists */
     }
-    .log-content li {
+    .log-content :global(li) {
       margin-bottom: var(--space-sm);
     }
     /* Styles for code blocks are in typography.css, but you can add more specific ones here */
-    
+
     /* Read More section */
     .read-more-section {
       margin-top: var(--space-xl);
@@ -165,7 +166,7 @@ if (otherEntries.length > 0) {
         })}
       </AnimatedTagsContainer>
     )}
-    
+
     {randomEntries.length > 0 && (
       <FadeIn client:visible>
         <section class="read-more-section">

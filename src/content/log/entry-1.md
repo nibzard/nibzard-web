@@ -16,7 +16,7 @@ Blink, and you might miss another billion-dollar acquisition or the release of y
 
 And here we are, trying to catch breath and make sense of it all. If you're a developer, or even vaguely tech-adjacent, you absolutely need to pay attention, because the implications are massive.
 
-A brief "history" lesson first. Back in February 2025 AD, Anthropic Claude Code research preview, the first notable CLI coding assistant. The tool was smooth, and the model powerful. Recently, on the LatentSpace podcast, they stated that Claude Code wrote around 80–90% of its own code. Talk about bootstrapping on steroids. Today, they have released SDK for devs to build composable coding agent tooling.
+A brief "history" lesson first. Back in [February 2025 AD](https://www.anthropic.com/news/claude-3-7-sonnet), Anthropic Claude Code research preview, the first notable CLI coding assistant. The tool was smooth, and the model powerful. Recently, on the LatentSpace podcast, they stated that Claude Code wrote around 80–90% of its own code. Talk about bootstrapping on steroids. Today, they have released SDK for devs to build composable coding agent tooling.
 
 Not far behind was OpenAI, which released Codex CLI, a conversational, terminal-based coding assistant that felt magical when it first debuted. (I even forked Codex CLI myself to understand its token usage and workflow, check out my gist if you're curious.) Meanwhile, in the open-source corner, we had Aider. Then Sourcegraph's Amp joined the fray in May, removing its waitlist and allowing anyone to spin up multistep agents with a simple agent(.)md file.
 
