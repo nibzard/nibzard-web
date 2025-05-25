@@ -1,19 +1,20 @@
 ---
-import { server } from 'astro:actions';
+import { server } from '../actions';
 import BaseLayout from '../layouts/BaseLayout.astro'; // Adjust layout import as needed
 
 let emailFromQuery = Astro.url.searchParams.get('email');
 let formMessage: string | null = null;
 let formMessageType: 'success' | 'error' | null = null;
 let initialEmail = emailFromQuery || '';
+let isPost = Astro.request.method === "POST";
 
 // If email is in query param, try to unsubscribe automatically on load (via a hidden form submission)
 // This is a conceptual client-side enhancement; Astro actions are server-side.
 // For a true auto-unsubscribe on load, the action would need to be called server-side if email is present.
 
-if (Astro.request.method === "POST") {
+if (isPost) {
   const formData = await Astro.request.formData();
-  const result = await server.unsubscribe.safe(formData);
+  const result = await server.unsubscribe(formData);
 
   if (result && result.data?.success) {
     formMessage = "You have been successfully unsubscribed.";
@@ -87,24 +88,26 @@ const pageDescription = "Manage your subscription preferences.";
   <div class="unsubscribe-container">
     <h1>{pageTitle}</h1>
 
-    {emailFromQuery && Astro.request.method !== "POST" && (
-      <p>Attempting to unsubscribe {emailFromQuery}...</p>
-      <form method="POST" action={server.unsubscribe.link} id="autoUnsubscribeForm">
-        <input type="hidden" name="email" value={emailFromQuery} />
-      </form>
-      <script is:inline>
-        // Automatically submit the form if email is from query param
-        // This is a client-side script to trigger the POST request for the action
-        document.addEventListener('DOMContentLoaded', () => {
-          const autoForm = document.getElementById('autoUnsubscribeForm');
-          if (autoForm) {
-            // Small delay to ensure page content is visible before potential navigation
-            setTimeout(() => {
-              autoForm.requestSubmit ? autoForm.requestSubmit() : autoForm.submit();
-            }, 100);
-          }
-        });
-      </script>
+    {emailFromQuery && !isPost && (
+      <>
+        <p>Attempting to unsubscribe {emailFromQuery}...</p>
+        <form method="POST" id="autoUnsubscribeForm">
+          <input type="hidden" name="email" value={emailFromQuery} />
+        </form>
+        <script is:inline>
+          // Automatically submit the form if email is from query param
+          // This is a client-side script to trigger the POST request for the action
+          document.addEventListener('DOMContentLoaded', () => {
+            const autoForm = document.getElementById('autoUnsubscribeForm');
+            if (autoForm) {
+              // Small delay to ensure page content is visible before potential navigation
+              setTimeout(() => {
+                autoForm.requestSubmit ? autoForm.requestSubmit() : autoForm.submit();
+              }, 100);
+            }
+          });
+        </script>
+      </>
     )}
 
     {formMessage && (
@@ -113,7 +116,7 @@ const pageDescription = "Manage your subscription preferences.";
       </div>
     )}
 
-    <form class="unsubscribe-form" method="POST" action={server.unsubscribe.link}>
+    <form class="unsubscribe-form" method="POST">
       <p>If you wish to unsubscribe, please enter your email address below and click "Unsubscribe".</p>
       <div>
         <label for="email">Email Address:</label>
