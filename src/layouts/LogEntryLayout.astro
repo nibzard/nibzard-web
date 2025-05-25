@@ -7,7 +7,20 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 import FadeIn from '../components/animations/FadeIn.jsx';
 import NewsletterSubscribe from '../components/NewsletterSubscribe.astro';
 
-const { frontmatter } = Astro.props as any;
+interface Frontmatter {
+  title: string;
+  description?: string;
+  date: Date;
+  tags?: string[];
+  tldr?: string;
+  // Add any other frontmatter properties you expect
+}
+
+interface Props {
+  frontmatter: Frontmatter;
+}
+
+const { frontmatter } = Astro.props as Props;
 const sortedTags = frontmatter.tags ? sortTags(frontmatter.tags) : [];
 
 // Get random log entries for the "Read More" section
@@ -192,6 +205,9 @@ if (otherEntries.length > 0) {
         </section>
       </FadeIn>
     )}
-    <NewsletterSubscribe client:visible />
+
+    <div class="section-spacer"></div>
+
+    <NewsletterSubscribe />
   </article>
 </BaseLayout>

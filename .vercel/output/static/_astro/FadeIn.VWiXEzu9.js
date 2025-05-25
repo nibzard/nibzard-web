@@ -1,0 +1,1 @@
+import{j as n,m as e}from"./proxy.CGW68Jin.js";import"./index.BVOCwoKb.js";function m({children:t,delay:i=0,duration:a=.2,yOffset:o=20}){return n.jsx(e.div,{initial:{opacity:0,y:o},animate:{opacity:1,y:0},transition:{duration:a,delay:i,ease:[.25,.1,.25,1]},children:t})}export{m as default};
