@@ -7,20 +7,21 @@ tags: [EXPERIENCE, WIP]
 draft: false
 ---
 
-## The Framework Choice Problem
-
-After experimenting with various web technologies—from Jekyll and Hugo to Astro and FastHTML—the key decision factor today isn't technical superiority but framework representation in state-of-the-art language models. This ensures compatibility with AI coding agents, making the choice strategic rather than purely technical.
-
 ## The Credit Burn Problem
 
 My recent experience with [AMP](https://ampcode.com/) illustrates a fundamental pricing problem. After bootstrapping an Astro project with `pnpm create astro@latest` and generating specifications through OpenAI's o3 model, I let AMP implement the spec. The results were impressive enough that I immediately purchased credits after exhausting the free tier. However, this revealed how rapidly credits disappear.
 
-AMP operates on a credit system covering all cost-incurring operations: web searches, LLM inference, and tool usage. While they claim to pass through costs without markup, the burn rate is concerning. The core issue is misaligned incentives—agents make decisions about tool calls and iterations, but users bear the financial consequences.
+AMP operates on a [credit system](https://ampcode.com/manual#usage-credits) covering all cost-incurring operations: web searches, LLM inference, and tool usage. While they claim to pass through costs without markup, the burn rate is concerning. The core issue is misaligned incentives—agents make decisions about tool calls and iterations, but users bear the financial consequences.
+
+![AMP Code credits stats](/images/amp-credits-spent.jpg)
 
 Cursor takes a different approach, charging per LLM request regardless of token consumption, with token-based pricing only for their premium MAX options using cutting-edge models.
 
+My experience with Claude Code wasn’t cheap—but when viewed through the lens of value delivered, the pricing starts to make sense. Compared to hiring a junior developer (and skipping the intermediate step of translating requirements), the efficiency gains become clear. Even with top-tier, SOTA models, the cost to ship a significant feature ranged from $20 to $200—surprisingly reasonable when measured against actual output.
+
 This misalignment creates several problems:
 - Agents over-iterate by design, exploring multiple solution paths
+- Agents tend to create slop and increase loc
 - No built-in incentive for efficiency optimization
 - Unpredictable costs that scale with agent behavior rather than user value
 - Users effectively subsidize AI system learning curves
@@ -93,4 +94,6 @@ The progression will likely follow this path:
 
 Success will belong to whoever first creates a pricing model that feels "fair" to developers while capturing the value being generated.
 
-The critical question remains: How quickly must local model capabilities improve before hybrid local/remote pricing becomes viable?
+The interesting question remains: How quickly must local model capabilities improve before hybrid local/remote pricing becomes viable?
+
+![Market Evolution Timeline](/images/agent-pricing-market-evolution.png)
