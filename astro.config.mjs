@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 import rehypeExternalLinks from './src/plugins/rehype-external-links.mjs';
 
 // import node from '@astrojs/node';
-import vercel from '@astrojs/vercel';
+import vercelServerless from '@astrojs/vercel/serverless';
 
 const siteUrl = 'https://nibzard.com';
 
@@ -25,5 +25,5 @@ export default defineConfig({
   // adapter: node({
   //   mode: 'standalone',
   // }),
-  adapter: vercel({}),
+  adapter: vercelServerless({}),
 });
