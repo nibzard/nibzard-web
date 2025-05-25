@@ -1,4 +1,5 @@
 ---
+import { server } from 'astro:actions';
 /**
  * NewsletterSubscribe Component
  * A reusable newsletter subscription form with customizable button text
@@ -17,14 +18,36 @@ const {
   buttonText = "Subscribe",
   showButton = true
 } = Astro.props;
+
+let formMessage: string | null = null;
+let formMessageType: 'success' | 'error' | null = null;
+
+if (Astro.request.method === "POST") {
+  const result = await server.subscribe.safe(Astro.request);
+  if (result && result.data && result.data.success) {
+    formMessage = "Thanks for subscribing! Please check your email to confirm.";
+    formMessageType = 'success';
+  } else if (result && result.error) {
+    formMessage = result.error.message || "An error occurred. Please try again.";
+    formMessageType = 'error';
+  } else {
+    formMessage = "An unexpected issue occurred. Please try again.";
+    formMessageType = 'error';
+  }
+}
 ---
 
 <div class="newsletter-card">
   <h3>{title}</h3>
   <p>{description}</p>
-  <form class="newsletter-form">
+  {formMessage && (
+    <div class={`form-message ${formMessageType}`}>
+      {formMessage}
+    </div>
+  )}
+  <form class="newsletter-form" method="POST" action={server.subscribe.link}>
     <div class="newsletter-input-group">
-      <input type="email" placeholder="Your email address" class="newsletter-input" required />
+      <input type="email" name="email" placeholder="Your email address" class="newsletter-input" required />
       {showButton && <button type="submit" class="newsletter-button">{buttonText}</button>}
     </div>
     <label class="newsletter-privacy">
@@ -101,5 +124,22 @@ const {
     .newsletter-button {
       width: 100%;
     }
+  }
+
+  .form-message {
+    padding: var(--space-sm);
+    border-radius: var(--border-radius);
+    margin-bottom: var(--space-md);
+    text-align: center;
+  }
+  .form-message.success {
+    background-color: var(--color-success-bg);
+    color: var(--color-success-text);
+    border: 1px solid var(--color-success-border);
+  }
+  .form-message.error {
+    background-color: var(--color-danger-bg);
+    color: var(--color-danger-text);
+    border: 1px solid var(--color-danger-border);
   }
 </style>

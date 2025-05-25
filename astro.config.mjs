@@ -4,6 +4,8 @@ import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import rehypeExternalLinks from './src/plugins/rehype-external-links.mjs';
 
+import node from '@astrojs/node';
+
 const siteUrl = 'https://nibzard.com';
 
 // https://astro.build/config
@@ -11,9 +13,14 @@ export default defineConfig({
   integrations: [react(), sitemap()],
   site: siteUrl,
   output: 'static',
+
   markdown: {
     rehypePlugins: [
       [rehypeExternalLinks, { domain: new URL(siteUrl).hostname }],
     ],
   },
+
+  adapter: node({
+    mode: 'standalone',
+  }),
 });
