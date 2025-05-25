@@ -16,6 +16,7 @@ const {
   description = "A minimal personal website and log."
 } = Astro.props;
 const canonicalUrl = Astro.url.toString();
+const siteUrl = Astro.site ? Astro.site.toString() : Astro.url.origin;
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +31,7 @@ const canonicalUrl = Astro.url.toString();
       basic: {
         title: title,
         type: "website",
-        image: "/og-nibzard.jpeg",
+        image: new URL("/og-nibzard.jpeg", siteUrl).toString(),
         url: canonicalUrl,
       },
       optional: {

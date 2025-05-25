@@ -346,3 +346,31 @@
     top: -1.25rem;
   }
 }
+
+/* Pagination Styles */
+nav.pagination {
+  /* Ensures the nav bar itself is centered */
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  /* Vertical margins for the nav element */
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-lg);
+  /* display: flex, align-items: center, justify-content: center, gap: var(--space-xs)
+     are assumed to be defined globally for .pagination from elements.astro or main.css */
+}
+
+.pagination a {
+  /* Increased padding for better click targets */
+  padding: var(--space-sm) var(--space-md);
+  /* text-decoration: none, border-radius: var(--border-radius),
+     transition: background-color 0.2s are assumed to be defined globally for .pagination a */
+}
+
+/* hover effect for non-active page links */
+.pagination a:not(.pagination-active):hover {
+  background-color: var(--color-border);
+  /* color: var(--color-accent2); /* Optional: uncomment if you want text color to change on hover */
+}
+
+/* Add other styles from index.less below if any */

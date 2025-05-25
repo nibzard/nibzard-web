@@ -64,12 +64,12 @@ const tagColors = {
     textColor: '#0277BD',       // Dark blue
     borderColor: '#29B6F6'      // Blue
   },
-  'ASTRO': {
+  'EXPERIENCE': {
     backgroundColor: '#F9FBE7', // Light lime
     textColor: '#827717',       // Dark lime
     borderColor: '#C0CA33'      // Lime
   },
-  'JS': {
+  'AI': {
     backgroundColor: '#FFFDE7', // Light yellow
     textColor: '#F57F17',       // Dark yellow
     borderColor: '#FFEB3B'      // Yellow

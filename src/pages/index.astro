@@ -10,6 +10,11 @@ import NewsletterSubscribe from '../components/NewsletterSubscribe.astro';
 import CtaButton from '../components/CtaButton.astro';
 import '../styles/index.less';
 
+// Get current page and page size
+const { searchParams } = Astro.url;
+const currentPage = parseInt(searchParams.get('page') || '1', 10);
+const pageSize = 20; // Number of entries per page
+
 // Get all log entries that aren't drafts
 const logEntries = await getCollection('log', ({ data }) => {
   return data.draft !== true;
@@ -43,7 +48,7 @@ const imageEntries = await getCollection('images', ({ data }) => {
 imageEntries.sort((a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf());
 
 // Create interleaved feed with all types
-const feedEntries = [];
+let allFeedEntries = []; // Renamed from feedEntries to gather all first
 const totalEntries = logEntries.length + thoughts.length + nowEntries.length + imageEntries.length;
 
 // Use index variables to track position in each array
@@ -58,7 +63,7 @@ function getDateValue(date: Date | null): number {
 }
 
 // Add entries to feed in date order
-while (feedEntries.length < 20 && feedEntries.length < totalEntries) {
+while (allFeedEntries.length < totalEntries) { // Changed condition to collect all entries
   const nextLogDate = logIndex < logEntries.length ? logEntries[logIndex].data.date : null;
   const nextThoughtDate = thoughtIndex < thoughts.length ? thoughts[thoughtIndex].data.date : null;
   const nextNowDate = nowIndex < nowEntries.length ? nowEntries[nowIndex].data.date : null;
@@ -94,22 +99,28 @@ while (feedEntries.length < 20 && feedEntries.length < totalEntries) {
 
   // Add the most recent entry to the feed
   if (mostRecentType === 'log') {
-    feedEntries.push({ type: 'log', entry: logEntries[logIndex] });
+    allFeedEntries.push({ type: 'log', entry: logEntries[logIndex] });
     logIndex++;
   } else if (mostRecentType === 'thought') {
-    feedEntries.push({ type: 'thought', entry: thoughts[thoughtIndex] });
+    allFeedEntries.push({ type: 'thought', entry: thoughts[thoughtIndex] });
     thoughtIndex++;
   } else if (mostRecentType === 'now') {
-    feedEntries.push({ type: 'now', entry: nowEntries[nowIndex] });
+    allFeedEntries.push({ type: 'now', entry: nowEntries[nowIndex] });
     nowIndex++;
   } else if (mostRecentType === 'image') {
-    feedEntries.push({ type: 'image', entry: imageEntries[imageIndex] });
+    allFeedEntries.push({ type: 'image', entry: imageEntries[imageIndex] });
     imageIndex++;
   } else {
     // No more entries
     break;
   }
 }
+
+// Paginate the feed entries
+const totalPages = Math.ceil(allFeedEntries.length / pageSize);
+const startIndex = (currentPage - 1) * pageSize;
+const endIndex = startIndex + pageSize;
+const feedEntries = allFeedEntries.slice(startIndex, endIndex); // These are the entries for the current page
 ---
 
 <BaseLayout title="nibzard - Home" description="Welcome to nibzard, a minimal personal website and log.">
@@ -130,8 +141,8 @@ while (feedEntries.length < 20 && feedEntries.length < totalEntries) {
   </form>
   <div class="feed-timeline">
     {feedEntries.map((item, index) => {
-      // Insert newsletter after 10th post
-      const showNewsletter = index === 10;
+      // Insert newsletter after 10th post (adjust if pageSize changes)
+      const showNewsletter = index === 10 && currentPage === 1; // Only show on first page if it's after 10th post
       // Render appropriate entry based on type
       return (
         <>
@@ -217,6 +228,26 @@ while (feedEntries.length < 20 && feedEntries.length < totalEntries) {
       />
     </div>
   </FadeIn>
+
+  {totalPages > 1 && (
+    <nav class="pagination" aria-label="Pagination" style="margin-top: var(--space-lg); margin-bottom: var(--space-lg);">
+      {currentPage > 1 && (
+        <a href={`/?page=${currentPage - 1}`} class="pagination-prev" aria-label="Previous page">←</a>
+      )}
+      {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
+        <a
+          href={`/?page=${page}`}
+          class={`pagination-page ${page === currentPage ? 'pagination-active' : ''}`}
+          aria-current={page === currentPage ? 'page' : undefined}
+        >
+          {page}
+        </a>
+      ))}
+      {currentPage < totalPages && (
+        <a href={`/?page=${currentPage + 1}`} class="pagination-next" aria-label="Next page">→</a>
+      )}
+    </nav>
+  )}
 </BaseLayout>
 
 <script>
