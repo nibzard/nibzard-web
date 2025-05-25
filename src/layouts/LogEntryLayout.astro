@@ -5,8 +5,9 @@ import AnimatedTagsContainer from '../components/animations/AnimatedTagsContaine
 import { formatTagForDisplay, sortTags } from '../utils/tagUtils';
 import { getCollection, type CollectionEntry } from 'astro:content';
 import FadeIn from '../components/animations/FadeIn.jsx';
+import NewsletterSubscribe from '../components/NewsletterSubscribe.astro';
 
-const { frontmatter } = Astro.props;
+const { frontmatter } = Astro.props as any;
 const sortedTags = frontmatter.tags ? sortTags(frontmatter.tags) : [];
 
 // Get random log entries for the "Read More" section
@@ -139,11 +140,13 @@ if (otherEntries.length > 0) {
   </style>
   <article class="fade-in">
     <header class="log-entry-header">
-      <p class="log-entry-meta">
-        Published on <time datetime={frontmatter.date.toISOString()}>
-          {new Date(frontmatter.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-        </time>
-      </p>
+      {frontmatter.date && (
+        <p class="log-entry-meta">
+          Published on <time datetime={frontmatter.date.toISOString()}>
+            {new Date(frontmatter.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+          </time>
+        </p>
+      )}
       <h1>{frontmatter.title}</h1>
       {frontmatter.tldr && (
         <p class="log-entry-tldr">TL;DR &gt;&gt; {frontmatter.tldr} &lt;&lt;</p>
@@ -189,5 +192,6 @@ if (otherEntries.length > 0) {
         </section>
       </FadeIn>
     )}
+    <NewsletterSubscribe client:visible />
   </article>
 </BaseLayout>

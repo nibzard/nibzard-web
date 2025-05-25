@@ -26,6 +26,7 @@
   --color-border: #f0f0f0;     /* Very subtle light grey border */
   --color-subtle-bg: var(--color-white);  /* Pure white background */
   --color-subtle: var(--primary-focus);
+  --color-form: rgba(249, 196, 215, 0.0825);
 
   /*
    * Typography System

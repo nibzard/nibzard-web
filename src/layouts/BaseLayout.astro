@@ -1,27 +1,63 @@
 ---
 // Import our main CSS file which includes all styles
 import '../styles/main.css';
+import { SEO } from "astro-seo";
 
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-const { title = "nibzard", description = "A minimal personal website and log." } = Astro.props;
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "nibzard",
+  description = "A minimal personal website and log."
+} = Astro.props;
+const canonicalUrl = Astro.url.toString();
 ---
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content={description}>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="sitemap" href="/sitemap-index.xml" />
+  <SEO
+    title={title}
+    description={description}
+    canonical={canonicalUrl}
+    openGraph={{
+      basic: {
+        title: title,
+        type: "website",
+        image: "/og-nibzard.jpeg",
+        url: canonicalUrl,
+      },
+      optional: {
+        siteName: "nibzard",
+      }
+    }}
+    twitter={{
+      creator: "@nibzard",
+    }}
+    extend={{
+      // astro-seo handles the title and description meta tags.
+      // It can also handle the favicon if you provide it in the link array.
+      link: [
+        { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+        { rel: "sitemap", href: "/sitemap-index.xml" }
+      ],
+      meta: [
+        { name: "viewport", content: "width=device-width, initial-scale=1.0" },
+        { name: "charset", content: "UTF-8" }
+      ]
+    }}
+  />
 
   <!-- Import Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-
-  <title>{title}</title>
 
   <!-- View Transitions -->
   <meta name="view-transition" content="same-origin" />

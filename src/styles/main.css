@@ -101,3 +101,16 @@ img, picture, video, canvas, svg {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* Styling for images rendered from Markdown in the main content area */
+.prose img,
+main img { /* Target images within main content, .prose is common for Markdown output */
+  display: block; /* Already in global, but good to reinforce */
+  max-width: 100%;
+  height: auto;
+  margin: var(--space-xl) auto; /* More vertical margin for standalone images */
+  border-radius: var(--border-radius-lg); /* Consistent with other larger elements */
+  border: 1px solid var(--color-border);
+  background-color: var(--color-background); /* Match figure style */
+  box-shadow: var(--shadow-sm); /* Optional: subtle shadow */
+}

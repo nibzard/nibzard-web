@@ -1,5 +1,6 @@
 ---
-import { getCollection, type CollectionEntry } from 'astro:content';
+export const prerender = true;
+import { getCollection, getEntry, type CollectionEntry } from 'astro:content';
 import LogEntryLayout from '../layouts/LogEntryLayout.astro';
 
 export async function getStaticPaths() {
@@ -13,13 +14,31 @@ export async function getStaticPaths() {
   }));
 }
 
-interface Props {
-  entry: CollectionEntry<'log'>;
+const { slug } = Astro.params;
+let entry: CollectionEntry<'log'> | undefined;
+let ContentComponent: any;
+
+if (slug) {
+  try {
+    entry = await getEntry('log', slug);
+  } catch (e) {
+    console.error(`Error fetching entry for slug "${slug}":`, e);
+    entry = undefined;
+  }
 }
 
-const { entry } = Astro.props;
-const { Content } = await entry.render();
+if (entry) {
+  const rendered = await entry.render();
+  ContentComponent = rendered.Content;
+}
 ---
-<LogEntryLayout frontmatter={entry.data}>
-  <Content />
-</LogEntryLayout>
+{entry && ContentComponent ? (
+  <LogEntryLayout frontmatter={entry.data}>
+    <ContentComponent />
+  </LogEntryLayout>
+) : (
+  <LogEntryLayout frontmatter={{ title: "Not Found", description: "The requested log entry could not be found." }}>
+    <p>Sorry, we couldn't find a log entry for the slug: <strong>{slug}</strong>.</p>
+    <p>Please check the URL or navigate back to the <a href="/log">log index</a>.</p>
+  </LogEntryLayout>
+)}
