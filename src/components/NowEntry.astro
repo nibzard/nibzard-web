@@ -13,12 +13,12 @@ const { entry } = Astro.props;
 
 <div class="now-entry">
   <h1>What I'm Currently Focused On</h1>
-  <p>This page outlines what I'm currently up to, inspired by <a href="https://nownownow.com/about" target="_blank" rel="noopener noreferrer">nownownow.com</a>.</p>
-  
+  <p>This is a now page, and if you have your own site, <a href="https://nownownow.com/about" target="_blank" rel="noopener noreferrer">you should make one,</a> too.</p>
+
   <div class="now-content">
     <slot />
   </div>
-  
+
   <div class="now-meta">
     <p class="now-updated">
       Last updated: <time datetime={entry.data.date.toISOString()}>
@@ -32,13 +32,13 @@ const { entry } = Astro.props;
   .now-entry {
     margin-bottom: 2rem;
   }
-  
+
   .now-meta {
     margin-top: 2rem;
     font-style: italic;
     color: var(--color-text-muted);
   }
-  
+
   .now-updated {
     font-size: 0.9rem;
   }
