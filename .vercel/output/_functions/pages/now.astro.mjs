@@ -12,7 +12,7 @@ const $$NowEntry = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$NowEntry;
   const { entry } = Astro2.props;
-  return renderTemplate`${maybeRenderHead()}<div class="now-entry" data-astro-cid-q2ndsl22> <h1 data-astro-cid-q2ndsl22>What I'm Currently Focused On</h1> <p data-astro-cid-q2ndsl22>This page outlines what I'm currently up to, inspired by <a href="https://nownownow.com/about" target="_blank" rel="noopener noreferrer" data-astro-cid-q2ndsl22>nownownow.com</a>.</p> <div class="now-content" data-astro-cid-q2ndsl22> ${renderSlot($$result, $$slots["default"])} </div> <div class="now-meta" data-astro-cid-q2ndsl22> <p class="now-updated" data-astro-cid-q2ndsl22>
+  return renderTemplate`${maybeRenderHead()}<div class="now-entry" data-astro-cid-q2ndsl22> <h1 data-astro-cid-q2ndsl22>What I'm Currently Focused On</h1> <p data-astro-cid-q2ndsl22>This is a now page, and if you have your own site, <a href="https://nownownow.com/about" target="_blank" rel="noopener noreferrer" data-astro-cid-q2ndsl22>you should make one,</a> too.</p> <div class="now-content" data-astro-cid-q2ndsl22> ${renderSlot($$result, $$slots["default"])} </div> <div class="now-meta" data-astro-cid-q2ndsl22> <p class="now-updated" data-astro-cid-q2ndsl22>
 Last updated: <time${addAttribute(entry.data.date.toISOString(), "datetime")} data-astro-cid-q2ndsl22> ${new Date(entry.data.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })} </time> </p> </div> </div> `;
 }, "/Users/nikola/dev/nibzard/src/components/NowEntry.astro", void 0);
 
