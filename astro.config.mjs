@@ -4,7 +4,8 @@ import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import rehypeExternalLinks from './src/plugins/rehype-external-links.mjs';
 
-import node from '@astrojs/node';
+// import node from '@astrojs/node';
+import vercel from '@astrojs/vercel';
 
 const siteUrl = 'https://nibzard.com';
 
@@ -12,7 +13,8 @@ const siteUrl = 'https://nibzard.com';
 export default defineConfig({
   integrations: [react(), sitemap()],
   site: siteUrl,
-  output: 'static',
+  // output: 'static',
+  output: 'server',
 
   markdown: {
     rehypePlugins: [
@@ -20,7 +22,8 @@ export default defineConfig({
     ],
   },
 
-  adapter: node({
-    mode: 'standalone',
-  }),
+  // adapter: node({
+  //   mode: 'standalone',
+  // }),
+  adapter: vercel(),
 });
