@@ -1,5 +1,5 @@
 ---
-import { server } from 'astro:actions';
+import { server } from '../actions';
 /**
  * NewsletterSubscribe Component
  * A reusable newsletter subscription form with customizable button text
@@ -23,7 +23,8 @@ let formMessage: string | null = null;
 let formMessageType: 'success' | 'error' | null = null;
 
 if (Astro.request.method === "POST") {
-  const result = await server.subscribe.safe(Astro.request);
+  const formData = await Astro.request.formData();
+  const result = await server.subscribe(formData);
   if (result && result.data && result.data.success) {
     formMessage = "Thanks for subscribing! Please check your email to confirm.";
     formMessageType = 'success';
@@ -45,7 +46,7 @@ if (Astro.request.method === "POST") {
       {formMessage}
     </div>
   )}
-  <form class="newsletter-form" method="POST" action={server.subscribe.link}>
+  <form class="newsletter-form" method="POST">
     <div class="newsletter-input-group">
       <input type="email" name="email" placeholder="Your email address" class="newsletter-input" required />
       {showButton && <button type="submit" class="newsletter-button">{buttonText}</button>}
