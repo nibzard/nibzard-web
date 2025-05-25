@@ -1,5 +1,4 @@
 ---
-import { server } from '../actions';
 /**
  * NewsletterSubscribe Component
  * A reusable newsletter subscription form with customizable button text
@@ -9,46 +8,24 @@ interface Props {
   title?: string;
   description?: string;
   buttonText?: string;
-  showButton?: boolean; // New property to control button visibility
+  showButton?: boolean;
 }
 
-const {
-  title = "Stay Updated",
-  description = "Subscribe to receive the latest updates and articles directly in your inbox.",
-  buttonText = "Subscribe",
-  showButton = true
-} = Astro.props;
-
-let formMessage: string | null = null;
-let formMessageType: 'success' | 'error' | null = null;
-
-if (Astro.request.method === "POST") {
-  const formData = await Astro.request.formData();
-  const result = await server.subscribe(formData);
-  if (result && result.data && result.data.success) {
-    formMessage = "Thanks for subscribing! Please check your email to confirm.";
-    formMessageType = 'success';
-  } else if (result && result.error) {
-    formMessage = result.error.message || "An error occurred. Please try again.";
-    formMessageType = 'error';
-  } else {
-    formMessage = "An unexpected issue occurred. Please try again.";
-    formMessageType = 'error';
-  }
-}
+const title = Astro.props.title ?? "Stay Updated";
+const description = Astro.props.description ?? "Subscribe to receive the latest updates and articles directly in your inbox.";
+const buttonText = Astro.props.buttonText ?? "Subscribe";
+const showButton = Astro.props.showButton ?? true;
 ---
 
 <div class="newsletter-card">
   <h3>{title}</h3>
   <p>{description}</p>
-  {formMessage && (
-    <div class={`form-message ${formMessageType}`}>
-      {formMessage}
-    </div>
-  )}
-  <form class="newsletter-form" method="POST">
+  <div id="form-message" class="form-message" style="display:none;"></div>
+  <form class="newsletter-form" id="newsletter-form">
     <div class="newsletter-input-group">
       <input type="email" name="email" placeholder="Your email address" class="newsletter-input" required />
+      <input type="text" name="firstName" placeholder="First name (optional)" class="newsletter-input" style="min-width:120px;" />
+      <input type="text" name="lastName" placeholder="Last name (optional)" class="newsletter-input" style="min-width:120px;" />
       {showButton && <button type="submit" class="newsletter-button">{buttonText}</button>}
     </div>
     <label class="newsletter-privacy">
@@ -57,6 +34,42 @@ if (Astro.request.method === "POST") {
     </label>
   </form>
 </div>
+
+<script type="module">
+  const form = document.getElementById('newsletter-form');
+  const messageDiv = document.getElementById('form-message');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    messageDiv.style.display = 'none';
+    messageDiv.className = 'form-message';
+    const formData = new FormData(form);
+    const data = {
+      email: formData.get('email'),
+      firstName: formData.get('firstName'),
+      lastName: formData.get('lastName'),
+    };
+    try {
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      const result = await res.json();
+      if (result.success) {
+        messageDiv.textContent = 'Thanks for subscribing! Please check your email to confirm.';
+        messageDiv.classList.add('success');
+        form.reset();
+      } else {
+        messageDiv.textContent = result.error || 'An error occurred. Please try again.';
+        messageDiv.classList.add('error');
+      }
+    } catch (err) {
+      messageDiv.textContent = 'An unexpected issue occurred. Please try again.';
+      messageDiv.classList.add('error');
+    }
+    messageDiv.style.display = 'block';
+  });
+</script>
 
 <style>
   .newsletter-card {
