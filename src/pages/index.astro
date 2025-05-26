@@ -142,7 +142,7 @@ const feedEntries = allFeedEntries.slice(startIndex, endIndex); // These are the
   <div class="feed-timeline">
     {feedEntries.map((item, index) => {
       // Insert newsletter after 10th post (adjust if pageSize changes)
-      const showNewsletter = index === 10 && currentPage === 1; // Only show on first page if it's after 10th post
+      const showNewsletter = index === 10 && currentPage === 1 && feedEntries.length >= pageSize; // Only show if enough items
       // Render appropriate entry based on type
       return (
         <>
