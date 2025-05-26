@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import FadeIn from '../components/animations/FadeIn.jsx';
 import CodeBlock from '../components/CodeBlock.astro';
 import NewsletterSubscribe from '../components/NewsletterSubscribe.astro';
 import CtaButton from '../components/CtaButton.astro';
@@ -16,616 +15,766 @@ console.log(message, sum);`;
 
 <BaseLayout title="UI Elements - nibzard" description="A showcase of UI elements used across nibzard.">
 
-  <FadeIn client:visible>
-    <section class="element-section">
-      <h2>Color System</h2>
-      <p>The color system uses CSS variables for consistent theming across the site.</p>
+  <section class="element-section">
+    <h2>Color System</h2>
+    <p>The color system uses CSS variables for consistent theming across the site.</p>
 
-      <div class="color-palette">
-        <div class="color-swatch" style="background-color: var(--color-accent1);">
-          --color-accent1<br>#E45B5F
-        </div>
-        <div class="color-swatch" style="background-color: var(--color-accent2);">
-          --color-accent2<br>#4BA3C3
-        </div>
-        <div class="color-swatch" style="background-color: var(--color-accent3);">
-          --color-accent3<br>#FFB865
-        </div>
-        <div class="color-swatch light" style="background-color: var(--color-background);">
-          --color-background<br>#FFFFFF
-        </div>
-        <div class="color-swatch light" style="background-color: var(--color-border);">
-          --color-border<br>#f0f0f0
-        </div>
-        <div class="color-swatch" style="background-color: var(--color-text);">
-          --color-text<br>#2D3032
-        </div>
-        <div class="color-swatch" style="background-color: var(--color-text-muted);">
-          --color-text-muted<br>#757F8C
-        </div>
+    <div class="color-palette">
+      <div class="color-swatch" style="background-color: var(--color-accent1);">
+        --color-accent1<br>#E45B5F
       </div>
-    </section>
-  </FadeIn>
-
-  <FadeIn client:visible delay={0.1}>
-    <section class="element-section">
-      <h2>Typography</h2>
-      <div class="typography-sample">
-        <h1>Heading 1 (--font-size-2xl)</h1>
-        <h2>Heading 2 (--font-size-xl)</h2>
-        <h3>Heading 3 (--font-size-lg)</h3>
-        <h4>Heading 4</h4>
-        <h5>Heading 5</h5>
-        <h6>Heading 6</h6>
-
-        <p>This is a paragraph with <strong>bold text</strong>, <em>italic text</em>, and <a href="#">a link</a>. The base font size is 16px (1rem) with a line height of 1.5.</p>
-
-        <p>Code elements like <code>const example = "hello world";</code> use the monospace font.</p>
-
-        <div class="font-sample" style="font-family: var(--font-sans);">
-          <div class="font-sample-name">Sans-serif Font (--font-sans)</div>
-          <p>The quick brown fox jumps over the lazy dog. 1234567890</p>
-        </div>
-
-        <div class="font-sample" style="font-family: var(--font-mono);">
-          <div class="font-sample-name">Monospace Font (--font-mono)</div>
-          <p>The quick brown fox jumps over the lazy dog. 1234567890</p>
-        </div>
+      <div class="color-swatch" style="background-color: var(--color-accent2);">
+        --color-accent2<br>#4BA3C3
       </div>
-    </section>
-  </FadeIn>
+      <div class="color-swatch" style="background-color: var(--color-accent3);">
+        --color-accent3<br>#FFB865
+      </div>
+      <div class="color-swatch light" style="background-color: var(--color-background);">
+        --color-background<br>#FFFFFF
+      </div>
+      <div class="color-swatch light" style="background-color: var(--color-border);">
+        --color-border<br>#f0f0f0
+      </div>
+      <div class="color-swatch" style="background-color: var(--color-text);">
+        --color-text<br>#2D3032
+      </div>
+      <div class="color-swatch" style="background-color: var(--color-text-muted);">
+        --color-text-muted<br>#757F8C
+      </div>
+    </div>
+  </section>
 
-  <FadeIn client:visible delay={0.2}>
-    <section class="element-section">
-      <h2>Buttons</h2>
-      <div class="button-container">
-        <button class="button-primary">Primary Button</button>
-        <button class="button-secondary">Secondary Button</button>
-        <button class="button-text">Text Button</button>
+  <section class="element-section">
+    <h2>Typography</h2>
+    <div class="typography-sample">
+      <h1>Heading 1 (--font-size-2xl)</h1>
+      <h2>Heading 2 (--font-size-xl)</h2>
+      <h3>Heading 3 (--font-size-lg)</h3>
+      <h4>Heading 4</h4>
+      <h5>Heading 5</h5>
+      <h6>Heading 6</h6>
+
+      <p>This is a paragraph with <strong>bold text</strong>, <em>italic text</em>, and <a href="#">a link</a>. The base font size is 16px (1rem) with a line height of 1.5.</p>
+
+      <p>Code elements like <code>const example = "hello world";</code> use the monospace font.</p>
+
+      <div class="font-sample" style="font-family: var(--font-sans);">
+        <div class="font-sample-name">Sans-serif Font (--font-sans)</div>
+        <p>The quick brown fox jumps over the lazy dog. 1234567890</p>
       </div>
 
-      <p>Buttons can also be used as links:</p>
-
-      <div class="button-container">
-        <a href="#" class="button-primary">Primary Link</a>
-        <a href="#" class="button-secondary">Secondary Link</a>
-        <a href="#" class="button-text">Text Link</a>
+      <div class="font-sample" style="font-family: var(--font-mono);">
+        <div class="font-sample-name">Monospace Font (--font-mono)</div>
+        <p>The quick brown fox jumps over the lazy dog. 1234567890</p>
       </div>
-    </section>
-  </FadeIn>
+    </div>
+  </section>
 
-  <FadeIn client:visible delay={0.3}>
-    <section class="element-section">
-      <h2>Cards</h2>
-      <div class="card-container">
-        <div class="card">
-          <h3>Card Title</h3>
-          <p>This is a simple card with some content. Cards are used to group related information.</p>
-          <a href="#" class="button-text">Learn More</a>
-        </div>
+  <section class="element-section">
+    <h2>Buttons</h2>
+    <div class="button-container">
+      <button class="button-primary">Primary Button</button>
+      <button class="button-secondary">Secondary Button</button>
+      <button class="button-text">Text Button</button>
+    </div>
 
-        <div class="card">
-          <h3>Another Card</h3>
-          <p>Cards can contain various elements like text, images, buttons, and more.</p>
-          <a href="#" class="button-text">View Details</a>
-        </div>
+    <p>Buttons can also be used as links:</p>
 
-        <div class="card">
-          <h3>Third Card</h3>
-          <p>The card layout is responsive and will adjust based on screen size.</p>
-          <a href="#" class="button-text">Explore</a>
-        </div>
-      </div>
-    </section>
-  </FadeIn>
+    <div class="button-container">
+      <a href="#" class="button-primary">Primary Link</a>
+      <a href="#" class="button-secondary">Secondary Link</a>
+      <a href="#" class="button-text">Text Link</a>
+    </div>
+  </section>
 
-  <FadeIn client:visible delay={0.4}>
-    <section class="element-section">
-      <h2>Tags</h2>
-      <p>Tags are used for categorization and filtering content.</p>
-
-      <div class="tag-container">
-        <a href="#" class="tag">design</a>
-        <a href="#" class="tag">development</a>
-        <a href="#" class="tag">javascript</a>
-        <a href="#" class="tag">css</a>
-        <a href="#" class="tag">html</a>
-        <a href="#" class="tag">react</a>
-        <a href="#" class="tag">astro</a>
-        <a href="#" class="tag active">active tag</a>
-      </div>
-    </section>
-  </FadeIn>
-
-  <FadeIn client:visible delay={0.5}>
-    <section class="element-section">
-      <h2>Alerts</h2>
-      <p>Alerts are used to provide feedback to the user.</p>
-
-      <div class="alert alert-info">
-        <strong>Info:</strong> This is an informational message.
+  <section class="element-section">
+    <h2>Cards</h2>
+    <div class="card-container">
+      <div class="card">
+        <h3>Card Title</h3>
+        <p>This is a simple card with some content. Cards are used to group related information.</p>
+        <a href="#" class="button-text">Learn More</a>
       </div>
 
-      <div class="alert alert-success">
-        <strong>Success:</strong> Your action was completed successfully!
+      <div class="card">
+        <h3>Another Card</h3>
+        <p>Cards can contain various elements like text, images, buttons, and more.</p>
+        <a href="#" class="button-text">View Details</a>
       </div>
 
-      <div class="alert alert-warning">
-        <strong>Warning:</strong> This action might have consequences.
+      <div class="card">
+        <h3>Third Card</h3>
+        <p>The card layout is responsive and will adjust based on screen size.</p>
+        <a href="#" class="button-text">Explore</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="element-section">
+    <h2>Tags</h2>
+    <p>Tags are used for categorization and filtering content.</p>
+
+    <div class="tag-container">
+      <a href="#" class="tag">design</a>
+      <a href="#" class="tag">development</a>
+      <a href="#" class="tag">javascript</a>
+      <a href="#" class="tag">css</a>
+      <a href="#" class="tag">html</a>
+      <a href="#" class="tag">react</a>
+      <a href="#" class="tag">astro</a>
+      <a href="#" class="tag active">active tag</a>
+    </div>
+  </section>
+
+  <section class="element-section">
+    <h2>Alerts</h2>
+    <p>Alerts are used to provide feedback to the user.</p>
+
+    <div class="alert alert-info">
+      <strong>Info:</strong> This is an informational message.
+    </div>
+
+    <div class="alert alert-success">
+      <strong>Success:</strong> Your action was completed successfully!
+    </div>
+
+    <div class="alert alert-warning">
+      <strong>Warning:</strong> This action might have consequences.
+    </div>
+
+    <div class="alert alert-error">
+      <strong>Error:</strong> Something went wrong. Please try again.
+    </div>
+  </section>
+
+  <section class="element-section">
+    <h2>Forms</h2>
+    <form class="form-sample" onsubmit="event.preventDefault(); alert('Form submitted (demo)');">
+      <div class="form-group">
+        <label class="form-label" for="name-sample">Name</label>
+        <input class="form-input" type="text" id="name-sample" placeholder="Enter your name">
       </div>
 
-      <div class="alert alert-error">
-        <strong>Error:</strong> Something went wrong. Please try again.
+      <div class="form-group">
+        <label class="form-label" for="email-sample">Email</label>
+        <input class="form-input" type="email" id="email-sample" placeholder="Enter your email">
       </div>
-    </section>
-  </FadeIn>
 
-  <FadeIn client:visible delay={0.6}>
-    <section class="element-section">
-      <h2>Forms</h2>
-      <form class="form-sample" onsubmit="event.preventDefault(); alert('Form submitted (demo)');">
-        <div class="form-group">
-          <label class="form-label" for="name">Name</label>
-          <input class="form-input" type="text" id="name" placeholder="Enter your name">
-        </div>
+      <div class="form-group">
+        <label class="form-label" for="message-sample">Message</label>
+        <textarea class="form-input" id="message-sample" rows="4" placeholder="Enter your message"></textarea>
+      </div>
 
-        <div class="form-group">
-          <label class="form-label" for="email">Email</label>
-          <input class="form-input" type="email" id="email" placeholder="Enter your email">
-        </div>
+      <div class="form-group">
+        <label class="form-label" for="subscribe-sample">
+          <input type="checkbox" id="subscribe-sample"> Subscribe to newsletter
+        </label>
+      </div>
 
-        <div class="form-group">
-          <label class="form-label" for="message">Message</label>
-          <textarea class="form-input" id="message" rows="4" placeholder="Enter your message"></textarea>
-        </div>
+      <button type="submit" class="button-primary">Submit</button>
+    </form>
+  </section>
 
-        <div class="form-group">
-          <label class="form-label">
-            <input type="checkbox"> Subscribe to newsletter
-          </label>
-        </div>
+  <section class="element-section">
+    <h2>Tables</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>John Doe</td>
+          <td>john@example.com</td>
+          <td>Developer</td>
+          <td>Active</td>
+        </tr>
+        <tr>
+          <td>Jane Smith</td>
+          <td>jane@example.com</td>
+          <td>Designer</td>
+          <td>Active</td>
+        </tr>
+        <tr>
+          <td>Bob Johnson</td>
+          <td>bob@example.com</td>
+          <td>Manager</td>
+          <td>Inactive</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
 
-        <button type="submit" class="button-primary">Submit</button>
-      </form>
-    </section>
-  </FadeIn>
+  <section class="element-section">
+    <h2>Content Entries</h2>
+    <p>The site uses a unified style for various types of content entries.</p>
 
-  <FadeIn client:visible delay={0.7}>
-    <section class="element-section">
-      <h2>Tables</h2>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Role</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>John Doe</td>
-            <td>john@example.com</td>
-            <td>Developer</td>
-            <td>Active</td>
-          </tr>
-          <tr>
-            <td>Jane Smith</td>
-            <td>jane@example.com</td>
-            <td>Designer</td>
-            <td>Active</td>
-          </tr>
-          <tr>
-            <td>Bob Johnson</td>
-            <td>bob@example.com</td>
-            <td>Manager</td>
-            <td>Inactive</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-  </FadeIn>
-
-  <FadeIn client:visible delay={0.8}>
-    <section class="element-section">
-      <h2>Content Entries</h2>
-      <p>The site uses a unified style for various types of content entries.</p>
-
-      <h3>Log Entry</h3>
-      <article class="log-entry" style="border-left-color: #4BA3C3;">
-        <div class="entry-meta">
-          <time datetime="2025-06-20T00:00:00.000Z">
-            June 20, 2025
-          </time>
-          <div class="entry-tags">
-            <div class="tag-container">
-              <a href="#" class="tag">design</a>
-              <a href="#" class="tag">development</a>
-            </div>
+    <h3>Log Entry</h3>
+    <article class="log-entry" style="border-left-color: var(--color-accent2);">
+      <div class="entry-meta">
+        <time datetime="2025-06-20T00:00:00.000Z">
+          June 20, 2025
+        </time>
+        <div class="entry-tags">
+          <div class="tag-container">
+            <a href="#" class="tag">design</a>
+            <a href="#" class="tag">development</a>
           </div>
         </div>
+      </div>
 
-        <div class="log-entry-content">
-          <h2>
-            <a href="#">Sample Log Entry Title</a>
-          </h2>
-          <p class="log-entry-tldr">This is a brief summary of what this log entry is about.</p>
-        </div>
-      </article>
+      <div class="log-entry-content">
+        <h2>
+          <a href="#">Sample Log Entry Title</a>
+        </h2>
+        <p class="log-entry-tldr">This is a brief summary of what this log entry is about.</p>
+      </div>
+    </article>
 
-      <h3>Thought Entry</h3>
-      <div class="thought-item">
-        <div class="entry-meta">
-          <time datetime="2025-06-18T00:00:00.000Z">
-            June 18, 2025
-          </time>
-          <span class="entry-type" style="background-color: var(--color-accent3);">Thought</span>
-        </div>
-        <div class="thought-content">
-          <blockquote>
-            The best code is often the code you don't have to write. Simplicity isn't just about fewer lines, but about fewer concepts to hold in your mind simultaneously.
-          </blockquote>
+    <h3>Thought Entry</h3>
+    <div class="thought-item">
+      <div class="entry-meta">
+        <time datetime="2025-06-18T00:00:00.000Z">
+          June 18, 2025
+        </time>
+        <span class="entry-type" style="background-color: var(--color-accent3);">Thought</span>
+      </div>
+      <div class="thought-content">
+        <blockquote>
+          The best code is often the code you don't have to write. Simplicity isn't just about fewer lines, but about fewer concepts to hold in your mind simultaneously.
+        </blockquote>
+      </div>
+    </div>
+
+    <h3>Now Entry</h3>
+    <div class="now-item">
+      <div class="entry-meta">
+        <time datetime="2025-06-19T00:00:00.000Z">
+          June 19, 2025
+        </time>
+        <span class="entry-type" style="background-color: var(--color-accent2);">Now</span>
+      </div>
+      <div class="now-item-content">
+        <h3>Current Focus</h3>
+        <ul>
+          <li>Building this website</li>
+          <li>Exploring digital gardens</li>
+          <li>Reading about system design</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="element-section">
+    <h2>Hero Section</h2>
+    <div class="hero-sample">
+      <h1>Welcome to nibzard</h1>
+      <p>A minimalist blog and personal site built with Astro.</p>
+      <a href="#" class="button-primary">Get Started</a>
+    </div>
+  </section>
+
+  <section class="element-section">
+    <h2>Breadcrumbs</h2>
+    <p>Breadcrumbs help users navigate and understand their location in the site hierarchy.</p>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Blog</a></li>
+        <li aria-current="page">Current Page</li>
+      </ol>
+    </nav>
+  </section>
+
+  <section class="element-section">
+    <h2>Accordions</h2>
+    <p>Accordions provide progressive disclosure for content-heavy pages.</p>
+
+    <div class="accordion">
+      <div class="accordion-item">
+        <button class="accordion-header">What is Astro?</button>
+        <div class="accordion-content">
+          <p>Astro is a modern static site builder that delivers lightning-fast performance with a great developer experience.</p>
         </div>
       </div>
 
-      <h3>Now Entry</h3>
-      <div class="now-item">
-        <div class="entry-meta">
-          <time datetime="2025-06-19T00:00:00.000Z">
-            June 19, 2025
-          </time>
-          <span class="entry-type" style="background-color: var(--color-accent2);">Now</span>
+      <div class="accordion-item">
+        <button class="accordion-header">How do islands work?</button>
+        <div class="accordion-content">
+          <p>Islands architecture allows you to hydrate only the interactive components that need JavaScript, keeping the rest of your site as static HTML.</p>
         </div>
-        <div class="now-item-content">
-          <h3>Current Focus</h3>
+      </div>
+    </div>
+  </section>
+
+  <section class="element-section">
+    <h2>Tooltips</h2>
+    <p>Tooltips provide additional context or information on hover.</p>
+
+    <div class="tooltip-container">
+      <button class="button-secondary tooltip-trigger" tabindex="0">Hover Me</button>
+      <span class="tooltip">This is a tooltip with helpful information</span>
+    </div>
+
+    <div class="tooltip-container">
+      <span class="tooltip-text">Another example <span class="tooltip-trigger" tabindex="0">with inline text</span></span>
+      <span class="tooltip">You can use tooltips on any element</span>
+    </div>
+  </section>
+
+  <section class="element-section">
+    <h2>Pagination</h2>
+    <p>Pagination helps users navigate through multi-page content.</p>
+
+    <nav class="pagination" aria-label="Pagination">
+      <a href="#" class="pagination-prev" aria-label="Previous page">←</a>
+      <a href="#" class="pagination-page">1</a>
+      <a href="#" class="pagination-page pagination-active" aria-current="page">2</a>
+      <a href="#" class="pagination-page">3</a>
+      <span class="pagination-ellipsis">...</span>
+      <a href="#" class="pagination-page">10</a>
+      <a href="#" class="pagination-next" aria-label="Next page">→</a>
+    </nav>
+  </section>
+
+  <section class="element-section">
+    <h2>Code Blocks</h2>
+    <p>Syntax-highlighted code blocks improve readability for technical content.</p>
+
+    <CodeBlock code={codeExample} language="JavaScript" />
+  </section>
+
+  <section class="element-section">
+    <h2>Social Sharing</h2>
+    <p>Social sharing buttons encourage content distribution.</p>
+
+    <div class="social-share">
+      {/* If these were real links opening new tabs, consider adding target="_blank", rel="noopener noreferrer" and more descriptive aria-labels if needed, e.g., aria-label="Share this page on Twitter" */}
+      <a href="#" class="social-button twitter">Twitter</a>
+      <a href="#" class="social-button linkedin">LinkedIn</a>
+      <a href="#" class="social-button facebook">Facebook</a>
+      <a href="#" class="social-button copy-link">Copy Link</a>
+    </div>
+  </section>
+
+  <section class="element-section">
+    <h2>Dark Mode Toggle</h2>
+    <p>Allow users to switch between light and dark themes.</p>
+
+    <div class="theme-toggle">
+      <button class="theme-toggle-button" aria-label="Toggle theme" aria-pressed="false">
+        <span class="theme-toggle-light">☀️</span>
+        <span class="theme-toggle-dark">🌙</span>
+        <span class="theme-toggle-slider"></span>
+      </button>
+    </div>
+  </section>
+
+  <section class="element-section">
+    <h2>Newsletter Subscription</h2>
+    <p>Capture email addresses to build your audience.</p>
+
+    <div class="component-demo">
+      <h3>Default Newsletter</h3>
+      <NewsletterSubscribe />
+    </div>
+
+    <div class="component-demo">
+      <h3>Newsletter with Custom Button</h3>
+      <NewsletterSubscribe
+        title="Join Our Community"
+        description="Get weekly updates on new articles and resources."
+        showButton={false}
+      />
+      <div class="newsletter-cta">
+        <CtaButton
+          text="Join Now"
+          type="secondary"
+          size="medium"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="element-section">
+    <h2>Card Component</h2>
+    <p>Reusable card layout system for organizing content.</p>
+
+    <CardSection
+      title="Example Card Section"
+      description="A flexible grid system for displaying cards"
+      columns={3}
+    >
+      <div class="demo-card">Card 1</div>
+      <div class="demo-card">Card 2</div>
+      <div class="demo-card">Card 3</div>
+    </CardSection>
+
+    <CardSection columns={2}>
+      <div class="demo-card">Card A (2-column)</div>
+      <div class="demo-card">Card B (2-column)</div>
+    </CardSection>
+  </section>
+
+  <section class="element-section">
+    <h2>Buttons</h2>
+    <p>Call-to-action buttons in different styles and sizes.</p>
+
+    <div class="button-demo">
+      <h3>Button Types</h3>
+      <div class="button-group">
+        <CtaButton text="Primary Button" type="primary" />
+        <CtaButton text="Secondary Button" type="secondary" />
+        <CtaButton text="Accent Button" type="accent" />
+      </div>
+
+      <h3>Button Sizes</h3>
+      <div class="button-group">
+        <CtaButton text="Small Button" size="small" />
+        <CtaButton text="Medium Button" size="medium" />
+        <CtaButton text="Large Button" size="large" />
+      </div>
+    </div>
+  </section>
+
+  <section class="element-section">
+    <h2>Figures</h2>
+    <p>Styled figures with captions for displaying images with explanatory text.</p>
+
+    <figure class="scientific-figure">
+      <img src="/images/placeholder.jpeg" alt="Sample diagram" />
+      <figcaption>
+        <span class="figure-number">Fig 1.</span> Example of a system architecture with interconnected components showing data flow between services.
+      </figcaption>
+    </figure>
+
+    <figure class="scientific-figure">
+      <img src="/images/placeholder.jpeg" alt="Data visualization" />
+      <figcaption>
+        <span class="figure-number">Fig 2.</span> Comparison of performance metrics across different implementation approaches.
+      </figcaption>
+    </figure>
+  </section>
+
+  <section class="element-section">
+    <h2>Featured Quotes</h2>
+    <p>Styled blockquotes to highlight important quotes or key takeaways.</p>
+
+    <blockquote class="featured-quote primary">
+      <p>The best way to predict the future is to invent it.</p>
+      <cite>— Alan Kay</cite>
+    </blockquote>
+
+    <blockquote class="featured-quote secondary">
+      <p>Simplicity is the ultimate sophistication.</p>
+      <cite>— Leonardo da Vinci</cite>
+    </blockquote>
+
+    <blockquote class="featured-quote accent">
+      <p>Design is not just what it looks like and feels like. Design is how it works.</p>
+      <cite>— Steve Jobs</cite>
+    </blockquote>
+
+    <blockquote class="featured-quote unattributed">
+      <p>This is an unattributed quote that stands on its own, perfect for highlighting key concepts or ideas without attribution.</p>
+    </blockquote>
+  </section>
+
+  <section class="element-section">
+    <h2>Video Embeds</h2>
+    <p>Responsive video embeds for YouTube and other video platforms.</p>
+
+    <div class="video-container">
+      <iframe
+        src="https://www.youtube.com/embed/iD-lhIhiVEs?si=SewVWt6bTK4HIdk6"
+        title="YouTube video: Demo of a Fortnite Stats Tracker built with Claude AI"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <div class="video-container with-caption">
+      <iframe
+        src="https://www.youtube.com/embed/iD-lhIhiVEs?si=SewVWt6bTK4HIdk6"
+        title="YouTube video with caption: Demo of a Fortnite Stats Tracker built with Claude AI"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+      <figcaption class="video-caption">
+        <span class="video-title">Video 1.</span> Demo video showing key concepts and implementation details.
+      </figcaption>
+    </div>
+  </section>
+
+  <section class="element-section">
+    <h2>Footer Components</h2>
+    <p>Footer elements provide navigation, contact information, and legal links at the bottom of your pages.</p>
+
+    <h3 class="sub-heading">Simple Footer</h3>
+    <footer class="footer-simple">
+      <div class="footer-content">
+        <p>&copy; 2025 nibzard. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <h3 class="sub-heading">Multi-Column Footer</h3>
+    <footer class="footer-multi">
+      <div class="footer-columns">
+        <div class="footer-column">
+          <h4>nibzard</h4>
+          <p class="footer-description">A minimalist blog and personal site built with Astro.</p>
+        </div>
+
+        <div class="footer-column">
+          <h4>Navigation</h4>
           <ul>
-            <li>Building this website</li>
-            <li>Exploring digital gardens</li>
-            <li>Reading about system design</li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Log</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">About</a></li>
           </ul>
         </div>
-      </div>
-    </section>
-  </FadeIn>
 
-  <FadeIn client:visible delay={0.9}>
-    <section class="element-section">
-      <h2>Hero Section</h2>
-      <div class="hero-sample">
-        <h1>Welcome to nibzard</h1>
-        <p>A minimalist blog and personal site built with Astro.</p>
-        <a href="#" class="button-primary">Get Started</a>
-      </div>
-    </section>
-  </FadeIn>
-
-  <FadeIn client:visible delay={1.0}>
-    <section class="element-section">
-      <h2>Breadcrumbs</h2>
-      <p>Breadcrumbs help users navigate and understand their location in the site hierarchy.</p>
-
-      <nav class="breadcrumbs" aria-label="Breadcrumb">
-        <ol>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Blog</a></li>
-          <li aria-current="page">Current Page</li>
-        </ol>
-      </nav>
-    </section>
-  </FadeIn>
-
-  <FadeIn client:visible delay={1.1}>
-    <section class="element-section">
-      <h2>Accordions</h2>
-      <p>Accordions provide progressive disclosure for content-heavy pages.</p>
-
-      <div class="accordion">
-        <div class="accordion-item">
-          <button class="accordion-header">What is Astro?</button>
-          <div class="accordion-content">
-            <p>Astro is a modern static site builder that delivers lightning-fast performance with a great developer experience.</p>
-          </div>
+        <div class="footer-column">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#">Articles</a></li>
+            <li><a href="#">Tutorials</a></li>
+            <li><a href="#">Elements</a></li>
+          </ul>
         </div>
 
-        <div class="accordion-item">
-          <button class="accordion-header">How do islands work?</button>
-          <div class="accordion-content">
-            <p>Islands architecture allows you to hydrate only the interactive components that need JavaScript, keeping the rest of your site as static HTML.</p>
+        <div class="footer-column">
+          <h4>Connect</h4>
+          <div class="social-links">
+            <a href="#" class="social-link">Twitter</a>
+            <a href="#" class="social-link">GitHub</a>
+            <a href="#" class="social-link">LinkedIn</a>
           </div>
         </div>
       </div>
-    </section>
-  </FadeIn>
 
-  <FadeIn client:visible delay={1.2}>
-    <section class="element-section">
-      <h2>Tooltips</h2>
-      <p>Tooltips provide additional context or information on hover.</p>
-
-      <div class="tooltip-container">
-        <button class="button-secondary tooltip-trigger">Hover Me</button>
-        <span class="tooltip">This is a tooltip with helpful information</span>
-      </div>
-
-      <div class="tooltip-container">
-        <span class="tooltip-text">Another example <span class="tooltip-trigger">with inline text</span></span>
-        <span class="tooltip">You can use tooltips on any element</span>
-      </div>
-    </section>
-  </FadeIn>
-
-  <FadeIn client:visible delay={1.3}>
-    <section class="element-section">
-      <h2>Pagination</h2>
-      <p>Pagination helps users navigate through multi-page content.</p>
-
-      <nav class="pagination" aria-label="Pagination">
-        <a href="#" class="pagination-prev" aria-label="Previous page">←</a>
-        <a href="#" class="pagination-page">1</a>
-        <a href="#" class="pagination-page pagination-active" aria-current="page">2</a>
-        <a href="#" class="pagination-page">3</a>
-        <span class="pagination-ellipsis">...</span>
-        <a href="#" class="pagination-page">10</a>
-        <a href="#" class="pagination-next" aria-label="Next page">→</a>
-      </nav>
-    </section>
-  </FadeIn>
-
-  <FadeIn client:visible delay={1.4}>
-    <section class="element-section">
-      <h2>Code Blocks</h2>
-      <p>Syntax-highlighted code blocks improve readability for technical content.</p>
-
-      <CodeBlock code={codeExample} language="JavaScript" />
-    </section>
-  </FadeIn>
-
-  <FadeIn client:visible delay={1.5}>
-    <section class="element-section">
-      <h2>Social Sharing</h2>
-      <p>Social sharing buttons encourage content distribution.</p>
-
-      <div class="social-share">
-        <a href="#" class="social-button twitter">Twitter</a>
-        <a href="#" class="social-button linkedin">LinkedIn</a>
-        <a href="#" class="social-button facebook">Facebook</a>
-        <a href="#" class="social-button copy-link">Copy Link</a>
-      </div>
-    </section>
-  </FadeIn>
-
-  <FadeIn client:visible delay={1.6}>
-    <section class="element-section">
-      <h2>Dark Mode Toggle</h2>
-      <p>Allow users to switch between light and dark themes.</p>
-
-      <div class="theme-toggle">
-        <button class="theme-toggle-button">
-          <span class="theme-toggle-light">☀️</span>
-          <span class="theme-toggle-dark">🌙</span>
-          <span class="theme-toggle-slider"></span>
-        </button>
-      </div>
-    </section>
-  </FadeIn>
-
-  <FadeIn client:visible delay={1.7}>
-    <section class="element-section">
-      <h2>Newsletter Subscription</h2>
-      <p>Capture email addresses to build your audience.</p>
-
-      <div class="component-demo">
-        <h3>Default Newsletter</h3>
-        <NewsletterSubscribe />
-      </div>
-
-      <div class="component-demo">
-        <h3>Newsletter with Custom Button</h3>
-        <NewsletterSubscribe
-          title="Join Our Community"
-          description="Get weekly updates on new articles and resources."
-          showButton={false}
-        />
-        <div class="newsletter-cta">
-          <CtaButton
-            text="Join Now"
-            type="secondary"
-            size="medium"
-          />
+      <div class="footer-bottom">
+        <p>&copy; 2025 nibzard. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
         </div>
       </div>
-    </section>
-  </FadeIn>
-
-  <FadeIn client:visible delay={1.6}>
-    <section class="element-section">
-      <h2>Card Component</h2>
-      <p>Reusable card layout system for organizing content.</p>
-
-      <CardSection
-        title="Example Card Section"
-        description="A flexible grid system for displaying cards"
-        columns={3}
-      >
-        <div class="demo-card">Card 1</div>
-        <div class="demo-card">Card 2</div>
-        <div class="demo-card">Card 3</div>
-      </CardSection>
-
-      <CardSection columns={2}>
-        <div class="demo-card">Card A (2-column)</div>
-        <div class="demo-card">Card B (2-column)</div>
-      </CardSection>
-    </section>
-  </FadeIn>
-
-  <FadeIn client:visible delay={1.7}>
-    <section class="element-section">
-      <h2>Buttons</h2>
-      <p>Call-to-action buttons in different styles and sizes.</p>
-
-      <div class="button-demo">
-        <h3>Button Types</h3>
-        <div class="button-group">
-          <CtaButton text="Primary Button" type="primary" />
-          <CtaButton text="Secondary Button" type="secondary" />
-          <CtaButton text="Accent Button" type="accent" />
-        </div>
-
-        <h3>Button Sizes</h3>
-        <div class="button-group">
-          <CtaButton text="Small Button" size="small" />
-          <CtaButton text="Medium Button" size="medium" />
-          <CtaButton text="Large Button" size="large" />
-        </div>
-      </div>
-    </section>
-  </FadeIn>
-
-  <FadeIn client:visible delay={1.8}>
-    <section class="element-section">
-      <h2>Figures</h2>
-      <p>Styled figures with captions for displaying images with explanatory text.</p>
-
-      <figure class="scientific-figure">
-        <img src="/images/placeholder.jpeg" alt="Sample diagram" />
-        <figcaption>
-          <span class="figure-number">Fig 1.</span> Example of a system architecture with interconnected components showing data flow between services.
-        </figcaption>
-      </figure>
-
-      <figure class="scientific-figure">
-        <img src="/images/placeholder.jpeg" alt="Data visualization" />
-        <figcaption>
-          <span class="figure-number">Fig 2.</span> Comparison of performance metrics across different implementation approaches.
-        </figcaption>
-      </figure>
-    </section>
-  </FadeIn>
-
-  <FadeIn client:visible delay={1.9}>
-    <section class="element-section">
-      <h2>Featured Quotes</h2>
-      <p>Styled blockquotes to highlight important quotes or key takeaways.</p>
-
-      <blockquote class="featured-quote primary">
-        <p>The best way to predict the future is to invent it.</p>
-        <cite>— Alan Kay</cite>
-      </blockquote>
-
-      <blockquote class="featured-quote secondary">
-        <p>Simplicity is the ultimate sophistication.</p>
-        <cite>— Leonardo da Vinci</cite>
-      </blockquote>
-
-      <blockquote class="featured-quote accent">
-        <p>Design is not just what it looks like and feels like. Design is how it works.</p>
-        <cite>— Steve Jobs</cite>
-      </blockquote>
-
-      <blockquote class="featured-quote unattributed">
-        <p>This is an unattributed quote that stands on its own, perfect for highlighting key concepts or ideas without attribution.</p>
-      </blockquote>
-    </section>
-  </FadeIn>
-
-  <FadeIn client:visible delay={1.95}>
-    <section class="element-section">
-      <h2>Video Embeds</h2>
-      <p>Responsive video embeds for YouTube and other video platforms.</p>
-
-      <div class="video-container">
-        <iframe
-          src="https://www.youtube.com/embed/iD-lhIhiVEs?si=SewVWt6bTK4HIdk6"
-          title="YouTube video"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
-      </div>
-
-      <div class="video-container with-caption">
-        <iframe
-          src="https://www.youtube.com/embed/iD-lhIhiVEs?si=SewVWt6bTK4HIdk6"
-          title="YouTube video with caption"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
-        <figcaption class="video-caption">
-          <span class="video-title">Video 1.</span> Demo video showing key concepts and implementation details.
-        </figcaption>
-      </div>
-    </section>
-  </FadeIn>
-
-  <FadeIn client:visible delay={2.0}>
-    <section class="element-section">
-      <h2>Footer Components</h2>
-      <p>Footer elements provide navigation, contact information, and legal links at the bottom of your pages.</p>
-
-      <h3 class="sub-heading">Simple Footer</h3>
-      <footer class="footer-simple">
-        <div class="footer-content">
-          <p>&copy; 2025 nibzard. All rights reserved.</p>
-          <div class="footer-links">
-            <a href="#">Privacy</a>
-            <a href="#">Terms</a>
-            <a href="#">Contact</a>
-          </div>
-        </div>
-      </footer>
-
-      <h3 class="sub-heading">Multi-Column Footer</h3>
-      <footer class="footer-multi">
-        <div class="footer-columns">
-          <div class="footer-column">
-            <h4>nibzard</h4>
-            <p class="footer-description">A minimalist blog and personal site built with Astro.</p>
-          </div>
-
-          <div class="footer-column">
-            <h4>Navigation</h4>
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Log</a></li>
-              <li><a href="#">Projects</a></li>
-              <li><a href="#">About</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-column">
-            <h4>Resources</h4>
-            <ul>
-              <li><a href="#">Articles</a></li>
-              <li><a href="#">Tutorials</a></li>
-              <li><a href="#">Elements</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-column">
-            <h4>Connect</h4>
-            <div class="social-links">
-              <a href="#" class="social-link">Twitter</a>
-              <a href="#" class="social-link">GitHub</a>
-              <a href="#" class="social-link">LinkedIn</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="footer-bottom">
-          <p>&copy; 2025 nibzard. All rights reserved.</p>
-          <div class="footer-legal">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Cookie Policy</a>
-          </div>
-        </div>
-      </footer>
-    </section>
-  </FadeIn>
+    </footer>
+  </section>
 
   <style>
+    /* Color System */
+    .color-palette {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: var(--space-md);
+      margin: var(--space-lg) 0;
+    }
+
+    .color-swatch {
+      padding: var(--space-lg);
+      border-radius: var(--border-radius);
+      color: white;
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      line-height: 1.5;
+      min-height: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .color-swatch.light {
+      color: var(--color-text);
+      border: 1px solid var(--color-border);
+    }
+
+    /* Button Styles */
+    .button-container {
+      display: flex;
+      gap: var(--space-md);
+      margin: var(--space-md) 0;
+      flex-wrap: wrap;
+    }
+
+    .button-primary,
+    .button-secondary,
+    .button-text {
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--border-radius);
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .button-primary {
+      background-color: var(--color-accent1);
+      color: white;
+    }
+
+    .button-primary:hover {
+      background-color: color-mix(in srgb, var(--color-accent1) 90%, black);
+    }
+
+    .button-secondary {
+      background-color: var(--color-accent2);
+      color: white;
+    }
+
+    .button-secondary:hover {
+      background-color: color-mix(in srgb, var(--color-accent2) 90%, black);
+    }
+
+    .button-text {
+      background: none;
+      color: var(--color-accent1);
+      padding: 0.75rem 1rem;
+    }
+
+    .button-text:hover {
+      background-color: color-mix(in srgb, var(--color-accent1) 10%, transparent);
+    }
+
+    /* Card Styles */
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--space-lg);
+      margin: var(--space-lg) 0;
+    }
+
+    .card {
+      background-color: var(--color-background);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius);
+      padding: var(--space-lg);
+      transition: all 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: var(--space-md);
+      color: var(--color-text);
+      font-size: 1.25rem;
+    }
+
+    .card p {
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-lg);
+      line-height: 1.5;
+    }
+
+    /* Tag Styles */
+    .tag-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+      margin: var(--space-md) 0;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: var(--border-radius);
+      background-color: var(--color-subtle);
+      color: var(--color-text);
+      text-decoration: none;
+      font-size: 0.875rem;
+      transition: all 0.2s ease;
+    }
+
+    .tag:hover {
+      background-color: var(--color-accent1);
+      color: white;
+    }
+
+    .tag.active {
+      background-color: var(--color-accent1);
+      color: white;
+    }
+
+    /* Form Styles */
+    .form-sample {
+      max-width: 500px;
+      margin: var(--space-lg) 0;
+    }
+
+    .form-group {
+      margin-bottom: var(--space-md);
+    }
+
+    .form-label {
+      display: block;
+      margin-bottom: var(--space-xs);
+      color: var(--color-text);
+      font-weight: 500;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius);
+      font-size: 1rem;
+      transition: all 0.2s ease;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: var(--color-accent1);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent1) 20%, transparent);
+    }
+
+    /* Element Section Styles */
+    .element-section {
+      margin-bottom: var(--space-xl);
+      padding: var(--space-lg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius);
+    }
+
+    .element-section h2 {
+      margin-top: 0;
+      margin-bottom: var(--space-lg);
+      color: var(--color-text);
+      font-size: 1.5rem;
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: var(--space-md);
+    }
+
+    .element-section p {
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      margin-bottom: var(--space-md);
+    }
+
     /* Content Entries Styles */
     .log-entry, .thought-item, .now-item {
       position: relative;
@@ -771,10 +920,11 @@ console.log(message, sum);`;
       margin-top: var(--space-md);
     }
 
-    .newsletter-cta {
+    .component-demo .newsletter-cta {
       display: flex;
       justify-content: center;
       margin-top: var(--space-md);
+      margin-bottom: var(--space-md); /* Added for spacing */
     }
 
     .newsletter-cta .button-secondary {
@@ -824,7 +974,7 @@ console.log(message, sum);`;
       background-color: var(--color-accent-2);
       color: white;
       border: none;
-      padding: var(--space-sm) var(--space-md);
+      padding: var(--space-sm) var(--space-lg);
       border-radius: var(--border-radius);
       cursor: pointer;
       font-weight: 500;
@@ -884,14 +1034,35 @@ console.log(message, sum);`;
       font-weight: 500;
       cursor: pointer;
       position: relative;
+      transition: background-color var(--transition-fast);
+    }
+    .accordion-header:hover {
+      background-color: var(--color-subtle-hover, rgba(0,0,0,0.02));
+    }
+    .accordion-header:focus-visible {
+      outline: 2px solid var(--color-accent-1);
+      outline-offset: 2px;
     }
     .accordion-header::after {
       content: "+";
       position: absolute;
       right: var(--space-md);
+      transition: transform var(--transition-fast);
+    }
+    .accordion-item.active .accordion-header::after {
+      content: "–";
     }
     .accordion-content {
       padding: 0 var(--space-md) var(--space-md);
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height var(--transition-normal) ease-out, padding var(--transition-normal) ease-out;
+    }
+    .accordion-item.active .accordion-content {
+      max-height: 500px;
+      padding-top: var(--space-sm);
+      padding-bottom: var(--space-md);
+      overflow: visible;
     }
 
     /* Tooltips */
@@ -964,7 +1135,7 @@ console.log(message, sum);`;
 
     /* Code Blocks */
     .code-block {
-      background-color: #1e1e1e;
+      background-color: var(--color-code-background, #1e1e1e);
       border-radius: var(--border-radius);
       overflow: hidden;
       margin: var(--space-md) 0;
@@ -973,20 +1144,24 @@ console.log(message, sum);`;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: #333;
+      background-color: var(--color-code-header-background, #333);
       padding: var(--space-xs) var(--space-sm);
-      color: #ccc;
+      color: var(--color-code-header-text, #ccc);
       font-family: var(--font-mono);
       font-size: 0.8rem;
     }
     .copy-button {
       background: none;
-      border: 1px solid #555;
-      color: #ccc;
+      border: 1px solid var(--color-code-copy-button-border, #555);
+      color: var(--color-code-copy-button-text, #ccc);
       padding: 2px var(--space-xs);
       border-radius: 3px;
       font-size: 0.7rem;
       cursor: pointer;
+    }
+    .copy-button:focus-visible {
+      outline: 1px solid var(--color-code-copy-button-text, #ccc);
+      outline-offset: 1px;
     }
     .code-block pre {
       margin: 0;
@@ -994,7 +1169,7 @@ console.log(message, sum);`;
       overflow-x: auto;
     }
     .code-block code {
-      color: #ccc;
+      color: var(--color-code-text, #ccc);
       font-family: var(--font-mono);
       font-size: 0.9rem;
       line-height: 1.5;
@@ -1003,7 +1178,7 @@ console.log(message, sum);`;
     /* Social Sharing */
     .social-share {
       display: flex;
-      gap: var(--space-sm);
+      gap: var(--space-md);
       flex-wrap: wrap;
     }
     .social-button {
@@ -1012,160 +1187,31 @@ console.log(message, sum);`;
       text-decoration: none;
       color: white;
       font-size: 0.9rem;
+      transition: opacity var(--transition-fast);
     }
+    .social-button:hover, .social-button:focus-visible {
+      opacity: 0.85;
+    }
+    .social-button:focus-visible {
+      box-shadow: 0 0 0 2px var(--color-background), 0 0 0 4px var(--color-accent1);
+    }
+
     .twitter {
-      background-color: #1DA1F2;
+      background-color: var(--color-social-twitter, #1DA1F2);
     }
     .linkedin {
-      background-color: #0077B5;
+      background-color: var(--color-social-linkedin, #0077B5);
     }
     .facebook {
-      background-color: #1877F2;
+      background-color: var(--color-social-facebook, #1877F2);
     }
     .copy-link {
-      background-color: #333;
+      background-color: var(--color-social-copy-link, #333);
     }
 
-    /* Theme Toggle */
-    .theme-toggle {
-      display: flex;
-      align-items: center;
-    }
-    .theme-toggle-button {
-      position: relative;
-      width: 60px;
-      height: 30px;
-      border-radius: 15px;
-      background-color: #333;
-      cursor: pointer;
-      border: none;
-      padding: 0;
-      overflow: hidden;
-    }
-    .theme-toggle-slider {
-      position: absolute;
-      top: 3px;
-      left: 3px;
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      background-color: white;
-      transition: transform 0.3s;
-    }
-    .theme-toggle-light, .theme-toggle-dark {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 14px;
-    }
-    .theme-toggle-light {
-      left: 8px;
-    }
-    .theme-toggle-dark {
-      right: 8px;
-    }
-
-    /* Footer Components */
-    .sub-heading {
-      margin-top: var(--space-lg);
-      margin-bottom: var(--space-md);
-      font-size: 1.2rem;
-    }
-
-    /* Simple Footer */
-    .footer-simple {
-      background-color: var(--color-subtle);
-      padding: var(--space-md);
-      border-radius: var(--border-radius);
-      margin-bottom: var(--space-lg);
-    }
-
-    .footer-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: var(--space-md);
-    }
-
-    .footer-links {
-      display: flex;
-      gap: var(--space-md);
-    }
-
-    .footer-links a {
-      color: var(--color-accent-2);
-      text-decoration: none;
-    }
-
-    .footer-links a:hover {
-      text-decoration: underline;
-    }
-
-    /* Multi-Column Footer */
-    .footer-multi {
-      background-color: var(--color-subtle);
-      border-radius: var(--border-radius);
-      padding: var(--space-lg);
-      margin-bottom: var(--space-lg);
-    }
-
-    .footer-columns {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: var(--space-lg);
-      margin-bottom: var(--space-lg);
-    }
-
-    .footer-column h4 {
-      margin-top: 0;
-      margin-bottom: var(--space-sm);
-      font-size: 1.1rem;
-    }
-
-    .footer-description {
-      color: var(--color-text-muted);
-      font-size: 0.9rem;
-      line-height: 1.5;
-    }
-
-    .footer-column ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .footer-column li {
-      margin-bottom: var(--space-xs);
-    }
-
-    .footer-column a {
-      color: var(--color-accent-2);
-      text-decoration: none;
-    }
-
-    .footer-column a:hover {
-      text-decoration: underline;
-    }
-
-    .social-links {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-xs);
-    }
-
-    .social-link {
-      display: inline-block;
-    }
-
-    .footer-bottom {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-top: var(--space-md);
-      border-top: 1px solid var(--color-border);
-      flex-wrap: wrap;
-      gap: var(--space-md);
+    .theme-toggle-button:focus-visible {
+      outline: 2px solid var(--color-accent-1);
+      outline-offset: 2px;
     }
 
     .footer-bottom p {
@@ -1324,6 +1370,635 @@ console.log(message, sum);`;
       font-weight: bold;
       font-family: var(--font-mono);
     }
+
+    /* Copied from src/styles/elements.css */
+    .element-section {
+      margin-bottom: var(--space-xl);
+      padding: var(--space-lg);
+      border: 1px solid var(--color-border, var(--color-subtle)); /* Added --color-border fallback */
+      border-radius: var(--border-radius);
+      background-color: var(--color-background-secondary, transparent); /* Optional: slight bg for sections */
+    }
+    .element-section h2 {
+      margin-top: 0;
+      margin-bottom: var(--space-lg);
+      border-bottom: 1px solid var(--color-border, var(--color-subtle)); /* Added --color-border fallback */
+      padding-bottom: var(--space-md);
+      font-family: var(--font-serif); /* More distinct section titles */
+      color: var(--color-text-heading, var(--color-text)); /* Use a specific heading color if defined */
+    }
+    .element-section h3 {
+      margin-top: var(--space-lg);
+      margin-bottom: var(--space-sm);
+      color: var(--color-accent-1);
+    }
+
+    /* Hero Styles (from index.astro) */
+    .hero-sample { /* Renamed to avoid conflict if global .hero exists */
+      text-align: center;
+      padding: var(--space-xl) 0;
+    }
+    .hero-sample h1 {
+      font-size: 3rem;
+      margin-bottom: var(--space-sm);
+    }
+    .hero-sample p {
+      font-size: 1.2rem;
+      color: var(--color-text-muted, #555); /* Use variable */
+      font-family: var(--font-sans);
+      max-width: 60ch;
+      margin: 0 auto var(--space-lg) auto;
+    }
+
+    /* CTA Button Styles (from index.astro) */
+    .cta-button-sample { /* Renamed to avoid conflict */
+      display: inline-block;
+      padding: var(--space-sm) var(--space-lg);
+      background-color: var(--color-accent-1);
+      color: var(--color-background);
+      text-decoration: none;
+      font-family: var(--font-mono);
+      border-radius: var(--border-radius);
+      transition: background-color var(--transition-normal);
+    }
+    .cta-button-sample:hover {
+      background-color: var(--color-accent-2);
+      color: var(--color-background);
+    }
+
+    /* Placeholder Toast Styles */
+    .toast-sample {
+      background-color: var(--color-subtle-accent); /* Assuming a light accent color */
+      color: var(--color-text);
+      padding: var(--space-md);
+      border-radius: var(--border-radius);
+      border-left: 4px solid var(--color-accent-1);
+      margin-top: var(--space-md);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .toast-sample.success {
+      border-left-color: var(--color-success, #28a745);
+      background-color: var(--color-success-bg, #e9f7ec);
+      color: var(--color-success-text, #155724); /* Ensure text color contrasts with bg */
+    }
+    .toast-sample.error {
+      border-left-color: var(--color-error, #dc3545);
+      background-color: var(--color-error-bg, #fdeaec);
+      color: var(--color-error-text, #721c24); /* Ensure text color contrasts with bg */
+    }
+    .toast-sample.info {
+      border-left-color: var(--color-info, #17a2b8);
+      background-color: var(--color-info-bg, #e8f7f9);
+      color: var(--color-info-text, #0c5460); /* Ensure text color contrasts with bg */
+    }
+
+    /* Simple Header/Nav */
+    .header-sample {
+      background-color: var(--color-background); /* Changed from secondary for more standard header */
+      padding: var(--space-md) var(--space-lg);
+      border-bottom: 1px solid var(--color-border, var(--color-subtle));
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: var(--shadow-sm, 0 1px 3px 0 rgba(0,0,0,0.1), 0 1px 2px 0 rgba(0,0,0,0.06)); /* Subtle shadow */
+    }
+    .header-sample .logo {
+      font-family: var(--font-mono);
+      font-size: 1.5rem;
+      color: var(--color-accent-1);
+      text-decoration: none;
+    }
+    .header-sample nav a {
+      margin-left: var(--space-md);
+      text-decoration: none;
+      color: var(--color-text-nav, var(--color-text)); /* Use specific nav text color if defined */
+      font-family: var(--font-sans);
+      padding: var(--space-xs) var(--space-sm);
+      border-radius: var(--border-radius-sm);
+      transition: background-color var(--transition-fast), color var(--transition-fast);
+    }
+    .header-sample nav a:hover {
+      color: var(--color-accent-1);
+      background-color: var(--color-accent-1-transparent, rgba(var(--color-accent-1-rgb), 0.05));
+    }
+
+    /* Simple Footer */
+    .footer-sample {
+      background-color: var(--color-background); /* Changed from secondary */
+      padding: var(--space-lg);
+      text-align: center;
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      color: var(--color-text-muted, #777);
+      border-top: 1px solid var(--color-border, var(--color-subtle));
+      margin-top: var(--space-xl); /* Add some top margin */
+    }
+    .footer-sample a {
+      color: var(--color-accent-1);
+      text-decoration: none;
+    }
+    .footer-sample a:hover {
+      text-decoration: underline;
+    }
+
+    /* Card Styles */
+    .card-sample-container {
+      display: flex;
+      gap: var(--space-md);
+      flex-wrap: wrap;
+    }
+    .card-sample {
+      background-color: var(--color-background);
+      border: 1px solid var(--color-border, var(--color-subtle));
+      border-radius: var(--border-radius);
+      padding: var(--space-lg); /* Increased padding */
+      box-shadow: var(--shadow-md, 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06)); /* Enhanced shadow */
+      width: calc(33.333% - var(--space-md) * 2 / 3); /* Adjust for gap */
+      min-width: 250px;
+      transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    }
+    .card-sample:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg, 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05));
+    }
+    .card-sample h4 {
+      margin-top: 0;
+      font-family: var(--font-serif); /* Consistent with section titles */
+      color: var(--color-accent-1);
+      margin-bottom: var(--space-sm); /* Added margin */
+    }
+    .card-sample p {
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    /* Form Element Styles */
+    .form-sample label {
+      display: block;
+      margin-bottom: var(--space-xs);
+      font-family: var(--font-sans);
+      font-weight: 500; /* Slightly less bold */
+      color: var(--color-text-label, var(--color-text)); /* Use specific label color if defined */
+      font-size: 0.9rem; /* Slightly smaller label */
+    }
+    .form-sample input[type="text"],
+    .form-sample input[type="email"],
+    .form-sample input[type="password"],
+    .form-sample textarea,
+    .form-sample select {
+      width: 100%;
+      padding: var(--space-sm) var(--space-md); /* Adjusted padding */
+      margin-bottom: var(--space-md);
+      border: 1px solid var(--color-border-input, var(--color-subtle)); /* Specific input border color */
+      border-radius: var(--border-radius);
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      background-color: var(--color-background-input, var(--color-background)); /* Specific input bg color */
+      color: var(--color-text-input, var(--color-text)); /* Specific input text color */
+      transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+    }
+    .form-sample input[type="text"]:focus,
+    .form-sample input[type="email"]:focus,
+    .form-sample input[type="password"]:focus,
+    .form-sample textarea:focus,
+    .form-sample select:focus {
+      outline: none;
+      border-color: var(--color-accent1);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent1) 20%, transparent);
+    }
+    .form-sample select {
+      appearance: none; /* Basic reset for custom arrow */
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23${(typeof getComputedStyle !== 'undefined' && getComputedStyle(document.documentElement).getPropertyValue('--color-text-muted').trim().replace('#','')) || '757F8C'}'%3E%3Cpath d='M7 10l5 5 5-5H7z'/%3E%3C/svg%3E"); /* Use CSS var */
+      background-repeat: no-repeat;
+      background-position: right var(--space-sm) center;
+      background-size: 1.2em;
+      padding-right: calc(var(--space-sm) + 1.5em); /* Space for arrow */
+    }
+    .form-sample .checkbox-group,
+    .form-sample .radio-group {
+      margin-bottom: var(--space-md);
+    }
+    .form-sample .checkbox-group label,
+    .form-sample .radio-group label {
+      display: flex;
+      align-items: center;
+      font-weight: normal;
+      margin-bottom: var(--space-xs);
+    }
+    .form-sample input[type="checkbox"],
+    .form-sample input[type="radio"] {
+      margin-right: var(--space-sm); /* Increased margin */
+      accent-color: var(--color-accent1);
+      width: 1.15em; /* Slightly larger */
+      height: 1.15em;
+      vertical-align: middle; /* Better alignment with text */
+    }
+
+    /* Alert/Banner Styles */
+    .alert-sample {
+      padding: var(--space-md);
+      margin-bottom: var(--space-md);
+      border: 1px solid transparent;
+      border-radius: var(--border-radius);
+      font-family: var(--font-sans);
+    }
+    .alert-sample.info {
+      color: var(--color-info-text, #0c5460);
+      background-color: var(--color-info-bg, #d1ecf1);
+      border-color: var(--color-info-border, #bee5eb);
+      border-left: 4px solid var(--color-info, #17a2b8); /* Add left border for emphasis */
+      padding-left: var(--space-lg);
+    }
+    .alert-sample.success {
+      color: var(--color-success-text, #155724);
+      background-color: var(--color-success-bg, #d4edda);
+      border-color: var(--color-success-border, #c3e6cb);
+      border-left: 4px solid var(--color-success, #28a745);
+      padding-left: var(--space-lg);
+    }
+    .alert-sample.warning {
+      color: var(--color-warning-text, #856404);
+      background-color: var(--color-warning-bg, #fff3cd);
+      border-color: var(--color-warning-border, #ffeeba);
+      border-left: 4px solid var(--color-warning, #ffc107); /* Define --color-warning if needed */
+      padding-left: var(--space-lg);
+    }
+    .alert-sample.error {
+      color: var(--color-error-text, #721c24);
+      background-color: var(--color-error-bg, #f8d7da);
+      border-color: var(--color-error-border, #f5c6cb);
+      border-left: 4px solid var(--color-error, #dc3545);
+      padding-left: var(--space-lg);
+    }
+
+    /* Modal/Dialog (Structure only) */
+    .modal-sample-overlay {
+      /* position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; */
+      /* JS would toggle display/visibility */
+      padding: var(--space-md);
+      background-color: var(--color-subtle);
+      border: 1px dashed var(--color-accent1);
+      text-align: center;
+      color: var(--color-text-muted);
+    }
+    .modal-sample-content {
+      background: var(--color-background);
+      padding: var(--space-lg);
+      border-radius: var(--border-radius-lg, var(--border-radius)); /* Larger radius for modals */
+      box-shadow: var(--shadow-xl, 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04)); /* More prominent shadow */
+      max-width: 500px;
+      margin: var(--space-md) auto; /* For demo purposes */
+    }
+
+    /* Table Styles */
+    .table-sample {
+      width: 100%;
+      border-collapse: collapse; /* Keep collapsed */
+      margin-bottom: var(--space-lg);
+      font-family: var(--font-sans);
+      border: 1px solid var(--color-border-table, var(--color-subtle)); /* Outer border */
+      border-radius: var(--border-radius); /* Rounded corners for the table */
+      overflow: hidden; /* To make border-radius work on table */
+      box-shadow: var(--shadow-sm);
+    }
+    .table-sample th, .table-sample td {
+      border: none; /* Remove individual cell borders */
+      border-bottom: 1px solid var(--color-border-table-row, var(--color-subtle)); /* Horizontal lines only */
+      padding: var(--space-md); /* Increased padding */
+      text-align: left;
+    }
+    .table-sample th {
+      background-color: var(--color-background-header-table, var(--color-background-secondary, var(--color-subtle))); /* Specific table header bg */
+      font-weight: 600; /* Bolder */
+      font-family: var(--font-mono);
+      color: var(--color-text-header-table, var(--color-text)); /* Specific table header text */
+      border-bottom-width: 2px; /* Thicker bottom border for header */
+      border-bottom-color: var(--color-border-table-header, var(--color-accent1));
+    }
+    .table-sample tr:last-child td {
+        border-bottom: none; /* No border for the last row's cells */
+    }
+    .table-sample tr:nth-child(even) {
+      background-color: var(--color-background-row-alt, var(--color-background-tertiary, #f9f9f9));
+    }
+    .table-sample tr:hover {
+        background-color: var(--color-background-row-hover, rgba(var(--color-accent1-rgb), 0.05)); /* Subtle hover */
+    }
+
+    /* Styled Lists */
+    .list-sample ul, .list-sample ol {
+      padding-left: var(--space-lg);
+      font-family: var(--font-sans);
+      line-height: 1.7;
+    }
+    .list-sample ul li::marker {
+      color: var(--color-accent1);
+      font-size: 1.1em; /* Slightly larger marker */
+    }
+    .list-sample ol li::marker {
+      color: var(--color-accent2);
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+    .list-sample ul ul, .list-sample ol ol {
+        margin-top: var(--space-xs);
+        margin-bottom: var(--space-xs);
+    }
+
+    /* Badges/Tags */
+    .badge-sample-container {
+      display: flex;
+      gap: var(--space-sm);
+      flex-wrap: wrap;
+      margin-bottom: var(--space-md);
+    }
+    .badge-sample {
+      display: inline-block;
+      padding: calc(var(--space-xs) * 0.8) var(--space-sm); /* Adjusted padding */
+      font-size: 0.75rem; /* Slightly smaller for typical badge use */
+      font-family: var(--font-mono);
+      border-radius: var(--border-radius-full, 9999px); /* Pill shape */
+      color: var(--color-background);
+      background-color: var(--color-accent1);
+      font-weight: 500;
+      line-height: 1; /* Ensure consistent height */
+    }
+    .badge-sample.secondary {
+      background-color: var(--color-accent2);
+    }
+    .badge-sample.subtle {
+      background-color: var(--color-subtle-accent, var(--color-subtle)); /* Use a subtle accent if available */
+      color: var(--color-text-muted, var(--color-text));
+      border: 1px solid var(--color-border, var(--color-subtle));
+      font-weight: normal;
+    }
+
+    /* Breadcrumbs */
+    .breadcrumbs-sample ol {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 var(--space-md) 0;
+      font-family: var(--font-sans);
+    }
+    .breadcrumbs-sample li {
+      display: inline;
+      font-size: 0.9rem;
+    }
+    .breadcrumbs-sample li + li::before {
+      content: "/"; /* Or use an SVG icon for > */
+      padding: 0 var(--space-sm); /* Increased padding */
+      color: var(--color-text-muted, #777);
+    }
+    .breadcrumbs-sample a {
+      text-decoration: none;
+      color: var(--color-accent-2); /* Hover color change */
+    }
+    .breadcrumbs-sample a:hover {
+      text-decoration: underline;
+      color: var(--color-accent-2); /* Hover color change */
+    }
+    .breadcrumbs-sample li.current {
+      color: var(--color-text);
+      font-weight: bold;
+    }
+
+    /* Pagination */
+    .pagination-sample {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: var(--space-xs);
+      font-family: var(--font-sans);
+      margin-top: var(--space-lg);
+    }
+    .pagination-sample a, .pagination-sample span {
+      padding: var(--space-xs) var(--space-sm);
+      text-decoration: none;
+      border: 1px solid var(--color-border-interactive, var(--color-border, var(--color-subtle))); /* Specific border */
+      border-radius: var(--border-radius); /* Consistent radius */
+      color: var(--color-accent-1);
+      transition: background-color var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+      min-width: 36px; /* Ensure items have a decent tap target size */
+      text-align: center;
+    }
+    .pagination-sample a:hover {
+      background-color: var(--color-accent-1-transparent-hover, rgba(var(--color-accent-1-rgb), 0.1)); /* Darker transparent */
+      border-color: var(--color-accent-1);
+      color: var(--color-accent-1); /* Keep color or make it darker */
+    }
+    .pagination-sample span.current {
+      background-color: var(--color-accent-1);
+      color: var(--color-background);
+      border-color: var(--color-accent-1);
+      font-weight: bold;
+    }
+    .pagination-sample span.disabled {
+      color: var(--color-text-disabled, #aaa); /* Specific disabled color */
+      border-color: var(--color-border-disabled, var(--color-subtle));
+      background-color: transparent;
+    }
+
+    /* Add a style for .tag.active */
+    .tag.active {
+      background-color: var(--color-accent1);
+      color: white;
+      font-weight: bold;
+      /* Ensure padding and border-radius are consistent with .tag if needed */
+      /* padding: ...; */
+      /* border-radius: ...; */
+    }
+
+    /* Button focus-visible styles */
+    .button-primary:focus-visible,
+    .button-secondary:focus-visible,
+    .button-text:focus-visible {
+      outline: 2px solid var(--color-accent-1);
+      outline-offset: 2px;
+      /* Consider a box-shadow for a softer focus, e.g.:
+      box-shadow: 0 0 0 3px var(--color-accent-1-transparent, rgba(var(--color-accent-1-rgb), 0.25)); */
+    }
+
+    /* Styles for Alerts matching the image */
+    .alert {
+      padding: var(--space-md);
+      margin-bottom: var(--space-md);
+      border-radius: var(--border-radius);
+      font-family: var(--font-sans);
+      border: none; /* Ensure no other borders by default for this context */
+    }
+    .alert.alert-info {
+      color: var(--color-info-text, #0c5460);
+      background-color: var(--color-info-bg, #d1ecf1);
+      border-left: 4px solid var(--color-info, #17a2b8);
+      padding-left: var(--space-lg); /* Adjust padding for the border */
+    }
+    .alert.alert-success {
+      color: var(--color-success-text, #155724);
+      background-color: var(--color-success-bg, #d4edda);
+      border-left: 4px solid var(--color-success, #28a745);
+      padding-left: var(--space-lg);
+    }
+    .alert.alert-warning {
+      color: var(--color-warning-text, #856404);
+      background-color: var(--color-warning-bg, #fff3cd);
+      border-left: 4px solid var(--color-warning, #ffc107);
+      padding-left: var(--space-lg);
+    }
+    .alert.alert-error {
+      color: var(--color-error-text, #721c24);
+      background-color: var(--color-error-bg, #f8d7da);
+      border-left: 4px solid var(--color-error, #dc3545);
+      padding-left: var(--space-lg);
+    }
+
+    /* Styles for Tables matching the image */
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: var(--space-lg);
+      font-family: var(--font-sans);
+      border: 1px solid var(--color-border-table, var(--color-subtle));
+      border-radius: var(--border-radius);
+      overflow: hidden; /* To make border-radius work on table */
+      box-shadow: var(--shadow-sm);
+    }
+    .table th,
+    .table td {
+      border: none; /* Remove individual cell borders */
+      border-bottom: 1px solid var(--color-border-table-row, var(--color-subtle)); /* Horizontal lines only */
+      padding: var(--space-md);
+      text-align: left;
+    }
+    .table th {
+      background-color: var(--color-background-header-table, var(--color-background-secondary, var(--color-subtle)));
+      font-weight: 600;
+      font-family: var(--font-mono);
+      color: var(--color-text-header-table, var(--color-text));
+      border-bottom-width: 2px; /* Thicker bottom border for header */
+      border-bottom-color: var(--color-border-table-header, var(--color-accent1));
+    }
+    .table tr:last-child td {
+      border-bottom: none; /* No border for the last row's cells */
+    }
+    .table tr:nth-child(even) {
+      background-color: var(--color-background-row-alt, var(--color-background-tertiary, #f9f9f9));
+    }
+    .table tr:hover {
+      background-color: var(--color-background-row-hover, rgba(var(--color-accent1-rgb), 0.05)); /* Subtle hover */
+    }
+
+    /* Footer Styles */
+    .footer-multi {
+      background-color: var(--color-background);
+      padding: var(--space-xl) var(--space-lg);
+      border-top: 1px solid var(--color-border);
+    }
+
+    .footer-columns {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-xl);
+      margin-bottom: var(--space-xl);
+    }
+
+    .footer-column {
+      min-width: 0;
+    }
+
+    .footer-column h4 {
+      font-size: 1.1rem;
+      margin-bottom: var(--space-md);
+      color: var(--color-text);
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-column ul li {
+      margin-bottom: var(--space-sm);
+    }
+
+    .footer-column ul li a {
+      color: var(--color-text-muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-column ul li a:hover {
+      color: var(--color-accent1);
+    }
+
+    .footer-description {
+      color: var(--color-text-muted);
+      margin-top: var(--space-sm);
+      line-height: 1.5;
+    }
+
+    .social-links {
+      display: flex;
+      gap: var(--space-md);
+    }
+
+    .social-link {
+      color: var(--color-text-muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .social-link:hover {
+      color: var(--color-accent1);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: var(--space-lg);
+      border-top: 1px solid var(--color-border);
+    }
+
+    .footer-legal {
+      display: flex;
+      gap: var(--space-md);
+    }
+
+    .footer-legal a {
+      color: var(--color-text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .footer-legal a:hover {
+      color: var(--color-accent1);
+    }
+
+    /* Responsive footer */
+    @media (max-width: 1024px) {
+      .footer-columns {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .footer-columns {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: var(--space-md);
+        text-align: center;
+      }
+
+      .footer-legal {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
   </style>
 
   <script>
@@ -1331,18 +2006,23 @@ console.log(message, sum);`;
     // Initialize functionality for the interactive elements
     document.addEventListener('DOMContentLoaded', () => {
       // Accordion functionality
-      const accordionHeaders = document.querySelectorAll('.accordion-header');
-      accordionHeaders.forEach(header => {
-        // Initialize accordions to be closed
-        const content = header.nextElementSibling;
-        if (content) content.style.display = 'none';
+      const accordionItems = document.querySelectorAll('.accordion-item');
+      accordionItems.forEach(item => {
+        const header = item.querySelector('.accordion-header');
+        const content = item.querySelector('.accordion-content');
 
-        header.addEventListener('click', () => {
-          if (content) {
-            content.style.display = content.style.display === 'none' ? 'block' : 'none';
-            header.classList.toggle('active');
-          }
-        });
+        if (header && content) {
+          // Initialize ARIA attributes
+          header.setAttribute('aria-expanded', 'false');
+          // Content is hidden by CSS (max-height: 0) by default
+
+          header.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+            item.classList.toggle('active');
+            header.setAttribute('aria-expanded', String(!isActive));
+            // CSS will handle the display/max-height transition
+          });
+        }
       });
 
       // Copy button functionality
@@ -1362,10 +2042,14 @@ console.log(message, sum);`;
       // Dark mode toggle functionality
       const themeToggle = document.querySelector('.theme-toggle-button');
       if (themeToggle) {
+        // Set initial aria-pressed state based on current body class
+        const isDarkMode = document.body.classList.contains('dark-mode');
+        themeToggle.setAttribute('aria-pressed', String(isDarkMode));
+
         themeToggle.addEventListener('click', () => {
           document.body.classList.toggle('dark-mode');
-          const slider = themeToggle.querySelector('.theme-toggle-slider');
-          slider.style.transform = slider.style.transform === 'translateX(30px)' ? '' : 'translateX(30px)';
+          const currentlyPressed = themeToggle.getAttribute('aria-pressed') === 'true';
+          themeToggle.setAttribute('aria-pressed', String(!currentlyPressed));
         });
       }
     });

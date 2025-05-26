@@ -1,0 +1,32 @@
+/* AnimatedTag.module.css */
+.standardizedTag {
+  font-weight: 500; /* Slightly bolder for emphasis */
+  padding: 0.25em 0.6em; /* Adjusted padding for a more compact look */
+  border-radius: var(--radius-2); /* Consistent with Pico's border radius */
+  border-width: 1px; /* Standard border width */
+  border-style: solid; /* Standard border style */
+  transition:
+    transform 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out,
+    opacity 0.2s ease-in-out; /* Smooth transitions for interactions */
+  text-decoration: none; /* Ensure no underline by default */
+  display: inline-block; /* Proper display for padding and margins */
+  line-height: 1.4; /* Improved line height for readability */
+  /* Colors and background are handled by inline styles in the component for dynamic theming */
+}
+
+/* Hover and Focus States for Standardized Tags */
+.standardizedTag:hover,
+.standardizedTag:focus {
+  opacity: 0.85; /* Slightly transparent on hover/focus for feedback */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  transform: translateY(-1px); /* Slight lift on hover/focus */
+}
+
+/* Active State for Standardized Tags */
+.standardizedTag.active {
+  font-weight: 600; /* Bolder for active state */
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3); /* Enhanced shadow for active state */
+  transform: translateY(0); /* Reset transform for active state */
+  opacity: 1; /* Full opacity for active state */
+}

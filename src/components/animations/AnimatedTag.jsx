@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { isStandardizedTag, getTagColors } from '../../config/tagColors';
+import styles from './AnimatedTag.module.css'; // Import CSS Modules
 
 /**
  * AnimatedTag Component
@@ -88,7 +89,16 @@ export default function AnimatedTag({ href, children, tagText: propTagText, isAc
   // No pulsing animation as it causes tags to fade away
 
   // Classes to apply based on active state and standardized status
-  const tagClasses = `tag ${isActive ? 'active' : ''} ${isStandard ? 'standardized-tag' : ''} ${className}`;
+  let tagClasses = `tag ${className}`;
+  if (isStandard) {
+    tagClasses += ` ${styles.standardizedTag}`;
+    if (isActive) {
+      tagClasses += ` ${styles.active}`;
+    }
+  } else if (isActive) {
+    tagClasses += ' active';
+  }
+  tagClasses = tagClasses.trim();
 
   // Create direct style object for standardized tags
   const tagStyle = isStandard && tagColorConfig ? {

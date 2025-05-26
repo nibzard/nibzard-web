@@ -12,6 +12,38 @@ const logEntries = await getCollection('log', ({ data }) => {
 // Sort entries by date (newest first)
 logEntries.sort((a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf());
 ---
+<style>
+  /* Styles from log-index.css */
+  .log-header {
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-sm);
+    /* border-bottom: 1px solid #f8f8f8; */ /* Using theme variable */
+    border-bottom: 1px solid var(--color-border-muted, #f0f0f0); /* Using a muted border or fallback */
+  }
+
+  .log-header h1 {
+    /* font-size: 2rem; */ /* Let global H1 style take precedence or use a more semantic variable */
+    margin-bottom: var(--space-xs);
+  }
+
+  .log-header p {
+    margin-bottom: 0;
+    color: var(--color-text-muted);
+  }
+
+  .log-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Optional: if direct li children of this log-list need marker removal */
+  /* Handled by LogItem.astro for its items, but if page has other LIs in .log-list */
+  /* .log-list > li::marker {
+    display: none;
+    content: "";
+  } */
+</style>
 <BaseLayout title="Log - nibzard" description="A collection of thoughts, updates, and project logs.">
   {/* The <style> tag has been removed */}
   <FadeIn client:visible>
