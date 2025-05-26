@@ -197,6 +197,9 @@ const feedEntries = allFeedEntries.slice(startIndex, endIndex); // These are the
                       {'tldr' in logEntry.data && logEntry.data.tldr && (
                         <p class="log-entry-tldr">{logEntry.data.tldr}</p>
                       )}
+                      <div>
+                        <a href={`/${logEntry.slug}`} class="read-full-post-link">Read full post →</a>
+                      </div>
                     </div>
                   </article>
                 );
@@ -625,6 +628,19 @@ nav.pagination {
 }
 
 /* Add other styles from index.less below if any */
+.read-full-post-link {
+  display: inline-block;
+  margin-top: 0.5em;
+  font-size: 0.95em;
+  color: var(--color-accent2);
+  text-decoration: underline;
+  font-family: var(--font-mono);
+  transition: color 0.2s;
+}
+.read-full-post-link:hover {
+  color: var(--color-accent1);
+  text-decoration: none;
+}
 </style>
 
 <script>
