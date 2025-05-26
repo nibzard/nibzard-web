@@ -11,6 +11,8 @@ There's a curious phenomenon happening. The most experienced developers—those 
 
 I call it the AI blind spot: a gap in perception between what senior engineers see as valuable and what actually transforms user experiences.
 
+The main reason is that they aren't using enough AI themselves.
+
 Here's the thing about incremental improvements: they're deceptively powerful. Take an existing product—one that works, that users tolerate, that gets the job done. Now add a small AI component. Maybe it's smarter autocomplete, better error messages, or predictive suggestions. Nothing revolutionary.
 
 But from the user's perspective? Magic.
