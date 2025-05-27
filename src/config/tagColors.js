@@ -30,7 +30,7 @@ const tagColors = {
     textColor: '#6A1B9A',       // Dark purple
     borderColor: '#AB47BC'      // Purple
   },
-  'TUTORIAL': {
+  'CHEATSHEET': {
     backgroundColor: '#E8F5E9', // Light green
     textColor: '#2E7D32',       // Dark green
     borderColor: '#66BB6A'      // Green

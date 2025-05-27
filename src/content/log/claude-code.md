@@ -1,0 +1,116 @@
+---
+title: "Mastering Claude Code: Boris Cherny's Guide & Cheatsheet"
+description: "A comprehensive summary and cheatsheet based on Boris Cherny's presentation on mastering Claude Code, covering setup, workflows, tool usage, context management, scripting, and advanced tips."
+tldr: "A practical guide to Claude Code, including setup, codebase Q&A, tool usage, context best practices, scripting, and power user tips, distilled from Boris Cherny's talk."
+date: 2025-05-20
+tags: [CHEATSHEET, Claude, Code]
+draft: false
+---
+
+Claude Code is a powerful, flexible, terminal-first AI coding assistant designed to integrate deeply with existing developer workflows and tools. Effective use involves understanding its agentic nature, providing rich context, and learning to guide its tool use through prompting and configuration. Its capabilities are continuously expanding, especially with the SDK for programmatic access and scripting.
+
+This is a detailed summary of Boris Cherny's presentation on ["Mastering Claude Code in 30 minutes."](https://www.youtube.com/watch?v=6eBSHbLKuN0)
+
+**I. Optimizing Your Setup (Initial Configuration)**
+
+*   **`/allowed-tools`**: Customize permissions for tools Claude can use (e.g., Git, Bash, file system operations) to avoid repetitive confirmation prompts for frequently used tools.
+*   **`/terminal-setup`**: Enables features like Shift+Enter for newlines in the prompt, making multi-line input easier.
+*   **`/theme`**: Set your preferred color scheme (light, dark, Daltonize for color blindness).
+*   **`/install-github-app`**: Integrates with GitHub, allowing you to tag `@claude` on issues or PRs, which Claude Code can then act upon.
+*   **`/config`**: Manage various settings, including turning notifications on/off.
+*   **macOS Dictation**: Can be enabled in system settings for voice-to-text input for prompts, useful for longer or more complex instructions.
+
+**II. Getting Started: Codebase Q&A**
+
+*   **Easiest way for new users to start.**
+*   **Powerful Onboarding Tool:** Anthropic uses it to significantly reduce technical onboarding time for new hires (from weeks to 2-3 days).
+*   **How it Works:** Ask questions about your codebase. Claude explores the code locally to answer.
+*   **Example Prompts for Q&A:**
+    *   "How is `@RoutingController.py` used?"
+    *   "How do I make a new `@app/services/ValidationTemplateFactory`?"
+    *   "Why does `recoverFromException` take so many arguments? Look through git history to answer." (Claude can use Git tools)
+    *   "Why did we fix issue `#18383` by adding the if/else in `@src/login.ts` API?"
+    *   "In which version did we release the new `@api/ext/PreHooks.php` API?"
+    *   "Look at PR `#9383`, then carefully verify which app versions were impacted."
+    *   "What did I ship last week?" (Claude can look at Git logs for your user)
+*   **Tip #1:** Use codebase Q&A to familiarize yourself with Claude Code's capabilities.
+*   **Tip #2:** Practice prompting. This helps you understand what Claude Code "gets" immediately versus what requires more specific instructions or context.
+
+**III. Leveling Up: Editing Code & Using Tools**
+
+1.  **Built-in Tools:** Claude Code ships with a dozen tools out-of-the-box, including:
+    *   Bash (for running shell commands)
+    *   File search, file listing, file read, file write
+    *   Web fetch and search
+    *   TODOs management
+    *   Sub-agents (for more complex, multi-step tasks)
+2.  **Steering Claude to Use Tools (Example Prompts):**
+    *   "Propose a few fixes for issue `#8732`, then implement the one I pick."
+    *   "Identify edge cases that are not covered in `@app/tests/signupTest.ts`, then update the tests to cover these. *think hard*." (The "think hard" can encourage more thorough reasoning).
+    *   "commit, push, pr" (A common shorthand incantation that Claude learns to interpret for standard Git workflow).
+    *   "Use 3 parallel agents to brainstorm ideas for how to clean up `@services/aggregator/feed_service.cpp`."
+3.  **Iterative Workflows:**
+    *   **Explore -> Plan -> Confirm -> Code -> Commit:** Good for complex changes.
+    *   **Write Tests -> Commit -> Code -> Iterate -> Commit:** Test-Driven Development (TDD) approach.
+    *   **Write Code -> Screenshot Result (e.g., with Puppeteer/iOS simulator) -> Iterate:** Useful for UI development. Claude can iterate based on visual feedback if it has a way to check its work (e.g., compare a screenshot to a mock).
+4.  **Tip #3: Teach Claude to use *your* team's tools.**
+    *   If your team has custom CLIs or scripts, tell Claude about them: "Use the `barley` CLI to check for error logs in the last training run. Use `-h` to check how to use it."
+5.  **Tip #4: Tailor the workflow to the task.** Different tasks benefit from different approaches (planning, TDD, visual iteration).
+
+**IV. Giving Claude Context**
+
+*   **More Context = Better Performance:** The more relevant information Claude has, the better its responses and actions will be.
+*   **Methods for Providing Context:**
+    *   **`CLAUDE.md` files:** Special Markdown files that Claude automatically reads.
+        *   `/<enterprise root>/CLAUDE.md`: Shared across all projects for an organization (enterprise policy).
+        *   `~/.claude/CLAUDE.md`: User-specific global context, shared across all their projects.
+        *   `<project-root>/CLAUDE.md`: Project-specific context, checked into version control (Git).
+        *   `<project-root>/CLAUDE.local.md`: Project-specific local context, *not* checked into Git (for local overrides, secrets, or temporary notes).
+    *   **Slash Commands:** Custom commands defined in `.md` files within `.claude/commands/` (either in user's home directory or project root).
+        *   Example: `~/.claude/commands/foo.md` can be invoked with `/user:foo`.
+        *   The `claude-code` repo itself has examples like `/label-github-issues.md`.
+    *   **At-mentioning Files/Folders:** Typing `@` followed by a file or folder path (e.g., `@src/components/Button.tsx` or `@app/tests/`) pulls their content into the current session's context.
+*   **Tip #5:** The more context you give Claude, the smarter it will be.
+*   **Tip #6:** Take time to *tune* your context. Consider if it's for personal use or the team, and whether it should be loaded automatically (e.g., in `CLAUDE.md`) or lazily (via at-mentions or slash commands). Keep `CLAUDE.md` concise for efficiency.
+
+**V. Keybindings & UI Tips**
+
+*   **Shift+Tab:** Auto-accept edits. Bash commands will still require explicit approval, but file edits can be auto-accepted.
+*   **`#` (Pound/Hash sign):** Create a memory. The current interaction or a summary will be added to the relevant `CLAUDE.md` file.
+*   **`!` (Exclamation mark):** Enter Bash mode. Allows you to run a shell command locally. The command and its output are added to Claude's context.
+*   **`@` (At sign):** Add a file or folder to the current session's context.
+*   **`Esc`:** Cancel the current operation Claude is performing.
+*   **`Double-Esc`:** Jump back in history. You can then use `--resume` to continue a previous session.
+*   **`Ctrl+R`:** Show verbose output. This reveals Claude's "thought process," including which tools it's considering or using.
+*   **`/vibe`**: (Audience mentioned, presenter skipped).
+
+**VI. Scripting Claude: Claude Code SDK**
+
+*   Provides programmatic, low-level access to Claude Code's functionalities.
+*   **Use Cases:**
+    *   CI/CD pipelines
+    *   Non-interactive contexts (e.g., scheduled jobs)
+    *   Automation tasks
+    *   Building block for more complex interactive applications.
+*   **Current Support:**
+    *   CLI tool (written in TypeScript).
+    *   Python SDK is "coming soon."
+*   **Example CLI Usage:**
+    `$ claude -p \`
+    `"what did i do this week?" \`
+    `--allowedTools Bash(git log:*) \`
+    `--output-format json`
+    *   This runs a prompt, allows only the `git log` Bash command, and outputs the result as JSON.
+*   **Unix Utility Philosophy:** Can be piped into and out of, e.g.:
+    `$ git status | claude -p "what are my changes?" --output-format=json | jq '.result'`
+
+**VIII. Multi-Claude (Running Sessions in Parallel)**
+
+*   Power users often run multiple Claude Code sessions simultaneously for different tasks or repositories.
+*   **Methods:**
+    *   Multiple checkouts of a repository in separate terminal tabs.
+    *   A single checkout using Git worktrees for branch isolation.
+    *   SSH sessions combined with TMUX for managing multiple remote Claude instances.
+    *   GitHub Actions to launch Claude Code jobs in parallel for CI/automation.
+
+> NOTE: Autogenerated from Youtube recording.
