@@ -850,18 +850,18 @@ li {
 /* Override log-content list styles for better indentation and spacing */
 .log-content ul,
 .log-content ol {
+  margin: var(--space-md) 0;
   padding-left: 2rem;
-  margin-top: 1rem;
-  margin-bottom: 1.5rem;
+  line-height: 1.6;
 }
 .log-content ul ul,
 .log-content ol ol {
+  margin: var(--space-xs) 0;
   padding-left: 1.5rem;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
 }
 .log-content li {
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--space-sm);
+  line-height: 1.65;
 }
 
 /* === Layout Containers === */
@@ -1804,7 +1804,7 @@ footer.full-width p {
 /* Better list styling with improved spacing */
 .log-content ul, .log-content ol {
   margin: var(--space-md) 0;
-  padding-left: var(--space-lg);
+  padding-left: 2rem;
   line-height: 1.6;
 }
 
@@ -1816,7 +1816,7 @@ footer.full-width p {
 /* Nested lists with better indentation */
 .log-content ul ul, .log-content ol ol {
   margin: var(--space-xs) 0;
-  padding-left: var(--space-md);
+  padding-left: 1.5rem;
 }
 
 .log-content ul ul li, .log-content ol ol li {
