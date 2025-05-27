@@ -2,7 +2,7 @@
 .standardizedTag {
   font-weight: 500; /* Slightly bolder for emphasis */
   padding: 0.25em 0.6em; /* Adjusted padding for a more compact look */
-  border-radius: var(--radius-2); /* Consistent with Pico's border radius */
+  border-radius: var(--border-radius); /* Use global border radius for consistency */
   border-width: 1px; /* Standard border width */
   border-style: solid; /* Standard border style */
   transition:

@@ -34,57 +34,6 @@ const pageTitle = "Unsubscribe from Newsletter";
 const pageDescription = "Manage your subscription preferences.";
 ---
 <BaseLayout title={pageTitle} description={pageDescription}>
-  <style>
-    .unsubscribe-container {
-      max-width: 600px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background-color: var(--color-form);
-      border: 1px solid var(--color-border);
-      border-radius: var(--border-radius);
-    }
-    .unsubscribe-container h1 {
-      margin-top: 0;
-      margin-bottom: var(--space-md);
-    }
-    .unsubscribe-form {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-md);
-    }
-    .unsubscribe-input {
-      padding: var(--space-sm);
-      border: 1px solid var(--color-border);
-      border-radius: var(--border-radius);
-      font-size: 1rem;
-    }
-    .unsubscribe-button {
-      background-color: var(--color-accent2);
-      color: white;
-      border: none;
-      padding: var(--space-sm) var(--space-md);
-      border-radius: var(--border-radius);
-      cursor: pointer;
-      font-weight: 500;
-    }
-    .form-message {
-      padding: var(--space-sm);
-      border-radius: var(--border-radius);
-      margin-bottom: var(--space-md);
-      text-align: center;
-    }
-    .form-message.success {
-      background-color: var(--color-success-bg);
-      color: var(--color-success-text);
-      border: 1px solid var(--color-success-border);
-    }
-    .form-message.error {
-      background-color: var(--color-danger-bg);
-      color: var(--color-danger-text);
-      border: 1px solid var(--color-danger-border);
-    }
-  </style>
-
   <div class="unsubscribe-container">
     <h1>{pageTitle}</h1>
 
