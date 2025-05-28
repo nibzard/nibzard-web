@@ -6,6 +6,7 @@ import tagColors, { getTagColors } from '../config/tagColors';
 import ThoughtRenderer from '../components/ThoughtRenderer.astro';
 import NowItemRenderer from '../components/NowItemRenderer.astro';
 import ImageRenderer from '../components/ImageRenderer.astro';
+import IdeaRenderer from '../components/IdeaRenderer.astro';
 import NewsletterSubscribe from '../components/NewsletterSubscribe.astro';
 import CtaButton from '../components/CtaButton.astro';
 import AnimatedTag from '../components/animations/AnimatedTag.jsx';
@@ -48,15 +49,24 @@ const imageEntries = await getCollection('images', ({ data }) => {
 // Sort image entries by date (newest first)
 imageEntries.sort((a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf());
 
+// Get all idea entries that aren't drafts
+const ideaEntries = await getCollection('idea', ({ data }) => {
+  return data.draft !== true;
+});
+
+// Sort idea entries by date (newest first)
+ideaEntries.sort((a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf());
+
 // Create interleaved feed with all types
 let allFeedEntries = []; // Renamed from feedEntries to gather all first
-const totalEntries = logEntries.length + thoughts.length + nowEntries.length + imageEntries.length;
+const totalEntries = logEntries.length + thoughts.length + nowEntries.length + imageEntries.length + ideaEntries.length;
 
 // Use index variables to track position in each array
 let logIndex = 0;
 let thoughtIndex = 0;
 let nowIndex = 0;
 let imageIndex = 0;
+let ideaIndex = 0;
 
 // Function to safely get date value
 function getDateValue(date: Date | null): number {
@@ -69,6 +79,7 @@ while (allFeedEntries.length < totalEntries) { // Changed condition to collect a
   const nextThoughtDate = thoughtIndex < thoughts.length ? thoughts[thoughtIndex].data.date : null;
   const nextNowDate = nowIndex < nowEntries.length ? nowEntries[nowIndex].data.date : null;
   const nextImageDate = imageIndex < imageEntries.length ? imageEntries[imageIndex].data.date : null;
+  const nextIdeaDate = ideaIndex < ideaEntries.length ? ideaEntries[ideaIndex].data.date : null;
 
   // Find the most recent date among available entries
   let mostRecentType: string | null = null;
@@ -98,6 +109,12 @@ while (allFeedEntries.length < totalEntries) { // Changed condition to collect a
     mostRecentValue = imageDateValue;
   }
 
+  const ideaDateValue = getDateValue(nextIdeaDate);
+  if (ideaDateValue > mostRecentValue) {
+    mostRecentType = 'idea';
+    mostRecentValue = ideaDateValue;
+  }
+
   // Add the most recent entry to the feed
   if (mostRecentType === 'log') {
     allFeedEntries.push({ type: 'log', entry: logEntries[logIndex] });
@@ -111,6 +128,9 @@ while (allFeedEntries.length < totalEntries) { // Changed condition to collect a
   } else if (mostRecentType === 'image') {
     allFeedEntries.push({ type: 'image', entry: imageEntries[imageIndex] });
     imageIndex++;
+  } else if (mostRecentType === 'idea') {
+    allFeedEntries.push({ type: 'idea', entry: ideaEntries[ideaIndex] });
+    ideaIndex++;
   } else {
     // No more entries
     break;
@@ -163,6 +183,10 @@ const feedEntries = allFeedEntries.slice(startIndex, endIndex); // These are the
               <div class="image-container">
                 <ImageRenderer entry={item.entry} />
               </div>
+            </FadeIn>
+          ) : item.type === 'idea' ? (
+            <FadeIn client:visible delay={index * 0.01} yOffset={5}>
+              <IdeaRenderer entry={item.entry} />
             </FadeIn>
           ) : (
             <FadeIn client:visible delay={index * 0.01} yOffset={5}>
