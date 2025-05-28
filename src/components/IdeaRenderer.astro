@@ -1,0 +1,260 @@
+---
+/**
+ * IdeaRenderer Component
+ * Renders an idea entry with Mad Men inspired advertising aesthetics
+ */
+
+interface Props {
+  entry: any;
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+// Category color mapping for Mad Men aesthetic
+const categoryColors = {
+  product: { bg: '#E3F2FD', accent: '#1976D2', text: '#0D47A1' },
+  service: { bg: '#F3E5F5', accent: '#7B1FA2', text: '#4A148C' },
+  campaign: { bg: '#FFF3E0', accent: '#F57C00', text: '#E65100' },
+  strategy: { bg: '#E8F5E8', accent: '#388E3C', text: '#1B5E20' },
+  innovation: { bg: '#FCE4EC', accent: '#C2185B', text: '#880E4F' }
+} as const;
+
+type CategoryType = keyof typeof categoryColors;
+
+const category: CategoryType = (entry.data.category as CategoryType) || 'product';
+const colors = categoryColors[category];
+---
+
+<div class="idea-card" style={`--idea-bg: ${colors.bg}; --idea-accent: ${colors.accent}; --idea-text: ${colors.text};`}>
+  <div class="idea-header">
+    <div class="idea-badge">FREE IDEA!</div>
+    <div class="idea-meta">
+      <time datetime={entry.data.date.toISOString()}>
+        {new Date(entry.data.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+      </time>
+      {entry.data.category && (
+        <span class="idea-category">{entry.data.category}</span>
+      )}
+    </div>
+  </div>
+
+  <div class="idea-content">
+    <h2 class="idea-title">{entry.data.title}</h2>
+    {entry.data.subtitle && (
+      <h3 class="idea-subtitle">{entry.data.subtitle}</h3>
+    )}
+    <div class="idea-description">
+      <Content />
+    </div>
+  </div>
+
+  <div class="idea-footer">
+    <div class="idea-cta">
+      <span class="cta-text">Imagine</span>
+      <span class="cta-emphasis">the possibilities</span>
+    </div>
+  </div>
+</div>
+
+<style>
+.idea-card {
+  background: linear-gradient(135deg, var(--idea-bg) 0%, color-mix(in srgb, var(--idea-bg) 95%, white) 100%);
+  border: 2px solid var(--idea-accent);
+  border-radius: var(--border-radius-lg);
+  margin: var(--space-xl) 0;
+  overflow: hidden;
+  position: relative;
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.08),
+    0 2px 4px rgba(0, 0, 0, 0.04);
+  transition: all var(--transition-normal);
+}
+
+.idea-card:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.12),
+    0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.idea-header {
+  background-color: var(--idea-accent);
+  color: white;
+  padding: var(--space-md) var(--space-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.idea-badge {
+  font-family: var(--font-mono);
+  font-weight: 900;
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.idea-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--space-2xs);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+.idea-category {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 0.15rem 0.4rem;
+  border-radius: var(--border-radius);
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.idea-content {
+  padding: var(--space-xl) var(--space-lg) var(--space-lg);
+  text-align: center;
+}
+
+.idea-title {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--idea-text);
+  margin: 0 0 var(--space-sm) 0;
+  line-height: 1.2;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.idea-subtitle {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--idea-accent);
+  margin: 0 0 var(--space-lg) 0;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+.idea-description {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--idea-text);
+  max-width: 600px;
+  margin: 0 auto var(--space-lg);
+}
+
+.idea-description :global(p) {
+  margin-bottom: var(--space-md);
+}
+
+.idea-description :global(strong) {
+  color: var(--idea-accent);
+  font-weight: 600;
+}
+
+.idea-description :global(em) {
+  color: var(--idea-accent);
+  font-style: italic;
+}
+
+.idea-footer {
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--idea-accent) 20%,
+    var(--idea-accent) 80%,
+    transparent 100%);
+  padding: var(--space-md) var(--space-lg);
+  text-align: center;
+}
+
+.idea-cta {
+  font-family: var(--font-serif, Georgia, serif);
+  color: white;
+  font-size: 1.1rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.cta-text {
+  font-weight: 400;
+  margin-right: var(--space-xs);
+}
+
+.cta-emphasis {
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* Mad Men inspired decorative elements */
+.idea-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg,
+    var(--idea-accent) 0%,
+    color-mix(in srgb, var(--idea-accent) 70%, white) 50%,
+    var(--idea-accent) 100%);
+  z-index: 1;
+}
+
+.idea-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg,
+    var(--idea-accent) 0%,
+    color-mix(in srgb, var(--idea-accent) 70%, white) 50%,
+    var(--idea-accent) 100%);
+  z-index: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .idea-title {
+    font-size: 1.8rem;
+  }
+
+  .idea-subtitle {
+    font-size: 1rem;
+  }
+
+  .idea-header {
+    flex-direction: column;
+    gap: var(--space-xs);
+    text-align: center;
+  }
+
+  .idea-meta {
+    align-items: center;
+  }
+
+  .idea-content {
+    padding: var(--space-lg) var(--space-md) var(--space-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .idea-badge {
+    font-size: 1rem;
+  }
+
+  .idea-title {
+    font-size: 1.5rem;
+  }
+
+  .idea-subtitle {
+    font-size: 0.9rem;
+  }
+}
+</style>

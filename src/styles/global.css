@@ -275,7 +275,7 @@ a.tag.standardized-tag:hover {
     margin-top: var(--space-2xs);
     width: 100%;
   }
-  
+
   a.tag.standardized-tag {
     padding: 0.15rem 0.4rem;
     font-size: 0.65rem;
@@ -408,7 +408,7 @@ a.tag.standardized-tag:hover {
   .card-grid.grid-cols-4 {
     grid-template-columns: 1fr;
   }
-  
+
   .card-grid.grid-cols-2 {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1747,6 +1747,29 @@ footer.full-width p {
     0 4px 6px rgba(0, 0, 0, 0.12),
     0 2px 4px rgba(0, 0, 0, 0.08);
   border-color: rgba(0, 0, 0, 0.12);
+}
+
+/* === Idea Card Integration === */
+.idea-card {
+  /* Ensure idea cards have consistent spacing with other feed items */
+  margin-bottom: var(--space-xl);
+}
+
+/* Ensure idea cards work well in the feed timeline */
+.feed-timeline .idea-card {
+  /* Add subtle animation delay for feed items */
+  animation-delay: inherit;
+}
+
+/* Make sure idea cards are responsive within the feed */
+@media (max-width: 768px) {
+  .feed-timeline .idea-card {
+    margin-left: calc(-1 * var(--space-md));
+    margin-right: calc(-1 * var(--space-md));
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
 }
 
 /* === Enhanced Log Content Readability === */

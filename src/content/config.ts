@@ -37,9 +37,21 @@ const imagesCollection = defineCollection({
   }),
 });
 
+const ideaCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string().max(80, "Title must be 80 characters or less"),
+    subtitle: z.string().max(120, "Subtitle must be 120 characters or less").optional(),
+    date: z.date(),
+    category: z.enum(['product', 'service', 'campaign', 'strategy', 'innovation']).optional(),
+    draft: z.boolean().optional().default(false),
+  }),
+});
+
 export const collections = {
   log: logCollection,
   now: nowCollection,
   thoughts: thoughtsCollection,
   images: imagesCollection,
+  idea: ideaCollection,
 };
