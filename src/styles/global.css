@@ -171,14 +171,15 @@ article img {
   max-width: 100%;
   height: auto;
   margin: var(--space-xl) auto var(--space-xl) auto;
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-lg);
   border: 1px solid rgba(0, 0, 0, 0.08);
   background-color: var(--color-background);
   box-shadow:
     0 1px 3px rgba(0, 0, 0, 0.12),
     0 1px 2px rgba(0, 0, 0, 0.08);
   transition: all var(--transition-normal);
-  padding: 4px;
+  /* Remove padding and clip-path, apply border-radius directly to the image */
+  overflow: hidden;
 }
 
 article img:hover {
@@ -1727,14 +1728,15 @@ footer.full-width p {
   max-width: 100%;
   height: auto;
   margin: 0 auto;
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-lg);
   border: 1px solid rgba(0, 0, 0, 0.08);
   background-color: var(--color-background);
   box-shadow:
     0 1px 3px rgba(0, 0, 0, 0.12),
     0 1px 2px rgba(0, 0, 0, 0.08);
   transition: all var(--transition-normal);
-  padding: 4px;
+  /* Remove padding, apply border-radius directly to the image */
+  overflow: hidden;
 }
 
 .image-display:hover {
@@ -1768,6 +1770,35 @@ footer.full-width p {
   width: 60px;
   height: 2px;
   background-color: var(--color-accent1);
+}
+
+/* Add spacing after main log content */
+.log-content {
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* Add spacing for tags section */
+.log-content + .tags {
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-xl);
+  padding: var(--space-md) 0;
+}
+
+/* Add spacing for continue reading section */
+.read-more-section {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--color-border);
+}
+
+.read-more-title {
+  margin-bottom: var(--space-lg);
+  font-size: 1.5rem;
+  color: var(--color-text);
+  font-family: var(--font-mono);
+  font-weight: 600;
 }
 
 /* Enhanced inline code styling */
