@@ -2,18 +2,21 @@
 
 A clean, elegant personal site and blog built with Astro. Features a minimalist design with a focus on readability and content.
 
-![nibzard screenshot](https://github.com/withastro/astro/assets/2244813/ff10799f-a816-4703-b967-c78997e8323d)
-
 ## Features
 
 - ✅ Clean, minimalist design with elegant typography
-- ✅ Component-based CSS architecture
+- ✅ Component-based CSS architecture with Pico CSS framework
 - ✅ Responsive layout that works on all devices
-- ✅ Log/blog with tag filtering
-- ✅ Optimized for performance (100/100 Lighthouse score)
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
+- ✅ Multiple content types: log/blog, thoughts, now page, and images
+- ✅ Tag-based content filtering and organization
+- ✅ Full-text search functionality with Fuse.js
+- ✅ Optimized for performance with Astro's static generation
+- ✅ SEO-friendly with sitemap and RSS feed generation
 - ✅ Markdown & MDX support for content
+- ✅ Server-side rendering with Vercel adapter
+- ✅ React integration for interactive components
 - ✅ Comprehensive UI component library
+- ✅ Email subscription/unsubscription functionality
 
 ## 🚀 Project Structure
 
@@ -22,41 +25,52 @@ The project follows a well-organized structure:
 ```text
 ├── public/               # Static assets (images, fonts, etc.)
 ├── src/
+│   ├── actions/          # Server actions for form handling
 │   ├── components/       # Reusable UI components
-│   │   └── LogItem.astro # Log entry component
-│   ├── content/
-│   │   └── log/          # Markdown/MDX content for log entries
-│   ├── layouts/
-│   │   └── BaseLayout.astro # Main layout template
+│   ├── config/           # Configuration files
+│   ├── content/          # Content collections
+│   │   ├── log/          # Blog/log entries (Markdown/MDX)
+│   │   ├── thoughts/     # Thought entries
+│   │   ├── now/          # "Now" page content
+│   │   ├── images/       # Image content
+│   │   └── config.ts     # Content collection schemas
+│   ├── layouts/          # Layout templates
 │   ├── pages/            # Page routes
+│   │   ├── api/          # API endpoints
 │   │   ├── log/          # Log pages
-│   │   └── tags/         # Tag filtering pages
-│   └── styles/           # CSS styles
-│       ├── components/   # Component-specific styles (e.g., log-entry.css, tags.css)
-│       ├── main.css      # Main CSS file that imports all styles
-│       └── variables.css # CSS variables for theming
-├── astro.config.mjs
-├── README.md
-└── package.json
+│   │   ├── tags/         # Tag filtering pages
+│   │   ├── index.astro   # Homepage
+│   │   ├── about.astro   # About page
+│   │   ├── search.astro  # Search page
+│   │   ├── elements.astro # UI component showcase
+│   │   ├── now.astro     # Current activities page
+│   │   └── [...slug].astro # Dynamic content pages
+│   ├── plugins/          # Custom Astro plugins
+│   ├── styles/           # CSS styles
+│   ├── utils/            # Utility functions
+│   └── consts.ts         # Site constants
+├── astro.config.mjs      # Astro configuration
+├── package.json          # Dependencies and scripts
+└── README.md
 ```
 
 ### Key Features
 
-- **Component-Based Architecture**: Reusable Astro components (e.g., `LogItem.astro`) for a consistent UI.
-- **Modular Styling**:
-    - Styles are organized by component (e.g., `src/styles/components/log-entry.css`).
-    - **CSS Variables** (`src/styles/variables.css`) are used for design tokens (colors, spacing, typography), enabling easy theming and consistency.
-    - Common utility classes are available for spacing, typography, etc.
-- **Content Collections**: Markdown/MDX content is organized within `src/content/`.
-- **Responsive Design**: A mobile-first approach ensures the site adapts to all screen sizes using responsive breakpoints.
+- **Content Collections**: Four distinct content types (log, thoughts, now, images) with TypeScript schemas
+- **Component-Based Architecture**: Reusable Astro and React components for consistent UI
+- **Search Functionality**: Full-text search across content using Fuse.js
+- **Modular Styling**: Built on Pico CSS framework with custom component styles
+- **Server-Side Rendering**: Deployed on Vercel with server adapter for dynamic functionality
+- **SEO Optimization**: Automatic sitemap generation, RSS feeds, and meta tags
 
-### Style System
-The project uses a comprehensive style system with:
+### Content Types
 
-- **CSS Variables**: For colors, spacing, typography, and more, defined in `src/styles/variables.css`.
-- **Component Styles**: Each UI component typically has its own dedicated CSS file (e.g., `src/styles/components/log-entry.css`).
-- **Utility Classes**: A set of common utility classes for fine-tuning layout and typography.
-- **Responsive Breakpoints**: Media queries are used to ensure a mobile-first responsive design.
+The site supports multiple content types through Astro's content collections:
+
+- **Log**: Blog posts with title, description, TLDR, date, tags, and draft status
+- **Thoughts**: Short-form content with date and draft status
+- **Now**: Current activities and status updates
+- **Images**: Image-based content with URLs and metadata
 
 ## 🧞 Commands
 
@@ -65,21 +79,35 @@ All commands are run from the root of the project, from a terminal:
 | Command                    | Action                                           |
 | :------------------------ | :----------------------------------------------- |
 | `pnpm install`             | Installs dependencies                            |
-| `npm install`              | Installs dependencies (if using npm)             |
-| `yarn install`             | Installs dependencies (if using yarn)            |
 | `pnpm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run dev`              | Starts local dev server at `localhost:4321` (if using npm) |
-| `yarn dev`                 | Starts local dev server at `localhost:4321` (if using yarn) |
 | `pnpm run build`           | Build your production site to `./dist/`          |
-| `npm run build`            | Build your production site to `./dist/` (if using npm) |
-| `yarn build`               | Build your production site to `./dist/` (if using yarn) |
 | `pnpm run preview`         | Preview your build locally, before deploying     |
-| `npm run preview`          | Preview your build locally, before deploying (if using npm) |
-| `yarn preview`             | Preview your build locally, before deploying (if using yarn) |
 | `pnpm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npx astro ...`            | Run CLI commands (works with any package manager) |
-| `pnpm run astro -- --help` | Get help using the Astro CLI                     |
-| `npx astro --help`         | Get help using the Astro CLI (works with any package manager) |
+
+*Note: This project uses pnpm as the package manager. You can also use npm or yarn with the equivalent commands.*
+
+## 🛠️ Tech Stack
+
+- **Framework**: [Astro](https://astro.build) v5.8.0
+- **UI Library**: [React](https://react.dev) v19.1.0 for interactive components
+- **CSS Framework**: [Pico CSS](https://picocss.com) v2.1.1 for minimal styling
+- **Search**: [Fuse.js](https://fusejs.io) v7.1.0 for fuzzy search
+- **Animations**: [Framer Motion](https://www.framer.com/motion/) v12.10.2
+- **Email**: [Resend](https://resend.com) v4.5.1 for email functionality
+- **Deployment**: [Vercel](https://vercel.com) with server adapter
+- **Content**: Markdown/MDX with content collections
+
+## 📄 Pages
+
+The site includes the following main pages:
+
+- **Homepage** (`/`): Landing page with recent content
+- **About** (`/about`): Personal information and background
+- **Log** (`/log`): Blog posts and articles
+- **Search** (`/search`): Full-text search across all content
+- **Now** (`/now`): Current activities and status
+- **Elements** (`/elements`): UI component showcase and style guide
+- **Tags** (`/tags/*`): Tag-based content filtering
 
 ## UI Components
 
@@ -92,7 +120,16 @@ The site includes a comprehensive set of UI components that can be viewed on the
 - **Alerts**: For displaying messages to users
 - **Forms**: Input fields, labels, and buttons
 - **Tables**: For displaying tabular data
-- **Log Entries**: For displaying individual log posts (see `LogItem.astro`)
+- **Search**: Interactive search component with real-time results
+
+## 🚀 Deployment
+
+The site is configured for deployment on Vercel with server-side rendering enabled. The configuration includes:
+
+- Server adapter for dynamic functionality
+- Automatic sitemap generation
+- RSS feed generation
+- External link processing
 
 ## 👀 Want to learn more?
 
@@ -100,4 +137,4 @@ Check out [Astro's documentation](https://docs.astro.build) or join their [Disco
 
 ## Credit
 
-This theme is based on the Astro blog template with significant customizations for a minimalist aesthetic.
+This site is built from scratch using Astro with a focus on minimalist design and optimal performance.
