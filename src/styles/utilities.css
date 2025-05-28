@@ -1,7 +1,7 @@
 /* Add any global utility classes here */
 
 .fade-in {
-  animation: fadeIn var(--duration-normal) var(--ease-smooth);
+  animation: fadeIn var(--animation-duration-normal) var(--ease-out);
 }
 
 @keyframes fadeIn {
@@ -37,7 +37,7 @@
 /* Text utilities */
 .text-center { text-align: center; }
 .text-muted { color: var(--color-text-muted); }
-.text-accent { color: var(--color-accent-1); }
+.text-accent { color: var(--color-accent1); }
 
 /* Container */
 .container {

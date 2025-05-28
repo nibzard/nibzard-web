@@ -14,6 +14,7 @@
 
   /* Text colors */
   --color-text: #2D3032;       /* Dark charcoal, not pure black */
+  --color-text-heading: #2D3032; /* Same as text for consistency */
   --color-text-muted: #757F8C; /* Slightly darker for better contrast */
   --color-text-light: #9CA3AF;
 
@@ -33,6 +34,7 @@
    * Consistent font families and sizes
    */
   --font-sans: 'Barlow', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-serif: Georgia, 'Times New Roman', serif;
   --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
 
   /* Font sizes - using a modular scale */
