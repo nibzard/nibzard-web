@@ -25,7 +25,7 @@ const tagColors = {
   },
 
   // Content type tags
-  'QUOTE': {
+  'ROBOPRESS': {
     backgroundColor: '#F3E5F5', // Light purple
     textColor: '#6A1B9A',       // Dark purple
     borderColor: '#AB47BC'      // Purple
