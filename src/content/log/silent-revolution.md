@@ -80,10 +80,10 @@ This inverts the traditional power dynamics in software development, where techn
 
 We've heard promises about democratizing software development for decades. The difference now is that it's actually happening—and at an astonishing pace.
 
-Consider what Yohei Nakajima built with Replit agent:
+Consider what Yohei Nakajima [built with Replit](https://x.com/yoheinakajima/status/1917615153715241110) agent:
 
 <blockquote class="featured-quote accent">
-[vcpedia.com](https://x.com/yoheinakajima/status/1917615153715241110)—I have a couple of Twitter queries that run on a schedule, and then an LLM decides if there's funding data in that tweet, and then it extracts funding data from that tweet, converts it into tables of funding startups, investors, and then enriches with EXA. And then I'm still working on the daily newsletter. Is it better than Crunchbase? No. Did I build it over a weekend by myself? Yes.
+vcpedia.com—I have a couple of Twitter queries that run on a schedule, and then an LLM decides if there's funding data in that tweet, and then it extracts funding data from that tweet, converts it into tables of funding startups, investors, and then enriches with EXA. And then I'm still working on the daily newsletter. Is it better than Crunchbase? No. Did I build it over a weekend by myself? Yes.
 </blockquote>
 
 Or this example from a non-technical operations team member:
@@ -96,10 +96,10 @@ The barrier to entry for creating software has fallen dramatically, not through 
 
 ## The Enterprise Opportunity Is Bigger Than Anyone Realizes
 
-While consumer applications get most of the attention, the enterprise impact of AI agents may be even more transformative. Consider these real-world examples:
+While consumer applications get most of the attention, the enterprise impact of AI agents may be even more transformative. Consider these [real-world examples](https://x.com/billyjhowell/status/1927874359584051210):
 
 <blockquote class="featured-quote secondary">
-Yesterday, I was looking at what I called an arbitrage opportunity—someone's company was quoted from NetSuite $150,000 to build a NetSuite extension. He decided to [build it in Replit](https://x.com/billyjhowell/status/1927874359584051210). It cost him $400, and he sold it to his employer for $32,000.
+Yesterday, I was looking at what I called an arbitrage opportunity—someone's company was quoted from NetSuite $150,000 to build a NetSuite extension. He decided to build it in Replit. It cost him $400, and he sold it to his employer for $32,000.
 </blockquote>
 
 This isn't just cost-saving; it's a fundamental rewriting of the economics of enterprise software development. When the implementation cost of custom software drops by two orders of magnitude, the decision-making calculus for what's worth building changes completely.
