@@ -131,6 +131,18 @@ The site is configured for deployment on Vercel with server-side rendering enabl
 - RSS feed generation
 - External link processing
 
+## Automated Content Container Screenshots
+
+You can generate screenshots of the `.content-container` element for a list of pages using Puppeteer. To do this:
+
+1. Ensure Puppeteer is installed: `pnpm add -D puppeteer`
+2. Place your log items (URLs) in `scripts/screenshot-content.js`.
+3. Run the script with:
+
+   pnpm screenshot:content
+
+Screenshots will be saved in the `screenshots/` directory at the project root.
+
 ## 👀 Want to learn more?
 
 Check out [Astro's documentation](https://docs.astro.build) or join their [Discord server](https://astro.build/chat).

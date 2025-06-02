@@ -24,3 +24,7 @@ pnpm-debug.log*
 .idea/
 
 .vercel/
+
+# content processing
+screenshots/
+tweets/
