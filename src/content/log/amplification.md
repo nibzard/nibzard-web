@@ -9,7 +9,7 @@ draft: false
 
 <blockquote class="featured-quote primary">
     The smartest model in the world is useless without the right context.
-    <cite>Mike Krieger</cite>
+    <cite>— Mike Krieger</cite>
 </blockquote>
 
 When you make one part of a system dramatically faster, you don't just speed up the whole system.

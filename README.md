@@ -83,6 +83,9 @@ All commands are run from the root of the project, from a terminal:
 | `pnpm run build`           | Build your production site to `./dist/`          |
 | `pnpm run preview`         | Preview your build locally, before deploying     |
 | `pnpm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `pnpm run pipe:img`        | Generate screenshots of content pages            |
+| `pnpm run pipe:tweet`      | Pipeline script for tweet processing             |
+| `pnpm run validate:schema` | Validate content schema and structure            |
 
 *Note: This project uses pnpm as the package manager. You can also use npm or yarn with the equivalent commands.*
 

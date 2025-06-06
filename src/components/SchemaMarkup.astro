@@ -1,0 +1,15 @@
+---
+export interface Props {
+  schema: Record<string, any>;
+}
+
+const { schema } = Astro.props;
+
+// Add context to schema if not present
+const schemaWithContext = {
+  "@context": "https://schema.org",
+  ...schema
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schemaWithContext, null, 2)}></script>

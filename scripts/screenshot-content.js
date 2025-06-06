@@ -32,6 +32,13 @@ const MAX_HEIGHT = 2000;
 
   for (const { slug, url } of logItems) {
     try {
+      // Check if screenshots already exist for this log item
+      const firstSegmentPath = path.join(outDir, `${slug}-1.png`);
+      if (fs.existsSync(firstSegmentPath)) {
+        console.log(`Screenshots already exist for ${slug}, skipping...`);
+        continue;
+      }
+
       await page.goto(url, { waitUntil: 'networkidle0' });
       // Hide astro-dev-toolbar, dev-bar, read-more-section, and newsletter-card with CSS
       await page.addStyleTag({

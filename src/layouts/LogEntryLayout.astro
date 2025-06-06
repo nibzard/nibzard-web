@@ -6,6 +6,8 @@ import { formatTagForDisplay, sortTags } from '../utils/tagUtils';
 import { getCollection, type CollectionEntry } from 'astro:content';
 import FadeIn from '../components/animations/FadeIn.jsx';
 import NewsletterSubscribe from '../components/NewsletterSubscribe.astro';
+import SchemaMarkup from '../components/SchemaMarkup.astro';
+import { createBlogPostSchema, createBreadcrumbSchema } from '../utils/schemaUtils';
 
 interface Frontmatter {
   title: string;
@@ -13,6 +15,7 @@ interface Frontmatter {
   date: Date;
   tags?: string[];
   tldr?: string;
+  author?: string;
   // Add any other frontmatter properties you expect
 }
 
@@ -22,6 +25,26 @@ interface Props {
 
 const { frontmatter } = Astro.props as Props;
 const sortedTags = frontmatter.tags ? sortTags(frontmatter.tags) : [];
+
+// Get the current URL for schema markup
+const currentUrl = new URL(Astro.request.url).href;
+const siteUrl = Astro.site ? Astro.site.toString() : Astro.url.origin;
+
+// Create schema markup for the blog post
+const blogPostSchema = createBlogPostSchema({
+  title: frontmatter.title,
+  description: frontmatter.description || frontmatter.tldr,
+  date: frontmatter.date,
+  url: currentUrl,
+  tags: frontmatter.tags
+});
+
+// Create breadcrumb schema
+const breadcrumbSchema = createBreadcrumbSchema([
+  { name: "Home", url: "https://nibzard.com" },
+  { name: "Log", url: "https://nibzard.com/log" },
+  { name: frontmatter.title, url: currentUrl }
+]);
 
 // Get random log entries for the "Read More" section
 const allEntries = await getCollection('log', ({ data }) => !data.draft);
@@ -36,8 +59,46 @@ if (otherEntries.length > 0) {
     .sort(() => Math.random() - 0.5)
     .slice(0, Math.min(2, otherEntries.length));
 }
+
+// Enhanced Open Graph configuration for articles
+const enhancedOgConfig = {
+  basic: {
+    title: `${frontmatter.title} - Log - nibzard`,
+    type: "article",
+    image: new URL("/og-nibzard.jpeg", siteUrl).toString(),
+    url: currentUrl,
+  },
+  optional: {
+    siteName: "nibzard",
+    description: frontmatter.description || `Log entry: ${frontmatter.title}`,
+  },
+  article: {
+    publishedTime: frontmatter.date.toISOString(),
+    author: [new URL("/about", siteUrl).toString()], // Link to author's about page
+    section: "Technology",
+    tag: frontmatter.tags || [],
+  }
+};
 ---
 <BaseLayout title={`${frontmatter.title} - Log - nibzard`} description={frontmatter.description || `Log entry: ${frontmatter.title}`}>
+  <!-- Additional meta tags in head -->
+  <Fragment slot="head">
+    <!-- Open Graph article author -->
+    <meta property="og:article:author" content={new URL("/about", siteUrl).toString()}>
+
+    <!-- Enhanced Open Graph for articles -->
+    <meta property="og:type" content="article">
+    <meta property="og:article:published_time" content={frontmatter.date.toISOString()}>
+    <meta property="og:article:section" content="Technology">
+    {frontmatter.tags?.map(tag => (
+      <meta property="og:article:tag" content={tag}>
+    ))}
+  </Fragment>
+
+  <!-- Blog Post Schema Markup -->
+  <SchemaMarkup schema={blogPostSchema} />
+  <SchemaMarkup schema={breadcrumbSchema} />
+
   <article class="fade-in">
     <header class="log-entry-header">
       {frontmatter.date && (
@@ -46,7 +107,7 @@ if (otherEntries.length > 0) {
             {new Date(frontmatter.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
           </time>
           <span class="author-meta">
-            by <a href="#author" class="author-link">Nikola Balić</a>
+            by <a href="#author" class="author-link">{frontmatter.author || "Nikola Balić"}</a>
           </span>
         </p>
       )}

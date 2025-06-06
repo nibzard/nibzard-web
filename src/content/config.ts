@@ -9,6 +9,7 @@ const logCollection = defineCollection({
     date: z.date(),
     tags: z.array(z.string()),
     draft: z.boolean().optional().default(false),
+    author: z.string().optional().default("Nikola Balić"),
   }),
 });
 
@@ -17,6 +18,7 @@ const nowCollection = defineCollection({
   schema: z.object({
     date: z.date(),
     draft: z.boolean().optional().default(false),
+    author: z.string().optional().default("Nikola Balić"),
   }),
 });
 
@@ -25,6 +27,7 @@ const thoughtsCollection = defineCollection({
   schema: z.object({
     date: z.date(),
     draft: z.boolean().optional().default(false),
+    author: z.string().optional().default("Nikola Balić"),
   }),
 });
 
@@ -34,6 +37,7 @@ const imagesCollection = defineCollection({
     date: z.date(),
     imageUrl: z.string(),
     draft: z.boolean().optional().default(false),
+    author: z.string().optional().default("Nikola Balić"),
   }),
 });
 
@@ -45,6 +49,7 @@ const ideaCollection = defineCollection({
     date: z.date(),
     category: z.enum(['product', 'service', 'campaign', 'strategy', 'innovation']).optional(),
     draft: z.boolean().optional().default(false),
+    author: z.string().optional().default("Nikola Balić"),
   }),
 });
 
