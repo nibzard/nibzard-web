@@ -2337,3 +2337,130 @@ footer.full-width p {
 .footer-simple .footer-links a:hover {
   color: var(--color-accent2);
 }
+
+/* === Author Section Styles === */
+.author-meta {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  margin-left: var(--space-sm);
+}
+
+.author-link {
+  color: var(--color-accent2);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--transition-fast);
+}
+
+.author-link:hover {
+  color: var(--color-accent1);
+  text-decoration: underline;
+}
+
+.author-section {
+  margin: var(--space-xl) 0;
+  padding: var(--space-lg);
+  background-color: var(--color-background-alt);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--color-border);
+}
+
+.author-container {
+  display: flex;
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+.author-avatar {
+  flex-shrink: 0;
+}
+
+.author-image {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--border-radius-full);
+  border: 2px solid var(--color-border);
+  object-fit: cover;
+  transition: transform var(--transition-fast);
+}
+
+.author-image:hover {
+  transform: scale(1.05);
+}
+
+.author-info {
+  flex: 1;
+}
+
+.author-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 var(--space-xs) 0;
+  color: var(--color-text);
+  font-family: var(--font-sans);
+}
+
+.author-bio {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-sm) 0;
+  line-height: 1.5;
+}
+
+.author-social {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: center;
+}
+
+.author-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  transition: all var(--transition-fast);
+  background-color: transparent;
+  border: 1px solid var(--color-border);
+}
+
+.author-social-link:hover {
+  color: var(--color-accent2);
+  background-color: var(--color-background);
+  border-color: var(--color-accent2);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+}
+
+.author-avatar a {
+  display: block;
+  text-decoration: none;
+  border-radius: var(--border-radius-full);
+  transition: transform var(--transition-fast);
+}
+
+.author-avatar a:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+  .author-container {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-md);
+  }
+
+  .author-meta {
+    display: block;
+    margin-left: 0;
+    margin-top: var(--space-xs);
+  }
+
+  .author-social {
+    justify-content: center;
+  }
+}
