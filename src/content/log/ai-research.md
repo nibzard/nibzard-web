@@ -1,7 +1,7 @@
 ---
 title: "When AI Does Research: An End-to-End Experiment"
 description: "How AI transformed an entire research project from conception to arXiv publication in just 2 days of FTE."
-tldr: "AI agents can now handle end-to-end research workflows—from conceiving studies to final publication. This experiment revealed that SOTA models excel at research thinking, full reproducibility becomes trivial, and human time can finally be redistributed to the most valuable parts: thinking and doing better."
+tldr: "AI agents can now handle end-to-end research workflows--from conceiving studies to final publication. This experiment revealed that SOTA models excel at research thinking, full reproducibility becomes trivial, and human time can finally be redistributed to the most valuable parts: thinking and doing better."
 date: 2025-06-02
 tags: [EXPERIENCE, AI, RESEARCH]
 draft: false
@@ -13,26 +13,30 @@ draft: false
 
 Fresh off the digital press, and you should [read it now](https://arxiv.org/abs/2506.02055).
 
+![AI Research Paper on arXiv](/images/20250606-arxiv-paper.png)
+
 This wasn't just another research paper. This was an end-to-end AI-augmented process: from conceiving the research question to building the survey tool, analyzing data, writing, reviewing, and final publication.
 
-I served as judge, overseer, and editor. The AI did the heavy lifting.
+I served as judge, overseer, editor, ... The AI did the heavy lifting.
 
-As the effort was spread over a month, it's hard to judge exact time invested—maybe 2 days of full-time equivalent work. Maybe less. The redistribution of human effort to the most valuable parts of research work (thinking, strategizing, deciding) is the real story here.
+As the effort was spread over a month, it's hard to judge exact time invested--maybe 2 days of full-time equivalent work. Maybe less. The redistribution of human effort to the most valuable parts of research work (thinking, strategizing, deciding) is the real story here.
 
-## What AI Research Actually Looks Like
+## What AI Augmented Research Actually Looks Like
 
-The process revealed something profound about where we are with SOTA models. They don't just assist with research—they can *think* about research problems in ways that feel genuinely novel.
+The process revealed something profound about where we are with SOTA models. They don't just assist with research--they can *think* about research problems in ways that feel genuinely novel.
 
 **The AI research workflow:**
-- **Conception**: AI suggested research angles I hadn't considered
-- **Survey Design**: Generated questionnaire structures and validated statistical approaches
-- **Data Collection**: Built and deployed the survey infrastructure
-- **Analysis**: Ran statistical models, identified patterns, proposed interpretations
-- **Writing**: Drafted sections, handled LaTeX formatting, managed citations
-- **Review**: Cross-checked findings, suggested improvements, caught inconsistencies
+- **Conception**: AI suggested research angles I hadn't considered (o3, gemini 2.5 pro, sonnet 3.7)
+- **Survey Design**: Generated questionnaire structures and validated statistical approaches (o3, gemini 2.5 pro, sonnet 3.7)
+- **Data Collection**: Built and deployed the survey infrastructure (Vercel v0, Claude Code)
+- **Analysis**: Ran statistical models, identified patterns, proposed interpretations (Cursor with 2.5 pro)
+- **Writing**: Drafted sections, handled LaTeX formatting, managed citations  (Cursor with sonnet 3.7)
+- **Review**: Cross-checked findings, suggested improvements, caught inconsistencies (Cursor with 2.5 pro)
 - **Publication**: Handled arXiv submission formatting and metadata
 
-At each stage, the AI didn't just execute—it contributed intellectual value. It caught methodological issues I missed. Suggested statistical approaches I hadn't considered. Identified patterns in the data that sparked new questions.
+![AI Research Process and Findings](/images/20250606-arxiv-paper-2.png)
+
+At each stage, the AI didn't just execute--it contributed intellectual value. It caught methodological issues I missed. Suggested statistical approaches I hadn't considered. Identified patterns in the data that sparked new questions.
 
 <blockquote class="featured-quote secondary">
     SOTA models are really good for this. They can tap into deep knowledge and "think" of new approaches.
@@ -44,7 +48,7 @@ Here's what changes when AI handles your research infrastructure: **full reprodu
 
 Not because you're trying to be a good citizen of science. Because it's actually easier than the alternative.
 
-When AI generates your analysis code, builds your survey tools, manages your data pipelines—making it reproducible is trivial. The AI naturally creates clean, documented, version-controlled workflows because that's how it "thinks" about problems.
+When AI generates your analysis code, builds your survey tools, manages your data pipelines--making it reproducible is trivial. The AI naturally creates clean, documented, version-controlled workflows because that's how it "thinks" about problems.
 
 The [code repository](https://github.com/nibzard/agent-perceptions) for this project isn't an afterthought or a compliance checkbox. It's the living documentation of exactly how every result was generated. Because the AI built it that way from the start.
 
@@ -63,7 +67,7 @@ AI handles the entire mechanical layer of academic publishing:
 - Figure generation and placement
 - Reference cross-checking
 
-This isn't just time-saving—it's cognitively liberating. When you're not fighting with `\usepackage{amsmath}` for the hundredth time, your mental energy goes to the ideas that actually matter.
+This isn't just time-saving--it's cognitively liberating. When you're not fighting with tooling and processes for the hundredth time, your mental energy goes to the ideas that actually matter.
 
 <blockquote class="featured-quote accent">
     LaTeX, conversions, translations, debugging = solved and abstracted.
@@ -93,7 +97,7 @@ The feedback loop rewards openness in ways traditional incentives never could.
 
 ## Random Learnings from the Trenches
 
-**SOTA models excel at research thinking.** They don't just process information—they make connections, identify gaps, suggest novel approaches. The intellectual contribution feels genuine, not just mechanical.
+**SOTA models excel at research thinking.** They don't just process information--they make connections, identify gaps, suggest novel approaches. The intellectual contribution feels genuine, not just mechanical.
 
 **Human-AI collaboration patterns emerge naturally.** I found myself naturally falling into a role more like a research director than a hands-on analyst. Setting strategic direction, making judgment calls, providing context and constraints.
 
@@ -105,9 +109,12 @@ The feedback loop rewards openness in ways traditional incentives never could.
 
 Now imagine you spent a month or couple of months on one research project/paper and just redistribute that effort to thinking about doing stuff better and doing new things.
 
+![Time Redistribution in AI-Augmented Research](/images/20250606-redistribution-research.png)
+*Author illustration - numbers are just imaginary*
+
 This is the real revolution.
 
-When AI handles the execution layer—data processing, literature review, statistical analysis, writing first drafts—human researchers can focus on:
+When AI handles the execution layer--data processing, literature review, statistical analysis, writing first drafts--human researchers can focus on:
 - **Problem selection**: What questions actually matter?
 - **Study design**: How do we structure investigations to generate real insights?
 - **Interpretation**: What do these results mean for the field?
@@ -121,7 +128,7 @@ The cognitive work shifts from "how do I implement this analysis?" to "what shou
 
 ## What This Means for Academic Research
 
-We're witnessing the same transformation in research that we've seen in software development. AI isn't replacing researchers—it's changing what research work looks like.
+We're witnessing the same transformation in research that we've seen in software development. AI isn't replacing researchers--it's changing what research work looks like.
 
 The successful academics of the next decade won't be those who can run the most complex statistical models or write the most polished prose. They'll be those who can:
 - **Ask the right questions** in a world where answering them becomes trivial
@@ -145,7 +152,7 @@ The answers aren't clear yet. But the questions are becoming urgent.
 
 This experiment represents one data point in a much larger transformation. Academic research is about to go through the same AI-driven revolution we've seen in software development.
 
-The researchers who adapt early—building AI-native workflows, focusing on strategic thinking over execution, embracing open practices that multiply AI effectiveness—will have overwhelming advantages.
+The researchers who adapt early--building AI-native workflows, focusing on strategic thinking over execution, embracing open practices that multiply AI effectiveness--will have overwhelming advantages.
 
 The future belongs to those who recognize that **the revolution is already here**.
 
