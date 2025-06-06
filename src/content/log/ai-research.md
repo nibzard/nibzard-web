@@ -1,6 +1,6 @@
 ---
 title: "When AI Does Research: An End-to-End Experiment"
-description: "Fresh off the digital press: how AI transformed an entire research project from conception to arXiv publication in just 2 days of FTE."
+description: "How AI transformed an entire research project from conception to arXiv publication in just 2 days of FTE."
 tldr: "AI agents can now handle end-to-end research workflows—from conceiving studies to final publication. This experiment revealed that SOTA models excel at research thinking, full reproducibility becomes trivial, and human time can finally be redistributed to the most valuable parts: thinking and doing better."
 date: 2025-06-02
 tags: [EXPERIENCE, AI, RESEARCH]
