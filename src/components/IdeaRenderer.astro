@@ -11,13 +11,13 @@ interface Props {
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 
-// Category color mapping for Mad Men aesthetic
+// Category color mapping for Mad Men aesthetic - muted palette
 const categoryColors = {
-  product: { bg: '#E3F2FD', accent: '#1976D2', text: '#0D47A1' },
-  service: { bg: '#F3E5F5', accent: '#7B1FA2', text: '#4A148C' },
-  campaign: { bg: '#FFF3E0', accent: '#F57C00', text: '#E65100' },
-  strategy: { bg: '#E8F5E8', accent: '#388E3C', text: '#1B5E20' },
-  innovation: { bg: '#FCE4EC', accent: '#C2185B', text: '#880E4F' }
+  product: { bg: '#F5F7FA', accent: '#5A7A9A', text: '#2C3E50' },
+  service: { bg: '#F8F6F9', accent: '#8B7CA3', text: '#4A3C5A' },
+  campaign: { bg: '#FBF8F3', accent: '#B8956A', text: '#7A5F3A' },
+  strategy: { bg: '#F6F9F6', accent: '#7BA085', text: '#3E5247' },
+  innovation: { bg: '#FAF6F8', accent: '#A8859B', text: '#5A3E4F' }
 } as const;
 
 type CategoryType = keyof typeof categoryColors;
@@ -30,9 +30,6 @@ const colors = categoryColors[category];
   <div class="idea-header">
     <div class="idea-badge">FREE IDEA!</div>
     <div class="idea-meta">
-      <time datetime={entry.data.date.toISOString()}>
-        {new Date(entry.data.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
-      </time>
       {entry.data.category && (
         <span class="idea-category">{entry.data.category}</span>
       )}

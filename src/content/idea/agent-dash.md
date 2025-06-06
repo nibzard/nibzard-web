@@ -1,6 +1,6 @@
 ---
 title: "AI Agents Dashboard"
-subtitle: "A streamlined web UI for deploying and managing AI agents in containers"
+subtitle: "A web UI for deploying and managing AI agents in containers"
 date: 2025-06-06
 category: "product"
 draft: false

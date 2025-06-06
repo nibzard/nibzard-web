@@ -1,7 +1,7 @@
 ---
 title: "The Amplification of Bottlenecks"
 description: "When AI solves one constraint, it reveals the next. What bottleneck will emerge when coding stops being the limitation?"
-tldr: "AI doesn't just make work faster—it amplifies hidden constraints. At Anthropic, eliminating coding bottlenecks revealed decision-making, integration, and context as the real limitations. Every breakthrough follows this pattern: solve one constraint, amplify the next."
+tldr: "AI doesn't just make work faster--it amplifies hidden constraints. At Anthropic, eliminating coding bottlenecks revealed decision-making, integration, and context as the real limitations. Every breakthrough follows this pattern: solve one constraint, amplify the next."
 date: 2025-06-02
 tags: [INSIGHT, AI, SYSTEMS]
 draft: false
@@ -16,7 +16,7 @@ When you make one part of a system dramatically faster, you don't just speed up 
 
 **You reveal where it was actually broken.**
 
-At Anthropic, 90% of code is now written by AI. Engineering—once the primary constraint—has been obliterated as a bottleneck.
+At Anthropic, 90% of code is now written by AI. Engineering--once the primary constraint--has been obliterated as a bottleneck.
 
 What emerged in its place?
 
@@ -50,7 +50,7 @@ Mike Krieger's equation captures this perfectly:
     Model Intelligence + Context & Memory + Interface = Utility
 </blockquote>
 
-*From his [recent talk](https://www.youtube.com/watch?v=DKrBGOFs0GY) on AI and organizational transformation.*
+From his [recent guest appearance](https://www.youtube.com/watch?v=DKrBGOFs0GY) on Lenny's Podcast.
 
 The most sophisticated AI model becomes useless when it lacks:
 - Your company's specific domain knowledge
@@ -58,7 +58,7 @@ The most sophisticated AI model becomes useless when it lacks:
 - Current project constraints and requirements
 - Team communication patterns and preferences
 
-The competitive advantage doesn't come from having the best AI—it comes from giving AI the best context.
+The competitive advantage doesn't come from having the best AI--it comes from giving AI the best context.
 
 ## What This Means for Organizations
 
@@ -93,7 +93,7 @@ Instead of just implementing AI tools, they'll ask: "When this constraint disapp
 
 This reveals something deeper about progress itself.
 
-Every breakthrough isn't just an acceleration—it's a **reorganization** of constraints. The system doesn't just get faster; it gets fundamentally different.
+Every breakthrough isn't just an acceleration--it's a **reorganization** of constraints. The system doesn't just get faster; it gets fundamentally different.
 
 The organizations that thrive aren't those that get the best AI tools first. They're those that **redesign their systems** around the new constraint landscape.
 
@@ -111,7 +111,7 @@ The question is: **what bottleneck will it reveal in your organization?**
 
 And are you ready for it?
 
-The organizations that answer this question correctly—and prepare accordingly—will have overwhelming advantages in the AI-native economy.
+The organizations that answer this question correctly--and prepare accordingly--will have overwhelming advantages in the AI-native economy.
 
 The rest will find themselves optimizing for constraints that no longer exist while struggling with limitations they never saw coming.
 

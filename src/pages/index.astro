@@ -73,6 +73,12 @@ function getDateValue(date: Date | null): number {
   return date ? date.valueOf() : 0;
 }
 
+// Ensure first entry is a log entry if available (only for the very first entry across all pages)
+if (allFeedEntries.length === 0 && logIndex < logEntries.length) {
+  allFeedEntries.push({ type: 'log', entry: logEntries[logIndex] });
+  logIndex++;
+}
+
 // Add entries to feed in date order
 while (allFeedEntries.length < totalEntries) { // Changed condition to collect all entries
   const nextLogDate = logIndex < logEntries.length ? logEntries[logIndex].data.date : null;
