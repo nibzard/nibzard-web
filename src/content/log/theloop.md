@@ -1,8 +1,8 @@
 ---
-title: "The Agent is the Loop"
+title: "The Agent is The Loop"
 description: "How the llm-loop-plugin transforms AI from a responsive tool into an autonomous agent that iterates until done."
 tldr: "The llm-loop-plugin gives Simon Willison's LLM CLI the ability to loop and iterate autonomously. Instead of being a bottleneck feeding prompts one by one, you can set a goal and watch it work file by file until complete. The magic isn't in the AI model—it's in the loop."
-date: 2025-01-01
+date: 2025-06-07
 tags: [INSIGHT, AI, TOOLS]
 draft: false
 ---
