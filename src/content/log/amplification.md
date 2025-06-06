@@ -8,7 +8,7 @@ draft: false
 ---
 
 <blockquote class="featured-quote primary">
-    The smartest model in the world is useless without the right context.
+    <p>The smartest model in the world is useless without the right context.</p>
     <cite>— Mike Krieger</cite>
 </blockquote>
 
@@ -47,7 +47,7 @@ AI doesn't just make coding faster. It reveals that **clarity is everything**.
 Mike Krieger's equation captures this perfectly:
 
 <blockquote class="featured-quote accent">
-    Model Intelligence + Context & Memory + Interface = Utility
+    <p>Model Intelligence + Context & Memory + Interface = Utility</p>
 </blockquote>
 
 From his [recent guest appearance](https://www.youtube.com/watch?v=DKrBGOFs0GY) on Lenny's Podcast.

@@ -799,6 +799,7 @@ a.tag.standardized-tag:hover {
 .featured-quote {
   margin: var(--space-lg) 0;
   padding: var(--space-lg);
+  padding-left: calc(var(--space-lg) + 3rem); /* Extra padding to accommodate quote mark */
   border-radius: var(--border-radius);
   position: relative;
   overflow: hidden;
@@ -807,7 +808,7 @@ a.tag.standardized-tag:hover {
   content: '\201C';
   position: absolute;
   top: -0.5rem;
-  left: 0.5rem;
+  left: var(--space-lg);
   font-size: 6rem;
   opacity: 0.15;
   font-family: var(--font-serif);
@@ -819,6 +820,8 @@ a.tag.standardized-tag:hover {
   position: relative;
   z-index: 1;
   font-weight: 300;
+  font-style: normal;
+  text-indent: 0;
 }
 .featured-quote cite {
   display: block;
@@ -1935,20 +1938,131 @@ footer.full-width p {
 }
 
 /* Improve blockquote styling */
-.log-content blockquote {
+.log-content blockquote:not(.featured-quote) {
   border-left: 3px solid var(--color-accent1);
-  padding-left: var(--space-md);
   margin: var(--space-lg) 0;
-  font-style: italic;
-  color: var(--color-text-muted);
+  color: var(--color-text);
   background-color: var(--color-background-alt);
-  padding: var(--space-md);
-  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  padding: var(--space-lg);
+  padding-left: calc(var(--space-lg) + 3rem); /* Extra padding to accommodate quote mark */
+  border-radius: var(--border-radius);
+  position: relative;
+  overflow: hidden;
+  /* Apply font styles directly to blockquote for when there's no p tag */
+  font-size: 1.5rem;
+  line-height: 1.4;
+  font-weight: 300;
+  font-style: normal;
+  text-indent: 0; /* Remove text indent since we're using padding */
+}
+
+/* Add decorative quote mark to log blockquotes */
+.log-content blockquote:not(.featured-quote)::before {
+  content: '\201C';
+  position: absolute;
+  top: -0.5rem;
+  left: var(--space-lg);
+  font-size: 6rem;
+  opacity: 0.15;
+  font-family: var(--font-serif);
+}
+
+/* Style paragraphs within log blockquotes */
+.log-content blockquote:not(.featured-quote) p {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  margin-bottom: var(--space-sm);
+  position: relative;
+  z-index: 1;
+  font-weight: 300;
+  font-style: normal;
+  text-indent: 0; /* Remove text indent since parent has padding */
+}
+
+/* Citation styling for log blockquotes */
+.log-content blockquote:not(.featured-quote) cite {
+  display: block;
+  font-size: 1rem;
+  font-style: normal;
+  text-align: right;
+  opacity: 0.8;
+  margin-top: var(--space-sm);
 }
 
 /* Better spacing for alert callouts */
 .log-content .alert {
   margin: var(--space-lg) 0;
+}
+
+/* Featured quote styles within log content */
+.log-content .featured-quote {
+  margin: var(--space-lg) 0;
+  padding: var(--space-lg);
+  padding-left: calc(var(--space-lg) + 3rem); /* Extra padding to accommodate quote mark */
+  border-radius: var(--border-radius);
+  position: relative;
+  overflow: hidden;
+  border-left: 3px solid var(--color-accent2);
+  font-size: 1.5rem;
+  line-height: 1.4;
+  font-weight: 300;
+  font-style: normal;
+  text-indent: 0;
+}
+
+.log-content .featured-quote::before {
+  content: '\201C';
+  position: absolute;
+  top: -0.5rem;
+  left: var(--space-lg);
+  font-size: 6rem;
+  opacity: 0.15;
+  font-family: var(--font-serif);
+}
+
+.log-content .featured-quote p {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  margin-bottom: var(--space-sm);
+  position: relative;
+  z-index: 1;
+  font-weight: 300;
+  font-style: normal;
+  text-indent: 0;
+}
+
+.log-content .featured-quote cite {
+  display: block;
+  font-size: 1rem;
+  font-style: normal;
+  text-align: right;
+  opacity: 0.8;
+  margin-top: var(--space-sm);
+}
+
+/* Featured quote color variants */
+.log-content .featured-quote.primary {
+  background-color: #E3F2FD;
+  color: #0D47A1;
+  border-left-color: #0D47A1;
+}
+
+.log-content .featured-quote.secondary {
+  background-color: #F3E5F5;
+  color: #4A148C;
+  border-left-color: #4A148C;
+}
+
+.log-content .featured-quote.accent {
+  background-color: #FFF3E0;
+  color: #E65100;
+  border-left-color: #E65100;
+}
+
+.log-content .featured-quote.unattributed {
+  background-color: #E8EAF6;
+  color: #1A237E;
+  border-left-color: #1A237E;
 }
 
 /* === Accordion Styles === */
