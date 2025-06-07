@@ -9,7 +9,7 @@ draft: false
 
 Blink, and your entire worldview could shift.
 
-Kenton Varda, lead engineer at Cloudflare, was convinced AI was overrated. "Glorified Markov chain generators," [he called them](https://github.com/cloudflare/workers-oauth-provider/?tab=readme-ov-file#written-using-claude). Pattern matchers pretending to understand code.
+[Kenton Varda](https://x.com/KentonVarda), lead engineer at Cloudflare, was convinced AI was overrated. "Glorified Markov chain generators," [he called them](https://github.com/cloudflare/workers-oauth-provider/?tab=readme-ov-file#written-using-claude). Pattern matchers pretending to understand code.
 
 So he decided to prove it. Build an [OAuth library](https://github.com/cloudflare/workers-oauth-provider/?tab=readme-ov-file#written-using-claude) with Claude. Watch it stumble. Have a quiet laugh.
 
