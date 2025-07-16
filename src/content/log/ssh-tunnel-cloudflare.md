@@ -110,6 +110,8 @@ I did have some small hick up as I am using Ghostty so I had to run this line to
 
 The best method is using **Termux** with a **Debian proot** environment. My primary device is Iphone but sadly after some battle with iSH and cloudflared I gave up and charged my backup Samsung.
 
+**EDIT:** I just found out there is an app in beta for iPhone - a mobile app for Claude Code: https://codeagentsmobile.maketry.xyz/
+
 1.  **Install Termux** from F-Droid or Google Play.
 2.  **Install Debian Environment:** In Termux, run:
     ```sh
