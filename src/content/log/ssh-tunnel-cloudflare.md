@@ -1,15 +1,22 @@
 ---
-title: "Secure SSH to Local VM via Cloudflare Tunnel"
-description: "Step-by-step guide for creating Cloudflare Tunnel to SSH into local VM with no open ports"
-tldr: "Complete guide to setting up Cloudflare Tunnel for secure SSH access to local VMs from desktop and mobile devices, including Zero Trust authentication and troubleshooting tips."
+title: "Code with Claude AI from Your Phone: VM Setup Guide"
+description: "Turn your phone into a powerful coding workstation with Claude Code running in your homelab VM"
+tldr: "Complete guide to setting up Claude Code in your homelab VM and accessing it securely from your phone via Cloudflare Tunnel - no open ports required."
 date: 2025-07-16
-tags: [CHEATSHEET, SSH, Cloudflare, Security, VM]
+tags: [CHEATSHEET, AI, Claude, Mobile, VM, Cloudflare]
 draft: false
 ---
 
-# **Guide: Secure SSH to a Local VM via Cloudflare Tunnel**
+Imagine having a powerful AI coding assistant running in your pocket, ehm homelab, that you can access from anywhere. This guide shows you how to set up Claude Code in an Ubuntu VM and access it securely through Cloudflare Tunnel, turning your mobile device into a surprisingly capable coding workstation.
 
-This guide explains how to create a new Cloudflare Tunnel to securely SSH into an Ubuntu VM on your local network (e.g., at `192.168.x.x`) using a custom subdomain (e.g., `ubuntu.your-domain.com`). This method requires no open ports on your router.
+**Why this setup rocks:**
+- ✨ **Code with AI anywhere**: Access Claude Code from your phone, tablet, or any device
+- 🔒 **Zero open ports**: Completely secure with Cloudflare Zero Trust authentication
+- 🏠 **Homelab powered**: Leverage your existing VM infrastructure
+- 📱 **Mobile-first**: Perfect for coding on-the-go or from the couch
+- 🚀 **Always available**: Your AI assistant runs 24/7 in your homelab
+
+The secret sauce? We'll create a secure tunnel to your VM using Cloudflare, then install Claude Code inside it. No VPN, no port forwarding, no security headaches.
 
 **Prerequisites**
 
