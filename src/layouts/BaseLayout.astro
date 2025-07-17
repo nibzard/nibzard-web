@@ -11,14 +11,17 @@ import { createWebsiteSchema, createPersonSchema } from '../utils/schemaUtils';
 export interface Props {
   title?: string;
   description?: string;
+  ogImage?: string;
 }
 
 const {
   title = "nibzard",
-  description = "A minimal personal website and log."
+  description = "A minimal personal website and log.",
+  ogImage
 } = Astro.props;
 const canonicalUrl = Astro.url.toString();
 const siteUrl = Astro.site ? Astro.site.toString() : Astro.url.origin;
+const defaultOgImage = new URL("/og-nibzard.jpeg", siteUrl).toString();
 
 // Generate schema markup
 const websiteSchema = createWebsiteSchema();
@@ -41,7 +44,7 @@ const personSchema = createPersonSchema();
       basic: {
         title: title,
         type: "website",
-        image: new URL("/og-nibzard.jpeg", siteUrl).toString(),
+        image: ogImage || defaultOgImage,
         url: canonicalUrl,
       },
       optional: {

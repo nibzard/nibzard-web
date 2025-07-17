@@ -56,9 +56,9 @@ Here's where it gets interesting. The people writing checks rarely write code an
 
 ### The Trust Paradox
 
-Developers trust code, not content marketing. They trust benchmarks they can reproduce, not case studies. They trust their IRC channel's recommendations over your Google Ads.
+Developers trust code, not content marketing. They trust reproducible benchmarks, not case studies, and they value peer recommendations over your Google Ads.
 
-Recent data shows a fascinating split: while controlled studies (like METR's) show experienced developers can actually slow down by ~19% using AI tools on familiar codebases, survey after survey shows most developers *believe* AI tools make them more productive. This perception gap is your opportunity—but only if you navigate it honestly.
+Recent data shows a fascinating split: while controlled studies (like METR's) show experienced developers can actually slow down by ~19% using AI tools on familiar codebases (still take this with a grain of salt due to the small sample of just 16 devs), survey after survey shows most developers *believe* AI tools make them more productive. This perception gap is your opportunity—but only if you navigate it honestly.
 
 ### The Channel Fragmentation Problem
 
@@ -75,7 +75,7 @@ The largest concentration of developer activity? **Private repositories** that r
 
 Here's what keeps engineering leaders up at night: their teams are already using 2-3 different AI coding tools. Nearly half of all engineering teams are in active "evaluation mode," running multiple tools in parallel.
 
-Why? Because switching is trivially easy. It's a VS Code extension away. It's a different API key. It's a team member saying "hey, try this instead" in Slack.
+Why? Because switching is trivially easy. It's a VS Code extension away. It's a different API key (looking at you Kimi, sneaking into Claude Code). It's a team member saying "hey, try this instead" in Slack.
 
 ## The Anti-Playbook That Actually Works
 

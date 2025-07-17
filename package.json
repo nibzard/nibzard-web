@@ -4,12 +4,14 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "node scripts/prebuild-og.js && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "pipe:img": "node scripts/screenshot-content.js",
     "pipe:tweet": "tsx scripts/pipe_tweet.ts",
-    "validate:schema": "tsx scripts/validate-schema.ts"
+    "validate:schema": "tsx scripts/validate-schema.ts",
+    "generate:og": "node scripts/generate-og-images.js",
+    "generate:og:force": "node scripts/generate-og-images.js --force"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.52.0",

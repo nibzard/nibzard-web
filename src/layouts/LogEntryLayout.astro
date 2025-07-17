@@ -30,6 +30,11 @@ const sortedTags = frontmatter.tags ? sortTags(frontmatter.tags) : [];
 const currentUrl = new URL(Astro.request.url).href;
 const siteUrl = Astro.site ? Astro.site.toString() : Astro.url.origin;
 
+// Get the slug from the URL path for dynamic OG image
+const urlPath = new URL(Astro.request.url).pathname;
+const slug = urlPath.split('/').filter(Boolean).pop() || '';
+const ogImageUrl = new URL(`/api/og/${slug}`, siteUrl).toString();
+
 // Create schema markup for the blog post
 const blogPostSchema = createBlogPostSchema({
   title: frontmatter.title,
@@ -65,7 +70,7 @@ const enhancedOgConfig = {
   basic: {
     title: `${frontmatter.title} - Log - nibzard`,
     type: "article",
-    image: new URL("/og-nibzard.jpeg", siteUrl).toString(),
+    image: ogImageUrl,
     url: currentUrl,
   },
   optional: {
@@ -80,7 +85,7 @@ const enhancedOgConfig = {
   }
 };
 ---
-<BaseLayout title={`${frontmatter.title} - Log - nibzard`} description={frontmatter.description || `Log entry: ${frontmatter.title}`}>
+<BaseLayout title={`${frontmatter.title} - Log - nibzard`} description={frontmatter.description || `Log entry: ${frontmatter.title}`} ogImage={ogImageUrl}>
   <!-- Additional meta tags in head -->
   <Fragment slot="head">
     <!-- Open Graph article author -->
