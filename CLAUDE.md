@@ -31,7 +31,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 1. **Create new article file**:
    - Location: `/src/content/log/`
-   - Filename: Use kebab-case (e.g., `ssh-tunnel-cloudflare.md`)
+   - Filename: Use kebab-case with short, unique names (1-2 words max) for clean URLs and OG image generation (e.g., `vacuum.md`, `blink.md`, `theloop.md`)
    - Required frontmatter fields:
      - `title`: Main title (max 60 characters)
      - `description`: Brief description (max 130 characters)
@@ -48,5 +48,6 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
    - Push to remote: `git push origin main`
 
 3. **Article will be available**:
-   - Individual URL: `/{slug}` (e.g., `/ssh-tunnel-cloudflare`)
+   - Individual URL: `/{slug}` (e.g., `/vacuum`, `/blink`)
    - Listed in log index: `/log/`
+   - Custom OG image: `/api/og/{slug}` (auto-generated)

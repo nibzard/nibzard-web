@@ -151,4 +151,4 @@ The winners in this space won't be the ones with the best marketing. They'll be 
 
 5. **Prepare for the long game**: Developer trust takes months to build and seconds to destroy. What are you doing today that will matter in a year?
 
-Remember: In the world of AI dev tools, the anti-playbook is the only playbook that works. Embrace the chaos, respect the skepticism, and build something developers actually want to use—even if they don't want to admit it yet.
+Remember: today, the anti-playbook is the only playbook that works. Embrace the chaos, respect the skepticism, and build something developers actually want to use—even if they don't want to admit it yet.

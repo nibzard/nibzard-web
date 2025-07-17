@@ -33,8 +33,8 @@ export const GET: APIRoute = async ({ params }) => {
   }
   
   try {
-    // Check if static OG image exists
-    const ogImagePath = path.resolve(__dirname, '../../../public/og', `${slug}.png`);
+    // Check if static OG image exists - use process.cwd() for more reliable path resolution
+    const ogImagePath = path.resolve(process.cwd(), 'public/og', `${slug}.png`);
     
     if (checkImageExists(ogImagePath)) {
       // Serve existing OG image
@@ -59,7 +59,7 @@ export const GET: APIRoute = async ({ params }) => {
     // Return fallback to default OG image for now
     // In a production environment, you might want to generate the image on-demand
     // or redirect to a background job that generates it
-    const fallbackPath = path.resolve(__dirname, '../../../public/og-nibzard.jpeg');
+    const fallbackPath = path.resolve(process.cwd(), 'public/og-nibzard.jpeg');
     
     if (checkImageExists(fallbackPath)) {
       const imageBuffer = fs.readFileSync(fallbackPath);
