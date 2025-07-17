@@ -53,6 +53,12 @@ const personSchema = createPersonSchema();
     }}
     twitter={{
       creator: "@nibzard",
+      site: "@nibzard",
+      card: "summary_large_image",
+      title: title,
+      description: description,
+      image: ogImage || defaultOgImage,
+      imageAlt: title
     }}
     extend={{
       // astro-seo handles the title and description meta tags.
