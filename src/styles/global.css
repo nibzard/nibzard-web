@@ -1899,8 +1899,8 @@ footer.full-width p {
   margin-top: var(--space-lg);
 }
 
-/* Style for multi-line code examples */
-.log-content p code + code {
+/* Style for multi-line code examples - only apply when code elements are on separate lines */
+.log-content p code + br + code {
   display: block;
   margin-top: 0.2rem;
   margin-left: var(--space-md);
