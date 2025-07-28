@@ -99,6 +99,24 @@ Quinn spent $1000 in a month of prototype usage. Which mirrors my own experience
 
 The most powerful AI coding tools will cost real money because they do real work. The $20/month subscription model works for chat interfaces and simple autocomplete. But breaks down when AI agents start replacing hours of human labor.
 
+## The Oracle and the Worker: A Multi-Model Approach
+
+The Sourcegraph team's latest breakthrough isn't a single, better model—it's a system for using multiple models strategically. They've implemented an ["Oracle" pattern](https://agentic-patterns.com/patterns/oracle-and-worker-multi-model/) that challenges the idea of a one-size-fits-all AI.
+
+The architecture is simple but powerful:
+
+**The Worker (Claude Sonnet 4):** A fast, capable, and cost-effective agent that handles the bulk of the tool use and code generation.
+
+**The Oracle (OpenAI o3 / Gemini 2.5 Pro):** A more powerful, "smarter" (and more expensive) model used for high-level reasoning, architectural planning, and debugging complex issues.
+
+The main agent can be explicitly told to "Ask the oracle" when it gets stuck or needs a better strategy.
+
+<div class="featured-quote primary">
+<p>The Oracle sub-agent reviews the main agent's work and suggests a better solution. This allows for high-level course correction without polluting the main agent's context with extensive exploration.</p>
+</div>
+
+This is a profound shift. Instead of relying on a single model's strengths, this approach creates a team of specialized AIs. It allows for sophisticated problem-solving while managing the high cost of frontier models, reserving them for tasks where their advanced reasoning is most impactful.
+
 ## The Grain of the Model: Why AI Lab Philosophies Matter
 
 Not all AI models are created equal. And the differences run deeper than benchmarks suggest.
@@ -129,19 +147,23 @@ They emerged from giving the AI sufficient autonomy and feedback.
 
 When Thorsten asked the agent to build a recording feature, it didn't just generate the code. It provided a testing plan. When an edit failed, the agent tried alternative approaches, added debug statements, fixed its own bugs.
 
-**The Sub-Agent Revolution**
+### The Sub-Agent Revolution
 
 But the real breakthrough came with sub-agents—AI systems spawning other AI systems to handle parallel work.
 
 This wasn't an engineered feature. It emerged when the AI realized it could decompose complex tasks and distribute them across multiple context windows.
 
-<div class="featured-quote secondary">
-<p>The agent sometimes performs tasks or uses tools in ways the developers didn't explicitly design for but are highly effective.</p>
-</div>
-
 The YAML frontmatter editing example is telling: instead of trying to process 36 files sequentially within a single context window, Claude Sonnet 4 automatically spawned four sub-agents. Each agent got a fresh context window and handled roughly 9 files.
 
 This sub-agent strategy solves one of the biggest limitations of current AI systems: context window management for complex, multi-file operations.
+
+<div class="featured-quote secondary">
+<p>Each sub-agent operates within its own context window. The main agent doesn't get overwhelmed by processing all 36 files—it only needs to manage the sub-tasks.</p>
+</div>
+
+<div class="featured-quote secondary">
+<p>The agent sometimes performs tasks or uses tools in ways the developers didn't explicitly design for but are highly effective.</p>
+</div>
 
 Traditional software development focuses on defined interfaces and predictable behavior. AI agents thrive on flexibility and emergence.
 
@@ -184,6 +206,22 @@ The problem isn't technical capability—it's the "long tail" of issues: missing
 The implication for AI agents is clear: rather than trying to replicate perfect development environments for every interaction, focus on pragmatic feedback mechanisms that actually work.
 
 Background agents represent the evolution from "AI as a better autocomplete" to "AI as a remote team member."
+
+## The Human as Strategist, Not Just Prompter
+
+As the agents become more capable, the human's role evolves. The [latest videos](https://youtu.be/hAEmt-FMyHA?si=LOAy9xZZSLLKjP6B) show Thorsten moving beyond simply assigning tasks to actively directing the agent's strategy.
+
+He now gives meta-instructions that shape the problem-solving process itself:
+
+**"Use as many subagents as you want."** - This explicitly encourages the agent to parallelize its workload, a key to solving complex refactoring tasks efficiently.
+
+**"Ask the oracle whether there isn't a better solution."** - This prompts the agent to use its multi-model capability for strategic review, leveraging a more powerful model for a second opinion.
+
+<div class="featured-quote secondary">
+<p>This is the next level of human-AI collaboration. The developer becomes an architect and a manager, guiding a team of agents, choosing the right tools (and models) for the job, and intervening at strategic moments.</p>
+</div>
+
+The goal is no longer to craft the perfect initial prompt. It's to build an intuition for when to let the agent work autonomously, when to nudge it with a suggestion, and when to bring in a specialist "oracle" to rethink the entire approach. This is the learnable skill of "Raising an Agent."
 
 ## The Evolution of Human-Agent Collaboration
 
