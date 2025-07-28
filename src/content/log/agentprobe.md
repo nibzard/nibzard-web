@@ -11,7 +11,7 @@ Five runs. Same prompt. Same agent. Same CLI.
 
 The results? **Complete chaos.**
 
-`vercel deploy` took anywhere from 16 to 33 turns to complete. Success rate? A miserable 40%.
+Claude running `vercel deploy` took anywhere from 16 to 33 turns to complete. Success rate? A miserable 40%.
 
 ![AgentProbe in action](/images/20250728_agentprobe.jpeg)
 
@@ -119,7 +119,9 @@ Run AgentProbe and against your CLI without installing it using uvx:
 uvx --from git+https://github.com/nibzard/agentprobe.git agentprobe test vercel --scenario deploy
 ```
 
-Share your results. The more data we collect, the better we understand how to build for both human and artificial users.
+**AgentProbe is currently in early development** and needs help from the community. Found issues? Have ideas? [Contribute on GitHub](https://github.com/nibzard/agentprobe) to help build better AI-native tools.
+
+Share your results on X (formerly Twitter) and tag [@nibzard](https://x.com/nibzard). The more data we collect, the better we understand how to build for both human and artificial users.
 
 Because here's the thing: **we're not choosing between human-friendly and agent-friendly anymore.**
 
