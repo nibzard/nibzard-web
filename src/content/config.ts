@@ -7,6 +7,7 @@ const logCollection = defineCollection({
     description: z.string().max(130, "Description must be 130 characters or less"),
     tldr: z.string().max(333, "Description must be 333 characters or less").optional(),
     date: z.date(),
+    updated: z.date().optional(),
     tags: z.array(z.string()),
     draft: z.boolean().optional().default(false),
     author: z.string().optional().default("Nikola Balić"),

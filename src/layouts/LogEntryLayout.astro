@@ -13,6 +13,7 @@ interface Frontmatter {
   title: string;
   description?: string;
   date: Date;
+  updated?: Date;
   tags?: string[];
   tldr?: string;
   author?: string;
@@ -111,6 +112,13 @@ const enhancedOgConfig = {
           Published on <time datetime={frontmatter.date.toISOString()}>
             {new Date(frontmatter.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
           </time>
+          {frontmatter.updated && (
+            <>
+              {' • '}Updated on <time datetime={frontmatter.updated.toISOString()}>
+                {new Date(frontmatter.updated).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+              </time>
+            </>
+          )}
           <span class="author-meta">
             by <a href="#author" class="author-link">{frontmatter.author || "Nikola Balić"}</a>
           </span>
