@@ -85,7 +85,7 @@ if (allFeedEntries.length === 0 && logIndex < logEntries.length) {
 
 // Add entries to feed in date order
 while (allFeedEntries.length < totalEntries) { // Changed condition to collect all entries
-  const nextLogDate = logIndex < logEntries.length ? logEntries[logIndex].data.date : null;
+  const nextLogDate = logIndex < logEntries.length ? (logEntries[logIndex].data.updated || logEntries[logIndex].data.date) : null;
   const nextThoughtDate = thoughtIndex < thoughts.length ? thoughts[thoughtIndex].data.date : null;
   const nextNowDate = nowIndex < nowEntries.length ? nowEntries[nowIndex].data.date : null;
   const nextImageDate = imageIndex < imageEntries.length ? imageEntries[imageIndex].data.date : null;

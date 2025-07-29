@@ -2,7 +2,7 @@
 title: "Why I Built a Tool to Test AI's Command Line AX"
 description: "Testing AI agents on CLI tools reveals chaos: 'vercel deploy' took 16-33 turns across runs with 40% success rate."
 tldr: "Built AgentProbe to test how AI agents interact with CLI tools. Even simple commands like 'vercel deploy' show massive variance: 16-33 turns across runs, 40% success rate. The tool reveals specific friction points and grades CLI 'agent-friendliness' from A-F. Now available for Claude Code MAX subscribers."
-date: 2025-07-28
+date: 2025-07-26
 tags: [AI, AGENTS, DEVELOPER-TOOLS, OPEN-SOURCE]
 draft: false
 ---
