@@ -49,7 +49,7 @@ But here's where it gets interesting. AgentProbe doesn't just count failures. It
 - **Friction points**: Where exactly do agents get confused?
 - **Recovery ability**: Can the agent self-correct or does it death-spiral?
 
-Each scenario gets an **AX Score** (Agent Experience Score). Just like school, but for how well your CLI plays with artificial intelligence.
+Each scenario gets an **AX Score** (Agent Experience Score), drawing from [Mathias Biilmann's](https://www.linkedin.com/in/mathias-biilmann-christensen-a5a3805/) framework for designing [Agent Experience](https://biilmann.blog/articles/introducing-ax/). Just like school, but for how well your CLI plays with artificial intelligence.
 
 ## The Uncomfortable Truth About Developer Tools
 
