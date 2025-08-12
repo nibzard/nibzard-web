@@ -181,4 +181,4 @@ For dense graph workloads, the performance improvement is substantial and measur
 The gap between theoretical algorithms and production systems is often wider than the papers suggest. FRE bridges that gap for dense graph shortest-path problems.
 </blockquote>
 
-*Implementation available at github.com/agrama-v2 with comprehensive benchmarks.*
+*Implementation available at https://github.com/nibzard/agrama-v2 with comprehensive benchmarks.*
