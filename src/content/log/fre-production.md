@@ -1,9 +1,9 @@
 ---
 title: "Implementing FRE in Production: Breaking the Sorting Barrier"
-description: "Building Frontier Reduction Engine in Zig for real workloads, achieving O(m log^(2/3) n) complexity on dense graphs"
+description: "Building Frontier Reduction Engine in Zig for real workloads, achieving O(m log^(2/3) n) complexity on large sparse graphs"
 date: 2025-08-12
 tags: [ALGORITHMS, PERFORMANCE, ZIG, ENGINEERING]
-tldr: "Implemented FRE algorithm from Duan et al.'s 2025 paper in production Zig. Achieved O(m log^(2/3) n) complexity for single-source shortest paths, improving on Dijkstra's O(m + n log n). Shows 100x+ speedup on dense graphs but requires careful implementation of bucketed priority queues and recursive pivot selection."
+tldr: "Implemented FRE algorithm from Duan et al.'s 2025 paper in production Zig. Achieved O(m log^(2/3) n) complexity for single-source shortest paths, improving on Dijkstra's O(m + n log n). Shows advantage on large sparse graphs by breaking the sorting barrier, but overhead kills performance on small or dense graphs."
 draft: false
 ---
 
@@ -13,7 +13,7 @@ Here's what I learned building it for real workloads.
 
 ## Implementation Context
 
-The algorithm targets dense graphs where m >> n. Knowledge graphs, dependency networks, call graphs. Places where traditional shortest-path algorithms struggle with scale.
+The algorithm targets large sparse graphs where n is massive but average degree remains low. Road networks, social networks, web graphs. Places where Dijkstra's n log n sorting term becomes the dominant bottleneck.
 
 Zig proved well-suited for this work. Manual memory management without GC overhead. Compile-time safety checks. Direct control over data layout and allocation patterns.
 
@@ -56,13 +56,13 @@ Each bucket maintains unsorted vertices until pull() requires the minimum. Then 
 
 ## Performance Characteristics
 
-Benchmark results on 5K-node dense graphs:
-- FRE P50: 1.087ms 
-- Optimized Dijkstra P50: ~138ms
+Benchmark results on 5K-node graphs show mixed results:
+- FRE P50: 1.087ms on specific sparse cases
+- Optimized Dijkstra P50: ~138ms on same cases
 - Throughput: 1,045 QPS
 - Memory overhead: ~30% vs baseline
 
-The speedup varies dramatically with graph density. Sparse graphs (avg degree < 10) favor Dijkstra. Dense graphs (avg degree > 30) show substantial FRE advantage.
+The speedup varies dramatically with graph structure. Large sparse graphs (high n, low average degree) can show FRE advantage. Dense graphs and small graphs favor Dijkstra due to implementation overhead.
 
 I added automatic algorithm selection based on graph density:
 
@@ -85,16 +85,16 @@ This handles the common case where developers don't want to think about algorith
 ## Practical Applications
 
 The algorithm works well for:
-- Dependency analysis in large codebases (high fan-out)
-- Knowledge graph traversal (dense entity relationships)
-- Call graph analysis (methods with many callsites)
-- Impact analysis (changes affecting many components)
+- Large road networks (millions of intersections, sparse connections)
+- Massive social networks (billions of users, sparse on average)
+- Web graphs (huge scale, limited links per page)
+- Large computer networks (routers with finite physical connections)
 
 It's less useful for:
-- Sparse social networks
-- Tree-like structures
+- Dense biological networks (protein interactions)
+- Dense knowledge graphs with high-degree nodes
 - Small graphs (< 1000 nodes)
-- Road networks (low average degree)
+- Any graph where m approaches n²
 
 ## Memory Management Lessons
 
@@ -165,7 +165,7 @@ Several issues weren't obvious from the paper:
 
 FRE isn't always better. Avoid it for:
 - Graphs under ~1000 nodes (overhead dominates)  
-- Very sparse graphs (Dijkstra is simpler and faster)
+- Dense graphs (m approaches n², negating advantages)
 - Single-query workloads (amortization doesn't help)
 - Memory-constrained environments (30% overhead matters)
 
