@@ -140,6 +140,40 @@ const projects = [
             </div>
           </div>
         ))}
+        
+        <!-- CTA Card -->
+        <div class="project-card cta-card">
+          <div class="project-header">
+            <h3>
+              <a href="https://github.com/nibzard" target="_blank" rel="noopener noreferrer me">
+                See More Projects
+                <svg class="external-link" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15,3 21,3 21,9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+            </h3>
+          </div>
+          
+          <div class="project-content">
+            <p class="project-description">
+              Explore more experiments, contributions, and collaborative projects on my GitHub profile.
+            </p>
+            
+            <div class="project-topics">
+              <span class="topic-tag">github</span>
+              <span class="topic-tag">open-source</span>
+              <span class="topic-tag">experiments</span>
+            </div>
+          </div>
+
+          <div class="project-footer">
+            <a href="https://github.com/nibzard" target="_blank" rel="noopener noreferrer me" class="project-link cta-link">
+              Visit GitHub Profile
+            </a>
+          </div>
+        </div>
       </section>
 
       <section class="projects-note">
@@ -268,6 +302,20 @@ const projects = [
 
   .project-link:hover {
     color: var(--text-primary);
+  }
+  
+  .cta-card {
+    border: 2px dashed var(--accent-color);
+    background: linear-gradient(135deg, var(--background-secondary), var(--background-tertiary));
+  }
+  
+  .cta-card:hover {
+    border-style: solid;
+    background: linear-gradient(135deg, var(--background-tertiary), var(--background-secondary));
+  }
+  
+  .cta-link {
+    font-weight: 600;
   }
 
   .projects-note {

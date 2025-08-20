@@ -122,13 +122,26 @@ After creating a log article, ALWAYS follow this comprehensive workflow:
    - Verify all image references exist
    - Fix syntax errors in code blocks
    - Test again until build succeeds
-4. **Verify OG image generation**: Confirm the article generates an OG image at `/api/og/[slug]`
-5. **Commit and push**: Once build succeeds completely:
-   - Stage the file: `git add src/content/log/[filename].md`
+4. **Generate OG image**: CRITICAL STEP - Run `pnpm run generate:og` to create the social media preview image
+   - Verify the OG image exists at `/public/og/[slug].png`
+   - If generation fails, check Chrome installation: `npx puppeteer browsers install chrome`
+5. **Commit and push**: Once build succeeds and OG image is generated:
+   - Stage the files: `git add src/content/log/[filename].md public/og/[slug].png`
    - Commit with clear message: `git commit -m "Add new article: [Article Title]"`
    - Push to remote: `git push origin main`
 
-**Critical**: Never proceed with git operations until build passes completely.
+### Optional: Social Media Assets
+
+After successful publication, optionally generate social media assets:
+
+6. **Generate tweets**: Run `pnpm run pipe:tweet` to create Twitter thread content
+   - Creates `/tweets/[slug].txt` with ready-to-post thread
+7. **Generate screenshots**: Run `pnpm run pipe:img` to create article screenshots
+   - Requires dev server: `pnpm run dev` (in background)
+   - Creates multiple screenshot segments in `/screenshots/`
+   - Stop dev server when complete
+
+**Critical**: Never proceed with git operations until build passes completely AND OG image is generated.
 
 ## Key Behaviors
 
@@ -167,6 +180,8 @@ Before publishing, ensure:
 **Build and Deployment:**
 - [ ] Frontmatter follows exact required format (YAML syntax, date format)
 - [ ] Build passes completely with `pnpm build`
-- [ ] OG image generates successfully at `/api/og/[slug]`
+- [ ] OG image generated and exists at `/public/og/[slug].png`
+- [ ] OG image API endpoint accessible at `/api/og/[slug]`
 - [ ] No console errors or warnings during build
 - [ ] Article accessible at expected URL pattern
+- [ ] Both article and OG image committed and pushed to git

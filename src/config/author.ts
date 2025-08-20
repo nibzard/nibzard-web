@@ -61,6 +61,8 @@ export const AUTHOR_INFO: AuthorInfo = {
     "Product Market Fit",
     "AI Product Development",
     "AI Coding Agents",
+    "Agent Experience (AX)",
+    "Agent-Friendly Design",
     "Digital Transformation",
     "Growth Marketing",
     "Design Sprints",
