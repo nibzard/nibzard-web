@@ -1,0 +1,334 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FadeIn from '../components/animations/FadeIn.jsx';
+
+const projects = [
+  {
+    title: "toneadjuster",
+    url: "https://github.com/nibzard/toneadjuster",
+    description: "Chrome extenstion for adjusting the tone and style of text using local LLM",
+    topics: ["ai", "text-processing", "tone", "nlp"]
+  },
+  {
+    title: "agentprobe",
+    url: "https://github.com/nibzard/agentprobe",
+    description: "Test Agent Experience (AX) - how well AI agents interact with CLI tools",
+    topics: ["ai", "testing", "cli", "agents"]
+  },
+  {
+    title: "claude-threads",
+    url: "https://github.com/nibzard/claude-threads",
+    description: "Thread management for Claude AI conversations",
+    topics: ["claude", "threads", "ai", "conversation"]
+  },
+  {
+    title: "awesome-agentic-patterns",
+    url: "https://github.com/nibzard/awesome-agentic-patterns",
+    description: "Curated collection of agentic AI patterns and architectures",
+    topics: ["ai", "patterns", "agents", "architecture"]
+  },
+  {
+    title: "AI Enablement Stack",
+    url: "https://github.com/daytonaio/ai-enablement-stack",
+    description: "Comprehensive map of AI development space",
+    topics: ["ai", "development", "toolkit", "workflows"]
+  },
+  {
+    title: "llmdb",
+    url: "https://github.com/nibzard/llmdb",
+    description: "Database operations powered by large language models",
+    topics: ["llm", "database", "ai", "data"]
+  },
+  {
+    title: "bucket",
+    url: "https://github.com/nibzard/bucket",
+    description: "Simple storage and organization tool",
+    topics: ["storage", "organization", "utility", "cli"]
+  },
+  {
+    title: "lmdb-mcp",
+    url: "https://github.com/nibzard/lmdb-mcp",
+    description: "AI memory using LMDB and Model Context Protocol",
+    topics: ["lmdb", "mcp", "claude", "database"]
+  },
+  {
+    title: "lmdb-tui",
+    url: "https://github.com/nibzard/lmdb-tui",
+    description: "Terminal user interface for LMDB database management",
+    topics: ["lmdb", "tui", "database", "terminal"]
+  },
+  {
+    title: "llm-loop",
+    url: "https://github.com/nibzard/llm-loop",
+    description: "Iterative loop plugin for Simon Willison llm cli tool",
+    topics: ["llm", "loop", "workflow", "ai"]
+  },
+  {
+    title: "agent-perceptions",
+    url: "https://github.com/nibzard/agent-perceptions",
+    description: "Research on how AI agents perceive and process information",
+    topics: ["ai", "research", "perception", "agents"]
+  },
+  {
+    title: "labruno-agent",
+    url: "https://github.com/nibzard/labruno-agent",
+    description: "Agent coordinator that creates multiple AI solutions to your coding tasks using parallel sandboxes",
+    topics: ["agent", "ai", "specialized", "automation"]
+  },
+  {
+    title: "ai-sandbox-benchmark-2",
+    url: "https://github.com/nibzard/ai-sandbox-benchmark-2",
+    description: "Benchmarking suite for AI sandbox environments",
+    topics: ["ai", "benchmark", "sandbox", "testing"]
+  },
+  {
+    title: "countgpt",
+    url: "https://github.com/nibzard/countgpt",
+    description: "Token counting and analysis tool for LLMs",
+    topics: ["gpt", "tokens", "analysis", "utility"]
+  },
+  {
+    title: "devcontainer-generator",
+    url: "https://github.com/nibzard/devcontainer-generator",
+    description: "Generate development containers for various project types",
+    topics: ["devcontainer", "generator", "development", "docker"]
+  }
+];
+---
+
+<BaseLayout title="Projects - nibzard" description="Open source projects and experiments by Nikola Balić (Nikola Balic) - AI tools, development utilities, and research implementations.">
+  <FadeIn client:visible>
+    <article>
+      <header class="projects-header">
+        <h1>Projects</h1>
+        <p class="projects-intro">
+          Open source projects and experiments exploring AI, development tools, and innovation.
+          Each project represents hands-on exploration of emerging technologies and practical solutions.
+        </p>
+      </header>
+
+      <section class="projects-grid">
+        {projects.map((project) => (
+          <div class="project-card">
+            <div class="project-header">
+              <h3>
+                <a href={project.url} target="_blank" rel="noopener noreferrer">
+                  {project.title}
+                  <svg class="external-link" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15,3 21,3 21,9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </h3>
+            </div>
+
+            <div class="project-content">
+              <p class="project-description">{project.description}</p>
+
+              <div class="project-topics">
+                {project.topics.map((topic) => (
+                  <span class="topic-tag">{topic}</span>
+                ))}
+              </div>
+            </div>
+
+            <div class="project-footer">
+              <a href={project.url} target="_blank" rel="noopener noreferrer" class="project-link">
+                View on GitHub
+              </a>
+            </div>
+          </div>
+        ))}
+      </section>
+
+      <section class="projects-note">
+        <h2>About These Projects</h2>
+        <p>
+          These projects represent my ongoing exploration of AI-driven development tools,
+          automation, and innovative approaches to software development. Each project serves
+          as both a practical tool and a learning laboratory for emerging technologies.
+        </p>
+        <p>
+          For more projects and contributions, visit my
+          <a href="https://github.com/nibzard" target="_blank" rel="noopener noreferrer me">
+            GitHub profile
+          </a>.
+        </p>
+      </section>
+    </article>
+  </FadeIn>
+</BaseLayout>
+
+<style>
+  .projects-header {
+    margin-bottom: 3rem;
+  }
+
+  .projects-header h1 {
+    margin-bottom: 1rem;
+  }
+
+  .projects-intro {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    max-width: 600px;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .project-card {
+    background: var(--background-secondary);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-color: var(--accent-color);
+  }
+
+  .project-header h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1.3rem;
+  }
+
+  .project-header h3 a {
+    color: var(--text-primary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .project-header h3 a:hover {
+    color: var(--accent-color);
+  }
+
+  .external-link {
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+  }
+
+  .project-header h3 a:hover .external-link {
+    opacity: 1;
+  }
+
+  .project-content {
+    flex: 1;
+    margin-bottom: 1.5rem;
+  }
+
+  .project-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .project-topics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .topic-tag {
+    background: var(--accent-color);
+    color: var(--accent-text);
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+
+  .project-footer {
+    margin-top: auto;
+  }
+
+  .project-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+  }
+
+  .project-link:hover {
+    color: var(--text-primary);
+  }
+
+  .projects-note {
+    background: var(--background-secondary);
+    padding: 2rem;
+    border-radius: 12px;
+    border-left: 4px solid var(--accent-color);
+  }
+
+  .projects-note h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+  }
+
+  .projects-note p {
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+  }
+
+  .projects-note p:last-child {
+    margin-bottom: 0;
+  }
+
+  .projects-note a {
+    color: var(--accent-color);
+    text-decoration: none;
+  }
+
+  .projects-note a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .projects-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      padding: 1.25rem;
+    }
+
+    .projects-note {
+      padding: 1.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .projects-header {
+      margin-bottom: 2rem;
+    }
+
+    .project-topics {
+      gap: 0.25rem;
+    }
+
+    .topic-tag {
+      font-size: 0.75rem;
+      padding: 0.2rem 0.6rem;
+    }
+  }
+</style>
