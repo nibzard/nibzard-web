@@ -1,0 +1,362 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FadeIn from '../components/animations/FadeIn.jsx';
+import SchemaMarkup from '../components/SchemaMarkup.astro';
+import { createBreadcrumbSchema } from '../utils/schemaUtils';
+
+const breadcrumbSchema = createBreadcrumbSchema([
+  { name: "Home", url: "https://nibzard.com" },
+  { name: "Bio", url: "https://nibzard.com/bio" }
+]);
+---
+
+<BaseLayout title="Nikola Balić (Nikola Balic) - Official Bio" description="Official biography of Nikola Balić (ASCII: Nikola Balic) - Growth Marketing Leader & AI Strategy Consultant. Source of truth for professional information.">
+  <FadeIn client:visible>
+    <article itemscope itemtype="https://schema.org/Person">
+      <header>
+        <h1 itemprop="name">Nikola Balić <span class="ascii-name">(Nikola Balic)</span></h1>
+        <div class="pronunciation">
+          <small>Pronunciation: NEE-ko-lah BAH-litch</small>
+        </div>
+        <p class="tagline" itemprop="jobTitle">Growth Marketing Leader & AI Strategy Consultant</p>
+      </header>
+
+      <section class="bio-intro">
+        <h2>Official Biography</h2>
+        <p itemprop="description">
+          <strong>Nikola Balić</strong> (ASCII spelling: <strong>Nikola Balic</strong>) builds go-to-market engines for AI-driven products that matter. 
+          As a Growth Marketing Leader & AI Strategy Consultant, he specializes in scaling innovation ecosystems and digital transformation.
+        </p>
+        
+        <div class="name-variations">
+          <h3>Name Variations & Recognition</h3>
+          <ul>
+            <li><strong>Primary:</strong> Nikola Balić (with diacritics)</li>
+            <li><strong>ASCII:</strong> Nikola Balic (international usage)</li>
+            <li><strong>Handle:</strong> nibzard (social media and professional platforms)</li>
+            <li><strong>Academic:</strong> Listed as both "Nikola Balić" and "Nikola Balic" in publications</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="professional-summary">
+        <h2>Professional Impact</h2>
+        <div class="achievement-grid">
+          <div class="achievement-item">
+            <h3>Daytona Growth Leadership</h3>
+            <ul>
+              <li>Scaled GitHub stars to 20,000+</li>
+              <li>Secured #1 and two #2 Product Hunt launches</li>
+              <li>Elevated Daytona.io from DR 0 to 51</li>
+              <li>Built engaged communities (2.8K X, 5.4K LinkedIn, 700+ YouTube)</li>
+              <li>Catalyzed pivot from cloud development environments to AI runtimes</li>
+            </ul>
+          </div>
+          
+          <div class="achievement-item">
+            <h3>Innovation & Research</h3>
+            <ul>
+              <li>14+ years scaling innovation ecosystems</li>
+              <li>€34M+ in EU funds deployed</li>
+              <li>54% YoY product growth expertise</li>
+              <li>Doctoral research in Digital Transformation</li>
+              <li>Published academic work in complex network analysis</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="academic-profile">
+        <h2>Academic & Research Profile</h2>
+        <div class="academic-info">
+          <div class="affiliation" itemprop="affiliation" itemscope itemtype="https://schema.org/Organization">
+            <strong>Current Affiliation:</strong> 
+            <span itemprop="name">Faculty of Science, University of Split</span>
+          </div>
+          <div class="languages">
+            <strong>Languages:</strong> English, Croatian
+          </div>
+          <div class="research-areas">
+            <strong>Research Areas:</strong> Digital Transformation, Complex Network Analysis, AI Product Development
+          </div>
+        </div>
+      </section>
+
+      <section class="verified-profiles">
+        <h2>Verified Professional Profiles</h2>
+        <div class="profile-grid">
+          <a href="https://x.com/nibzard" target="_blank" rel="noopener noreferrer me" class="profile-link">
+            <strong>X (Twitter):</strong> @nibzard
+          </a>
+          <a href="https://www.linkedin.com/in/nikolabalic/" target="_blank" rel="noopener noreferrer me" class="profile-link">
+            <strong>LinkedIn:</strong> /in/nikolabalic
+          </a>
+          <a href="https://github.com/nibzard" target="_blank" rel="noopener noreferrer me" class="profile-link">
+            <strong>GitHub:</strong> /nibzard
+          </a>
+          <a href="https://scholar.google.com/citations?user=JT3JHokAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer me" class="profile-link">
+            <strong>Google Scholar:</strong> Nikola Balić
+          </a>
+          <a href="https://www.researchgate.net/profile/Nikola_Balic" target="_blank" rel="noopener noreferrer me" class="profile-link">
+            <strong>ResearchGate:</strong> Nikola_Balic
+          </a>
+          <a href="https://orcid.org/0000-0002-4405-1470" target="_blank" rel="noopener noreferrer me" class="profile-link">
+            <strong>ORCID:</strong> 0000-0002-4405-1470
+          </a>
+        </div>
+      </section>
+
+      <section class="expertise-areas">
+        <h2>Areas of Expertise</h2>
+        <div class="expertise-grid">
+          <div class="expertise-category">
+            <h3>Growth & Marketing</h3>
+            <ul>
+              <li>Go-to-Market Strategy</li>
+              <li>Product Market Fit</li>
+              <li>Developer Tools Marketing</li>
+              <li>Community Building</li>
+              <li>Product Hunt Launches</li>
+            </ul>
+          </div>
+          <div class="expertise-category">
+            <h3>AI & Technology</h3>
+            <ul>
+              <li>AI Product Development</li>
+              <li>AI Coding Agents</li>
+              <li>Multi-agent Orchestration</li>
+              <li>AI Runtime Environments</li>
+              <li>Technical Product Positioning</li>
+            </ul>
+          </div>
+          <div class="expertise-category">
+            <h3>Innovation</h3>
+            <ul>
+              <li>Design Sprints</li>
+              <li>Design Thinking</li>
+              <li>Jobs To Be Done (JTBD)</li>
+              <li>Business Model Canvas</li>
+            </ul>
+          </div>
+          <div class="expertise-category">
+            <h3>Research & Data</h3>
+            <ul>
+              <li>Digital Transformation</li>
+              <li>Complex Network Analysis</li>
+              <li>Innovation Ecosystems</li>
+              <li>Data Science Applications</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="media-contact">
+        <h2>Media & Speaking</h2>
+        <p>
+          For media inquiries, speaking engagements, or professional collaboration, 
+          Nikola Balić can be reached through any of the verified profiles above or via 
+          <a href="https://nibzard.com/about">his official website</a>.
+        </p>
+        
+        <div class="media-assets">
+          <h3>Media Assets</h3>
+          <div class="asset-grid">
+            <div class="asset-item">
+              <img src="/images/nikola-balic-large.jpg" alt="Nikola Balić (Nikola Balic) - Professional headshot for media use" class="media-headshot" />
+              <a href="/images/nikola-balic-large.jpg" download>High-res headshot</a>
+            </div>
+            <div class="asset-item">
+              <img src="/avatar/avatar-nibzard.png" alt="Nikola Balić (Nikola Balic) nibzard avatar for digital use" class="media-avatar" />
+              <a href="/avatar/avatar-nibzard.png" download>Digital avatar</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="bio-footer">
+        <p class="canonical-notice">
+          <strong>Canonical Source:</strong> This page serves as the official biographical reference for 
+          Nikola Balić (Nikola Balic). For the most current information, please refer to 
+          <a href="https://nibzard.com/bio" rel="canonical">https://nibzard.com/bio</a>
+        </p>
+        <p class="last-updated">
+          <small>Profile maintained and updated by Nikola Balić</small>
+        </p>
+      </footer>
+    </article>
+  </FadeIn>
+
+  <!-- Breadcrumb Schema -->
+  <SchemaMarkup schema={breadcrumbSchema} />
+</BaseLayout>
+
+<style>
+  .ascii-name {
+    color: var(--text-secondary);
+    font-weight: normal;
+  }
+  
+  .pronunciation {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .pronunciation small {
+    font-style: italic;
+    color: var(--text-secondary);
+  }
+  
+  .tagline {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+  }
+  
+  .name-variations {
+    background: var(--background-secondary);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+  }
+  
+  .name-variations h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .name-variations ul {
+    margin-bottom: 0;
+  }
+  
+  .achievement-grid,
+  .expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 1.5rem 0;
+  }
+  
+  .achievement-item,
+  .expertise-category {
+    background: var(--background-secondary);
+    padding: 1.5rem;
+    border-radius: 8px;
+  }
+  
+  .achievement-item h3,
+  .expertise-category h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+  }
+  
+  .academic-info {
+    background: var(--background-secondary);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+  }
+  
+  .academic-info > div {
+    margin-bottom: 0.75rem;
+  }
+  
+  .academic-info > div:last-child {
+    margin-bottom: 0;
+  }
+  
+  .profile-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+  
+  .profile-link {
+    display: block;
+    background: var(--background-secondary);
+    padding: 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text-primary);
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+  }
+  
+  .profile-link:hover {
+    background: var(--background-tertiary);
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+  }
+  
+  .asset-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin: 1.5rem 0;
+  }
+  
+  .asset-item {
+    text-align: center;
+  }
+  
+  .media-headshot,
+  .media-avatar {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+  
+  .media-avatar {
+    border-radius: 50%;
+  }
+  
+  .asset-item a {
+    display: inline-block;
+    background: var(--accent-color);
+    color: var(--accent-text);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: opacity 0.2s ease;
+  }
+  
+  .asset-item a:hover {
+    opacity: 0.8;
+  }
+  
+  .bio-footer {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+  }
+  
+  .canonical-notice {
+    background: var(--background-secondary);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--accent-color);
+  }
+  
+  .last-updated {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .achievement-grid,
+    .expertise-grid,
+    .profile-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .asset-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>
