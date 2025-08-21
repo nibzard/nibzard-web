@@ -25,6 +25,7 @@ try {
   console.log('Pre-build: OG images generated successfully');
 } catch (error) {
   console.error('Pre-build: Error generating OG images:', error.message);
+  console.log('Pre-build: Continuing build without OG image generation...');
   // Don't fail the build if OG image generation fails
   process.exit(0);
 }
