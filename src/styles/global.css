@@ -995,6 +995,10 @@ li {
   .logo {
     justify-content: flex-start;
   }
+
+  .logo .surname {
+    display: none;
+  }
 }
 
 /* === Footer Styles === */
