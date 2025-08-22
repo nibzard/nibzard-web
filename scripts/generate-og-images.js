@@ -2,7 +2,7 @@ import puppeteer from 'puppeteer';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import sharp from 'sharp';
+// import sharp from 'sharp'; // Removed due to architecture compatibility issues
 
 // __dirname workaround for ES modules
 const __filename = fileURLToPath(import.meta.url);
@@ -134,13 +134,7 @@ async function generateOGImage(page, entry, template) {
     type: 'png'
   });
   
-  // Optimize with Sharp
-  await sharp(imagePath)
-    .png({ quality: 90, compressionLevel: 9 })
-    .toFile(imagePath.replace('.png', '-optimized.png'));
-  
-  // Replace original with optimized
-  fs.renameSync(imagePath.replace('.png', '-optimized.png'), imagePath);
+  // Skip Sharp optimization to avoid architecture compatibility issues
   
   console.log(`Generated OG image for: ${entry.title} -> ${imagePath}`);
 }
