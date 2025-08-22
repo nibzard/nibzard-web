@@ -75,3 +75,36 @@ export function createBreadcrumbSchema(items: { name: string; url: string }[]): 
     }))
   };
 }
+
+export function createImageObjectSchema(data: {
+  url: string;
+  alt: string;
+  caption?: string;
+  width?: number;
+  height?: number;
+}): Record<string, any> {
+  return {
+    "@type": "ImageObject",
+    url: data.url,
+    description: data.alt,
+    caption: data.caption,
+    ...(data.width && { width: data.width }),
+    ...(data.height && { height: data.height }),
+    author: AUTHOR_INFO,
+    copyrightHolder: AUTHOR_INFO
+  };
+}
+
+export function createFAQSchema(faqs: { question: string; answer: string }[]): Record<string, any> {
+  return {
+    "@type": "FAQPage",
+    mainEntity: faqs.map(faq => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer
+      }
+    }))
+  };
+}

@@ -1,4 +1,39 @@
+# General crawlers
 User-agent: *
 Allow: /
+
+# AI Crawlers - Welcome with rate limiting
+User-agent: GPTBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Claude-Web
+Allow: /
+Crawl-delay: 1
+
+User-agent: CCBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: ChatGPT-User
+Allow: /
+Crawl-delay: 1
+
+User-agent: GoogleOther
+Allow: /
+Crawl-delay: 1
+
+User-agent: PerplexityBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: FacebookBot
+Allow: /
+Crawl-delay: 2
+
+# Bing AI
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
 
 Sitemap: https://nibzard.com/sitemap-index.xml

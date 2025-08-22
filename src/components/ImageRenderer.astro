@@ -19,7 +19,7 @@ const { Content } = await entry.render();
     </time>
   </div>
   <div class="image-content">
-    <img src={entry.data.imageUrl} alt="" class="image-display" />
+    <img src={entry.data.imageUrl} alt={entry.data.title || entry.data.description || 'Image from Nikola Balić'} class="image-display" />
     <div class="image-description">
       <Content />
     </div>

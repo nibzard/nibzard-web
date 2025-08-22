@@ -16,7 +16,7 @@ export interface Props {
 
 const {
   title = "nibzard",
-  description = "A minimal personal website and log.",
+  description = "Personal website and insights from Nikola Balić on AI, growth marketing, and innovation. Explore technical articles, market analysis, and go-to-market strategies for AI-driven products.",
   ogImage
 } = Astro.props;
 const canonicalUrl = Astro.url.toString();
@@ -80,7 +80,8 @@ const personSchema = createPersonSchema();
       ],
       meta: [
         { name: "viewport", content: "width=device-width, initial-scale=1.0" },
-        { name: "charset", content: "UTF-8" }
+        { name: "charset", content: "UTF-8" },
+        { property: "og:image:alt", content: title }
       ]
     }}
   />
