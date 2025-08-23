@@ -7,9 +7,9 @@ tldr: "AI agents succeed or fail based on your --help text. Clear command struct
 draft: false
 ---
 
-AI agents don't need fancy UX. They need good `--help`.
+AI agents don't need fancy MCP. They need good `--help`.
 
-Watch an agent try to use your CLI tool. It reads the help text once, then executes commands based on that understanding. No trial and error. No man pages. No MCP documentation searches. Just `--help` and go.
+Watch an agent try to use your CLI tool. It reads the help text once, then executes commands based on that understanding. No trial and error. No man pages. No 100 MCP tool calls. Just `--help` and go.
 
 If your help text is clear, the agent succeeds in one try. If it's ambiguous, the agent burns API calls retrying commands, asking for clarification, or parsing confusing output.
 
