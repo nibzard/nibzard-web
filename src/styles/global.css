@@ -27,7 +27,7 @@ body {
 /* === Typography & Links === */
 
 main {
-  max-width: 720px;
+  max-width: 820px;
   margin: 0 auto;
   padding: var(--space-lg) var(--space-md);
 }
@@ -890,7 +890,7 @@ li {
 
 /* === Layout Containers === */
 .inner-container {
-  max-width: 720px;
+  max-width: 820px;
   margin: 0 auto;
   padding-left: var(--space-md);
   padding-right: var(--space-md);
@@ -1998,6 +1998,11 @@ footer.full-width p {
 }
 
 /* Better spacing for alert callouts */
+
+::selection {
+  background-color: var(--color-accent3);
+  color: var(--color-black);
+}
 .log-content .alert {
   margin: var(--space-lg) 0;
 }
