@@ -20,6 +20,7 @@
 
   /* Accent colors */
   --color-accent1: #E45B5F;    /* Soft red accent */
+  --color-accent1-muted: #A8595C; /* Muted red for subtle emphasis */
   --color-accent2: #4BA3C3;    /* Light blue accent */
   --color-accent3: #FFB865;    /* Warm amber accent */
 
@@ -31,15 +32,33 @@
 
   /*
    * Typography System
-   * Consistent font families and sizes
+   * Consistent font families and sizes with Monaspace integration
    */
   --font-sans: 'Barlow', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-serif: Georgia, 'Times New Roman', serif;
-  --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+  
+  /* Monaspace Font Families */
+  --font-mono-neon: 'Monaspace Neon', 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+  --font-mono-argon: 'Monaspace Argon', 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+  --font-mono-xenon: 'Monaspace Xenon', 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+  --font-mono-krypton: 'Monaspace Krypton', 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+  --font-mono-radon: 'Monaspace Radon', 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+  
+  /* Primary font assignments - Updated hierarchy */
+  --font-body: var(--font-mono-argon); /* Main body text - humanist monospace */
+  --font-heading: var(--font-mono-xenon); /* Headings - slab serif, impactful */
+  --font-emphasis: var(--font-mono-radon); /* Quotes, em - handwriting, expressive */
+  --font-metadata: var(--font-mono-krypton); /* Dates, bylines - mechanical, precise */
+  --font-code: var(--font-mono-krypton); /* Code blocks - mechanical, precise */
+  --font-ui: var(--font-mono-krypton); /* UI elements - mechanical, precise */
+  
+  /* Backward compatibility */
+  --font-mono: var(--font-heading); /* Default monospace for existing elements */
+  --font-mono-fallback: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
 
-  /* Font sizes - using a modular scale */
-  --font-size-xs: 0.75rem;   /* 12px */
-  --font-size-sm: 0.875rem;  /* 14px */
+  /* Font sizes - increased for better readability */
+  --font-size-xs: 0.8rem;    /* 12.8px */
+  --font-size-sm: 0.9rem;    /* 14.4px */
   --font-size-base: 1rem;    /* 16px */
   --font-size-md: 1.125rem;  /* 18px */
   --font-size-lg: 1.25rem;   /* 20px */
@@ -77,9 +96,9 @@
   --border-radius-full: 9999px;
 
   /* Pico CSS Custom Properties */
-  --font-family: var(--font-sans);
-  --font-family-heading: var(--font-mono);
-  --font-family-monospace: var(--font-mono);
+  --font-family: var(--font-body);
+  --font-family-heading: var(--font-heading);
+  --font-family-monospace: var(--font-code);
   --spacing: 0.75rem;
   --typography-spacing-vertical: 1.2rem;
   --form-element-spacing-vertical: 0.75rem;

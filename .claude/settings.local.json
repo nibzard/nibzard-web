@@ -3,7 +3,15 @@
     "allow": [
       "mcp__playwright__browser_navigate",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "WebFetch(domain:monaspace.githubnext.com)",
+      "WebFetch(domain:www.jsdelivr.com)",
+      "WebFetch(domain:github.com)",
+      "WebSearch",
+      "mcp__playwright__browser_take_screenshot",
+      "mcp__playwright__browser_console_messages",
+      "Bash(find:*)",
+      "Bash(mv:*)"
     ],
     "deny": []
   }
