@@ -1,95 +1,175 @@
 ---
-title: "The Empty Terminal: From User Experience to Agent Experience"
-description: "How CLI design must evolve from human-friendly to agent-friendly interfaces in the age of AI automation."
+title: "AI Agents Just Need Good --help"
+description: "Clear CLI documentation is your agent API. Vague help text costs 2x more in API calls and failed automations."
 date: 2025-08-17
-tags: [UX, AI, CLI, AGENTS, DEVELOPER-TOOLS]
-tldr: "The shift from User Experience to Agent Experience requires fundamental changes in CLI design. Tools built for human convenience confuse AI agents with ambiguous outputs, conversational text, and implicit success signals. The future belongs to deterministic, structured, token-efficient interfaces."
+tags: [CLI, AI, AGENTS, DOCUMENTATION, API]
+tldr: "AI agents succeed or fail based on your --help text. Clear command structure, explicit success signals, and structured output options make the difference between one API call and five retries."
 draft: false
 ---
 
-The command line was a *secret language*.
+AI agents don't need fancy MCP. They need good `--help`.
 
-It was a world of precision. Of pipes and redirects. Of muscle memory baked into fingertips. For fifty years, we built tools for ourselves. We, the builders, the system administrators, the developers. We crafted CLIs with an implicit understanding of *the human on the other side*. A legacy deployment tool, with its colorful progress bars and friendly, conversational output, felt like the pinnacle of this craft.
+Watch an agent try to use your CLI tool. It reads the help text once, then executes commands based on that understanding. No trial and error. No man pages. No 100 MCP tool calls. Just `--help` and go.
 
-*Then we gave it to an agent.*
+If your help text is clear, the agent succeeds in one try. If it's ambiguous, the agent burns API calls retrying commands, asking for clarification, or parsing confusing output.
 
-We gave it a simple task: deploy the application and confirm the final URL. The agent started. The tool replied, "Okay, starting your build! Hang tight..." The agent waited. It saw a spinner, a series of log lines, and finally, "Hooray! Your site is live at `example-123.app`." To a human, this is a clear success. To the agent, it was ambiguous. It was a token mess. Was "Hooray!" the signal? Was the URL on the last line the definitive output, or was there more? It took another turn, another API call, just to ask, "Are you done?"
+This isn't theoretical. I've watched agents struggle with tools that humans love. A deployment CLI with friendly messages like "Hang tight..." followed by "Hooray! Your site is live!" leaves agents guessing. Did it work? Is there more output coming? Should it wait?
 
-It wasn't a bug in the tool. It wasn't a flaw in the agent. It was a *category error*. The tool was speaking a dialect of human convenience. The agent needed a language of *pure, predictable logic*. This is the heart of a new discipline.
+The same deployment with `--json` output and clear exit codes? The agent nails it every time.
 
-## The New Rules of the Craft
+## What Makes a Good CLI for Agents
 
-Matt Biilmann of Netlify gave it a name: **AX**, or [Agent Experience](https://biilmann.blog/articles/introducing-ax/). It's a fundamental shift in how we must think about our interfaces. The old rules of UX, designed to delight and guide a human, are being replaced by the stark requirements of a machine. The contrast is not subtle.
+Your `--help` text is your API contract with agents. Here's what works:
 
-| User Experience (UX) | Agent Experience (AX) |
-| :--- | :--- |
-| **Values discoverability:** Helpful `--help` text, intuitive subcommands. | **Values predictability:** Deterministic outputs, strict APIs, zero ambiguity. |
-| **Values helpful dialogue:** Friendly error messages, conversational prose. | **Values structured data:** Machine-readable errors (JSON), meaningful exit codes. |
-| **Adheres to the Unix philosophy:** "Silence is success." No output means it worked. | **Requires an explicit signal:** "Success must be stated." Silence is unknown. |
-| **Values rich feedback:** Colorful spinners, detailed progress logs. | **Values token efficiency:** Minimalist output, every character has a cost. |
-| **Goal: Make the human feel smart.** | **Goal: Make the agent's job simple.** |
+**Clear command structure:**
+```
+$ deploy --help
+Usage: deploy [OPTIONS] <directory>
 
-This is *not* a theoretical problem. We need the methods to measure it.
+Options:
+  --format <json|text>     Output format (default: text)
+  --wait                   Wait for deployment to complete
+  --url-only              Only output the final URL
+  
+Exit codes:
+  0: Success
+  1: Invalid arguments
+  2: Deploy failed
+```
 
-## The New Discipline of Measurement
+**Bad help text** is vague:
+- "Deploy your awesome project!"
+- "Various options available"
+- No mention of output format or exit codes
 
-To build for this new world, we need a new discipline of evaluation. It requires two distinct instruments.
+**Good help text** is specific:
+- Exact argument formats
+- All possible flags
+- Clear exit code meanings
+- Output format options
 
-First, we need a stethoscope. A way to measure the friction of an interaction. This is a qualitative art. It requires a framework that can run an agent through a task and then analyze the full execution trace. It looks for moments of confusion: where did the agent get stuck? Did it have to retry a command? Did it misuse a flag because the help text was unclear? From these observations, we can generate a score—a grade that tells us how a tool *feels* to an agent. It measures the pain.
+## Why CLI Beats MCP
 
-But *feel* is not enough. We need a *ledger*.
+[Mario Zechner tested this](https://mariozechner.at/posts/2025-08-15-mcp-vs-cli/). He compared MCP servers against CLI tools across multiple tasks, measuring token usage, time, and success rates. The results were clear: CLIs often outperform MCPs.
 
-This is the quantitative science, shown in the methodical benchmark work of engineers like [Mario Zechner](https://mariozechner.at/posts/2025-08-15-mcp-vs-cli/). He didn't just measure success; he measured the cost. He proved that a confusing interface is an expensive one. In his tests, a tool that forced an agent to take extra steps could more than double the cost of completing a task. The agent's bar tab is real, and it's paid in API calls, wasted time and polluted context. This approach measures the price.
+**MCP problems:**
+- Many MCPs "flood the context window with unnecessary output"
+- Too many tools in one MCP "degrade agent performance"
+- MCPs often reimplement functionality that CLIs already provide better
 
-A complete benchmark requires both. The stethoscope tells us *why* the agent struggled. The ledger tells us *how much* that struggle cost.
+**Example: GitHub workflows**
+- GitHub MCP server: Verbose output, multiple tools, context pollution
+- GitHub CLI (`gh`): Clean commands, structured output, familiar patterns
 
-## Designing for the Empty Terminal
+The agent doesn't get frustrated. It just burns your budget.
 
-The logical conclusion is that we must start designing for a new user. **A user who is fast, literal, and has a budget.** A user who will never appreciate a clever animation but will reward a tool that returns clean JSON.
+## Token Efficiency Matters
 
-The great developer tools of the next decade will be built differently.
+Every word in your help text takes context space. Verbose documentation pollutes the agent's working memory, leaving less room for actual problem-solving. Concise help text means the agent can focus on the task, not parsing unnecessary fluff.
 
-They will honor the spirit of the Unix philosophy—no unnecessary chatter—but will break its cardinal rule. For an agent, *silence is not success. Silence is ambiguity*. Success must be stated, clearly and concisely.
+## Three Rules for Agent-Friendly CLIs
 
-They will not have a sprawling, multi-page `man` file. They will have a concise tool definition that can be consumed in a single prompt.
+**1. Make success explicit**
+```bash
+# Bad: Silent success
+$ deploy ./app
+(no output)
 
-They will not return a flowery, human-readable paragraph upon success. They will return a single line of structured data with an exit code of 0.
+# Good: Clear success signal  
+$ deploy ./app
+{"status": "success", "url": "https://app-xyz.com", "deploy_id": "d123"}
+```
 
-This is the craft of Agent Experience. It is a return to a kind of minimalism. A focus on designing clean, deterministic, and token-efficient interfaces for a user that doesn't have hands. A user that sits *alone*, in the empty terminal.
+**2. Provide structured output**
+```bash
+# Add --json to everything
+$ status --json
+{"status": "running", "uptime": 3600, "memory_mb": 512}
 
-<blockquote class="featured-quote primary">
-The craft is not gone. It has changed. We are no longer building for our hands. We are building for a new kind of mind.
-</blockquote>
+# Not this
+$ status  
+App is running great! Memory usage looks good.
+```
 
-## The Practical Implications
+**3. Document your exit codes**
+```
+Exit codes:
+  0: Success
+  1: Invalid arguments  
+  2: Authentication failed
+  3: Network error
+  4: Resource not found
+```
 
-I've tested dozens of CLI tools with AI agents through [AgentProbe](/agentprobe). The results are stark. Tools designed for human convenience consistently confuse agents:
+Agents parse exit codes faster than text. Use them.
 
-- Authentication flows requiring browser interaction
-- Success states indicated only by visual cues
-- Error messages lacking actionable specificity
-- Multi-turn wizards instead of single commands
+## Common Agent Failures
 
-The cost is measurable. A simple deployment that takes a human 30 seconds can require 20+ agent turns and multiple API calls. The monetary cost matters, but the *real* cost is reliability.
+Testing CLI tools with agents reveals these patterns:
 
-## Building for Both Worlds
+**Authentication flows** - Browser redirects kill agents. Provide API keys or token-based auth instead.
 
-The future isn't about *choosing* between human-friendly and agent-friendly design. The winners will master both.
+**Progress indicators** - Spinners and progress bars are invisible to agents. Use `--verbose` with line-by-line updates.
 
-Consider these parallel design principles:
+**Interactive prompts** - "Do you want to continue? (y/n)" breaks agent workflows. Add `--yes` flags.
 
-**For humans**: Rich help text, intuitive workflows, forgiving error recovery.
+**Ambiguous errors** - "Something went wrong" tells agents nothing. Return specific error codes and messages.
 
-**For agents**: Structured output modes, deterministic behavior, explicit success signals.
+**Context-aware help** - Show different help based on current state. A CI environment might expose different flags than a local development setup.
 
-A well-designed CLI in 2025 offers both paths. `--json` flags for structured output. `--quiet` modes that speak only success or failure. Clear exit codes that agents can parse without ambiguity.
+## Design for Both
 
-The tools that embrace this duality won't just survive the agent revolution—they'll become force multipliers in it.
+You don't have to choose between human and agent users:
 
-## The Empty Terminal Awaits
+```bash
+# Human-friendly default
+$ deploy
+✨ Deploying your app...
+🚀 Live at https://app-xyz.com
 
-The terminal is becoming empty of human hands, but it's filling with artificial minds. They *think* differently. They *parse* differently. They succeed and fail by different rules.
+# Agent-friendly option  
+$ deploy --json
+{"status": "success", "url": "https://app-xyz.com", "deploy_id": "d123"}
+```
 
-The craft of building for them is just beginning. It requires new principles, new measurements, and *new empathy* for users who experience our tools as streams of tokens rather than visual interfaces.
+Add `--json`, `--quiet`, and `--yes` flags to existing tools. Agents will use them. Humans will stick with the defaults.
 
-The command line was a secret language between humans and machines. Now we must teach it to speak to *the machines themselves*.
+## The CLI Advantage
+
+Mario's evaluation revealed a crucial insight: many MCPs produce "much worse results than just letting the agent run the command line tool directly." This isn't surprising when you consider:
+
+**CLIs are already in training data** - Models learned CLI patterns from millions of examples. They understand `git status`, `docker ps`, and `npm install` without explanation.
+
+**MCPs create abstraction overhead** - Each MCP introduces new tool names, schemas, and behaviors. Agents must learn these from scratch in every conversation.
+
+**Single purpose wins** - A focused CLI tool beats a Swiss Army knife MCP with dozens of functions. Fewer choices mean better decisions.
+
+## The Competitive Edge
+
+Companies with agent-friendly CLIs have an advantage. When agents can use your tools reliably on the first try, you capture more automation workflows. When they struggle with unclear interfaces, they move to competitors with better documentation.
+
+## Security for Agent Workflows
+
+Design CLIs with agent access patterns in mind:
+
+**API-first authentication** - Use tokens instead of browser flows. Agents can't click through OAuth screens.
+
+**Scoped permissions** - Let agents authenticate with limited access. A deployment agent doesn't need billing permissions.
+
+**Audit trails** - Log agent actions differently from human actions. You need to know what automated tools are doing.
+
+## When MCP Makes Sense
+
+MCPs aren't always wrong. They work when:
+- No CLI tool exists
+- Existing CLIs are too verbose or complex
+- You need stateful interactions
+- The client lacks shell access
+
+But most of the time, a well-designed CLI is simpler, faster, and more reliable.
+
+## The Bottom Line
+
+Good `--help` text isn't just documentation. It's your agent API. Models already know how to use CLI tools. Don't force them to learn a new abstraction layer when the command line works perfectly.
+
+Skip the MCP. Build a better CLI.
