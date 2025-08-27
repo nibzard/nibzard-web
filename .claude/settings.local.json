@@ -11,7 +11,9 @@
       "mcp__playwright__browser_take_screenshot",
       "mcp__playwright__browser_console_messages",
       "Bash(find:*)",
-      "Bash(mv:*)"
+      "Bash(mv:*)",
+      "Bash(git push:*)",
+      "Bash(git pull:*)"
     ],
     "deny": []
   }
