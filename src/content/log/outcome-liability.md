@@ -1,6 +1,6 @@
 ---
 title: "Outcome Liability: Why Agent Authorship Misses the Point"
-description: "As agents abstract away development like HLLs did assembly, 'human liability for authored code' becomes meaningless. The future is operator liability backed by provable assurance."
+description: "The future of code liability isn't about who wrote it, but who operates it. Provable assurance beats authorship tracking."
 date: 2025-08-20
 tags: [AI, AGENTS, LIABILITY, POLICY, DEVELOPMENT]
 tldr: "As agents abstract away development like HLLs did assembly, 'human liability for authored code' becomes meaningless. The future is operator liability backed by provable assurance—signed attestations, property tests, and runtime monitoring matter more than keystrokes."
