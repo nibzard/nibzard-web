@@ -13,10 +13,6 @@ draft: false
 
 Picture this: You're driving through San Francisco and spot a cryptic billboard. Five numbers. No explanation. Just:
 
-```
-{64659, 123310, 75584, 8138, 38271}
-```
-
 ![The mysterious Listen Labs billboard that started it all](/images/berghain_billboard.png)
 
 That's it. SF billboards are basically expensive Reddit posts hoping to go viral online. And this one worked.
