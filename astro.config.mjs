@@ -3,6 +3,7 @@ import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import rehypeExternalLinks from './src/plugins/rehype-external-links.mjs';
+import rehypeHeadingAnchors from './src/plugins/rehype-heading-anchors.mjs';
 
 // import node from '@astrojs/node';
 import vercel from '@astrojs/vercel';
@@ -19,6 +20,7 @@ export default defineConfig({
   markdown: {
     rehypePlugins: [
       [rehypeExternalLinks, { domain: new URL(siteUrl).hostname }],
+      rehypeHeadingAnchors,
     ],
   },
 

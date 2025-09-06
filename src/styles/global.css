@@ -30,7 +30,7 @@ body {
 /* === Typography & Links === */
 
 main {
-  max-width: 960px;
+  max-width: 800px;
   margin: 0 auto;
   padding: var(--space-lg) var(--space-md);
   width: 100%;
@@ -935,6 +935,7 @@ li {
 .log-content li {
   margin-bottom: var(--space-sm);
   line-height: 1.65;
+  font-size: 1rem;
 }
 
 /* === Layout Containers === */
@@ -1852,6 +1853,41 @@ time {
   font-family: var(--font-mono);
 }
 
+/* Ensure h2 text maintains heading styles when wrapped in anchor */
+.log-content h2 a:not(.heading-anchor) {
+  color: var(--color-accent1) !important;
+  text-decoration: none !important;
+  font-weight: 700;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.log-content h2 a:not(.heading-anchor):hover {
+  color: var(--color-accent1) !important;
+  text-decoration: none !important;
+}
+
+/* Heading anchor styles */
+.heading-anchor {
+  color: #2d3748 !important; /* Dark gray, almost black */
+  text-decoration: none !important;
+  font-weight: 400;
+  margin-right: var(--space-sm); /* Add spacing between # and heading text */
+  opacity: 0.7;
+  transition: opacity var(--transition-fast), color var(--transition-fast);
+  display: inline-block;
+}
+
+.log-content h2:hover .heading-anchor {
+  opacity: 1;
+}
+
+.heading-anchor:hover {
+  color: var(--color-accent2) !important;
+  text-decoration: none !important;
+  opacity: 1;
+}
+
 .log-content h2::before {
   content: '';
   position: absolute;
@@ -1932,6 +1968,7 @@ time {
 .log-content li {
   margin-bottom: var(--space-sm);
   line-height: 1.65;
+  font-size: 1rem;
 }
 
 /* Nested lists with better indentation */
