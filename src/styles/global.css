@@ -3150,6 +3150,31 @@ a[href*="://"] {
 }
 
 /* === Mobile Menu === */
+
+/* Body scroll lock for mobile menu */
+body.mobile-menu-open {
+  overflow: hidden;
+}
+
+/* Body scroll lock for search overlay */
+body.search-overlay-open {
+  overflow: hidden;
+}
+
+/* Ensure main content doesn't interfere with mobile menu - exclude header since it contains the menu */
+body.mobile-menu-open main,
+body.mobile-menu-open footer {
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+/* Only blur the navigation part of header, not the whole header */
+body.mobile-menu-open header .logo,
+body.mobile-menu-open header nav:not(.mobile-menu-nav) {
+  filter: blur(2px);
+  pointer-events: none;
+}
+
 .mobile-menu-trigger {
   display: none;
   background: none;
@@ -3188,21 +3213,36 @@ a[href*="://"] {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(4px);
-  z-index: 1001;
+  background: #000000;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 999999;
   display: flex;
   justify-content: flex-end;
+  /* Prevent interaction with background elements */
+  touch-action: none;
+  /* Create new stacking context */
+  isolation: isolate;
+  /* Ensure full coverage */
+  width: 100vw;
+  height: 100vh;
 }
 
 .mobile-menu-content {
   background: white;
   width: 280px;
-  height: 100%;
+  height: 100vh;
   padding: var(--space-lg);
   display: flex;
   flex-direction: column;
   box-shadow: -4px 0 20px rgba(0, 0, 0, 0.25);
+  position: relative;
+  z-index: 10000;
+  /* Ensure proper isolation */
+  isolation: isolate;
+  /* Prevent any background bleeding */
+  overflow-y: auto;
 }
 
 .mobile-menu-header {

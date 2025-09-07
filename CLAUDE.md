@@ -25,6 +25,42 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Git Workflow
 - Before pushing to git always test the build with: npm run build
 
+## Performance Testing with Lighthouse
+
+Use Lighthouse to audit site performance, accessibility, SEO, and best practices during development:
+
+### Quick Setup
+```bash
+# One-time install
+npm install -g lighthouse
+
+# Start dev server (if not running)
+pnpm run dev
+```
+
+### Running Audits
+```bash
+# Full audit with HTML report
+lighthouse http://localhost:4321 \
+  --output html --output-path ./lighthouse-report.html \
+  --chrome-flags="--headless --no-sandbox --disable-gpu"
+
+# Quick JSON scores only
+lighthouse http://localhost:4321 \
+  --only-categories=performance,accessibility,best-practices,seo \
+  --output=json --quiet
+
+# Test production build (more accurate performance)
+pnpm run build && pnpm run preview
+lighthouse http://localhost:4322 --output html --output-path ./lighthouse-prod.html
+```
+
+### Performance Notes
+- Development server results will show slower performance than production
+- Focus on accessibility, SEO, and best practices during development
+- Test production build (`pnpm run preview`) for accurate performance metrics
+- Reports are saved as `lighthouse-report.html` in project root
+
 ## Adding New Log Articles
 
 ### Process for adding new articles to the log:

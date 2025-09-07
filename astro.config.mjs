@@ -4,6 +4,7 @@ import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import rehypeExternalLinks from './src/plugins/rehype-external-links.mjs';
 import rehypeHeadingAnchors from './src/plugins/rehype-heading-anchors.mjs';
+import rehypeOptimizeImages from './src/plugins/rehype-optimize-images.mjs';
 
 // import node from '@astrojs/node';
 import vercel from '@astrojs/vercel';
@@ -42,6 +43,7 @@ export default defineConfig({
     rehypePlugins: [
       [rehypeExternalLinks, { domain: new URL(siteUrl).hostname }],
       rehypeHeadingAnchors,
+      rehypeOptimizeImages,
     ],
   },
 

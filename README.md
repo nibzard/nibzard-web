@@ -42,7 +42,7 @@ The project follows a well-organized structure:
 │   │   ├── index.astro   # Homepage
 │   │   ├── about.astro   # About page
 │   │   ├── search.astro  # Search page
-│   │   ├── elements.astro # UI component showcase
+│   │   ├── styles.astro  # UI styles and component showcase
 │   │   ├── now.astro     # Current activities page
 │   │   └── [...slug].astro # Dynamic content pages
 │   ├── plugins/          # Custom Astro plugins

@@ -11,7 +11,15 @@ export default function SearchOverlay() {
   // Register this component with the global manager
   useEffect(() => {
     if (typeof window !== 'undefined' && window.searchOverlay) {
-      window.searchOverlay.registerComponent({ setState: setIsOpen });
+      window.searchOverlay.registerComponent({ 
+        setState: (state) => {
+          if (typeof state === 'object' && 'isOpen' in state) {
+            setIsOpen(state.isOpen);
+          } else {
+            setIsOpen(state);
+          }
+        }
+      });
     }
   }, []);
 
@@ -28,7 +36,7 @@ export default function SearchOverlay() {
     }
   }, [isOpen]);
 
-  // Handle ESC key press
+  // Handle ESC key press and body scroll lock
   useEffect(() => {
     const handleEscKey = (event) => {
       if (event.key === 'Escape') {
@@ -36,17 +44,18 @@ export default function SearchOverlay() {
       }
     };
 
+    const body = document.body;
     if (isOpen) {
       document.addEventListener('keydown', handleEscKey);
-      // Prevent body scroll when overlay is open
-      document.body.style.overflow = 'hidden';
+      // Prevent body scroll when overlay is open - optimized approach
+      body.classList.add('search-overlay-open');
     } else {
-      document.body.style.overflow = 'unset';
+      body.classList.remove('search-overlay-open');
     }
 
     return () => {
       document.removeEventListener('keydown', handleEscKey);
-      document.body.style.overflow = 'unset';
+      body.classList.remove('search-overlay-open');
     };
   }, [isOpen, onClose]);
 

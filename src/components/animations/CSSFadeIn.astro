@@ -1,0 +1,83 @@
+---
+// ABOUTME: CSS-only fade-in animation component to replace heavy Framer Motion
+// ABOUTME: Uses Intersection Observer API for performance-optimized scroll-triggered animations
+
+interface Props {
+  delay?: number;
+  duration?: number;
+  yOffset?: number;
+  className?: string;
+}
+
+const { 
+  delay = 0, 
+  duration = 0.3, 
+  yOffset = 20,
+  className = ""
+} = Astro.props;
+
+const uniqueId = `fade-in-${Math.random().toString(36).substr(2, 9)}`;
+---
+
+<div 
+  class={`css-fade-in ${className}`}
+  data-fade-in
+  data-delay={delay}
+  data-duration={duration}
+  data-y-offset={yOffset}
+  id={uniqueId}
+>
+  <slot />
+</div>
+
+<style define:vars={{ delay: `${delay}s`, duration: `${duration}s`, yOffset: `${yOffset}px` }}>
+  .css-fade-in {
+    opacity: 0;
+    transform: translateY(var(--yOffset));
+    transition: opacity var(--duration) ease-out var(--delay), 
+                transform var(--duration) ease-out var(--delay);
+  }
+
+  .css-fade-in.fade-in-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  // Intersection Observer for scroll-triggered animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const element = entry.target as HTMLElement;
+        const delay = parseInt(element.dataset.delay || '0') * 1000;
+        
+        setTimeout(() => {
+          element.classList.add('fade-in-visible');
+          observer.unobserve(element); // Stop observing once animated
+        }, delay);
+      }
+    });
+  }, observerOptions);
+
+  // Observe all fade-in elements
+  document.addEventListener('DOMContentLoaded', () => {
+    const fadeElements = document.querySelectorAll('[data-fade-in]');
+    fadeElements.forEach((element) => {
+      observer.observe(element);
+    });
+  });
+
+  // Handle dynamic content (for client-side navigation)
+  document.addEventListener('astro:page-load', () => {
+    const fadeElements = document.querySelectorAll('[data-fade-in]:not(.fade-in-visible)');
+    fadeElements.forEach((element) => {
+      observer.observe(element);
+    });
+  });
+</script>

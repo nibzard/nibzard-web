@@ -13,7 +13,110 @@ const sum = 1 + 2;
 console.log(message, sum);`;
 ---
 
-<BaseLayout title="UI Elements - nibzard" description="A showcase of UI elements used across nibzard.">
+<BaseLayout title="Styles - nibzard" description="A showcase of all styles and UI elements used across nibzard articles and pages.">
+
+  <section class="element-section">
+    <h2>Article Styles</h2>
+    <p>Common formatting elements used in blog posts and articles throughout the site.</p>
+
+    <h3>Text Formatting</h3>
+    <div class="typography-sample">
+      <p><strong>Bold text</strong> using **bold** or <strong>strong</strong></p>
+      <p><em>Italic text</em> using *italic* or <em>em</em></p>
+      <p>Inline code like <code>const example = "hello world";</code> using `backticks`</p>
+      <p><a href="#">Links</a> can be standalone or within text</p>
+    </div>
+
+    <h3>Lists</h3>
+    <div class="list-sample">
+      <h4>Unordered Lists</h4>
+      <ul>
+        <li>First item</li>
+        <li>Second item with <strong>bold text</strong></li>
+        <li>Third item with <a href="#">a link</a></li>
+        <li>Nested list:
+          <ul>
+            <li>Nested item 1</li>
+            <li>Nested item 2</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h4>Ordered Lists</h4>
+      <ol>
+        <li>First numbered item</li>
+        <li>Second numbered item</li>
+        <li>Third item with nested content:
+          <ol>
+            <li>Nested numbered item</li>
+            <li>Another nested item</li>
+          </ol>
+        </li>
+      </ol>
+    </div>
+
+    <h3>Horizontal Rules</h3>
+    <p>Section dividers using <code>---</code>:</p>
+    <hr>
+
+    <h3>Images</h3>
+    <p>Standard image markup with alt text:</p>
+    <img src="/images/placeholder.jpeg" alt="Example image with descriptive alt text" style="max-width: 300px; height: auto;" />
+
+    <h3>Tables with Container</h3>
+    <p>Responsive table wrapper for better mobile display:</p>
+    <div class="table-container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Status</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Article formatting</td>
+            <td>✅ Complete</td>
+            <td>All styles documented</td>
+          </tr>
+          <tr>
+            <td>Responsive tables</td>
+            <td>✅ Complete</td>
+            <td>Using table-container wrapper</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Code Blocks</h3>
+    <p>Multi-line code with language specification:</p>
+    <CodeBlock code={`# Example bash command
+npm install -g @anthropic-ai/claude-code
+
+# Start Claude Code
+claude`} language="bash" />
+
+    <CodeBlock code={`// JavaScript example
+function greet(name) {
+  return \`Hello, \${name}!\`;
+}
+
+console.log(greet("world"));`} language="javascript" />
+
+    <h3>Featured Quotes in Articles</h3>
+    <p>Special blockquotes with citations:</p>
+    
+    <blockquote class="featured-quote primary">
+      <p>The best way to predict the future is to invent it.</p>
+      <cite>— <a href="#">Alan Kay</a></cite>
+    </blockquote>
+
+    <blockquote class="featured-quote secondary">
+      <p>Simplicity is the ultimate sophistication.</p>
+      <cite>— Leonardo da Vinci</cite>
+    </blockquote>
+  </section>
 
   <section class="element-section">
     <h2>Color System</h2>

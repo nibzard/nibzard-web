@@ -1,0 +1,72 @@
+/* ABOUTME: Critical above-the-fold CSS for faster initial render
+ * ABOUTME: Contains essential styles needed for first paint and LCP optimization */
+
+/* Critical layout styles */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+  color: #2D3032;
+  font-family: 'Monaspace Argon', 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+/* Critical header styles */
+header {
+  position: relative;
+  z-index: 100;
+}
+
+/* Critical main content area */
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Critical typography for above-the-fold content */
+h1 {
+  font-family: 'Monaspace Xenon', 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+  font-size: 2.25rem;
+  line-height: 1.2;
+  margin: 0 0 1rem 0;
+  font-weight: 600;
+  color: #2D3032;
+}
+
+/* Critical styles for first image (LCP candidate) */
+img[src*="berghain_billboard"] {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1rem 0;
+  border-radius: 4px;
+}
+
+/* Critical navigation styles to prevent layout shift */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background: #FFFFFF;
+}
+
+/* Critical loading states */
+.fade-in {
+  opacity: 1;
+}
+
+/* Critical responsive breakpoints */
+@media (max-width: 768px) {
+  main {
+    padding: 16px 12px;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+}

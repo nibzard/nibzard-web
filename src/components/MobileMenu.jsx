@@ -6,16 +6,18 @@ import { motion, AnimatePresence } from 'framer-motion';
 export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Prevent body scroll when menu is open
+  // Prevent body scroll when menu is open - optimized to reduce reflows
   useEffect(() => {
+    const body = document.body;
     if (isOpen) {
-      document.body.style.overflow = 'hidden';
+      // Use CSS class instead of direct style manipulation
+      body.classList.add('mobile-menu-open');
     } else {
-      document.body.style.overflow = 'unset';
+      body.classList.remove('mobile-menu-open');
     }
 
     return () => {
-      document.body.style.overflow = 'unset';
+      body.classList.remove('mobile-menu-open');
     };
   }, [isOpen]);
 

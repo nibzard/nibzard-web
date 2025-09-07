@@ -4,7 +4,7 @@ import AnimatedTag from '../components/animations/AnimatedTag.jsx';
 import AnimatedTagsContainer from '../components/animations/AnimatedTagsContainer.jsx';
 import { formatTagForDisplay, sortTags } from '../utils/tagUtils';
 import { getCollection, type CollectionEntry } from 'astro:content';
-import FadeIn from '../components/animations/FadeIn.jsx';
+import CSSFadeIn from '../components/animations/CSSFadeIn.astro';
 import NewsletterSubscribe from '../components/NewsletterSubscribe.astro';
 import SchemaMarkup from '../components/SchemaMarkup.astro';
 import CopyMarkdownButton from '../components/CopyMarkdownButton.jsx';
@@ -111,7 +111,7 @@ const enhancedOgConfig = {
   <article class="fade-in">
     <header class="log-entry-header">
       <div class="article-actions">
-        <CopyMarkdownButton client:load slug={slug} />
+        <CopyMarkdownButton client:idle slug={slug} />
       </div>
       {frontmatter.date && (
         <p class="log-entry-meta">
@@ -155,7 +155,7 @@ const enhancedOgConfig = {
     )}
 
     {randomEntries.length > 0 && (
-      <FadeIn client:visible>
+      <CSSFadeIn delay={0.2}>
         <section class="read-more-section">
           <h2 class="read-more-title">Continue Reading</h2>
           <div class="card-container">
@@ -174,10 +174,10 @@ const enhancedOgConfig = {
             ))}
           </div>
         </section>
-      </FadeIn>
+      </CSSFadeIn>
     )}
 
-    <FadeIn client:visible>
+    <CSSFadeIn delay={0.4}>
       <section class="author-section" id="author">
         <div class="author-container">
           <div class="author-avatar">
@@ -208,7 +208,7 @@ const enhancedOgConfig = {
           </div>
         </div>
       </section>
-    </FadeIn>
+    </CSSFadeIn>
 
     <div class="section-spacer"></div>
 

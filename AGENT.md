@@ -17,7 +17,7 @@
 - **UI**: Use variables from variables.css for colors/typography
 - **Animations**: Framer Motion (keep subtle)
 - **Error Handling**: try/catch for async operations
-- **UI Elements**: Always reference `src/pages/elements.astro` when creating new pages or components to maintain consistency
+- **UI Elements**: Always reference `src/pages/styles.astro` when creating new pages or components to maintain consistency
 
 ## File Organization
 - `/src/components/`: Reusable UI components
