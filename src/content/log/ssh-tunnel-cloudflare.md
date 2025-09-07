@@ -3,7 +3,7 @@ title: "Code with Claude AI from Your Phone: VM Setup Guide"
 description: "Turn your phone into a powerful coding workstation with Claude Code running in your homelab VM"
 tldr: "Complete guide to setting up Claude Code in your homelab VM and accessing it securely from your phone via Cloudflare Tunnel - no open ports required."
 date: 2025-07-16
-tags: [CHEATSHEET, AI, Claude, Mobile, VM, Cloudflare]
+tags: [HUMAN, CHEATSHEET, AI, Claude, Mobile, VM, Cloudflare]
 draft: false
 ---
 

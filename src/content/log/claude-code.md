@@ -3,7 +3,7 @@ title: "Mastering Claude Code: Boris Cherny's Guide & Cheatsheet"
 description: "Summary and cheatsheet from Boris Cherny's talk on Claude Code: setup, workflows, tools, and tips."
 tldr: "A practical guide to Claude Code, including setup, codebase Q&A, tool usage, context best practices, scripting, and power user tips, distilled from Boris Cherny's talk."
 date: 2025-05-27
-tags: [CHEATSHEET, Claude, Code]
+tags: [HUMAN, CHEATSHEET, Claude, Code]
 draft: false
 ---
 

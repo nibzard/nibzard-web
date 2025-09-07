@@ -2,7 +2,7 @@
 title: "The Anti-Playbook: Why AI Dev Tools Need Different Growth"
 description: "Traditional SaaS growth tactics fail with AI dev tools. Here's why you need to throw out the playbook."
 date: 2025-07-17
-tags: [AI, DEVELOPER-TOOLS, GROWTH, SAAS, STRATEGY]
+tags: [HUMAN, AI, DEVELOPER-TOOLS, GROWTH, SAAS, STRATEGY]
 draft: false
 tldr: "The traditional SaaS playbook is dead for AI dev tools. Developers smell BS, the market has three overlapping layers, and you're fighting inertia—not competition. Success means activation through value, retention through community, and expansion through metrics."
 author: "Nikola Balić"

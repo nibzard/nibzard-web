@@ -3,7 +3,7 @@ title: "Why AI Code Still Needs Human Nudges"
 description: "AI excels at generating working code, but sustainable software requires strategic human intervention."
 tldr: "AI coding assistants are incredible at rapid code generation, but without human guidance they miss maintainability, architecture, and sustainable engineering practices. The key isn't perfect prompts, it's knowing when and how to nudge the AI toward better decisions."
 date: 2025-07-29
-tags: [AI, ENGINEERING, DEVELOPMENT]
+tags: [HUMAN, AI, ENGINEERING, DEVELOPMENT]
 draft: false
 ---
 

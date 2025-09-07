@@ -1,8 +1,9 @@
 ---
 title: "The 20-Year Technology Adoption Cycle and AI's Acceleration"
 description: "How transformative technologies follow a 20-year adoption cycle, and why AI represents a fundamental departure from this pattern."
+tldr: "Infrastructure technologies historically take 20 years to reach critical mass adoption (GPS, mobile, autonomous vehicles). AI breaks this pattern, achieving rapid shallow adoption through existing digital infrastructure, but faces new barriers transitioning to deep societal integration by 2030-2040."
 date: 2025-07-08
-tags: ["AI", "ROBOPRESS", "innovation", "adoption"]
+tags: ["AI", "SLOP", "innovation", "adoption"]
 ---
 
 ## From Infrastructure to Intelligence and the Future of AI Integration

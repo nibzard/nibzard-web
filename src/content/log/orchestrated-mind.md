@@ -3,7 +3,7 @@ title: "The Orchestrated Mind: A Vision for Multi-Agent AI"
 description: "A thousand AI agents working on one codebase, sharing continuous memory and orchestrated intelligence."
 tldr: "The future of AI isn't single agents but orchestrated swarms sharing temporal memory graphs. Picture agents that don't pass messages but share thoughts, with orchestrators that predict bottlenecks before they surface and memory systems that evolve themselves."
 date: 2025-08-12
-tags: [AI, AGENTS, MULTI-AGENT, ORCHESTRATION, MEMORY]
+tags: [HUMAN, AI, AGENTS, MULTI-AGENT, ORCHESTRATION, MEMORY]
 draft: false
 ---
 

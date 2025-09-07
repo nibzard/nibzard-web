@@ -3,7 +3,7 @@ title: "Why Senior Engineers Overlook Small AI Wins"
 description: "How experienced devs might be missing the big impact of tiny AI improvements on user experience."
 tldr: "Senior engineers often dismiss small AI coding power-ups (like smarter autocomplete or better error messages), not realizing these tweaks can totally change how users feel about a product."
 date: 2025-05-26
-tags: [OPINION]
+tags: [HUMAN, OPINION]
 draft: false
 ---
 

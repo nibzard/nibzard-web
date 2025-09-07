@@ -2,7 +2,7 @@
 title: "AI Agents Just Need Good --help"
 description: "Clear CLI documentation is your agent API. Vague help text costs 2x more in API calls and failed automations."
 date: 2025-08-17
-tags: [CLI, AI, AGENTS, DOCUMENTATION, API]
+tags: [HUMAN, CLI, AI, AGENTS, DOCUMENTATION, API]
 tldr: "AI agents succeed or fail based on your --help text. Clear command structure, explicit success signals, and structured output options make the difference between one API call and five retries."
 draft: false
 ---

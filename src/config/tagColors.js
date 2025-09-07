@@ -25,10 +25,15 @@ const tagColors = {
   },
 
   // Content type tags
-  'ROBOPRESS': {
-    backgroundColor: '#F3E5F5', // Light purple
-    textColor: '#6A1B9A',       // Dark purple
-    borderColor: '#AB47BC'      // Purple
+  'SLOP': {
+    backgroundColor: '#FFF3E0', // Light orange/amber - warning color
+    textColor: '#E65100',       // Dark orange - warning color
+    borderColor: '#FF9800'      // Orange - warning color
+  },
+  'HUMAN': {
+    backgroundColor: '#F3E5F5', // Light purple - human authorship
+    textColor: '#6A1B9A',       // Dark purple - human authorship
+    borderColor: '#AB47BC'      // Purple - human authorship
   },
   'CHEATSHEET': {
     backgroundColor: '#E8F5E9', // Light green

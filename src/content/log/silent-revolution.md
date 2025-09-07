@@ -3,7 +3,7 @@ title: "How AI Agents Are Reshaping Creation"
 description: "AI is dissolving the boundaries between roles, fundamentally changing who can create software and how quickly ideas become reality"
 tldr: "Today's AI agents excel at computer operation and research, maintain coherence for hours, favor curious problem-solvers over technical experts, and are democratizing software creation while challenging traditional employment models."
 date: 2025-05-29
-tags: [ROBOPRESS, AI, AGENTS]
+tags: [SLOP, AI, AGENTS]
 draft: false
 ---
 

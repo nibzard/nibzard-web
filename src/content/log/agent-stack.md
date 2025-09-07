@@ -3,7 +3,7 @@ title: "The Agent-Friendly Stack: 50+ AI Projects Taught Me This"
 description: "After shipping 50+ projects with AI agents, one pattern emerged: winners aren't the most powerful, they're the most agent-friendly"
 tldr: "From shipping 50+ AI projects in months, I learned that successful tools must master the duality between human needs (power/flexibility) and agent needs (clarity/determinism). Type safety, machine-readable docs, and friction-free workflows separate winners from losers in the AI-native era."
 date: 2025-07-21
-tags: [AI, AGENTS, DEVELOPER-TOOLS, EXPERIENCE]
+tags: [HUMAN, AI, AGENTS, DEVELOPER-TOOLS, EXPERIENCE]
 draft: false
 ---
 

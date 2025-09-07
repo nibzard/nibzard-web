@@ -3,7 +3,7 @@ title: "The Amplification of Bottlenecks"
 description: "When AI solves one constraint, it reveals the next. What bottleneck will emerge when coding stops being the limitation?"
 tldr: "AI doesn't just make work faster--it amplifies hidden constraints. At Anthropic, eliminating coding bottlenecks revealed decision-making, integration, and context as the real limitations. Every breakthrough follows this pattern: solve one constraint, amplify the next."
 date: 2025-06-02
-tags: [INSIGHT, AI, SYSTEMS]
+tags: [HUMAN, INSIGHT, AI, SYSTEMS]
 draft: false
 ---
 

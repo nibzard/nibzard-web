@@ -4,7 +4,7 @@ description: "Real-world insights from Sourcegraph's journey building AI coding 
 tldr: "AI coding agents work best with inversion of control, curated context over comprehensive, usage-based pricing for real work, emergent behaviors over engineered features, rich feedback loops, and agent-native workflows. The revolution is here--adapt or be displaced."
 date: 2025-05-28
 updated: 2025-07-27
-tags: [EXPERIENCE, AI, AGENTS]
+tags: [HUMAN, EXPERIENCE, AI, AGENTS]
 draft: false
 ---
 

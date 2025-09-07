@@ -3,7 +3,7 @@ title: The Day the Skeptic Blinked
 description: "Journey from AI skeptic to convert--proving that the future belongs to experts who learned to work with machines."
 tldr: "Kenton Varda, a Cloudflare engineer who was skeptical of AI, tested Claude by building an OAuth library. The code was surprisingly good, leading him to realize the power isn't in AI replacing humans, but in the combination of AI speed and human expertise."
 date: 2025-06-07
-tags: [OPINION]
+tags: [HUMAN, OPINION]
 draft: false
 ---
 

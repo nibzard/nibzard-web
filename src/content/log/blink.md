@@ -3,7 +3,7 @@ title: Blink, and the entire AI landscape could shift
 description: "AI dev tooling is consolidating--acquisitions, coding agents, and fierce competition reshape interfaces, pricing, and memory."
 tldr: "The AI developer tooling market is moving faster than ever, with big players acquiring startups and releasing powerful coding agents. Interfaces are becoming commoditized, token economics will drive cost efficiency, spec-driven workflows prevail, memory persistence is key, and incumbents' flywheel grows stronger."
 date: 2025-05-20
-tags: [OPINION]
+tags: [HUMAN, OPINION]
 draft: false
 ---
 

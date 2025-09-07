@@ -1,0 +1,58 @@
+---
+// ABOUTME: AI content warning component for articles heavily written by AI
+// ABOUTME: Displays a prominent warning box to indicate AI-generated content
+---
+
+<div class="ai-warning">
+  <div class="ai-warning-icon">⚠️</div>
+  <div class="ai-warning-content">
+    <strong>This article was heavily written by AI.</strong>
+    <p>More than 90% of this article was written by AI. While that doesn't mean it's total garbage, you should skim read it with appropriate context.</p>
+  </div>
+</div>
+
+<style>
+  .ai-warning {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    background-color: #FFF3E0;
+    border: 2px solid #FF9800;
+    border-radius: var(--border-radius);
+    padding: var(--space-md);
+    margin: var(--space-lg) 0;
+    font-family: var(--font-sans);
+    box-shadow: 0 2px 4px rgba(255, 152, 0, 0.1);
+  }
+
+  .ai-warning-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  .ai-warning-content {
+    flex: 1;
+  }
+
+  .ai-warning-content strong {
+    color: #E65100;
+    font-weight: 600;
+    display: block;
+    margin-bottom: var(--space-xs);
+  }
+
+  .ai-warning-content p {
+    margin: 0;
+    color: #E65100;
+    line-height: 1.4;
+    font-size: 0.9rem;
+  }
+
+  /* Ensure it's prominent on mobile */
+  @media (max-width: 768px) {
+    .ai-warning {
+      margin: var(--space-md) 0;
+    }
+  }
+</style>

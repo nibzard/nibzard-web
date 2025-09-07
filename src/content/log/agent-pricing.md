@@ -3,7 +3,7 @@ title: AI Coding Agent Pricing
 description: "AI coding agents burn through credits fast while users pay for inefficiencies. Explore fair pricing models and market solutions."
 tldr: "Current AI coding agents have misaligned pricing—users pay for agent inefficiencies and over-iteration. Credit burn rates are unpredictable and scale with agent behavior, not user value. Solutions include fair-use models, temporal arbitrage, outcome-based pricing, and hybrid local/remote approaches."
 date: 2025-05-25
-tags: [EXPERIENCE, WIP]
+tags: [HUMAN, EXPERIENCE, WIP]
 draft: false
 ---
 

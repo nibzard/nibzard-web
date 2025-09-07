@@ -7,7 +7,9 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 import FadeIn from '../components/animations/FadeIn.jsx';
 import NewsletterSubscribe from '../components/NewsletterSubscribe.astro';
 import SchemaMarkup from '../components/SchemaMarkup.astro';
+import CopyMarkdownButton from '../components/CopyMarkdownButton.jsx';
 import { createBlogPostSchema, createBreadcrumbSchema } from '../utils/schemaUtils';
+import AIWarning from '../components/AIWarning.astro';
 
 interface Frontmatter {
   title: string;
@@ -26,6 +28,7 @@ interface Props {
 
 const { frontmatter } = Astro.props as Props;
 const sortedTags = frontmatter.tags ? sortTags(frontmatter.tags) : [];
+const hasSlop = frontmatter.tags?.some(tag => tag.toUpperCase() === 'SLOP');
 
 // Get the current URL for schema markup
 const currentUrl = new URL(Astro.request.url).href;
@@ -107,6 +110,9 @@ const enhancedOgConfig = {
 
   <article class="fade-in">
     <header class="log-entry-header">
+      <div class="article-actions">
+        <CopyMarkdownButton client:load slug={slug} />
+      </div>
       {frontmatter.date && (
         <p class="log-entry-meta">
           Published on <time datetime={frontmatter.date.toISOString()}>
@@ -129,6 +135,7 @@ const enhancedOgConfig = {
         <p class="log-entry-tldr">TL;DR &gt;&gt; {frontmatter.tldr} &lt;&lt;</p>
       )}
     </header>
+    {hasSlop && <AIWarning />}
     <div class="log-content">
       <slot /> {/* Content from the Markdown file will be rendered here */}
     </div>
