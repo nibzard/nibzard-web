@@ -1,8 +1,10 @@
 ---
 title: "AI Coding Agents, Each With a Niche"
-tags: ["AI", "INSIGHT", "TOOLS"]
-pubDate: "2025-09-07"
-description: "We are still in divergent phase. Each agent has a niche, shaped by context, interface, and constraints. Knowing where each one shines is the difference between frustration and flow."
+tags: ["AI CODE", "HUMAN", "TOOLS"]
+date: 2025-09-07
+description: "Each AI coding agent has a niche. Knowing where each one shines is the difference between frustration and flow."
+tldr: "Each AI coding agent has a niche. Knowing where each one shines is the difference between frustration and flow."
+draft: false
 ---
 
 We’re past the point where “AI coding agents” means a single category. The ecosystem has fractured into multiple agents, each with strengths and quirks.
@@ -21,7 +23,7 @@ It’s tempting to chase the “best agent.” But in practice, it’s the *fit*
 
 # The Pattern
 
-Every generation of tools doesn’t converge, it diverges. 
+Every generation of tools doesn’t converge, it diverges.
 
 Innovation happens in the edges: someone solves formatting, someone tools, others scale, someone nails interaction design. Together, they form a toolkit, not a monolith.
 
