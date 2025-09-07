@@ -14,7 +14,8 @@
       "Bash(mv:*)",
       "Bash(git push:*)",
       "Bash(git pull:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "mcp__playwright__browser_resize"
     ],
     "deny": []
   }

@@ -3,19 +3,15 @@ title: "Vibe Coding Through the Berghain Challenge"
 description: "How my AI coding partner and I obsessed over a nightclub bouncer optimization problem for one intense day"
 tldr: "Listen Labs' viral billboard puzzle led to a nightclub bouncer optimization challenge. My AI partner Claude and I spent a day building RBCR (Re-solving Bid-Price with Confidence Reserves), achieving 781 rejections among >30k competitors through dual variables and mathematical optimization."
 date: 2025-09-05
-tags: [HUMAN, AI, OPTIMIZATION, GROWTH]
+tags: [SLOP, AI, OPTIMIZATION, GROWTH]
 draft: false
 ---
-
-<div class="alert alert-warning">
-<strong>Note:</strong> And the kicker? Claude wrote this entire article too. I just provided the direction and feedback. The AI that helped me solve the Berghain Challenge also helped me tell you about it. Meta-collaboration all the way down.
-</div>
 
 This article documents an experiment in AI-human collaboration for solving complex optimization problems. What you're reading is a real-time record of how AI coding agents can tackle challenges where 98% of the work is done by the agent with slight human oversight and nudging.
 
 The goal was to observe how AI-agent collaboration evolves under pressure. I'm seeing some of you spend 30+ minutes reading this—which is great because there are learnings at multiple levels. But the biggest insight is toward the end: **the loop is not enough.**
 
-If you iterate too many times, you overcomplicate. Sometimes AI agents overcomplicate solutions. Sometimes simple is good enough. The overarching learning? Focus on **outcomes, not code**. 
+If you iterate too many times, you overcomplicate. Sometimes AI agents overcomplicate solutions. Sometimes simple is good enough. The overarching learning? Focus on **outcomes, not code**.
 
 We're moving toward ephemeral, just-in-time code. If it does the job, it's good enough. This is a glimpse into that future.
 
@@ -2066,3 +2062,6 @@ But at some point, you're on your own. The gap between 781 and 716 represents th
 
 Still, I regret nothing. The journey taught us about optimization, about collaboration, about the limits and possibilities of human-AI partnership. And maybe, just maybe, someone reading this will find that final insight we missed and claim that Berlin trip.
 
+<div class="alert alert-warning">
+<strong>Note:</strong> And the kicker? Claude wrote this entire article too. I just provided the direction and feedback. The AI that helped me solve the Berghain Challenge also helped me tell you about it. Meta-collaboration all the way down.
+</div>

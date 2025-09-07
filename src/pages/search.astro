@@ -61,25 +61,7 @@ try {
 
 <BaseLayout title={`Search Results for "${initialQuery}" | nibzard`} description={`Search results for "${initialQuery}" on nibzard.`}>
   <div class="search-page-container">
-    <h1>Search</h1>
-    <form
-      id="search-form"
-      class="form-group"
-      action="/search"
-      method="get"
-      style="margin-bottom: var(--space-lg); display: flex; align-items: center; width: 100%; margin-left: calc(-1 * var(--space-xl)); margin-right: calc(-1 * var(--space-xl)); padding-left: var(--space-xl); padding-right: var(--space-xl);">
-      <input
-        class="form-input search-bar"
-        type="text"
-        name="q"
-        id="search-input"
-        value={initialQuery}
-        placeholder="Search..."
-        autocomplete="off"
-        style="flex-grow: 1; margin-right: var(--space-sm);"
-      />
-      <button type="submit" class="button-primary">Search</button>
-    </form>
+    <h1>Search Results{initialQuery && `: "${initialQuery}"`}</h1>
 
     <div id="feed-timeline" class="feed-timeline" style="min-height: 200px;">
       {/* Search results will be rendered here by client-side script */}
@@ -97,7 +79,6 @@ try {
 
   document.addEventListener('DOMContentLoaded', () => {
     const feedTimeline = document.getElementById('feed-timeline');
-    const searchInput = document.querySelector('.search-bar');
     const jsonDataScript = document.getElementById('fuse-feed-data');
     let clientFeedEntriesData = [];
     let rawJsonContent = '';
@@ -125,10 +106,6 @@ try {
     }
 
     const initialQueryFromURL = new URLSearchParams(window.location.search).get('q') || '';
-
-    if (searchInput && searchInput.value !== initialQueryFromURL) {
-      searchInput.value = initialQueryFromURL;
-    }
 
     function formatDate(dateStr) {
       const d = new Date(dateStr);
@@ -209,14 +186,8 @@ try {
       renderFeed(results);
     }
 
-    if (searchInput) {
-      doSearch(initialQueryFromURL);
-      searchInput.addEventListener('input', (e) => {
-        doSearch(e.target.value.trim());
-      });
-    } else {
-        console.error('Search input not found on the page.');
-    }
+    // Perform initial search with URL query
+    doSearch(initialQueryFromURL);
   });
 </script>
 

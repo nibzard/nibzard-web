@@ -26,14 +26,14 @@ const tagColors = {
 
   // Content type tags
   'SLOP': {
-    backgroundColor: '#FFF3E0', // Light orange/amber - warning color
-    textColor: '#E65100',       // Dark orange - warning color
-    borderColor: '#FF9800'      // Orange - warning color
+    backgroundColor: '#F3E5F5', // Light purple - AI content
+    textColor: '#6A1B9A',       // Dark purple - AI content
+    borderColor: '#AB47BC'      // Purple - AI content
   },
   'HUMAN': {
-    backgroundColor: '#F3E5F5', // Light purple - human authorship
-    textColor: '#6A1B9A',       // Dark purple - human authorship
-    borderColor: '#AB47BC'      // Purple - human authorship
+    backgroundColor: '#FFF3E0', // Light orange/amber - human authorship
+    textColor: '#E65100',       // Dark orange - human authorship
+    borderColor: '#FF9800'      // Orange - human authorship
   },
   'CHEATSHEET': {
     backgroundColor: '#E8F5E9', // Light green
@@ -41,9 +41,9 @@ const tagColors = {
     borderColor: '#66BB6A'      // Green
   },
   'OPINION': {
-    backgroundColor: '#FFF3E0', // Light orange
-    textColor: '#E65100',       // Dark orange
-    borderColor: '#FF9800'      // Orange
+    backgroundColor: '#E8EAF6', // Light indigo
+    textColor: '#3F51B5',       // Dark indigo
+    borderColor: '#5C6BC0'      // Indigo
   },
 
   // Status tags

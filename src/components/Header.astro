@@ -1,5 +1,6 @@
 ---
 import Navigation from './Navigation.astro';
+import MobileMenu from './MobileMenu.jsx';
 ---
 
 <header class="site-header full-width">
@@ -8,5 +9,6 @@ import Navigation from './Navigation.astro';
       <span class="accent1">Niko</span>la Balic
     </a>
     <Navigation />
+    <MobileMenu client:load />
   </div>
 </header>

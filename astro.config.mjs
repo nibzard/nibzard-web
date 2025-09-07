@@ -12,7 +12,28 @@ const siteUrl = 'https://nibzard.com';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react(), sitemap()],
+  integrations: [react(), sitemap({
+    filter: (page) => {
+      // Include all pages by default
+      return true;
+    },
+    serialize: (item) => {
+      // Adjust priority for markdown pages
+      if (item.url.endsWith('.md')) {
+        return {
+          ...item,
+          priority: 0.6,
+          changefreq: 'monthly'
+        };
+      }
+      // Default priority for HTML pages
+      return {
+        ...item,
+        priority: item.url === siteUrl + '/' ? 1.0 : 0.8,
+        changefreq: 'weekly'
+      };
+    }
+  })],
   site: siteUrl,
   // output: 'static',
   output: 'server',

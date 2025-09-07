@@ -6,6 +6,7 @@ import { SEO } from "astro-seo";
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import SchemaMarkup from '../components/SchemaMarkup.astro';
+import SearchOverlay from '../components/SearchOverlay.jsx';
 import { createWebsiteSchema, createPersonSchema } from '../utils/schemaUtils';
 
 export interface Props {
@@ -131,6 +132,9 @@ const personSchema = createPersonSchema();
   </main>
   <Footer />
   
+  <!-- Search Overlay -->
+  <SearchOverlay client:load />
+  
   <!-- Enhanced code blocks with copy functionality -->
   <script is:inline>
     // Enhanced code blocks with copy functionality
@@ -243,6 +247,46 @@ const personSchema = createPersonSchema();
           }
         });
       });
+    });
+  </script>
+
+  <!-- Search Overlay Management -->
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Create a global search overlay manager
+      window.searchOverlay = {
+        isOpen: false,
+        component: null,
+        
+        open() {
+          this.isOpen = true;
+          this.updateComponent();
+        },
+        
+        close() {
+          this.isOpen = false;
+          this.updateComponent();
+        },
+        
+        updateComponent() {
+          if (this.component) {
+            this.component.setState({ isOpen: this.isOpen });
+          }
+        },
+        
+        registerComponent(component) {
+          this.component = component;
+        }
+      };
+      
+      // Handle search trigger button click
+      const searchTrigger = document.getElementById('search-trigger');
+      if (searchTrigger) {
+        searchTrigger.addEventListener('click', function(e) {
+          e.preventDefault();
+          window.searchOverlay.open();
+        });
+      }
     });
   </script>
 </body>
