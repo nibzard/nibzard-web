@@ -15,13 +15,13 @@
   /* Text colors */
   --color-text: #2D3032;       /* Dark charcoal, not pure black */
   --color-text-heading: #2D3032; /* Same as text for consistency */
-  --color-text-muted: #757F8C; /* Slightly darker for better contrast */
+  --color-text-muted: #5A646F; /* Darker for 4.5:1 contrast ratio */
   --color-text-light: #9CA3AF;
 
   /* Accent colors */
   --color-accent1: #E45B5F;    /* Soft red accent */
   --color-accent1-muted: #A8595C; /* Muted red for subtle emphasis */
-  --color-accent2: #4BA3C3;    /* Light blue accent */
+  --color-accent2: #2D7A9C;    /* Darker blue accent for better contrast */
   --color-accent3: #FFB865;    /* Warm amber accent */
 
   /* UI colors */

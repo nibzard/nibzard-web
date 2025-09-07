@@ -32,7 +32,7 @@ const tagColors = {
   },
   'HUMAN': {
     backgroundColor: '#FFF3E0', // Light orange/amber - human authorship
-    textColor: '#E65100',       // Dark orange - human authorship
+    textColor: '#C43E00',       // Darker orange for 4.5:1 contrast - human authorship
     borderColor: '#FF9800'      // Orange - human authorship
   },
   'CHEATSHEET': {
@@ -76,7 +76,7 @@ const tagColors = {
   },
   'AI': {
     backgroundColor: '#FFFDE7', // Light yellow
-    textColor: '#F57F17',       // Dark yellow
+    textColor: '#C96500',       // Darker amber for 4.5:1 contrast
     borderColor: '#FFEB3B'      // Yellow
   },
 

@@ -85,7 +85,7 @@ try {
 
     if (jsonDataScript) {
       rawJsonContent = jsonDataScript.textContent;
-      console.log('Attempting to parse JSON, raw textContent:', rawJsonContent);
+      // Debug: Attempting to parse JSON, raw textContent
       try {
         clientFeedEntriesData = JSON.parse(rawJsonContent);
         if (Array.isArray(clientFeedEntriesData) && clientFeedEntriesData.length === 1 && clientFeedEntriesData[0].type === 'error') {

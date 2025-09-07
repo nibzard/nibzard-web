@@ -225,7 +225,7 @@ const feedEntries = allFeedEntries.slice(startIndex, endIndex); // These are the
                         <p class="log-entry-tldr">{logEntry.data.tldr}</p>
                       )}
                       <div>
-                        <a href={`/${logEntry.slug}`} class="read-full-post-link">Read full post →</a>
+                        <a href={`/${logEntry.slug}`} class="read-full-post-link" aria-label={`Read full article: ${logEntry.data.title}`}>Read full post →</a>
                       </div>
                     </div>
                   </article>
@@ -305,7 +305,12 @@ const feedEntries = allFeedEntries.slice(startIndex, endIndex); // These are the
         // In a real implementation, this would send the form data to a server
         const emailInput = newsletterForm.querySelector('input[type="email"]');
         if (emailInput && emailInput.value) {
-          alert(`Thank you for subscribing with ${emailInput.value}!`);
+          // Show success message (replace alert with better UX)
+          const successMsg = document.createElement('div');
+          successMsg.textContent = 'Thank you for subscribing!';
+          successMsg.style.cssText = 'color: var(--color-accent1); font-size: 0.9rem; margin-top: 0.5rem;';
+          emailInput.parentNode.appendChild(successMsg);
+          setTimeout(() => successMsg.remove(), 3000);
           emailInput.value = '';
         }
       });

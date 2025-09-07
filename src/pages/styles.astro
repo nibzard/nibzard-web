@@ -252,7 +252,7 @@ console.log(greet("world"));`} language="javascript" />
 
   <section class="element-section">
     <h2>Forms</h2>
-    <form class="form-sample" onsubmit="event.preventDefault(); alert('Form submitted (demo)');">
+    <form class="form-sample" onsubmit="event.preventDefault(); const msg = document.createElement('div'); msg.textContent = 'Form submitted (demo)'; msg.style.cssText = 'color: var(--color-accent1); font-size: 0.9rem; margin-top: 0.5rem;'; this.appendChild(msg); setTimeout(() => msg.remove(), 2000);">
       <div class="form-group">
         <label class="form-label" for="name-sample">Name</label>
         <input class="form-input" type="text" id="name-sample" placeholder="Enter your name">

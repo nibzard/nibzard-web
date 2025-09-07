@@ -244,7 +244,7 @@ article img + * {
 /* Regular tags (default) - subtle but visible */
 a.tag:not(.tag-standardized) {
   background-color: rgba(128, 128, 128, 0.05) !important;
-  color: #666 !important;
+  color: #4a4a4a !important;
   border-color: rgba(128, 128, 128, 0.2) !important;
   opacity: 0.85;
 }
@@ -252,14 +252,14 @@ a.tag:not(.tag-standardized) {
 a.tag:not(.tag-standardized):hover {
   background-color: rgba(128, 128, 128, 0.1) !important;
   border-color: rgba(128, 128, 128, 0.3) !important;
-  color: #555 !important;
+  color: #3a3a3a !important;
   opacity: 1;
   transform: translateY(-0.5px);
 }
 
 a.tag:not(.tag-standardized).active {
   background-color: rgba(128, 128, 128, 0.1) !important;
-  color: #444 !important;
+  color: #2a2a2a !important;
   border-color: rgba(128, 128, 128, 0.4) !important;
   opacity: 1;
 }
@@ -835,6 +835,24 @@ table tbody tr:hover,
   font-size: var(--font-size-base);
   font-feature-settings: 'liga' 1, 'calt' 1;
 }
+
+/* Read full post link styling */
+.read-full-post-link {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 500;
+  font-family: var(--font-ui);
+  font-size: var(--font-size-sm);
+  border-bottom: 1px solid var(--color-border);
+  transition: all var(--transition-fast);
+  padding-bottom: 2px;
+}
+
+.read-full-post-link:hover {
+  color: var(--color-accent1);
+  border-bottom-color: var(--color-accent1);
+  text-decoration: none;
+}
 .thought-content { position: relative; }
 .thought-content blockquote {
   margin: 0;
@@ -907,7 +925,7 @@ table tbody tr:hover,
 }
 .featured-quote.accent {
   background-color: #FFF3E0;
-  color: #E65100;
+  color: #C43E00;
 }
 .featured-quote.unattributed {
   background-color: #E8EAF6;
@@ -1572,7 +1590,7 @@ footer.full-width p {
   font-size: 0.9rem;
   font-family: var(--font-mono);
   text-decoration: none;
-  color: #555;
+  color: var(--color-text);
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
@@ -2296,8 +2314,8 @@ a[href*="://"] {
 
 .log-content .featured-quote.accent {
   background-color: #FFF3E0;
-  color: #E65100;
-  border-left-color: #E65100;
+  color: #C43E00;
+  border-left-color: #C43E00;
 }
 
 .log-content .featured-quote.unattributed {
