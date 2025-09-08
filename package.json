@@ -35,7 +35,6 @@
   "devDependencies": {
     "less": "^4.3.0",
     "puppeteer": "^24.10.0",
-    "rehype-mermaid-cli": "^0.2.1",
     "sharp": "^0.34.2",
     "terser": "^5.44.0",
     "tsx": "^4.19.4"
