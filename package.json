@@ -11,8 +11,7 @@
     "pipe:tweet": "tsx scripts/pipe_tweet.ts",
     "validate:schema": "tsx scripts/validate-schema.ts",
     "generate:og": "node scripts/generate-og-images.js",
-    "generate:og:force": "node scripts/generate-og-images.js --force",
-    "postinstall": "playwright install chromium"
+    "generate:og:force": "node scripts/generate-og-images.js --force"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.52.0",
@@ -28,16 +27,15 @@
     "framer-motion": "^12.10.2",
     "fuse.js": "^7.1.0",
     "hast-util-to-string": "^3.0.1",
-    "playwright": "^1.55.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "rehype-mermaid": "^3.0.0",
     "resend": "^4.5.1",
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
     "less": "^4.3.0",
     "puppeteer": "^24.10.0",
+    "rehype-mermaid-cli": "^0.2.1",
     "sharp": "^0.34.2",
     "terser": "^5.44.0",
     "tsx": "^4.19.4"

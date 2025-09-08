@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 import rehypeExternalLinks from './src/plugins/rehype-external-links.mjs';
 import rehypeHeadingAnchors from './src/plugins/rehype-heading-anchors.mjs';
 import rehypeOptimizeImages from './src/plugins/rehype-optimize-images.mjs';
-import rehypeMermaid from 'rehype-mermaid';
+import rehypeMermaidCLI from 'rehype-mermaid-cli';
 
 // import node from '@astrojs/node';
 import vercel from '@astrojs/vercel';
@@ -100,7 +100,7 @@ export default defineConfig({
       [rehypeExternalLinks, { domain: new URL(siteUrl).hostname }],
       rehypeHeadingAnchors,
       rehypeOptimizeImages,
-      [rehypeMermaid, { strategy: 'img-svg', dark: true }],
+      rehypeMermaidCLI,
     ],
   },
 
