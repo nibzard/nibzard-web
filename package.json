@@ -12,7 +12,7 @@
     "validate:schema": "tsx scripts/validate-schema.ts",
     "generate:og": "node scripts/generate-og-images.js",
     "generate:og:force": "node scripts/generate-og-images.js --force",
-    "postinstall": "playwright install --with-deps chromium"
+    "postinstall": "playwright install chromium"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.52.0",
