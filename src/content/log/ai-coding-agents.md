@@ -16,6 +16,7 @@ We’re past the point where “AI coding agents” means a single category. The
 * **OpenCode** → clean UI + model flexibility.
 * **Codex CLI** → GPT-5 scalpel precision.
 * **Gemini CLI** → huge context, free brute-force QA with Playwright MCP.
+* **Charm Crush** → epileptical TUI assault.
 
 # Why This Matters
 

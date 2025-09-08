@@ -2040,7 +2040,6 @@ a[href*="://"] {
   word-break: break-word;
   hyphens: auto;
   max-width: 100%;
-  display: inline-block;
 }
 
 /* Additional safety for log content links */
@@ -2050,7 +2049,6 @@ a[href*="://"] {
   word-break: break-word;
   hyphens: auto;
   max-width: 100%;
-  display: inline-block;
 }
 
 .log-content p a,
@@ -2115,7 +2113,6 @@ a[href*="://"] {
     word-break: break-all;
     overflow-wrap: anywhere;
     hyphens: none;
-    display: inline-block;
     max-width: 100%;
     line-height: 1.4;
   }
