@@ -6,12 +6,16 @@ tags: [CHEATSHEET, Oracle Cloud, Cloudflare, Rails, Deployment]
 tldr: "Complete guide to installing Basecamp's Once Campfire on Oracle Cloud. Covers memory constraints, firewall layers, asset compilation, and SSL configuration for production deployment."
 ---
 
+> **⚠️ Performance Warning**: This setup works on Oracle's Always Free VM.Standard.E2.1.Micro but the experience is quite limited due to the very weak CPU (1/8 OCPU). Expect slow page loads, sluggish UI interactions, and lengthy asset compilation times. Consider upgrading to a more powerful instance for production use.
+
 This guide covers installing Basecamp's Once Campfire on Oracle Cloud Infrastructure with Cloudflare DNS. The process involves system setup, dependency installation, database configuration, asset compilation, and firewall management.
 
 ## Prerequisites
-- Oracle Cloud VM (minimum 1GB RAM, 2 CPU cores recommended)
+- Oracle Cloud VM.Standard.E2.1.Micro (1/8 OCPU, 1GB RAM) or larger
 - Domain name managed by Cloudflare
 - SSH access to your server
+
+**Note**: The Always Free VM.Standard.E2.1.Micro (1/8 OCPU, 1GB memory, 480 Mbps networking) works but is underpowered. Asset compilation will be slow and memory-intensive operations may require patience.
 
 ## Key Lessons Learned
 1. **Memory Constraints**: Docker builds fail on low-memory VMs - use direct installation instead
