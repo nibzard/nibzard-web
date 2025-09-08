@@ -67,6 +67,8 @@ try {
       {/* Search results will be rendered here by client-side script */}
     </div>
   </div>
+  
+  <script type="application/json" id="fuse-feed-data" set:html={clientFeedEntriesJsonString}></script>
 </BaseLayout>
 
 <script type="module">
@@ -190,5 +192,3 @@ try {
     doSearch(initialQueryFromURL);
   });
 </script>
-
-<script type="application/json" id="fuse-feed-data" set:html={clientFeedEntriesJsonString}></script>
