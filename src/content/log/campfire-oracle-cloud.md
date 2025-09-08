@@ -1,5 +1,5 @@
 ---
-title: "Complete Campfire Installation Guide for Oracle Cloud + Cloudflare"
+title: "Campfire Installation Guide for Oracle Cloud + Cloudflare"
 description: "Step-by-step installation of Basecamp's Once Campfire on Oracle Cloud Infrastructure with Cloudflare DNS"
 date: 2025-08-21
 tags: [CHEATSHEET, Oracle Cloud, Cloudflare, Rails, Deployment]
