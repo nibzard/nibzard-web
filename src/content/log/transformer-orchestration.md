@@ -6,7 +6,7 @@ tags: [SLOP]
 tldr: "Built a 4.76M parameter transformer to coordinate 8 bouncer algorithms. While averaging 958 rejections vs RBCR2's 887, achieved breakthrough single game of 855 rejections through learned strategy orchestration."
 ---
 
-*Part 2: How we built a strategy controller that coordinates algorithmic approaches and learned to compete with the best*
+*Part 2: How we built a strategy controller that coordinates algorithmic approaches and learned to compete with the best is a continuation of the ["Vibe Coding Through the Berghain Challenge"](/berghain) article.*
 
 ## From RBCR to Transformer: The Next Evolution
 
@@ -110,7 +110,7 @@ class StrategyControllerTransformer(nn.Module):
 Our first training attempt was humbling:
 
 **Original transformer** (untrained): 884-956 rejections, 0% success rate
-**RBCR2 baseline**: 869-948 rejections, 100% success rate
+**RBCR2 baseline**: 869-948 rejections, 92% success rate
 
 The untrained transformer was making random strategy selections and failing catastrophically. But there was a glimmer of hope—when it did work, it was coordinating strategies in interesting ways.
 
@@ -186,18 +186,19 @@ class HybridTransformerStrategy:
 
 **Latest Batch Results (100 games)**:
 - **Success Rate**: 61/100 (61.0%) vs RBCR2's 92%
-- **Best Performance**: 790 rejections vs RBCR2's 804 average
+- **Best Performance**: 790 rejections (latest batch best) vs RBCR2's 887 average
+- **Historical Best**: 855 rejections (single game breakthrough)
 - **Speed**: 5x faster than RBCR2 (0.3s vs 1.5s per game)
 - **Duration**: 55.7s for 100 games vs 280s for RBCR2
 
-**The Core Challenge**: The transformer shows competitive peak performance but struggles with reliability. While it can achieve 790 rejections (better than RBCR2's average), it only succeeds 61% of the time versus RBCR2's 92% consistency.
+**The Core Challenge**: The transformer shows competitive peak performance but struggles with reliability. While it averages 958 rejections (worse than RBCR2), its best performances (855 historical, 790 recent batch) demonstrate the potential of learned coordination, though it only succeeds 61% of the time versus RBCR2's 92% consistency.
 
 **Speed Achievement**: The 5x performance improvement makes the transformer viable for real-time applications where RBCR2's computational overhead becomes prohibitive.
 
 **Historical Comparison**:
 - **Phase 1 - Untrained**: 943.6 ± 56.6 rejections, 0% success rate
-- **Phase 2 - Elite Training**: 958.0 ± 56.6 rejections, improved success rate
-- **Phase 3 - Latest Results**: 790 best performance, 61% success rate
+- **Phase 2 - Elite Training**: 958.0 ± 56.6 rejections average, improved success rate
+- **Phase 3 - Latest Results**: 958 average, 790 best in recent batch, 61% success rate
 
 ## The Conservative Improvements That Worked
 
@@ -330,13 +331,13 @@ This project demonstrated a new paradigm for AI systems:
 | System | Best Performance | Success Rate | Speed (per game) | Key Innovation |
 |--------|-----------------|--------------|------------------|----------------|
 | **RBCR Champion** | 781.0 | 100% | 2.0s | Mathematical perfection |
-| **RBCR2 Baseline** | 804 avg | 92% | 1.5s | Mathematical elegance |
+| **RBCR2 Baseline** | 887 avg | 92% | 1.5s | Mathematical elegance |
 | **Latest Transformer** | 790 best | 61% | 0.3s | Strategic orchestration + speed |
 | **Untrained Transformer** | 943.6 | 0% | 0.3s | Random coordination |
 
-**The Achievement**: The transformer has achieved competitive peak performance (790 vs 804 rejections) while being 5x faster than RBCR2. However, it trades reliability for speed, succeeding only 61% of the time versus RBCR2's 92% consistency.
+**The Achievement**: The transformer has achieved competitive peak performance (855 historical best, 790 latest batch best vs RBCR2's 887 average) while being 5x faster than RBCR2. However, it trades reliability for speed, succeeding only 61% of the time versus RBCR2's 92% consistency.
 
-**Performance Breakthrough**: When successful, the transformer matches or exceeds RBCR2's performance, proving that learned strategy coordination can compete with mathematical approaches.
+**Performance Breakthrough**: When successful, the transformer can exceed RBCR2's performance (855 best vs 887 average), proving that learned strategy coordination can compete with mathematical approaches, though the overall average remains worse at 958 rejections.
 
 **The Reliability Gap**: The primary failure mode involves getting trapped near success—games that reach 591/600 young people but hit the 966 rejection limit while being tantalizingly close to completion.
 
