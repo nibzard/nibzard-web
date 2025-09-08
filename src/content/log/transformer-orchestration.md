@@ -8,6 +8,16 @@ tldr: "Built a 4.76M parameter transformer to coordinate 8 bouncer algorithms. W
 
 *Part 2: How we built a strategy controller that coordinates algorithmic approaches and learned to compete with the best*
 
+## From RBCR to Transformer: The Next Evolution
+
+After achieving 781 rejections with our RBCR algorithm, most rational people would have stopped. We had a mathematically elegant solution that dominated 30,000 competitors. But rationality and optimization addiction don't mix well.
+
+**Me**: "Claude, what if we could build something that learns from all our strategies? Not replace them, but coordinate them?"
+
+**Claude**: "You're thinking about a meta-strategy? Something that decides when to use RBCR versus Ultimate3H versus the LSTM approaches?"
+
+This was the birth of our transformer-based strategy controller—a system that would orchestrate our existing algorithmic champions rather than trying to replace them.
+
 ```mermaid
 graph TD
     A[RBCR Algorithm: 781 rejections] --> B[Human: What if we coordinate strategies?]
@@ -20,16 +30,6 @@ graph TD
     style A fill:#c8e6c9
     style G fill:#4caf50
 ```
-
-## From RBCR to Transformer: The Next Evolution
-
-After achieving 781 rejections with our RBCR algorithm, most rational people would have stopped. We had a mathematically elegant solution that dominated 30,000 competitors. But rationality and optimization addiction don't mix well.
-
-**Me**: "Claude, what if we could build something that learns from all our strategies? Not replace them, but coordinate them?"
-
-**Claude**: "You're thinking about a meta-strategy? Something that decides when to use RBCR versus Ultimate3H versus the LSTM approaches?"
-
-This was the birth of our transformer-based strategy controller—a system that would orchestrate our existing algorithmic champions rather than trying to replace them.
 
 ## The Paradigm Shift: Orchestration Over Replacement
 
@@ -185,7 +185,7 @@ class HybridTransformerStrategy:
 ## Performance Results: Speed vs Reliability Tradeoffs
 
 **Latest Batch Results (100 games)**:
-- **Success Rate**: 61/100 (61.0%) vs RBCR2's 92% 
+- **Success Rate**: 61/100 (61.0%) vs RBCR2's 92%
 - **Best Performance**: 790 rejections vs RBCR2's 804 average
 - **Speed**: 5x faster than RBCR2 (0.3s vs 1.5s per game)
 - **Duration**: 55.7s for 100 games vs 280s for RBCR2
