@@ -11,7 +11,8 @@
     "pipe:tweet": "tsx scripts/pipe_tweet.ts",
     "validate:schema": "tsx scripts/validate-schema.ts",
     "generate:og": "node scripts/generate-og-images.js",
-    "generate:og:force": "node scripts/generate-og-images.js --force"
+    "generate:og:force": "node scripts/generate-og-images.js --force",
+    "postinstall": "playwright install --with-deps chromium"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.52.0",
