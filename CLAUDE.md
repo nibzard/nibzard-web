@@ -87,3 +87,28 @@ lighthouse http://localhost:4322 --output html --output-path ./lighthouse-prod.h
    - Individual URL: `/{slug}` (e.g., `/vacuum`, `/blink`)
    - Listed in log index: `/log/`
    - Custom OG image: `/api/og/{slug}` (auto-generated)
+
+## Mermaid Diagrams
+
+This site supports Mermaid diagrams in markdown files. Mermaid diagrams are rendered as SVG graphics with proper styling and colors.
+
+### Setup and Dependencies
+- **Required packages**: `rehype-mermaid`, `playwright`
+- **Playwright browsers**: Must be installed with `pnpm exec playwright install --with-deps chromium`
+- **Configuration**: Already configured in `astro.config.mjs` with:
+  - `excludeLangs: ['mermaid']` to prevent syntax highlighting interference
+  - `rehype-mermaid` with `img-svg` strategy and dark mode support
+
+### Usage in Markdown
+```markdown
+\`\`\`mermaid
+graph TD
+    A[Start] --> B[Process]
+    B --> C[End]
+\`\`\`
+```
+
+### Troubleshooting
+- If Mermaid diagrams show as code blocks: Run `pnpm exec playwright install --with-deps chromium`
+- If content is truncated after Mermaid blocks: Check that Playwright browsers are installed
+- Mermaid blocks are processed during build time, not in the browser

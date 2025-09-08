@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
-// import '../styles/index.less';
+import SearchResults from '../components/SearchResults.jsx';
 
 const { searchParams } = new URL(import.meta.env.SITE + Astro.request.url);
 const initialQuery = searchParams.get('q') || '';
@@ -49,146 +49,12 @@ const clientFeedEntries = [
   })),
 ];
 
-let clientFeedEntriesJsonString = '';
-try {
-  clientFeedEntriesJsonString = JSON.stringify(clientFeedEntries);
-} catch (e) {
-  console.error("Error stringifying clientFeedEntries on server:", e);
-  clientFeedEntriesJsonString = JSON.stringify([{ type: 'error', message: 'Could not serialize search data.'}]);
-}
-
 ---
 
 <BaseLayout title={`Search Results for "${initialQuery}" | nibzard`} description={`Search results for "${initialQuery}" on nibzard.`}>
   <div class="search-page-container">
     <h1>Search Results{initialQuery && `: "${initialQuery}"`}</h1>
 
-    <div id="feed-timeline" class="feed-timeline" style="min-height: 200px;">
-      {/* Search results will be rendered here by client-side script */}
-    </div>
+    <SearchResults feedEntries={clientFeedEntries} initialQuery={initialQuery} client:load />
   </div>
-  
-  <script type="application/json" id="fuse-feed-data" set:html={clientFeedEntriesJsonString}></script>
 </BaseLayout>
-
-<script type="module">
-  import Fuse from 'https://cdn.jsdelivr.net/npm/fuse.js@7.1.0/dist/fuse.mjs';
-  // @ts-nocheck
-
-  // Define helper functions s and a in the client-side scope
-  const s = (val, def = '') => (val === null || typeof val === 'undefined') ? def : String(val);
-  const a = (val, def = []) => Array.isArray(val) ? val : def;
-
-  document.addEventListener('DOMContentLoaded', () => {
-    const feedTimeline = document.getElementById('feed-timeline');
-    const jsonDataScript = document.getElementById('fuse-feed-data');
-    let clientFeedEntriesData = [];
-    let rawJsonContent = '';
-
-    if (jsonDataScript) {
-      rawJsonContent = jsonDataScript.textContent;
-      // Debug: Attempting to parse JSON, raw textContent
-      try {
-        clientFeedEntriesData = JSON.parse(rawJsonContent);
-        if (Array.isArray(clientFeedEntriesData) && clientFeedEntriesData.length === 1 && clientFeedEntriesData[0].type === 'error') {
-          console.error('Search data serialization error from server:', clientFeedEntriesData[0].message);
-          feedTimeline.innerHTML = `<div style="text-align:center;color:var(--color-error);padding:2rem;">Error: ${clientFeedEntriesData[0].message}</div>`;
-          return;
-        }
-      } catch (error) {
-        console.error('Failed to parse JSON data:', error);
-        console.error('Problematic JSON string was:', rawJsonContent);
-        if (feedTimeline) feedTimeline.innerHTML = '<div style="text-align:center;color:var(--color-error);padding:2rem;">Error: Could not load search data. Invalid format.</div>';
-        return;
-      }
-    } else {
-      console.error('Could not find JSON data script tag (fuse-feed-data).');
-      if (feedTimeline) feedTimeline.innerHTML = '<div style="text-align:center;color:var(--color-error);padding:2rem;">Error: Search data script element not found.</div>';
-      return;
-    }
-
-    const initialQueryFromURL = new URLSearchParams(window.location.search).get('q') || '';
-
-    function formatDate(dateStr) {
-      const d = new Date(dateStr);
-      return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
-    }
-
-    function renderFeed(entries) {
-      if (!feedTimeline) return;
-      if (!entries || !entries.length) {
-        feedTimeline.innerHTML = '<div style="text-align:center;color:var(--color-text-muted);padding:2rem;">No results found.</div>';
-        return;
-      }
-      feedTimeline.innerHTML = entries.map((item, index) => {
-        const date = item.date ? formatDate(item.date) : 'Date N/A';
-        let entryHtml = '';
-        const itemTitle = s(item.title);
-        const itemTldr = s(item.tldr);
-        const itemText = s(item.text);
-        const itemCaption = s(item.caption);
-        const itemImageUrl = s(item.imageUrl);
-        const itemSlug = s(item.slug, '#');
-
-        switch (item.type) {
-          case 'log':
-            entryHtml = `
-              <article class="log-entry">
-                <div class="entry-meta"><time>${date}</time></div>
-                <div class="log-entry-content">
-                  <h2><a href="/${itemSlug}">${itemTitle}</a></h2>
-                  ${itemTldr ? `<p class="log-entry-tldr">${itemTldr}</p>` : ''}
-                </div>
-              </article>`;
-            break;
-          case 'thought':
-            entryHtml = `
-              <div class="thought-entry">
-                <div class="entry-meta"><time>${date}</time> Thought</div>
-                <blockquote><a href="/${itemSlug}">${itemText}</a></blockquote>
-              </div>`;
-            break;
-          case 'now':
-            entryHtml = `
-              <div class="now-entry">
-                <div class="entry-meta"><time>${date}</time> Now</div>
-                <div>${itemTitle || itemText}</div>
-              </div>`;
-            break;
-          case 'image':
-            entryHtml = `
-              <div class="image-entry">
-                <div class="entry-meta"><time>${date}</time> Image</div>
-                <div>
-                  ${itemImageUrl ? `<img src="${itemImageUrl}" alt="${itemCaption || 'Search result image'}" style="max-width: 100%; border-radius: var(--border-radius); margin-bottom: var(--space-sm);"/>` : ''}
-                  <p>${itemCaption}</p>
-                </div>
-              </div>`;
-            break;
-        }
-        return entryHtml;
-      }).join('');
-    }
-
-    const fuse = new Fuse(clientFeedEntriesData, {
-      keys: [
-        'title', 'tldr', 'tags', 'text', 'caption', 'slug', 'imageUrl'
-      ],
-      threshold: 0.4,
-      ignoreLocation: true,
-      minMatchCharLength: 2,
-    });
-
-    function doSearch(query) {
-      if (!query) {
-        renderFeed(clientFeedEntriesData);
-        return;
-      }
-      const results = fuse.search(query).map(r => r.item);
-      renderFeed(results);
-    }
-
-    // Perform initial search with URL query
-    doSearch(initialQueryFromURL);
-  });
-</script>
