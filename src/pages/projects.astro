@@ -4,96 +4,153 @@ import FadeIn from '../components/animations/FadeIn.jsx';
 
 const projects = [
   {
+    title: "riftkit",
+    url: "https://github.com/nibzard/riftkit",
+    description: "AI-focused dotfiles for remote VM development. Optimized for Claude Code, Amp, and modern CLI tools",
+    topics: ["ai", "devops", "remote-development", "productivity"],
+    date: "2025-09-04"
+  },
+  {
+    title: "ctxt",
+    url: "https://github.com/nibzard/ctxt",
+    description: "Turn any webpage into perfect LLM input with shareable, permanent links",
+    topics: ["ai", "web-scraping", "markdown", "utility"],
+    date: "2025-09-04"
+  },
+  {
+    title: "langchain-steel",
+    url: "https://github.com/nibzard/langchain-steel",
+    description: "AI-first browser automation and web scraping tools for LangChain with advanced document loading capabilities",
+    topics: ["ai", "web-scraping", "langchain", "automation"],
+    date: "2025-09-05"
+  },
+  {
+    title: "berghain-colab",
+    url: "https://github.com/nibzard/berghain-colab",
+    description: "Train a 4.8M parameter dual-head transformer on Google Colab to optimize nightclub admission strategies",
+    topics: ["machine-learning", "transformer", "game-ai", "colab"],
+    date: "2025-09-08"
+  },
+  {
+    title: "hn-karma-tracker",
+    url: "https://github.com/nibzard/hn-karma-tracker",
+    description: "Automatically tracks and visualizes a Hacker News user's karma points over time using GitHub Actions",
+    topics: ["github-actions", "data-visualization", "python", "web-scraping"],
+    date: "2025-09-09"
+  },
+  {
+    title: "ospec",
+    url: "https://github.com/nibzard/ospec",
+    description: "The specification format for AI coding agents to build products with proven tech stacks",
+    topics: ["ai", "software-engineering", "specification", "tech-stack"],
+    date: "2025-09-09"
+  },
+  {
     title: "toneadjuster",
     url: "https://github.com/nibzard/toneadjuster",
     description: "Chrome extenstion for adjusting the tone and style of text using local LLM",
-    topics: ["ai", "text-processing", "tone", "nlp"]
+    topics: ["ai", "text-processing", "tone", "nlp"],
+    date: "2025-08-21"
   },
   {
     title: "agentprobe",
     url: "https://github.com/nibzard/agentprobe",
     description: "Test Agent Experience (AX) - how well AI agents interact with CLI tools",
-    topics: ["ai", "testing", "cli", "agents"]
+    topics: ["ai", "testing", "cli", "agents"],
+    date: "2025-08-25"
   },
   {
     title: "claude-threads",
     url: "https://github.com/nibzard/claude-threads",
     description: "Thread management for Claude AI conversations",
-    topics: ["claude", "threads", "ai", "conversation"]
+    topics: ["claude", "threads", "ai", "conversation"],
+    date: "2025-08-01"
   },
   {
     title: "awesome-agentic-patterns",
     url: "https://github.com/nibzard/awesome-agentic-patterns",
     description: "Curated collection of agentic AI patterns and architectures",
-    topics: ["ai", "patterns", "agents", "architecture"]
+    topics: ["ai", "patterns", "agents", "architecture"],
+    date: "2025-09-08"
   },
   {
     title: "AI Enablement Stack",
     url: "https://github.com/daytonaio/ai-enablement-stack",
     description: "Comprehensive map of AI development space",
-    topics: ["ai", "development", "toolkit", "workflows"]
+    topics: ["ai", "development", "toolkit", "workflows"],
+    date: "2025-08-11"
   },
   {
     title: "llmdb",
     url: "https://github.com/nibzard/llmdb",
     description: "Database operations powered by large language models",
-    topics: ["llm", "database", "ai", "data"]
+    topics: ["llm", "database", "ai", "data"],
+    date: "2025-07-21"
   },
   {
     title: "bucket",
     url: "https://github.com/nibzard/bucket",
     description: "Simple storage and organization tool",
-    topics: ["storage", "organization", "utility", "cli"]
+    topics: ["storage", "organization", "utility", "cli"],
+    date: "2025-07-18"
   },
   {
     title: "lmdb-mcp",
     url: "https://github.com/nibzard/lmdb-mcp",
     description: "AI memory using LMDB and Model Context Protocol",
-    topics: ["lmdb", "mcp", "claude", "database"]
+    topics: ["lmdb", "mcp", "claude", "database"],
+    date: "2025-06-27"
   },
   {
     title: "lmdb-tui",
     url: "https://github.com/nibzard/lmdb-tui",
     description: "Terminal user interface for LMDB database management",
-    topics: ["lmdb", "tui", "database", "terminal"]
+    topics: ["lmdb", "tui", "database", "terminal"],
+    date: "2025-06-09"
   },
   {
     title: "llm-loop",
     url: "https://github.com/nibzard/llm-loop",
     description: "Iterative loop plugin for Simon Willison llm cli tool",
-    topics: ["llm", "loop", "workflow", "ai"]
+    topics: ["llm", "loop", "workflow", "ai"],
+    date: "2025-06-07"
   },
   {
     title: "agent-perceptions",
     url: "https://github.com/nibzard/agent-perceptions",
     description: "Research on how AI agents perceive and process information",
-    topics: ["ai", "research", "perception", "agents"]
+    topics: ["ai", "research", "perception", "agents"],
+    date: "2025-06-01"
   },
   {
     title: "labruno-agent",
     url: "https://github.com/nibzard/labruno-agent",
     description: "Agent coordinator that creates multiple AI solutions to your coding tasks using parallel sandboxes",
-    topics: ["agent", "ai", "specialized", "automation"]
+    topics: ["agent", "ai", "specialized", "automation"],
+    date: "2025-04-10"
   },
   {
     title: "ai-sandbox-benchmark-2",
     url: "https://github.com/nibzard/ai-sandbox-benchmark-2",
     description: "Benchmarking suite for AI sandbox environments",
-    topics: ["ai", "benchmark", "sandbox", "testing"]
+    topics: ["ai", "benchmark", "sandbox", "testing"],
+    date: "2025-04-23"
   },
   {
     title: "countgpt",
     url: "https://github.com/nibzard/countgpt",
     description: "Token counting and analysis tool for LLMs",
-    topics: ["gpt", "tokens", "analysis", "utility"]
+    topics: ["gpt", "tokens", "analysis", "utility"],
+    date: "2025-04-06"
   },
   {
     title: "devcontainer-generator",
     url: "https://github.com/nibzard/devcontainer-generator",
     description: "Generate development containers for various project types",
-    topics: ["devcontainer", "generator", "development", "docker"]
+    topics: ["devcontainer", "generator", "development", "docker"],
+    date: "2024-12-08"
   }
-];
+].sort((a, b) => new Date(b.date) - new Date(a.date));
 ---
 
 <BaseLayout title="Projects - nibzard" description="Open source projects and experiments by Nikola Balić (Nikola Balic) - AI tools, development utilities, and research implementations.">
