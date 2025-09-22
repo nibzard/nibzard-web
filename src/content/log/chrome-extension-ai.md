@@ -2,7 +2,7 @@
 title: "From Twitter Analysis to Chrome Extension in Hours"
 description: "How AI coding agents democratized Chrome extension development, turning algorithm insights into shipped product overnight."
 tldr: "Used Claude Code to analyze Twitter's algorithm, build FollowSaver Chrome extension, and navigate Web Store submission. AI handled 95% of technical work—I provided direction and created assets. Approved in 24 hours. The barrier to shipping dropped from months to hours."
-date: 2025-01-22
+date: 2025-09-22
 tags: [AI, CHROME, TWITTER, SHIPPING]
 draft: false
 ---
