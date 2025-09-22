@@ -17,6 +17,8 @@ Today, [FollowSaver](https://chromewebstore.google.com/detail/followsaver/afagod
 
 It started with [analyzing Twitter's recommendation algorithm](https://nibzard.github.io/twitter-algorithm-tufte). Claude Code and I dissected the two-stage ranking system, engagement hierarchies, and network effects.
 
+![Twitter Algorithm Analysis - Visual breakdown of the recommendation engine](/images/20250922_x-algo-guide.png)
+
 **Key discovery**: Twitter prioritizes "two-hop" connections—friends of friends. Your network's network matters more than random follows.
 
 **The problem**: Most people follow randomly, missing algorithmic leverage.
@@ -26,6 +28,8 @@ It started with [analyzing Twitter's recommendation algorithm](https://nibzard.g
 ## The Chrome Web Store Transformation
 
 Claude didn't just build the extension—it guided the entire submission process. Privacy policies, manifest requirements, store optimization, compliance documentation. Everything I would have spent weeks learning.
+
+![FollowSaver in the Chrome Web Store - Approved in 24 hours](/images/20250922_chrome-store.png)
 
 **Submission to approval: 24 hours.**
 
