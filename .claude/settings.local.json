@@ -15,7 +15,9 @@
       "Bash(git push:*)",
       "Bash(git pull:*)",
       "Bash(grep:*)",
-      "mcp__playwright__browser_resize"
+      "mcp__playwright__browser_resize",
+      "WebFetch(domain:nibzard.github.io)",
+      "WebFetch(domain:chromewebstore.google.com)"
     ],
     "deny": []
   }
