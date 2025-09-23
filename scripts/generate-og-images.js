@@ -2,7 +2,13 @@ import puppeteer from 'puppeteer';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import sharp from 'sharp';
+// Try to import sharp, but make it optional
+let sharp;
+try {
+  sharp = (await import('sharp')).default;
+} catch (error) {
+  console.warn('Sharp not available, skipping image optimization:', error.message);
+}
 
 // __dirname workaround for ES modules
 const __filename = fileURLToPath(import.meta.url);
@@ -134,13 +140,19 @@ async function generateOGImage(page, entry, template) {
     type: 'png'
   });
   
-  // Optimize with Sharp
-  await sharp(imagePath)
-    .png({ quality: 90, compressionLevel: 9 })
-    .toFile(imagePath.replace('.png', '-optimized.png'));
-  
-  // Replace original with optimized
-  fs.renameSync(imagePath.replace('.png', '-optimized.png'), imagePath);
+  // Optimize with Sharp if available
+  if (sharp) {
+    try {
+      await sharp(imagePath)
+        .png({ quality: 90, compressionLevel: 9 })
+        .toFile(imagePath.replace('.png', '-optimized.png'));
+      
+      // Replace original with optimized
+      fs.renameSync(imagePath.replace('.png', '-optimized.png'), imagePath);
+    } catch (error) {
+      console.warn(`Sharp optimization failed for ${entry.slug}, using unoptimized image:`, error.message);
+    }
+  }
   
   console.log(`Generated OG image for: ${entry.title} -> ${imagePath}`);
 }
