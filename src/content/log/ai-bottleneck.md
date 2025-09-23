@@ -107,3 +107,7 @@ They're building toward a future where development teams orchestrate AI processe
 It's still early. There's significant execution risk. The interfaces will evolve. But the fundamental insight about orchestration-first development feels directionally correct for the industry transition we're experiencing.
 
 Most of the industry is still optimizing for Act Two. The teams preparing for Act Three will have exponential advantages when the infrastructure matures.
+
+<div class="alert alert-info">
+  <strong>Ready for Act Three?</strong> <a href="https://www.verdent.ai/" target="_blank" rel="noopener noreferrer">Try Verdent</a> and experience agent orchestration firsthand. See how multiple AI agents can work together on your projects with full observability and systematic coordination.
+</div>
