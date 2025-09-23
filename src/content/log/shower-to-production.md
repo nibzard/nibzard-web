@@ -2,7 +2,7 @@
 title: "From Shower Ideas to Production: Autonomous AI Agents"
 description: "Running 100% autonomous AI agents in VMs to go from idea to implementation without touching a keyboard"
 tldr: "I've solved the idea-to-code friction by running autonomous AI agents in VMs. Every shower idea gets spec'd and implemented automatically using loop.sh orchestration, specialized subagents, and proper tooling."
-date: 2025-01-15
+date: 2025-09-22
 tags: [AI, AUTOMATION, TOOLS, WORKFLOW]
 draft: false
 ---
@@ -45,11 +45,11 @@ Here's the real workflow:
 
 ## Production Patterns That Emerged
 
-**Spec Driven Development**: [FINISH THIS]
+**Spec Driven Development**: The voice-to-spec pipeline becomes the single source of truth. Every project starts with a comprehensive specification that includes architecture decisions, tech stack choices, and acceptance criteria. This upfront investment pays massive dividends when the agent hits implementation—no ambiguity, no mid-flight architecture changes, no scope creep.
 
 **Failure Recovery**: The system distinguishes between recoverable errors (missing files, syntax issues) and hard failures (rate limits, fundamental blockers). It attempts recovery for the former and gracefully stops for the latter.
 
-**Task Management Mastery**: [FINISH THIS]
+**Task Management Mastery**: The task-master subagent becomes a productivity multiplier. It maintains perfect todo file hygiene, breaks down complex features into atomic tasks, and provides intelligent task selection based on current context and dependencies. No human ever has to think about what to work on next—the system handles prioritization, estimation, and progress tracking autonomously.
 
 **Git Discipline**: Every completed task gets committed with meaningful messages. This creates a clean history and enables easy rollbacks if the agent takes a wrong turn.
 
