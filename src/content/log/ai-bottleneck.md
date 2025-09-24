@@ -11,11 +11,14 @@ Over the past few months advising Verdent AI, I've had a front-row seat to the o
 
 Software development has a classic three-act structure. We're living through Act Two, and most people don't realize it yet.
 
+![Three-act structure diagram showing the classic narrative progression from setup through confrontation to resolution](/images/three-act-structure.png)
+*Source: [Writing for Film: The Three Act Structure](https://thediscerningwriter.wordpress.com/2016/04/20/writing-for-film-the-three-act-structure/)*
+
 **Act One** was the craft era. Individual developers writing code, line by line, function by function. Tools helped us type faster--IDEs, autocomplete, stack overflow searches--but the fundamental unit remained human intelligence applied to logical problems.
 
 **Act Two** is the assistant era. We have AI that helps us code faster. Claude Code, OpenAI Codex, Cursor, Devin, Cline, Aider, Amp--smart tools that autocomplete thoughts, generate functions, debug errors. Still fundamentally human-driven, still linear, and mostly one-agent-per-human workflows.
 
-**Act Three** is the orchestration era. This is where compute becomes cheaper than human labor, where agents coordinate with other agents, where development transforms from individual craft to systematic process management.
+**Act Three** is the orchestration era. This is where agent becomes cheaper than human labor, where agents coordinate with other agents, where development transforms from individual craft to systematic process management.
 
 Most of the industry is still thinking in Act Two terms.
 
@@ -67,6 +70,8 @@ Current single-agent tools sidestep this by keeping everything human-supervised.
 
 This is where Verdent becomes interesting. I've watched them evolve from a VS Code extension to an agent orchestration suite, and their development velocity has been unlike anything I've seen in dev tools.
 
+![Verdent Deck orchestration interface showing project planning with multiple parallel tasks, file explorer, and integrated terminal - demonstrating the systematic coordination of AI agents working on complex development workflows](/images/20250923_verdent-deck-ui.png)
+
 They're not just building faster autocomplete. They're building infrastructure for coordinated agent workflows:
 
 **Multiple Agents, Isolated Contexts**: Parallel execution without collision, each agent working in separate Git worktrees but coordinating through shared understanding.
@@ -91,12 +96,6 @@ The foundational models will commoditize. GPT, Claude, Gemini, Zhipu, Kimi, Qwen
 
 **Bet 3: Security Becomes Systematic, Not Reactive**
 Current AI coding tools require post-generation security review. Orchestrated systems can build security into the workflow architecture: sandboxed execution environments, formal verification steps, automated compliance checking. Security stops being something you add afterward and becomes something the orchestration system enforces systematically.
-
-## My Fourth Bet: Supporting the Orchestration Trailblazers
-
-When someone presents you with these three strategic shifts, the natural question becomes: who's actually building toward this future?
-
-That's where my fourth bet came in. When [Verdent](https://www.verdent.ai/) approached me on day one with their initial idea, these weren't just theoretical frameworks, they were the lens through which I evaluated their potential. I made a personal bet: that supporting early orchestration infrastructure would prove more valuable than optimizing single-agent assistance.
 
 ## Why Orchestration Matters
 
