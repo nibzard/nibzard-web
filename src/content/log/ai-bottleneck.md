@@ -18,25 +18,25 @@ Software development has a classic three-act structure. We're living through Act
 
 **Act Two** is the assistant era. We have AI that helps us code faster. Claude Code, OpenAI Codex, Cursor, Devin, Cline, Aider, Amp--smart tools that autocomplete thoughts, generate functions, debug errors. Still fundamentally human-driven, still linear, and mostly one-agent-per-human workflows.
 
-**Act Three** is the orchestration era. This is where agent becomes cheaper than human labor, where agents coordinate with other agents, where development transforms from individual craft to systematic process management.
+**Act Three** is the orchestration era. This is where agent becomes cheaper than human labor, where agents coordinate with other agents, where development transforms from individual craft to systematic process management. This is where we benefit from a massive exponent enabled by agents.
 
 Most of the industry is still thinking in Act Two terms.
 
 ## The Linear Trap
 
-Current AI coding tools follow the same pattern: one human, one agent, one linear process. You prompt, the agent responds, you iterate. Even the most sophisticated tools, and I've worked with most of them over the past year in dev tools, operate within this single-threaded paradigm.
+Current AI coding tools follow the same pattern: **one human, one agent, one linear process**. You prompt, the agent responds, you iterate. Even the most sophisticated tools, and I've worked with most of them over the past year in dev tools, operate within this single-threaded paradigm.
 
-Humans are really bad at multitasking. I've lived through months of Agent Maxing, but there's an upper limit and painful risk of burnout. It can be done, but it takes a special type of human effort.
+Humans are really bad at multitasking. I've lived through months of Agent Maxing (running as many agents and burning as many tokens as possible), but there's an upper limit and painful risk of burnout. It can be done, but it takes a special type of human effort.
 
 The promise was exponential productivity gains. The reality has been incremental improvements. Faster autocomplete. Smarter code generation. Better debugging assistance. All valuable, but fundamentally limited by human throughput and creativity.
 
-Here's the constraint: humans are still the bottleneck. We prompt one agent at a time, review one output at a time, manage one workflow at a time. The agent's compute capacity vastly exceeds our ability to coordinate it effectively.
+Here's the constraint: **humans are still the bottleneck**. We prompt one agent at a time, review one output at a time, manage one workflow at a time. The agent's compute capacity vastly exceeds our ability to coordinate it effectively.
 
-This is like having a Formula One car but driving in city traffic. The limitation isn't the engine, it's the infrastructure.
+> This is like having a Formula One car but driving in city traffic. The limitation isn't the engine, it's the infrastructure.
 
 ## Beyond Human-Scale Processes
 
-From my work with engineering companies across B2C and B2B contexts, I've observed something consistent: development is never actually individual work. It's orchestrated process work. Multiple people, multiple steps, multiple handoffs, multiple verification loops.
+From my work with engineering companies across B2C and B2B contexts, I've observed something consistent: **development is never actually individual work**. It's orchestrated process work. Multiple people, multiple steps, multiple handoffs, multiple verification loops.
 
 We have Kanban boards, JIRA workflows, code review processes, CI/CD pipelines--all attempts to systematize complexity beyond what any single person can manage. But these processes were designed for human constraints: limited working memory, sequential attention, communication overhead.
 
