@@ -107,9 +107,7 @@ const personSchema = createPersonSchema();
     })(window, document, "clarity", "script", "t6jkgqqx5e");
   </script>
 
-  <!-- Import Fonts - Optimized for performance -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- DNS prefetch for third-party services -->
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
   <link rel="dns-prefetch" href="https://www.clarity.ms">
   
@@ -124,6 +122,8 @@ const personSchema = createPersonSchema();
   <link rel="preload" href="/fonts/monaspace/MonaspaceArgonVF.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/monaspace/MonaspaceXenonVF.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/monaspace/MonaspaceNeonVF.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/monaspace/MonaspaceKryptonVF.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/monaspace/MonaspaceRadonVF.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Schema.org Structured Data -->
   <SchemaMarkup schema={websiteSchema} />
@@ -300,28 +300,7 @@ const personSchema = createPersonSchema();
     });
   </script>
 
-  <!-- Mermaid client-side rendering -->
-  <script type="module" is:inline>
-    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-    
-    // Initialize Mermaid with configuration
-    mermaid.initialize({
-      startOnLoad: true,
-      theme: 'default',
-      themeVariables: {
-        primaryColor: '#2d3032',
-        primaryTextColor: '#2d3032',
-        primaryBorderColor: '#2d3032',
-        lineColor: '#6b7280',
-        secondaryColor: '#f3f4f6',
-        tertiaryColor: '#ffffff'
-      }
-    });
-    
-    // Process Mermaid diagrams after page load
-    document.addEventListener('DOMContentLoaded', () => {
-      mermaid.run();
-    });
-  </script>
+  <!-- Lazy load Mermaid only when diagrams are present -->
+  <script type="module" src="/src/scripts/mermaid-loader.js"></script>
 </body>
 </html>
