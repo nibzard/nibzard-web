@@ -17,7 +17,13 @@
       "Bash(grep:*)",
       "mcp__playwright__browser_resize",
       "WebFetch(domain:nibzard.github.io)",
-      "WebFetch(domain:chromewebstore.google.com)"
+      "WebFetch(domain:chromewebstore.google.com)",
+      "mcp__CDP__new_page",
+      "mcp__CDP__take_screenshot",
+      "mcp__CDP__performance_start_trace",
+      "mcp__CDP__performance_analyze_insight",
+      "Bash(pnpm run:*)",
+      "mcp__CDP__list_pages"
     ],
     "deny": []
   }
