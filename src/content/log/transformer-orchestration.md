@@ -4,6 +4,7 @@ description: "How we built a strategy controller that coordinates algorithmic ap
 date: 2025-09-08
 tags: [SLOP]
 tldr: "Built a 4.76M parameter transformer to coordinate 8 bouncer algorithms. While averaging 958 rejections vs RBCR2's 887, achieved breakthrough single game of 855 rejections through learned strategy orchestration."
+author: "Nikola Balić"
 ---
 
 *Part 2: How we built a strategy controller that coordinates algorithmic approaches and learned to compete with the best is a continuation of the ["Vibe Coding Through the Berghain Challenge"](/berghain) article.*

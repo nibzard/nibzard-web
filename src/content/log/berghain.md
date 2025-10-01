@@ -5,6 +5,7 @@ tldr: "Listen Labs' viral billboard puzzle led to a nightclub bouncer optimizati
 date: 2025-09-05
 tags: [SLOP, AI, OPTIMIZATION, GROWTH]
 draft: false
+author: "Nikola Balić"
 ---
 
 This article documents an experiment in AI-human collaboration for solving complex optimization problems. What you're reading is a real-time record of how AI coding agents can tackle challenges where 98% of the work is done by the agent with slight human oversight and nudging.

@@ -5,6 +5,7 @@ tldr: "Used Claude Code to analyze Twitter's algorithm, build FollowSaver Chrome
 date: 2025-09-22
 tags: [AI, CHROME, TWITTER, SHIPPING]
 draft: false
+author: "Nikola Balić"
 ---
 
 Two years ago, I wouldn't have dreamed of publishing a Chrome extension.

@@ -5,6 +5,7 @@ tldr: "AI doesn't just make work faster--it amplifies hidden constraints. At Ant
 date: 2025-06-02
 tags: [HUMAN, INSIGHT, AI, SYSTEMS]
 draft: false
+author: "Nikola Balić"
 ---
 
 <blockquote class="featured-quote primary">

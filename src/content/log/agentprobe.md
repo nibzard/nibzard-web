@@ -5,6 +5,7 @@ tldr: "Built AgentProbe to test how AI agents interact with CLI tools. Even simp
 date: 2025-07-26
 tags: [HUMAN, AI, AGENTS, DEVELOPER-TOOLS, OPEN-SOURCE]
 draft: false
+author: "Nikola Balić"
 ---
 
 Five runs. Same prompt. Same agent. Same CLI.

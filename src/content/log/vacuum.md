@@ -5,6 +5,7 @@ tldr: "Senior engineers often dismiss small AI coding power-ups (like smarter au
 date: 2025-05-26
 tags: [HUMAN, OPINION]
 draft: false
+author: "Nikola Balić"
 ---
 
 <blockquote class="featured-quote primary">

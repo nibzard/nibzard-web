@@ -5,6 +5,7 @@ date: 2025-10-01
 tags: [AI, STARTUPS, STRATEGY, VENTURE, SILICON-VALLEY]
 tldr: "AI startups fail by optimizing for quarters instead of decades. Win by ignoring market noise, hiring missionaries during downturns, ruthlessly seeking truth, securing credibility early, selling FOMO, targeting unregulated markets, building for the pyramid, embracing acute pain, and becoming your own media."
 draft: false
+author: "Nikola Balić"
 ---
 
 Most AI startups are playing the wrong game on the wrong timescale.

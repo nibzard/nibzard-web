@@ -5,6 +5,7 @@ tldr: "The llm-loop-plugin gives Simon Willison's LLM CLI the ability to loop an
 date: 2025-06-07
 tags: [HUMAN, INSIGHT, AI, TOOLS]
 draft: false
+author: "Nikola Balić"
 ---
 
 There's a moment when a tool stops being a tool and becomes an agent.

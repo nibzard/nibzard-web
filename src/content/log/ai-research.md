@@ -5,6 +5,7 @@ tldr: "AI agents can now handle end-to-end research workflows--from conceiving s
 date: 2025-06-02
 tags: [HUMAN, EXPERIENCE, AI, RESEARCH]
 draft: false
+author: "Nikola Balić"
 ---
 
 <blockquote class="featured-quote primary">

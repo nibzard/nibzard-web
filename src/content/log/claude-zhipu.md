@@ -5,6 +5,7 @@ tldr: "This setup allows you to use Claude Code CLI with Zhipu's API (api.z.ai) 
 date: 2025-09-01
 tags: [CHEATSHEET, Claude, CLI, API]
 draft: false
+author: "Nikola Balić"
 ---
 
 This setup allows you to use **Claude Code CLI** with **Zhipu's API** (`api.z.ai`) **in parallel** with your existing Claude Max / Anthropic CLI installation.  

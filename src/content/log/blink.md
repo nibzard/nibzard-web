@@ -5,6 +5,7 @@ tldr: "The AI developer tooling market is moving faster than ever, with big play
 date: 2025-05-20
 tags: [HUMAN, OPINION]
 draft: false
+author: "Nikola Balić"
 ---
 
 We're witnessing the **fastest consolidation** in the history of developer tooling.

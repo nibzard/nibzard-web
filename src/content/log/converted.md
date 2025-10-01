@@ -5,6 +5,7 @@ tldr: "Kenton Varda, a Cloudflare engineer who was skeptical of AI, tested Claud
 date: 2025-06-07
 tags: [HUMAN, OPINION]
 draft: false
+author: "Nikola Balić"
 ---
 
 Blink, and your entire worldview could shift.

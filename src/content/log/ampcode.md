@@ -6,6 +6,7 @@ date: 2025-05-28
 updated: 2025-07-27
 tags: [HUMAN, EXPERIENCE, AI, AGENTS]
 draft: false
+author: "Nikola Balić"
 ---
 
 *What happens when you stop talking about AI and start shipping with it?*

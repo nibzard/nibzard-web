@@ -5,6 +5,7 @@ tldr: "A practical guide to Claude Code, including setup, codebase Q&A, tool usa
 date: 2025-05-27
 tags: [HUMAN, CHEATSHEET, Claude, Code]
 draft: false
+author: "Nikola Balić"
 ---
 
 **Claude Code** is a powerful, flexible, **terminal-first AI coding assistant** designed to integrate deeply with existing developer workflows and tools.

@@ -5,6 +5,7 @@ date: 2025-08-17
 tags: [HUMAN, CLI, AI, AGENTS, DOCUMENTATION, API]
 tldr: "AI agents succeed or fail based on your --help text. Clear command structure, explicit success signals, and structured output options make the difference between one API call and five retries."
 draft: false
+author: "Nikola Balić"
 ---
 
 AI agents don't need fancy MCP. They need good `--help`.

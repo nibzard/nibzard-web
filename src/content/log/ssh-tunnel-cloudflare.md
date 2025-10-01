@@ -5,6 +5,7 @@ tldr: "Complete guide to setting up Claude Code in your homelab VM and accessing
 date: 2025-07-16
 tags: [HUMAN, CHEATSHEET, AI, Claude, Mobile, VM, Cloudflare]
 draft: false
+author: "Nikola Balić"
 ---
 
 Imagine having a powerful AI coding assistant running in your pocket, ehm homelab, that you can access from anywhere. This guide shows you how to set up Claude Code in an Ubuntu VM and access it securely through Cloudflare Tunnel, turning your mobile device into a surprisingly capable coding workstation.

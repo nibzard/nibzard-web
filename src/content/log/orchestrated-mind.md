@@ -5,6 +5,7 @@ tldr: "The future of AI isn't single agents but orchestrated swarms sharing temp
 date: 2025-08-12
 tags: [HUMAN, AI, AGENTS, MULTI-AGENT, ORCHESTRATION, MEMORY]
 draft: false
+author: "Nikola Balić"
 ---
 
 Picture a thousand AI agents working on a single codebase. A code analyst identifies patterns, a test writer crafts validation, a performance optimizer restructures algorithms. They don't pass messages—they share thoughts.

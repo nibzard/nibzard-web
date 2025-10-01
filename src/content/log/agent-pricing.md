@@ -5,6 +5,7 @@ tldr: "Current AI coding agents have misaligned pricing—users pay for agent in
 date: 2025-05-25
 tags: [HUMAN, EXPERIENCE, WIP]
 draft: false
+author: "Nikola Balić"
 ---
 
 ## The Credit Burn Problem

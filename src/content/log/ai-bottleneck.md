@@ -5,6 +5,7 @@ date: 2025-09-23
 tags: [AI, ORCHESTRATION, FUTURE, VERDENT, AGENTS]
 tldr: "We're transitioning from linear AI coding assistants to orchestrated agent systems. The future isn't about humans using AI tools--it's about humans orchestrating AI processes."
 draft: false
+author: "Nikola Balić"
 ---
 
 Over the past few months advising Verdent AI, I've had a front-row seat to the orchestration challenge that most developers don't see coming. Here's what that experience taught me about where the industry is heading.

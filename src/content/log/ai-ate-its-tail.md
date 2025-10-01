@@ -5,6 +5,7 @@ date: 2025-09-08
 description: "AI analyzed its own git history. Meta-experiment revealed the urgent need for transparent proof-of-work in AI-human collaboration."
 tldr: "Used AI to analyze its own git history, sparking thoughts on transparent AI-human collaboration. The future isn't hiding AI use—it's building verifiable trails of who did what, when, and how. Like Andy Weir's crowdsourced Martian, creative work has always been collaborative."
 draft: false
+author: "Nikola Balić"
 ---
 
 ## The Experiment

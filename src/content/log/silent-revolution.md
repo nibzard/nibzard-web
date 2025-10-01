@@ -5,6 +5,7 @@ tldr: "Today's AI agents excel at computer operation and research, maintain cohe
 date: 2025-05-29
 tags: [SLOP, AI, AGENTS]
 draft: false
+author: "Nikola Balić"
 ---
 
 The boundaries between technical and non-technical roles are dissolving before our eyes.

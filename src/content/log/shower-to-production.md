@@ -5,6 +5,7 @@ tldr: "I've solved the idea-to-code friction by running autonomous AI agents in 
 date: 2025-09-22
 tags: [AI, AUTOMATION, TOOLS, WORKFLOW]
 draft: false
+author: "Nikola Balić"
 ---
 
 Every great project starts with a crazy idea in the shower.

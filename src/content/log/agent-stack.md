@@ -5,6 +5,7 @@ tldr: "From shipping 50+ AI projects in months, I learned that successful tools 
 date: 2025-07-21
 tags: [HUMAN, AI, AGENTS, DEVELOPER-TOOLS, EXPERIENCE]
 draft: false
+author: "Nikola Balić"
 ---
 
 We're speedrunning through a Cambrian explosion.
