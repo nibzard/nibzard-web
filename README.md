@@ -133,15 +133,19 @@ The site implements Accept header content negotiation for AI-friendly markdown d
 
 ### How it works
 
-Articles are served in different formats based on the `Accept` header:
+Articles are served in different formats based on the `Accept` header OR by appending `.md` to the URL:
 
 ```bash
 # HTML (default - browsers)
 curl https://nibzard.com/claude-zhipu
 → Full HTML page
 
-# Markdown (AI agents, LLMs)
+# Markdown via Accept header (AI agents, LLMs)
 curl -H "Accept: text/markdown" https://nibzard.com/claude-zhipu
+→ Raw markdown content
+
+# Markdown via .md URL (explicit request)
+curl https://nibzard.com/claude-zhipu.md
 → Raw markdown content
 
 # Plain text (also serves markdown)
@@ -160,12 +164,12 @@ curl -H "Accept: text/plain" https://nibzard.com/claude-zhipu
 ### Implementation
 
 Content negotiation is handled via Astro middleware (`src/middleware.ts`) that:
-1. Checks the `Accept` header on incoming requests
-2. Returns raw markdown when `text/markdown` or `text/plain` is preferred
+1. Checks if URL ends with `.md` OR if `Accept` header prefers markdown/plain text
+2. Returns raw markdown when either condition is true
 3. Returns HTML for all other cases (browsers)
 4. Includes proper headers: `Vary: Accept`, `Link: rel="canonical"`, caching
 
-The `/api/raw/[slug]` endpoint also remains available for explicit markdown requests.
+The `/api/raw/[slug]` endpoint also remains available for backward compatibility.
 
 ## 🚀 Deployment
 

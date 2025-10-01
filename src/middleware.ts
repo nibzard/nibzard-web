@@ -10,7 +10,11 @@ export const onRequest = defineMiddleware(async (context, next) => {
   const url = new URL(request.url);
   const pathname = url.pathname;
 
-  // Only handle root-level log entry paths (not /log/* redirects, tags, API routes, static assets, etc.)
+  // Check if this is a .md URL request
+  const isMdUrl = pathname.endsWith('.md');
+
+  // Only handle root-level log entry paths or .md URLs
+  // Skip: /log/* redirects, tags, API routes, static assets, etc.
   if (pathname.startsWith('/api/') ||
       pathname.startsWith('/_astro/') ||
       pathname.startsWith('/images/') ||
@@ -18,9 +22,12 @@ export const onRequest = defineMiddleware(async (context, next) => {
       pathname.startsWith('/log/') ||  // Skip /log/* redirects
       pathname.startsWith('/tags/') || // Skip tag pages
       pathname === '/' ||
-      pathname.includes('.')) {
+      (pathname.includes('.') && !isMdUrl)) { // Skip other file extensions but not .md
     return next();
   }
+
+  // Extract slug from pathname (remove leading slash and .md extension if present)
+  const slug = pathname.replace(/^\//, '').replace(/\.md$/, '').replace(/\/$/, '');
 
   // Skip middleware during prerendering (headers not available)
   // During prerendering, accessing request.headers triggers a warning
@@ -32,16 +39,14 @@ export const onRequest = defineMiddleware(async (context, next) => {
     const markdownIndex = acceptHeader.indexOf('text/markdown');
     const htmlIndex = acceptHeader.indexOf('text/html');
 
-    // Determine if markdown is preferred
-    const prefersMarkdown = (plainIndex !== -1 || markdownIndex !== -1) &&
-                            (htmlIndex === -1 ||
-                             (plainIndex !== -1 && plainIndex < htmlIndex) ||
-                             (markdownIndex !== -1 && markdownIndex < htmlIndex));
+    // Determine if markdown is preferred via Accept header OR .md URL
+    const prefersMarkdown = isMdUrl ||
+                            ((plainIndex !== -1 || markdownIndex !== -1) &&
+                             (htmlIndex === -1 ||
+                              (plainIndex !== -1 && plainIndex < htmlIndex) ||
+                              (markdownIndex !== -1 && markdownIndex < htmlIndex)));
 
     if (prefersMarkdown) {
-      // Extract slug from pathname
-      const slug = pathname.replace(/^\//, '').replace(/\/$/, '');
-
       // Check if this is a valid log entry
       const logEntries = await getCollection('log', ({ data }) => {
         return data.draft !== true;
