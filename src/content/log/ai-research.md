@@ -9,6 +9,24 @@ author: "Nikola Balić"
 source_url:
   html: https://nibzard.com/ai-research
   md: https://nibzard.com/ai-research.md
+topics:
+  - AI-augmented research
+  - end-to-end academic workflows
+  - reproducibility
+  - LaTeX automation
+  - concurrent research production
+entities:
+  - arXiv
+  - Claude Code
+  - Cursor
+  - Vercel v0
+  - o3
+  - Gemini 2.5 Pro
+  - Sonnet 3.7
+answers_questions:
+  - How can AI handle end-to-end academic research from conception to publication?
+  - What makes reproducibility trivial in AI-assisted research?
+  - How does AI redistribute researcher time from execution to thinking?
 ---
 
 <blockquote class="featured-quote primary">

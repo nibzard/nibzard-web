@@ -8,6 +8,12 @@ author: "Nikola Balić"
 source_url:
   html: https://nibzard.com/campfire-oracle-cloud
   md: https://nibzard.com/campfire-oracle-cloud.md
+topics: [Basecamp Once deployment, Oracle Cloud setup, Cloudflare DNS, Rails production, server configuration]
+entities: [Basecamp, Oracle Cloud, Cloudflare, Ubuntu, Nginx, Redis, SQLite3, Rails]
+answers_questions:
+  - How do you deploy Basecamp's Once Campfire on Oracle Cloud?
+  - What are the common pitfalls in Rails deployment on low-memory VMs?
+  - How do you configure multi-layer firewalls for cloud applications?
 ---
 
 > **⚠️ Performance Warning**: This setup works on Oracle's Always Free VM.Standard.E2.1.Micro but the experience is quite limited due to the very weak CPU (1/8 OCPU). Expect slow page loads, sluggish UI interactions, and lengthy asset compilation times. Consider upgrading to a more powerful instance for production use.

@@ -9,6 +9,23 @@ author: "Nikola Balić"
 source_url:
   html: https://nibzard.com/silent-revolution
   md: https://nibzard.com/silent-revolution.md
+topics:
+  - AI agent capabilities
+  - software democratization
+  - non-technical developer empowerment
+  - AI-human collaboration
+  - employment disruption
+entities:
+  - Replit
+  - Amjad Masad
+  - Yohei Nakajima
+  - Village Global
+  - Dario Amodei
+  - Anthropic
+answers_questions:
+  - What can AI coding agents actually do today versus tomorrow?
+  - Why do non-technical users sometimes outperform technical experts with AI agents?
+  - How will AI agents reshape employment in the next 1-5 years?
 ---
 
 The boundaries between technical and non-technical roles are dissolving before our eyes.

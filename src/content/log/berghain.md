@@ -9,6 +9,12 @@ author: "Nikola Balić"
 source_url:
   html: https://nibzard.com/berghain
   md: https://nibzard.com/berghain.md
+topics: [Optimization challenges, algorithmic game theory, AI-human collaboration, mathematical modeling, viral growth marketing]
+entities: [Listen Labs, Alfred Wahlforss, Berghain, RBCR algorithm, Lagrangian multipliers, Claude, GPT-5, Amp Code]
+answers_questions:
+  - How do you solve constrained optimization problems with AI assistance?
+  - What makes viral technical challenges engaging for engineering communities?
+  - When does mathematical elegance beat machine learning approaches?
 ---
 
 This article documents an experiment in AI-human collaboration for solving complex optimization problems. What you're reading is a real-time record of how AI coding agents can tackle challenges where 98% of the work is done by the agent with slight human oversight and nudging.

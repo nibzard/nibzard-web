@@ -9,6 +9,12 @@ author: "Nikola Balić"
 source_url:
   html: https://nibzard.com/shower-to-production
   md: https://nibzard.com/shower-to-production.md
+topics: [Autonomous AI agents, voice-to-spec workflows, automated development, VM-based execution, loop orchestration]
+entities: [WisprFlow, Claude Code, Termius, tmux, loop.sh, task-master, git-master]
+answers_questions:
+  - How do you go from idea to implementation without touching a keyboard?
+  - What does 100% autonomous AI agent development look like?
+  - How can you orchestrate long-running AI development sessions?
 ---
 
 Every great project starts with a crazy idea in the shower.

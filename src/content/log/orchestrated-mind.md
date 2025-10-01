@@ -9,6 +9,12 @@ author: "Nikola Balić"
 source_url:
   html: https://nibzard.com/orchestrated-mind
   md: https://nibzard.com/orchestrated-mind.md
+topics: [Multi-agent systems, temporal memory graphs, AI orchestration, agent collaboration, self-improving memory]
+entities: []
+answers_questions:
+  - What does multi-agent AI collaboration look like at scale?
+  - How can AI memory systems evolve themselves?
+  - What happens when thousands of agents share continuous memory?
 ---
 
 Picture a thousand AI agents working on a single codebase. A code analyst identifies patterns, a test writer crafts validation, a performance optimizer restructures algorithms. They don't pass messages—they share thoughts.

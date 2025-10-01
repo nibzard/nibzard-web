@@ -9,6 +9,12 @@ author: "Nikola Balić"
 source_url:
   html: https://nibzard.com/nudges
   md: https://nibzard.com/nudges.md
+topics: [AI code quality, human guidance in coding, maintainability principles, engineering best practices, code review]
+entities: []
+answers_questions:
+  - Why does AI-generated code need human nudges for sustainability?
+  - What engineering principles should you enforce with AI coding agents?
+  - How do you balance AI speed with long-term code maintainability?
 ---
 
 AI coding assistants excel at one thing: **making code that compiles**.

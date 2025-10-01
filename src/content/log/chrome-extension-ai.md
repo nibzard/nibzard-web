@@ -9,6 +9,12 @@ author: "Nikola Balić"
 source_url:
   html: https://nibzard.com/chrome-extension-ai
   md: https://nibzard.com/chrome-extension-ai.md
+topics: [Chrome extension development, Twitter algorithm analysis, rapid prototyping, AI-assisted development, deployment]
+entities: [FollowSaver, Chrome Web Store, Twitter, Claude Code]
+answers_questions:
+  - How fast can you build and publish a Chrome extension with AI?
+  - What does the AI-assisted Chrome extension development workflow look like?
+  - How do you analyze and leverage platform algorithms for product development?
 ---
 
 Two years ago, I wouldn't have dreamed of publishing a Chrome extension.

@@ -9,6 +9,21 @@ author: "Nikola Balić"
 source_url:
   html: https://nibzard.com/claude-code
   md: https://nibzard.com/claude-code.md
+topics:
+  - Claude Code usage
+  - terminal-first AI coding
+  - configuration best practices
+  - SDK scripting
+  - developer workflows
+entities:
+  - Boris Cherny
+  - Anthropic
+  - Claude Code
+  - GitHub
+answers_questions:
+  - How do you optimize Claude Code for professional development work?
+  - What are the essential configuration steps for Claude Code?
+  - How can you script and automate Claude Code using the SDK?
 ---
 
 **Claude Code** is a powerful, flexible, **terminal-first AI coding assistant** designed to integrate deeply with existing developer workflows and tools.

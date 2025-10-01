@@ -8,6 +8,12 @@ author: "Nikola Balić"
 source_url:
   html: https://nibzard.com/transformer-orchestration
   md: https://nibzard.com/transformer-orchestration.md
+topics: [Strategy orchestration, transformer models, multi-algorithm coordination, performance optimization, learned coordination]
+entities: [RBCR algorithm, LSTM, PPO, Claude, Berghain Challenge, Listen Labs]
+answers_questions:
+  - How do you build AI systems that coordinate other AI systems?
+  - When does learned strategy selection outperform individual algorithms?
+  - What are the tradeoffs between speed and reliability in transformer-based orchestration?
 ---
 
 *Part 2: How we built a strategy controller that coordinates algorithmic approaches and learned to compete with the best is a continuation of the ["Vibe Coding Through the Berghain Challenge"](/berghain) article.*

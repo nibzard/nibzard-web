@@ -9,6 +9,12 @@ author: "Nikola Balić"
 source_url:
   html: https://nibzard.com/ai-coding-agents
   md: https://nibzard.com/ai-coding-agents.md
+topics: [AI coding tool ecosystem, niche specialization, developer tool selection, workflow optimization]
+entities: [Cloud Code, Amp Code, OpenCode, Codex CLI, Gemini CLI, Charm Crush, Playwright MCP]
+answers_questions:
+  - What niche does each major AI coding agent fill?
+  - How do you choose the right AI coding tool for specific tasks?
+  - Why is tool orchestration more important than finding one perfect agent?
 ---
 
 We’re past the point where “AI coding agents” means a single category. The ecosystem has fractured into multiple agents, each with strengths and quirks.

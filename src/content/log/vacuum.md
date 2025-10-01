@@ -9,6 +9,20 @@ author: "Nikola Balić"
 source_url:
   html: https://nibzard.com/vacuum
   md: https://nibzard.com/vacuum.md
+topics:
+  - AI development tools
+  - developer productivity
+  - user experience design
+  - AI-native workflows
+  - product innovation
+entities:
+  - Thorsten Ball
+  - Zed
+  - React
+answers_questions:
+  - Why do experienced developers overlook the impact of small AI improvements?
+  - How does hands-on AI experience change product development intuition?
+  - What makes developers become AI-native in their workflow?
 ---
 
 <blockquote class="featured-quote primary">

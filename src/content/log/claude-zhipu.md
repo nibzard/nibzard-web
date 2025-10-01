@@ -9,6 +9,12 @@ author: "Nikola Balić"
 source_url:
   html: https://nibzard.com/claude-zhipu
   md: https://nibzard.com/claude-zhipu.md
+topics: [Multi-API setup, Claude Code configuration, parallel CLI installations, API provider switching]
+entities: [Claude Code, Zhipu AI, GLM-4.5, Anthropic, Node.js, npm]
+answers_questions:
+  - How do you run multiple Claude Code instances with different API providers?
+  - What's the complete setup for using Zhipu's API with Claude tools?
+  - How can you maintain parallel AI coding environments without conflicts?
 ---
 
 This setup allows you to use **Claude Code CLI** with **Zhipu's API** (`api.z.ai`) **in parallel** with your existing Claude Max / Anthropic CLI installation.  

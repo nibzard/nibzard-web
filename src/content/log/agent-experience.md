@@ -9,6 +9,12 @@ author: "Nikola Balić"
 source_url:
   html: https://nibzard.com/agent-experience
   md: https://nibzard.com/agent-experience.md
+topics: [CLI design for AI agents, help text optimization, structured output formats, exit codes, agent-friendly interfaces]
+entities: [Mario Zechner, MCP, GitHub CLI]
+answers_questions:
+  - Why is good --help text more important than MCP for AI agents?
+  - How do you make CLIs agent-friendly without breaking human usability?
+  - What specific patterns cause AI agents to fail with command-line tools?
 ---
 
 AI agents don't need fancy MCP. They need good `--help`.

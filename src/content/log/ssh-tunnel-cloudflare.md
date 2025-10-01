@@ -9,6 +9,12 @@ author: "Nikola Balić"
 source_url:
   html: https://nibzard.com/ssh-tunnel-cloudflare
   md: https://nibzard.com/ssh-tunnel-cloudflare.md
+topics: [Homelab setup, Cloudflare Tunnel, SSH access, remote development, mobile coding, Claude Code deployment]
+entities: [Oracle Cloud, Cloudflare Zero Trust, Proxmox, Ubuntu, Termux, Debian proot, Node.js, nvm]
+answers_questions:
+  - How do you securely access a homelab VM from mobile devices?
+  - What's the complete setup for Claude Code in a remote VM?
+  - How can you code with AI from your phone using Cloudflare tunnels?
 ---
 
 Imagine having a powerful AI coding assistant running in your pocket, ehm homelab, that you can access from anywhere. This guide shows you how to set up Claude Code in an Ubuntu VM and access it securely through Cloudflare Tunnel, turning your mobile device into a surprisingly capable coding workstation.

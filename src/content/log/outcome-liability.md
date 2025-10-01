@@ -9,6 +9,12 @@ author: "Nikola Balić"
 source_url:
   html: https://nibzard.com/outcome-liability
   md: https://nibzard.com/outcome-liability.md
+topics: [AI code liability, authorship tracking, provable assurance, operator responsibility, policy frameworks]
+entities: [Ghostty, Mitchell Hashimoto, SLSA, in-toto, Sigstore, TLA+, Dafny]
+answers_questions:
+  - Who is liable for AI-generated code—the human or the agent?
+  - How do we prove authorship in AI-human collaborative development?
+  - What does outcome-based liability look like versus authorship liability?
 ---
 
 The discourse around AI-generated code liability sounds reasonable until you play it forward.

@@ -8,6 +8,24 @@ author: "Nikola Balić"
 source_url:
   html: https://nibzard.com/20yr-tech-cycle
   md: https://nibzard.com/20yr-tech-cycle.md
+topics:
+  - Technology adoption cycles
+  - infrastructure technologies
+  - AI acceleration patterns
+  - societal transformation
+  - critical mass theory
+entities:
+  - GPS
+  - mobile communications
+  - autonomous vehicles
+  - Waymo
+  - DARPA
+  - Internet
+  - TCP/IP
+answers_questions:
+  - Why do infrastructure technologies take 20 years to reach critical mass?
+  - How does AI break the traditional 20-year adoption pattern?
+  - What are the barriers preventing deep AI integration in organizations?
 ---
 
 ## From Infrastructure to Intelligence and the Future of AI Integration

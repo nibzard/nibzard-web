@@ -9,6 +9,12 @@ author: "Nikola Balić"
 source_url:
   html: https://nibzard.com/ai-ate-its-tail
   md: https://nibzard.com/ai-ate-its-tail.md
+topics: [AI analyzing AI work, transparent collaboration, proof-of-work systems, writing verification, creative collaboration]
+entities: [Andy Weir, The Martian, MindMark, Hacker News]
+answers_questions:
+  - How can AI analyze its own development history?
+  - What does transparent AI-human collaboration look like?
+  - How do we verify who contributed what in AI-assisted writing?
 ---
 
 ## The Experiment

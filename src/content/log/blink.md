@@ -9,6 +9,27 @@ author: "Nikola Balić"
 source_url:
   html: https://nibzard.com/blink
   md: https://nibzard.com/blink.md
+topics:
+  - AI coding tools market consolidation
+  - competitive strategy
+  - pricing models
+  - developer tooling economics
+  - infrastructure scaling
+entities:
+  - Anthropic
+  - Claude Code
+  - OpenAI
+  - Codex CLI
+  - Cursor
+  - Windsurf
+  - Google Jules
+  - Microsoft Copilot
+  - Sourcegraph Amp
+  - Aider
+answers_questions:
+  - How is the AI developer tooling market consolidating?
+  - What are the mega-trends shaping AI coding assistants?
+  - Why are interfaces commoditizing while memory becomes the new frontier?
 ---
 
 We're witnessing the **fastest consolidation** in the history of developer tooling.

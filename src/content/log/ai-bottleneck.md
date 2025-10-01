@@ -9,6 +9,12 @@ author: "Nikola Balić"
 source_url:
   html: https://nibzard.com/ai-bottleneck
   md: https://nibzard.com/ai-bottleneck.md
+topics: [Agent orchestration, development workflow evolution, multi-agent systems, observability, process management]
+entities: [Verdent AI, VS Code, Claude Code, OpenAI Codex, Cursor, Devin, Cline, Aider, Amp]
+answers_questions:
+  - Why are humans the bottleneck in AI-assisted development?
+  - What does the future of orchestrated agent systems look like?
+  - How do you observe and manage complex multi-agent workflows?
 ---
 
 Over the past few months advising Verdent AI, I've had a front-row seat to the orchestration challenge that most developers don't see coming. Here's what that experience taught me about where the industry is heading.

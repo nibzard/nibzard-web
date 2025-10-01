@@ -10,6 +10,12 @@ author: "Nikola Balić"
 source_url:
   html: https://nibzard.com/ampcode
   md: https://nibzard.com/ampcode.md
+topics: [AI coding agent development, Sourcegraph experience, inversion of control, context management, multi-model orchestration]
+entities: [Sourcegraph, Quinn Slack, Thorsten Ball, Amp Code, Claude Sonnet 4, OpenAI o3, Gemini 2.5 Pro, RBCR]
+answers_questions:
+  - What makes AI coding agents work in production versus demos?
+  - How do you design context management for autonomous agents?
+  - Why does inversion of control matter for AI agent effectiveness?
 ---
 
 *What happens when you stop talking about AI and start shipping with it?*

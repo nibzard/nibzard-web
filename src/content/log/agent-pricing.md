@@ -9,6 +9,21 @@ author: "Nikola Balić"
 source_url:
   html: https://nibzard.com/agent-pricing
   md: https://nibzard.com/agent-pricing.md
+topics:
+  - AI pricing models
+  - credit burn rates
+  - token economics
+  - cost optimization
+  - usage-based pricing
+entities:
+  - AMP Code
+  - Cursor
+  - Claude Code
+  - Vercel v0
+answers_questions:
+  - Why do AI coding agents burn through credits so fast?
+  - What are fair pricing models for AI-generated code?
+  - How can developers manage unpredictable AI agent costs?
 ---
 
 ## The Credit Burn Problem

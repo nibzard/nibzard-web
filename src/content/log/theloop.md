@@ -9,6 +9,12 @@ author: "Nikola Balić"
 source_url:
   html: https://nibzard.com/theloop
   md: https://nibzard.com/theloop.md
+topics: [Autonomous AI agents, LLM CLI tools, agentic behavior, tool iteration, workflow automation]
+entities: [Simon Willison, LLM CLI, llm-loop-plugin, Claude]
+answers_questions:
+  - What transforms an AI tool from responsive to autonomous?
+  - How does the loop pattern change AI agent behavior?
+  - Why is iteration capability more important than single-turn performance?
 ---
 
 There's a moment when a tool stops being a tool and becomes an agent.

@@ -9,6 +9,12 @@ author: "Nikola Balić"
 source_url:
   html: https://nibzard.com/fre-production
   md: https://nibzard.com/fre-production.md
+topics: [Algorithm implementation, graph theory, shortest paths, Zig programming, performance optimization, FRE algorithm]
+entities: [Duan et al., Zig, Dijkstra algorithm, SSSP]
+answers_questions:
+  - How do you implement cutting-edge algorithms in production systems?
+  - When does FRE outperform Dijkstra for shortest path problems?
+  - What are the practical tradeoffs of academic algorithms in real workloads?
 ---
 
 I implemented the Frontier Reduction Engine from Duan et al.'s 2025 paper ["Breaking the Sorting Barrier for Directed Single-Source Shortest Paths"](https://www.alphaxiv.org/abs/2504.17033) in production Zig. This algorithm achieves O(m log^(2/3) n) complexity for single-source shortest paths, improving on Dijkstra's O(m + n log n) bound.

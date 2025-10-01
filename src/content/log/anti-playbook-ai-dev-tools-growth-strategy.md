@@ -9,6 +9,12 @@ author: "Nikola Balić"
 source_url:
   html: https://nibzard.com/anti-playbook-ai-dev-tools-growth-strategy
   md: https://nibzard.com/anti-playbook-ai-dev-tools-growth-strategy.md
+topics: [Developer tools marketing, AI tools adoption, enterprise sales strategy, community-driven growth, product-led growth]
+entities: [VS Code, GitHub, Hacker News, Reddit, Discord, METR, DORA metrics]
+answers_questions:
+  - Why do traditional SaaS growth tactics fail for AI developer tools?
+  - How do you build trust with skeptical developer audiences?
+  - What metrics matter for AI coding tool enterprise adoption?
 ---
 
 ## Forget Everything You Learned About SaaS Growth

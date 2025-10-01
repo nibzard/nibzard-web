@@ -9,6 +9,22 @@ author: "Nikola Balić"
 source_url:
   html: https://nibzard.com/startup-moat
   md: https://nibzard.com/startup-moat.md
+topics:
+  - AI startup strategy
+  - venture capital
+  - long-term thinking
+  - hiring strategy
+  - competitive advantages
+entities:
+  - Marc Andreessen
+  - Charlie Songhurst
+  - Elon Musk
+  - Silicon Valley
+  - CNBC
+answers_questions:
+  - How do AI startups build lasting competitive advantages?
+  - When should startups hire during market cycles?
+  - What is the MilliElon operating system for startup execution?
 ---
 
 Most AI startups are playing the wrong game on the wrong timescale.

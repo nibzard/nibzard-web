@@ -9,6 +9,12 @@ author: "Nikola Balić"
 source_url:
   html: https://nibzard.com/agent-stack
   md: https://nibzard.com/agent-stack.md
+topics: [Agent-friendly technology stacks, developer tools evolution, type safety for AI, machine-readable documentation, CLI design]
+entities: [FastAPI, Stripe API, React, TypeScript, SQLite, WAL mode, Netlify, Mathias Biilmann]
+answers_questions:
+  - What makes a technology stack agent-friendly versus human-friendly?
+  - How has type safety evolved from developer tool to agent communication protocol?
+  - Which frameworks naturally support AI agent collaboration?
 ---
 
 We're speedrunning through a Cambrian explosion.

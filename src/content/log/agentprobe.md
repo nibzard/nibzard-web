@@ -9,6 +9,12 @@ author: "Nikola Balić"
 source_url:
   html: https://nibzard.com/agentprobe
   md: https://nibzard.com/agentprobe.md
+topics: [CLI testing for AI agents, agent experience (AX), tool friction analysis, command-line interface design, developer tool quality]
+entities: [Vercel, Claude, AgentProbe, Mathias Biilmann, OAuth, Claude Code MAX]
+answers_questions:
+  - How do you test whether CLIs are agent-friendly?
+  - What causes AI agents to fail when using command-line tools?
+  - Why does agent experience (AX) matter for developer tool adoption?
 ---
 
 Five runs. Same prompt. Same agent. Same CLI.

@@ -9,6 +9,12 @@ author: "Nikola Balić"
 source_url:
   html: https://nibzard.com/amplification
   md: https://nibzard.com/amplification.md
+topics: [Constraint amplification, bottleneck identification, organizational scaling, context management, AI productivity paradox]
+entities: [Anthropic, Mike Krieger, Lenny's Podcast]
+answers_questions:
+  - What bottleneck emerges when AI eliminates coding constraints?
+  - How does solving one constraint amplify hidden limitations?
+  - Why does context become more important than model intelligence?
 ---
 
 <blockquote class="featured-quote primary">

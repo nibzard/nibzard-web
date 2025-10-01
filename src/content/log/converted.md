@@ -9,6 +9,12 @@ author: "Nikola Balić"
 source_url:
   html: https://nibzard.com/converted
   md: https://nibzard.com/converted.md
+topics: [AI skepticism conversion, OAuth library development, code quality, security review, expert-AI collaboration]
+entities: [Kenton Varda, Cloudflare, Claude, OAuth, RFC]
+answers_questions:
+  - What converts AI skeptics into believers?
+  - How do security experts validate AI-generated code?
+  - What makes AI-human collaboration more powerful than either alone?
 ---
 
 Blink, and your entire worldview could shift.
