@@ -28,21 +28,26 @@ Log articles follow a specific structure:
 ```yaml
 ---
 title: "The Title (max 60 characters)"
-description: "Brief description (max 130 characters)" 
+description: "Brief description (STRICT LIMIT: 130 characters)"
 date: 2025-08-12  # YYYY-MM-DD format, no quotes needed
 tags: [ARRAY, OF, TAGS]
 draft: false
 ---
 ```
 
-**Date Format Critical**: Use unquoted YYYY-MM-DD format (e.g., `2025-08-12`). Quoted dates may cause build failures.
+**CRITICAL Validation Rules**:
+- **Title**: Maximum 60 characters (build will fail if exceeded)
+- **Description**: STRICT maximum 130 characters (build will fail if exceeded)
+- **Date Format**: Use unquoted YYYY-MM-DD format (e.g., `2025-08-12`). Quoted dates cause build failures.
 
 ### Optional Frontmatter Fields
 
 ```yaml
-tldr: "Brief summary (max 333 characters)"
+tldr: "Brief summary (STRICT LIMIT: 333 characters)"
 author: "Nikola Balić" # defaults to this if not specified
 ```
+
+**CRITICAL**: TLDR must be maximum 333 characters. Build will fail if exceeded.
 
 ## Content Structure and Style
 
@@ -58,11 +63,13 @@ author: "Nikola Balić" # defaults to this if not specified
 4. **Experience Reports**: Context → Challenge faced → Approach taken → Lessons learned
 
 ### Writing Style Guidelines
-- **Voice**: Technical but accessible, confident but not arrogant
+- **Voice**: Technical but accessible, confident but not arrogant, direct and compelling
 - **Tone**: Authentic, conversational, insightful
 - **Structure**: Use ## headings, bullet points, code blocks, and blockquotes
 - **Length**: Substantial articles (1000+ words typical)
 - **Examples**: Include specific code examples, real scenarios, concrete data
+- **Flexibility**: Be open to user feedback and section removal/refinement requests
+- **Avoid**: Generic "next steps" or "uncomfortable truths" sections unless specifically requested
 
 ### Special Elements
 
@@ -103,21 +110,29 @@ Use UPPERCASE tags from these common categories:
 ## Content Research Process
 
 Before writing, ALWAYS follow this research workflow:
-1. **Review recent articles**: Read 2-3 latest log articles to match voice and style patterns
+1. **MANDATORY: Review recent articles first**: Read 2-4 latest log articles to deeply understand voice, tone, and style patterns. This is NON-NEGOTIABLE - never write without this step.
 2. **Research existing content**: Check what's already been written on the topic using Grep/Glob
 3. **Identify cross-references**: Look for opportunities to link to related existing articles
 4. **Gather concrete examples**: Find specific data, tools, or scenarios to reference
 5. **Identify unique angle**: What perspective or insight makes this article valuable?
 6. **Structure the narrative**: Plan the flow from problem to resolution
+7. **Validate frontmatter limits BEFORE writing**: Count characters in title (≤60), description (≤130), and tldr (≤333) to avoid build failures
 
 ## Post-Creation Workflow
 
 After creating a log article, ALWAYS follow this comprehensive workflow:
 
 1. **Verify file creation**: Confirm the article file exists with proper frontmatter
-2. **Test the build**: Run `pnpm build` to ensure the new article doesn't break the site
-3. **Comprehensive error handling**: If build fails:
+2. **Pre-flight validation**: BEFORE running build, verify:
+   - Title ≤ 60 characters
+   - Description ≤ 130 characters
+   - TLDR ≤ 333 characters (if present)
+   - Date format is unquoted YYYY-MM-DD
+   - All YAML syntax is valid
+3. **Test the build**: Run `pnpm build` to ensure the new article doesn't break the site
+4. **Comprehensive error handling**: If build fails:
    - Read and analyze the full error output
+   - Check for frontmatter character limit violations (most common issue)
    - Check for frontmatter formatting issues (YAML syntax, date format)
    - Verify all image references exist
    - Fix syntax errors in code blocks
