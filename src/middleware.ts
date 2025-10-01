@@ -1,9 +1,68 @@
 // ABOUTME: Middleware for content negotiation - serves markdown or HTML based on Accept header
-// ABOUTME: Implements Accept header pattern for AI-friendly markdown content delivery
+// ABOUTME: Implements Accept header pattern for AI-friendly markdown content delivery with AI agent metadata
 import { defineMiddleware } from 'astro:middleware';
-import { getCollection } from 'astro:content';
+import { getCollection, type CollectionEntry } from 'astro:content';
 import fs from 'fs';
 import path from 'path';
+
+/**
+ * Generate AI-friendly metadata header for markdown responses
+ */
+function generateAIMetadata(
+  entry: CollectionEntry<'log'>,
+  slug: string,
+  siteUrl: string,
+  relatedPosts: CollectionEntry<'log'>[]
+): string {
+  const { data } = entry;
+  const publishedDate = data.date instanceof Date
+    ? data.date.toISOString().split('T')[0]
+    : String(data.date);
+  const tags = data.tags ? data.tags.join(', ') : 'None';
+
+  let metadata = '=== SITE CONTEXT FOR AI AGENTS ===\n';
+  metadata += `SITE: nibzard.com\n`;
+  metadata += `AUTHOR: ${data.author || 'Nikola Balić'}\n`;
+  metadata += `PUBLISHED: ${publishedDate}\n`;
+  if (data.updated) {
+    const updatedDate = data.updated instanceof Date
+      ? data.updated.toISOString().split('T')[0]
+      : String(data.updated);
+    metadata += `UPDATED: ${updatedDate}\n`;
+  }
+  metadata += `TAGS: ${tags}\n`;
+  // Ensure siteUrl doesn't end with slash before adding slug
+  const cleanSiteUrl = siteUrl.replace(/\/$/, '');
+  metadata += `URL: ${cleanSiteUrl}/${slug}\n`;
+  metadata += `\n`;
+
+  metadata += `NAVIGATION:\n`;
+  metadata += `- Home: /\n`;
+  metadata += `- Log: /log\n`;
+  metadata += `- About: /about\n`;
+  metadata += `- Projects: /projects\n`;
+  metadata += `- Now: /now\n`;
+  metadata += `\n`;
+
+  if (relatedPosts.length > 0) {
+    metadata += `RELATED_POSTS:\n`;
+    relatedPosts.forEach(post => {
+      metadata += `- ${post.data.title}: /${post.slug}\n`;
+    });
+    metadata += `\n`;
+  }
+
+  metadata += `AUTHOR_CONTACT:\n`;
+  metadata += `- X: https://x.com/nibzard\n`;
+  metadata += `- LinkedIn: https://www.linkedin.com/in/nikolabalic/\n`;
+  metadata += `- GitHub: https://github.com/nibzard\n`;
+  metadata += `\n`;
+
+  metadata += `NEWSLETTER: Available on website\n`;
+  metadata += `=================================\n\n`;
+
+  return metadata;
+}
 
 export const onRequest = defineMiddleware(async (context, next) => {
   const { request, site } = context;
@@ -66,7 +125,19 @@ export const onRequest = defineMiddleware(async (context, next) => {
           const siteUrl = site?.toString() || 'https://nibzard.com';
           const canonicalUrl = new URL(`/${slug}`, siteUrl).toString();
 
-          return new Response(markdownContent, {
+          // Get related posts (2 random posts excluding current)
+          const otherEntries = logEntries.filter(e => e.slug !== slug);
+          const relatedPosts = otherEntries
+            .sort(() => Math.random() - 0.5)
+            .slice(0, Math.min(2, otherEntries.length));
+
+          // Generate AI-friendly metadata header
+          const aiMetadata = generateAIMetadata(entry, slug, siteUrl, relatedPosts);
+
+          // Prepend metadata to markdown content
+          const enhancedContent = aiMetadata + markdownContent;
+
+          return new Response(enhancedContent, {
             status: 200,
             headers: {
               'Content-Type': 'text/markdown; charset=utf-8',
