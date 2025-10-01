@@ -301,6 +301,9 @@ const personSchema = createPersonSchema();
   </script>
 
   <!-- Lazy load Mermaid only when diagrams are present -->
-  <script type="module" src="/src/scripts/mermaid-loader.js"></script>
+  <script type="module">
+    import { initializeMermaidIfNeeded } from '../scripts/mermaid-loader.js';
+    // Already initialized in the module, no need to call again
+  </script>
 </body>
 </html>
