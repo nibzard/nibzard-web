@@ -19,9 +19,10 @@ export const onRequest = defineMiddleware(async (context, next) => {
       pathname.startsWith('/_astro/') ||
       pathname.startsWith('/images/') ||
       pathname.startsWith('/fonts/') ||
-      pathname.startsWith('/src/') ||   // Skip source scripts
-      pathname.startsWith('/log/') ||   // Skip /log/* redirects
-      pathname.startsWith('/tags/') ||  // Skip tag pages
+      pathname.startsWith('/src/') ||      // Skip source scripts
+      pathname.startsWith('/scripts/') ||  // Skip compiled scripts
+      pathname.startsWith('/log/') ||      // Skip /log/* redirects
+      pathname.startsWith('/tags/') ||     // Skip tag pages
       pathname === '/' ||
       (pathname.includes('.') && !isMdUrl)) { // Skip other file extensions but not .md
     return next();
