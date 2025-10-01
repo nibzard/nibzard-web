@@ -5,9 +5,6 @@ date: 2025-08-21
 tags: [CHEATSHEET, Oracle Cloud, Cloudflare, Rails, Deployment]
 tldr: "Complete guide to installing Basecamp's Once Campfire on Oracle Cloud. Covers memory constraints, firewall layers, asset compilation, and SSL configuration for production deployment."
 author: "Nikola Balić"
-source_url:
-  html: https://nibzard.com/campfire-oracle-cloud
-  md: https://nibzard.com/campfire-oracle-cloud.md
 topics: [Basecamp Once deployment, Oracle Cloud setup, Cloudflare DNS, Rails production, server configuration]
 entities: [Basecamp, Oracle Cloud, Cloudflare, Ubuntu, Nginx, Redis, SQLite3, Rails]
 answers_questions:

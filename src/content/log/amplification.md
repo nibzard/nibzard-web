@@ -6,9 +6,6 @@ date: 2025-06-02
 tags: [HUMAN, INSIGHT, AI, SYSTEMS]
 draft: false
 author: "Nikola Balić"
-source_url:
-  html: https://nibzard.com/amplification
-  md: https://nibzard.com/amplification.md
 topics: [Constraint amplification, bottleneck identification, organizational scaling, context management, AI productivity paradox]
 entities: [Anthropic, Mike Krieger, Lenny's Podcast]
 answers_questions:

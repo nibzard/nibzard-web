@@ -6,9 +6,6 @@ tags: [HUMAN, AI, DEVELOPER-TOOLS, GROWTH, SAAS, STRATEGY]
 draft: false
 tldr: "The traditional SaaS playbook is dead for AI dev tools. Developers smell BS, the market has three overlapping layers, and you're fighting inertia—not competition. Success means activation through value, retention through community, and expansion through metrics."
 author: "Nikola Balić"
-source_url:
-  html: https://nibzard.com/anti-playbook-ai-dev-tools-growth-strategy
-  md: https://nibzard.com/anti-playbook-ai-dev-tools-growth-strategy.md
 topics: [Developer tools marketing, AI tools adoption, enterprise sales strategy, community-driven growth, product-led growth]
 entities: [VS Code, GitHub, Hacker News, Reddit, Discord, METR, DORA metrics]
 answers_questions:

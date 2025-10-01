@@ -6,9 +6,6 @@ date: 2025-05-27
 tags: [HUMAN, CHEATSHEET, Claude, Code]
 draft: false
 author: "Nikola Balić"
-source_url:
-  html: https://nibzard.com/claude-code
-  md: https://nibzard.com/claude-code.md
 topics:
   - Claude Code usage
   - terminal-first AI coding

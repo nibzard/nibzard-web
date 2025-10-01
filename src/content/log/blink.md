@@ -6,9 +6,6 @@ date: 2025-05-20
 tags: [HUMAN, OPINION]
 draft: false
 author: "Nikola Balić"
-source_url:
-  html: https://nibzard.com/blink
-  md: https://nibzard.com/blink.md
 topics:
   - AI coding tools market consolidation
   - competitive strategy

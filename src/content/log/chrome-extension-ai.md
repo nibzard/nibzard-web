@@ -6,9 +6,6 @@ date: 2025-09-22
 tags: [AI, CHROME, TWITTER, SHIPPING]
 draft: false
 author: "Nikola Balić"
-source_url:
-  html: https://nibzard.com/chrome-extension-ai
-  md: https://nibzard.com/chrome-extension-ai.md
 topics: [Chrome extension development, Twitter algorithm analysis, rapid prototyping, AI-assisted development, deployment]
 entities: [FollowSaver, Chrome Web Store, Twitter, Claude Code]
 answers_questions:

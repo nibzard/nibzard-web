@@ -6,9 +6,6 @@ description: "Each AI coding agent has a niche. Knowing where each one shines is
 tldr: "Each AI coding agent has a niche. Knowing where each one shines is the difference between frustration and flow."
 draft: false
 author: "Nikola Balić"
-source_url:
-  html: https://nibzard.com/ai-coding-agents
-  md: https://nibzard.com/ai-coding-agents.md
 topics: [AI coding tool ecosystem, niche specialization, developer tool selection, workflow optimization]
 entities: [Cloud Code, Amp Code, OpenCode, Codex CLI, Gemini CLI, Charm Crush, Playwright MCP]
 answers_questions:

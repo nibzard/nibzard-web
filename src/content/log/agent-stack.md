@@ -6,9 +6,6 @@ date: 2025-07-21
 tags: [HUMAN, AI, AGENTS, DEVELOPER-TOOLS, EXPERIENCE]
 draft: false
 author: "Nikola Balić"
-source_url:
-  html: https://nibzard.com/agent-stack
-  md: https://nibzard.com/agent-stack.md
 topics: [Agent-friendly technology stacks, developer tools evolution, type safety for AI, machine-readable documentation, CLI design]
 entities: [FastAPI, Stripe API, React, TypeScript, SQLite, WAL mode, Netlify, Mathias Biilmann]
 answers_questions:

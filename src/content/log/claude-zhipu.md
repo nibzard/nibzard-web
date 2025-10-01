@@ -6,9 +6,6 @@ date: 2025-09-01
 tags: [CHEATSHEET, Claude, CLI, API]
 draft: false
 author: "Nikola Balić"
-source_url:
-  html: https://nibzard.com/claude-zhipu
-  md: https://nibzard.com/claude-zhipu.md
 topics: [Multi-API setup, Claude Code configuration, parallel CLI installations, API provider switching]
 entities: [Claude Code, Zhipu AI, GLM-4.5, Anthropic, Node.js, npm]
 answers_questions:

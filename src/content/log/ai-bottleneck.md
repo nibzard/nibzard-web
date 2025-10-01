@@ -6,9 +6,6 @@ tags: [AI, ORCHESTRATION, FUTURE, VERDENT, AGENTS]
 tldr: "We're transitioning from linear AI coding assistants to orchestrated agent systems. The future isn't about humans using AI tools--it's about humans orchestrating AI processes."
 draft: false
 author: "Nikola Balić"
-source_url:
-  html: https://nibzard.com/ai-bottleneck
-  md: https://nibzard.com/ai-bottleneck.md
 topics: [Agent orchestration, development workflow evolution, multi-agent systems, observability, process management]
 entities: [Verdent AI, VS Code, Claude Code, OpenAI Codex, Cursor, Devin, Cline, Aider, Amp]
 answers_questions:

@@ -6,9 +6,6 @@ date: 2025-09-05
 tags: [SLOP, AI, OPTIMIZATION, GROWTH]
 draft: false
 author: "Nikola Balić"
-source_url:
-  html: https://nibzard.com/berghain
-  md: https://nibzard.com/berghain.md
 topics: [Optimization challenges, algorithmic game theory, AI-human collaboration, mathematical modeling, viral growth marketing]
 entities: [Listen Labs, Alfred Wahlforss, Berghain, RBCR algorithm, Lagrangian multipliers, Claude, GPT-5, Amp Code]
 answers_questions:

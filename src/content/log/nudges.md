@@ -6,9 +6,6 @@ date: 2025-07-29
 tags: [HUMAN, AI, ENGINEERING, DEVELOPMENT]
 draft: false
 author: "Nikola Balić"
-source_url:
-  html: https://nibzard.com/nudges
-  md: https://nibzard.com/nudges.md
 topics: [AI code quality, human guidance in coding, maintainability principles, engineering best practices, code review]
 entities: []
 answers_questions:

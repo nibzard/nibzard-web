@@ -6,9 +6,6 @@ date: 2025-09-22
 tags: [AI, AUTOMATION, TOOLS, WORKFLOW]
 draft: false
 author: "Nikola Balić"
-source_url:
-  html: https://nibzard.com/shower-to-production
-  md: https://nibzard.com/shower-to-production.md
 topics: [Autonomous AI agents, voice-to-spec workflows, automated development, VM-based execution, loop orchestration]
 entities: [WisprFlow, Claude Code, Termius, tmux, loop.sh, task-master, git-master]
 answers_questions:

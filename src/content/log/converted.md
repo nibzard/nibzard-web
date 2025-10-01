@@ -6,9 +6,6 @@ date: 2025-06-07
 tags: [HUMAN, OPINION]
 draft: false
 author: "Nikola Balić"
-source_url:
-  html: https://nibzard.com/converted
-  md: https://nibzard.com/converted.md
 topics: [AI skepticism conversion, OAuth library development, code quality, security review, expert-AI collaboration]
 entities: [Kenton Varda, Cloudflare, Claude, OAuth, RFC]
 answers_questions:

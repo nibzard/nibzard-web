@@ -6,9 +6,6 @@ date: 2025-05-25
 tags: [HUMAN, EXPERIENCE, WIP]
 draft: false
 author: "Nikola Balić"
-source_url:
-  html: https://nibzard.com/agent-pricing
-  md: https://nibzard.com/agent-pricing.md
 topics:
   - AI pricing models
   - credit burn rates

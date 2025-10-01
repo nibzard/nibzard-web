@@ -5,9 +5,6 @@ tldr: "Infrastructure technologies historically take 20 years to reach critical 
 date: 2025-07-08
 tags: ["AI", "SLOP", "innovation", "adoption"]
 author: "Nikola Balić"
-source_url:
-  html: https://nibzard.com/20yr-tech-cycle
-  md: https://nibzard.com/20yr-tech-cycle.md
 topics:
   - Technology adoption cycles
   - infrastructure technologies

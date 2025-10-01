@@ -6,9 +6,6 @@ date: 2025-05-26
 tags: [HUMAN, OPINION]
 draft: false
 author: "Nikola Balić"
-source_url:
-  html: https://nibzard.com/vacuum
-  md: https://nibzard.com/vacuum.md
 topics:
   - AI development tools
   - developer productivity

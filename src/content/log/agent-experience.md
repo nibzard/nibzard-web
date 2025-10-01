@@ -6,9 +6,6 @@ tags: [HUMAN, CLI, AI, AGENTS, DOCUMENTATION, API]
 tldr: "AI agents succeed or fail based on your --help text. Clear command structure, explicit success signals, and structured output options make the difference between one API call and five retries."
 draft: false
 author: "Nikola Balić"
-source_url:
-  html: https://nibzard.com/agent-experience
-  md: https://nibzard.com/agent-experience.md
 topics: [CLI design for AI agents, help text optimization, structured output formats, exit codes, agent-friendly interfaces]
 entities: [Mario Zechner, MCP, GitHub CLI]
 answers_questions:

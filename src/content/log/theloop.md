@@ -6,9 +6,6 @@ date: 2025-06-07
 tags: [HUMAN, INSIGHT, AI, TOOLS]
 draft: false
 author: "Nikola Balić"
-source_url:
-  html: https://nibzard.com/theloop
-  md: https://nibzard.com/theloop.md
 topics: [Autonomous AI agents, LLM CLI tools, agentic behavior, tool iteration, workflow automation]
 entities: [Simon Willison, LLM CLI, llm-loop-plugin, Claude]
 answers_questions:

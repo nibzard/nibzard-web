@@ -6,9 +6,6 @@ date: 2025-08-12
 tags: [HUMAN, AI, AGENTS, MULTI-AGENT, ORCHESTRATION, MEMORY]
 draft: false
 author: "Nikola Balić"
-source_url:
-  html: https://nibzard.com/orchestrated-mind
-  md: https://nibzard.com/orchestrated-mind.md
 topics: [Multi-agent systems, temporal memory graphs, AI orchestration, agent collaboration, self-improving memory]
 entities: []
 answers_questions:

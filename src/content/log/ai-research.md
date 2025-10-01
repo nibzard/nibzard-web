@@ -6,9 +6,6 @@ date: 2025-06-02
 tags: [HUMAN, EXPERIENCE, AI, RESEARCH]
 draft: false
 author: "Nikola Balić"
-source_url:
-  html: https://nibzard.com/ai-research
-  md: https://nibzard.com/ai-research.md
 topics:
   - AI-augmented research
   - end-to-end academic workflows

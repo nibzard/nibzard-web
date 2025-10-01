@@ -5,9 +5,6 @@ date: 2025-09-08
 tags: [SLOP]
 tldr: "Built a 4.76M parameter transformer to coordinate 8 bouncer algorithms. While averaging 958 rejections vs RBCR2's 887, achieved breakthrough single game of 855 rejections through learned strategy orchestration."
 author: "Nikola Balić"
-source_url:
-  html: https://nibzard.com/transformer-orchestration
-  md: https://nibzard.com/transformer-orchestration.md
 topics: [Strategy orchestration, transformer models, multi-algorithm coordination, performance optimization, learned coordination]
 entities: [RBCR algorithm, LSTM, PPO, Claude, Berghain Challenge, Listen Labs]
 answers_questions:

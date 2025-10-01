@@ -6,9 +6,6 @@ date: 2025-07-16
 tags: [HUMAN, CHEATSHEET, AI, Claude, Mobile, VM, Cloudflare]
 draft: false
 author: "Nikola Balić"
-source_url:
-  html: https://nibzard.com/ssh-tunnel-cloudflare
-  md: https://nibzard.com/ssh-tunnel-cloudflare.md
 topics: [Homelab setup, Cloudflare Tunnel, SSH access, remote development, mobile coding, Claude Code deployment]
 entities: [Oracle Cloud, Cloudflare Zero Trust, Proxmox, Ubuntu, Termux, Debian proot, Node.js, nvm]
 answers_questions:

@@ -47,6 +47,7 @@ function generateAIMetadata(
   // Ensure siteUrl doesn't end with slash before adding slug
   const cleanSiteUrl = siteUrl.replace(/\/$/, '');
   metadata += `URL: ${cleanSiteUrl}/${slug}\n`;
+  metadata += `MARKDOWN_URL: ${cleanSiteUrl}/${slug}.md\n`;
   metadata += `CITE_AS: "${citation}"\n`;
   metadata += `LICENSE: CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)\n`;
   metadata += `\n`;
