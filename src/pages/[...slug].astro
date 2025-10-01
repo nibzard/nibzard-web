@@ -1,43 +1,9 @@
 ---
-export const prerender = true;
+export const prerender = false;
 import { getCollection, getEntry, type CollectionEntry } from 'astro:content';
 import LogEntryLayout from '../layouts/LogEntryLayout.astro';
 
-export async function getStaticPaths() {
-  const logEntries = await getCollection('log', ({ data }) => {
-    return data.draft !== true; // Filter out drafts
-  });
-
-  // Generate paths for both HTML and Markdown versions
-  const paths = [];
-  
-  // Add regular HTML paths
-  logEntries.forEach((entry: CollectionEntry<'log'>) => {
-    paths.push({
-      params: { slug: entry.slug },
-      props: { entry },
-    });
-  });
-  
-  // Add Markdown paths that redirect to API
-  logEntries.forEach((entry: CollectionEntry<'log'>) => {
-    paths.push({
-      params: { slug: `${entry.slug}.md` },
-      props: { entry, isMarkdownRequest: true },
-    });
-  });
-  
-  return paths;
-}
-
 const { slug } = Astro.params;
-const { isMarkdownRequest } = Astro.props;
-
-// Handle markdown requests by redirecting to API
-if (isMarkdownRequest && slug) {
-  const cleanSlug = slug.replace('.md', '');
-  return Astro.redirect(`/api/raw/${cleanSlug}`, 302);
-}
 
 let entry: CollectionEntry<'log'> | undefined;
 let ContentComponent: any;

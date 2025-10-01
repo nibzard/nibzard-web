@@ -17,6 +17,7 @@ A clean, elegant personal site and blog built with Astro. Features a minimalist 
 - ✅ React integration for interactive components
 - ✅ Comprehensive UI component library
 - ✅ Email subscription/unsubscription functionality
+- ✅ **Accept header content negotiation** for AI-friendly markdown delivery
 
 ## 🚀 Project Structure
 
@@ -62,6 +63,7 @@ The project follows a well-organized structure:
 - **Modular Styling**: Built on Pico CSS framework with custom component styles
 - **Server-Side Rendering**: Deployed on Vercel with server adapter for dynamic functionality
 - **SEO Optimization**: Automatic sitemap generation, RSS feeds, and meta tags
+- **Content Negotiation**: Accept header-based markdown/HTML delivery for AI agents (GEO optimized)
 
 ### Content Types
 
@@ -125,6 +127,46 @@ The site includes a comprehensive set of UI components that can be viewed on the
 - **Tables**: For displaying tabular data
 - **Search**: Interactive search component with real-time results
 
+## 🤖 Accept Header Content Negotiation
+
+The site implements Accept header content negotiation for AI-friendly markdown delivery, following best practices for Generative Engine Optimization (GEO).
+
+### How it works
+
+Articles are served in different formats based on the `Accept` header:
+
+```bash
+# HTML (default - browsers)
+curl https://nibzard.com/claude-zhipu
+→ Full HTML page
+
+# Markdown (AI agents, LLMs)
+curl -H "Accept: text/markdown" https://nibzard.com/claude-zhipu
+→ Raw markdown content
+
+# Plain text (also serves markdown)
+curl -H "Accept: text/plain" https://nibzard.com/claude-zhipu
+→ Raw markdown content
+```
+
+### Benefits
+
+- **10x token reduction** for AI agents reading content
+- **Same URL** serves both HTML and markdown (no redirects)
+- **RESTful** - proper content negotiation via standard HTTP headers
+- **SEO-friendly** - canonical links point to HTML version
+- **Cacheable** - proper `Vary: Accept` headers for CDN caching
+
+### Implementation
+
+Content negotiation is handled via Astro middleware (`src/middleware.ts`) that:
+1. Checks the `Accept` header on incoming requests
+2. Returns raw markdown when `text/markdown` or `text/plain` is preferred
+3. Returns HTML for all other cases (browsers)
+4. Includes proper headers: `Vary: Accept`, `Link: rel="canonical"`, caching
+
+The `/api/raw/[slug]` endpoint also remains available for explicit markdown requests.
+
 ## 🚀 Deployment
 
 The site is configured for deployment on Vercel with server-side rendering enabled. The configuration includes:
@@ -133,6 +175,7 @@ The site is configured for deployment on Vercel with server-side rendering enabl
 - Automatic sitemap generation
 - RSS feed generation
 - External link processing
+- Accept header middleware for content negotiation
 
 ## Automated Content Container Screenshots
 

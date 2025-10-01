@@ -20,15 +20,7 @@ export default defineConfig({
       return true;
     },
     serialize: (item) => {
-      // Adjust priority for markdown pages
-      if (item.url.endsWith('.md')) {
-        return {
-          ...item,
-          priority: 0.6,
-          changefreq: 'monthly'
-        };
-      }
-      // Default priority for HTML pages
+      // Set priority based on page type
       return {
         ...item,
         priority: item.url === siteUrl + '/' ? 1.0 : 0.8,

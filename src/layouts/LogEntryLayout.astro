@@ -31,11 +31,11 @@ const sortedTags = frontmatter.tags ? sortTags(frontmatter.tags) : [];
 const hasSlop = frontmatter.tags?.some(tag => tag.toUpperCase() === 'SLOP');
 
 // Get the current URL for schema markup
-const currentUrl = new URL(Astro.request.url).href;
+const currentUrl = Astro.url.href;
 const siteUrl = Astro.site ? Astro.site.toString() : Astro.url.origin;
 
 // Get the slug from the URL path for dynamic OG image
-const urlPath = new URL(Astro.request.url).pathname;
+const urlPath = Astro.url.pathname;
 const slug = urlPath.split('/').filter(Boolean).pop() || '';
 const ogImageUrl = new URL(`/api/og/${slug}`, siteUrl).toString();
 
