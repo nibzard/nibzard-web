@@ -49,7 +49,7 @@ function generateAIMetadata(
   metadata += `URL: ${cleanSiteUrl}/${slug}\n`;
   metadata += `MARKDOWN_URL: ${cleanSiteUrl}/${slug}.md\n`;
   metadata += `CITE_AS: "${citation}"\n`;
-  metadata += `LICENSE: CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)\n`;
+  metadata += `LICENSE: CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)\n`;
   metadata += `\n`;
 
   metadata += `NAVIGATION:\n`;
