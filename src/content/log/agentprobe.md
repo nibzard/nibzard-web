@@ -6,6 +6,9 @@ date: 2025-07-26
 tags: [HUMAN, AI, AGENTS, DEVELOPER-TOOLS, OPEN-SOURCE]
 draft: false
 author: "Nikola Balić"
+source_url:
+  html: https://nibzard.com/agentprobe
+  md: https://nibzard.com/agentprobe.md
 ---
 
 Five runs. Same prompt. Same agent. Same CLI.

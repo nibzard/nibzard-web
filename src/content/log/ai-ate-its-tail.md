@@ -6,6 +6,9 @@ description: "AI analyzed its own git history. Meta-experiment revealed the urge
 tldr: "Used AI to analyze its own git history, sparking thoughts on transparent AI-human collaboration. The future isn't hiding AI use—it's building verifiable trails of who did what, when, and how. Like Andy Weir's crowdsourced Martian, creative work has always been collaborative."
 draft: false
 author: "Nikola Balić"
+source_url:
+  html: https://nibzard.com/ai-ate-its-tail
+  md: https://nibzard.com/ai-ate-its-tail.md
 ---
 
 ## The Experiment

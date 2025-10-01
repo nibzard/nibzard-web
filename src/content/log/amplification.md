@@ -6,6 +6,9 @@ date: 2025-06-02
 tags: [HUMAN, INSIGHT, AI, SYSTEMS]
 draft: false
 author: "Nikola Balić"
+source_url:
+  html: https://nibzard.com/amplification
+  md: https://nibzard.com/amplification.md
 ---
 
 <blockquote class="featured-quote primary">

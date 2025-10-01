@@ -6,6 +6,9 @@ date: 2025-09-05
 tags: [SLOP, AI, OPTIMIZATION, GROWTH]
 draft: false
 author: "Nikola Balić"
+source_url:
+  html: https://nibzard.com/berghain
+  md: https://nibzard.com/berghain.md
 ---
 
 This article documents an experiment in AI-human collaboration for solving complex optimization problems. What you're reading is a real-time record of how AI coding agents can tackle challenges where 98% of the work is done by the agent with slight human oversight and nudging.

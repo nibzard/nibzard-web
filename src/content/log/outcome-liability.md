@@ -6,6 +6,9 @@ tags: [HUMAN, AI, AGENTS, LIABILITY, POLICY, DEVELOPMENT]
 tldr: "As agents abstract away development like HLLs did assembly, 'human liability for authored code' becomes meaningless. The future is operator liability backed by provable assurance—signed attestations, property tests, and runtime monitoring matter more than keystrokes."
 draft: false
 author: "Nikola Balić"
+source_url:
+  html: https://nibzard.com/outcome-liability
+  md: https://nibzard.com/outcome-liability.md
 ---
 
 The discourse around AI-generated code liability sounds reasonable until you play it forward.

@@ -6,6 +6,9 @@ date: 2025-09-01
 tags: [CHEATSHEET, Claude, CLI, API]
 draft: false
 author: "Nikola Balić"
+source_url:
+  html: https://nibzard.com/claude-zhipu
+  md: https://nibzard.com/claude-zhipu.md
 ---
 
 This setup allows you to use **Claude Code CLI** with **Zhipu's API** (`api.z.ai`) **in parallel** with your existing Claude Max / Anthropic CLI installation.  

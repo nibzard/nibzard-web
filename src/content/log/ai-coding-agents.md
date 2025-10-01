@@ -6,6 +6,9 @@ description: "Each AI coding agent has a niche. Knowing where each one shines is
 tldr: "Each AI coding agent has a niche. Knowing where each one shines is the difference between frustration and flow."
 draft: false
 author: "Nikola Balić"
+source_url:
+  html: https://nibzard.com/ai-coding-agents
+  md: https://nibzard.com/ai-coding-agents.md
 ---
 
 We’re past the point where “AI coding agents” means a single category. The ecosystem has fractured into multiple agents, each with strengths and quirks.

@@ -6,6 +6,9 @@ date: 2025-05-29
 tags: [SLOP, AI, AGENTS]
 draft: false
 author: "Nikola Balić"
+source_url:
+  html: https://nibzard.com/silent-revolution
+  md: https://nibzard.com/silent-revolution.md
 ---
 
 The boundaries between technical and non-technical roles are dissolving before our eyes.

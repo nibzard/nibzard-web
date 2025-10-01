@@ -6,6 +6,9 @@ date: 2025-07-29
 tags: [HUMAN, AI, ENGINEERING, DEVELOPMENT]
 draft: false
 author: "Nikola Balić"
+source_url:
+  html: https://nibzard.com/nudges
+  md: https://nibzard.com/nudges.md
 ---
 
 AI coding assistants excel at one thing: **making code that compiles**.

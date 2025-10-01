@@ -6,6 +6,9 @@ date: 2025-07-16
 tags: [HUMAN, CHEATSHEET, AI, Claude, Mobile, VM, Cloudflare]
 draft: false
 author: "Nikola Balić"
+source_url:
+  html: https://nibzard.com/ssh-tunnel-cloudflare
+  md: https://nibzard.com/ssh-tunnel-cloudflare.md
 ---
 
 Imagine having a powerful AI coding assistant running in your pocket, ehm homelab, that you can access from anywhere. This guide shows you how to set up Claude Code in an Ubuntu VM and access it securely through Cloudflare Tunnel, turning your mobile device into a surprisingly capable coding workstation.

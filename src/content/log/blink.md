@@ -6,6 +6,9 @@ date: 2025-05-20
 tags: [HUMAN, OPINION]
 draft: false
 author: "Nikola Balić"
+source_url:
+  html: https://nibzard.com/blink
+  md: https://nibzard.com/blink.md
 ---
 
 We're witnessing the **fastest consolidation** in the history of developer tooling.

@@ -6,6 +6,9 @@ date: 2025-05-27
 tags: [HUMAN, CHEATSHEET, Claude, Code]
 draft: false
 author: "Nikola Balić"
+source_url:
+  html: https://nibzard.com/claude-code
+  md: https://nibzard.com/claude-code.md
 ---
 
 **Claude Code** is a powerful, flexible, **terminal-first AI coding assistant** designed to integrate deeply with existing developer workflows and tools.

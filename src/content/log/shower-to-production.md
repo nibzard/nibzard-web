@@ -6,6 +6,9 @@ date: 2025-09-22
 tags: [AI, AUTOMATION, TOOLS, WORKFLOW]
 draft: false
 author: "Nikola Balić"
+source_url:
+  html: https://nibzard.com/shower-to-production
+  md: https://nibzard.com/shower-to-production.md
 ---
 
 Every great project starts with a crazy idea in the shower.

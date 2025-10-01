@@ -6,6 +6,9 @@ tags: [HUMAN, ALGORITHMS, PERFORMANCE, ZIG, ENGINEERING]
 tldr: "Implemented FRE algorithm from Duan et al.'s 2025 paper in production Zig. Achieved O(m log^(2/3) n) complexity for single-source shortest paths, improving on Dijkstra's O(m + n log n). Shows advantage on large sparse graphs by breaking the sorting barrier, but overhead kills performance on small or dense graphs."
 draft: false
 author: "Nikola Balić"
+source_url:
+  html: https://nibzard.com/fre-production
+  md: https://nibzard.com/fre-production.md
 ---
 
 I implemented the Frontier Reduction Engine from Duan et al.'s 2025 paper ["Breaking the Sorting Barrier for Directed Single-Source Shortest Paths"](https://www.alphaxiv.org/abs/2504.17033) in production Zig. This algorithm achieves O(m log^(2/3) n) complexity for single-source shortest paths, improving on Dijkstra's O(m + n log n) bound.

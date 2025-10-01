@@ -6,6 +6,9 @@ date: 2025-09-22
 tags: [AI, CHROME, TWITTER, SHIPPING]
 draft: false
 author: "Nikola Balić"
+source_url:
+  html: https://nibzard.com/chrome-extension-ai
+  md: https://nibzard.com/chrome-extension-ai.md
 ---
 
 Two years ago, I wouldn't have dreamed of publishing a Chrome extension.

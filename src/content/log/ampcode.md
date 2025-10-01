@@ -7,6 +7,9 @@ updated: 2025-07-27
 tags: [HUMAN, EXPERIENCE, AI, AGENTS]
 draft: false
 author: "Nikola Balić"
+source_url:
+  html: https://nibzard.com/ampcode
+  md: https://nibzard.com/ampcode.md
 ---
 
 *What happens when you stop talking about AI and start shipping with it?*

@@ -6,6 +6,9 @@ date: 2025-07-21
 tags: [HUMAN, AI, AGENTS, DEVELOPER-TOOLS, EXPERIENCE]
 draft: false
 author: "Nikola Balić"
+source_url:
+  html: https://nibzard.com/agent-stack
+  md: https://nibzard.com/agent-stack.md
 ---
 
 We're speedrunning through a Cambrian explosion.

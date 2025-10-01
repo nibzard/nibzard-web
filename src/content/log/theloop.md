@@ -6,6 +6,9 @@ date: 2025-06-07
 tags: [HUMAN, INSIGHT, AI, TOOLS]
 draft: false
 author: "Nikola Balić"
+source_url:
+  html: https://nibzard.com/theloop
+  md: https://nibzard.com/theloop.md
 ---
 
 There's a moment when a tool stops being a tool and becomes an agent.
