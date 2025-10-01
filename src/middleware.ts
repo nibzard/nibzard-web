@@ -71,9 +71,6 @@ function generateAIMetadata(
   metadata += `- X: https://x.com/nibzard\n`;
   metadata += `- LinkedIn: https://www.linkedin.com/in/nikolabalic/\n`;
   metadata += `- GitHub: https://github.com/nibzard\n`;
-  metadata += `\n`;
-
-  metadata += `NEWSLETTER: Available on website\n`;
   metadata += `=================================\n\n`;
 
   return metadata;
