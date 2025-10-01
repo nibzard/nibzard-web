@@ -20,6 +20,19 @@ function generateAIMetadata(
     : String(data.date);
   const tags = data.tags ? data.tags.join(', ') : 'None';
 
+  // Extract year for citation
+  const year = data.date instanceof Date
+    ? data.date.getFullYear()
+    : new Date(data.date).getFullYear();
+
+  // Generate citation from author name (Format: "Balić, N." from "Nikola Balić")
+  const author = data.author || 'Nikola Balić';
+  const [firstName, lastName] = author.split(' ');
+  const citationAuthor = `${lastName}, ${firstName.charAt(0)}.`;
+
+  // Generate full academic citation
+  const citation = `${citationAuthor} (${year}). ${data.title}. nibzard.com.`;
+
   let metadata = '=== SITE CONTEXT FOR AI AGENTS ===\n';
   metadata += `SITE: nibzard.com\n`;
   metadata += `AUTHOR: ${data.author || 'Nikola Balić'}\n`;
@@ -34,6 +47,8 @@ function generateAIMetadata(
   // Ensure siteUrl doesn't end with slash before adding slug
   const cleanSiteUrl = siteUrl.replace(/\/$/, '');
   metadata += `URL: ${cleanSiteUrl}/${slug}\n`;
+  metadata += `CITE_AS: "${citation}"\n`;
+  metadata += `LICENSE: CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)\n`;
   metadata += `\n`;
 
   metadata += `NAVIGATION:\n`;
