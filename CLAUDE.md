@@ -112,3 +112,30 @@ graph TD
 - If Mermaid diagrams show as code blocks: Run `pnpm exec playwright install --with-deps chromium`
 - If content is truncated after Mermaid blocks: Check that Playwright browsers are installed
 - Mermaid blocks are processed during build time, not in the browser
+
+## Style and Voice
+
+When writing content for this site, follow these style guidelines:
+
+### Writing Voice
+- **Conversational & Direct**: Write as if having a conversation with the reader. Use "you" frequently and maintain a casual, approachable tone even with complex technical topics
+- **Technical Depth Made Accessible**: Make highly technical topics (optimization algorithms, AI agents, mathematical concepts) intuitive through concrete examples and analogies
+- **Narrative-Driven Structure**: Use story/journey formats ("Day 1, Day 2, Day 3"), build suspense gradually, and weave personal experience throughout
+- **Authentic Voice**: Show vulnerability, admit failures, share thought processes and uncertainties. Be humorous and self-aware when appropriate
+- **Practical Focus**: Emphasize real-world applications and lessons learned. Balance theory with practical implementation
+- **Community-Oriented**: Reference and build on work by others, credit contributors, position as part of broader conversation
+
+### Content Structure
+- Start with a hook or provocative observation
+- Use effective blockquotes for key insights
+- Integrate code examples naturally into explanations
+- Use personal anecdotes to illustrate larger points
+- Go deep on technical details when warranted
+- End with actionable insights or reflections
+
+### Tone Guidelines
+- Be knowledgeable without being pretentious
+- Be detailed without being pedantic
+- Be personal without being self-indulgent
+- Make complex topics engaging and accessible to broader audiences while still satisfying technical experts
+- Show passion and enthusiasm for the subject matter
