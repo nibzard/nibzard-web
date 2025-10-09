@@ -23,7 +23,9 @@
       "mcp__CDP__performance_start_trace",
       "mcp__CDP__performance_analyze_insight",
       "Bash(pnpm run:*)",
-      "mcp__CDP__list_pages"
+      "mcp__CDP__list_pages",
+      "WebFetch(domain:www.skeptrune.com)",
+      "Bash(curl:*)"
     ],
     "deny": []
   }
