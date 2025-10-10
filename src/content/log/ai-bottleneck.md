@@ -29,19 +29,26 @@ Software development has a classic three-act structure. We're living through Act
 
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#1f2937', 'primaryBorderColor': '#374151', 'primaryTextColor': '#f3f4f6', 'lineColor': '#6b7280', 'sectionBkgColor': '#111827', 'tertiaryColor': '#1f2937' }}%%
-timeline
-    title AI Development Evolution
-    section Act One: Craft Era
-        Individual developers : Writing code line-by-line
-        Human intelligence : Basic tools
-    section Act Two: Assistant Era
-        AI helps humans : Code faster
-        One human, one agent : Linear process
-        Current industry : Standard
-    section Act Three: Orchestration Era
-        Agents coordinate : With other agents
-        Systematic process : Management
-        Exponential : Complexity & productivity
+graph LR
+    subgraph Act One: Craft Era
+        A1[Individual Developers] --> A2[Writing Code Line-by-Line]
+        A3[Human Intelligence] --> A4[Basic Tools]
+    end
+
+    subgraph Act Two: Assistant Era
+        B1[AI Helps Humans] --> B2[Code Faster]
+        B3[One Human, One Agent] --> B4[Linear Process]
+        B5[Current Industry] --> B6[Standard]
+    end
+
+    subgraph Act Three: Orchestration Era
+        C1[Agents Coordinate] --> C2[With Other Agents]
+        C3[Systematic Process] --> C4[Management]
+        C5[Exponential] --> C6[Complexity & Productivity]
+    end
+
+    A2 --> B1
+    B4 --> C1
 ```
 
 Most of the industry is still thinking in Act Two terms.
@@ -60,21 +67,15 @@ Here's the constraint: **humans are still the bottleneck**. We prompt one agent 
 
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#1f2937', 'primaryBorderColor': '#374151', 'primaryTextColor': '#f3f4f6', 'lineColor': '#6b7280', 'sectionBkgColor': '#111827', 'tertiaryColor': '#1f2937' }}%%
-graph LR
-    subgraph Current Linear Process
-        H1[Human] --> A1[AI Agent] --> C1[Code Output]
-    end
-
-    subgraph Future Orchestration Process
-        H2[Human Orchestrator] --> O[Orchestration Layer]
-        O --> A2[Agent 1: Planning]
-        O --> A3[Agent 2: Coding]
-        O --> A4[Agent 3: Testing]
-        A2 --> S[Shared Context]
-        A3 --> S
-        A4 --> S
-        S --> F[Final Output]
-    end
+graph TD
+    H[Human Orchestrator] --> O[Orchestration Layer]
+    O --> A1[Agent 1: Planning]
+    O --> A2[Agent 2: Coding]
+    O --> A3[Agent 3: Testing]
+    A1 --> S[Shared Context]
+    A2 --> S
+    A3 --> S
+    S --> F[Final Output]
 ```
 
 ## Beyond Human-Scale Processes
@@ -102,24 +103,21 @@ This isn't just a technical problem. It's a trust problem. Enterprise teams won'
 
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#1f2937', 'primaryBorderColor': '#374151', 'primaryTextColor': '#f3f4f6', 'lineColor': '#6b7280', 'sectionBkgColor': '#111827', 'tertiaryColor': '#1f2937' }}%%
-graph TD
-    subgraph Agent Orchestration System
+graph LR
+    subgraph Agent System
         A[Multiple Agents] --> P[Parallel Tasks]
         P --> D[Decision Points]
     end
 
-    subgraph Observability Layer
-        O[Observability] --> E[Explainability]
-        E --> T[Traceability]
-    end
+    D --> O[Observability]
 
-    subgraph Trust Outcomes
+    subgraph Trust Pipeline
+        O --> E[Explainability]
+        E --> T[Traceability]
         T --> V[Verification]
         V --> Debug[Debugging]
         Debug --> Trust[Enterprise Trust]
     end
-
-    D --> O
 ```
 
 You need to see:
