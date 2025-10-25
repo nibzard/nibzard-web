@@ -135,6 +135,22 @@ answers_questions:
 6. **Reflect on Insights**: End with broader lessons and takeaways
 7. **Format Frontmatter**: Complete all required frontmatter fields exactly
 
+## CRITICAL: Always Test the Build
+
+**MANDATORY STEP**: After completing any new article, you MUST run the build to ensure it doesn't break:
+
+```bash
+npm run build
+```
+
+This checks for:
+- **Content schema validation** (title max 60 chars, description max 130 chars)
+- **Image references** and missing assets
+- **Build errors** from invalid markdown or frontmatter
+- **Link validation** and internal references
+
+Never skip this step - it prevents broken deployments and ensures content quality. If the build fails, fix the errors before considering the article complete.
+
 ## Quality Guidelines
 
 - **Length**: Aim for 1000-3000 words depending on topic complexity
