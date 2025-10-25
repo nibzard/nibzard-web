@@ -28,5 +28,9 @@
       "Bash(curl:*)"
     ],
     "deny": []
-  }
+  },
+  "enabledMcpjsonServers": [
+    "daytona"
+  ],
+  "enableAllProjectMcpServers": true
 }
