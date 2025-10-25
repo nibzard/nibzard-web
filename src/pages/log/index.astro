@@ -4,9 +4,9 @@ import { getCollection } from 'astro:content';
 import FadeIn from '../../components/animations/FadeIn.jsx';
 import LogItem from '../../components/LogItem.astro';
 
-// Get all log entries that aren't drafts
+// Get all log entries that aren't drafts and aren't excluded from lists
 const logEntries = await getCollection('log', ({ data }) => {
-  return data.draft !== true;
+  return data.draft !== true && data.excludeFromList !== true;
 });
 
 // Sort entries by date (newest first)

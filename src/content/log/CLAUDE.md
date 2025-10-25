@@ -5,6 +5,7 @@ tldr: "Write conversationally, use storytelling, include technical depth, follow
 date: 2025-10-25
 tags: [HUMAN, PROCESS, AI, WRITING]
 draft: false
+excludeFromList: true
 author: "Nikola Balić"
 topics: [AI-assisted writing, content creation guidelines, style guidelines, blogging workflow]
 entities: [Claude Code, LLM agents, content creation]
