@@ -6,8 +6,8 @@ import AnimatedTag from '../../components/animations/AnimatedTag.jsx';
 import { formatTagForDisplay, sortTags } from '../../utils/tagUtils';
 // import '../../styles/tags-index.less'; // Import the Less file
 
-const logEntries = await getCollection('log', ({ data }) => {
-  return data.draft !== true && data.excludeFromList !== true;
+const logEntries = await getCollection('log', ({ data, slug }) => {
+  return data.draft !== true && slug !== 'claude' && data.title;
 });
 
 const allTags = logEntries.flatMap(entry => entry.data.tags || []);

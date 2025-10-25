@@ -1,21 +1,3 @@
----
-title: "How to Write New Log Articles"
-description: "Instructions for AI coding agents on creating new log articles that match the site's style and voice"
-tldr: "Write conversationally, use storytelling, include technical depth, follow frontmatter structure exactly. Be authentic, admit failures, share thought processes. Focus on what you learned, not just what you built."
-date: 2025-10-25
-tags: [HUMAN, PROCESS, AI, WRITING]
-draft: false
-excludeFromList: true
-author: "Nikola Balić"
-topics: [AI-assisted writing, content creation guidelines, style guidelines, blogging workflow]
-entities: [Claude Code, LLM agents, content creation]
-answers_questions:
-  - How should AI agents write new log articles for this site?
-  - What writing style and voice should be used?
-  - What frontmatter structure is required?
-  - What content patterns work best for technical articles?
----
-
 # Instructions for AI Coding Agents
 
 This file contains guidelines for AI coding agents (like Claude Code, LLM CLI, etc.) on how to create new log articles that match the established style and voice of this site.

@@ -6,7 +6,7 @@ import FadeIn from '../../components/animations/FadeIn.jsx';
 import LogItem from '../../components/LogItem.astro';
 
 export async function getStaticPaths() {
-  const logEntries = await getCollection('log', ({ data }) => data.draft !== true && data.excludeFromList !== true);
+  const logEntries = await getCollection('log', ({ data, slug }) => data.draft !== true && slug !== 'claude' && data.title);
   const allTags = logEntries.flatMap((entry: any) => entry.data.tags || []);
   const uniqueTags = [...new Set(allTags)];
 
@@ -20,10 +20,10 @@ const { tag } = Astro.params; // This will be the lowercase tag from the URL
 const { tagName } = Astro.props; // This is the original casing tag name for display
 
 // Get all log entries with this tag
-const allLogEntries = await getCollection('log', ({ data }) => {
+const allLogEntries = await getCollection('log', ({ data, slug }) => {
   // Ensure tag matching is case-insensitive and handles undefined tags array
   const entryTags = (data.tags || []).map((t: string) => t.toLowerCase());
-  return data.draft !== true && data.excludeFromList !== true && entryTags.includes(tag);
+  return data.draft !== true && slug !== 'claude' && data.title && entryTags.includes(tag);
 });
 
 // Sort entries by date (newest first)

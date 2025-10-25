@@ -3,12 +3,12 @@ import { defineCollection, z } from 'astro:content';
 const logCollection = defineCollection({
   type: 'content', // 'content' for Markdown files
   schema: z.object({
-    title: z.string().max(60, "Title must be 60 characters or less"),
-    description: z.string().max(130, "Description must be 130 characters or less"),
+    title: z.string().max(60, "Title must be 60 characters or less").optional(),
+    description: z.string().max(130, "Description must be 130 characters or less").optional(),
     tldr: z.string().max(333, "Description must be 333 characters or less").optional(),
-    date: z.date(),
+    date: z.date().optional(),
     updated: z.date().optional(),
-    tags: z.array(z.string()),
+    tags: z.array(z.string()).optional(),
     draft: z.boolean().optional().default(false),
     author: z.string().optional().default("Nikola Balić"),
   }),

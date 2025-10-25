@@ -6,7 +6,7 @@ import SearchResults from '../components/SearchResults.jsx';
 const { searchParams } = new URL(import.meta.env.SITE + Astro.request.url);
 const initialQuery = searchParams.get('q') || '';
 
-const logEntries = await getCollection('log', ({ data }) => data.draft !== true && data.excludeFromList !== true);
+const logEntries = await getCollection('log', ({ data, slug }) => data.draft !== true && slug !== 'claude' && data.title);
 const thoughts = await getCollection('thoughts', ({ data }) => data.draft !== true);
 const nowEntries = await getCollection('now', ({ data }) => data.draft !== true);
 const imageEntries = await getCollection('images', ({ data }) => data.draft !== true);

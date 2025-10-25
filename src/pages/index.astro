@@ -17,9 +17,9 @@ const { searchParams } = Astro.url;
 const currentPage = parseInt(searchParams.get('page') || '1', 10);
 const pageSize = 20; // Number of entries per page
 
-// Get all log entries that aren't drafts and aren't excluded from lists
-const logEntries = await getCollection('log', ({ data }) => {
-  return data.draft !== true && data.excludeFromList !== true;
+// Get all log entries that aren't drafts and aren't CLAUDE.md
+const logEntries = await getCollection('log', ({ data, slug }) => {
+  return data.draft !== true && slug !== 'claude' && data.title;
 });
 
 // Sort entries by updated date if exists, otherwise by original date (newest first)
