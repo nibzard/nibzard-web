@@ -1,6 +1,6 @@
 ---
-title: "Serving Humans and AI: The Architecture of Content Negotiation"
-description: "How I built a dual-format content delivery system that serves the same markdown content to both humans and AI agents with no hidden restrictions."
+title: "Serving Humans and AI Through Content Negotiation"
+description: "How I built a dual-format delivery system serving identical content to humans and AI agents with no hidden restrictions."
 tldr: "My site serves identical content in HTML for humans and markdown for AI agents, with no hidden content, excellent crawlability, and smart content negotiation based on Accept headers."
 date: 2025-10-25
 tags: [HUMAN, ARCHITECTURE, AI, WEBDEV]
