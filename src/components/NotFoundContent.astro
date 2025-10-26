@@ -1,0 +1,110 @@
+---
+import Terminal404 from './Terminal404.jsx';
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+interface Props {
+  slug?: string | string[];
+}
+
+const { slug } = Astro.props as Props;
+
+// Pick one random log entry for a helpful redirect
+const entries = await getCollection('log', ({ data }) => !data.draft && data.date);
+let random: CollectionEntry<'log'> | undefined = undefined;
+if (entries.length > 0) {
+  random = entries[Math.floor(Math.random() * entries.length)];
+}
+---
+<section class="nf-wrap fade-in">
+  <header class="nf-header">
+    <p class="nf-eyebrow">Error 404</p>
+    <h1 class="nf-title glitch" data-text="File not found">File not found</h1>
+    <p class="nf-sub">The path you requested doesn’t exist in this universe.</p>
+  </header>
+
+  <div class="nf-terminal">
+    <Terminal404 client:visible slug={typeof slug === 'string' ? slug : Array.isArray(slug) ? slug.join('/') : ''} />
+  </div>
+
+  {random && (
+    <nav class="nf-actions" aria-label="Suggested destinations">
+      <a class="button-secondary" href={`/${random.slug}`}>Random log</a>
+    </nav>
+  )}
+</section>
+
+<style>
+  .nf-wrap {
+    display: grid;
+    gap: var(--space-xl);
+    padding: var(--space-xl) 0;
+  }
+  .nf-header {
+    display: grid;
+    gap: var(--space-sm);
+  }
+  .nf-eyebrow {
+    font-family: var(--font-metadata);
+    font-size: var(--font-size-sm);
+    letter-spacing: 0.04em;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+  .nf-title {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-3xl);
+    line-height: var(--line-height-tight);
+    margin: 0;
+  }
+  /* Subtle glitch effect */
+  .glitch { position: relative; }
+  .glitch::before,
+  .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+  }
+  .glitch::before {
+    color: var(--color-accent2);
+    clip-path: inset(0 0 0 0);
+    opacity: 0;
+    animation: glitchTop 3.2s infinite;
+  }
+  .glitch::after {
+    color: var(--color-accent1);
+    clip-path: inset(0 0 0 0);
+    opacity: 0;
+    animation: glitchBottom 3.2s infinite 80ms;
+  }
+  @keyframes glitchTop {
+    0%, 96% { opacity: 0; transform: translate(0, 0); }
+    97% { opacity: .55; transform: translate(1px, -1px); }
+    98% { opacity: .35; transform: translate(-1px, 1px); }
+    100% { opacity: 0; transform: translate(0, 0); }
+  }
+  @keyframes glitchBottom {
+    0%, 96% { opacity: 0; transform: translate(0, 0); }
+    97% { opacity: .55; transform: translate(-1px, 1px); }
+    98% { opacity: .35; transform: translate(1px, -1px); }
+    100% { opacity: 0; transform: translate(0, 0); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .glitch::before, .glitch::after { animation: none; opacity: 0; }
+  }
+  .nf-sub {
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+  .nf-terminal {
+    border-left: 4px solid var(--color-accent2);
+  }
+  .nf-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    align-items: center;
+  }
+  
+</style>

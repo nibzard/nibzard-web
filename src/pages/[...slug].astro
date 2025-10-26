@@ -2,6 +2,8 @@
 export const prerender = false;
 import { getCollection, getEntry, type CollectionEntry } from 'astro:content';
 import LogEntryLayout from '../layouts/LogEntryLayout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NotFoundContent from '../components/NotFoundContent.astro';
 
 const { slug } = Astro.params;
 
@@ -35,8 +37,7 @@ if (entry) {
     <ContentComponent />
   </LogEntryLayout>
 ) : (
-  <LogEntryLayout frontmatter={{ title: "Not Found", description: "The requested log entry could not be found." }}>
-    <p>Sorry, we couldn't find a log entry for the slug: <strong>{slug}</strong>.</p>
-    <p>Please check the URL or navigate back to the <a href="/log">log index</a>.</p>
-  </LogEntryLayout>
+  <BaseLayout title="404 - nibzard" description="File not found. Try Home, Log, or Search.">
+    <NotFoundContent slug={slug} />
+  </BaseLayout>
 )}

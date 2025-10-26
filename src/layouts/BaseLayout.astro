@@ -19,7 +19,7 @@ export interface Props {
 
 const {
   title = "nibzard",
-  description = "A minimal personal website and log.",
+  description = "all things AI agents, growth and startups",
   ogImage
 } = Astro.props;
 const canonicalUrl = Astro.url.toString();
@@ -110,14 +110,14 @@ const personSchema = createPersonSchema();
   <!-- DNS prefetch for third-party services -->
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
   <link rel="dns-prefetch" href="https://www.clarity.ms">
-  
+
   <!-- Monaspace fonts are loaded from local files via fonts.css -->
-  
+
   <!-- Monaspace fonts are self-hosted, no external font loading needed -->
-  
+
   <!-- Critical CSS inlined for faster first paint -->
   <style set:html={criticalCSS}></style>
-  
+
   <!-- Preload critical Monaspace fonts -->
   <link rel="preload" href="/fonts/monaspace/MonaspaceArgonVF.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/monaspace/MonaspaceXenonVF.woff2" as="font" type="font/woff2" crossorigin>
@@ -141,27 +141,27 @@ const personSchema = createPersonSchema();
     <slot /> <!-- Page content will be injected here -->
   </main>
   <Footer />
-  
+
   <!-- Search Overlay -->
   <SearchOverlay client:idle />
-  
+
   <!-- Enhanced code blocks with copy functionality -->
   <script is:inline>
     // Enhanced code blocks with copy functionality
     document.addEventListener('DOMContentLoaded', function() {
       const codeBlocks = document.querySelectorAll('pre code');
-      
+
       codeBlocks.forEach(function(codeBlock) {
         const pre = codeBlock.parentElement;
         if (pre.tagName !== 'PRE') return;
-        
+
         // Skip if already wrapped
         if (pre.parentElement.classList.contains('code-block-wrapper')) return;
-        
+
         // Create wrapper
         const wrapper = document.createElement('div');
         wrapper.className = 'code-block-wrapper';
-        
+
         // Create copy button
         const copyButton = document.createElement('button');
         copyButton.className = 'copy-button';
@@ -173,19 +173,19 @@ const personSchema = createPersonSchema();
           </svg>
           Copy
         `;
-        
+
         // Wrap the pre element
         pre.parentNode.insertBefore(wrapper, pre);
         wrapper.appendChild(pre);
         wrapper.appendChild(copyButton);
-        
+
         // Add click event to copy button
         copyButton.addEventListener('click', async function() {
           const codeText = codeBlock.textContent;
-          
+
           try {
             await navigator.clipboard.writeText(codeText);
-            
+
             // Visual feedback - success
             const originalHTML = this.innerHTML;
             this.innerHTML = `
@@ -196,17 +196,17 @@ const personSchema = createPersonSchema();
             `;
             this.style.color = '#22c55e';
             this.style.borderColor = '#22c55e';
-            
+
             // Reset after 2 seconds
             setTimeout(() => {
               this.innerHTML = originalHTML;
               this.style.color = '';
               this.style.borderColor = '';
             }, 2000);
-            
+
           } catch (err) {
             console.error('Failed to copy code:', err);
-            
+
             // Fallback for older browsers or failed clipboard access
             try {
               // Create temporary textarea for fallback copy
@@ -218,7 +218,7 @@ const personSchema = createPersonSchema();
               textarea.select();
               document.execCommand('copy');
               document.body.removeChild(textarea);
-              
+
               // Success feedback
               const originalHTML = this.innerHTML;
               this.innerHTML = `
@@ -229,13 +229,13 @@ const personSchema = createPersonSchema();
               `;
               this.style.color = '#22c55e';
               this.style.borderColor = '#22c55e';
-              
+
               setTimeout(() => {
                 this.innerHTML = originalHTML;
                 this.style.color = '';
                 this.style.borderColor = '';
               }, 2000);
-              
+
             } catch (fallbackErr) {
               // Show error feedback
               const originalHTML = this.innerHTML;
@@ -247,7 +247,7 @@ const personSchema = createPersonSchema();
               `;
               this.style.color = '#ef4444';
               this.style.borderColor = '#ef4444';
-              
+
               setTimeout(() => {
                 this.innerHTML = originalHTML;
                 this.style.color = '';
@@ -267,28 +267,28 @@ const personSchema = createPersonSchema();
       window.searchOverlay = {
         isOpen: false,
         component: null,
-        
+
         open() {
           this.isOpen = true;
           this.updateComponent();
         },
-        
+
         close() {
           this.isOpen = false;
           this.updateComponent();
         },
-        
+
         updateComponent() {
           if (this.component) {
             this.component.setState({ isOpen: this.isOpen });
           }
         },
-        
+
         registerComponent(component) {
           this.component = component;
         }
       };
-      
+
       // Handle search trigger button click
       const searchTrigger = document.getElementById('search-trigger');
       if (searchTrigger) {
