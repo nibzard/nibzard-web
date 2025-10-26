@@ -8,6 +8,11 @@ const { slug } = Astro.params;
 let entry: CollectionEntry<'log'> | undefined;
 let ContentComponent: any;
 
+// Block internal helper page from being routable
+if (typeof slug === 'string' && slug.toLowerCase() === 'claude') {
+  Astro.response.status = 404;
+}
+
 if (slug) {
   try {
     entry = await getEntry('log', slug);
@@ -20,6 +25,9 @@ if (slug) {
 if (entry) {
   const rendered = await entry.render();
   ContentComponent = rendered.Content;
+} else {
+  // For unknown slugs, mark response as 404
+  Astro.response.status = 404;
 }
 ---
 {entry && ContentComponent ? (

@@ -82,6 +82,11 @@ export const onRequest = defineMiddleware(async (context, next) => {
   const url = new URL(request.url);
   const pathname = url.pathname;
 
+  // Explicitly block internal helper page from being routable
+  if (pathname === '/claude' || pathname === '/claude/' || pathname === '/claude.md') {
+    return new Response('Not Found', { status: 404 });
+  }
+
   // Check if this is a .md URL request
   const isMdUrl = pathname.endsWith('.md');
 

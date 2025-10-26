@@ -21,17 +21,19 @@ export interface BlogPostSchema {
 export function createBlogPostSchema(data: {
   title: string;
   description?: string;
-  date: Date;
+  date?: Date; // Optional to avoid crashes on not-found pages
   url: string;
   tags?: string[];
   modifiedDate?: Date;
 }): BlogPostSchema {
+  const published = data.date ?? new Date();
+  const modified = data.modifiedDate ?? data.date ?? published;
   return {
     "@type": "BlogPosting",
     headline: data.title,
     description: data.description,
-    datePublished: data.date.toISOString(),
-    dateModified: data.modifiedDate?.toISOString() || data.date.toISOString(),
+    datePublished: published.toISOString(),
+    dateModified: modified.toISOString(),
     author: AUTHOR_INFO,
     publisher: ORGANIZATION_INFO,
     mainEntityOfPage: {
