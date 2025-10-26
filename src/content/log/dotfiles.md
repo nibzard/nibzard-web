@@ -153,6 +153,16 @@ If we rename `CLAUDE.md` to `.claude`, the build errors should disappear. No mor
 
 Sometimes the best solution isn't to add more configuration or workarounds. It's to align with the conventions your tools already understand.
 
+## Reader Feedback: The Case for `.filename.md`
+
+After publishing this article, I received an interesting email proposing an alternative: use `.filename.md` instead of just `.filename`.
+
+The logic is appealing - dot prefixes give automatic exclusion while `.md` extensions declare the content format. This creates a "Markdown dotfile" convention that's both stackable and semantically clear.
+
+It's an elegant approach if we think of agent instructions as Markdown content. But I'm hesitating because these files aren't really blog posts or documentation. They're evolving toward becoming multi-format containers that might hold Markdown alongside JSON schemas, code examples, or structured metadata.
+
+The question becomes: are we writing Markdown files that happen to contain instructions, or instruction files that happen to use Markdown syntax? I'm leaning toward the latter.
+
 ## Bottom Line
 
 `.md` is not a neutral container for text. It's a signal that triggers a cascade of automatic processing: publishing, formatting, compiling, and indexing.
