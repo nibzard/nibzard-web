@@ -8,14 +8,13 @@ import NowItemRenderer from '../components/NowItemRenderer.astro';
 import ImageRenderer from '../components/ImageRenderer.astro';
 import IdeaRenderer from '../components/IdeaRenderer.astro';
 import NewsletterSubscribe from '../components/NewsletterSubscribe.astro';
-import CtaButton from '../components/CtaButton.astro';
 import AnimatedTag from '../components/animations/AnimatedTag.jsx';
 // import '../styles/index.css';
 
 // Get current page and page size
 const { searchParams } = Astro.url;
 const currentPage = parseInt(searchParams.get('page') || '1', 10);
-const pageSize = 20; // Number of entries per page
+const pageSize = 10; // Number of entries per page
 
 // Get all log entries that aren't drafts and aren't CLAUDE.md
 const logEntries = await getCollection('log', ({ data, slug }) => {
@@ -224,40 +223,16 @@ const feedEntries = allFeedEntries.slice(startIndex, endIndex); // These are the
                       {'tldr' in logEntry.data && logEntry.data.tldr && (
                         <p class="log-entry-tldr">{logEntry.data.tldr}</p>
                       )}
-                      <div>
-                        <a href={`/${logEntry.slug}`} class="read-full-post-link" aria-label={`Read full article: ${logEntry.data.title}`}>Read full post →</a>
-                      </div>
                     </div>
                   </article>
                 );
               })()}
             </FadeIn>
           )}
-          {showNewsletter && (
-            <FadeIn client:visible delay={0} yOffset={5}>
-              <div class="newsletter-section">
-                <NewsletterSubscribe
-                  title="Stay Updated"
-                  description="Subscribe to receive the latest updates and articles directly in your inbox."
-                  showButton={true}
-                />
-              </div>
-            </FadeIn>
-          )}
         </>
       );
     })}
   </div>
-  {/* Insert newsletter at the bottom */}
-  <FadeIn client:visible delay={0} yOffset={5}>
-    <div class="newsletter-section">
-      <NewsletterSubscribe
-        title="Stay Updated"
-        description="Subscribe to receive the latest updates and articles directly in your inbox."
-        showButton={true}
-      />
-    </div>
-  </FadeIn>
 
   {totalPages > 1 && (
     <nav class="pagination" aria-label="Pagination" style="margin-top: var(--space-lg); margin-bottom: var(--space-lg);">
@@ -278,6 +253,16 @@ const feedEntries = allFeedEntries.slice(startIndex, endIndex); // These are the
       )}
     </nav>
   )}
+  {/* Insert newsletter at the bottom */}
+  <FadeIn client:visible delay={0} yOffset={5}>
+    <div class="newsletter-section">
+      <NewsletterSubscribe
+        title="Stay Updated"
+        description="Subscribe to receive the latest updates and articles directly in your inbox."
+        showButton={true}
+      />
+    </div>
+  </FadeIn>
 </BaseLayout>
 
 <script>

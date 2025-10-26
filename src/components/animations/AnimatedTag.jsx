@@ -4,8 +4,8 @@ import { isStandardizedTag, getTagColors } from '../../config/tagColors';
 /**
  * Tag Component
  *
- * A simple, performant tag component with CSS-only hover effects.
- * Supports both standardized (colored) and regular (subtle) tags.
+ * A simple, plain text tag component with minimal styling.
+ * Tags appear as text links with pipe separators, no button-like appearance.
  *
  * @param {Object} props - Component props
  * @param {string} props.href - The link destination for the tag
@@ -37,15 +37,11 @@ export default function AnimatedTag({ href, children, tagText: propTagText, isAc
     tagClasses += ' active';
   }
 
-  // Apply colors via inline styles for standardized tags
-  const tagStyle = isStandard && tagColorConfig ? {
-    backgroundColor: tagColorConfig.backgroundColor,
-    borderColor: tagColorConfig.borderColor,
-    color: tagColorConfig.textColor,
-  } : {};
+  // No inline styles - let CSS handle all appearance
+  const tagStyle = {};
 
-  // Format display text
-  const displayText = isStandard ? tagText.toUpperCase() : tagText;
+  // Use text as-is, no formatting
+  const displayText = tagText;
 
   return (
     <a
