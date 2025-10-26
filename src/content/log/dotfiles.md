@@ -2,7 +2,7 @@
 title: "Stop Using .md for AI Agent Instructions"
 description: "Files ending in .md trigger automatic processing that breaks agent instruction files. Use dotfiles instead."
 tldr: "Static site generators, formatters, and indexers treat .md files as content. Agent instruction files need dotfiles like .claude to avoid unwanted processing."
-date: 2025-10-25
+date: 2025-10-26
 tags: [HUMAN, AI, TOOLS, ARCHITECTURE]
 draft: false
 author: "Nikola Balić"
@@ -75,14 +75,13 @@ The cleanest solution is also the most obvious: stop using `.md` for agent instr
 
 Use dotfiles with clear names:
 - `.claude` for Claude-specific instructions
-- `.agents` for general agent rules
-- `.ai` for AI workflow guidelines
+- `.agents` for open format for guiding coding agents [managed by OpenAI](https://agents.md/)
 
 The benefits are immediate:
 
 **Automatic exclusion**: Most glob patterns (`**/*.md`) skip dotfiles by default, which means static site generators, formatters, and other tools won't accidentally process your instruction files.
 
-**Clear intent**: The filename itself communicates purpose. `.claude` says "this is for Claude agents," not "this is a blog post."
+**Clear intent**: The filename itself communicates purpose. `.claude` or `.agents` says "this is for AI agents," not "this is a blog post."
 
 **Human-readable**: You still get Markdown syntax highlighting in editors and can read the files easily during code review.
 
@@ -110,7 +109,6 @@ Add to your `.gitignore` or build ignore patterns:
 ```
 **/.claude
 **/.agents
-**/.ai
 ```
 
 ### Editor Configuration
@@ -119,8 +117,7 @@ For VS Code, add to your settings:
 {
   "files.associations": {
     ".claude": "markdown",
-    ".agents": "markdown",
-    ".ai": "markdown"
+    ".agents": "markdown"
   }
 }
 ```
@@ -150,9 +147,9 @@ The key insight is that **file extensions carry intent**. `.md` says "publish me
 
 ## What I Learned
 
-This experience taught me something important about modern development: we're not just writing code anymore, we're configuring complex toolchains. File naming isn't just about organization—it's about communicating intent to both humans and machines.
+We're not just writing code anymore, we're configuring complex toolchains. File naming isn't just about organization—it's about communicating intent to both humans and machines.
 
-When I renamed `CLAUDE.md` to `.claude`, the build errors disappeared. No more schema validation, no more exclude patterns, no more fighting my tools. The file became what it was meant to be: operational instructions for AI agents, not content for human consumption.
+If we rename `CLAUDE.md` to `.claude`, the build errors should disappear. No more schema validation, no more exclude patterns, no more fighting tools. The file becomes what it was meant to be: operational instructions for AI agents, not content for human consumption.
 
 Sometimes the best solution isn't to add more configuration or workarounds. It's to align with the conventions your tools already understand.
 
