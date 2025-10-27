@@ -15,12 +15,14 @@ export interface Props {
   title?: string;
   description?: string;
   ogImage?: string;
+  fullWidth?: boolean;
 }
 
 const {
   title = "nibzard",
   description = "all things AI agents, growth and startups",
-  ogImage
+  ogImage,
+  fullWidth = false
 } = Astro.props;
 const canonicalUrl = Astro.url.toString();
 const siteUrl = Astro.site ? Astro.site.toString() : Astro.url.origin;
@@ -138,7 +140,13 @@ const personSchema = createPersonSchema();
 <body>
   <Header />
   <main class="content-container">
-    <slot /> <!-- Page content will be injected here -->
+    {fullWidth ? (
+      <slot />
+    ) : (
+      <div class="inner-container">
+        <slot /> <!-- Page content will be injected here -->
+      </div>
+    )}
   </main>
   <Footer />
 

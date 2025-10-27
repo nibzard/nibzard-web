@@ -29,59 +29,46 @@ export default function SearchResults({ feedEntries, initialQuery = '' }) {
   }, [query, fuse, feedEntries]);
 
   return (
-    <div className="feed-timeline">
+    <ul className="search-results-list">
       {results.length === 0 && (
-        <div style={{ textAlign: 'center', color: 'var(--color-text-muted)', padding: '2rem' }}>
-          No results found.
-        </div>
+        <li className="search-result empty">No results found.</li>
       )}
       {results.map((item, index) => {
-        const date = item.date ? formatDate(item.date) : 'Date N/A';
-        
+        const date = item.date ? formatDate(item.date) : '';
+
         if (item.type === 'log') {
           return (
-            <article className="log-entry" key={index}>
-              <div className="entry-meta">
-                <time>{date}</time>
+            <li className="search-result" key={index}>
+              <a href={`/${item.slug}`}>{item.title}</a>
+              <div className="search-result-meta">
+                {date} · Log{item.tldr ? ` · ${item.tldr}` : ''}
               </div>
-              <div className="log-entry-content">
-                <h2>
-                  <a href={`/${item.slug}`}>{item.title}</a>
-                </h2>
-                {item.tldr && <p className="log-entry-tldr">{item.tldr}</p>}
-              </div>
-            </article>
+            </li>
           );
         } else if (item.type === 'thought') {
           return (
-            <div className="thought-entry" key={index}>
-              <div className="entry-meta">
-                <time>{date}</time> Thought
-              </div>
-              <blockquote>{item.text || ''}</blockquote>
-            </div>
+            <li className="search-result" key={index}>
+              <a href={`/${item.slug}`}>{item.text || 'Thought'}</a>
+              <div className="search-result-meta">{date} · Thought</div>
+            </li>
           );
         } else if (item.type === 'now') {
           return (
-            <div className="now-entry" key={index}>
-              <div className="entry-meta">
-                <time>{date}</time> Now
-              </div>
-              <div>{item.title || ''}</div>
-            </div>
+            <li className="search-result" key={index}>
+              <a href={`/${item.slug}`}>{item.title || item.text || 'Now'}</a>
+              <div className="search-result-meta">{date} · Now</div>
+            </li>
           );
         } else if (item.type === 'image') {
           return (
-            <div className="image-entry" key={index}>
-              <div className="entry-meta">
-                <time>{date}</time> Image
-              </div>
-              <div>{item.caption || ''}</div>
-            </div>
+            <li className="search-result" key={index}>
+              <a href={`/${item.slug}`}>{item.caption || 'Image'}</a>
+              <div className="search-result-meta">{date} · Image</div>
+            </li>
           );
         }
         return null;
       })}
-    </div>
+    </ul>
   );
 }

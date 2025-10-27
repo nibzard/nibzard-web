@@ -43,9 +43,9 @@ export default function SearchFeed({ feedEntries }) {
           onChange={e => setQuery(e.target.value)}
         />
       </div>
-      <div className="feed-timeline">
+      <div className="masonry-grid">
         {results.length === 0 && (
-          <div style={{ textAlign: 'center', color: 'var(--color-text-muted)', padding: '2rem' }}>
+          <div style={{ textAlign: 'center', color: 'var(--color-text-muted)', padding: '2rem', gridColumn: '1 / -1' }}>
             No results found.
           </div>
         )}
@@ -70,7 +70,7 @@ export default function SearchFeed({ feedEntries }) {
             const thought = item.entry;
             const date = formatDate(thought.data.date);
             return (
-              <div className="thought-entry" key={index}>
+              <div className="thought-item" key={index}>
                 <div className="entry-meta">
                   <time>{date}</time> Thought
                 </div>
@@ -81,7 +81,7 @@ export default function SearchFeed({ feedEntries }) {
             const now = item.entry;
             const date = formatDate(now.data.date);
             return (
-              <div className="now-entry" key={index}>
+              <div className="now-item" key={index}>
                 <div className="entry-meta">
                   <time>{date}</time> Now
                 </div>
@@ -92,11 +92,13 @@ export default function SearchFeed({ feedEntries }) {
             const img = item.entry;
             const date = formatDate(img.data.date);
             return (
-              <div className="image-entry" key={index}>
+              <div className="log-entry" key={index}>
                 <div className="entry-meta">
                   <time>{date}</time> Image
                 </div>
-                <div>{img.data.caption || ''}</div>
+                <div className="log-entry-content">
+                  <div>{img.data.caption || ''}</div>
+                </div>
               </div>
             );
           }
