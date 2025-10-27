@@ -30,11 +30,27 @@ body {
 /* === Typography & Links === */
 
 main {
-  max-width: 800px;
   margin: 0 auto;
   padding: var(--space-lg) var(--space-md);
   width: 100%;
+  max-width: 100%;
   box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* Add extra padding for very wide screens to balance content */
+@media (min-width: 1600px) {
+  main {
+    padding-left: var(--space-xl);
+    padding-right: var(--space-xl);
+  }
+}
+
+@media (min-width: 2000px) {
+  main {
+    padding-left: var(--space-2xl);
+    padding-right: var(--space-2xl);
+  }
 }
 
 a {
@@ -791,7 +807,153 @@ table tbody tr:hover,
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   transition: all var(--transition-normal);
   margin-bottom: 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
+
+
+/* Double width entries for first and last items */
+.log-entry.double-width,
+.thought-item.double-width,
+.now-item.double-width {
+  grid-column: span 2;
+}
+
+/* Responsive behavior for double width entries */
+@media (max-width: 899px) {
+  .log-entry.double-width,
+  .thought-item.double-width,
+  .now-item.double-width {
+    grid-column: span 1;
+  }
+}
+
+/* === Flexbox Masonry Grid System === */
+.masonry-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-lg);
+  margin: var(--space-lg) 0;
+  align-items: stretch;
+  max-width: 1200px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Base item widths for 3-column layout */
+.masonry-grid .log-entry,
+.masonry-grid .thought-item,
+.masonry-grid .now-item,
+.masonry-grid .image-container,
+.masonry-grid .idea-card {
+  width: 380px;
+  flex-shrink: 0;
+}
+
+/* Double width items - take up 2 columns */
+.masonry-grid .log-entry.double-width,
+.masonry-grid .thought-item.double-width,
+.masonry-grid .now-item.double-width {
+  width: 780px;
+}
+
+/* Responsive breakpoints for Flexbox layout */
+@media (max-width: 1199px) and (min-width: 900px) {
+  .masonry-grid {
+    max-width: 1000px;
+  }
+
+  .masonry-grid .log-entry,
+  .masonry-grid .thought-item,
+  .masonry-grid .now-item,
+  .masonry-grid .image-container,
+  .masonry-grid .idea-card {
+    width: 320px;
+  }
+
+  .masonry-grid .log-entry.double-width,
+  .masonry-grid .thought-item.double-width,
+  .masonry-grid .now-item.double-width {
+    width: 650px;
+  }
+
+  /* Remove left margin on smaller screens where it's not needed */
+  .masonry-grid .tag-container {
+    margin-left: 0;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .masonry-grid .tag-container .tag {
+    word-break: break-word;
+    hyphens: auto;
+    overflow-wrap: break-word;
+    white-space: nowrap;
+    max-width: 100%;
+    text-overflow: ellipsis;
+  }
+}
+
+@media (max-width: 899px) {
+  .masonry-grid {
+    gap: var(--space-md);
+    max-width: 800px;
+  }
+
+  /* 2-column layout for tablet */
+  .masonry-grid .log-entry,
+  .masonry-grid .thought-item,
+  .masonry-grid .now-item,
+  .masonry-grid .image-container,
+  .masonry-grid .idea-card {
+    width: calc(50% - var(--space-md));
+  }
+
+  .masonry-grid .log-entry.double-width,
+  .masonry-grid .thought-item.double-width,
+  .masonry-grid .now-item.double-width {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .masonry-grid {
+    gap: var(--space-md);
+    max-width: 600px;
+  }
+
+  /* 1-column layout for mobile */
+  .masonry-grid .log-entry,
+  .masonry-grid .thought-item,
+  .masonry-grid .now-item,
+  .masonry-grid .image-container,
+  .masonry-grid .idea-card,
+  .masonry-grid .log-entry.double-width,
+  .masonry-grid .thought-item.double-width,
+  .masonry-grid .now-item.double-width {
+    width: 100%;
+  }
+}
+
+/* Mobile-specific tag styles */
+@media (max-width: 768px) {
+  .masonry-grid .tag-container .tag {
+    white-space: normal;
+    font-size: 0.7rem;
+  }
+}
+
+/* Simple hover effects */
+.masonry-grid .log-entry:hover,
+.masonry-grid .thought-item:hover,
+.masonry-grid .now-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
 
 .log-entry { border-left-color: var(--color-accent2); }
 .thought-item { border-left-color: var(--color-accent3); }
@@ -806,7 +968,7 @@ table tbody tr:hover,
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-sm);
   flex-wrap: wrap;
   gap: var(--space-xs);
   font-family: var(--font-metadata);
@@ -816,13 +978,15 @@ table tbody tr:hover,
 }
 .entry-tags {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
   font-size: 0.75rem;
   color: var(--color-text-muted);
   font-family: var(--font-metadata);
   flex-wrap: wrap;
   gap: 0;
+  margin-top: var(--space-sm);
+  width: 100%;
 }
 .entry-type {
   background-color: var(--color-accent2);
@@ -834,6 +998,12 @@ table tbody tr:hover,
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
+.log-entry-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
 .log-entry-content h2 {
   font-size: 1.6rem;
   margin-bottom: var(--space-sm);
@@ -874,7 +1044,13 @@ table tbody tr:hover,
   border-bottom-color: var(--color-accent1);
   text-decoration: none;
 }
-.thought-content { position: relative; }
+
+.thought-content {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
 .thought-content blockquote {
   margin: 0;
   padding: 0;
@@ -887,17 +1063,15 @@ table tbody tr:hover,
 .now-item-content {
   line-height: var(--line-height-relaxed);
   color: var(--color-text);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 @media (max-width: 768px) {
   .entry-meta {
     flex-direction: column;
     align-items: flex-start;
     gap: var(--space-sm);
-  }
-  .entry-tags {
-    width: 100%;
-    justify-content: flex-start;
-    margin-top: var(--space-xs);
   }
 }
 
@@ -1205,11 +1379,34 @@ footer.full-width p {
   transition: all var(--transition-normal);
   margin-bottom: var(--space-2xl);
   font-family: var(--font-mono-neon);
+  max-width: 1200px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .newsletter-card:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transform: translateY(-1px);
+}
+
+/* Responsive newsletter card to match masonry-grid */
+@media (max-width: 1199px) and (min-width: 900px) {
+  .newsletter-card {
+    max-width: 1000px;
+  }
+}
+
+@media (max-width: 899px) {
+  .newsletter-card {
+    max-width: 800px;
+  }
+}
+
+@media (max-width: 640px) {
+  .newsletter-card {
+    max-width: 600px;
+  }
 }
 
 .newsletter-card h3 {
@@ -1622,6 +1819,39 @@ footer.full-width p {
 
 .no-tags {
   font-style: italic;
+  color: var(--color-text-muted);
+}
+
+/* === Search Results (List) === */
+.search-results-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-lg) 0;
+}
+
+.search-result {
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.search-result:last-child {
+  border-bottom: none;
+}
+
+.search-result a {
+  color: var(--color-text);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+
+.search-result a:hover {
+  color: var(--color-accent1);
+  border-bottom-color: var(--color-accent1);
+}
+
+.search-result-meta {
+  margin-top: 0.25rem;
+  font-size: 0.9rem;
   color: var(--color-text-muted);
 }
 
@@ -2095,7 +2325,7 @@ a[href*="://"] {
     min-width: 320px; /* Reduce minimum width on mobile */
     font-size: var(--font-size-sm);
   }
-  
+
   .log-content table td,
   .log-content .table td {
     padding: var(--space-sm);
@@ -2104,7 +2334,7 @@ a[href*="://"] {
     hyphens: auto;
     max-width: 0; /* Force flex-basis calculation */
   }
-  
+
   .log-content table td a,
   .log-content .table td a {
     word-break: break-all;
@@ -2113,20 +2343,20 @@ a[href*="://"] {
     max-width: 100%;
     display: block;
   }
-  
+
   /* Force aggressive breaking for table content */
   .log-content table code,
   .log-content .table code {
     word-break: break-all;
     white-space: pre-wrap;
   }
-  
+
   /* Fix long URLs and paths in paragraphs */
   .log-content p {
     overflow-wrap: break-word;
     word-wrap: break-word;
   }
-  
+
   /* Break all URLs aggressively on mobile */
   .log-content a[href^="http"],
   .log-content a[href^="https"],
@@ -2137,14 +2367,14 @@ a[href*="://"] {
     max-width: 100%;
     line-height: 1.4;
   }
-  
+
   /* Handle long continuous strings in code */
   .log-content code {
     word-break: break-word;
     overflow-wrap: break-word;
     white-space: pre-wrap;
   }
-  
+
   /* Force break on specific content types prone to overflow */
   .log-content p,
   .log-content li,
@@ -2153,7 +2383,7 @@ a[href*="://"] {
     word-wrap: break-word;
     overflow-wrap: break-word;
   }
-  
+
   /* Additional safety for main content container */
   main {
     min-width: 0;

@@ -153,8 +153,8 @@ const endIndex = startIndex + pageSize;
 const feedEntries = allFeedEntries.slice(startIndex, endIndex); // These are the entries for the current page
 ---
 
-<BaseLayout title="nibzard - Home" description="all things AI agents, growth and startups">
-  <div class="feed-timeline">
+<BaseLayout title="nibzard - Home" description="all things AI agents, growth and startups" fullWidth={true}>
+  <div class="masonry-grid">
     {feedEntries.map((item, index) => {
       // Insert newsletter after 10th post (adjust if pageSize changes)
       const showNewsletter = index === 10 && currentPage === 1 && feedEntries.length >= pageSize; // Only show if enough items
@@ -186,8 +186,17 @@ const feedEntries = allFeedEntries.slice(startIndex, endIndex); // These are the
                 const firstTag = 'tags' in logEntry.data ? logEntry.data.tags?.[0] || null : null;
                 const tagColor = firstTag ? getTagColors(firstTag) : null;
                 const borderStyle = tagColor ? `border-left-color: ${tagColor.borderColor}` : '';
+
+                // Check if this is the first or last log entry in the current page
+                const logEntriesInPage = feedEntries.filter((feedItem) => feedItem.type === 'log');
+                const currentLogIndex = logEntriesInPage.findIndex((feedItem) => feedItem.entry.slug === logEntry.slug);
+                const isFirstLogEntry = currentLogIndex === 0;
+                const isLastLogEntry = currentLogIndex === logEntriesInPage.length - 1;
+                const isDoubleWidth = (isFirstLogEntry || isLastLogEntry) && logEntriesInPage.length > 1;
+
+    
                 return (
-                  <article class="log-entry" style={borderStyle}>
+                  <article class={`log-entry ${isDoubleWidth ? 'double-width' : ''}`} style={borderStyle}>
                     <div class="entry-meta">
                       <time datetime={(logEntry.data.updated || logEntry.data.date).toISOString()}>
                         {logEntry.data.updated ? (
@@ -199,10 +208,19 @@ const feedEntries = allFeedEntries.slice(startIndex, endIndex); // These are the
                           new Date(logEntry.data.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
                         )}
                       </time>
-                      <div class="entry-tags">
-                        {'tags' in logEntry.data && logEntry.data.tags && logEntry.data.tags.length > 0 && (
-                          <div class="tag-container">
-                            {logEntry.data.tags.map((tag: string) => {
+                    </div>
+                    <div class="log-entry-content">
+                      <h2>
+                        <a href={`/${logEntry.slug}`}>{'title' in logEntry.data ? logEntry.data.title : 'Log Entry'}</a>
+                      </h2>
+                      {'tldr' in logEntry.data && logEntry.data.tldr && (
+                        <p class="log-entry-tldr">{logEntry.data.tldr}</p>
+                      )}
+                    </div>
+                    <div class="entry-tags">
+                      {'tags' in logEntry.data && logEntry.data.tags && logEntry.data.tags.length > 0 && (
+                        <div class="tag-container">
+                          {logEntry.data.tags.map((tag: string) => {
                               const formattedTag = tag;
                               return (
                                 <AnimatedTag
@@ -215,15 +233,6 @@ const feedEntries = allFeedEntries.slice(startIndex, endIndex); // These are the
                           </div>
                         )}
                       </div>
-                    </div>
-                    <div class="log-entry-content">
-                      <h2>
-                        <a href={`/${logEntry.slug}`}>{'title' in logEntry.data ? logEntry.data.title : 'Log Entry'}</a>
-                      </h2>
-                      {'tldr' in logEntry.data && logEntry.data.tldr && (
-                        <p class="log-entry-tldr">{logEntry.data.tldr}</p>
-                      )}
-                    </div>
                   </article>
                 );
               })()}
