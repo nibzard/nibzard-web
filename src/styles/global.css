@@ -859,6 +859,33 @@ table tbody tr:hover,
   width: 780px;
 }
 
+/* Decorative background for double-width log entries (home feed only) */
+.masonry-grid .log-entry.double-width {
+  /* Blend white backgrounds into the card using darken against the card color */
+  background-image:
+    linear-gradient(var(--color-background-alt), var(--color-background-alt)),
+    url('/images/squirel_xs.jpeg');
+  background-blend-mode: darken, normal;
+  background-repeat: no-repeat, no-repeat;
+  background-position: right bottom, right bottom;
+  background-size: 200px auto, 200px auto;
+}
+
+/* Add breathing room on wide screens so text doesn't sit over image */
+@media (min-width: 900px) {
+  .masonry-grid .log-entry.double-width {
+    padding-right: 0;
+  }
+}
+
+/* Hide the decorative image on smaller screens where double-width collapses */
+@media (max-width: 899px) {
+  .masonry-grid .log-entry.double-width {
+    background-image: none;
+    padding-right: inherit;
+  }
+}
+
 /* Responsive breakpoints for Flexbox layout */
 @media (max-width: 1199px) and (min-width: 900px) {
   .masonry-grid {
