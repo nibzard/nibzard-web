@@ -7,7 +7,7 @@ tags: [AI, STARTUPS, AGENTS, STRATEGY, PRODUCT]
 draft: false
 author: "Nikola Balić"
 topics: [AI agent labs vs model labs, product-first development, agentic systems, outcome-based software, AI startup strategy]
-entities: [Swyx, Cognition Labs, Devin, Cursor, OpenAI, Anthropic, Akash Bajwa]
+entities: [Swyx, Cognition Labs, Devin, Cursor, OpenAI, Anthropic, Akash Bajwa, Andrej Karpathy]
 answers_questions:
   - What's the difference between agent labs and model labs?
   - Why are product-first AI startups winning over model-first companies?
@@ -34,6 +34,8 @@ As [Swyx](https://www.swyx.io/cognition) puts it:
 
 The difference isn't just technical—it's cultural, financial, and strategic.
 
+Agent labs are also more realistic about capabilities. As [Karpathy](https://x.com/karpathy/status/1915581920022585597) notes, the industry overshoots when building "fully autonomous entities" when what we really need are tools for collaboration.
+
 ## What Makes an Agent Lab
 
 I spent time digging into what Swyx calls "agent labs" and here's what I've learned from watching companies like Cognition (Devin), Cursor, and Factory AI:
@@ -42,7 +44,7 @@ I spent time digging into what Swyx calls "agent labs" and here's what I've lear
 
 **They own the full workflow.** Model labs see prompts and responses. Agent labs see the entire trace—file changes, tool calls, test results, user approvals. That operational data is their moat.
 
-**They're domain-specific.** Instead of trying to build general intelligence, they focus on specific domains like software engineering, customer support, or financial operations where existing models don't quite solve the problem.
+**They're domain-specific.** Instead of trying to build general intelligence, they focus on specific domains where there's still "lots of work remaining" - the integration work, the domain expertise, the grunt work that Karpathy emphasizes as the real challenge.
 
 **They deliver outcomes, not outputs.** This is the key insight. You're not paying for AI tokens—you're paying for deployed applications, closed tickets, shipped features, or resolved bugs.
 
@@ -66,7 +68,7 @@ OpenAI can optimize for next-token prediction. Cursor can optimize for "feature 
 
 Model labs need billions in funding and years of R&D before they see revenue. Agent labs can start charging in weeks.
 
-I've watched this firsthand with tools like AMP Code and Cursor. They're charging real money for real value delivered today, not promising AGI tomorrow.
+I've watched this with tools like AMP Code and Cursor. They're charging real money for real value delivered today, not promising AGI tomorrow.
 
 ## The Architecture That's Winning
 
@@ -133,7 +135,11 @@ If you're building AI products, the agent lab model is worth studying closely.
 
 ## The Decade Ahead
 
-[Swyx](https://www.swyx.io/cognition) frames this as the shift from the "Decade of Models (2015-2025)" to the "Decade of Agents (2025-?)." I think he's right.
+[Swyx](https://www.swyx.io/cognition) frames this as the shift from the "Decade of Models (2015-2025)" to the "Decade of Agents (2025-?)."
+
+As [Andrej Karpathy](https://x.com/karpathy/status/1882544526033924438) puts it: "This is the decade of agents."
+
+I think they're both right.
 
 The frontier is moving from raw model scaling to agentic orchestration, reliability, and integration. Value is accruing to those who own user interaction, reward signals, and operational data.
 
