@@ -30,11 +30,11 @@ There's a split happening in the AI world right now, and understanding it is cru
 
 As [Swyx](https://www.swyx.io/cognition) puts it:
 
-> "Agent labs ship product first, and then work their way down as they get data, revenue and conviction and deep understanding of their problem domain."
+> Agent labs ship product first, and then work their way down as they get data, revenue and conviction and deep understanding of their problem domain.
 
 The difference isn't just technical—it's cultural, financial, and strategic.
 
-Agent labs are also more realistic about capabilities. As [Karpathy](https://x.com/karpathy/status/1915581920022585597) notes, the industry overshoots when building "fully autonomous entities" when what we really need are tools for collaboration.
+Agent labs are also more realistic about capabilities. As [Karpathy](https://x.com/karpathy/status/1979644538185752935) notes, "My critique of the industry is more in overshooting the tooling w.r.t. present capability."
 
 ## What Makes an Agent Lab
 
