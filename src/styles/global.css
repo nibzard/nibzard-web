@@ -31,7 +31,7 @@ body {
 
 main {
   margin: 0 auto;
-  padding: var(--space-lg) var(--space-md);
+  padding: 0 var(--space-md) var(--space-lg) var(--space-md);
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
@@ -1094,6 +1094,30 @@ table tbody tr:hover,
   display: flex;
   flex-direction: column;
 }
+
+.now-preview {
+  font-size: var(--font-size-md);
+  margin: 0 0 var(--space-md) 0;
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+
+.now-cta {
+  color: var(--color-accent2);
+  text-decoration: none;
+  font-weight: 500;
+  font-family: var(--font-ui);
+  font-size: var(--font-size-sm);
+  transition: all var(--transition-fast);
+  margin-top: auto;
+}
+
+.now-cta:hover {
+  color: var(--color-accent1);
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent1);
+  text-underline-offset: 2px;
+}
 @media (max-width: 768px) {
   .entry-meta {
     flex-direction: column;
@@ -1398,13 +1422,12 @@ footer.full-width p {
 
 /* === Enhanced Newsletter Section === */
 .newsletter-card {
-  background-color: var(--color-form);
+  background-color: var(--color-newsletter-bg);
   border-radius: 0;
   padding: var(--space-xl);
   border: 1px solid var(--color-border);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   transition: all var(--transition-normal);
-  margin-bottom: var(--space-2xl);
   font-family: var(--font-mono-neon);
   max-width: 1200px;
   width: 100%;

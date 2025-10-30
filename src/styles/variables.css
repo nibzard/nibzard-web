@@ -29,6 +29,7 @@
   --color-subtle-bg: var(--color-white);  /* Pure white background */
   --color-subtle: var(--primary-focus);
   --color-form: rgba(249, 196, 215, 0.0825);
+  --color-newsletter-bg: #c4f2f980; /* Light cyan with transparency for newsletter card */
 
   /*
    * Typography System

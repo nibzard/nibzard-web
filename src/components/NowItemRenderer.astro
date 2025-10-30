@@ -10,6 +10,11 @@ interface Props {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+
+// Get all headings from the markdown content
+const headingMatches = entry.body.matchAll(/##\s+(.+)/g);
+const headings = Array.from(headingMatches, match => match[1]);
+const previewText = headings.length > 0 ? headings.join(', ') : 'Current thoughts and updates';
 ---
 
 <div class="now-item">
@@ -20,6 +25,7 @@ const { Content } = await entry.render();
     <span class="entry-type">Now</span>
   </div>
   <div class="now-item-content">
-    <Content />
+    <p class="now-preview">{previewText}</p>
+    <a href="/now" class="now-cta">read where my mind is now →</a>
   </div>
 </div>

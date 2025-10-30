@@ -18,7 +18,7 @@ interface ProcessedContent {
  */
 async function getAllContent(): Promise<ProcessedContent> {
   const [logs, thoughts, nowUpdates, images, ideas] = await Promise.all([
-    getCollection('log', (entry) => !entry.data.draft),
+    getCollection('log', ({ data, slug }) => !data.draft && slug !== 'claude'),
     getCollection('thoughts', (entry) => !entry.data.draft),
     getCollection('now', (entry) => !entry.data.draft),
     getCollection('images', (entry) => !entry.data.draft),
@@ -26,8 +26,12 @@ async function getAllContent(): Promise<ProcessedContent> {
   ]);
 
   // Sort by date (newest first)
-  const sortByDate = <T extends { data: { date: Date } }>(entries: T[]): T[] =>
-    entries.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+  const sortByDate = <T extends { data: { date?: Date } }>(entries: T[]): T[] =>
+    entries.sort((a, b) => {
+      const dateA = a.data.date?.getTime() ?? 0;
+      const dateB = b.data.date?.getTime() ?? 0;
+      return dateB - dateA;
+    });
 
   return {
     logs: sortByDate(logs),
