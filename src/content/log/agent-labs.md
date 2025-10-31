@@ -54,7 +54,7 @@ Here's what I've seen in the wild: companies that start with products have a mas
 
 ### The Data Advantage
 
-When Cursor helps you write code, they capture everything: your repository structure, your coding patterns, your acceptance criteria, the files you modify, the tests you run. They're building a dataset that OpenAI and Anthropic can never access.
+When Cursor helps you write code, they capture everything: your repository structure, your coding patterns, your acceptance criteria, the files you modify, the tests you run. They're building a dataset that OpenAI and Anthropic can never access—a [trust signal](/trust) more valuable than any API.
 
 When Devin builds a feature, they capture the entire development workflow: planning, implementation, testing, deployment. That's proprietary training data worth more than any publicly available dataset.
 
@@ -66,7 +66,7 @@ OpenAI can optimize for next-token prediction. Cursor can optimize for "feature 
 
 ### The Revenue Reality
 
-Model labs need billions in funding and years of R&D before they see revenue. Agent labs can start charging in weeks.
+Model labs need billions in funding and years of R&D before they see revenue. Agent labs can [start charging in weeks](/agent-pricing).
 
 I've watched this with tools like AMP Code and Cursor. They're charging real money for real value delivered today, not promising AGI tomorrow.
 
@@ -89,7 +89,7 @@ Here's something that surprised me: agent labs invest more in evaluation and gua
 
 Why? Because reliability trumps raw intelligence every time.
 
-I've seen agent systems that fail 30% of the time with brilliant reasoning, and systems that succeed 95% of the time with basic logic. Customers pay for the 95% success rate, not the brilliant failures.
+I've seen agent systems that fail 30% of the time with brilliant reasoning, and systems that succeed 95% of the time with basic logic. [Customers pay for the 95% success rate](/trust), not the brilliant failures.
 
 Top labs build comprehensive eval harnesses covering:
 - **Reliability**: Task success rates, test pass rates
@@ -102,7 +102,7 @@ Top labs build comprehensive eval harnesses covering:
 
 I used to think the big model labs would eventually crush everyone else. Now I'm not so sure.
 
-Agent labs have defensive moats that model labs can't replicate:
+Agent labs have [defensive moats](/startup-moat) that model labs can't replicate:
 
 - **Workflow data** - They see how work actually gets done in organizations
 - **Domain expertise** - They understand the nuances of specific industries
@@ -127,9 +127,9 @@ This top-down evolution lets them de-risk R&D and compound their data advantages
 
 If you're building AI products, the agent lab model is worth studying closely.
 
-**For founders:** You don't need billions in funding or a team of PhD researchers. You need a deep understanding of a domain and the ability to build reliable workflows on top of existing models.
+**For founders:** You don't need billions in funding or a team of PhD researchers. You need a deep understanding of a domain and the ability to [build reliable workflows](/startup-moat) on top of existing models.
 
-**For developers:** The most valuable skills are shifting from model architecture to system design, evaluation engineering, and domain-specific workflow optimization.
+**For developers:** The [most valuable skills](/agent-stack) are shifting from model architecture to system design, evaluation engineering, and domain-specific workflow optimization.
 
 **For investors:** Look for companies that capture workflow data and have clear evaluation metrics. The moat is in the data and the feedback loops, not the models themselves.
 

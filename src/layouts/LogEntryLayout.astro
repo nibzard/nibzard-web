@@ -10,6 +10,9 @@ import SchemaMarkup from '../components/SchemaMarkup.astro';
 import CopyMarkdownButton from '../components/CopyMarkdownButton.jsx';
 import { createBlogPostSchema, createBreadcrumbSchema } from '../utils/schemaUtils';
 import AIWarning from '../components/AIWarning.astro';
+import { getDiverseRelatedArticles } from '../utils/articleMatching';
+import RelatedArticles from '../components/RelatedArticles.astro';
+import ReadingProgress from '../components/ReadingProgress.astro';
 
 interface Frontmatter {
   title: string;
@@ -55,19 +58,24 @@ const breadcrumbSchema = createBreadcrumbSchema([
   { name: frontmatter.title, url: currentUrl }
 ]);
 
-// Get random log entries for the "Read More" section
+// Get all log entries for smart recommendations
 const allEntries = await getCollection('log', ({ data }) => !data.draft && data.date);
-// Filter out the current entry using the title (since we don't have the slug/id)
-const otherEntries = allEntries.filter(entry => entry.data.title !== frontmatter.title);
 
-// Randomly select two entries
-let randomEntries: CollectionEntry<'log'>[] = [];
-if (otherEntries.length > 0) {
-  // Shuffle array and take first two entries (or all if less than 2)
-  randomEntries = [...otherEntries]
-    .sort(() => Math.random() - 0.5)
-    .slice(0, Math.min(2, otherEntries.length));
-}
+// Create current entry object for matching
+const currentEntry = {
+  title: frontmatter.title,
+  tags: frontmatter.tags || [],
+  topics: frontmatter.topics || [],
+  entities: frontmatter.entities || [],
+  date: frontmatter.date
+};
+
+// Get diverse related articles for "Related Articles" section (3 articles)
+const relatedArticlesEntries = getDiverseRelatedArticles(
+  currentEntry,
+  allEntries.filter(entry => entry.data.title !== frontmatter.title),
+  3
+);
 
 // Note: Article-specific Open Graph tags are added conditionally in <head> when date exists
 ---
@@ -121,49 +129,42 @@ if (otherEntries.length > 0) {
         <p class="log-entry-tldr">TL;DR &gt;&gt; {frontmatter.tldr} &lt;&lt;</p>
       )}
     </header>
+
+    {sortedTags.length > 0 && (
+      <section class="article-tags-section">
+        <div class="tags-header">
+          <span class="tags-label">Topics:</span>
+          <AnimatedTagsContainer client:visible className="tags-inline">
+            {sortedTags.map((tag: string) => {
+              const formattedTag = formatTagForDisplay(tag);
+              return (
+                <AnimatedTag
+                  client:visible
+                  href={`/tags/${tag.toLowerCase()}`}
+                  tagText={formattedTag}
+                />
+              );
+            })}
+          </AnimatedTagsContainer>
+        </div>
+      </section>
+    )}
+
     {hasSlop && <AIWarning />}
     <div class="log-content">
       <slot /> {/* Content from the Markdown file will be rendered here */}
     </div>
-    {sortedTags.length > 0 && (
-      <AnimatedTagsContainer client:visible className="tags">
-        {sortedTags.map((tag: string) => {
-          const formattedTag = formatTagForDisplay(tag);
-          return (
-            <AnimatedTag
-              client:visible
-              href={`/tags/${tag.toLowerCase()}`}
-              tagText={formattedTag}
-            />
-          );
-        })}
-      </AnimatedTagsContainer>
-    )}
 
-    {randomEntries.length > 0 && (
-      <CSSFadeIn delay={0.2}>
-        <section class="read-more-section">
-          <h2 class="read-more-title">Continue Reading</h2>
-          <div class="card-container">
-            {randomEntries.map((entry) => (
-              <a href={`/${entry.slug}`} class="card">
-                <p class="card-date">
-                  <time datetime={entry.data.date.toISOString()}>
-                    {new Date(entry.data.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-                  </time>
-                </p>
-                <h3>{entry.data.title}</h3>
-                {entry.data.description && (
-                  <p>{entry.data.description}</p>
-                )}
-              </a>
-            ))}
-          </div>
-        </section>
+    {relatedArticlesEntries.length > 0 && (
+      <CSSFadeIn delay={0.1}>
+        <RelatedArticles
+          relatedEntries={relatedArticlesEntries}
+          currentTitle={frontmatter.title}
+        />
       </CSSFadeIn>
     )}
 
-    <CSSFadeIn delay={0.4}>
+    <CSSFadeIn delay={0.2}>
       <section class="author-section" id="author">
         <div class="author-container">
           <div class="author-avatar">
@@ -199,5 +200,7 @@ if (otherEntries.length > 0) {
     <div class="section-spacer"></div>
 
     <NewsletterSubscribe />
+
+    <ReadingProgress suggestedArticles={relatedArticlesEntries} />
   </article>
 </BaseLayout>
