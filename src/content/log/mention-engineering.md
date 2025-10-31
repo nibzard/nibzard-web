@@ -2,7 +2,7 @@
 title: "Mention Engineering: The Content Side of Prompt Craft"
 description: "Analysis of AI search behavior reveals why some brands get cited while others disappear in AI-generated responses"
 tldr: "Analysis of how AI models cite sources reveals a new discipline: mention engineering. This isn't SEO anymore—it's about crafting content that becomes ideal citation material for AI models."
-date: 2025-10-10
+date: 2025-10-26
 tags: [AI, SEO, SEARCH, STRATEGY, MARKETING]
 draft: false
 author: "Nikola Balić"
