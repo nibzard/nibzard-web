@@ -12,6 +12,7 @@ const logCollection = defineCollection({
     topics: z.array(z.string()).optional(),
     entities: z.array(z.string()).optional(),
     answers_questions: z.array(z.string()).optional(),
+    featured: z.boolean().optional().default(false),
     draft: z.boolean().optional().default(false),
     author: z.string().optional().default("Nikola Balić"),
   }),

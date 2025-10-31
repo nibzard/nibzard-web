@@ -21,8 +21,13 @@ const logEntries = await getCollection('log', ({ data, slug }) => {
   return data.draft !== true && slug !== 'claude' && data.title;
 });
 
-// Sort entries by updated date if exists, otherwise by original date (newest first)
+// Sort entries: featured first, then by date (newest first)
 logEntries.sort((a, b) => {
+  // Featured articles always come first
+  if (a.data.featured && !b.data.featured) return -1;
+  if (!a.data.featured && b.data.featured) return 1;
+  
+  // If both featured or both not featured, sort by date
   const aDate = a.data.updated || a.data.date;
   const bDate = b.data.updated || b.data.date;
   return new Date(bDate).valueOf() - new Date(aDate).valueOf();

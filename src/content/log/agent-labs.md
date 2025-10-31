@@ -4,6 +4,7 @@ description: "Why product-first AI startups will dominate the next decade while 
 tldr: "Agent labs ship product first and build infrastructure later. They turn LLMs into goal-directed systems that deliver outcomes, not just outputs. This product-first approach is capturing the real value in the AI stack."
 date: 2025-10-28
 tags: [AI, STARTUPS, AGENTS, STRATEGY, PRODUCT]
+featured: true
 draft: false
 author: "Nikola Balić"
 topics: [AI agent labs vs model labs, product-first development, agentic systems, outcome-based software, AI startup strategy]

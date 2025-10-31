@@ -8,6 +8,7 @@ import CSSFadeIn from '../components/animations/CSSFadeIn.astro';
 import NewsletterSubscribe from '../components/NewsletterSubscribe.astro';
 import SchemaMarkup from '../components/SchemaMarkup.astro';
 import CopyMarkdownButton from '../components/CopyMarkdownButton.jsx';
+import ChatGPTButton from '../components/ChatGPTButton.jsx';
 import { createBlogPostSchema, createBreadcrumbSchema } from '../utils/schemaUtils';
 import AIWarning from '../components/AIWarning.astro';
 import { getDiverseRelatedArticles } from '../utils/articleMatching';
@@ -104,27 +105,34 @@ const relatedArticlesEntries = getDiverseRelatedArticles(
 
   <article class="fade-in">
     <header class="log-entry-header">
-      <div class="article-actions">
-        <CopyMarkdownButton client:idle slug={slug} />
-      </div>
       {frontmatter.date && (
+        <div class="article-header-tools">
+          <div class="publication-meta">
+            Published on <time datetime={frontmatter.date.toISOString()}>
+              {new Date(frontmatter.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+            </time>
+            {frontmatter.updated && (
+              <>
+                {' • '}Updated on <time datetime={frontmatter.updated.toISOString()}>
+                  {new Date(frontmatter.updated).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                </time>
+              </>
+            )}
+          </div>
+          <div class="article-actions">
+            <CopyMarkdownButton client:idle slug={slug} />
+            <ChatGPTButton client:idle slug={slug} title={frontmatter.title} />
+          </div>
+        </div>
+      )}
+      <h1>{frontmatter.title}</h1>
+      {frontmatter.author && (
         <p class="log-entry-meta">
-          Published on <time datetime={frontmatter.date.toISOString()}>
-            {new Date(frontmatter.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-          </time>
-          {frontmatter.updated && (
-            <>
-              {' • '}Updated on <time datetime={frontmatter.updated.toISOString()}>
-                {new Date(frontmatter.updated).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-              </time>
-            </>
-          )}
           <span class="author-meta">
-            by <a href="#author" class="author-link">{frontmatter.author || "Nikola Balić"}</a>
+            by <a href="/bio" class="author-link">{frontmatter.author}</a>
           </span>
         </p>
       )}
-      <h1>{frontmatter.title}</h1>
       {frontmatter.tldr && (
         <p class="log-entry-tldr">TL;DR &gt;&gt; {frontmatter.tldr} &lt;&lt;</p>
       )}
@@ -165,16 +173,20 @@ const relatedArticlesEntries = getDiverseRelatedArticles(
     )}
 
     <CSSFadeIn delay={0.2}>
-      <section class="author-section" id="author">
+      <section class="author-section" id="author" itemscope itemtype="https://schema.org/Person">
         <div class="author-container">
-          <div class="author-avatar">
-            <a href="/about" aria-label="Learn more about Nikola Balić">
-              <img src="/avatar/avatar-nibzard.png" alt="Nikola Balić" class="author-image" />
-            </a>
-          </div>
           <div class="author-info">
-            <h3 class="author-name">Nikola Balić</h3>
-            <p class="author-bio">I build go-to-market engines for AI driven products that matter.</p>
+            <h3 class="author-name">
+              <a href="/bio" class="author-link" itemprop="url">
+                <span itemprop="name">Nikola Balić</span>
+              </a>
+            </h3>
+            <p class="author-bio" itemprop="description">
+              Building go-to-market engines for AI-driven products with purpose.
+              Worked with innovative startups like <strong>Numarics</strong>, <strong>Codeanywhere</strong>,
+              <strong>Daytona</strong>, and <strong>Steel</strong> on growth strategies and market positioning.
+              Faculty at University of Split, researching AI adoption patterns and developer tools.
+            </p>
             <div class="author-social">
               <a href="https://x.com/nibzard" target="_blank" rel="noopener noreferrer" class="author-social-link" aria-label="Follow on X">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">

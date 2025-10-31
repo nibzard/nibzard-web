@@ -42,7 +42,7 @@ export const AUTHOR_INFO: AuthorInfo = {
   ],
   url: "https://nibzard.com",
   image: "https://nibzard.com/avatar/avatar-nibzard.png",
-  description: "I build go-to-market engines for AI driven products that matter. Expert in scaling innovation ecosystems and digital transformation.",
+  description: "Building go-to-market engines for AI-driven products with purpose. Expert in scaling innovation ecosystems and digital transformation.",
   jobTitle: "Growth Marketing Leader & AI Strategy Consultant",
   worksFor: {
     "@type": "Organization",
