@@ -1,0 +1,136 @@
+---
+// ABOUTME: IfYouLikedThis component displays articles with semantically similar questions
+// ABOUTME: Uses answers_questions frontmatter for intelligent content recommendations
+
+import { formatTagForDisplay } from '../utils/tagUtils';
+
+interface Props {
+  similarEntries: Array<{
+    slug: string;
+    data: {
+      title: string;
+      description?: string;
+      tldr?: string;
+      date: Date;
+      tags?: string[];
+      answers_questions?: string[];
+    };
+  }>;
+  currentTitle: string;
+}
+
+const { similarEntries, currentTitle } = Astro.props;
+
+// Filter out current article if somehow included
+const filteredEntries = similarEntries.filter(
+  entry => entry.data.title !== currentTitle
+);
+---
+
+{filteredEntries.length > 0 && (
+  <section class="if-you-liked-section">
+    <h2 class="if-you-liked-title">If You Liked This</h2>
+    <p class="if-you-liked-subtitle">These articles answer similar questions</p>
+    <div class="if-you-liked-grid">
+      {filteredEntries.map((entry) => (
+        <article class="if-you-liked-card">
+          <a href={`/${entry.slug}`}>
+            <h3>{entry.data.title}</h3>
+            {entry.data.description && (
+              <p class="if-you-liked-description">{entry.data.description}</p>
+            )}
+            {entry.data.answers_questions && entry.data.answers_questions.length > 0 && (
+              <div class="questions-preview">
+                <p class="question-item">→ {entry.data.answers_questions[0]}</p>
+              </div>
+            )}
+          </a>
+        </article>
+      ))}
+    </div>
+  </section>
+)}
+
+<style>
+  .if-you-liked-section {
+    margin: var(--space-3xl) 0;
+    padding: var(--space-2xl) 0;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .if-you-liked-title {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--space-xs);
+    font-family: var(--font-heading);
+    color: var(--color-text-heading);
+  }
+
+  .if-you-liked-subtitle {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-xl);
+    font-family: var(--font-sans);
+  }
+
+  .if-you-liked-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-lg);
+  }
+
+  .if-you-liked-card {
+    padding: var(--space-xl);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    transition: var(--transition-normal);
+    background: var(--color-background);
+  }
+
+  .if-you-liked-card:hover {
+    border-color: var(--color-accent2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  .if-you-liked-card a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  .if-you-liked-card h3 {
+    font-size: var(--font-size-md);
+    margin-bottom: var(--space-md);
+    color: var(--color-text-heading);
+    font-family: var(--font-mono);
+    line-height: var(--line-height-tight);
+  }
+
+  .if-you-liked-description {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-md);
+    line-height: var(--line-height-relaxed);
+    font-family: var(--font-sans);
+  }
+
+  .questions-preview {
+    margin-top: var(--space-md);
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .question-item {
+    font-size: var(--font-size-xs);
+    color: var(--color-accent2);
+    font-family: var(--font-sans);
+    font-style: italic;
+    line-height: var(--line-height-relaxed);
+  }
+
+  @media (max-width: 768px) {
+    .if-you-liked-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

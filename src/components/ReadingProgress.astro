@@ -1,0 +1,216 @@
+---
+// ABOUTME: Reading progress bar with article suggestions at 80% scroll
+// ABOUTME: Uses localStorage for permanent dismissal (user preference persists across sessions)
+
+interface Props {
+  suggestedArticles: Array<{
+    slug: string;
+    data: {
+      title: string;
+      description?: string;
+    };
+  }>;
+}
+
+const { suggestedArticles } = Astro.props;
+---
+
+<div id="reading-progress-bar" class="reading-progress"></div>
+
+<div id="reading-suggestions" class="reading-suggestions hidden">
+  {suggestedArticles.length > 0 && (
+    <div class="suggestions-content">
+      <div class="suggestion-text">
+        <span class="suggestion-label">Read next:</span>
+        <a href={`/${suggestedArticles[0].slug}`} class="suggestion-link">
+          {suggestedArticles[0].data.title}
+        </a>
+      </div>
+      <button id="dismiss-suggestions" class="dismiss-btn" aria-label="Dismiss suggestions">×</button>
+    </div>
+  )}
+</div>
+
+<script>
+  // Reading progress bar and suggestions
+  const STORAGE_KEY = 'nibzard_reading_suggestions_dismissed';
+
+  function updateReadingProgress() {
+    const scrollableHeight =
+      document.documentElement.scrollHeight - window.innerHeight;
+    const scrolled = window.scrollY;
+    const progressBar = document.getElementById('reading-progress-bar');
+    const suggestions = document.getElementById('reading-suggestions');
+
+    if (!progressBar) return;
+
+    const progress = (scrolled / scrollableHeight) * 100;
+    progressBar.style.width = Math.min(100, progress) + '%';
+
+    // Check if user has dismissed suggestions this session
+    const isDismissed = sessionStorage.getItem(STORAGE_KEY) === 'true';
+
+    // Show suggestions at 80% progress (only if not dismissed this session)
+    if (progress >= 80 && suggestions && !isDismissed) {
+      if (!suggestions.classList.contains('visible')) {
+        suggestions.classList.remove('hidden');
+        suggestions.classList.add('visible');
+      }
+    }
+  }
+
+  // Handle per-session dismissal
+  const dismissBtn = document.getElementById('dismiss-suggestions');
+  const suggestions = document.getElementById('reading-suggestions');
+
+  if (dismissBtn && suggestions) {
+    dismissBtn.addEventListener('click', () => {
+      // Save dismissal preference to sessionStorage (per-session only)
+      sessionStorage.setItem(STORAGE_KEY, 'true');
+
+      // Hide suggestions with animation
+      suggestions.classList.remove('visible');
+      suggestions.classList.add('hidden');
+    });
+  }
+
+  // Attach scroll listener with throttle for performance
+  let scrollTimeout: NodeJS.Timeout;
+  window.addEventListener('scroll', () => {
+    if (scrollTimeout) clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(updateReadingProgress, 10);
+  }, { passive: true });
+
+  // Initial update
+  updateReadingProgress();
+</script>
+
+<style>
+  .reading-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-accent1), var(--color-accent2));
+    z-index: 1000;
+    width: 0%;
+    transition: width 0.1s ease-out;
+    pointer-events: none;
+  }
+
+  .reading-suggestions {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--color-background);
+    border-top: 2px solid var(--color-accent1);
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 999;
+    transform: translateY(100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .reading-suggestions.visible {
+    transform: translateY(0);
+  }
+
+  .reading-suggestions.hidden {
+    transform: translateY(100%);
+  }
+
+  .suggestions-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: var(--space-lg) var(--space-xl);
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+  }
+
+  .suggestion-text {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .suggestion-label {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    font-family: var(--font-metadata);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+  }
+
+  .suggestion-link {
+    color: var(--color-accent2);
+    text-decoration: none;
+    font-size: var(--font-size-md);
+    font-family: var(--font-heading);
+    transition: var(--transition-fast);
+    font-weight: 500;
+  }
+
+  .suggestion-link:hover {
+    color: var(--color-accent1);
+    text-decoration: underline;
+  }
+
+  .dismiss-btn {
+    flex-shrink: 0;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-fast);
+    border-radius: var(--border-radius-sm);
+    line-height: 1;
+  }
+
+  .dismiss-btn:hover {
+    color: var(--color-accent1);
+    background: var(--color-background-alt);
+  }
+
+  .dismiss-btn:focus {
+    outline: 2px solid var(--color-accent1);
+    outline-offset: 2px;
+  }
+
+  @media (max-width: 768px) {
+    .suggestions-content {
+      padding: var(--space-md) var(--space-lg);
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--space-sm);
+    }
+
+    .suggestion-text {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--space-xs);
+      padding-right: var(--space-xl);
+    }
+
+    .suggestion-link {
+      font-size: var(--font-size-sm);
+    }
+
+    .dismiss-btn {
+      position: absolute;
+      top: var(--space-sm);
+      right: var(--space-sm);
+    }
+  }
+</style>

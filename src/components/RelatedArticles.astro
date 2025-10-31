@@ -1,0 +1,130 @@
+---
+// ABOUTME: Related Articles component displays 3 contextually similar articles based on tag/topic matching
+// ABOUTME: Used to reduce bounce rate by showing relevant content recommendations
+
+import { formatTagForDisplay } from '../utils/tagUtils';
+
+interface Props {
+  relatedEntries: Array<{
+    slug: string;
+    data: {
+      title: string;
+      description?: string;
+      tldr?: string;
+      date: Date;
+      tags?: string[];
+    };
+  }>;
+  currentTitle: string;
+}
+
+const { relatedEntries, currentTitle } = Astro.props;
+
+// Filter out current article if somehow included
+const filteredEntries = relatedEntries.filter(
+  entry => entry.data.title !== currentTitle
+);
+---
+
+{filteredEntries.length > 0 && (
+  <section class="related-articles-section">
+    <h2 class="related-articles-title">Related Articles</h2>
+    <div class="related-articles-grid">
+      {filteredEntries.map((entry) => (
+        <article class="related-article-card">
+          <a href={`/${entry.slug}`}>
+            <h3>{entry.data.title}</h3>
+            {entry.data.tldr && (
+              <p class="related-tldr">{entry.data.tldr}</p>
+            )}
+            {entry.data.tags && entry.data.tags.length > 0 && (
+              <div class="related-tags">
+                {entry.data.tags.slice(0, 3).map(tag => (
+                  <span class="mini-tag">{formatTagForDisplay(tag)}</span>
+                ))}
+              </div>
+            )}
+          </a>
+        </article>
+      ))}
+    </div>
+  </section>
+)}
+
+<style>
+  .related-articles-section {
+    margin: var(--space-3xl) 0 var(--space-2xl);
+  }
+
+  .related-articles-title {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-xl);
+    font-family: var(--font-heading);
+    color: var(--color-text-heading);
+  }
+
+  .related-articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-lg);
+  }
+
+  .related-article-card {
+    padding: var(--space-lg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    transition: var(--transition-normal);
+    background: var(--color-background);
+  }
+
+  .related-article-card:hover {
+    border-color: var(--color-accent1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .related-article-card a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  .related-article-card h3 {
+    font-size: var(--font-size-md);
+    margin-bottom: var(--space-sm);
+    color: var(--color-text-heading);
+    font-family: var(--font-mono);
+    line-height: var(--line-height-tight);
+  }
+
+  .related-tldr {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-md);
+    line-height: var(--line-height-relaxed);
+    font-family: var(--font-sans);
+  }
+
+  .related-tags {
+    display: flex;
+    gap: var(--space-xs);
+    flex-wrap: wrap;
+  }
+
+  .mini-tag {
+    font-size: var(--font-size-xs);
+    padding: var(--space-3xs) var(--space-xs);
+    background: var(--color-background-alt);
+    border-radius: var(--border-radius-sm);
+    color: var(--color-text-muted);
+    font-family: var(--font-metadata);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  @media (max-width: 768px) {
+    .related-articles-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
