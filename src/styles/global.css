@@ -857,7 +857,7 @@ table tbody tr:hover,
 
 /* === Content Entries (log, thought, now) === */
 .log-entry, .thought-item, .now-item {
-  position: relative;
+  position: relative; /* Critical for containing absolute link */
   padding: 1.5rem;
   background-color: var(--color-background-alt);
   border-radius: 0;
@@ -1047,6 +1047,31 @@ table tbody tr:hover,
 .log-entry:hover, .thought-item:hover, .now-item:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Clickable card styles */
+.log-entry,
+.now-item {
+  cursor: pointer;
+}
+
+/* Position tags to ensure they remain clickable */
+.entry-tags {
+  position: relative;
+  z-index: 10;
+}
+
+/* Focus styles for accessibility */
+.log-entry:focus,
+.now-item:focus {
+  outline: 2px solid var(--color-accent1);
+  outline-offset: 2px;
+}
+
+/* Ensure tags have their own focus styles */
+.entry-tags .tag:focus {
+  outline: 2px solid var(--color-accent2);
+  outline-offset: 2px;
 }
 
 .entry-meta {

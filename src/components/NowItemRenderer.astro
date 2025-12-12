@@ -17,7 +17,13 @@ const headings = Array.from(headingMatches, match => match[1]);
 const previewText = headings.length > 0 ? headings.join(', ') : 'Current thoughts and updates';
 ---
 
-<div class="now-item">
+<div
+  class="now-item"
+  data-href="/now"
+  role="button"
+  tabIndex="0"
+  aria-label="Read current thoughts and updates"
+>
   <div class="entry-meta">
     <time datetime={entry.data.date.toISOString()}>
       {new Date(entry.data.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
@@ -26,6 +32,5 @@ const previewText = headings.length > 0 ? headings.join(', ') : 'Current thought
   </div>
   <div class="now-item-content">
     <p class="now-preview">{previewText}</p>
-    <a href="/now" class="now-cta">read where my mind is now →</a>
   </div>
 </div>

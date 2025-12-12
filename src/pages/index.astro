@@ -201,7 +201,14 @@ const feedEntries = allFeedEntries.slice(startIndex, endIndex); // These are the
 
     
                 return (
-                  <article class={`log-entry ${isDoubleWidth ? 'double-width' : ''}`} style={borderStyle}>
+                  <article
+                    class={`log-entry ${isDoubleWidth ? 'double-width' : ''}`}
+                    style={borderStyle}
+                    data-href={`/${logEntry.slug}`}
+                    role="button"
+                    tabIndex="0"
+                    aria-label={`Read article: ${'title' in logEntry.data ? logEntry.data.title : 'Log Entry'}`}
+                  >
                     <div class="entry-meta">
                       <time datetime={(logEntry.data.updated || logEntry.data.date).toISOString()}>
                         {logEntry.data.updated ? (
@@ -215,9 +222,7 @@ const feedEntries = allFeedEntries.slice(startIndex, endIndex); // These are the
                       </time>
                     </div>
                     <div class="log-entry-content">
-                      <h2>
-                        <a href={`/${logEntry.slug}`}>{'title' in logEntry.data ? logEntry.data.title : 'Log Entry'}</a>
-                      </h2>
+                      <h2>{'title' in logEntry.data ? logEntry.data.title : 'Log Entry'}</h2>
                       {'tldr' in logEntry.data && logEntry.data.tldr && (
                         <p class="log-entry-tldr">{logEntry.data.tldr}</p>
                       )}
@@ -296,6 +301,43 @@ const feedEntries = allFeedEntries.slice(startIndex, endIndex); // These are the
   // @ts-nocheck
   // Initialize functionality for the interactive elements
   document.addEventListener('DOMContentLoaded', () => {
+    // Handle card clicks and keyboard navigation for log entries
+    const logEntries = document.querySelectorAll('.log-entry');
+    const nowItems = document.querySelectorAll('.now-item');
+
+    // Function to handle clickable cards
+    const makeCardClickable = (card) => {
+      // Handle card clicks
+      card.addEventListener('click', (e) => {
+        // Check if click is on a tag link (only for log entries)
+        const isTagClick = e.target.closest('.entry-tags .tag');
+        if (!isTagClick) {
+          // Navigate to destination
+          const href = card.getAttribute('data-href');
+          if (href) {
+            window.location.href = href;
+          }
+        }
+      });
+
+      // Handle keyboard navigation
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          const href = card.getAttribute('data-href');
+          if (href) {
+            window.location.href = href;
+          }
+        }
+      });
+    };
+
+    // Make log entries clickable
+    logEntries.forEach(makeCardClickable);
+
+    // Make now items clickable
+    nowItems.forEach(makeCardClickable);
+
     // Newsletter form handling
     const newsletterForm = document.querySelector('.newsletter-form');
     if (newsletterForm) {
