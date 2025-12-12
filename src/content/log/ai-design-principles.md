@@ -1,5 +1,5 @@
 ---
-title: "A 2026 Design Constitution for AI-Native Products"
+title: "A 2026 Design Principles for AI-Native Products"
 description: "Software is no longer a noun, it's a verb. Here's how to design for AI-native products where users shape outcomes."
 tldr: "In the AI era, design shifts from fixed features to malleable environments. Users don't want apps—they want capabilities. Control, reversibility, and provenance matter more than polish."
 date: 2025-12-12
