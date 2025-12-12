@@ -5,6 +5,7 @@ tldr: "In the AI era, design shifts from fixed features to malleable environment
 date: 2025-12-12
 tags: [AI, DESIGN, PRINCIPLES, USER-EXPERIENCE]
 draft: false
+featured: true
 author: "Nikola Balić"
 topics: [AI product design, user experience, design Principles, human-AI interaction]
 entities: [AI agents, collaborative interfaces, generative UI]
