@@ -1,0 +1,637 @@
+/* === Content Module === */
+/* Article images, log content typography, quotes, and content-specific styles */
+
+/* === Enhanced Article Images === */
+article img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: var(--space-xl) auto var(--space-xl) auto;
+  border-radius: var(--border-radius-lg);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background-color: var(--color-background);
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.08);
+  transition: all var(--transition-normal);
+  overflow: hidden;
+}
+
+article img:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.12),
+    0 2px 4px rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+/* Ensure proper spacing after images */
+article img + * {
+  margin-top: var(--space-lg) !important;
+}
+
+/* Special spacing for image descriptions */
+.image-description + * {
+  margin-top: var(--space-md) !important;
+}
+
+/* === Image Description === */
+.image-description {
+  margin: 0 0 1.5rem 0;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  display: inline-flex;
+}
+
+.image-description::before {
+  content: "✧ ";
+  margin-right: 0.5em;
+  opacity: 0.7;
+  font-size: 1.1em;
+  vertical-align: text-top;
+}
+
+/* === Enhanced Log Content Readability === */
+
+/* Main log content container */
+.log-content {
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* H2 headings */
+.log-content h2 {
+  font-size: 1.4rem;
+  color: var(--color-accent1);
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-lg);
+  font-weight: 700;
+  padding: var(--space-sm) 0;
+  border-bottom: 2px solid var(--color-border);
+  position: relative;
+  font-family: var(--font-mono);
+}
+
+.log-content h2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 60px;
+  height: 2px;
+  background-color: var(--color-accent1);
+}
+
+/* H2 text maintains heading styles when wrapped in anchor */
+.log-content h2 a:not(.heading-anchor) {
+  color: var(--color-accent1) !important;
+  text-decoration: none !important;
+  font-weight: 700;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.log-content h2 a:not(.heading-anchor):hover {
+  color: var(--color-accent1) !important;
+  text-decoration: none !important;
+}
+
+/* Heading anchor styles */
+.heading-anchor {
+  color: #2d3748 !important;
+  text-decoration: none !important;
+  font-weight: 400;
+  margin-right: var(--space-sm);
+  opacity: 0.7;
+  transition: opacity var(--transition-fast), color var(--transition-fast);
+  display: inline-block;
+}
+
+.log-content h2:hover .heading-anchor {
+  opacity: 1;
+}
+
+.heading-anchor:hover {
+  color: var(--color-accent2) !important;
+  text-decoration: none !important;
+  opacity: 1;
+}
+
+/* Paragraphs */
+.log-content p {
+  margin-bottom: var(--space-md);
+  line-height: 1.45;
+  font-size: 1rem;
+}
+
+/* Inline code */
+.log-content code {
+  background-color: var(--color-background-alt);
+  padding: 0.15rem 0.4rem;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  border: 1px solid var(--color-border);
+  color: var(--color-accent2);
+  font-weight: 600;
+  font-family: var(--font-code);
+}
+
+/* Pre blocks */
+.log-content pre {
+  background-color: #2d3748;
+  border: 1px solid #4a5568;
+  border-radius: var(--border-radius);
+  padding: var(--space-md);
+  overflow-x: auto;
+  margin: var(--space-md) 0;
+  color: #e2e8f0;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+  position: relative;
+}
+
+.log-content pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
+}
+
+/* Lists */
+.log-content ul,
+.log-content ol {
+  margin: var(--space-md) 0;
+  padding-left: 2rem;
+  line-height: 1.6;
+}
+
+.log-content li {
+  margin-bottom: var(--space-sm);
+  line-height: 1.65;
+  font-size: 1rem;
+}
+
+.log-content ul ul,
+.log-content ol ol {
+  margin: var(--space-xs) 0;
+  padding-left: 1.5rem;
+}
+
+.log-content ul ul li,
+.log-content ol ol li {
+  margin-bottom: var(--space-xs);
+  font-size: 0.95rem;
+}
+
+/* List styling callouts */
+.log-content li strong:first-child {
+  color: var(--color-accent1);
+  font-weight: 600;
+}
+
+/* Emphasis */
+.log-content em {
+  color: var(--color-accent1-muted);
+  font-style: normal;
+  font-weight: 400;
+  font-family: var(--font-emphasis);
+}
+
+/* Blockquotes */
+.log-content blockquote:not(.featured-quote) {
+  border-left: 3px solid var(--color-accent1);
+  margin: var(--space-lg) 0;
+  color: var(--color-text);
+  background-color: var(--color-background-alt);
+  padding: var(--space-lg);
+  padding-left: calc(var(--space-lg) + 3rem);
+  border-radius: var(--border-radius);
+  position: relative;
+  overflow: hidden;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  font-weight: 300;
+  font-style: normal;
+  text-indent: 0;
+}
+
+.log-content blockquote:not(.featured-quote)::before {
+  content: '\201C';
+  position: absolute;
+  top: -0.5rem;
+  left: var(--space-lg);
+  font-size: 6rem;
+  opacity: 0.15;
+  font-family: var(--font-serif);
+}
+
+.log-content blockquote:not(.featured-quote) p {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  margin-bottom: var(--space-sm);
+  position: relative;
+  z-index: 1;
+  font-weight: 300;
+  font-style: normal;
+  text-indent: 0;
+}
+
+.log-content blockquote:not(.featured-quote) cite {
+  display: block;
+  font-size: 1rem;
+  font-style: normal;
+  text-align: right;
+  opacity: 0.8;
+  margin-top: var(--space-sm);
+}
+
+/* Featured quotes */
+.featured-quote {
+  margin: var(--space-lg) 0;
+  padding: var(--space-lg);
+  padding-left: calc(var(--space-lg) + 3rem);
+  border-radius: var(--border-radius);
+  position: relative;
+  overflow: hidden;
+}
+
+.featured-quote::before {
+  content: '\201C';
+  position: absolute;
+  top: -0.5rem;
+  left: var(--space-lg);
+  font-size: 6rem;
+  opacity: 0.15;
+  font-family: var(--font-serif);
+}
+
+.featured-quote p {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  margin-bottom: var(--space-sm);
+  position: relative;
+  z-index: 1;
+  font-weight: 300;
+  font-style: normal;
+  text-indent: 0;
+}
+
+.featured-quote cite {
+  display: block;
+  font-size: 1rem;
+  font-style: normal;
+  text-align: right;
+  opacity: 0.8;
+  margin-top: var(--space-sm);
+}
+
+/* Featured quote within log content */
+.log-content .featured-quote {
+  margin: var(--space-lg) 0;
+  padding: var(--space-lg);
+  padding-left: calc(var(--space-lg) + 3rem);
+  border-radius: var(--border-radius);
+  position: relative;
+  overflow: hidden;
+  border-left: 3px solid var(--color-accent2);
+  font-size: 1.5rem;
+  line-height: 1.4;
+  font-weight: 300;
+  font-style: normal;
+  text-indent: 0;
+}
+
+.log-content .featured-quote::before {
+  content: '\201C';
+  position: absolute;
+  top: -0.5rem;
+  left: var(--space-lg);
+  font-size: 6rem;
+  opacity: 0.15;
+  font-family: var(--font-serif);
+}
+
+.log-content .featured-quote p {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  margin-bottom: var(--space-sm);
+  position: relative;
+  z-index: 1;
+  font-weight: 300;
+  font-style: normal;
+  text-indent: 0;
+}
+
+.log-content .featured-quote cite {
+  display: block;
+  font-size: 1rem;
+  font-style: normal;
+  text-align: right;
+  opacity: 0.8;
+  margin-top: var(--space-sm);
+}
+
+/* Featured quote color variants */
+.featured-quote.primary {
+  background-color: #E3F2FD;
+  color: #0D47A1;
+}
+
+.featured-quote.secondary {
+  background-color: #F3E5F5;
+  color: #4A148C;
+}
+
+.featured-quote.accent {
+  background-color: #FFF3E0;
+  color: #C43E00;
+}
+
+.featured-quote.unattributed {
+  background-color: #E8EAF6;
+  color: #1A237E;
+  border-left: 3px solid var(--color-accent2);
+  padding-left: calc(var(--space-lg) - 3px);
+}
+
+/* Log content featured quote variants */
+.log-content .featured-quote.primary {
+  background-color: #E3F2FD;
+  color: #0D47A1;
+  border-left-color: #0D47A1;
+}
+
+.log-content .featured-quote.secondary {
+  background-color: #F3E5F5;
+  color: #4A148C;
+  border-left-color: #4A148C;
+}
+
+.log-content .featured-quote.accent {
+  background-color: #FFF3E0;
+  color: #C43E00;
+  border-left-color: #C43E00;
+}
+
+.log-content .featured-quote.unattributed {
+  background-color: #E8EAF6;
+  color: #1A237E;
+  border-left-color: #1A237E;
+}
+
+/* Alert callouts in log content */
+.log-content .alert {
+  margin: var(--space-lg) 0;
+}
+
+/* Tags section after log content */
+.log-content + .tags {
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-xl);
+  padding: var(--space-md) 0;
+}
+
+/* Read more section */
+.read-more-section {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--color-border);
+}
+
+.read-more-title {
+  margin-bottom: var(--space-lg);
+  font-size: 1.5rem;
+  color: var(--color-text);
+  font-family: var(--font-mono);
+  font-weight: 600;
+}
+
+/* Visual breaks between sections */
+.log-content p + ul {
+  margin-top: var(--space-md);
+}
+
+.log-content ul + p {
+  margin-top: var(--space-lg);
+}
+
+/* === URL Breaking for Mobile === */
+/* Fix long URLs breaking mobile layout */
+a[href^="http"],
+a[href^="https"],
+a[href*="://"] {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+  max-width: 100%;
+}
+
+.log-content a {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+  max-width: 100%;
+}
+
+.log-content p a,
+.log-content li a {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Handle italic GitHub links with aggressive breaking */
+.log-content em a,
+.log-content em,
+.log-content i a,
+.log-content i {
+  word-break: break-all;
+  overflow-wrap: anywhere;
+  hyphens: none;
+}
+
+/* === CodeBlock Styles === */
+.code-block {
+  background-color: #1e1e1e;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  margin: var(--space-md) 0;
+}
+
+.code-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: var(--space-xs) var(--space-sm);
+  color: #ccc;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+
+.copy-button {
+  background: none;
+  border: 1px solid #555;
+  color: #ccc;
+  padding: 2px var(--space-xs);
+  border-radius: 3px;
+  font-size: 0.7rem;
+  cursor: pointer;
+}
+
+.code-block pre {
+  margin: 0;
+  padding: var(--space-md);
+  overflow-x: auto;
+}
+
+.code-block code {
+  color: #ccc;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* === Enhanced Image Items (from ImageRenderer) === */
+.image-item {
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.image-item .entry-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-md);
+  gap: var(--space-md);
+  font-family: var(--font-mono);
+  font-weight: 500;
+}
+
+.image-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.image-display {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border-radius: var(--border-radius-lg);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background-color: var(--color-background);
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.08);
+  transition: all var(--transition-normal);
+  overflow: hidden;
+}
+
+.image-display:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.12),
+    0 2px 4px rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+/* === Idea Card Integration === */
+.idea-card {
+  margin-bottom: var(--space-xl);
+}
+
+.feed-timeline .idea-card {
+  animation-delay: inherit;
+}
+
+/* === Responsive Mobile === */
+@media (max-width: 768px) {
+  .log-content table,
+  .log-content .table {
+    min-width: 320px;
+    font-size: var(--font-size-sm);
+  }
+
+  .log-content table td,
+  .log-content .table td {
+    padding: var(--space-sm);
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    max-width: 0;
+  }
+
+  .log-content table td a,
+  .log-content .table td a {
+    word-break: break-all;
+    overflow-wrap: anywhere;
+    hyphens: none;
+    max-width: 100%;
+    display: block;
+  }
+
+  .log-content table code,
+  .log-content .table code {
+    word-break: break-all;
+    white-space: pre-wrap;
+  }
+
+  .log-content p {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+
+  .log-content a[href^="http"],
+  .log-content a[href^="https"],
+  .log-content a[href*="://"] {
+    word-break: break-all;
+    overflow-wrap: anywhere;
+    hyphens: none;
+    max-width: 100%;
+    line-height: 1.4;
+  }
+
+  .log-content code {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+  }
+
+  .log-content p,
+  .log-content li,
+  .log-content td,
+  .log-content th {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .feed-timeline .idea-card {
+    margin-left: calc(-1 * var(--space-md));
+    margin-right: calc(-1 * var(--space-md));
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+
+  main {
+    min-width: 0;
+    overflow-x: hidden;
+  }
+}
+
+@media (max-width: 768px) {
+  .featured-quote p {
+    font-size: 1.2rem;
+  }
+}

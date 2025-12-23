@@ -1,0 +1,114 @@
+/* === Masonry Grid System === */
+/* CSS Grid implementation for masonry layout */
+
+.masonry-grid {
+  display: grid;
+  gap: var(--space-lg);
+  margin: var(--space-lg) 0;
+  max-width: 1200px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  /* Auto-fit with minmax creates responsive columns */
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  /* Enable dense packing for better space utilization */
+  grid-auto-flow: dense;
+}
+
+/* Base items */
+.masonry-grid .log-entry,
+.masonry-grid .thought-item,
+.masonry-grid .now-item,
+.masonry-grid .image-container,
+.masonry-grid .idea-card {
+  min-width: 380px;
+}
+
+/* Double width spans 2 columns */
+.masonry-grid .log-entry.double-width,
+.masonry-grid .thought-item.double-width,
+.masonry-grid .now-item.double-width {
+  grid-column: span 2;
+}
+
+/* Decorative squirrel for double-width log entries */
+.masonry-grid .log-entry.double-width {
+  background-image:
+    linear-gradient(var(--color-background-alt), var(--color-background-alt)),
+    url('/images/squirel_xs.jpeg');
+  background-blend-mode: darken, normal;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: 200px auto;
+}
+
+/* Add breathing room on wide screens so text doesn't sit over image */
+@media (min-width: 900px) {
+  .masonry-grid .log-entry.double-width {
+    padding-right: 0;
+  }
+}
+
+/* Hide the decorative image on smaller screens where double-width collapses */
+@media (max-width: 899px) {
+  .masonry-grid .log-entry.double-width {
+    background-image: none;
+    padding-right: inherit;
+  }
+}
+
+/* Medium screens (900-1199px) */
+@media (max-width: 1199px) and (min-width: 900px) {
+  .masonry-grid {
+    max-width: 1000px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+
+  .masonry-grid .log-entry,
+  .masonry-grid .thought-item,
+  .masonry-grid .now-item,
+  .masonry-grid .image-container,
+  .masonry-grid .idea-card {
+    min-width: 320px;
+  }
+}
+
+/* Tablet (640-899px) */
+@media (max-width: 899px) {
+  .masonry-grid {
+    gap: var(--space-md);
+    max-width: 800px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .masonry-grid .log-entry.double-width,
+  .masonry-grid .thought-item.double-width,
+  .masonry-grid .now-item.double-width {
+    grid-column: span 1; /* Collapse to single column */
+  }
+}
+
+/* Mobile (640px and below) */
+@media (max-width: 640px) {
+  .masonry-grid {
+    gap: var(--space-md);
+    max-width: 600px;
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Hover effects */
+.masonry-grid .log-entry:hover,
+.masonry-grid .thought-item:hover,
+.masonry-grid .now-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile-specific tag styles */
+@media (max-width: 768px) {
+  .masonry-grid .tag-container .tag {
+    white-space: normal;
+    font-size: 0.7rem;
+  }
+}

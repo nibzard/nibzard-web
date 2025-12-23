@@ -1,0 +1,233 @@
+/* === Layout Containers === */
+
+/* Main content area */
+main {
+  margin: 0 auto;
+  padding: 0 var(--space-md) var(--space-lg) var(--space-md);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* Add extra padding for very wide screens to balance content */
+@media (min-width: 1600px) {
+  main {
+    padding-left: var(--space-xl);
+    padding-right: var(--space-xl);
+  }
+}
+
+@media (min-width: 2000px) {
+  main {
+    padding-left: var(--space-2xl);
+    padding-right: var(--space-2xl);
+  }
+}
+
+/* Inner container for centered content */
+.inner-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding-left: var(--space-md);
+  padding-right: var(--space-md);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* === Site Header === */
+.site-header {
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: var(--space-md);
+  background-color: var(--color-subtle-bg);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 56px;
+}
+
+.logo {
+  font-family: var(--font-mono-krypton);
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  font-feature-settings: 'liga' 1, 'calt' 1;
+}
+
+.logo .accent1 {
+  color: var(--color-accent1);
+  font-weight: 900;
+  margin-right: 2px;
+}
+
+.site-nav {
+  margin-left: auto;
+}
+
+.site-nav ul {
+  display: flex;
+  gap: var(--space-xl);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+}
+
+.site-nav li {
+  display: flex;
+  align-items: center;
+}
+
+.site-nav a {
+  font-family: var(--font-mono-krypton);
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--color-text);
+  transition: color var(--transition-fast), border-bottom 0.2s;
+  padding: 2px 0;
+  border-bottom: 2px solid transparent;
+  position: relative;
+  font-feature-settings: 'liga' 1, 'calt' 1;
+  letter-spacing: 0.02em;
+}
+
+.site-nav a:hover,
+.site-nav a:focus,
+.site-nav a.active {
+  color: var(--color-accent1);
+  border-bottom: 2px solid var(--color-accent1);
+  text-decoration: none;
+}
+
+/* === Footer Styles === */
+footer.full-width {
+  padding: var(--space-lg) 0;
+  text-align: center;
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  margin-top: var(--space-xl);
+  border-top: 1px solid var(--color-border);
+  background-color: var(--color-subtle-bg);
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.04);
+  font-feature-settings: 'liga' 1, 'calt' 1;
+}
+
+.footer-content {
+  padding: var(--space-md) 0;
+}
+
+.ascii-divider {
+  font-family: var(--font-mono);
+  margin-bottom: var(--space-xs);
+  letter-spacing: 0.2em;
+  color: var(--color-border);
+  opacity: 0.7;
+  font-size: 1.2rem;
+}
+
+.footer-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-lg);
+}
+
+.footer-links {
+  display: flex;
+  gap: var(--space-xl);
+}
+
+.footer-links a {
+  color: var(--color-accent2);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: var(--font-ui);
+  transition: color 0.2s, border-bottom 0.2s;
+  border-bottom: 2px solid transparent;
+  padding: 2px 0;
+  font-feature-settings: 'liga' 1, 'calt' 1;
+}
+
+.footer-links a:hover {
+  text-decoration: none;
+  border-bottom: 2px solid var(--color-accent2);
+}
+
+.monospace {
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.accent1 {
+  color: var(--color-accent1);
+}
+
+footer.full-width p {
+  margin: 0;
+}
+
+/* === Section Spacer === */
+.section-spacer {
+  height: var(--space-xl);
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .footer-main {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+  }
+  .footer-links {
+    gap: var(--space-md);
+  }
+}
+
+@media (max-width: 600px) {
+  .search-bar-container {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0.5rem 0.25rem;
+  }
+
+  .search-bar {
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    border-right: 1.5px solid var(--color-border);
+    border-bottom: none;
+  }
+
+  .button-primary {
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    width: 100%;
+    margin-top: -1.5px;
+  }
+
+  .header-content {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-sm);
+  }
+
+  .site-nav ul {
+    gap: var(--space-md);
+    justify-content: flex-end;
+  }
+
+  .logo {
+    justify-content: flex-start;
+  }
+}
