@@ -1,7 +1,10 @@
 import { ActionError, defineAction } from 'astro:actions';
 import { Resend } from 'resend';
 
-const resend = new Resend(import.meta.env.RESEND_API_KEY);
+// Only initialize Resend if API key is available
+const resend = import.meta.env.RESEND_API_KEY
+  ? new Resend(import.meta.env.RESEND_API_KEY)
+  : null;
 
 // Define a type for the expected form data
 interface SubscribeFormData {
@@ -21,6 +24,14 @@ export const server = {
       }
 
       const email = formData.get('email') as string;
+
+      // Check if Resend is configured
+      if (!resend) {
+        throw new ActionError({
+          code: 'INTERNAL_SERVER_ERROR',
+          message: 'Newsletter service is not configured.',
+        });
+      }
 
       try {
         const { data, error } = await resend.contacts.create({
@@ -68,6 +79,14 @@ export const server = {
         });
       }
       const email = formData.get('email') as string;
+
+      // Check if Resend is configured
+      if (!resend) {
+        throw new ActionError({
+          code: 'INTERNAL_SERVER_ERROR',
+          message: 'Newsletter service is not configured.',
+        });
+      }
 
       try {
         // First, find the contact by email to get their ID
