@@ -192,7 +192,7 @@ rm -rf ~/.claude-zhipu
   chmod 700 ~/bin/claude-zhipu
   ```
 
-For more security, you can modify the wrapper to **prompt for the key at runtime** instead of hardcoding.
+For better security, consider using [`pass`](https://www.passwordstore.org/) to store your API key instead of hardcoding it.
 
 ---
 
