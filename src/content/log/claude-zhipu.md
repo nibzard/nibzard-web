@@ -23,7 +23,7 @@ The new command is called `claude-zhipu` and it won't interfere with your normal
 
 Zhipu AI recently launched their [GLM-4.7](https://z.ai/blog/glm-4.7) model with native support for Claude's API format, making it seamless to use existing Claude tools with their infrastructure.
 
-> **Christmas Offer**: Zhipu is running [50% off your first GLM Coding Plan purchase](https://z.ai/subscribe?ic=61HSE9HVY6) this December (affiliate link — gives you an additional 10% off).
+Zhipu is running [**50% off** your first GLM Coding Plan purchase](https://z.ai/subscribe?ic=61HSE9HVY6) this December.
 
 ![Zhipu AI GLM-4.7 Architecture](https://z-cdn-media.chatglm.cn/prompts-rich-media-resources/4.7-blog/20251223-004432.png)
 
