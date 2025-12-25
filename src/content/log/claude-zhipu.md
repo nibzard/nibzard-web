@@ -23,6 +23,8 @@ The new command is called `claude-zhipu` and it won't interfere with your normal
 
 Zhipu AI recently launched their [GLM-4.7](https://z.ai/blog/glm-4.7) model with native support for Claude's API format, making it seamless to use existing Claude tools with their infrastructure.
 
+> **Christmas Offer**: Zhipu is running [50% off your first GLM Coding Plan purchase](https://z.ai/subscribe?ic=61HSE9HVY6) this December (affiliate link — gives you an additional 10% off).
+
 ![Zhipu AI GLM-4.7 Architecture](https://z-cdn-media.chatglm.cn/prompts-rich-media-resources/4.7-blog/20251223-004432.png)
 
 ---
@@ -120,6 +122,12 @@ So you now have **two parallel Claude CLIs**:
 * `claude` → uses your existing Anthropic account / subscription
 * `claude-zhipu` → uses Zhipu API with your custom key
 
+### 💬 My Experience with the Max Plan
+
+I treated myself to the Max yearly plan for Christmas since they're running a promo. After 24 hours with three parallel agents running, I'd used about 40% of the 5-hour quota window—plenty for my workflow.
+
+The speed is the real difference: GLM-4.7 does 55+ tokens/second. The Max Plan gets you ~2,400 prompts every 5 hours, or about 3× the Claude Max (20x) allowance.
+
 ---
 
 ## 🆕 What's New in GLM-4.7
@@ -192,3 +200,4 @@ For more security, you can modify the wrapper to **prompt for the key at runtime
 
 - [Official Zhipu Claude Development Guide](https://docs.z.ai/scenario-example/develop-tools/claude) - Complete documentation for developing with Claude-compatible APIs
 - [GLM-4.7 Model Announcement](https://z.ai/blog/glm-4.7) - Technical details about Zhipu's latest model with interleaved thinking
+- [Get GLM Coding Plan](https://z.ai/subscribe?ic=61HSE9HVY6) — *Affiliate link, gives you additional 10% off*
