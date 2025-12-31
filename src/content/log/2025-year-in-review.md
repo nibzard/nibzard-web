@@ -35,6 +35,12 @@ That's when it hit me. The bottleneck wasn't AI capability anymore. It was me.
 
 Left Daytona when the AI runtime pivot was validated at the first AI Engineer Summit in NYC. Both OpenAI and Anthropic redefined AI agents with runtimes. The shift was real. We finally saw traction. It felt like the natural conclusion.
 
+Spent February in SF. Enjoyed the conversations, the density of people building. But honestly? Felt like the *fellow kids* meme the entire time.
+
+![Fellow Kids Meme](/images/fellow-kids-meme.jpg)
+
+20-somethings pitching AGI while I'm wondering if anyone remembers how databases work.
+
 "Excitable boy," they all said.
 
 ### Act Two: The Experimentation (Aug-Sep)
