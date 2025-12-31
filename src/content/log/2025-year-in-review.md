@@ -8,7 +8,7 @@ draft: false
 featured: true
 author: "Nikola Balić"
 topics: [AI evolution in 2025, agent orchestration, career transitions, startup advisory, agent labs vs model labs, developer tools transformation]
-entities: [Daytona, Codeanywhere, Steel.dev, Profico, Verdent, Claude Code, Anthropic, Bun, Cursor, Sourcegraph Amp, Cognition, MCP, RBCR algorithm]
+entities: [Daytona, Codeanywhere, Steel.dev, Profico, Verdent, Claude Code, Anthropic, Bun, Cursor, Sourcegraph Amp, Cognition, MCP, RBCR algorithm, Engram, EngramDB, Agrama, agentprobe, awesome-agentic-patterns, agentic-patterns.com, llm-answer-watcher, agent-perceptions, lmdb-tui, O'Reilly]
 answers_questions:
   - What happened in 2025?
   - How did AI evolve from assistant to teammate?
@@ -125,6 +125,12 @@ The year ended with Anthropic's acquisition of Bun—a move that redefined devto
 
 The new stack: **Model → Protocol (MCP) → Runtime (Bun) → Experience Layer**
 
+### Databases as Agent Infrastructure
+
+Explored databases as the foundation for agent orchestration, communication, and observability. Multiple iterations—[Engram](https://github.com/nibzard/engram-v3), [EngramDB](https://github.com/nibzard/EngramDB), [Agrama](https://github.com/nibzard/agrama-v2)—converged on a key insight: agents need shared memory with provenance.
+
+Built [lmdb-tui](https://github.com/nibzard/lmdb-tui) to explore efficient embedded databases. The lesson: high-performance, inspectable storage is non-negotiable for multi-agent systems.
+
 ---
 
 ## Technical Deep Dives
@@ -138,6 +144,14 @@ A multi-part algorithm journey that became a case study in AI-human collaboratio
 - Transformer-based orchestration: 855 best game
 
 Claude wrote 95% of the code. I provided direction. The results spoke for themselves.
+
+### Projects That Shaped My Thinking
+
+- **[agentprobe](https://github.com/nibzard/agentprobe)**: Built to test AI agent interaction with CLIs. Found that even `vercel deploy` takes 16-33 turns with 40% success rates.
+- **[awesome-agentic-patterns](https://github.com/nibzard/awesome-agentic-patterns)**: Curated catalog of real-world agent patterns. Now live at [agentic-patterns.com](https://agentic-patterns.com).
+- **[llm-answer-watcher](https://github.com/nibzard/llm-answer-watcher)**: Explored Agentic SEO (AEO)—optimizing for AI answer engines rather than traditional search.
+- **[agent-perceptions](https://github.com/nibzard/agent-perceptions)**: Survey research from O'Reilly coding agents event. Analyzed how developers perceive AI agents.
+- **[engram-lite](https://github.com/nibzard/engram-lite)**: Lightweight exploration of agent memory systems.
 
 ### Production Realities
 
@@ -198,6 +212,7 @@ This year wouldn't have been possible without:
 - The teams I advised—Steel.dev, Profico, Verdent—for trusting me with your vision
 - The communities that formed around these ideas—Hacker News discussions, GitHub contributors, Twitter threads
 - The students who forced me to articulate what I know
+- The broader AI community—[daytonaio/ai-enablement-stack](https://github.com/daytonaio/ai-enablement-stack) contributors, open-source collaborators, everyone building in public
 
 ---
 
