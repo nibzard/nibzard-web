@@ -1,6 +1,6 @@
 ---
 title: "2025: The Year AI Became a Teammate"
-description: "Personal and professional journey through AI's evolution from assistant to teammate—from leaving a PMF-stage startup to academia, advisory, and a summer of full-time AI experimentation."
+description: "AI became a teammate in 2025. From Daytona to academia, advisory, and a summer of full-time AI experimentation."
 tldr: "Left Daytona after 3 years, joined academia as full-time lecturer, advised Steel.dev, Profico, and Verdent, published 44 articles, 7,761 GitHub commits (27% AI-assisted). 2025 was the year orchestration replaced assistance."
 date: 2025-12-31
 tags: [META, YEAR-IN-REVIEW, AI, AGENTS, REFLECTION, STARTUPS, CAREER]
