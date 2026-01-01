@@ -55,6 +55,8 @@ Joined academia as a full-time lecturer—teaching SWE 101 and Science Engineeri
 
 Started advising. Steel.dev on growth (cracked group scaling infinite browser sessions). Profico as AI Engineer in Residence (strategy, architecture, implementation). Verdent, founded by the ex-head of algo at TikTok.
 
+Teaching SWE 101 to 3rd years and Science Engineering to 1st year MSc students revealed something: the next generation needs foundations more than ever. AI can write code, but understanding systems? That still requires wrestling with basics.
+
 Through intense experimentation, I gained a deep understanding of both the potential and the limitations. A privileged glimpse into the future—one that will be largely automated and AI-driven. But also confronted with reality: we're still years, maybe a decade, away from that vision fully materializing.
 
 ---
