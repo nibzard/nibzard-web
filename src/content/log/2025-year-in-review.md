@@ -1,7 +1,7 @@
 ---
 title: "2025: The Year AI Became a Teammate"
-description: "AI became a teammate in 2025. From Daytona to academia, advisory, and a summer of full-time AI experimentation."
-tldr: "Left Daytona after 3 years, joined academia as full-time lecturer, advised Steel.dev, Profico, and Verdent, published 44 articles, 7,761 GitHub commits (27% AI-assisted). 2025 was the year orchestration replaced assistance."
+description: "AI became a teammate in 2025. From startups back to academia, advisory, and a summer of full-time AI experimentation."
+Every 7 years I tend to take sabatical and do a major reset or change.
 date: 2025-12-31
 tags: [META, YEAR-IN-REVIEW, AI, AGENTS, REFLECTION, STARTUPS, CAREER]
 draft: false
@@ -10,32 +10,31 @@ author: "Nikola Balić"
 topics: [AI evolution in 2025, agent orchestration, career transitions, startup advisory, agent labs vs model labs, developer tools transformation]
 entities: [Daytona, Codeanywhere, Steel.dev, Profico, Verdent, Claude Code, Anthropic, Bun, Cursor, Sourcegraph Amp, Cognition, MCP, RBCR algorithm, Engram, EngramDB, Agrama, agentprobe, awesome-agentic-patterns, agentic-patterns.com, llm-answer-watcher, agent-perceptions, lmdb-tui, O'Reilly, Simon Willison, Andrej Karpathy]
 answers_questions:
-  - What happened in 2025?
+  - What happened with AI in 2025?
   - How did AI evolve from assistant to teammate?
-  - What were the major career transitions?
   - What does the shift from DX to AX mean?
-  - What are the predictions for 2026?
+  - What are the AI predictions for 2026?
 ---
 
-I left Daytona in early 2025. Three years—one at Codeanywhere, two at Daytona from day zero. We reached product-market fit with AI runtime infrastructure. The foundations were built, the plane was flying, and it was ready to keep going without me.
+I've made a habit of taking a "sabbatical" every few years to reset and reinvent. 2025 was the year to do it again.
+
+I left Daytona in May 2025. Three years: one at Codeanywhere, two at Daytona from day zero. We reached product-market fit with AI runtime infrastructure. The foundations were built, the plane was flying, and it was ready to keep going without me.
 
 So I took the summer off. Not to rest—to experiment.
 
-I spent two months coding full-time with AI. Generated so much AI-written and AI-swapped code that it would probably completely confuse any future models if it ever made its way into a training dataset.
+I spent few months coding full-time with AI. Generated so much AI code that it would probably completely confuse any future models if it ever made its way into a training dataset.
 
 That's when it hit me. The bottleneck wasn't AI capability anymore. It was me.
 
-I should know—I'm writing this with Claude. Partly because it's faster. Mostly to compress 2025 into something that fits in a context window.
+But let's compress 2025 into something that fits in a context window.
 
-2025 was the year AI stopped being a tool and started being a teammate. 2026 will be the year we figure out what that means.
+> 2025 was the year AI stopped being a tool and started being a teammate. 2026 will be the year we figure out what that means.
 
 ---
 
 ## The Year in Three Acts
 
-### Act One: The Departure (Jan-Jul)
-
-Left Daytona when the AI runtime pivot was validated at the first AI Engineer Summit in NYC. Both OpenAI and Anthropic redefined AI agents with runtimes. The shift was real. We finally saw traction. It felt like the natural conclusion.
+### Act One: The Departure (Jan-May)
 
 Spent February in SF. Enjoyed the conversations, the density of people building. But honestly? Felt like the *fellow kids* meme the entire time.
 
@@ -43,23 +42,29 @@ Spent February in SF. Enjoyed the conversations, the density of people building.
 
 20-somethings pitching AGI while I'm wondering if anyone remembers how databases work.
 
-"Excitable boy," they all said.
+When the AI runtime pivot was validated at the first AI Engineer Summit in NYC in March, everything clicked. I was in the audience listening to [Barry's talk](https://www.youtube.com/watch?v=D7_ipDqhtwk) while [live-blogging about runtimes](https://www.daytona.io/dotfiles/ai-agents-need-a-runtime-with-a-dynamic-lifecycle-here-s-why). Both OpenAI and Anthropic redefined AI agents with runtimes.
 
-### Act Two: The Experimentation (Aug-Sep)
+I was very satisfied that 9 months of nudging the team paid off. The shift was real. We finally saw traction. When I left Daytona in May, it felt like the natural conclusion of 3 years with the team.
 
-Dedicated myself full-time to exploring the limits and possibilities of AI coding. What I found: we're not in the assistant era anymore. We're in the orchestration era.
+Time to move on.
 
-The question changed from "which AI writes the best code?" to "how do I coordinate multiple AI processes effectively?"
+> "Excitable boy," they all said.
 
-### Act Three: The New Chapter (Oct-Dec)
+### Act Two: The Experimentation (May-Sep)
 
-Joined academia as a full-time lecturer—teaching SWE 101 and Science Engineering to 3rd year BSc and 1st year MSc students.
+For the next few months I have dedicated myself full-time to exploring the limits and possibilities of AI coding. One thing became crystal clear: **we're not in the assistant era anymore. We're in the orchestration era.**
 
-Started advising. Steel.dev on growth (cracked group scaling infinite browser sessions). Profico as AI Engineer in Residence (strategy, architecture, implementation). Verdent, founded by the ex-head of algo at TikTok.
+The question changed from "which AI writes the best code?" to **"how do I coordinate multiple AI processes effectively?"**
 
-Teaching SWE 101 to 3rd years and Science Engineering to 1st year MSc students revealed something: the next generation needs foundations more than ever. AI can write code, but understanding systems? That still requires wrestling with basics.
+Oh yeah, and I got to enjoy tons of quality time with family over the summer.
 
-Through intense experimentation, I gained a deep understanding of both the potential and the limitations. A privileged glimpse into the future—one that will be largely automated and AI-driven. But also confronted with reality: we're still years, maybe a decade, away from that vision fully materializing.
+### Act Three: The New Chapter (Sept-Dec)
+
+In the meantime I have started advising friends and startups. Steel.dev on growth (cracked team of engineers scaling infinite browser sessions). Profico as AI Engineer in Residence (strategy, architecture, implementation). Verdent, founded by TikTok's former head of algo, was a fun and rewarding short stint.
+
+Somehow, out of the blue, I was invited to join academia as a full-time lecturer. Teaching SWE 101 to 3rd years and Science Engineering to 1st year MSc students revealed something: **the next generation needs foundations more than ever.** AI can write code, but understanding systems? That still requires wrestling with basics.
+
+Through intense experimentation, I gained a deep understanding of both the potential and the limitations. A privileged glimpse into the future—one that will be largely automated and AI-driven. But also confronted with reality: **we're still years, maybe a decade, away from that vision fully materializing.**
 
 ---
 
@@ -67,7 +72,7 @@ Through intense experimentation, I gained a deep understanding of both the poten
 
 **Content**: 44 articles published across AI agents, developer tools, algorithms, growth strategy, research methodology, liability and policy
 
-**GitHub**: 7,761 commits across 158 repositories. 26.9% AI-assisted (2,087 commits). Primary collaborator: Claude (1,872 commits). Most active month: November (994 commits).
+**GitHub**: 7,761 commits across **158 repositories**. 49.4% AI auto-commited. Primary collaborator: Claude. Most active month: November (994 commits).
 
 ![GitHub Activity Heatmap 2025](/images/gh-activity-heatmap.png)
 ![Monthly Commit Frequency](/images/gh-commit-frequency.png)
@@ -77,13 +82,15 @@ Through intense experimentation, I gained a deep understanding of both the poten
 ![AI vs Solo Commits](/images/gh-ai-vs-solo.png)
 ![AI Agent Breakdown](/images/gh-ai-agents.png)
 
-**Twitter**: 608 tweets, 849,159 impressions, 7,935 likes, 737 new followers. Peak month: August (207,339 impressions) during the experimentation period.
+**X/Twitter**: 2025 was very active for me on Twitter with 608 tweets, 849,159 impressions, 7,935 likes, **737 new followers**. Peak month: August (207,339 impressions) during the intense experimentation period.
 
 **GitHub Stars Growth**:
 
+One of the side projects was me collecting agentic patters I've observed in the wild. It is more bookmarks for myself but kept as [open-source awesome-agentic-patterns project](https://github.com/nibzard/awesome-agentic-patterns/) and a [website](https://agentic-patterns.com/).
+
 ![GitHub Star History 2025](/images/star-history-20251231.png)
 
-These aren't vanity metrics. They're evidence of a shift in how I work—and how the industry is moving.
+These aren't metrics. They're evidence of a shift in how the interest is moving.
 
 ---
 
@@ -93,25 +100,27 @@ These aren't vanity metrics. They're evidence of a shift in how I work—and how
 
 The most important strategic insight of the year: product-first AI companies started capturing more value than model-first companies.
 
-> "Agent labs ship product first, and then work their way down as they get data, revenue and conviction."
+> Agent labs ship product first, and then work their way down as they get data, revenue and conviction.
 
 Cursor, Cognition, Amp—they're not trying to build better models. They're building better workflows. They see the entire trace: file changes, tool calls, test results, user approvals. That operational data is their moat.
 
+As explored in [swyx's "Agent Labs" deep dive](https://www.latent.space/p/agent-labs), this shift represents a fundamental reordering of the AI value chain—product and workflow intelligence now sits above model capability as the primary differentiator.
+
 Model labs optimize for next-token prediction. Agent labs optimize for "feature completion rate." Which one drives more business value?
 
-Nathan Lambert's "2025 Open Models Year in Review" (with Florian Brand) documents the flip: Chinese labs like DeepSeek, Qwen, and Moonshot AI now occupy the "Frontier" tier of open models, while Western labs scramble to catch up. The product-first approach—shipping working models that developers actually use—has won over model-first purity.
+Nathan Lambert's ["2025 Open Models Year in Review"](https://www.interconnects.ai/p/2025-open-models-year-in-review) (with Florian Brand) documents the flip: Chinese labs like DeepSeek, Qwen, and Moonshot AI now occupy the "Frontier" tier of open models, while Western labs scramble to catch up. **The product-first approach—shipping working models that developers actually use—has won over model-first purity.**
 
 ### The Economics Reset
 
-Premium pricing emerged—$200/month became normal for power users. The value shifted from "answers" to "parallelized work." You're no longer paying for an AI tool; you're budgeting for a compute-backed labor multiplier.
+Premium pricing emerged—$200/month became normal for power users. The value shifted from "answers" to "parallelized work." As [Simon Willison](https://simonwillison.net/2025/Dec/31/the-year-in-llms/) puts it, you're no longer paying for an AI tool—you're budgeting for a compute-backed labor multiplier.
 
 ### Reasoning Became a Product Knob
 
-The technical foundation for all this: models got "reasoning-ish" in a way that felt like a qualitative shift. RLVR (reinforcement learning from verifiable rewards) moved from novelty to production—enabling "thinking" behavior and introducing a new scaling lever: test-time compute. As Andrej Karpathy framed it, reasoning became something labs could dial with training + inference strategy.
+The technical foundation for all this: models got "reasoning-ish" in a way that felt like a qualitative shift. RLVR (reinforcement learning from verifiable rewards) moved from novelty to production—enabling "thinking" behavior and introducing a new scaling lever: test-time compute. As [Andrej Karpathy](https://karpathy.bearblog.dev/year-in-review-2025/) framed it, **reasoning became something labs could dial with training + inference strategy.**
 
-Sebastian Raschka's "State of LLMs 2025" provides the technical synthesis: RLVR integrates rule-based verification with LLM-based reasoning, while inference-time scaling papers like "The Art of Scaling Test-Time Compute" show how to optimize this new lever. He predicts 2026 will see RL expand into non-verifiable domains.
+> 2026 will see RL expand into non-verifiable domains.
 
-You could now buy "more thinking" with latency, tokens, and money. That's what made orchestration possible.
+You could now **buy "more thinking" with latency, tokens, and money**. That's what made orchestration possible.
 
 ### Orchestration Became the Bottleneck
 
@@ -123,41 +132,43 @@ The three-act framework emerged:
 - **Assistant Era**: AI helps humans code faster
 - **Orchestration Era**: Humans coordinate AI processes
 
-> "The future isn't about humans using AI tools—it's about humans orchestrating AI processes."
+> The future isn't about humans using AI tools—it's about humans orchestrating AI processes.
 
-Nathan Lambert traces this as part of an "RL renaissance"—reinforcement learning moved from niche to mainstream, with reasoning models developing "Thinking, Searching, and Acting" primitives. His analysis: coding has become "the epicenter of AI progress," the best place to feel current model capabilities.
+Nathan Lambert traces this as: coding has become "the epicenter of AI progress," the best place to feel current model capabilities.
 
 ### AX Emerged Alongside DX
 
 Perhaps the most prescient theme: tools needed to work for AI agents, not just humans.
 
-> "AI agents don't need fancy MCP. They need good --help."
+> AI agents don't need fancy MCP. They need good --help.
 
-I built AgentProbe to test how AI agents interact with CLI tools. The results were sobering: even simple commands like `vercel deploy` showed 16-33 turns across runs with 40% success rates.
+I built [AgentProbe](https://github.com/nibzard/agentprobe/) to test how AI agents interact with CLI tools. The results, at that time, were sobering: even simple commands like `vercel deploy` showed 16-33 turns across runs with 40% success rates.
 
 The agent-friendly stack emerged from 50+ projects: type safety as inter-agent communication protocol, machine-readable documentation, friction-free workflows.
 
-Simon Willison framed this as "agents took over the terminal"—they thrived in text-based environments where LLMs are strongest, even as general-purpose GUI agents struggled.
+Simon Willison framed this as **"agents took over the terminal"**—they thrived in text-based environments where LLMs are strongest, even as general-purpose GUI agents struggled.
 
 ### Devtools Became AI Infrastructure
 
 The year ended with Anthropic's acquisition of Bun—a move that redefined devtools as infrastructure for AI agents.
 
-> "Devtools are no longer a layer on top of the model. They're part of the model stack itself."
+> Devtools are no longer a layer on top of the model. They're part of the model stack itself.
 
-The new stack: **Model → Protocol (MCP) → Runtime (Bun) → Experience Layer**
+The new stack: **Model → Protocol → Runtime → Experience Layer**
 
 ### Databases as Agent Infrastructure
 
-Explored databases as the foundation for agent orchestration, communication, and observability. Multiple iterations—[Engram](https://github.com/nibzard/engram-v3), [EngramDB](https://github.com/nibzard/EngramDB), [Agrama](https://github.com/nibzard/agrama-v2)—converged on a key insight: agents need shared memory with provenance.
+Explored databases as the foundation for agent orchestration, communication, and observability. Multiple iterations—[Engram](https://github.com/nibzard/engram-v3), [EngramDB](https://github.com/nibzard/EngramDB), [Agrama](https://github.com/nibzard/agrama-v2)—converged on a key insight: **agents need shared memory with provenance.**
 
-Built [lmdb-tui](https://github.com/nibzard/lmdb-tui) to explore efficient embedded databases. The lesson: high-performance, inspectable storage is non-negotiable for multi-agent systems.
+On the sidelines, I've built data exploration tools like [lmdb-tui](https://github.com/nibzard/lmdb-tui) and [claude-threads](https://github.com/nibzard/claude-threads/) to explore context management and observability.
+
+**The lesson: high-performance, inspectable storage is non-negotiable for multi-agent systems.**
 
 ---
 
 ## Technical Deep Dives
 
-### The Berghain Challenge
+I did some explorations just for fun, like [the Berghain Challenge](https://www.nibzard.com/berghain/).
 
 A multi-part algorithm journey that became a case study in AI-human collaboration:
 
@@ -165,35 +176,30 @@ A multi-part algorithm journey that became a case study in AI-human collaboratio
 - RBCR algorithm: 781 rejections
 - Transformer-based orchestration: 855 best game
 
-Claude wrote 95% of the code. I provided direction. The results spoke for themselves.
+Claude wrote 99% of the code. I provided direction. Fully automated training run.
 
-### Projects That Shaped My Thinking
+We've built a nice niche model that beats the top algorithm on resource usage and performs well enough for production.
 
-- **[agentprobe](https://github.com/nibzard/agentprobe)**: Built to test AI agent interaction with CLIs. Found that even `vercel deploy` takes 16-33 turns with 40% success rates.
+## Research at AI Speed
+
+["When AI Does Research"](https://www.nibzard.com/ai-research/) documented end-to-end AI-augmented research producing an arXiv paper in 2 days of FTE. LaTeX, conversions, translations—all abstracted. What remained was thinking.
+
+## Projects That Shaped My Thinking
+
+- **[agentprobe](https://github.com/nibzard/agentprobe)**: Built to test AI agent interaction with CLIs.
 - **[awesome-agentic-patterns](https://github.com/nibzard/awesome-agentic-patterns)**: Curated catalog of real-world agent patterns. Now live at [agentic-patterns.com](https://agentic-patterns.com).
-- **[llm-answer-watcher](https://github.com/nibzard/llm-answer-watcher)**: Explored Agentic SEO (AEO)—optimizing for AI answer engines rather than traditional search.
-- **[agent-perceptions](https://github.com/nibzard/agent-perceptions)**: Survey research from O'Reilly coding agents event. Analyzed how developers perceive AI agents.
-- **[engram-lite](https://github.com/nibzard/engram-lite)**: Lightweight exploration of agent memory systems.
-
-### Production Realities
-
-Articles like FRE in Production and Demos Run on Embeddings explored the gap between AI demos and production systems. The 99% problem became clear: in high-stakes domains, 99% accuracy is a failing grade.
-
-Eugene Yan's work on evals—particularly "Product Evals in Three Simple Steps"—bridges this gap with practical frameworks for measuring what matters. His focus on evaluation metrics highlights why demo-to-production remains so difficult.
-
-### Research at AI Speed
-
-"When AI Does Research" documented end-to-end AI-augmented research producing an arXiv paper in 2 days of FTE. LaTeX, conversions, translations—all abstracted. What remained was thinking.
+- **[llm-answer-watcher](https://github.com/nibzard/llm-answer-watcher)**: Explored Agentic SEO (AEO or GEO)—optimizing for AI answer engines rather than traditional search.
+- **[agent-perceptions](https://github.com/nibzard/agent-perceptions)**: Survey research from [O'Reilly Coding with AI](https://www.oreilly.com/radar/takeaways-from-coding-with-ai/) event I've presented in. Analyzed how developers perceive AI agents.
+- **[engram-lite](https://github.com/nibzard/engram-lite)**: Just one of the explorations of agent memory systems.
+- **[Northstar DB](https://github.com/nibzard/plandb)**: Latest exploration of DB as place of communication and observability for AI agents.
 
 ---
 
 ## Looking to 2026
 
-Based on 44 articles and a year of experimentation, here's what I'm watching:
+Based on a year of experimentation, here's what I'm watching.
 
-### From AI Design Principles
-
-> "Software is no longer a noun, it's a verb."
+> Software is no longer a noun, it's a verb.
 
 The impulse is no longer "find the right app" but "make the environment do what I need, now." Value isn't in the artifact but in task completion velocity.
 
@@ -204,17 +210,13 @@ The impulse is no longer "find the right app" but "make the environment do what 
 - Local agency beats central intelligence
 - Shift literacy from "how" to "what and why"
 
-### From Agent Labs Analysis
-
-**Multi-agent orchestration will mature.** We'll move from single agents to coordinated swarms with shared memory and specialized roles.
+**Multi-agent orchestration will mature.** We'll finally move from single agents to coordinated swarms with shared memory and specialized roles.
 
 **Agent experience becomes first-class.** Tools will be designed for AI agents from day one, with humans as secondary users.
 
 **Outcome-based liability emerges.** As "Outcome Liability" explored, the question isn't who wrote the code—it's who operates the system.
 
 **Mention engineering replaces SEO.** Content strategy shifts from keywords to becoming citation material for AI models.
-
-### The Reality Check
 
 **The success rate plateau.** We'll still be around 90% success—far from the 99.999% required for high-stakes production. The gap between demo and production persists.
 
@@ -230,27 +232,15 @@ The impulse is no longer "find the right app" but "make the environment do what 
 
 ---
 
-## The Personal Evolution
-
-Reading through 44 articles, my own thinking evolved dramatically:
-
-- **Early year**: Focused on which AI tool writes the best code
-- **Mid year**: Realized orchestration is the real bottleneck
-- **Late year**: Recognized that the entire development stack is being rebuilt around AI agents
-
-The articles moved from tactical tool comparisons to strategic infrastructure questions. From "which assistant should I use?" to "how do we build systems where humans and AI collaborate effectively?"
-
----
-
 ## The Thank Yous
 
 This year wouldn't have been possible without:
 
 - The AI collaborators who made this velocity possible—Claude, GPT-5, Amp, and others
-- The teams I advised—Steel.dev, Profico, Verdent—for trusting me with your vision
+- The teams I've worked with Daytona, Steel.dev, Profico, Verdent—for trusting me with your vision, and some hush-hush
 - The communities that formed around these ideas—Hacker News discussions, GitHub contributors, Twitter threads
 - The students who forced me to articulate what I know
-- The broader AI community—[daytonaio/ai-enablement-stack](https://github.com/daytonaio/ai-enablement-stack) contributors, open-source collaborators, everyone building in public
+- The broader AI community—open-source collaborators, everyone building in public
 
 ---
 
@@ -268,27 +258,10 @@ I'm available for advisory and consulting in:
 
 If you're building in this space and need help, reach out.
 
----
 
-**Sources & Influences:**
-
-This article synthesizes insights from 44 publications, 7,761 GitHub commits, 608 tweets, and a year of full-time AI experimentation.
-
-Key external influences include:
-- Simon Willison's analysis of "agents taking over the terminal" and the normalization of deviance in AI safety
-- Andrej Karpathy's framing of RLVR and test-time compute as product knobs
-- Sebastian Raschka's "State of LLMs 2025" for technical synthesis of RLVR and inference-time scaling
-- Nathan Lambert's "2025 Open Models Year in Review" for model maker tier lists and the "RL renaissance"
-- Eugene Yan's evals framework for bridging demo-to-production gaps
-
-Each artifact contributed a piece to this puzzle—the result is a map of how AI and software development evolved together over one remarkable year.
+> 2025 was the year AI stopped being a tool and started being a teammate.
+> 2026 will be the year we figure out what that means.
 
 ---
 
-2025 was the year AI stopped being a tool and started being a teammate.
-
-2026 will be the year we figure out what that means.
-
----
-
-*This article synthesizes insights from 44 publications, 7,761 GitHub commits, 608 tweets, and a year of full-time AI experimentation. Each artifact contributed a piece to this puzzle—the result is a map of how AI and software development evolved together over one remarkable year.*
+*This article synthesizes insights from 44 publications, 7,761 GitHub commits, 608 tweets, and a year of full-time AI experimentation using Claude Code. Each artifact contributed a piece to this puzzle—the result is a map of how AI and software development evolved together over one remarkable year.*
