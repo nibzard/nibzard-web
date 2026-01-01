@@ -25,6 +25,8 @@ I spent two months coding full-time with AI. Generated so much AI-written and AI
 
 That's when it hit me. The bottleneck wasn't AI capability anymore. It was me.
 
+I should know—I'm writing this with Claude. Partly because it's faster. Mostly to compress 2025 into something that fits in a context window.
+
 2025 was the year AI stopped being a tool and started being a teammate. 2026 will be the year we figure out what that means.
 
 ---
