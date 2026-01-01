@@ -97,6 +97,10 @@ Cursor, Cognition, Amp—they're not trying to build better models. They're buil
 
 Model labs optimize for next-token prediction. Agent labs optimize for "feature completion rate." Which one drives more business value?
 
+### The Economics Reset
+
+Premium pricing emerged—$200/month became normal for power users. The value shifted from "answers" to "parallelized work." You're no longer paying for an AI tool; you're budgeting for a compute-backed labor multiplier.
+
 ### Orchestration Became the Bottleneck
 
 Mid-year, the realization struck. AI coding tools had become so capable that humans became the constraint.
@@ -118,6 +122,8 @@ Perhaps the most prescient theme: tools needed to work for AI agents, not just h
 I built AgentProbe to test how AI agents interact with CLI tools. The results were sobering: even simple commands like `vercel deploy` showed 16-33 turns across runs with 40% success rates.
 
 The agent-friendly stack emerged from 50+ projects: type safety as inter-agent communication protocol, machine-readable documentation, friction-free workflows.
+
+Simon Willison framed this as "agents took over the terminal"—they thrived in text-based environments where LLMs are strongest, even as general-purpose GUI agents struggled.
 
 ### Devtools Became AI Infrastructure
 
