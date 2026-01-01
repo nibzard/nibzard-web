@@ -88,7 +88,7 @@ Through intense experimentation, I gained a deep understanding of both the poten
 
 One of the side projects was me collecting agentic patters I've observed in the wild. It is more bookmarks for myself but kept as [open-source awesome-agentic-patterns project](https://github.com/nibzard/awesome-agentic-patterns/) and a [website](https://agentic-patterns.com/).
 
-![GitHub Star History 2025](/images/star-history-20251231.png)
+![GitHub Star History 2025](/images/star-history-202611.png)
 
 These aren't metrics. They're evidence of a shift in how the interest is moving.
 
