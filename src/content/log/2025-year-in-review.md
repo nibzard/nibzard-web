@@ -8,7 +8,7 @@ draft: false
 featured: true
 author: "Nikola Balić"
 topics: [AI evolution in 2025, agent orchestration, career transitions, startup advisory, agent labs vs model labs, developer tools transformation]
-entities: [Daytona, Codeanywhere, Steel.dev, Profico, Verdent, Claude Code, Anthropic, Bun, Cursor, Sourcegraph Amp, Cognition, MCP, RBCR algorithm, Engram, EngramDB, Agrama, agentprobe, awesome-agentic-patterns, agentic-patterns.com, llm-answer-watcher, agent-perceptions, lmdb-tui, O'Reilly]
+entities: [Daytona, Codeanywhere, Steel.dev, Profico, Verdent, Claude Code, Anthropic, Bun, Cursor, Sourcegraph Amp, Cognition, MCP, RBCR algorithm, Engram, EngramDB, Agrama, agentprobe, awesome-agentic-patterns, agentic-patterns.com, llm-answer-watcher, agent-perceptions, lmdb-tui, O'Reilly, Simon Willison, Andrej Karpathy]
 answers_questions:
   - What happened in 2025?
   - How did AI evolve from assistant to teammate?
@@ -103,7 +103,7 @@ Premium pricing emerged—$200/month became normal for power users. The value sh
 
 ### Reasoning Became a Product Knob
 
-The technical foundation for all this: models got "reasoning-ish" in a way that felt like a qualitative shift. RLVR (reinforcement learning from verifiable rewards) moved from novelty to production—enabling "thinking" behavior and introducing a new scaling lever: test-time compute.
+The technical foundation for all this: models got "reasoning-ish" in a way that felt like a qualitative shift. RLVR (reinforcement learning from verifiable rewards) moved from novelty to production—enabling "thinking" behavior and introducing a new scaling lever: test-time compute. As Andrej Karpathy framed it, reasoning became something labs could dial with training + inference strategy.
 
 You could now buy "more thinking" with latency, tokens, and money. That's what made orchestration possible.
 
@@ -243,6 +243,16 @@ I'm available for advisory and consulting in:
 - **Startup advisory**—agent lab strategy, product-market fit for AI-native products
 
 If you're building in this space and need help, reach out.
+
+---
+
+**Sources & Influences:**
+
+This article synthesizes insights from 44 publications, 7,761 GitHub commits, 608 tweets, and a year of full-time AI experimentation.
+
+Key external influences include Simon Willison's analysis of "agents taking over the terminal" and the normalization of deviance in AI safety, and Andrej Karpathy's framing of RLVR and test-time compute as product knobs.
+
+Each artifact contributed a piece to this puzzle—the result is a map of how AI and software development evolved together over one remarkable year.
 
 ---
 
