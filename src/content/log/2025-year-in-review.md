@@ -101,6 +101,8 @@ The most important strategic insight of the year: product-first AI companies sta
 
 > Agent labs ship product first, and then work their way down as they get data, revenue and conviction.
 
+Cursor reported [>$500M ARR](https://cursor.sh/blog/series-c) and "over half of the Fortune 500" usage. Cognition reported Devin ARR growth from $1M (Sep 2024) to [$73M](https://www.cognition.ai/blog/funding) by June 2025.
+
 Cursor, Cognition, Amp—they're not trying to build better models. They're building better workflows. They see the entire trace: file changes, tool calls, test results, user approvals. That operational data is their moat.
 
 As explored in [swyx's "Agent Labs" deep dive](https://www.latent.space/p/agent-labs), this shift represents a fundamental reordering of the AI value chain—product and workflow intelligence now sits above model capability as the primary differentiator.
@@ -135,6 +137,10 @@ The three-act framework emerged:
 
 Nathan Lambert traces this as: coding has become "the epicenter of AI progress," the best place to feel current model capabilities.
 
+But here's the reality: success is bimodal. Strong in CLI/structured tools, weak in messy GUIs. OpenAI's CUA scored [38.1% on OSWorld](https://openai.com/research/cua) for full computer use, despite 87% on web navigation tasks. We're still far from the 99.999% reliability required for high-stakes production.
+
+Even Marc Benioff shifted tone. At Davos: "digital labor" optimism. By mid-year: [93% accuracy](https://www.salesforceben.com/marc-benioff-claims-93-ai-agent-accuracy-is-this-good-enough/), "100% not realistic." By year's end: calling AGI ["hypnosis"](https://www.businessinsider.com/marc-benioff-extremely-suspect-agi-hypnosis-2025-8). The arc: visionary → operational. Reliability isn't assumed—it's built via data quality, guardrails, and measured accuracy ceilings.
+
 ### AX Emerged Alongside DX
 
 Perhaps the most prescient theme: tools needed to work for AI agents, not just humans.
@@ -162,6 +168,25 @@ Explored databases as the foundation for agent orchestration, communication, and
 On the sidelines, I've built data exploration tools like [lmdb-tui](https://github.com/nibzard/lmdb-tui) and [claude-threads](https://github.com/nibzard/claude-threads/) to explore context management and observability.
 
 **The lesson: high-performance, inspectable storage is non-negotiable for multi-agent systems.**
+
+---
+
+## So What? Practical Takeaways
+
+**For Founders:**
+- Pick a "tool-closed loop" wedge—workflows where success is machine-verifiable
+- Instrument the full trace on day 1 (prompts, tool calls, approvals)
+- Ship "reliability UX": checkpoints, rollback, human-in-the-loop gates
+
+**For AI Engineers:**
+- Build an eval harness before features
+- Implement a trace-first runtime
+- Default to supervised autonomy until you prove reliability
+
+**For Investors:**
+- Underwrite workflow retention, not seat count
+- The moat is trace + integration + distribution, not prompts
+- Treat reliability/safety as a first-class diligence axis
 
 ---
 
@@ -194,15 +219,24 @@ We've built a nice niche model that beats the top algorithm on resource usage an
 
 ---
 
-## Looking to 2026
-
-Based on a year of experimentation, here's what I'm watching.
+## Looking to 2026: Three Scenarios
 
 > Software is no longer a noun, it's a verb.
 
 The impulse is no longer "find the right app" but "make the environment do what I need, now." Value isn't in the artifact but in task completion velocity.
 
-**Design shifts for 2026:**
+**Base Case (Most Likely):** Supervised autonomy dominates. Agent products grow with human approvals, scoped tools, strong tracing. We're building teammates, not employees.
+
+**Bull Case:** Rapid reliability gains in constrained domains (coding, IT ops, analytics) enable outcome-priced agent services in B2B.
+
+**Bear Case:** Security incidents + cost overruns + regulatory friction slow deployment. Autonomy remains stuck in demos and low-stakes copilots.
+
+**Early indicators to watch:** Independent evals on OSWorld/WebArena, stable margins on $200 tiers, MCP server counts, contract language allocating "agent outcome" responsibility.
+
+---
+
+## Design Shifts for 2026
+
 - Design for malleability, not features
 - Collapse the boundary between using and making
 - Make provenance a first-class interface element
@@ -217,17 +251,28 @@ The impulse is no longer "find the right app" but "make the environment do what 
 
 **Mention engineering replaces SEO.** Content strategy shifts from keywords to becoming citation material for AI models.
 
-**The success rate plateau.** We'll still be around 90% success—far from the 99.999% required for high-stakes production. The gap between demo and production persists.
-
-**Consumer AI tidal wave.** Massive uptake with total dependence. Everyone defaults to an LLM for any problem. AI becomes the interface to reality itself.
+**Consumer AI tidal wave.** Everyone defaults to an LLM for any problem. AI becomes the interface to reality itself.
 
 **AI slop grows 100x.** As barriers drop, low-quality content floods everything. The signal-to-noise ratio gets worse before it gets better.
 
-**Models become background.** They're already good enough. The value shifts to routing, application layers, smarter use. Major model labs will pivot from "bigger models" to "smarter application."
+**Models become background.** They're already good enough. The value shifts to routing, application layers, smarter use.
 
 **Native AI creatives emerge.** A new creative class that builds with AI from scratch—not using AI as a tool, but thinking in terms of what AI makes possible.
 
-**Engineering discovers autonomy.** More engineers figure out the value of fully automatic coding agents. This realization drives exponential improvement in AI coding tools.
+**Engineering discovers autonomy.** More engineers figure out the value of fully automatic coding agents.
+
+---
+
+## The Numbers
+
+**Reliability in 2025:**
+- Full desktop automation: 38.1% (OSWorld)
+- Web tasks: 58.1% (WebArena)
+- Coding: ~65% (SWE-bench Verified, with scaffolding)
+
+**Power-user pricing became normal:**
+- ChatGPT Pro, Claude Max, Cursor Ultra, Perplexity Max: $200/month
+- Devin Team: $500/month (enterprise positioning)
 
 ---
 
