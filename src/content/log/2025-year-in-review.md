@@ -99,6 +99,8 @@ Cursor, Cognition, Amp—they're not trying to build better models. They're buil
 
 Model labs optimize for next-token prediction. Agent labs optimize for "feature completion rate." Which one drives more business value?
 
+Nathan Lambert's "2025 Open Models Year in Review" (with Florian Brand) documents the flip: Chinese labs like DeepSeek, Qwen, and Moonshot AI now occupy the "Frontier" tier of open models, while Western labs scramble to catch up. The product-first approach—shipping working models that developers actually use—has won over model-first purity.
+
 ### The Economics Reset
 
 Premium pricing emerged—$200/month became normal for power users. The value shifted from "answers" to "parallelized work." You're no longer paying for an AI tool; you're budgeting for a compute-backed labor multiplier.
@@ -106,6 +108,8 @@ Premium pricing emerged—$200/month became normal for power users. The value sh
 ### Reasoning Became a Product Knob
 
 The technical foundation for all this: models got "reasoning-ish" in a way that felt like a qualitative shift. RLVR (reinforcement learning from verifiable rewards) moved from novelty to production—enabling "thinking" behavior and introducing a new scaling lever: test-time compute. As Andrej Karpathy framed it, reasoning became something labs could dial with training + inference strategy.
+
+Sebastian Raschka's "State of LLMs 2025" provides the technical synthesis: RLVR integrates rule-based verification with LLM-based reasoning, while inference-time scaling papers like "The Art of Scaling Test-Time Compute" show how to optimize this new lever. He predicts 2026 will see RL expand into non-verifiable domains.
 
 You could now buy "more thinking" with latency, tokens, and money. That's what made orchestration possible.
 
@@ -120,6 +124,8 @@ The three-act framework emerged:
 - **Orchestration Era**: Humans coordinate AI processes
 
 > "The future isn't about humans using AI tools—it's about humans orchestrating AI processes."
+
+Nathan Lambert traces this as part of an "RL renaissance"—reinforcement learning moved from niche to mainstream, with reasoning models developing "Thinking, Searching, and Acting" primitives. His analysis: coding has become "the epicenter of AI progress," the best place to feel current model capabilities.
 
 ### AX Emerged Alongside DX
 
@@ -172,6 +178,8 @@ Claude wrote 95% of the code. I provided direction. The results spoke for themse
 ### Production Realities
 
 Articles like FRE in Production and Demos Run on Embeddings explored the gap between AI demos and production systems. The 99% problem became clear: in high-stakes domains, 99% accuracy is a failing grade.
+
+Eugene Yan's work on evals—particularly "Product Evals in Three Simple Steps"—bridges this gap with practical frameworks for measuring what matters. His focus on evaluation metrics highlights why demo-to-production remains so difficult.
 
 ### Research at AI Speed
 
@@ -266,7 +274,12 @@ If you're building in this space and need help, reach out.
 
 This article synthesizes insights from 44 publications, 7,761 GitHub commits, 608 tweets, and a year of full-time AI experimentation.
 
-Key external influences include Simon Willison's analysis of "agents taking over the terminal" and the normalization of deviance in AI safety, and Andrej Karpathy's framing of RLVR and test-time compute as product knobs.
+Key external influences include:
+- Simon Willison's analysis of "agents taking over the terminal" and the normalization of deviance in AI safety
+- Andrej Karpathy's framing of RLVR and test-time compute as product knobs
+- Sebastian Raschka's "State of LLMs 2025" for technical synthesis of RLVR and inference-time scaling
+- Nathan Lambert's "2025 Open Models Year in Review" for model maker tier lists and the "RL renaissance"
+- Eugene Yan's evals framework for bridging demo-to-production gaps
 
 Each artifact contributed a piece to this puzzle—the result is a map of how AI and software development evolved together over one remarkable year.
 
