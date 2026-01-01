@@ -206,6 +206,20 @@ The impulse is no longer "find the right app" but "make the environment do what 
 
 **Mention engineering replaces SEO.** Content strategy shifts from keywords to becoming citation material for AI models.
 
+### The Reality Check
+
+**The success rate plateau.** We'll still be around 90% success—far from the 99.999% required for high-stakes production. The gap between demo and production persists.
+
+**Consumer AI tidal wave.** Massive uptake with total dependence. Everyone defaults to an LLM for any problem. AI becomes the interface to reality itself.
+
+**AI slop grows 100x.** As barriers drop, low-quality content floods everything. The signal-to-noise ratio gets worse before it gets better.
+
+**Models become background.** They're already good enough. The value shifts to routing, application layers, smarter use. Major model labs will pivot from "bigger models" to "smarter application."
+
+**Native AI creatives emerge.** A new creative class that builds with AI from scratch—not using AI as a tool, but thinking in terms of what AI makes possible.
+
+**Engineering discovers autonomy.** More engineers figure out the value of fully automatic coding agents. This realization drives exponential improvement in AI coding tools.
+
 ---
 
 ## The Personal Evolution
