@@ -1,7 +1,6 @@
 ---
 title: "2025: The Year AI Became a Teammate"
 description: "AI became a teammate in 2025. From startups back to academia, advisory, and a summer of full-time AI experimentation."
-Every 7 years I tend to take sabatical and do a major reset or change.
 date: 2025-12-31
 tags: [META, YEAR-IN-REVIEW, AI, AGENTS, REFLECTION, STARTUPS, CAREER]
 draft: false
