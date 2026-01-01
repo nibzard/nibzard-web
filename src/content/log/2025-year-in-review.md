@@ -101,6 +101,12 @@ Model labs optimize for next-token prediction. Agent labs optimize for "feature 
 
 Premium pricing emerged—$200/month became normal for power users. The value shifted from "answers" to "parallelized work." You're no longer paying for an AI tool; you're budgeting for a compute-backed labor multiplier.
 
+### Reasoning Became a Product Knob
+
+The technical foundation for all this: models got "reasoning-ish" in a way that felt like a qualitative shift. RLVR (reinforcement learning from verifiable rewards) moved from novelty to production—enabling "thinking" behavior and introducing a new scaling lever: test-time compute.
+
+You could now buy "more thinking" with latency, tokens, and money. That's what made orchestration possible.
+
 ### Orchestration Became the Bottleneck
 
 Mid-year, the realization struck. AI coding tools had become so capable that humans became the constraint.
