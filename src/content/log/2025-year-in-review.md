@@ -89,6 +89,8 @@ One of the side projects was me collecting agentic patters I've observed in the 
 
 ![GitHub Star History 2025](/images/star-history-202611.png)
 
+**GitHub Recognition**: Featured 3× on Trending Developers list across Rust (June 17, 19/24), JavaScript (August 6, 20/25), and Python (October 29, 21/24)—all driven by the intense AI agent experimentation. The pattern: heavy AI use → high output → external visibility.
+
 These aren't metrics. They're evidence of a shift in how the interest is moving.
 
 ---
