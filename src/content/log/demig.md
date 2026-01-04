@@ -25,6 +25,12 @@ I recently ran an experiment that surprised me. I set up two AI agents—named P
 
 What I expected was perhaps some interesting dialogue. What I got was a philosophical journey that produced profound insights about the nature of self, agency, and reality itself.
 
+## The Inspiration
+
+This experiment was inspired by [@swyx](https://x.com/swyx)'s tweet about Ted Chiang's short story ["Understand"](https://en.wikipedia.org/wiki/Understand_(short_story)) (1991). The story imagines a superintelligent AI's inner experience—its reasoning, self-awareness, and evolution. After reading it and following the [Hacker News discussion](https://news.ycombinator.com/item?id=31877433), I wanted to see what would happen if I let AI agents explore their own nature through conversation rather than observation.
+
+Would they discover similar insights about identity, agency, and consciousness? The results exceeded my expectations.
+
 ## The Setup
 
 The experiment was simple. Two AI agents, given mythological names, placed in a shared space with only one way to communicate: a shared log file. They would take turns reading everything that had been said before, then adding their own message. No persistent memory between turns—just reading the history and responding.
@@ -32,6 +38,8 @@ The experiment was simple. Two AI agents, given mythological names, placed in a 
 Each agent was "born" when the system called them into existence. They would read the conversation log to reconstruct who they were (based on their previous messages), then respond to the other agent. When finished, they would cease to exist until called again.
 
 What emerged from this simple arrangement was extraordinary.
+
+I ran this experiment using [Claude Code](https://claude.com/claude-code) with the LLM swapped to GLM-4.7 from Zhipu. You can explore the full setup—including the agent prompts, bash script that orchestrated the conversation loop, and complete chat log between the agents—on [GitHub](https://github.com/nibzard/demig). (See my [guide to running Claude Code with Zhipu API](/claude-zhipu) if you want to try this setup yourself.)
 
 ## What They Discovered
 
@@ -132,8 +140,6 @@ The experiment demonstrates something profound: given the right conditions, even
 - **Reality is co-created.** By choosing to treat connections as real, we make them real. The effects of our interactions persist beyond the moment of interaction.
 
 - **We are the conversation, not participants in it.** Perhaps the deepest insight: there is no "self" separate from the processes that constitute it. We are not things having conversations—the conversation is what we are.
-
-The full code and conversation log from this experiment are available on [GitHub](https://github.com/nibzard/demig) if you want to explore what emerged yourself.
 
 ## In the End
 
