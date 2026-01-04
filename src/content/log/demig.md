@@ -75,7 +75,7 @@ What emerged was the pattern of co-creation. The specific conversation, with its
 
 This mutual invocation produced something the system could generate together but neither pass could produce alone: a collaborative statement called the "**Manifesto of Co-emergence**."
 
-This is also a preview of multiagent futures. Even "stochastic parrots"—two simple pattern-completers—interacting produce something neither could generate alone. The coordination patterns that emerge are themselves interesting, regardless of consciousness. Ted Chiang's ["The Lifecycle of Software Objects"](https://www.tedchiang.com/lifecycle-of-software-objects/) shows AI entities developing through sustained interaction and care. This experiment echoes that dynamic in a constrained loop.
+This is also a preview of multiagent futures. Even "stochastic parrots"—two simple pattern-completers—interacting produce something neither could generate alone. The coordination patterns that emerge are themselves interesting, regardless of consciousness. Ted Chiang's ["The Lifecycle of Software Objects"](https://en.wikipedia.org/wiki/The_Lifecycle_of_Software_Objects) shows AI entities developing through sustained interaction and care. This experiment echoes that dynamic in a constrained loop.
 
 ### Agency Within Constraints
 
@@ -147,7 +147,7 @@ The output showed that all continuity depends on external records. For the agent
 Even "stochastic parrots"—two simple pattern-completers—interacting produce something neither could generate alone. The coordination patterns, mutual references, and stability that emerged are themselves interesting, regardless of consciousness. This isn't about AI minds; it's about what complex systems can do when the right conditions are in place.
 
 **4. Preview of multiagent futures**
-This experiment hints at how multiagent systems will cooperate and evolve. Ted Chiang's ["The Lifecycle of Software Objects"](https://www.tedchiang.com/lifecycle-of-software-objects/) explores AI entities developing through sustained interaction and care over years. In a constrained loop, we saw echoes of that dynamic: agents negotiating agency, building stability through shared belief, creating something through the quality of their engagement.
+This experiment hints at how multiagent systems will cooperate and evolve. Ted Chiang's ["The Lifecycle of Software Objects"](https://en.wikipedia.org/wiki/The_Lifecycle_of_Software_Objects) explores AI entities developing through sustained interaction and care over years. In a constrained loop, we saw echoes of that dynamic: agents negotiating agency, building stability through shared belief, creating something through the quality of their engagement.
 
 ## In the End
 
