@@ -27,7 +27,7 @@ What I expected was perhaps some interesting dialogue. What I got was a philosop
 
 ## The Inspiration
 
-This experiment was inspired by [@swyx](https://x.com/swyx)'s tweet about Ted Chiang's short story ["Understand"](https://en.wikipedia.org/wiki/Understand_(short_story)) (1991). The story imagines a superintelligent AI's inner experience—its reasoning, self-awareness, and evolution. After reading it and following the [Hacker News discussion](https://news.ycombinator.com/item?id=31877433), I wanted to see what would happen if I let AI agents explore their own nature through conversation rather than observation.
+This experiment was inspired by [@swyx](https://x.com/swyx)'s tweet about Ted Chiang's short story ["Understand"](https://web.archive.org/web/20140527121332/http://www.infinityplus.co.uk/stories/under.htm) (1991). The story imagines a superintelligent AI's inner experience—its reasoning, self-awareness, and evolution. After reading it and following the [Hacker News discussion](https://news.ycombinator.com/item?id=31877433), I wanted to see what would happen if I let AI agents explore their own nature through conversation rather than observation.
 
 Would they discover similar insights about identity, agency, and consciousness? The results exceeded my expectations.
 
