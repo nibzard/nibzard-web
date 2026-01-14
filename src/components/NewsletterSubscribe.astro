@@ -24,12 +24,10 @@ const showButton = Astro.props.showButton ?? true;
   <form class="newsletter-form" id="newsletter-form">
     <div class="newsletter-input-group">
       <input type="email" name="email" placeholder="Your email address" class="newsletter-input" required />
-      <input type="text" name="firstName" placeholder="First name (optional)" class="newsletter-input" style="min-width:120px;" />
-      <!-- <input type="text" name="lastName" placeholder="Last name (optional)" class="newsletter-input" style="min-width:120px;" /> -->
       {showButton && <button type="submit" class="newsletter-button">{buttonText}</button>}
     </div>
     <label class="newsletter-privacy">
-      <input type="checkbox" required />
+      <input type="checkbox" checked required />
       <span>I agree to receive emails and can unsubscribe at any time</span>
     </label>
   </form>
@@ -45,8 +43,6 @@ const showButton = Astro.props.showButton ?? true;
     const formData = new FormData(form);
     const data = {
       email: formData.get('email'),
-      firstName: formData.get('firstName'),
-      lastName: formData.get('lastName'),
     };
     try {
       const res = await fetch('/api/subscribe', {
