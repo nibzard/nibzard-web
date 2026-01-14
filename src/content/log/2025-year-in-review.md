@@ -1,6 +1,7 @@
 ---
 title: "2025: The Year AI Became a Teammate"
 description: "AI became a teammate in 2025. From startups back to academia, advisory, and a summer of full-time AI experimentation."
+tldr: "Left Daytona, spent summer coding full-time with AI. 2025: orchestration era, agent labs overtook model labs, AX emerged alongside DX. 2026 will figure out what 'AI as teammate' actually means."
 date: 2025-12-31
 tags: [META, YEAR-IN-REVIEW, AI, AGENTS, REFLECTION, STARTUPS, CAREER]
 draft: false
