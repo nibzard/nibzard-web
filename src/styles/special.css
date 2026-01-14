@@ -111,6 +111,132 @@
   margin-top: 3px;
 }
 
+/* === Newsletter Modal === */
+.newsletter-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg);
+}
+
+.newsletter-modal-content {
+  background: var(--color-background);
+  border-radius: var(--border-radius-lg);
+  max-width: 480px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.newsletter-modal-close {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  background: var(--color-background-alt);
+  border: none;
+  font-size: 1.5rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  transition: var(--transition-fast);
+  line-height: 1;
+}
+
+.newsletter-modal-close:hover {
+  background: var(--color-accent1);
+  color: white;
+}
+
+.newsletter-modal-body {
+  padding: var(--space-xl);
+}
+
+.newsletter-modal-body h3 {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-sm);
+  color: var(--color-text);
+}
+
+.newsletter-modal-body > p {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-lg);
+  line-height: 1.6;
+}
+
+.newsletter-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.newsletter-modal-input {
+  padding: 0.875rem var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  background: var(--color-background-alt);
+  color: var(--color-text);
+  font-size: 1rem;
+  font-family: var(--font-mono-neon);
+}
+
+.newsletter-modal-input:focus {
+  outline: none;
+  border-color: var(--color-accent1);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.newsletter-modal-button {
+  padding: 0.875rem var(--space-lg);
+  background: var(--color-accent1);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  font-family: var(--font-mono-neon);
+}
+
+.newsletter-modal-button:hover {
+  background: var(--color-accent2);
+}
+
+.newsletter-modal-legal {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  text-align: center;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .newsletter-modal-overlay {
+    padding: var(--space-md);
+  }
+
+  .newsletter-modal-body {
+    padding: var(--space-lg);
+  }
+
+  .newsletter-modal-body h3 {
+    font-size: 1.25rem;
+  }
+}
+
 /* === About Page Media & Avatar Styles === */
 .media-section {
   margin-top: var(--space-lg);

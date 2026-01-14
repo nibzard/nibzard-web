@@ -188,11 +188,7 @@ const { paginatedEntries: feedEntries, totalPages } = paginateFeed(
   {/* Insert newsletter at the bottom */}
   <FadeIn client:visible delay={0} yOffset={5}>
     <div class="newsletter-section">
-      <NewsletterSubscribe
-        title="Stay Updated"
-        description="Subscribe to receive the latest updates and articles directly in your inbox."
-        showButton={true}
-      />
+      <NewsletterSubscribe showButton={true} />
     </div>
   </FadeIn>
 </BaseLayout>
