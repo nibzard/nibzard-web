@@ -9,6 +9,7 @@ import NewsletterSubscribe from '../components/NewsletterSubscribe.astro';
 import SchemaMarkup from '../components/SchemaMarkup.astro';
 import CopyMarkdownButton from '../components/CopyMarkdownButton.jsx';
 import ChatGPTButton from '../components/ChatGPTButton.jsx';
+import ShareButton from '../components/ShareButton.jsx';
 import { createBlogPostSchema, createBreadcrumbSchema } from '../utils/schemaUtils';
 import AIWarning from '../components/AIWarning.astro';
 import { getDiverseRelatedArticles } from '../utils/articleMatching';
@@ -122,6 +123,7 @@ const relatedArticlesEntries = getDiverseRelatedArticles(
           <div class="article-actions">
             <CopyMarkdownButton client:idle slug={slug} />
             <ChatGPTButton client:idle slug={slug} title={frontmatter.title} />
+            <ShareButton client:idle slug={slug} title={frontmatter.title} />
           </div>
         </div>
       )}
@@ -162,6 +164,8 @@ const relatedArticlesEntries = getDiverseRelatedArticles(
     <div class="log-content">
       <slot /> {/* Content from the Markdown file will be rendered here */}
     </div>
+
+    <NewsletterSubscribe />
 
     {relatedArticlesEntries.length > 0 && (
       <CSSFadeIn delay={0.1}>
@@ -210,8 +214,6 @@ const relatedArticlesEntries = getDiverseRelatedArticles(
     </CSSFadeIn>
 
     <div class="section-spacer"></div>
-
-    <NewsletterSubscribe />
 
     <ReadingProgress suggestedArticles={relatedArticlesEntries} />
   </article>

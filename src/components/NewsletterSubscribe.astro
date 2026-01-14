@@ -11,8 +11,8 @@ interface Props {
   showButton?: boolean;
 }
 
-const title = Astro.props.title ?? "Stay Updated";
-const description = Astro.props.description ?? "Subscribe to receive the latest updates and articles directly in your inbox.";
+const title = Astro.props.title ?? "Engineers Building with AI";
+const description = Astro.props.description ?? "Analysis of AI agent architecture, dev tool reviews, and go-to-market strategies. Unsubscribe anytime.";
 const buttonText = Astro.props.buttonText ?? "Subscribe";
 const showButton = Astro.props.showButton ?? true;
 ---
@@ -21,7 +21,7 @@ const showButton = Astro.props.showButton ?? true;
   <h3>{title}</h3>
   <p>{description}</p>
   <div id="form-message" class="form-message" style="display:none;"></div>
-  <form class="newsletter-form" id="newsletter-form">
+  <form class="newsletter-form" id="newsletter-form" name="newsletter-form">
     <div class="newsletter-input-group">
       <input type="email" name="email" placeholder="Your email address" class="newsletter-input" required />
       {showButton && <button type="submit" class="newsletter-button">{buttonText}</button>}

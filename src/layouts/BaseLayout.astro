@@ -9,6 +9,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import SchemaMarkup from '../components/SchemaMarkup.astro';
 import SearchOverlay from '../components/SearchOverlay.jsx';
+import NewsletterModal from '../components/NewsletterModal.jsx';
 import { createWebsiteSchema, createPersonSchema } from '../utils/schemaUtils';
 
 export interface Props {
@@ -156,6 +157,9 @@ const personSchema = createPersonSchema();
 
   <!-- Search Overlay -->
   <SearchOverlay client:idle />
+
+  <!-- Newsletter Modal -->
+  <NewsletterModal client:idle />
 
   <!-- Enhanced code blocks with copy functionality -->
   <script is:inline>

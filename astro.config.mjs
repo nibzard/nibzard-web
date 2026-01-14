@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
+import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import rehypeExternalLinks from './src/plugins/rehype-external-links.mjs';
 import rehypeHeadingAnchors from './src/plugins/rehype-heading-anchors.mjs';
@@ -14,7 +15,7 @@ const siteUrl = 'https://nibzard.com';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react(), sitemap({
+  integrations: [mdx(), react(), sitemap({
     filter: (page) => {
       // Include all pages by default
       return true;
@@ -84,6 +85,20 @@ export default defineConfig({
   },
 
   markdown: {
+    syntaxHighlight: {
+      type: 'shiki',
+      excludeLangs: ['mermaid'],
+    },
+    remarkPlugins: [
+      remarkMermaidClient,
+    ],
+    rehypePlugins: [
+      [rehypeExternalLinks, { domain: new URL(siteUrl).hostname }],
+      rehypeHeadingAnchors,
+      rehypeOptimizeImages,
+    ],
+  },
+  mdx: {
     syntaxHighlight: {
       type: 'shiki',
       excludeLangs: ['mermaid'],
