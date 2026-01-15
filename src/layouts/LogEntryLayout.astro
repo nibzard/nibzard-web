@@ -15,6 +15,7 @@ import AIWarning from '../components/AIWarning.astro';
 import { getDiverseRelatedArticles } from '../utils/articleMatching';
 import RelatedArticles from '../components/RelatedArticles.astro';
 import ReadingProgress from '../components/ReadingProgress.astro';
+import GiscusComments from '../components/GiscusComments.jsx';
 
 interface Frontmatter {
   title: string;
@@ -175,6 +176,16 @@ const relatedArticlesEntries = getDiverseRelatedArticles(
         />
       </CSSFadeIn>
     )}
+
+    <section class="comments-section" id="comments">
+      <GiscusComments
+        client:only="react"
+        repo={import.meta.env.GISCUS_REPO}
+        repoId={import.meta.env.GISCUS_REPO_ID}
+        category={import.meta.env.GISCUS_CATEGORY}
+        categoryId={import.meta.env.GISCUS_CATEGORY_ID}
+      />
+    </section>
 
     <CSSFadeIn delay={0.2}>
       <section class="author-section" id="author" itemscope itemtype="https://schema.org/Person">
