@@ -1,0 +1,127 @@
+---
+export const prerender = true;
+import { getCollection, getEntry, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import NotFoundContent from '../../components/NotFoundContent.astro';
+
+export async function getStaticPaths() {
+  const thoughts = await getCollection('thoughts', ({ data }) => {
+    return data.draft !== true;
+  });
+
+  return thoughts.map((entry: CollectionEntry<'thoughts'>) => ({
+    params: { slug: entry.id.split('/').pop().replace('.md', '') },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+
+let ContentComponent: any;
+
+if (entry) {
+  const rendered = await entry.render();
+  ContentComponent = rendered.Content;
+}
+---
+
+{entry && ContentComponent ? (
+  <BaseLayout
+    title={`Thought — ${new Date(entry.data.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}`}
+    description="A quick thought from Nikola Balić"
+  >
+    <article class="thought-full">
+      <div class="thought-header">
+        <time datetime={entry.data.date.toISOString()}>
+          {new Date(entry.data.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+        </time>
+        <span class="entry-type">Thought</span>
+      </div>
+      <blockquote class="thought-full-content">
+        <ContentComponent />
+      </blockquote>
+      <a href="/" class="back-link">← Back to all</a>
+    </article>
+  </BaseLayout>
+) : (
+  <BaseLayout title="404 - nibzard" description="Thought not found">
+    <NotFoundContent slug={Astro.params.slug} />
+  </BaseLayout>
+)}
+
+<style>
+  .thought-full {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: var(--space-2xl) var(--space-md);
+  }
+
+  .thought-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .thought-header time {
+    color: var(--color-text-muted);
+    font-family: var(--font-ui);
+    font-size: var(--font-size-sm);
+  }
+
+  .entry-type {
+    background: var(--color-accent3);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--border-radius);
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .thought-full-content {
+    font-size: 1.25rem;
+    line-height: 1.7;
+    font-style: italic;
+    color: var(--color-text);
+    margin: 0;
+    padding: var(--space-xl) 0;
+  }
+
+  .thought-full-content :global(p) {
+    margin-bottom: var(--space-md);
+  }
+
+  .back-link {
+    display: inline-block;
+    margin-top: var(--space-xl);
+    color: var(--color-accent3);
+    text-decoration: none;
+    font-family: var(--font-ui);
+    font-size: var(--font-size-sm);
+    transition: color var(--transition-fast);
+  }
+
+  .back-link:hover {
+    color: var(--color-accent1);
+  }
+
+  @media (max-width: 768px) {
+    .thought-full {
+      padding: var(--space-lg) var(--space-md);
+    }
+
+    .thought-full-content {
+      font-size: 1.1rem;
+    }
+
+    .thought-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--space-xs);
+    }
+  }
+</style>

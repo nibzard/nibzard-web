@@ -559,7 +559,7 @@ a.tag:not(.tag-standardized).active {
   /* Truncate long thoughts */
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 8;
   overflow: hidden;
   text-overflow: ellipsis;
 }

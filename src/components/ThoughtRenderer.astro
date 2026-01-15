@@ -10,18 +10,36 @@ interface Props {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+
+// Generate slug from entry ID (filename: YYMMDD.md)
+const slug = entry.id.split('/').pop().replace('.md', '');
 ---
 
-<div class="thought-item">
-  <div class="entry-meta">
-    <time datetime={entry.data.date.toISOString()}>
-      {new Date(entry.data.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
-    </time>
-    <span class="entry-type">Thought</span>
+<a href={`/thoughts/${slug}`} class="thought-item-link">
+  <div class="thought-item">
+    <div class="entry-meta">
+      <time datetime={entry.data.date.toISOString()}>
+        {new Date(entry.data.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+      </time>
+      <span class="entry-type">Thought</span>
+    </div>
+    <div class="thought-content">
+      <blockquote>
+        <Content />
+      </blockquote>
+    </div>
   </div>
-  <div class="thought-content">
-    <blockquote>
-      <Content />
-    </blockquote>
-  </div>
-</div>
+</a>
+
+<style>
+  .thought-item-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  .thought-item-link:hover .thought-item {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+</style>
