@@ -1,17 +1,137 @@
+---
+// ABOUTME: SEO-Oriented Footer Component
+// ABOUTME: Clean, professional footer with proper spacing
+---
+
 <footer class="full-width">
-  <div class="inner-container footer-content">
-    <div class="ascii-divider">+-+-+</div>
-    <div class="footer-main">
-      <p>&copy; {new Date().getFullYear()} <span class="monospace">n<span class="accent1">i</span>bzard</span></p>
-      <div class="footer-links">
-        <a href="/log">Log</a>
-        <a href="/about">About</a>
-        <a href="/bio">Bio</a>
-        <a href="/projects">Projects</a>
-        <a href="/now">Now</a>
-        <a href="/styles">Styles</a>
-        <a href="/rss.xml">RSS</a>
+  <div class="footer-content">
+    <div class="footer-grid">
+      <!-- Site -->
+      <div>
+        <h4 class="footer-title">Site</h4>
+        <ul class="footer-list">
+          <li><a href="/log">Log</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/bio">Bio</a></li>
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="/now">Now</a></li>
+        </ul>
       </div>
+
+      <!-- Social -->
+      <div>
+        <h4 class="footer-title">Social</h4>
+        <ul class="footer-list">
+          <li><a href="https://x.com/nibzard" target="_blank" rel="noopener noreferrer">X / Twitter</a></li>
+          <li><a href="https://github.com/nibzard" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/nikolabalic/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        </ul>
+      </div>
+
+      <!-- Topics -->
+      <div>
+        <h4 class="footer-title">Topics</h4>
+        <ul class="footer-list">
+          <li><a href="/tags/ai">AI</a></li>
+          <li><a href="/tags/agents">Agents</a></li>
+          <li><a href="/tags/startups">Startups</a></li>
+          <li><a href="/tags/growth">Growth</a></li>
+          <li><a href="/tags/engineering">Engineering</a></li>
+        </ul>
+      </div>
+
+      <!-- More -->
+      <div>
+        <h4 class="footer-title">More</h4>
+        <ul class="footer-list">
+          <li><a href="/rss.xml">RSS Feed</a></li>
+          <li><a href="/sitemap-index.xml">Sitemap</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom -->
+    <div class="footer-bottom">
+      <p class="copyright">&copy; {new Date().getFullYear()} nibzard</p>
     </div>
   </div>
 </footer>
+
+<style>
+  .footer-content {
+    border-top: 1px solid var(--color-subtle);
+    padding: 3rem 0 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .footer-title {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0 0 0.75rem 0;
+    color: var(--color-text);
+  }
+
+  .footer-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer-list li {
+    margin-bottom: 0.4rem;
+  }
+
+  .footer-list a {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    transition: color 150ms ease;
+  }
+
+  .footer-list a:hover {
+    color: var(--color-accent2);
+  }
+
+  .footer-bottom {
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-subtle);
+  }
+
+  .copyright {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .footer-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .footer-content {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+</style>
