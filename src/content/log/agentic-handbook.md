@@ -20,9 +20,7 @@ Something happened over the 2025 winter holidays that caught everyone by surpris
 
 ## The Christmas That Changed Everything
 
-The GitHub repository for "Awesome Agentic Patterns" had been growing steadily since its launch. But around Christmas, the growth chart went vertical. In just a few days, the repository jumped from relative obscurity to nearly 2,500 stars. The website traffic mirrored this spike. Something had clicked.
-
-**Links:** [GitHub](https://github.com/nibzard/awesome-agentic-patterns) · [Website](https://agentic-patterns.com/)
+The [GitHub repository](https://github.com/nibzard/awesome-agentic-patterns) for "Awesome Agentic Patterns" had been growing steadily since its launch. But around Christmas, the growth chart went vertical. In just a few days, the repository jumped from relative obscurity to nearly 2,500 stars. The [website](https://agentic-patterns.com/) traffic mirrored this spike. Something had clicked.
 
 But the real story wasn't in the metrics—it was in *who* was talking about AI agents.
 
@@ -698,16 +696,10 @@ The teams that win will be the ones who:
 
 You've just read a comprehensive guide to agentic patterns. The most valuable next step is to **actually use one**.
 
-Pick a pattern. Implement it. Watch it fail. Fix it. Watch it succeed. Then share what you learned.
+Pick a pattern. Implement it. Watch it fail. Fix it. Watch it succeed. Then [share what you learned](https://github.com/nibzard/awesome-agentic-patterns) with the community.
 
 The best time to start exploring agents was during the holidays. The second best time is now.
 
 ---
 
-**Explore the full collection:** [agentic-patterns.com](https://agentic-patterns.com)
-
-**Contribute your patterns:** [github.com/nibzard/awesome-agentic-patterns](https://github.com/nibzard/awesome-agentic-patterns)
-
----
-
-*Written in early 2026 based on the collective wisdom of teams shipping agents to production. If you found this valuable, share it with someone navigating the agentic AI frontier.*
+*Written in early 2026 based on the collective wisdom of teams shipping agents to production. Explore the full collection of 113 patterns at [agentic-patterns.com](https://agentic-patterns.com).*

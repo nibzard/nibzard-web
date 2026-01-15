@@ -8,6 +8,7 @@ import NowItemRenderer from '../components/NowItemRenderer.astro';
 import ImageRenderer from '../components/ImageRenderer.astro';
 import IdeaRenderer from '../components/IdeaRenderer.astro';
 import NewsletterSubscribe from '../components/NewsletterSubscribe.astro';
+import AISummaryButtons from '../components/AISummaryButtons.astro';
 import AnimatedTag from '../components/animations/AnimatedTag.jsx';
 import { createInterleavedFeed, paginateFeed } from '../utils/contentFeed';
 import { calculateDoubleWidth } from '../utils/cardUtils';
@@ -190,6 +191,11 @@ const { paginatedEntries: feedEntries, totalPages } = paginateFeed(
     <div class="newsletter-section">
       <NewsletterSubscribe showButton={true} />
     </div>
+  </FadeIn>
+
+  {/* AI Summary buttons */}
+  <FadeIn client:visible delay={0} yOffset={5}>
+    <AISummaryButtons />
   </FadeIn>
 </BaseLayout>
 
