@@ -1,0 +1,62 @@
+---
+/**
+ * ThoughtEntry Component
+ * Displays a thought entry in the style of the "now" page
+ */
+
+interface Props {
+  entry: any;
+}
+
+const { entry } = Astro.props;
+---
+
+<div class="thought-entry">
+  <h1>A Quick Thought</h1>
+  <p>These are my quick thoughts—short insights, observations, and reflections. Less than a full article, more than a tweet.</p>
+
+  <div class="thought-content">
+    <slot />
+  </div>
+
+  <div class="thought-meta">
+    <p class="thought-date">
+      Posted on <time datetime={entry.data.date.toISOString()}>
+        {new Date(entry.data.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+      </time>
+    </p>
+  </div>
+</div>
+
+<style>
+  .thought-entry {
+    margin-bottom: 2rem;
+  }
+
+  .thought-meta {
+    margin-top: 2rem;
+    font-style: italic;
+    color: var(--color-text-muted);
+  }
+
+  .thought-date {
+    font-size: 0.9rem;
+  }
+
+  .thought-content {
+    margin-top: var(--space-lg);
+  }
+
+  .thought-content :global(blockquote) {
+    font-size: 1.25rem;
+    line-height: 1.7;
+    font-style: italic;
+    color: var(--color-text);
+    margin: 0;
+    padding: var(--space-xl) 0;
+  }
+
+  .thought-content :global(blockquote p) {
+    margin-bottom: var(--space-md);
+  }
+</style>

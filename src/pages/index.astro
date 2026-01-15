@@ -218,6 +218,7 @@ const { paginatedEntries: feedEntries, totalPages } = paginateFeed(
   document.addEventListener('DOMContentLoaded', () => {
     // Handle card clicks and keyboard navigation for log entries
     const logEntries = document.querySelectorAll('.log-entry');
+    const thoughtItems = document.querySelectorAll('.thought-item');
     const nowItems = document.querySelectorAll('.now-item');
 
     // Function to handle clickable cards
@@ -249,6 +250,9 @@ const { paginatedEntries: feedEntries, totalPages } = paginateFeed(
 
     // Make log entries clickable
     logEntries.forEach(makeCardClickable);
+
+    // Make thought items clickable
+    thoughtItems.forEach(makeCardClickable);
 
     // Make now items clickable
     nowItems.forEach(makeCardClickable);

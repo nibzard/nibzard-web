@@ -3,7 +3,7 @@
 // ABOUTME: Clean, professional footer with proper spacing
 ---
 
-<footer class="full-width">
+<footer>
   <div class="footer-content">
     <div class="footer-grid">
       <!-- Site -->
@@ -51,22 +51,28 @@
     </div>
 
     <!-- Bottom -->
-    <div class="footer-bottom">
+    <!-- <div class="footer-bottom">
       <p class="copyright">&copy; {new Date().getFullYear()} nibzard</p>
-    </div>
+    </div> -->
   </div>
 </footer>
 
 <style>
-  /* Reset old footer styles */
-  footer {
-    padding: 0 !important;
-    text-align: left !important;
+  /* Remove all borders from newsletter and footer area */
+  .newsletter-card {
     border: none !important;
     box-shadow: none !important;
   }
 
-  .full-width {
+  footer,
+  .newsletter-section,
+  .ai-summary-section,
+  .footer-content,
+  .footer-grid,
+  .footer-grid > div,
+  .footer-list,
+  .footer-title,
+  .footer-bottom {
     border: none !important;
     box-shadow: none !important;
   }
@@ -77,7 +83,6 @@
     margin: 0 auto;
     padding-left: 2rem;
     padding-right: 2rem;
-    border: none !important;
   }
 
   .footer-grid {

@@ -1,0 +1,116 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+import FadeIn from '../../components/animations/FadeIn.jsx';
+
+// Get all thoughts that aren't drafts
+const thoughts = await getCollection('thoughts', ({ data }) => {
+  return data.draft !== true;
+});
+
+// Sort by date (newest first)
+thoughts.sort((a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf());
+
+// Generate preview text and slug for each thought
+const thoughtsWithMeta = thoughts.map((thought) => {
+  const slug = thought.id.split('/').pop().replace('.md', '');
+  const firstLine = thought.body.split('\n\n')[0].replace(/[*_#]/g, '').trim();
+  const preview = firstLine.length > 200 ? firstLine.substring(0, 197) + '...' : firstLine;
+  return {
+    thought,
+    slug,
+    preview,
+  };
+});
+---
+
+<BaseLayout title="Thoughts - nibzard" description="Quick thoughts, observations, and reflections.">
+  <FadeIn client:visible>
+    <section class="thoughts-index">
+      <h1>Thoughts</h1>
+      <p class="subtitle">Quick insights, observations, and reflections. Less than a full article, more than a tweet.</p>
+
+      <ul class="thoughts-list">
+        {thoughtsWithMeta.map(({ thought, slug, preview }) => (
+          <li>
+            <a href={`/thoughts/${slug}`} class="thought-link">
+              <time datetime={thought.data.date.toISOString()}>
+                {new Date(thought.data.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+              </time>
+              <p class="thought-preview">{preview}</p>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  </FadeIn>
+</BaseLayout>
+
+<style>
+  .thoughts-index {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--space-2xl) var(--space-md);
+  }
+
+  .thoughts-index h1 {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-xl);
+  }
+
+  .thoughts-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .thoughts-list li {
+    margin-bottom: var(--space-lg);
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--space-lg);
+  }
+
+  .thoughts-list li:last-child {
+    border-bottom: none;
+  }
+
+  .thought-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition: color var(--transition-fast);
+  }
+
+  .thought-link:hover {
+    color: var(--color-accent3);
+  }
+
+  .thought-link time {
+    display: block;
+    font-family: var(--font-ui);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-xs);
+  }
+
+  .thought-preview {
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-normal);
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .thoughts-index {
+      padding: var(--space-lg) var(--space-md);
+    }
+
+    .thoughts-index h1 {
+      font-size: 2rem;
+    }
+  }
+</style>

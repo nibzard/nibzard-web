@@ -15,31 +15,22 @@ const { Content } = await entry.render();
 const slug = entry.id.split('/').pop().replace('.md', '');
 ---
 
-<a href={`/thoughts/${slug}`} class="thought-item-link">
-  <div class="thought-item">
-    <div class="entry-meta">
-      <time datetime={entry.data.date.toISOString()}>
-        {new Date(entry.data.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
-      </time>
-      <span class="entry-type">Thought</span>
-    </div>
-    <div class="thought-content">
-      <blockquote>
-        <Content />
-      </blockquote>
-    </div>
+<div
+  class="thought-item"
+  data-href={`/thoughts/${slug}`}
+  role="button"
+  tabIndex="0"
+  aria-label={`Read thought from ${new Date(entry.data.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}`}
+>
+  <div class="entry-meta">
+    <time datetime={entry.data.date.toISOString()}>
+      {new Date(entry.data.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+    </time>
+    <span class="entry-type">Thought</span>
   </div>
-</a>
-
-<style>
-  .thought-item-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-  }
-
-  .thought-item-link:hover .thought-item {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  }
-</style>
+  <div class="thought-content">
+    <blockquote>
+      <Content />
+    </blockquote>
+  </div>
+</div>

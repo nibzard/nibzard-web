@@ -612,6 +612,7 @@ a.tag:not(.tag-standardized).active {
 
 /* Clickable card styles */
 .log-entry,
+.thought-item,
 .now-item {
   cursor: pointer;
 }
