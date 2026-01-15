@@ -84,7 +84,7 @@ const { paginatedEntries: feedEntries, totalPages } = paginateFeed(
 );
 ---
 
-<BaseLayout title="nibzard - Home" description="all things AI agents, growth and startups" fullWidth={true}>
+<BaseLayout title="nibzard - Home" description="all things AI agents, growth and startups" fullWidth={true} showNewsletterModal={false}>
   <div class="masonry-grid">
     {feedEntries.map((item, index) => {
       return (

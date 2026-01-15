@@ -88,6 +88,44 @@ lighthouse http://localhost:4322 --output html --output-path ./lighthouse-prod.h
    - Listed in log index: `/log/`
    - Custom OG image: `/api/og/{slug}` (auto-generated)
 
+## Content Creation Skills
+
+This project has skills for creating different types of content. When you ask to create content, Claude will automatically use the appropriate skill based on your request.
+
+```
+┌───────────┬──────────────────────────────────────────────────────────────┐
+│   Type    │                         When to use                          │
+├───────────┼──────────────────────────────────────────────────────────────┤
+│ Image     │ Visual content (screenshot, photo, chart) with brief caption │
+├───────────┼──────────────────────────────────────────────────────────────┤
+│ Thought   │ Quick insight, observation, philosophical reflection         │
+├───────────┼──────────────────────────────────────────────────────────────┤
+│ Idea      │ Product/service concept with marketing flair                 │
+├───────────┼──────────────────────────────────────────────────────────────┤
+│ Now Entry │ Life update with multiple focus areas (## sections)          │
+├───────────┼──────────────────────────────────────────────────────────────┤
+│ Article   │ Full blog post with narrative/technical depth                │
+└───────────┴──────────────────────────────────────────────────────────────┘
+```
+
+### Available Skills
+
+- **image-writer**: Creates image posts with brief captions (`src/content/images/`)
+- **thought-writer**: Creates quick thoughts and observations (`src/content/thoughts/`)
+- **idea-writer**: Creates product/service concept ideas (`src/content/idea/`)
+- **now-writer**: Creates "what I'm doing now" entries (`src/content/now/`)
+- **article-writer**: Creates full blog articles (`src/content/log/`)
+
+### Quick Reference
+
+| Skill | Directory | Filename Format | Frontmatter Complexity |
+|-------|-----------|-----------------|------------------------|
+| image-writer | `src/content/images/` | YYMMDD.md | Minimal (date, imageUrl) |
+| thought-writer | `src/content/thoughts/` | YYMMDD.md | Minimal (date only) |
+| now-writer | `src/content/now/` | YYMMDD.md | Minimal (date only) |
+| idea-writer | `src/content/idea/` | Descriptive kebab-case | Medium (title, subtitle, category, date) |
+| article-writer | `src/content/log/` | Descriptive kebab-case | Complex (title, description, tags, topics, etc.) |
+
 ## Mermaid Diagrams
 
 This site supports Mermaid diagrams in markdown files. Mermaid diagrams are rendered as SVG graphics with proper styling and colors.

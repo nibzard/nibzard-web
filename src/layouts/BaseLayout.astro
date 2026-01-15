@@ -17,13 +17,15 @@ export interface Props {
   description?: string;
   ogImage?: string;
   fullWidth?: boolean;
+  showNewsletterModal?: boolean;
 }
 
 const {
   title = "nibzard",
   description = "all things AI agents, growth and startups",
   ogImage,
-  fullWidth = false
+  fullWidth = false,
+  showNewsletterModal = true
 } = Astro.props;
 const canonicalUrl = Astro.url.toString();
 const siteUrl = Astro.site ? Astro.site.toString() : Astro.url.origin;
@@ -159,7 +161,7 @@ const personSchema = createPersonSchema();
   <SearchOverlay client:idle />
 
   <!-- Newsletter Modal -->
-  <NewsletterModal client:idle />
+  {showNewsletterModal !== false && <NewsletterModal client:idle />}
 
   <!-- Enhanced code blocks with copy functionality -->
   <script is:inline>
