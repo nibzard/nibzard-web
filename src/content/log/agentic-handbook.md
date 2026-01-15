@@ -50,9 +50,9 @@ This repository, with its 113 patterns collected from real production systems, b
 
 ### The "Ralph Wiggum" Phenomenon
 
-Another phenomenon that exploded during the holidays was the "Ralph Wiggum coding loop"—named after the Simpsons character who means well but misses context. This describes the cycle where an agent starts working on something, seems productive, but gradually drifts off-course because it lacks the deeper context that a human would implicitly understand.
+Another phenomenon that exploded during the holidays was the "Ralph Wiggum coding loop"—named after the Simpsons character who means well but misses context. As [ghuntley describes it](https://ghuntley.com/ralph/), this describes the cycle where an agent starts working on something, seems productive, but gradually drifts off-course because it lacks the deeper context that a human would implicitly understand.
 
-The holiday spike represented people collectively figuring out how to break this cycle. The patterns in this collection—particularly around human-in-the-loop collaboration, monitoring, and control transfer—represent the solutions developers discovered.
+The holiday spike represented people collectively figuring out how to break this cycle. The patterns in this collection—particularly around human-in-the-loop collaboration, monitoring, and control transfer—represent the solutions developers discovered. (For more on avoiding the Ralph Wiggum trap, see [ghuntley's guide](https://github.com/ghuntley/how-to-ralph-wiggum)).
 
 ### Why This Moment Matters
 
