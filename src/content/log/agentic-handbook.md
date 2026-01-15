@@ -125,7 +125,7 @@ As of early 2026, this repository contains **113 patterns** organized into **8 c
 
 The patterns cluster naturally into eight categories, each addressing a different dimension of building production agents:
 
-### 1. Orchestration & Control (33 patterns)
+### 1. Orchestration & Control
 
 **The brain of the agent.** How does the agent decide what to do, in what order, and when to stop?
 
@@ -138,7 +138,7 @@ Key patterns include:
 - **[Language Agent Tree Search (LATS)](https://agentic-patterns.com/patterns/language-agent-tree-search-lats/)**: Apply Monte Carlo Tree Search to reasoning problems
 - **[Tree of Thoughts](https://agentic-patterns.com/patterns/tree-of-thought-reasoning/)**: Structure reasoning as exploratory tree search
 
-### 2. Tool Use & Environment (21 patterns)
+### 2. Tool Use & Environment
 
 **The hands of the agent.** How does the agent interact with external systems—APIs, databases, file systems, browsers?
 
@@ -150,7 +150,7 @@ Key patterns include:
 - **[Egress Lockdown](https://agentic-patterns.com/patterns/egress-lockdown-no-exfiltration-channel/)**: Security pattern for agents that shouldn't exfiltrate data
 - **[LLM-Friendly API Design](https://agentic-patterns.com/patterns/llm-friendly-api-design/)**: Design APIs that language models can actually use effectively
 
-### 3. Context & Memory (13 patterns)
+### 3. Context & Memory
 
 **The mind of the agent.** How does the agent manage limited context windows while building up knowledge over time?
 
@@ -162,7 +162,7 @@ Key patterns include:
 - **[Curated Code Context](https://agentic-patterns.com/patterns/curated-code-context-window/)**: Selectively include only relevant code in context
 - **[Progressive Disclosure for Large Files](https://agentic-patterns.com/patterns/progressive-disclosure-large-files/)**: Load file contents incrementally
 
-### 4. Feedback Loops (13 patterns)
+### 4. Feedback Loops
 
 **The growth mechanism of the agent.** How does the agent improve its outputs through iteration and evaluation?
 
@@ -174,7 +174,7 @@ Key patterns include:
 - **[Coding Agent CI Feedback Loop](https://agentic-patterns.com/patterns/coding-agent-ci-feedback-loop/)**: Use test failures as learning signals
 - **[Graph of Thoughts (GoT)](https://agentic-patterns.com/patterns/graph-of-thoughts/)**: Structure reasoning as a graph with interconnected thoughts
 
-### 5. UX & Collaboration (13 patterns)
+### 5. UX & Collaboration
 
 **The partnership between human and agent.** How do humans and agents work together effectively?
 
@@ -186,7 +186,7 @@ Key patterns include:
 - **[Verbose Reasoning Transparency](https://agentic-patterns.com/patterns/verbose-reasoning-transparency/)**: Make agent thinking visible for trust and debugging
 - **[Abstracted Code Representation for Review](https://agentic-patterns.com/patterns/abstracted-code-representation-for-review/)**: Higher-level summaries instead of raw diffs
 
-### 6. Reliability & Eval (12 patterns)
+### 6. Reliability & Eval
 
 **The quality assurance of the agent.** How do you know your agent is working correctly?
 
@@ -198,7 +198,7 @@ Key patterns include:
 - **[Extended Coherence Work Sessions](https://agentic-patterns.com/patterns/extended-coherence-work-sessions/)**: Maintain agent focus across long interactions
 - **[Workflow Evals with Mocked Tools](https://agentic-patterns.com/patterns/workflow-evals-with-mocked-tools/)**: Test agent logic without real tool calls
 
-### 7. Learning & Adaptation (5 patterns)
+### 7. Learning & Adaptation
 
 **The evolution of the agent.** How do agents improve over time and build institutional knowledge?
 
@@ -210,7 +210,7 @@ Key patterns include:
 - **[Compounding Engineering Pattern](https://agentic-patterns.com/patterns/compounding-engineering-pattern/)**: Build on previous agent work
 - **[Variance-Based RL](https://agentic-patterns.com/patterns/variance-based-rl-sample-selection/)**: Select training examples based on uncertainty
 
-### 8. Security & Safety (3 patterns)
+### 8. Security & Safety
 
 **The safeguards for the agent.** How do you prevent agents from causing harm?
 
@@ -646,8 +646,8 @@ The 113 patterns in this collection represent the state of agentic AI in early 2
 ### Gaps and Opportunities
 
 **Small categories that should grow:**
-- **Security & Safety** (3 patterns) – Will expand as agents become more deployed
-- **Learning & Adaptation** (5 patterns) – The holy grail of agents that actually improve
+- **Security & Safety** – Will expand as agents become more deployed
+- **Learning & Adaptation** – The holy grail of agents that actually improve
 
 **Underexplored areas:**
 - Multi-modal agents (beyond text and code)
