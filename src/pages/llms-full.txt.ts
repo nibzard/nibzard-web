@@ -123,8 +123,15 @@ function generateTableOfContents(content: ProcessedContent): string {
  * Renders the full content of a log entry
  */
 async function renderLogEntry(entry: CollectionEntry<'log'>): Promise<string> {
-  // Read the raw markdown file
-  const filePath = join(process.cwd(), 'src', 'content', 'log', `${entry.slug}.md`);
+  // Read the raw markdown file (handle both .md and .mdx extensions)
+  const basePath = join(process.cwd(), 'src', 'content', 'log', entry.slug);
+  let filePath = `${basePath}.md`;
+  try {
+    readFileSync(filePath, 'utf-8');
+  } catch {
+    // Try .mdx extension if .md doesn't exist
+    filePath = `${basePath}.mdx`;
+  }
   const rawContent = readFileSync(filePath, 'utf-8');
 
   // Remove frontmatter (everything between first two --- lines)

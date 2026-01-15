@@ -14,9 +14,13 @@ export const GET: APIRoute = async ({ request }) => {
       getCollection('idea', (entry) => !entry.data.draft),
     ]);
 
-    // Sort by date (newest first)
-    const sortByDate = <T extends { data: { date: Date } }>(entries: T[]): T[] =>
-      entries.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+    // Sort by date (newest first), handling optional dates
+    const sortByDate = <T extends { data: { date?: Date } }>(entries: T[]): T[] =>
+      entries.sort((a, b) => {
+        const aTime = a.data.date?.getTime() ?? 0;
+        const bTime = b.data.date?.getTime() ?? 0;
+        return bTime - aTime;
+      });
 
     const sortedLogs = sortByDate(logs);
     const sortedIdeas = sortByDate(ideas);

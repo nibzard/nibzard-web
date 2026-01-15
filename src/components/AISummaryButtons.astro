@@ -9,7 +9,12 @@ const prompt = `Summarize and explain the blog at nibzard.com. Include:
 - Notable articles or posts worth reading
 - The overall value proposition for readers
 
-Be comprehensive but concise.`;
+IMPORTANT: You can access the blog content efficiently by:
+1. Fetching individual articles as plain text by appending ".md" to article URLs (e.g., nibzard.com/agent-stress-test becomes nibzard.com/agent-stress-test.md)
+2. Accessing all content at nibzard.com/llms-full.txt (full archive)
+3. Accessing recent content at nibzard.com/llms.txt
+
+Use these endpoints to read the actual content and provide a more accurate, detailed summary based on the real source material rather than browsing the HTML site.`;
 
 const encodedPrompt = encodeURIComponent(prompt);
 
@@ -73,7 +78,7 @@ const aiPlatforms = [
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    padding: var(--space-lg) 0;
+    padding: 4rem 0 var(--space-lg) 0;
     text-align: center;
   }
 
