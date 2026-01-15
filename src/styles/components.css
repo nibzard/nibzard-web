@@ -564,43 +564,6 @@ a.tag:not(.tag-standardized).active {
   text-overflow: ellipsis;
 }
 
-/* Expanded state */
-.thought-content blockquote.expanded {
-  display: block;
-  -webkit-line-clamp: unset;
-}
-
-/* Expand/collapse button */
-.thought-expand {
-  margin-top: var(--space-sm);
-  padding: var(--space-xs) var(--space-sm);
-  background: transparent;
-  border: 1px solid var(--color-accent3);
-  color: var(--color-accent3);
-  border-radius: var(--border-radius);
-  cursor: pointer;
-  font-size: 0.875rem;
-  font-family: var(--font-ui);
-  transition: all var(--transition-fast);
-}
-
-.thought-expand:hover {
-  background: var(--color-accent3);
-  color: white;
-}
-
-.thought-expand .collapse-text {
-  display: none;
-}
-
-.thought-content blockquote.expanded + .thought-expand .expand-text {
-  display: none;
-}
-
-.thought-content blockquote.expanded + .thought-expand .collapse-text {
-  display: inline;
-}
-
 /* Now item content */
 .now-item-content {
   line-height: var(--line-height-relaxed);

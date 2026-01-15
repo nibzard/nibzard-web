@@ -10,9 +10,6 @@ interface Props {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
-
-// Generate a safe ID from entry.id (filename-based)
-const thoughtId = `thought-${entry.id.split('/').pop().replace('.md', '')}`;
 ---
 
 <div class="thought-item">
@@ -23,38 +20,8 @@ const thoughtId = `thought-${entry.id.split('/').pop().replace('.md', '')}`;
     <span class="entry-type">Thought</span>
   </div>
   <div class="thought-content">
-    <blockquote id={thoughtId}>
+    <blockquote>
       <Content />
     </blockquote>
-    <button
-      class="thought-expand"
-      data-target={thoughtId}
-      aria-expanded="false"
-    >
-      <span class="expand-text">Read more</span>
-      <span class="collapse-text">Show less</span>
-    </button>
   </div>
 </div>
-
-<script>
-  // Add click handler for expand/collapse
-  document.querySelectorAll('.thought-expand').forEach(button => {
-    button.addEventListener('click', () => {
-      const targetId = button.getAttribute('data-target');
-      const blockquote = document.getElementById(targetId);
-
-      if (blockquote) {
-        const isExpanded = blockquote.classList.toggle('expanded');
-        button.setAttribute('aria-expanded', String(isExpanded));
-      }
-    });
-  });
-</script>
-
-<style>
-  /* Component-specific styles for button positioning */
-  .thought-content {
-    position: relative;
-  }
-</style>
