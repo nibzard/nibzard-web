@@ -28,6 +28,10 @@ Now, with **Codex 5.2 in xhigh mode**, everything clicked. The new Looper is bui
 
 Look, I know how this sounds. Others are off building entire orchestrations systems—Steve Yegge's Gas Town is basically Kubernetes mated with Temporal, with seven worker roles, a tmux UI, and concepts called "Beads" and "Molecules." It's designed for running 20–30 Claude Code instances at once. That's cool, but I wanted something very simple: true to the rough idea of just running a loop, but with some fancy bells and whistles.
 
+There's a deeper reason for building small wrappers instead of full orchestrators: the model makers themselves are building the best harnesses. Codex CLI comes from OpenAI; Claude Code from Anthropic. They know their models' token patterns, thinking styles, and tool preferences better than anyone else. Even third-party models like GLM-4.7 on Z.ai feel eerily native in Claude Code—like they were trained or reinforced on Claude Code workflows itself.
+
+Other companies are building their own harnesses too: Charm's [Crush](https://github.com/charmbracelet/crush) brings glamorous terminal-native AI coding, while OpenCode and Pi Code offer their own takes. But none of this invites me to build a *better* harness. The ideal form is a small wrapper around something that already works—nothing extra, just structure on top.
+
 Most AI coding tools give you a chatty assistant that's helpful but forgetful, that re-explains context you've already established, that drifts when tasks get complex.
 
 I wanted something else. So I built Looper.
@@ -44,6 +48,16 @@ At its core, Looper is a tiny bash wrapper around Codex that enforces a strict l
 
 The rule is boring on purpose. **Boring scales.**
 
+## The Speed You Can Still Intervene At
+
+Here's what Gas Town and the 20-agent swarms miss: humans become the bottleneck.
+
+When you're juggling two dozen Claude Code instances, you can't actually follow what's happening. You're along for the ride, hoping the factory doesn't disembowel you. That's not autonomy I can trust.
+
+I want to move at a speed where I can *still intervene* while the system runs in complete autonomy. A day or two for a project? That's bearable. It gives me space to do other stuff, let Looper chug away, and check in periodically with enough context to redirect if needed. If it's been coding for 48 hours and I realize the direction is wrong, I can stop it and pivot. It hasn't gone so far that everything is a loss.
+
+Slow enough to follow. Fast enough to ship.
+
 ## Why a Backlog Changes Everything
 
 <blockquote class="featured-quote primary">
@@ -58,7 +72,7 @@ The review pass behaves like a senior dev: read the whole repo, check against so
 
 This means the system can run indefinitely, but still has a hard stop when the backlog is truly exhausted.
 
-## What the Numbers Look Like
+## The Shape of the Loop
 
 From my local `~/.looper` logs:
 
@@ -72,14 +86,12 @@ These are local test runs, not production. But they show the shape: short, consi
 ## The Anti-Magic Approach
 
 <blockquote class="featured-quote secondary">
-The gap between AI that demos well and AI that ships is a reliability gap, not a capability gap. Structure is how you bridge it.
+The gap between AI that demos well and AI that ships is in observability, not capability. Structure is how you bridge it.
 </blockquote>
 
-There's a seductive idea in AI development right now: just give the model more context, better tools, and let it figure things out. But **99% reliability is a failing grade** in production engineering.
-
-You need to answer: what changed, why, and in which iteration?
-
 When every task is explicit and every update flows through a schema, you get traceability for free. No task can sprawl because each iteration has a single objective. The system either completes the work or admits it needs more work.
+
+You can always answer: what changed, why, and in which iteration?
 
 It's honest.
 
