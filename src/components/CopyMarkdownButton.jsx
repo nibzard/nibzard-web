@@ -1,8 +1,66 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+
+const copyTextToClipboard = async (text) => {
+  if (navigator?.clipboard) {
+    try {
+      await navigator.clipboard.writeText(text);
+      return true;
+    } catch (error) {
+      // Fall through to the execCommand fallback.
+    }
+  }
+
+  try {
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.setAttribute('readonly', '');
+    textarea.style.position = 'fixed';
+    textarea.style.top = '0';
+    textarea.style.left = '-9999px';
+    textarea.style.opacity = '0';
+    document.body.appendChild(textarea);
+    textarea.focus();
+    textarea.select();
+    textarea.setSelectionRange(0, textarea.value.length);
+    const success = document.execCommand('copy');
+    document.body.removeChild(textarea);
+    return success;
+  } catch (error) {
+    return false;
+  }
+};
 
 const CopyMarkdownButton = ({ slug, className = '' }) => {
   const [copied, setCopied] = useState(false);
   const [loading, setLoading] = useState(false);
+  const markdownRef = useRef(null);
+
+  useEffect(() => {
+    let isMounted = true;
+    markdownRef.current = null;
+
+    const prefetchMarkdown = async () => {
+      try {
+        const response = await fetch(`/api/raw/${slug}`);
+        if (!response.ok) {
+          throw new Error('Failed to prefetch markdown');
+        }
+
+        const markdownContent = await response.text();
+        if (isMounted) {
+          markdownRef.current = markdownContent;
+        }
+      } catch (error) {
+        console.error('Failed to prefetch markdown:', error);
+      }
+    };
+
+    prefetchMarkdown();
+
+    return () => {
+      isMounted = false;
+    };
+  }, [slug]);
 
   const handleCopyMarkdown = async () => {
     if (loading) return;
@@ -10,13 +68,15 @@ const CopyMarkdownButton = ({ slug, className = '' }) => {
     setLoading(true);
     
     try {
-      const response = await fetch(`/api/raw/${slug}`);
-      if (!response.ok) {
-        throw new Error('Failed to fetch markdown');
+      const markdownContent = markdownRef.current;
+      if (!markdownContent) {
+        throw new Error('Markdown not ready');
       }
-      
-      const markdownContent = await response.text();
-      await navigator.clipboard.writeText(markdownContent);
+
+      const didCopy = await copyTextToClipboard(markdownContent);
+      if (!didCopy) {
+        throw new Error('Failed to copy markdown');
+      }
       
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
@@ -24,9 +84,13 @@ const CopyMarkdownButton = ({ slug, className = '' }) => {
       console.error('Failed to copy markdown:', error);
       // Fallback: copy the markdown URL instead
       const markdownUrl = `${window.location.origin}/${slug}.md`;
-      await navigator.clipboard.writeText(markdownUrl);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
+      const didCopyUrl = await copyTextToClipboard(markdownUrl);
+      if (didCopyUrl) {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      } else {
+        console.error('Failed to copy markdown URL:', markdownUrl);
+      }
     } finally {
       setLoading(false);
     }

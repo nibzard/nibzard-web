@@ -4,6 +4,36 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+const copyTextToClipboard = async (text) => {
+  if (navigator?.clipboard) {
+    try {
+      await navigator.clipboard.writeText(text);
+      return true;
+    } catch (error) {
+      // Fall through to the execCommand fallback.
+    }
+  }
+
+  try {
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.setAttribute('readonly', '');
+    textarea.style.position = 'fixed';
+    textarea.style.top = '0';
+    textarea.style.left = '-9999px';
+    textarea.style.opacity = '0';
+    document.body.appendChild(textarea);
+    textarea.focus();
+    textarea.select();
+    textarea.setSelectionRange(0, textarea.value.length);
+    const success = document.execCommand('copy');
+    document.body.removeChild(textarea);
+    return success;
+  } catch (error) {
+    return false;
+  }
+};
+
 const ShareButton = ({ slug, title, className = '' }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -57,7 +87,11 @@ const ShareButton = ({ slug, title, className = '' }) => {
 
   const copyLink = async () => {
     try {
-      await navigator.clipboard.writeText(url);
+      const didCopy = await copyTextToClipboard(url);
+      if (!didCopy) {
+        throw new Error('Failed to copy link');
+      }
+
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {

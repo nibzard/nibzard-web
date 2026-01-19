@@ -24,6 +24,36 @@ const languageDisplay = language === "text" ? "code" : language;
 
 <script>
   // Copy to clipboard functionality
+  const copyTextToClipboard = async (text) => {
+    if (navigator?.clipboard) {
+      try {
+        await navigator.clipboard.writeText(text);
+        return true;
+      } catch (error) {
+        // Fall through to the execCommand fallback.
+      }
+    }
+
+    try {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.top = '0';
+      textarea.style.left = '-9999px';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.focus();
+      textarea.select();
+      textarea.setSelectionRange(0, textarea.value.length);
+      const success = document.execCommand('copy');
+      document.body.removeChild(textarea);
+      return success;
+    } catch (error) {
+      return false;
+    }
+  };
+
   document.addEventListener('DOMContentLoaded', function() {
     const copyButtons = document.querySelectorAll('.copy-button');
     
@@ -33,7 +63,10 @@ const languageDisplay = language === "text" ? "code" : language;
         if (!code) return;
         
         try {
-          await navigator.clipboard.writeText(code);
+          const didCopy = await copyTextToClipboard(code);
+          if (!didCopy) {
+            throw new Error('Failed to copy code');
+          }
           
           // Visual feedback
           const originalText = this.innerHTML;
