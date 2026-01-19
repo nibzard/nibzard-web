@@ -22,9 +22,11 @@ This obsession started last June. I built [llm-loop](https://github.com/nibzard/
 
 Around the same time, I had a great chat with [Geoffrey Huntley](https://ghuntley.com/). We'd converged in the same universe—he was pioneering what he called the **Ralph Wiggum Loop**: autonomous agents that maintain codebases indefinitely. Geoff saw the future before most of us even knew there was a problem to solve.
 
-In September, when [Z.ai released GLM-4.5](https://z.ai/subscribe?ic=61HSE9HVY6) (referral link), I built `loop.sh`—the first version of a simple looping script that used skills to move work forward. It worked, but it was still missing something.
+In September, when [Z.ai released GLM-4.5](https://z.ai/subscribe?ic=61HSE9HVY6) (referral link that feeds my loops), I built `loop.sh`—the first version of a simple looping script that used skills to move work forward. It worked, but it was still missing something.
 
 Now, with **Codex 5.2 in xhigh mode**, everything clicked. The new Looper is built entirely around it—harnessing the power of observability through logs, traceability through a JSON task list, and script flags for tail and status. It's not just an autonomous coder anymore. It's an auditable workflow.
+
+Look, I know how this sounds. Others are off building entire orchestrations systems—Steve Yegge's Gas Town is basically Kubernetes mated with Temporal, with seven worker roles, a tmux UI, and concepts called "Beads" and "Molecules." It's designed for running 20–30 Claude Code instances at once. That's cool, but I wanted something very simple: true to the rough idea of just running a loop, but with some fancy bells and whistles.
 
 Most AI coding tools give you a chatty assistant that's helpful but forgetful, that re-explains context you've already established, that drifts when tasks get complex.
 
