@@ -58,6 +58,8 @@ I want to move at a speed where I can *still intervene* while the system runs in
 
 Slow enough to follow. Fast enough to ship.
 
+This speed mirrors the **flow state** formula: too fast causes anxiety and loss of control; too slow causes boredom and disengagement. A successful looper keeps the challenge level just barely above your ability to intervene manually—which is precisely where optimal experience lives.
+
 ## Why a Backlog Changes Everything
 
 <blockquote class="featured-quote primary">
