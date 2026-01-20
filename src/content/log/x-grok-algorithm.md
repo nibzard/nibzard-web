@@ -1,27 +1,27 @@
 ---
 title: "X's Grok-Powered Algorithm: The January 2026 Rewrite"
-description: "X's algorithm rewritten with Grok's transformer architecture. I analyzed the closed code and updated the Tufte-designed playbook."
+description: "X's Grok algorithm analyzed with AI agents. Comparison with old algorithm and practical learnings."
 date: 2026-01-20
 tags: [X, TWITTER, ALGORITHM, GROK, GROWTH, REVERSE-ENGINEERING]
 draft: false
 author: "Nikola Balić"
-topics: [Grok algorithm, X recommendation system, transformer architecture, reverse engineering, closed-source analysis]
+topics: [Grok algorithm, X recommendation system, transformer architecture, reverse engineering, open-source analysis]
 entities: [Grok, xAI, twitter-algorithm-tufte]
 answers_questions:
   - What changed in X's January 2026 algorithm?
   - How does Grok power X's recommendations?
-  - What does the closed-code analysis reveal?
+  - What does the open-sourced code analysis reveal?
 ---
 
-X's recommendation algorithm just got a complete rewrite. And it's not just an update—it's a fundamental shift to Grok's transformer architecture.
+X's recommendation algorithm got a significant rewrite. The core system now uses Grok's transformer architecture instead of the previous ML pipeline.
 
 <blockquote class="featured-quote primary">
-The old pipeline is gone. In-network posts, out-of-network ML retrieval, the two-stage ranking system—everything has been rearchitected around Grok's transformer model.
+The in-network posts, out-of-network ML retrieval, and two-stage ranking system have been rearchitected around Grok's transformer model.
 </blockquote>
 
 Elon open-sourced the code last week, called it "dumb," and admitted the algorithm has been flooding feeds with irrelevant junk. Which is exactly why I updated my playbook.
 
-I analyzed the closed-source code exclusively—no documentation, no guides, just the raw implementation—and rewrote the entire guide to reflect what's actually happening under the hood.
+I used Claude Code AI agents to analyze the newly open-sourced code and compare it with the previous algorithm. The agents worked through the implementation directly and updated the guide to reflect what's actually happening under the hood.
 
 <blockquote class="featured-quote secondary">
 Full disclosure: This analysis and report was generated entirely by Claude Code CLI AI agents. I'm just publishing what they produced.
