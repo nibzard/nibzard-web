@@ -36,7 +36,7 @@ But that's not what's happening. AI is turning effort into a **multiplier**. Not
 
 And when you multiply, you don't just get "more good." You get more *bad* (faster mistakes), more *noise* (more output that feels like progress), more *fragility* (more surface area), more *variance* (wildly different outcomes from similar inputs).
 
-**AI doesn't just make work faster—it amplifies hidden constraints.**
+[**AI doesn't just make work faster—it amplifies hidden constraints.**](/amplification)
 
 You can feel it in every domain:
 
@@ -49,7 +49,7 @@ What AI is really doing is turning the world into a system where constraints rev
 
 ## Why Speed Without Structure Is Fragility
 
-Most teams are still running "assistant era" processes with "orchestration era" tools.
+Most teams are still running ["assistant era"](/ai-bottleneck) processes with ["orchestration era"](/ai-bottleneck) tools.
 
 In the assistant era, you're still doing the work. AI is a power tool—one human, one agent, one linear process. In the orchestration era, you're designing the system that does the work. AI is labor.
 
@@ -61,7 +61,7 @@ Why? Because the bottleneck moved.
 
 The cost of producing *output* drops, so the cost of producing *coherent output* dominates. The founder is no longer the person who pushes work through the pipe. **The founder is the person who keeps the pipe from exploding.**
 
-This is also why you see a new bottleneck emerge: **observability**. When you have multiple agents, parallel tasks, and stochastic planning, you need to answer: what was planned vs executed? Which agent made which decision? What verified correctness? Where did it fail, and why?
+This is also why you see a new bottleneck emerge: **observability** (as I've [written about before](/ai-bottleneck)). When you have multiple agents, parallel tasks, and stochastic planning, you need to answer: what was planned vs executed? Which agent made which decision? What verified correctness? Where did it fail, and why?
 
 AI makes "doing" cheaper, but it makes "knowing what happened" more expensive. The winners will solve that paradox.
 
@@ -79,7 +79,7 @@ In older eras, you could be bad at translation and still survive because the env
 
 The core niche—if you strip away the metaphors—is simple: **build translators that let you move at the new speed without becoming fragile**.
 
-That's a market niche. It's also a strategy. And it's why "anti-playbooks" are emerging: because playbooks are basically translation layers for stable markets, and stable markets are not what we have.
+That's a market niche. It's also a strategy. And it's why ["anti-playbooks"](/anti-playbook-ai-dev-tools-growth-strategy) are emerging: because playbooks are basically translation layers for stable markets, and stable markets are not what we have.
 
 When AI is involved, the gap between users and approvers widens. Usage is easier (so more people try), but the downside is scarier (because the system can act, not just suggest). So the most important GTM move isn't a funnel—it's **trust design**.
 
@@ -95,9 +95,9 @@ Here's what to do on Monday:
 
 **Pick one bottleneck to kill this month.** Market, product, or message—don't pick all three. If you can't name your bottleneck in one sentence, your bottleneck is "decision-making." Start there.
 
-**Build one loop that runs without you.** Onboarding → activation → retention. Spec → build → test → deploy. Content → distribution → feedback. If you are still the loop, you are the bottleneck.
+**Build one loop that runs without you.** Onboarding → activation → retention. Spec → build → test → deploy. Content → distribution → feedback. If you are still the loop, you are the bottleneck. (The [loop is where the magic is](/theloop).)
 
-**Make your system legible to agents.** Add contracts. Add schemas. Add structured outputs. Add machine-readable docs. If an agent can't reliably operate your system, your future workforce can't either.
+**Make your system legible to agents.** Add contracts. Add schemas. Add structured outputs. Add machine-readable docs. (This is what an ["agent-friendly stack"](/agent-stack) looks like.) If an agent can't reliably operate your system, your future workforce can't either.
 
 **Instrument outcomes, not activity.** Outcome metrics should answer: *did the system behave as intended?* Not: *did we ship something?*
 
@@ -114,3 +114,5 @@ Plastic worlds reward speed, translation, loops, trust, assurance. The winners w
 If you feel overwhelmed, it doesn't mean you're failing.
 
 It means you're awake.
+
+And if you read this far, you're exactly the kind of founder who should [talk to Disequi](https://disequi.com/).
