@@ -120,19 +120,10 @@ const personSchema = createPersonSchema();
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
   <link rel="dns-prefetch" href="https://www.clarity.ms">
 
-  <!-- Monaspace fonts are loaded from local files via fonts.css -->
-
-  <!-- Monaspace fonts are self-hosted, no external font loading needed -->
+  <!-- Using system fonts - no external font loading needed -->
 
   <!-- Critical CSS inlined for faster first paint -->
   <style set:html={criticalCSS}></style>
-
-  <!-- Preload critical Monaspace fonts -->
-  <link rel="preload" href="/fonts/monaspace/MonaspaceArgonVF.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/monaspace/MonaspaceXenonVF.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/monaspace/MonaspaceNeonVF.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/monaspace/MonaspaceKryptonVF.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/monaspace/MonaspaceRadonVF.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Schema.org Structured Data -->
   <SchemaMarkup schema={websiteSchema} />

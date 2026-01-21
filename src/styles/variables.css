@@ -38,24 +38,21 @@
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-serif: Georgia, 'Times New Roman', serif;
   
-  /* Monaspace Font Families */
-  --font-mono-neon: 'Monaspace Neon', 'SFMono-Regular', Consolas, monospace;
-  --font-mono-argon: 'Monaspace Argon', 'SFMono-Regular', Consolas, monospace;
-  --font-mono-xenon: 'Monaspace Xenon', 'SFMono-Regular', Consolas, monospace;
-  --font-mono-krypton: 'Monaspace Krypton', 'SFMono-Regular', Consolas, monospace;
-  --font-mono-radon: 'Monaspace Radon', 'SFMono-Regular', Consolas, monospace;
-  
-  /* Primary font assignments - Updated hierarchy */
-  --font-body: var(--font-mono-argon); /* Main body text - humanist monospace */
-  --font-heading: var(--font-mono-xenon); /* Headings - slab serif, impactful */
-  --font-emphasis: var(--font-mono-radon); /* Quotes, em - handwriting, expressive */
-  --font-metadata: var(--font-mono-krypton); /* Dates, bylines - mechanical, precise */
-  --font-code: var(--font-mono-krypton); /* Code blocks - mechanical, precise */
-  --font-ui: var(--font-mono-krypton); /* UI elements - mechanical, precise */
-  
+  /* System font stack for faster page loads */
+  --font-sans-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono-stack: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+
+  /* Primary font assignments - using system fonts */
+  --font-body: var(--font-sans-stack); /* Main body text - system sans-serif */
+  --font-heading: var(--font-sans-stack); /* Headings - system sans-serif */
+  --font-emphasis: var(--font-sans-stack); /* Quotes, emphasis - system sans-serif */
+  --font-metadata: var(--font-sans-stack); /* Dates, bylines - system sans-serif */
+  --font-code: var(--font-mono-stack); /* Code blocks - system monospace */
+  --font-ui: var(--font-sans-stack); /* UI elements - system sans-serif */
+
   /* Backward compatibility */
-  --font-mono: var(--font-heading); /* Default monospace for existing elements */
-  --font-mono-fallback: 'SFMono-Regular', Consolas, monospace;
+  --font-mono: var(--font-mono-stack); /* Default monospace for existing elements */
+  --font-mono-fallback: var(--font-mono-stack);
 
   /* Font sizes - increased for better readability */
   --font-size-xs: 0.8rem;    /* 12.8px */

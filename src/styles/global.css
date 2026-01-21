@@ -1,6 +1,6 @@
 /* === Base Reset & Typography === */
 @import './variables.css';
-@import './fonts.css';
+/* Using system fonts - no custom fonts needed */
 @import './typography.css';
 @import './utilities.css';
 
