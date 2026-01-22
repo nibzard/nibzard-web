@@ -43,7 +43,7 @@ const siteUrl = Astro.site ? Astro.site.toString() : Astro.url.origin;
 // Get the slug from the URL path for dynamic OG image
 const urlPath = Astro.url.pathname;
 const slug = urlPath.split('/').filter(Boolean).pop() || '';
-const ogImageUrl = new URL(`/api/og/${slug}`, siteUrl).toString();
+const ogImageUrl = new URL(`/og/${slug}.png`, siteUrl).toString();
 
 // Create schema markup for the blog post
 const blogPostSchema = createBlogPostSchema({
