@@ -152,6 +152,12 @@ After enabling the proxy, Cloudflare showed ~44k requests with about 70% served 
 
 So the proxy helped, but it wasn't a magic bullet. My HTML was still passing through to Vercel on most requests.
 
+But here's the reality check: MS Clarity showed about 18,761 sessions with ~1.25 pages per session—roughly 23,451 actual pageviews. Compare that to 700,000 Vercel edge requests, and you're looking at ~30 edge requests per pageview.
+
+![MS Clarity analytics showing sessions and pageviews](/images/20260121-ms-clarity.png)
+
+This is actually normal for modern sites. Edge requests count every CDN hit—fonts, CSS, JS, images, API calls—not just the HTML page load. The ratio looks alarming, but it's how serverless platforms meter traffic.
+
 <blockquote class="featured-quote secondary">
 "The day I learned: 'static' describes your build process, not your caching strategy."
 </blockquote>
