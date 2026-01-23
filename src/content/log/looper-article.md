@@ -132,3 +132,13 @@ But there's something deeper here. Cursor 2.0's multi-model ensemble approach sh
 The future of Looper isn't just one model looping. It's multiple models, interleaved strategically, each covering the others' weaknesses.
 
 Because reliability isn't about having the best model. It's about having the best *system*.
+
+## Looper Go: The Next Iteration
+
+I'm now porting Looper to [Go](https://github.com/nibzard/looper-go).
+
+Why Go? The bash wrapper proved the concept, but it's starting to hit its limits. I want to make Looper more flexible—add proper concurrency, better error handling, plugin-style agent support—while preserving the dead-simple loop structure that makes it work.
+
+A bit fancier under the hood, but the same DNA: one task, one iteration, honest review.
+
+The Go port isn't a rewrite for rewrite's sake. It's about making Looper something I can grow with—more reliable, easier to extend, still boring enough to trust.
