@@ -65,7 +65,6 @@ main {
 
 .logo .accent1 {
   color: var(--color-accent1);
-  font-weight: 900;
   margin-right: 2px;
 }
 
