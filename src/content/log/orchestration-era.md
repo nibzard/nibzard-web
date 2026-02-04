@@ -2,7 +2,7 @@
 title: "AI Agents Need Clearer Delegation"
 description: "What hundreds of AI conversations taught me about effective agent workflows."
 tldr: "After analyzing hundreds of AI sessions, the successful ones shared clear patterns: subagents explore, main agents implement, and verification happens after every change."
-date: 2025-02-04
+date: 2025-10-30
 tags: [HUMAN, AI, AGENTS, LESSONS]
 draft: false
 author: "Nikola Balić"
