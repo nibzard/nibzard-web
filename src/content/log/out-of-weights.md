@@ -88,7 +88,7 @@ I needed to research leads—people who had reached out to me. Could have built 
 
 ![exa.ai search interface](/images/20260203-exaai.png)
 
-Instead, I pointed a pure CLI agent (Claude with GLM 4.7) at the problem and let it figure it out.
+Instead, I pointed a pure CLI agent to Exa.ai API and [Steel.dev](https://steel.dev/) API and let it figure it out.
 
 No complex flow. No fragile scraping infrastructure. Just an agent with a browser and a goal.
 
