@@ -7,7 +7,7 @@ tags: [HUMAN, AI, AGENTS, TOOLS, LESSONS]
 draft: false
 author: "Nikola Balić"
 topics: [AI-native tools, LLM knowledge gaps, feedback loops, task management, developer workflow]
-entities: [Convex, exe.ai, GitHub, ESP32-P4, M5Stack, GLM 4.7, Vercel]
+entities: [Convex, exa.ai, GitHub, ESP32-P4, M5Stack, GLM 4.7, Vercel]
 answers_questions:
   - What happens when you use tools newer than LLM training data?
   - How do you bridge the gap when AI lacks knowledge about new tools?
@@ -18,7 +18,7 @@ answers_questions:
     AI-native tools win. But everything new is out of weights.
 </blockquote>
 
-I've been working with some cutting-edge tools lately—Convex for auth, exe.ai for search, ESP32-P4 for hardware. Each time, I hit the same wall: the tool wasn't in the training data.
+I've been working with some cutting-edge tools lately—Convex for auth, exa.ai for search, ESP32-P4 for hardware. Each time, I hit the same wall: the tool wasn't in the training data.
 
 The AI agent flailed. It made assumptions. It hallucinated APIs. We burned time debugging things that would have been obvious if the model had ever seen the documentation before.
 
@@ -115,7 +115,7 @@ The ecosystem is still figuring itself out. We're in the messy middle—innovati
 
 After a week of bumping into the edges of what AI knows, here's what I'm taking forward:
 
-**AI-native tools win** when they're designed for agents. Convex and exe.ai get this—their onboarding flows assume an AI coding agent is involved.
+**AI-native tools win** when they're designed for agents. Convex and exa.ai get this—their onboarding flows assume an AI coding agent is involved.
 
 **Everything new is out of weights**—accept this, build feedback loops instead of relying on pre-trained knowledge.
 
