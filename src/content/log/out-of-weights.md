@@ -2,7 +2,7 @@
 title: "Out of Weights"
 description: "What happens when you use AI tools so new they weren't in the training data."
 tldr: "AI-native tools win, but there's a chasm: new tech isn't in LLM weights yet. The bridge? Strong feedback loops, GitHub issues as task management, and LESSONS_LEARNED.md."
-date: 2025-10-28
+date: 2026-02-03
 tags: [HUMAN, AI, AGENTS, TOOLS, LESSONS]
 draft: false
 author: "Nikola Balić"
