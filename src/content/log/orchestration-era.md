@@ -1,38 +1,34 @@
 ---
-title: "The Assistant Era is Over"
-description: "What 88 AI conversations taught me about moving from prompts to orchestration."
-tldr: "After analyzing 88 real AI sessions, the pattern is clear: successful agents don't just respond—they orchestrate. The future isn't better prompts, it's disciplined delegation, clear handoffs, and knowing when to explore versus execute."
+title: "AI Agents Need Clearer Delegation"
+description: "What 88 AI conversations taught me about effective agent workflows."
+tldr: "After analyzing 88 AI sessions, the successful ones shared clear patterns: subagents explore, main agents implement, and verification happens after every change."
 date: 2025-02-04
 tags: [HUMAN, AI, AGENTS, LESSONS]
 draft: false
 author: "Nikola Balić"
 topics: [AI orchestration, agent workflows, delegation patterns, human-AI collaboration, production lessons]
-entities: [Claude, Claude Code, LLM CLI]
+entities: [Claude, Claude Code, Anthropic]
 answers_questions:
-  - What separates effective AI agents from glorified autocomplete?
   - How should you delegate work to AI subagents?
-  - Why do some AI workflows feel magical while others feel like banging rocks together?
+  - What makes AI workflows succeed or fail?
+  - Why do some AI sessions feel productive while others feel like banging rocks together?
 ---
 
 <blockquote class="featured-quote primary">
     The most experienced developers—those who've built systems from scratch, debugged the impossible, and shipped products that millions use—are often the most skeptical about AI coding tools. They've seen enough hype cycles to know that a demo isn't a product.
 </blockquote>
 
-But something shifted recently. The demos got better. The tools got more capable. And people who actually ship software started noticing that AI workflows were... working?
+Skepticism is healthy. But some workflows with AI coding agents are genuinely productive now, and the difference between productive and frustrating sessions isn't the model or the interface—it's how the agent orchestrates work.
 
-I wanted to understand why. So I did something that only an AI would suggest: I analyzed 88 of my own AI conversations across five projects—web development, plugin systems, pattern documentation, iOS development, and education.
+I analyzed 88 of my AI conversations across five projects—web development, plugin systems, pattern documentation, iOS development, and education—to understand what actually works.
 
-What I found wasn't a story about better models or smarter prompts. It was a story about **orchestration**.
+The sessions that went well weren't about better prompts. They were about how the agent delegated tasks, coordinated subagents, and verified changes.
 
-The sessions that succeeded weren't the ones where I wrote the perfect prompt. They were the ones where I successfully managed a system of agents with clear roles, disciplined delegation, and explicit handoffs.
+## Exploration is Delegated; Implementation is Centralized
 
-The assistant era—where you ask an AI to do something and hope for the best—is over. Welcome to the orchestration era.
+Across 48 times the agent spawned subagents, it never delegated final implementation to them.
 
-## The First Pattern: Exploration is Delegated; Implementation is Centralized
-
-Here's the thing that surprised me most: across 48 times I spawned subagents, I never once delegated final implementation to them.
-
-Subagents were consistently used for *exploration and research*—never for writing the final code.
+Subagents were consistently used for exploration and research—never for writing the final code.
 
 In my web project, the workflow looked like this:
 - Spawn subagent: "Find how the newsletter component works"
@@ -42,174 +38,137 @@ In my web project, the workflow looked like this:
 
 The main agent made 258 edits versus only 75 new files. That's a 3.4:1 ratio—editing existing code, not rewriting from scratch.
 
-The lesson here is counterintuitive: **don't delegate implementation. Delegate understanding.**
+The pattern that emerges: **delegate understanding, not implementation.**
 
-The main agent should be the "hand"—the thing that actually makes changes. Subagents are the "eyes"—they explore, research, and synthesize information so the hand knows where to reach.
+The main agent makes changes. Subagents explore, research, and synthesize so the main agent knows what to change.
 
-When you try to delegate both exploration AND implementation to subagents, you get merge conflicts, lost context, and that distinct feeling that the tool is working against you rather than with you.
+When you try to delegate both exploration and implementation to subagents, you get merge conflicts, lost context, and the sense that the tool is working against you.
 
-## The Second Pattern: Parallel Exploration Beats Sequential
+## Parallel Exploration Beats Sequential
 
-One session stands out. I needed to understand four different aspects of a codebase, and I spawned four subagents in parallel:
+One session stood out. The agent needed to understand four aspects of a codebase, so it spawned four subagents in parallel:
 
 - Agent one: Newsletter component exploration
 - Agent two: Modal pattern discovery
 - Agent three: Search implementation research
 - Agent four: Log page analysis
 
-Meanwhile, the main agent coordinated and synthesized their findings.
+The main agent coordinated and synthesized their findings.
 
-This took a fraction of the time it would have taken to explore sequentially. And the quality was better—each subagent stayed focused on a single narrow question, while the main agent saw how all the pieces fit together.
+This was faster than sequential exploration and produced better results—each subagent stayed focused on one question, while the main agent saw how everything fit together.
 
-If you find yourself asking an agent to explore A, then waiting, then asking it to explore B, then waiting... you're doing it wrong. Spawn multiple agents with different focus areas and let them run in parallel.
+If you find yourself asking an agent to explore A, then waiting, then asking it to explore B, then waiting... the more effective approach is spawning multiple agents with different focus areas.
 
-Time spent sequentially exploring is time wasted.
+## Don't Delegate Implementation
 
-## The Silent Killer: Empty Task Subjects
-
-This is the one that hurts because it's so simple: most of the time I spawned subagents, I gave them empty or vague subjects.
-
-"Task delegation → "" (empty subject) → Subagent confusion"
-
-When I looked back at my logs, I had conversations like `agent-a7911db` and `agent-adeac17` with no indication of what they were actually doing. Try tracing what a subagent was working on three weeks later when the subject is empty.
-
-Clear task subjects are metadata hygiene—like commit messages for agent orchestration. "Explore newsletter implementation" is infinitely better than "" or "research" or "look into stuff."
-
-Every Task invocation needs a clear, specific subject. It seems trivial until you're trying to reference previous work and can't remember which agent did what.
-
-## The Anti-Pattern: Implementation Delegation
-
-I mentioned this earlier, but it's worth calling out as an explicit anti-pattern:
+The anti-pattern:
 
 ```
 Task delegation → Subagent implementation → Merge conflicts
 ```
 
-The fix is simple but requires discipline:
+What works:
 
 ```
 User request → Task exploration → Plan → Approval → Implementation
 ```
 
-The main agent should always retain control of the Edit tool. Subagents explore using Read, Grep, and Glob—but the main agent is the only one making changes.
+The main agent retains control of the Edit tool. Subagents explore using Read, Grep, and Glob—the main agent makes changes.
 
-This maps onto a pattern I've seen in successful AI workflows: the exploration-implementation split. Subagents are researchers. The main agent is the writer.
+Subagents are researchers. The main agent is the writer.
 
-## The Communication Lesson: Ask Before Acting
+## Ask Before Acting
 
-The projects where I used `AskUserQuestion` more frequently had fewer corrections and smoother sessions.
+Claude Code's `AskUserQuestion` tool is one of those features that seems obvious in retrospect—let the agent ask clarifying questions instead of making assumptions.
 
-In one iOS project, I used it four times across six sessions to clarify:
+The sessions where the agent used this tool more frequently had fewer corrections and smoother workflows. In one iOS project, the agent asked four clarifying questions across six sessions:
 - The scope of dark mode implementation
 - How environment variables should be handled
 - The sync strategy for data
 
-Each question prevented what would have been a wrong turn and subsequent correction.
+Each question prevented what would have been a wrong turn.
 
-The anti-pattern looks like this:
+The anti-pattern:
+
 ```
 User request → Immediate Edit → Wrong assumptions → Corrections
 ```
 
-The pattern that works:
+What the tool enables:
+
 ```
-User request → Task exploration → Ask clarifying questions → Plan → Implementation
+User request → Task exploration → Agent asks clarifying questions → Plan → Implementation
 ```
 
-When you're uncertain, ask *before* acting. The `AskUserQuestion` tool isn't overhead—it's insurance against rework.
+This isn't overhead—it's a simple mechanism that prevents wasted work on wrong assumptions. [Boris Cherny noted this feature](https://www.threads.net/@boris_cherny/post/DP6_Rc-k78s) when it launched, and it's since become [one of the most discussed capabilities](https://juejin.cn/post/7589962224796287014) in the Claude Code community.
 
-## The Verification Habit: Never Trust an Edit
+## Never Trust an Edit Without Verification
 
-The most successful sessions all had one thing in common: build verification after every change.
+The most successful sessions had verification after every change.
 
-Edit → Bash build → Verify → Continue
+The agent caught issues early—LinkedIn API problems, MDX rendering bugs, typos—because it never trusted an Edit without verification.
 
-Edit → Bash build → Verify → Continue
+The anti-pattern:
 
-Edit → Bash build → Verify → Continue
-
-I caught issues early—LinkedIn API problems, MDX rendering bugs, typos—because I never trusted an Edit without verification.
-
-The anti-pattern is what you'd expect:
 ```
 Edit → Edit → Edit → Broken build → Panic
 ```
 
-The pattern that works:
+What works:
+
 ```
-Edit → Bash verify → Edit → Bash verify → Continuous verification
+Edit → Verify → Edit → Verify → Continuous verification
 ```
 
-This is the "Background Agent with CI Feedback" pattern in action. Fast feedback beats perfect code.
+Fast feedback beats perfect code.
 
-## Tool Discipline: Edit Over Write
+## Read, Grep, Glob for Discovery
 
-Across all projects, Edit was preferred over Write by a wide margin. In my iOS project, the ratio was 6.6:1—66 edits versus only 10 new files.
-
-Use Edit for changes. Reserve Write for new files.
-
-Edit preserves context and structure. Write is a hammer when you need a scalpel.
-
-## The Discovery Toolkit: Read, Grep, Glob
-
-Three tools form a consistent pattern for codebase exploration:
+Claude Code's discovery tools—Read, Grep, and Glob—form a consistent pattern for codebase exploration:
 
 - Glob for files → Read for content → Grep for patterns
 
-This showed up across every project. In one pattern documentation project, there were 178 Reads, 22 Greps, and 34 Globs across 17 sessions.
+In one pattern documentation project, there were 178 Reads, 22 Greps, and 34 Globs across 17 sessions.
 
-Sometimes grep beats embeddings. No indexing infrastructure needed, just raw text search.
+Sometimes grep beats embeddings. No indexing infrastructure needed, just raw text search. [Agent design analysis has noted](https://jannesklaas.github.io/ai/2025/07/20/claude-code-agent-design.html) that this preference for direct codebase access over vector embeddings is a key part of Claude Code's effectiveness.
 
-## The Collaboration Gap: Reinforcement Works
+## Reinforcement Works
 
-Here's something I didn't expect: projects with more positive feedback had better outcomes.
+Sessions with more positive feedback had better outcomes.
 
-In my web project: 8 positive, 2 corrections (best ratio)
-In another project: 1 positive, 5 corrections (worst ratio)
+In my web project: 8 positive, 2 corrections
+In another project: 1 positive, 5 corrections
 
-When the agent did something well, saying so wasn't just politeness—it was training data for future interactions. Reinforcement works.
+When the agent did something well, saying so wasn't just politeness—it was training data for future interactions.
 
-The lesson: when you see good behavior, call it out. It's not just nice—it improves future sessions.
+When you see good behavior, call it out. It improves future sessions.
 
-## The Interrupt Problem: Course-Correct Early, Not Late
+## Course-Correct Early, Not Late
 
-I only interrupted one session mid-workflow, and it was painful. The agent was mid-implementation when I provided new direction, wasting effort on the wrong path.
+I only interrupted one session mid-workflow, and it wasted effort—the agent was mid-implementation when I provided new direction.
 
-If you're going to course-correct, do it during planning, not implementation.
+Course-correct during planning, not implementation.
 
-This is why the "Human-in-the-Loop Approval Framework" pattern exists: approve the plan, not just the code. Interrupt early, not late.
+Approve the plan, not just the code.
 
-## What This Means for You
+## What Actually Works
 
-If you're frustrated with AI coding tools, the problem might not be the model or the interface. It might be your mental model.
-
-The old model: "Ask the AI to do something."
-
-The new model: "Orchestrate a system of agents to explore, design, and execute."
-
-This isn't semantics. It's reflected in actual usage patterns:
+If you're frustrated with AI coding tools, the problem might not be the model. It might be how the agent orchestrates work.
 
 **Subagents explore.** Use them for codebase research, not implementation. One task per subagent. If you need multiple things explored, spawn multiple subagents in parallel.
 
-**The main agent implements.** Keep Edit control centralized. Use Edit for changes, Write for new files.
+**The main agent implements.** The agent keeps Edit control centralized—using Edit for changes, Write for new files.
 
-**Clear communication matters.** Every Task needs a clear subject. Ask questions before acting when uncertain.
+**Clear communication matters.** The agent uses AskUserQuestion when uncertain.
 
-**Verify everything.** Never trust an Edit without Bash verification. Edit → Bash verify → Continue.
+**Verify everything.** The agent verifies after each Edit.
 
-**Reinforce good behavior.** When the agent does something well, say so. It's training data for future interactions.
+**Reinforce good behavior.** When the agent does something well, say so.
 
-## The Future is Orchestration
+The sessions that work well are the ones where:
+- Exploration is delegated, implementation is centralized
+- Changes are verified continuously
+- Questions are asked before action
+- Multiple subagents coordinate in parallel
 
-The 88 conversations I analyzed reveal a clear evolution: we're moving from the "assistant era" to the "orchestration era."
-
-The agents that succeed are the ones that:
-- Delegate exploration, not implementation
-- Use clear task subjects and tracking
-- Verify changes continuously
-- Ask questions before acting
-- Coordinate multiple subagents in parallel
-
-The future isn't about better prompts. It's about disciplined orchestration, clear delegation, and understanding the strengths and limitations of both human and machine intelligence.
-
-The assistant era is over. The orchestration era is just beginning.
+Better prompts won't fix a broken workflow. The agent's orchestration patterns—delegation, verification, and handoffs—are what matter.
