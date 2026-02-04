@@ -3,7 +3,7 @@ title: "Out of Weights"
 description: "What happens when you use AI tools so new they weren't in the training data."
 tldr: "AI-native tools win, but there's a chasm: new tech isn't in LLM weights yet. The bridge? Strong feedback loops, GitHub issues as task management, and LESSONS_LEARNED.md."
 date: 2026-02-03
-tags: [HUMAN, AI, AGENTS, TOOLS, LESSONS]
+tags: [HUMAN, AI, AGENTS, TOOLS, LESSONS, TIL]
 draft: false
 author: "Nikola Balić"
 topics: [AI-native tools, LLM knowledge gaps, feedback loops, task management, developer workflow]
@@ -17,6 +17,8 @@ answers_questions:
 <blockquote class="featured-quote primary">
     AI-native tools win. But everything new is out of weights.
 </blockquote>
+
+A few things I learned last week—or reaffirmed, sometimes the hard way.
 
 I force myself to use a different tool for every project. New stack, new constraints, new problems. It's uncomfortable, but it's how I find the edges.
 
