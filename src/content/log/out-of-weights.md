@@ -18,7 +18,9 @@ answers_questions:
     AI-native tools win. But everything new is out of weights.
 </blockquote>
 
-I've been working with some cutting-edge tools lately—Convex for auth, exa.ai for search, ESP32-P4 for hardware. Each time, I hit the same wall: the tool wasn't in the training data.
+I force myself to use a different tool for every project. New stack, new constraints, new problems. It's uncomfortable, but it's how I find the edges.
+
+Lately that's meant Convex for auth, exa.ai for search, ESP32-P4 for hardware. Each time, I hit the same wall: the tool wasn't in the training data.
 
 The AI agent flailed. It made assumptions. It hallucinated APIs. We burned time debugging things that would have been obvious if the model had ever seen the documentation before.
 
@@ -26,16 +28,17 @@ But some projects worked anyway. And the difference wasn't the tool—it was the
 
 ## The Chasm
 
-Convex has this beautiful auth flow. You drop it in, it works. The agent can set up the project without blocking you—just let it do its thing.
+Convex's CLI uses interactive prompts that don't respond to automated input. The agent can't scaffold the project—it hits a wall immediately.
 
-But then the problems start. Convex is relatively new. It wasn't well-represented in LLM training datasets. Much of it is **outside the weights**.
+![Convex CLI blocking the AI agent](/images/20260203-convex.png)
 
-The agent doesn't know:
-- The exact API signatures
-- The file structure conventions
-- The edge cases that only appear in real usage
+That's just the first sign. Convex is relatively new. It wasn't well-represented in LLM training datasets. Much of it is **outside the weights**.
 
 You end up debugging and manually providing context that should have been there from the start. There's a gap between the initial onboarding and the fully functional experience. This chasm exists because information is missing—knowledge that needs to be augmented by humans.
+
+Convex's CLI requires interactive prompts—something AI agents can't handle. That taught me: **AI-native isn't just about clean APIs. It's about non-interactive flows.**
+
+To their credit, Convex gets this. They've since built dedicated AI tooling—downloadable `.cursorrules`, an `LLM Leaderboard`, and AI-specific components for agents. They're not just claiming AI-friendliness; they're **evaluating and publishing results**. That's how you bridge the gap.
 
 Once the project is bootstrapped and everything works, it becomes easier. But getting there? Painful.
 
@@ -81,6 +84,8 @@ Issues as task management feels like a hint. But is it enough?
 
 I needed to research leads—people who had reached out to me. Could have built some complex scraping pipeline. Could have manually clicked through profiles.
 
+![exa.ai search interface](/images/20260203-exaai.png)
+
 Instead, I pointed a pure CLI agent (Claude with GLM 4.7) at the problem and let it figure it out.
 
 No complex flow. No fragile scraping infrastructure. Just an agent with a browser and a goal.
@@ -119,7 +124,7 @@ The ecosystem is still figuring itself out. We're in the messy middle—innovati
 
 After a week of bumping into the edges of what AI knows, here's what I'm taking forward:
 
-**AI-native tools win** when they're designed for agents. Convex and exa.ai get this—their onboarding flows assume an AI coding agent is involved.
+**AI-native tools win** when they're designed for agents—especially non-interactive CLIs that don't block automation.
 
 **Everything new is out of weights**—accept this, build feedback loops instead of relying on pre-trained knowledge.
 
