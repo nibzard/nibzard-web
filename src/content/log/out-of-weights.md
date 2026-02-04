@@ -73,6 +73,10 @@ The AI doesn't need to know everything about the project. It just needs to be ab
     Good task management is better than complete documentation.
 </blockquote>
 
+This makes me think more and more about the future of GitHub in AI-driven development. Will it suffer Stack Overflow's fate—becoming a ghost town as AI agents learn to answer questions without ever visiting the site? Or will GitHub manage to redefine itself as the coordination layer for human-AI collaboration?
+
+Issues as task management feels like a hint. But is it enough?
+
 ## Scraping with Agents
 
 I needed to research leads—people who had reached out to me. Could have built some complex scraping pipeline. Could have manually clicked through profiles.
