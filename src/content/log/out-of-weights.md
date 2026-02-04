@@ -32,11 +32,11 @@ Convex's CLI uses interactive prompts that don't respond to automated input. The
 
 ![Convex CLI blocking the AI agent](/images/20260203-convex.png)
 
-That's just the first sign. Convex is relatively new. It wasn't well-represented in LLM training datasets. Much of it is **outside the weights**.
+That's just the first sign. But here's the thing: Convex has been around for years. It should be in the weights. So maybe that's not the problem.
 
-You end up debugging and manually providing context that should have been there from the start. There's a gap between the initial onboarding and the fully functional experience. This chasm exists because information is missing—knowledge that needs to be augmented by humans.
+Fast-moving startups change their products, interfaces, and surfaces constantly. Even if something is in the training data, it might be outdated by the time you use it. And maybe we didn't feed the agent enough context to begin with.
 
-Convex's CLI requires interactive prompts—something AI agents can't handle. That taught me: **AI-native isn't just about clean APIs. It's about non-interactive flows.**
+The biggest issue was simply that the CLI expected human input. What we needed was a flow built for agents—a better agent experience.
 
 To their credit, Convex gets this. They've since built dedicated AI tooling—downloadable `.cursorrules`, an `LLM Leaderboard`, and AI-specific components for agents. They're not just claiming AI-friendliness; they're **evaluating and publishing results**. That's how you bridge the gap.
 
