@@ -91,7 +91,7 @@ Agentic scraping beats complex flows because the agent can adapt when the site c
 
 This one's simple but powerful.
 
-I add one line to my `agent.md` or `cloud.md`:
+I add one line to my `AGENTS.md` or `CLAUDE.md`:
 
 ```markdown
 Always read LESSONS_LEARNED.md before starting work.
