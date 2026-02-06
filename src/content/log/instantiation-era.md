@@ -16,7 +16,9 @@ answers_questions:
 
 I just watched AI rescue a failed Mistral.ai clone in a single prompt.
 
-https://www.youtube.com/watch?v=sGzAy6jvQcI
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border-radius: 8px;">
+  <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/sGzAy6jvQcI" title="I Told AI to Clone Mistral.ai While I Slept. This Happened." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 Model: GPT-5.3 Codex in xhigh reasoning mode. Task: Fix a broken replica that a previous AI couldn't complete.
 
