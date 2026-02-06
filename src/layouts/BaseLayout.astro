@@ -30,6 +30,9 @@ const {
 const canonicalUrl = Astro.url.toString();
 const siteUrl = Astro.site ? Astro.site.toString() : Astro.url.origin;
 const defaultOgImage = new URL("/og-nibzard.jpeg", siteUrl).toString();
+const enableAnalytics =
+  import.meta.env.PROD &&
+  (Astro.url.hostname === "nibzard.com" || Astro.url.hostname === "www.nibzard.com");
 
 // Generate schema markup
 const websiteSchema = createWebsiteSchema();
@@ -97,28 +100,32 @@ const personSchema = createPersonSchema();
     }}
   />
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RK4YPPTGTB"></script>
-  <script is:inline>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+  {enableAnalytics && (
+    <Fragment>
+      <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-RK4YPPTGTB"></script>
+      <script is:inline>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-    gtag('config', 'G-RK4YPPTGTB');
-  </script>
+        gtag('config', 'G-RK4YPPTGTB');
+      </script>
 
-  <!-- Microsoft Clarity -->
-  <script is:inline>
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "t6jkgqqx5e");
-  </script>
+      <!-- Microsoft Clarity -->
+      <script is:inline>
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "t6jkgqqx5e");
+      </script>
 
-  <!-- DNS prefetch for third-party services -->
-  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-  <link rel="dns-prefetch" href="https://www.clarity.ms">
+      <!-- DNS prefetch for third-party services -->
+      <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+      <link rel="dns-prefetch" href="https://www.clarity.ms">
+    </Fragment>
+  )}
 
   <!-- Using system fonts - no external font loading needed -->
 
