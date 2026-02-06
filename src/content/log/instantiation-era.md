@@ -16,6 +16,8 @@ answers_questions:
 
 I just watched AI rescue a failed Mistral.ai clone in a single prompt.
 
+https://www.youtube.com/watch?v=sGzAy6jvQcI
+
 Model: GPT-5.3 Codex in xhigh reasoning mode. Task: Fix a broken replica that a previous AI couldn't complete.
 
 It analyzed the production site, extracted the design system from their brand page, identified the broken implementation, and rebuilt component by component—Hero, Navigation, Features, Footer—with custom Mistral orange (#F16F14) throughout.
