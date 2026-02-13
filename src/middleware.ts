@@ -138,22 +138,15 @@ function prefersMarkdownResponse(acceptHeader: string, isMdUrl: boolean): boolea
   const parsedAccept = parseAcceptHeader(acceptHeader);
   if (parsedAccept.length === 0) return false;
 
-  let bestKind: 'html' | 'markdown' = 'html';
-  let bestScore = scoreMediaType(parsedAccept, 'text/html');
-
   const markdownScore = scoreMediaType(parsedAccept, 'text/markdown');
-  if (isBetterScore(markdownScore, bestScore)) {
-    bestKind = 'markdown';
-    bestScore = markdownScore;
-  }
+  if (markdownScore.q <= 0) return false;
 
-  const plainScore = scoreMediaType(parsedAccept, 'text/plain');
-  if (isBetterScore(plainScore, bestScore)) {
-    bestKind = 'markdown';
-    bestScore = plainScore;
-  }
+  const htmlScore = scoreMediaType(parsedAccept, 'text/html');
 
-  return bestKind === 'markdown' && bestScore.q > 0;
+  // Human navigation should default to HTML unless markdown is strictly preferred.
+  // `.md` URLs still force markdown regardless of Accept header.
+  if (htmlScore.q <= 0) return true;
+  return markdownScore.q > htmlScore.q;
 }
 
 function resolveMarkdownTarget(pathname: string): MarkdownTarget | null {
@@ -318,6 +311,13 @@ export const onRequest = defineMiddleware(async (context, next) => {
   }
 
   const isMdUrl = pathname.endsWith('.md');
+
+  // Keep regular browser page navigations on HTML by default.
+  // Explicit `.md` URLs still opt into markdown.
+  const fetchDest = request.headers.get('sec-fetch-dest');
+  if (!isMdUrl && fetchDest === 'document') {
+    return next();
+  }
 
   if (
     pathname.startsWith('/api/') ||
