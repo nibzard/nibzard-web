@@ -13,6 +13,12 @@ interface ProcessedContent {
   ideas: CollectionEntry<'idea'>[];
 }
 
+const CONTENT_SIGNAL = 'ai-input=yes, ai-train=yes, search=yes';
+
+function estimateTextTokens(content: string): string {
+  return Math.max(1, Math.ceil(content.length / 4)).toString();
+}
+
 /**
  * Fetches all non-draft content from all collections
  */
@@ -302,7 +308,7 @@ async function generateLLMSContent() {
   };
 }
 
-export const GET: APIRoute = async ({ request }) => {
+export const GET: APIRoute = async () => {
   try {
     // Generate the complete llms content
     const llmsContent = await generateLLMSContent();
@@ -311,9 +317,12 @@ export const GET: APIRoute = async ({ request }) => {
     const headers = new Headers({
       'Content-Type': 'text/plain; charset=utf-8',
       'Cache-Control': 'public, max-age=3600, s-maxage=3600', // Cache for 1 hour
+      'Vary': 'Accept-Encoding',
       'Access-Control-Allow-Origin': '*', // Allow CORS for LLM applications
       'Access-Control-Allow-Methods': 'GET',
       'Access-Control-Allow-Headers': 'Content-Type',
+      'Content-Signal': CONTENT_SIGNAL,
+      'X-Markdown-Tokens': estimateTextTokens(llmsContent.markdown),
       'X-Content-Count': llmsContent.metadata.totalEntries.toString(),
       'X-Last-Updated': llmsContent.metadata.lastUpdated.toISOString(),
       'X-Log-Count': llmsContent.metadata.collections.logs.toString(),
@@ -341,7 +350,7 @@ export const GET: APIRoute = async ({ request }) => {
 };
 
 // Support HEAD requests for content discovery
-export const HEAD: APIRoute = async ({ request }) => {
+export const HEAD: APIRoute = async () => {
   try {
     // Generate just the metadata to get content info
     const llmsContent = await generateLLMSContent();
@@ -349,9 +358,12 @@ export const HEAD: APIRoute = async ({ request }) => {
     const headers = new Headers({
       'Content-Type': 'text/plain; charset=utf-8',
       'Cache-Control': 'public, max-age=3600, s-maxage=3600',
+      'Vary': 'Accept-Encoding',
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET',
       'Access-Control-Allow-Headers': 'Content-Type',
+      'Content-Signal': CONTENT_SIGNAL,
+      'X-Markdown-Tokens': estimateTextTokens(llmsContent.markdown),
       'Content-Length': new Blob([llmsContent.markdown]).size.toString(),
       'X-Content-Count': llmsContent.metadata.totalEntries.toString(),
       'X-Last-Updated': llmsContent.metadata.lastUpdated.toISOString(),
@@ -380,7 +392,7 @@ export const HEAD: APIRoute = async ({ request }) => {
 };
 
 // Support OPTIONS requests for CORS preflight
-export const OPTIONS: APIRoute = async ({ request }) => {
+export const OPTIONS: APIRoute = async () => {
   return new Response(null, {
     status: 200,
     headers: {

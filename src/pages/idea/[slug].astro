@@ -1,0 +1,42 @@
+---
+export const prerender = false;
+import { getEntry, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import NotFoundContent from '../../components/NotFoundContent.astro';
+import IdeaRenderer from '../../components/IdeaRenderer.astro';
+import FadeIn from '../../components/animations/FadeIn.jsx';
+
+const { slug } = Astro.params;
+
+let entry: CollectionEntry<'idea'> | undefined;
+
+if (slug) {
+  try {
+    entry = await getEntry('idea', slug);
+  } catch (error) {
+    console.error(`Error fetching idea entry for slug "${slug}":`, error);
+    entry = undefined;
+  }
+}
+
+if (!entry) {
+  Astro.response.status = 404;
+}
+---
+
+{entry ? (
+  <BaseLayout
+    title={`${entry.data.title} - Idea - nibzard`}
+    description={entry.data.subtitle || 'A project idea from Nikola Balić'}
+  >
+    <FadeIn client:visible>
+      <section>
+        <IdeaRenderer entry={entry} />
+      </section>
+    </FadeIn>
+  </BaseLayout>
+) : (
+  <BaseLayout title="404 - nibzard" description="Idea not found">
+    <NotFoundContent slug={slug} />
+  </BaseLayout>
+)}

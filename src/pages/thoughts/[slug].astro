@@ -1,23 +1,27 @@
 ---
-export const prerender = true;
-import { getCollection, type CollectionEntry } from 'astro:content';
+export const prerender = false;
+import { getEntry, type CollectionEntry } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import NotFoundContent from '../../components/NotFoundContent.astro';
 import ThoughtEntry from '../../components/ThoughtEntry.astro';
 import FadeIn from '../../components/animations/FadeIn.jsx';
 
-export async function getStaticPaths() {
-  const thoughts = await getCollection('thoughts', ({ data }) => {
-    return data.draft !== true;
-  });
+const { slug } = Astro.params;
 
-  return thoughts.map((entry: CollectionEntry<'thoughts'>) => ({
-    params: { slug: entry.id.split('/').pop().replace('.md', '') },
-    props: { entry },
-  }));
+let entry: CollectionEntry<'thoughts'> | undefined;
+
+if (slug) {
+  try {
+    entry = await getEntry('thoughts', slug);
+  } catch (error) {
+    console.error(`Error fetching thought entry for slug "${slug}":`, error);
+    entry = undefined;
+  }
 }
 
-const { entry } = Astro.props;
+if (!entry) {
+  Astro.response.status = 404;
+}
 
 let ContentComponent: any;
 
@@ -42,6 +46,6 @@ if (entry) {
   </BaseLayout>
 ) : (
   <BaseLayout title="404 - nibzard" description="Thought not found">
-    <NotFoundContent slug={Astro.params.slug} />
+    <NotFoundContent slug={slug} />
   </BaseLayout>
 )}

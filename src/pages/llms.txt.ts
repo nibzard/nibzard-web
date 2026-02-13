@@ -1,9 +1,15 @@
 // ABOUTME: llms.txt endpoint following the specification with metadata and links
 
 import { type APIRoute } from 'astro';
-import { getCollection, type CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
 
-export const GET: APIRoute = async ({ request }) => {
+const CONTENT_SIGNAL = 'ai-input=yes, ai-train=yes, search=yes';
+
+function estimateTextTokens(content: string): string {
+  return Math.max(1, Math.ceil(content.length / 4)).toString();
+}
+
+export const GET: APIRoute = async () => {
   try {
     // Get all non-draft content
     const [logs, thoughts, nowUpdates, images, ideas] = await Promise.all([
@@ -29,7 +35,7 @@ export const GET: APIRoute = async ({ request }) => {
     const sortedImages = sortByDate(images);
 
     // Generate llms.txt content following the specification
-    const baseUrl = 'https://www.nibzard.com';
+    const baseUrl = 'https://nibzard.com';
 
     let content = `# Nibzard
 
@@ -86,9 +92,12 @@ For the complete concatenated content of all articles, visit [${baseUrl}/llms-fu
       headers: {
         'Content-Type': 'text/plain; charset=utf-8',
         'Cache-Control': 'public, max-age=3600, s-maxage=3600',
+        'Vary': 'Accept-Encoding',
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Methods': 'GET',
         'Access-Control-Allow-Headers': 'Content-Type',
+        'Content-Signal': CONTENT_SIGNAL,
+        'X-Markdown-Tokens': estimateTextTokens(content),
         'X-Total-Entries': (logs.length + thoughts.length + nowUpdates.length + images.length + ideas.length).toString(),
         'X-Log-Count': logs.length.toString(),
         'X-Thoughts-Count': thoughts.length.toString(),
@@ -110,7 +119,7 @@ For the complete concatenated content of all articles, visit [${baseUrl}/llms-fu
 };
 
 // Support HEAD requests for content discovery
-export const HEAD: APIRoute = async ({ request }) => {
+export const HEAD: APIRoute = async () => {
   try {
     const [logs, thoughts, nowUpdates, images, ideas] = await Promise.all([
       getCollection('log', (entry) => !entry.data.draft),
@@ -127,9 +136,11 @@ export const HEAD: APIRoute = async ({ request }) => {
       headers: {
         'Content-Type': 'text/plain; charset=utf-8',
         'Cache-Control': 'public, max-age=3600, s-maxage=3600',
+        'Vary': 'Accept-Encoding',
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Methods': 'GET',
         'Access-Control-Allow-Headers': 'Content-Type',
+        'Content-Signal': CONTENT_SIGNAL,
         'X-Total-Entries': totalEntries.toString(),
         'X-Log-Count': logs.length.toString(),
         'X-Thoughts-Count': thoughts.length.toString(),

@@ -4,10 +4,29 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 // Try to import sharp, but make it optional
 let sharp;
+const SKIP_EXIT_CODE = 10;
+
+function formatOptionalSharpWarning(error) {
+  const message = error instanceof Error ? error.message : String(error);
+  if (message.includes('Could not load the "sharp" module')) {
+    return 'Sharp not available, skipping image optimization. Install optional dependency "sharp" for optimized OG images.';
+  }
+  return `Sharp not available, skipping image optimization: ${message}`;
+}
+
+function isMissingBrowserError(error) {
+  const message = error instanceof Error ? error.message : String(error);
+  return (
+    message.includes('Could not find Chrome') ||
+    message.includes('Could not find Chromium') ||
+    message.includes('Executable doesn\'t exist')
+  );
+}
+
 try {
   sharp = (await import('sharp')).default;
 } catch (error) {
-  console.warn('Sharp not available, skipping image optimization:', error.message);
+  console.warn(formatOptionalSharpWarning(error));
 }
 
 // __dirname workaround for ES modules
@@ -160,45 +179,66 @@ async function generateOGImage(page, entry, template) {
 // Main execution
 (async () => {
   console.log('Starting OG image generation...');
+  let browser;
   
-  // Load template
-  const templatePath = path.join(templatesDir, 'og-image.html');
-  if (!fs.existsSync(templatePath)) {
-    console.error('Template not found:', templatePath);
-    process.exit(1);
-  }
-  
-  const template = fs.readFileSync(templatePath, 'utf8');
-  
-  // Get all log entries
-  const entries = getLogEntries();
-  console.log(`Found ${entries.length} log entries`);
-  
-  // Launch browser
-  const browser = await puppeteer.launch({
-    headless: true,
-    args: ['--no-sandbox', '--disable-setuid-sandbox']
-  });
-  
-  const page = await browser.newPage();
-  
-  // Generate OG images
-  for (const entry of entries) {
-    const ogImagePath = path.join(outputDir, `${entry.slug}.png`);
-    
-    // Skip if already exists (unless force flag is set)
-    if (fs.existsSync(ogImagePath) && !process.argv.includes('--force')) {
-      console.log(`OG image already exists for: ${entry.title}, skipping...`);
-      continue;
+  try {
+    // Load template
+    const templatePath = path.join(templatesDir, 'og-image.html');
+    if (!fs.existsSync(templatePath)) {
+      throw new Error(`Template not found: ${templatePath}`);
     }
-    
+
+    const template = fs.readFileSync(templatePath, 'utf8');
+
+    // Get all log entries
+    const entries = getLogEntries();
+    console.log(`Found ${entries.length} log entries`);
+
     try {
-      await generateOGImage(page, entry, template);
+      browser = await puppeteer.launch({
+        headless: true,
+        args: ['--no-sandbox', '--disable-setuid-sandbox']
+      });
     } catch (error) {
-      console.error(`Error generating OG image for ${entry.title}:`, error.message);
+      if (isMissingBrowserError(error)) {
+        console.warn('Chrome for Puppeteer is not installed. Skipping OG image generation.');
+        console.warn('Install it with: pnpm exec puppeteer browsers install chrome');
+        process.exitCode = SKIP_EXIT_CODE;
+        return;
+      }
+      throw error;
+    }
+
+    const page = await browser.newPage();
+
+    // Generate OG images
+    for (const entry of entries) {
+      const ogImagePath = path.join(outputDir, `${entry.slug}.png`);
+
+      // Skip if already exists (unless force flag is set)
+      if (fs.existsSync(ogImagePath) && !process.argv.includes('--force')) {
+        console.log(`OG image already exists for: ${entry.title}, skipping...`);
+        continue;
+      }
+
+      try {
+        await generateOGImage(page, entry, template);
+      } catch (error) {
+        const message = error instanceof Error ? error.message : String(error);
+        console.error(`Error generating OG image for ${entry.title}: ${message}`);
+      }
+    }
+
+    console.log('OG image generation completed!');
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    console.error(`OG image generation failed: ${message}`);
+    process.exitCode = 1;
+  } finally {
+    if (browser) {
+      await browser.close().catch(() => {
+        // No-op on close failures; build should still proceed.
+      });
     }
   }
-  
-  await browser.close();
-  console.log('OG image generation completed!');
 })();
