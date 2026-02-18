@@ -13,7 +13,9 @@ I wanted a CLI that I can hand to my web automation agent (OpenClaw) and say: go
 
 So I started where boring people start: the OpenAPI JSON. Steel already has it. From there, I built a "looper." It's a bash script. Yes. It runs a single prompt in a loop. Think RALPH loop, but with a little more structure. I named it German Cousin Ralf, because if you're going to rely on a bash script, you might as well give it a name that sounds like it files taxes on time.
 
-<https://youtu.be/Lv0s9THuwnY>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border-radius: 8px;">
+  <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/Lv0s9THuwnY" title="Making CLIs Agent-Friendly with Loops and Schemas" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 The loop's output isn't just code. The main artifact is a todo JSON file that becomes the project's living backlog. The agent scaffolds tasks from a spec you give it (I began with a SPECS.md brain dump referencing the official Steel.dev API), then it picks what to do next. Crucially, it can add tasks as it discovers missing pieces. The list snowballed to ~140 tasks. That's not scope creep; that's reality being more detailed than your first draft.
 
