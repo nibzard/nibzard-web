@@ -1,10 +1,9 @@
 ---
 title: "CI for Agent Behavior: Bullying a CLI Into Being Useful"
-description: "Building reliable agent tooling through loops, logs, and schemas—because iteration beats perfection every time."
+description: "Building reliable agent tooling through loops, logs, and schemas."
 date: 2025-02-17
 tags: [AGENTS, AUTOMATION, CLI, TOOLING]
 draft: false
-tldr: "I built a CLI for my web automation agent using structured loops: a todo-backed backlog, schema validation, and a verification harness that runs 50 random web actions per cycle. Agent reliability isn't philosophy—it's loops and logs."
 ---
 
 CLIs are great if you have fingers, patience, and a decent tolerance for "RTFM." Agents have none of those. They don't "remember" that one flag you always forget, they don't infer intent from vibes, and they will happily brick your flow by hallucinating a subcommand that never existed.
@@ -17,7 +16,7 @@ The loop's output isn't just code. The main artifact is a todo JSON file that be
 
 Observability matters. A loop that produces "some code" is cute. A loop that produces a verifiable task graph is useful. To keep the agent from turning the backlog into abstract art, I added a schema file that the agent maintains and validates against. Boring constraint, huge payoff: less randomness, more determinism, and re-runs that don't feel like rolling dice in production.
 
-Then I let it run. For two to three days. Latest Codex plus Spark (the super fast OpenAI model) chewing through tasks, wiring up commands, cleaning edges. At the end, I ran a second loop: the review loop. Prompt: "Review this as a senior engineer. Fix bugs. Simplify. Add missing tasks." You'd be surprised how much "polish" is just "remove the weird thing you thought was clever at 2am."
+Then I let it run. For two to three days. Codex 5.3 Spark (the super fast OpenAI model) chewing through tasks, wiring up commands, cleaning edges. At the end, I ran a second loop: the review loop. Prompt: "Review this as a senior engineer. Fix bugs. Simplify. Add missing tasks." You'd be surprised how much "polish" is just "remove the weird thing you thought was clever at 2am."
 
 Finally, the third loop: Steel Web Loop. This one is a verification harness disguised as chaos. Each run, the agent picks a random useful web action—read headlines, scrape a page, navigate Wikipedia, whatever—and executes it end to end using the CLI it just built. After each run, it updates a lessons file: task chosen, commands used, what succeeded, what failed, what was learned. Fifty runs per loop. Some succeed, some eat glass, all leave a paper trail.
 
