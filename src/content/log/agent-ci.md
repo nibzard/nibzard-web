@@ -23,4 +23,4 @@ Finally, the third loop: Steel Web Loop. This one is a verification harness disg
 
 And that's the point. Iteration beats perfection. Every time. Agent reliability isn't a philosophical stance. It's loops, logs, schemas, and your tooling getting bullied into competence. Your opinion about AI won't matter. Your competitor's cycle time will.
 
-<iframe src="https://platform.twitter.com/embed/Tweet.html?dnt=true&embedId=twitter-widget-0&frame=false&hideCard=false&hideThread=false&id=2023807296095076773&lang=en&origin=file%3A%2F%2F%2Fhome%2Fniko%2Fnibzard-web%2Fsrc%2Fcontent%2Flog%2Fagent-ci.md&sessionId=9e5b5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c&theme=dark&widgetsVersion=2615f7e52b7e0%3A1702314776719&width=550px" style="border: none; max-width: 100%; min-width: 180px; margin: 0 auto; display: block;" width="550" height="400" data-tweet-url="https://x.com/nibzard/status/2023807296095076773"></iframe>
+[Demo video](https://x.com/nibzard/status/2023807296095076773)
