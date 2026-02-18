@@ -1,7 +1,7 @@
 ---
 title: "Making CLIs Agent-Friendly with Loops and Schemas"
 description: "Building reliable agent tooling through loops, logs, and schemas."
-date: 2025-02-17
+date: 2026-02-17
 tags: [AGENTS, AUTOMATION, CLI, TOOLING]
 draft: false
 tldr: "A CLI for my web automation agent, built through structured loops: a todo-backed backlog, schema validation, and a verification harness running 50 random web actions per cycle. Agent reliability isn't philosophy—it's loops and logs."
