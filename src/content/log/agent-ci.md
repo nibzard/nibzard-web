@@ -15,7 +15,7 @@ So I started where boring people start: the OpenAPI JSON. Steel already has it. 
 
 The loop's output isn't just code. The main artifact is a todo JSON file that becomes the project's living backlog. The agent scaffolds tasks from a spec you give it (I began with a SPECS.md brain dump referencing the official Steel.dev API), then it picks what to do next. Crucially, it can add tasks as it discovers missing pieces. The list snowballed to ~140 tasks. That's not scope creep; that's reality being more detailed than your first draft.
 
-Observability matters. A loop that produces "some code" is cute. A loop that produces a verifiable task graph is useful. To keep the agent from turning the backlog into abstract art, I added a schema file that the agent maintains and validates against. Boring constraint, huge payoff: less randomness, more determinism, and re-runs that don't feel like rolling dice in production.
+Observability matters. A loop that produces "some code" isn't enough. A loop that produces a verifiable task graph is useful. To keep the agent from turning the backlog into a mess, I added a schema file that the agent maintains and validates against. Boring constraint, huge payoff: less randomness, more determinism, consistent re-runs.
 
 Then I let it run. For two to three days. Codex 5.3 Spark (the super fast OpenAI model) chewing through tasks, wiring up commands, cleaning edges. At the end, I ran a second loop: the review loop. Prompt: "Review this as a senior engineer. Fix bugs. Simplify. Add missing tasks." You'd be surprised how much "polish" is just "remove the weird thing you thought was clever at 2am."
 
