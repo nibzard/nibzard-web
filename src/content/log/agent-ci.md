@@ -1,5 +1,5 @@
 ---
-title: "CI for Agent Behavior: Bullying a CLI Into Being Useful"
+title: "Making CLIs Agent-Friendly with Loops and Schemas"
 description: "Building reliable agent tooling through loops, logs, and schemas."
 date: 2025-02-17
 tags: [AGENTS, AUTOMATION, CLI, TOOLING]
