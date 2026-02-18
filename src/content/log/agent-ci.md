@@ -4,6 +4,7 @@ description: "Building reliable agent tooling through loops, logs, and schemas."
 date: 2025-02-17
 tags: [AGENTS, AUTOMATION, CLI, TOOLING]
 draft: false
+tldr: "A CLI for my web automation agent, built through structured loops: a todo-backed backlog, schema validation, and a verification harness running 50 random web actions per cycle. Agent reliability isn't philosophy—it's loops and logs."
 ---
 
 CLIs are great if you have fingers, patience, and a decent tolerance for "RTFM." Agents have none of those. They don't "remember" that one flag you always forget, they don't infer intent from vibes, and they will happily brick your flow by hallucinating a subcommand that never existed.
