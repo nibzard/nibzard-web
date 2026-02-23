@@ -22,7 +22,7 @@
     "@astrojs/vercel": "^9.0.2",
     "@giscus/react": "^3.1.0",
     "@picocss/pico": "^2.1.1",
-    "astro": "^5.16.6",
+    "astro": "^5.17.3",
     "astro-seo": "^0.8.4",
     "framer-motion": "^12.10.2",
     "fuse.js": "^7.1.0",
