@@ -40,12 +40,11 @@ This is the core insight behind AI-native tool design: **agents shouldn't have t
 
 <blockquote class="featured-quote primary">
     The "API" an agent uses is the command surface + help text + output shapes + exit codes.
-    <cite>AI-NATIVE Design Principles</cite>
 </blockquote>
 
 ## The Nine Principles
 
-I stumbled across a set of principles for AI-native interfaces recently, and they crystallized something I'd been feeling but couldn't articulate. Here's the distilled version:
+I've [written before about agent experience](/agent-experience)—the idea that AI agents need tools designed for them, not just humans. These principles crystallize that thinking into something actionable. Here's the distilled version:
 
 ### 1. Treat Interfaces as Contracts
 
@@ -150,7 +149,7 @@ The synthesis: **clarity + structure + determinism + recovery**.
 
 ## Why This Matters Now
 
-I've been working with AI coding agents more this year, and I notice the friction points. The commands that work beautifully from a human terminal but confuse an agent. The tools that require interactive prompts. The outputs that need natural language parsing to extract meaning.
+I've been working with AI coding agents non-stop extensively for the last 12 months, and I notice the friction points. The commands that work beautifully from a human terminal but confuse an agent. The tools that require interactive prompts. The outputs that need natural language parsing to extract meaning.
 
 The tools that *do* work well with agents feel almost boring. Predictable. Reliable. They give you the same envelope shape every time. They tell you exactly what went wrong. They make it easy to retry.
 
@@ -176,6 +175,6 @@ Because agents don't complain. They just fail silently, retry uselessly, or hall
 
 And that's worse.
 
----
+## Putting It Into Practice
 
-*These principles come from work on agent interfaces at Steel and elsewhere. The full credit goes to the teams thinking systematically about this problem. I'm just amplifying because it changed how I think about tool design.*
+I'm building [agentprobe](https://github.com/nibzard/agentprobe) to test CLI tools exactly this way—by having agents use them and measuring what works. If you're curious about how your tools perform under agent load, that's the place to start.
