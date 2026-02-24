@@ -15,10 +15,6 @@ answers_questions:
   - How do I make my tools recoverable for automated systems?
 ---
 
-Here's a shift that snuck up on me: AI agents are now *users* of your CLI tools.
-
-Not human users. Not API consumers. **Agents.**
-
 When you run `claude code` or use Cursor's agent mode or any of the growing fleet of AI coding assistants, those agents aren't just chatting with you. They're executing commands, parsing output, making decisions, and retrying when things fail.
 
 And most of our tools? They're designed for humans.
