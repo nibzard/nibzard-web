@@ -148,6 +148,15 @@ People care a lot about:
 
 A great agent makes it easy to swap models mid-session and keeps costs visible. You shouldn't be surprised by your bill.
 
+But here's what most people miss: **spending tokens on SOTA models is the competitive advantage right now.** Not saving money. Not waiting for prices to drop. Actually using the best models, a lot, to build the muscle.
+
+<blockquote class="featured-quote secondary">
+They try AI, but they don't understand that it's a skill. And then you, you pick up the guitar. You're not going to be good at the guitar in the first day...
+<cite><a href="https://xsteindr">Peter Steinberger</a></cite>
+</blockquote>
+
+The teams winning with agents aren't the ones optimizing costs. They're the ones who've put in the hours—learning how to prompt, when to intervene, what workflows actually work. That knowledge compounds. And you only get it by spending tokens.
+
 ## 10) Default Toolset Should Be Small, Safe, and Sharp
 
 Start tight:
