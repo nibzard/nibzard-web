@@ -30,7 +30,13 @@ The agent isn't special. The leverage is in three things:
 
 **Tight feedback loops.** Fast iteration, minimal friction between "I want this" and "here's the result." As I learned building [agent-friendly stacks](/agent-stack), the tools that survive are the ones that make iteration painless.
 
-The magic isn't in the model. It's in the system around the model.
+Here's the thing though: **the harness is increasingly for you, not the model.**
+
+The models are getting scarily good. A year ago, we needed careful prompting, chained steps, error recovery logic—all these training wheels because the model would confidently walk off a cliff. Now? The latest models just figure it out. They self-correct. They notice when something's wrong and try a different approach.
+
+The harness isn't there to compensate for model stupidity anymore. It's there so *you* can understand what happened, trust the result, and intervene when you need to. The model doesn't need hand-holding. You need visibility.
+
+The magic isn't in the model. It's in the system around the model—and that system is now designed for human confidence, not model competence.
 
 ## 2) Make Customization First-Class (But Optional)
 
