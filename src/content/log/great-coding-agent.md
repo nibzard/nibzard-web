@@ -14,7 +14,7 @@ answers_questions:
   - What's the difference between permission gates and review gates for agent safety?
 ---
 
-I've been working with AI coding agents non-stop for over a year now. After shipping 50+ projects and watching the ecosystem explode, a pattern has emerged.
+I've been working with AI coding agents non-stop for over a year now. After building hundreds of projects and watching the ecosystem explode, a pattern has emerged.
 
 The agents that stick aren't the ones with the smartest models. They're the ones with the best *harness*.
 
