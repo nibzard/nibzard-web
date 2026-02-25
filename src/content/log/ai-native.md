@@ -1,5 +1,5 @@
 ---
-title: "The Hidden Users: Designing CLI Tools for AI Agents"
+title: "Designing CLI Tools for AI Agents"
 description: "Most 'AI-native' tools are built with AI features. But what about tools designed FOR AI agents to use? Here's the playbook."
 tldr: "AI agents are now power users of your CLI tools. If you want them to succeed, you need structured output, deterministic exit codes, explicit sessions, and recovery primitives. Here's the complete checklist."
 date: 2026-02-24
