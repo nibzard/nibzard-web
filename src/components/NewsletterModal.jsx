@@ -1,16 +1,49 @@
 // ABOUTME: Scroll-triggered newsletter modal that appears at 60% scroll depth
-// ABOUTME: Uses sessionStorage to remember dismissal, click-outside-to-close, ESC key support
+// ABOUTME: Uses localStorage with 7-day dismissal window, click-outside-to-close, ESC key support
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
 const NewsletterModal = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const STORAGE_KEY = 'nibzard_newsletter_modal_dismissed';
+  const STORAGE_KEY = 'nibzard_newsletter_modal_dismissed_at';
+  const DISMISS_DURATION_MS = 7 * 24 * 60 * 60 * 1000; // 7 days
+
+  const isModalDismissed = () => {
+    try {
+      const dismissedAt = localStorage.getItem(STORAGE_KEY);
+      if (!dismissedAt) {
+        return false;
+      }
+
+      const timestamp = Number(dismissedAt);
+      if (Number.isNaN(timestamp)) {
+        localStorage.removeItem(STORAGE_KEY);
+        return false;
+      }
+
+      const isDismissed = Date.now() - timestamp < DISMISS_DURATION_MS;
+      if (!isDismissed) {
+        localStorage.removeItem(STORAGE_KEY);
+      }
+
+      return isDismissed;
+    } catch {
+      return false;
+    }
+  };
+
+  const setModalDismissed = () => {
+    try {
+      localStorage.setItem(STORAGE_KEY, String(Date.now()));
+    } catch {
+      // Storage failures should not block showing/hiding behavior.
+    }
+  };
 
   useEffect(() => {
-    // Check if already dismissed this session
-    if (sessionStorage.getItem(STORAGE_KEY) === 'true') {
+    // Check if already dismissed within the last 7 days
+    if (isModalDismissed()) {
       return;
     }
 
@@ -43,7 +76,7 @@ const NewsletterModal = () => {
   const handleClose = () => {
     setIsOpen(false);
     document.body.style.overflow = '';
-    sessionStorage.setItem(STORAGE_KEY, 'true');
+    setModalDismissed();
   };
 
   const handleBackdropClick = () => {
