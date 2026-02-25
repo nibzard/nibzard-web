@@ -110,6 +110,12 @@ Agents feel "smart" when their tools are reliable, deterministic, and well-scope
 
 A mediocre model with great tools often beats a great model with janky tools.
 
+I saw this play out with Codex Spark. It's the "fast" variant—cheaper, quicker, but not as smart as regular Codex. Runs on ~1000 tokens. On paper, it's the inferior model.
+
+But paired with sharp, well-scoped tools? It's mind-bogglingly good for the right tasks. File reads, targeted edits, running tests, checking lints—the mechanical stuff that doesn't require deep reasoning but needs to happen fast. Spark doesn't sit there pondering the architecture. It just executes.
+
+The lesson: speed + great tools carves out a real purpose, even for a "lesser" model. Spark isn't trying to be smart. It's trying to be fast at things that don't need smarts. That's a legitimate niche.
+
 This is the core insight from [the agent-friendly stack](/agent-stack): winners won't be the most powerful tools. They'll be the most agent-friendly ones. Type safety becomes a communication protocol. Documentation becomes machine-readable contracts. The stack adapts to agents, not the other way around.
 
 <blockquote class="featured-quote secondary">
