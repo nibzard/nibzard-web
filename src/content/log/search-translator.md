@@ -20,6 +20,12 @@ Here's a search query that showed up in Google Search Console recently:
 
 Thirty-one words. No human typed that into Google.
 
+I’ve been using our new Steel CLI and `steel-browser` skill to explore this kind of case in practice.
+
+This demo shows Claude Code running **parallel browser sessions** with ChatGPT so you can inspect how it reasons and what answers it returns en masse.
+
+<https://www.youtube.com/watch?v=eKkAwi8vt4Q>
+
 That's not a search query. That's a *translated* search query - the output of an AI rewriting someone's prompt into something a search engine can understand.
 
 And it's showing up in GSC because somewhere, an AI answer engine sent that exact string to Google.
@@ -181,6 +187,14 @@ Your content can appear in step 2 - even if the human never visited Google direc
 This is the new SEO frontier: **optimizing for AI rewriters**, not just human searchers.
 
 The evidence is already in your GSC. You just have to know what you're looking at.
+
+## See this live
+
+If this is still abstract, watch the same workflow with the Steel CLI and `steel-browser` skill in the loop:
+
+<https://www.youtube.com/watch?v=eKkAwi8vt4Q>
+
+You can also read the release context in [Steel CLI and the new Steel Browser skill](https://steel.dev/blog/steel-cli-and-agent-skill).
 
 ---
 
