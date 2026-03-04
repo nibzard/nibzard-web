@@ -201,6 +201,20 @@ In practice, `base skill + skill overlay + codified run` is more deterministic t
 
 ---
 
+## From bash runbook to reusable Node CLI
+
+Another outcome from this workflow: I took the hardened bash script plus logs from previous sessions and used them as training context for an agent to build a dedicated Node CLI for the same task.
+
+That changed the operating model:
+
+- The bash runbook stays the deterministic baseline.
+- The Node CLI wraps it as a reusable productized interface for that specific job.
+- The agent can execute the CLI, observe failures, and self-heal by adjusting steps when the site changes.
+
+I also used Steel credentials so authenticated state could be reused safely across runs, instead of hardcoding account details in scripts. With that in place, I can use my ChatGPT subscription through the CLI and hand it to agents for repeatable research workflows like agentic optimization, answer engine optimization (AEO), and generative engine optimization (GEO). Related context: [The Hidden Language of Search](/search-translator).
+
+---
+
 ## Practical notes
 
 - Permissions and ToS: automate only what you are allowed to automate; treat credentials as radioactive.
