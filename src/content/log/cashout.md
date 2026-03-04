@@ -39,6 +39,10 @@ A pattern that worked for me:
 
 This turns "agentic browsing" from a one-off demo into something reproducible, reviewable, and automatable.
 
+One practical addition while testing that made this way of working easier was a small Steel web UI for live/recording session preview. It helped me observe every first-run decision the agent was making and catch issues before they became script logic.
+
+![Steel web session preview during first-run debugging](/images/20260303_bash-article-steel-session.png)
+
 ---
 
 ## The missing layer: agent-native interfaces
