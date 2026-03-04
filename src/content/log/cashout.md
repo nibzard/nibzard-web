@@ -179,12 +179,25 @@ After capture, I verified by asking the agent to read the screenshot and transcr
 
 ## Why this works (and why it scales)
 
-It separates discovery from execution.
+It separates discovery, execution, and recovery.
 
 - Discovery is messy. The agent experiments, snapshots, retries, and learns where the UI moved.
 - Execution should be boring. Same commands, same session discipline, same evidence capture.
+- Recovery stays adaptive. You can run the deterministic script inside an agent, and if the page changes, the agent can resnapshot, patch the step, and continue.
 
-This conversion step is what makes it real: the end product is not the chat transcript. It is a deterministic, reviewable script.
+The output is no longer just a transcript. It is a deterministic, reviewable procedure with a self-healing wrapper.
+
+---
+
+## Skill overlays: the next layer
+
+I expect a lot from what I call skill overlays.
+
+- Base skill: a strong generic skill that works across many sites and communicates CLI usage clearly to the agent.
+- Skill overlay: domain-specific or domain-plus-action-specific guidance that captures the website's quirks.
+- Codified run: the deterministic bash procedure exported from a successful run.
+
+In practice, `base skill + skill overlay + codified run` is more deterministic than prompting alone, while still letting the agent self-heal when UI details drift.
 
 ---
 
@@ -197,8 +210,16 @@ This conversion step is what makes it real: the end product is not the chat tran
 
 ---
 
+## Next step
+
+- We are experimenting with skill overlays as first-class artifacts.
+- Early internal runs suggest up to 10x fewer tokens and about 2x faster execution when overlays are combined with a codified bash run.
+- These numbers are still directional, not formally benchmarked yet, but the outcome quality is already noticeably better.
+
+---
+
 ## The punchline
 
-I treat the agent as the automation author.
-It explores the website, figures out the reliable path, and hands me a script.
-From there, the script is the product.
+This is not just "run a bash script."
+It is deterministic automation with an adaptive agent wrapper.
+The script gives repeatability, and the agent gives self-healing.
