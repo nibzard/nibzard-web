@@ -1,6 +1,6 @@
 ---
-title: "Explore once, script forever: cashing out session runs"
-description: "Let an agent discover a messy UI flow once, then export the exact commands as a deterministic bash script."
+title: "Explore once, script forever: cashing out web runs"
+description: "Let an agent discover a messy web UI flow once, then export the exact tool commands as a deterministic bash script."
 tldr: "Give the agent a Steel CLI plus a SKILL.md contract, force a snapshot/click/fill loop, then convert the successful run into a rerunnable bash script."
 date: 2026-03-04
 tags: [AI, AGENTS, AUTOMATION, BASH, CLI, AX]
@@ -10,12 +10,12 @@ author: "Nikola Balić"
 topics: [agent experience, skills as contracts, deterministic automation, browser workflows, bash scripting]
 entities: [Codex, SKILL.md, Steel, ChatGPT, OpenClaw, bash, CLI, DOM, bot checks]
 answers_questions:
-  - Why do agents struggle with real interfaces?
-  - How do you make agent runs predictable and reviewable?
+  - Why do agents struggle with real websites?
+  - How do you make agent web runs predictable and reviewable?
   - How do you turn a successful agent run into a bash script?
 ---
 
-Agents can write code, reason through ambiguity, and call tools. And then you point them at real interfaces and everything gets messy:
+Agents can write code, reason through ambiguity, and call tools. And then you point them at a real website and everything gets messy:
 
 - Login walls and MFA.
 - Dynamic DOM.
@@ -25,23 +25,23 @@ Agents can write code, reason through ambiguity, and call tools. And then you po
 
 What is a five-minute human task becomes a twenty-minute agent debugging session.
 
-A lot of this came from real pain while working on the Steel CLI release. I was experimenting heavily with how agents run interactive sessions, including OpenClaw runs where I tried to get the agent to do something actionable, like obtain an email for itself.
+A lot of this came from real pain while working on the Steel CLI release. I was experimenting heavily with how agents browse the web, including OpenClaw runs where I tried to get the agent to do something actionable, like obtain an email for itself.
 
 In my tests, OpenClaw failed every actionable flow (effectively a 100% failure rate). That pressure pushed us to ship the redesigned, re-architected CLI and skill.
 
 CLIs are a good surface for coding agents like Claude Code and Codex because they are native to terminal workflows.
-With a strong model, a capable coding agent, and an agent-friendly CLI contract, you can overcome most UI-flow chaos once and codify the winning path into a repeatable script.
+With a strong model, a capable coding agent, and an agent-friendly CLI contract, you can overcome most web-flow chaos once and codify the winning path into a repeatable script.
 I wrote more about this in [Making CLIs Agent-Friendly with Loops and Schemas](/agent-ci).
 
 A pattern that worked for me:
 
-> Give the agent a Steel CLI, discover the full flow once, then export the exact commands it used as a bash script you can rerun.
+> Let the agent discover the web flow once, then export the exact commands it used as a bash script you can rerun.
 
-This turns "agentic session execution" from a one-off demo into something reproducible, reviewable, and automatable.
+This turns "agentic browsing" from a one-off demo into something reproducible, reviewable, and automatable.
 
-One practical addition while testing that made this way of working easier was a small Steel CLI UI for live/recording session preview. It helped me observe every first-run decision the agent was making and catch issues before they became script logic.
+One practical addition while testing that made this way of working easier was a small Steel web UI for live/recording session preview. It helped me observe every first-run decision the agent was making and catch issues before they became script logic.
 
-![Steel session preview during first-run debugging](/images/20260303_bash-article-steel-session.png)
+![Steel web session preview during first-run debugging](/images/20260303_bash-article-steel-session.png)
 
 ---
 
@@ -96,7 +96,7 @@ The skill is what forces discipline. It should bias the agent toward:
 
 ### 3) Run a real task (not a toy)
 
-Good prompts are tasks where the interface is the source of truth:
+Good prompts are tasks where the website is the source of truth:
 
 - Download last month's invoice PDF from a portal
 - Create something, then verify it exists
@@ -106,7 +106,7 @@ Good prompts are tasks where the interface is the source of truth:
 
 Once the agent finally nails the flow, I ask for a conversion:
 
-> Take the exact commands you ran (in order), parameterize what changes (dates, names, IDs), add `set -euo pipefail`, and output a single bash script.
+> Take the exact commands you ran (in order), parameterize what changes (dates, names, IDs), and output a single bash script.
 
 That is the moment the workflow becomes reusable automation.
 
@@ -200,7 +200,7 @@ The output is no longer just a transcript. It is a deterministic, reviewable pro
 I expect a lot from what I call skill overlays.
 
 - Base skill: a strong generic skill that works across many sites and communicates CLI usage clearly to the agent.
-- Skill overlay: domain-specific or domain-plus-action-specific guidance that captures interface quirks.
+- Skill overlay: domain-specific or domain-plus-action-specific guidance that captures the website's quirks.
 - Codified run: the deterministic bash procedure exported from a successful run.
 
 In practice, `base skill + skill overlay + codified run` is more deterministic than prompting alone, while still letting the agent self-heal when UI details drift.
