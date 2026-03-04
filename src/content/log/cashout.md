@@ -29,7 +29,9 @@ A lot of this came from real pain while working on the Steel CLI release. I was 
 
 In my tests, OpenClaw failed every actionable flow (effectively a 100% failure rate). That pressure pushed us to ship the redesigned, re-architected CLI and skill.
 
-CLIs are a good surface for coding agents like Claude Code and Codex because they are native to terminal workflows. With a strong model, a capable coding agent, and an agent-friendly CLI contract, you can overcome most of the web-flow chaos once, then codify the winning path into a repeatable script. I wrote more about this in [Making CLIs Agent-Friendly with Loops and Schemas](/agent-ci).
+CLIs are a good surface for coding agents like Claude Code and Codex because they are native to terminal workflows.
+With a strong model, a capable coding agent, and an agent-friendly CLI contract, you can overcome most web-flow chaos once and codify the winning path into a repeatable script.
+I wrote more about this in [Making CLIs Agent-Friendly with Loops and Schemas](/agent-ci).
 
 A pattern that worked for me:
 
@@ -199,11 +201,15 @@ I expect a lot from what I call skill overlays.
 
 In practice, `base skill + skill overlay + codified run` is more deterministic than prompting alone, while still letting the agent self-heal when UI details drift.
 
+- We are experimenting with skill overlays as first-class artifacts.
+- Early internal runs suggest up to 10x fewer tokens and about 2x faster execution when overlays are combined with a codified bash run.
+- These numbers are still directional, not formally benchmarked yet, but the outcome quality is already noticeably better.
+
 ---
 
 ## From bash runbook to reusable Node CLI
 
-Another outcome from this workflow: I took the hardened bash script plus logs from previous sessions and used them as training context for an agent to build a dedicated Node CLI for the same task.
+Another outcome from this workflow: I took the hardened bash script plus logs from previous sessions and used them as reference context for an agent to build a dedicated Node CLI for the same task.
 
 That changed the operating model:
 
@@ -211,24 +217,18 @@ That changed the operating model:
 - The Node CLI wraps it as a reusable productized interface for that specific job.
 - The agent can execute the CLI, observe failures, and self-heal by adjusting steps when the site changes.
 
-I also used Steel credentials so authenticated state could be reused safely across runs, instead of hardcoding account details in scripts. With that in place, I can use my ChatGPT subscription through the CLI and hand it to agents for repeatable research workflows like agentic optimization, answer engine optimization (AEO), and generative engine optimization (GEO). Related context: [The Hidden Language of Search](/search-translator).
+I also used Steel credentials so authenticated state could be reused safely across runs, instead of hardcoding account details in scripts.
+With that in place, I can use my ChatGPT subscription through the CLI and hand it to agents for repeatable research workflows like agentic optimization, answer engine optimization (AEO), and generative engine optimization (GEO).
+Related context: [The Hidden Language of Search](/search-translator).
 
 ---
 
 ## Practical notes
 
-- Permissions and ToS: automate only what you are allowed to automate; treat credentials as radioactive.
+- Permissions and ToS: automate only what you are allowed to automate; treat credentials as sensitive secrets.
 - Parameterize early: dates, IDs, cities, names; turn them into variables so the script does not fossilize.
 - Verify outputs: prefer scripts that end with evidence artifacts you can inspect.
 - Keep sessions disciplined: name them, stop them, and do not let one run leak state into the next.
-
----
-
-## Next step
-
-- We are experimenting with skill overlays as first-class artifacts.
-- Early internal runs suggest up to 10x fewer tokens and about 2x faster execution when overlays are combined with a codified bash run.
-- These numbers are still directional, not formally benchmarked yet, but the outcome quality is already noticeably better.
 
 ---
 
