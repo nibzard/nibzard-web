@@ -41,7 +41,6 @@ One practical addition while testing that made this way of working easier was a 
 
 ![Steel web session preview during first-run debugging](/images/20260303_bash-article-steel-session.png)
 
-
 ## The missing layer: agent-native interfaces
 
 This is less about model intelligence and more about interface design.
@@ -75,7 +74,15 @@ The win is simple: you keep "how to drive this tool" out of your prompts, and in
 
 ### 1) Give the agent a CLI
 
-I used the brand-new [Steel CLI with its redesigned `steel-browser` skill](https://steel.dev/blog/steel-cli-and-agent-skill).
+I started with the Steel CLI and installed the browser skill so the agent had a stable control surface:
+
+```bash
+npm i -g @steel-dev/cli
+steel login
+npx skills add steel-dev/cli --skill steel-browser
+```
+
+Then I used the brand-new [Steel CLI with its redesigned `steel-browser` skill](https://steel.dev/blog/steel-cli-and-agent-skill).
 It is built for agent workflows: explicit session lifecycle commands, structured snapshots, and action primitives with predictable outcomes.
 That contract makes discovery fast and reruns boringly consistent. See the [Steel CLI docs](https://docs.steel.dev/overview/steel-cli).
 
