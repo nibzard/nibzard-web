@@ -43,7 +43,6 @@ One practical addition while testing that made this way of working easier was a 
 
 ![Steel web session preview during first-run debugging](/images/20260303_bash-article-steel-session.png)
 
----
 
 ## The missing layer: agent-native interfaces
 
@@ -61,7 +60,6 @@ Browsers are hostile if you only give pixels. A CLI makes the interaction loop e
 
 This is what I mean by ["agent experience" (AX)](https://biilmann.blog/articles/introducing-ax/): clear inputs, predictable outputs, and failures you can recover from.
 
----
 
 ## Skills are contracts (not vibes)
 
@@ -74,7 +72,6 @@ A "skill" is basically a capability with a contract. In practice that means a `S
 
 The win is simple: you keep "how to drive this tool" out of your prompts, and inside a reusable contract.
 
----
 
 ## My workflow: explore once, script forever
 
@@ -110,7 +107,6 @@ Once the agent finally nails the flow, I ask for a conversion:
 
 That is the moment the workflow becomes reusable automation.
 
----
 
 ## A concrete walk-through (real run: prompt -> screenshot -> script)
 
@@ -181,7 +177,6 @@ Result: `chatgpt-openclaw-response-test2.png` created successfully (PNG, 1915 x 
 
 After capture, I verified by asking the agent to read the screenshot and transcribe the visible response text.
 
----
 
 ## Why this works (and why it scales)
 
@@ -193,7 +188,6 @@ It separates discovery, execution, and recovery.
 
 The output is no longer just a transcript. It is a deterministic, reviewable procedure with a self-healing wrapper.
 
----
 
 ## Skill overlays: the next layer
 
@@ -209,7 +203,6 @@ In practice, `base skill + skill overlay + codified run` is more deterministic t
 - Early internal runs suggest up to 10x fewer tokens and about 2x faster execution when overlays are combined with a codified bash run.
 - These numbers are still directional, not formally benchmarked yet, but the outcome quality is already noticeably better.
 
----
 
 ## From bash runbook to reusable Node CLI
 
@@ -225,7 +218,6 @@ I also used Steel credentials so authenticated state could be reused safely acro
 With that in place, I can use my ChatGPT subscription through the CLI and hand it to agents for repeatable research workflows like agentic optimization, answer engine optimization (AEO), and generative engine optimization (GEO).
 Related context: [The Hidden Language of Search](/search-translator).
 
----
 
 ## Practical notes
 
@@ -234,7 +226,6 @@ Related context: [The Hidden Language of Search](/search-translator).
 - Verify outputs: prefer scripts that end with evidence artifacts you can inspect.
 - Keep sessions disciplined: name them, stop them, and do not let one run leak state into the next.
 
----
 
 ## The punchline
 
