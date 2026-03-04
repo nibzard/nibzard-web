@@ -218,6 +218,8 @@ That gave me three layers:
 I also used Steel credentials so authenticated state could be reused safely across runs, instead of hardcoding account details in scripts.
 With that in place, I can use my ChatGPT subscription through the CLI and hand it to agents for repeatable research workflows like search and optimization workflows tied to content ranking, as covered in [The Hidden Language of Search](/search-translator).
 
+![Node CLI screenshot showing the ChatGPT query flow automation](/images/20260303-ask-chatgpt.png)
+
 
 ## Practical notes
 
