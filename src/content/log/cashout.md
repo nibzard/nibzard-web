@@ -1,7 +1,7 @@
 ---
 title: "Explore once, script forever: cashing out web runs"
 description: "Let an agent discover a messy web UI flow once, then export the exact tool commands as a deterministic bash script."
-tldr: "Give the agent a CLI plus a SKILL.md contract, force a snapshot/click/fill loop, then cash out the successful run into a rerunnable bash script."
+tldr: "Give the agent a CLI plus a SKILL.md contract, force a snapshot/click/fill loop, then convert the successful run into a rerunnable bash script."
 date: 2026-03-04
 tags: [AI, AGENTS, AUTOMATION, BASH, CLI, AX]
 draft: false
@@ -24,6 +24,12 @@ Agents can write code, reason through ambiguity, and call tools. And then you po
 - Bot checks and random flakiness.
 
 What is a five-minute human task becomes a twenty-minute agent debugging session.
+
+A lot of this came from real pain while working on the Steel CLI release. I was experimenting heavily with how agents browse the web, including OpenClaw runs where I tried to get the agent to do something actionable, like obtain an email for itself.
+
+In my tests, OpenClaw failed every actionable flow (effectively a 100% failure rate). That pressure pushed us to ship the redesigned, re-architected CLI and skill.
+
+CLIs are a good surface for coding agents like Claude Code and Codex because they are native to terminal workflows. With a strong model, a capable coding agent, and an agent-friendly CLI contract, you can overcome most of the web-flow chaos once, then codify the winning path into a repeatable script. I wrote more about this in [Making CLIs Agent-Friendly with Loops and Schemas](/agent-ci).
 
 A pattern that worked for me:
 
@@ -112,7 +118,7 @@ Then I asked the agent:
 
 > Now list all commands line by line that worked
 
-It "cashed out" the run as a literal command list:
+It returned the successful run as a literal command list:
 
 ```bash
 SESSION=chatgpt-openclaw-$(date +%s)
@@ -146,7 +152,7 @@ Two important details:
 
 The `e15` detail is where an "agent run" becomes automation: you harden variable refs before rerunning.
 
-### Cashing it out into a reusable script
+### Turn it into a reusable script
 
 Next prompt:
 
@@ -178,7 +184,7 @@ It separates discovery from execution.
 - Discovery is messy. The agent experiments, snapshots, retries, and learns where the UI moved.
 - Execution should be boring. Same commands, same session discipline, same evidence capture.
 
-The "cash out" step is what makes it real: the end product is not the chat transcript. It is a deterministic, reviewable script.
+This conversion step is what makes it real: the end product is not the chat transcript. It is a deterministic, reviewable script.
 
 ---
 
