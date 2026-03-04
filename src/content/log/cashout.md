@@ -25,7 +25,7 @@ Agents can write code, reason through ambiguity, and call tools. And then you po
 
 What is a five-minute human task becomes a twenty-minute agent debugging session.
 
-Use this pattern:
+A pattern that worked for me:
 
 > Let the agent discover the web flow once, then export the exact commands it used as a bash script you can rerun.
 
@@ -35,7 +35,7 @@ This turns "agentic browsing" from a one-off demo into something reproducible, r
 
 ## The missing layer: agent-native interfaces
 
-The unlock is not a smarter model. It is an interface designed for agents.
+This is less about a smarter model and more about an interface designed for agents.
 
 Browsers are hostile if you only give pixels. A CLI makes the interaction loop explicit:
 
@@ -47,13 +47,13 @@ Browsers are hostile if you only give pixels. A CLI makes the interaction loop e
 6. Repeat until done
 7. Stop the session
 
-This is what I mean by "agent experience" (AX): clear inputs, predictable outputs, and failures you can recover from.
+This is what I mean by ["agent experience" (AX)](https://biilmann.blog/articles/introducing-ax/): clear inputs, predictable outputs, and failures you can recover from.
 
 ---
 
 ## Skills are contracts (not vibes)
 
-If you are using Codex, a "skill" is basically a capability with a contract. In practice that means a `SKILL.md` that spells out:
+A "skill" is basically a capability with a contract. In practice that means a `SKILL.md` that spells out:
 
 - When the agent should use it (trigger rules)
 - The workflow (the command loop)
