@@ -1,0 +1,66 @@
+{
+  "skill_name": "content-skills",
+  "description": "Evaluation test cases for nibzard-web content skills",
+  "evals": [
+    {
+      "id": 1,
+      "skill": "article-writer",
+      "prompt": "I want to write about my experience debugging an AI agent loop that kept crashing for 3 days straight. It started when I tried to make the agent retry failed API calls automatically, but something in the error handling caused infinite recursion. I learned a lot about failure states and graceful degradation.",
+      "expected_output": "A new article file in src/content/log/ with proper frontmatter (title, description, tags, topics, etc.) and narrative-driven content about the debugging experience",
+      "assertions": [
+        {"name": "creates_article_file", "check": "File created in src/content/log/"},
+        {"name": "has_required_frontmatter", "check": "Frontmatter includes title, description, date, tags"},
+        {"name": "uses_conversational_tone", "check": "Content uses 'you' and direct address"},
+        {"name": "includes_personal_experience", "check": "Contains personal debugging story"}
+      ]
+    },
+    {
+      "id": 2,
+      "skill": "thought-writer",
+      "prompt": "quick thought: the only way you're going to figure this out is by getting your hands dirty and seeing what works",
+      "expected_output": "A new thought file in src/content/thoughts/YYMMDD.md with minimal frontmatter (just date) and the thought content",
+      "assertions": [
+        {"name": "creates_thought_file", "check": "File created in src/content/thoughts/"},
+        {"name": "uses_YYMMDD_format", "check": "Filename follows YYMMDD.md format"},
+        {"name": "minimal_frontmatter", "check": "Frontmatter only has date field"},
+        {"name": "captures_thought", "check": "Content contains the user's thought"}
+      ]
+    },
+    {
+      "id": 3,
+      "skill": "idea-writer",
+      "prompt": "add an idea: a web dashboard that combines container-use, Coder AgentAPI, and Claude into a single interface for managing AI agents",
+      "expected_output": "A new idea file in src/content/idea/ with structured frontmatter (title, subtitle, category, date) and marketing-style content",
+      "assertions": [
+        {"name": "creates_idea_file", "check": "File created in src/content/idea/"},
+        {"name": "has_title_and_category", "check": "Frontmatter includes title and category"},
+        {"name": "marketing_flair", "check": "Content includes tagline or target market"},
+        {"name": "technology_links", "check": "References to tools/technologies included"}
+      ]
+    },
+    {
+      "id": 4,
+      "skill": "now-writer",
+      "prompt": "update my now page - I'm currently shipping a new skill evaluation framework and researching how different models handle failure states",
+      "expected_output": "A new now entry in src/content/now/YYMMDD.md with date frontmatter and ## sections for focus areas",
+      "assertions": [
+        {"name": "creates_now_file", "check": "File created in src/content/now/"},
+        {"name": "uses_YYMMDD_format", "check": "Filename follows YYMMDD.md format"},
+        {"name": "has_sections", "check": "Content uses ## headings for different areas"},
+        {"name": "present_tense", "check": "Content describes current focus"}
+      ]
+    },
+    {
+      "id": 5,
+      "skill": "image-writer",
+      "prompt": "post this screenshot from /public/images/claude4-dashboard.png - Claude 4 loves complex dashboard visualizations",
+      "expected_output": "A new image entry in src/content/images/YYMMDD.md with date and imageUrl frontmatter",
+      "assertions": [
+        {"name": "creates_image_file", "check": "File created in src/content/images/"},
+        {"name": "has_imageUrl", "check": "Frontmatter includes imageUrl field"},
+        {"name": "correct_image_path", "check": "imageUrl starts with /images/"},
+        {"name": "brief_caption", "check": "Content is brief (1-2 sentences)"}
+      ]
+    }
+  ]
+}
