@@ -22,6 +22,7 @@ entities:
   - Next.js
   - Vite
   - Mladen Vukmir
+  - Gergely Orosz
 answers_questions:
   - Why is software entering a post-copyright era?
   - How does AI change software copyright in practice?
@@ -116,6 +117,8 @@ That is a massive regime change.
 If you want a concrete example, look at [Cloudflare's `vinext`](https://blog.cloudflare.com/vinext/). In February 2026, Cloudflare described using one engineer plus AI to reimplement most of the Next.js API surface on top of Vite, turning a dominant framework into something that could be retargeted toward Cloudflare Workers instead of merely adapted after the fact. That is a very clean example of the shift I am describing here: value moving away from the sanctity of the original source text and toward behavior, compatibility, tests, and deployment context.
 
 And the caveat matters just as much. Cloudflare is explicit that `vinext` is still experimental, not battle-tested at serious scale, and still earning trust. That is the second half of the story. Reimplementation gets cheap much faster than legitimacy does.
+
+As [Gergely Orosz noted](https://newsletter.pragmaticengineer.com/p/the-pulse-cloudflare-rewrites-nextjs), that is the deeper signal in `vinext`: not that it is already production-perfect, but that a major reimplementation like this is now suddenly plausible.
 
 Once implementation becomes cheap enough, more and more software gets pulled into an abundance dynamic:
 
