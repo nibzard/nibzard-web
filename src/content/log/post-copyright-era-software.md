@@ -17,6 +17,11 @@ entities:
   - WIPO
   - European IPR Helpdesk
   - AI coding agents
+  - Cloudflare
+  - vinext
+  - Next.js
+  - Vite
+  - Mladen Vukmir
 answers_questions:
   - Why is software entering a post-copyright era?
   - How does AI change software copyright in practice?
@@ -108,6 +113,10 @@ Now a spec, a test suite, a benchmark target, a wire protocol, an API contract, 
 
 That is a massive regime change.
 
+If you want a concrete example, look at [Cloudflare's `vinext`](https://blog.cloudflare.com/vinext/). In February 2026, Cloudflare described using one engineer plus AI to reimplement most of the Next.js API surface on top of Vite, turning a dominant framework into something that could be retargeted toward Cloudflare Workers instead of merely adapted after the fact. That is a very clean example of the shift I am describing here: value moving away from the sanctity of the original source text and toward behavior, compatibility, tests, and deployment context.
+
+And the caveat matters just as much. Cloudflare is explicit that `vinext` is still experimental, not battle-tested at serious scale, and still earning trust. That is the second half of the story. Reimplementation gets cheap much faster than legitimacy does.
+
 Once implementation becomes cheap enough, more and more software gets pulled into an abundance dynamic:
 
 - old projects get revived
@@ -154,6 +163,8 @@ You can keep the vocabulary, but the confidence behind it starts to dissolve.
 That does not mean courts disappear. It does not mean lawyers run out of work. It does not mean every dispute becomes unwinnable.
 
 It means the legal framework starts lagging further behind the technical reality it is supposed to govern.
+
+My friend Mladen Vukmir makes a similar point in [The Copyright Dilemma with Claude](https://platforum9.com/the-copyright-dilemma-with-claude/). Mladen is not just any commentator here. He is a longtime IP lawyer, founding partner of VUKMIR + ASSOCIATES, a longstanding member of ECTA and INTA, and someone who has spent decades working across copyright, trademarks, patents, and technology law. His argument is that the **current copyright framework may struggle to survive the AI era in its existing form**, and that the harder question is how the economic value created by AI gets distributed. I think that is exactly the right reframing. The legal argument does not disappear, but it stops being sufficient on its own.
 
 In other words: the law remains, but the leverage fades.
 
