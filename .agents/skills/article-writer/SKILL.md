@@ -1,6 +1,6 @@
 ---
 name: article-writer
-description: Create new log articles in nibzard.com style. Use when the user says "write an article", "create a blog post", "new log entry", or mentions wanting to write about a topic, experience, or idea. This skill captures the established voice: conversational, narrative-driven, technically deep yet accessible, with authentic personal perspective.
+description: "Create new log articles in nibzard.com style. Use when the user says \"write an article\", \"create a blog post\", \"new log entry\", or mentions wanting to write about a topic, experience, or idea. This skill captures the established voice: conversational, narrative-driven, technically deep yet accessible, with authentic personal perspective."
 allowed-tools:
   - Write
   - Read
