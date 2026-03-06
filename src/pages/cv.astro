@@ -1,9 +1,10 @@
 ---
 import FadeIn from '../components/animations/FadeIn.jsx';
 import { SEO } from "astro-seo";
+import { resolveSiteOrigin, toSiteUrl } from '../utils/siteUrls';
 
-const siteUrl = Astro.site ? Astro.site.toString() : Astro.url.origin;
-const canonicalUrl = Astro.url.toString();
+const siteUrl = resolveSiteOrigin(Astro.site, Astro.url);
+const canonicalUrl = toSiteUrl(Astro.site, Astro.url, Astro.url.pathname);
 const defaultOgImage = new URL("/og-nibzard.jpeg", siteUrl).toString();
 ---
 

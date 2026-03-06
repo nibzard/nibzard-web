@@ -4,7 +4,7 @@ description: "Software was already an awkward fit for copyright. AI turns that m
 tldr: "Copyright does not disappear in the AI era, but it stops functioning as a meaningful scarcity mechanism for software. As reimplementation gets cheap, the real moats shift to trust, governance, provenance, maintenance, and operational legitimacy."
 date: 2026-03-06
 tags: [AI, SOFTWARE, COPYRIGHT, POLICY, FUTURE]
-draft: true
+draft: false
 author: "Nikola Balić"
 topics:
   - software copyright

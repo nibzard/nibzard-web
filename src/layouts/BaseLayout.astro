@@ -11,6 +11,7 @@ import SchemaMarkup from '../components/SchemaMarkup.astro';
 import SearchOverlay from '../components/SearchOverlay.jsx';
 import NewsletterModal from '../components/NewsletterModal.jsx';
 import { createWebsiteSchema, createPersonSchema } from '../utils/schemaUtils';
+import { resolveSiteOrigin, toSiteUrl } from '../utils/siteUrls';
 
 export interface Props {
   title?: string;
@@ -27,12 +28,13 @@ const {
   fullWidth = false,
   showNewsletterModal = true
 } = Astro.props;
-const canonicalUrl = Astro.url.toString();
-const siteUrl = Astro.site ? Astro.site.toString() : Astro.url.origin;
+const siteUrl = resolveSiteOrigin(Astro.site, Astro.url);
+const canonicalUrl = toSiteUrl(Astro.site, Astro.url, Astro.url.pathname);
 const defaultOgImage = new URL("/og-nibzard.jpeg", siteUrl).toString();
+const siteHostname = new URL(siteUrl).hostname;
 const enableAnalytics =
   import.meta.env.PROD &&
-  (Astro.url.hostname === "nibzard.com" || Astro.url.hostname === "www.nibzard.com");
+  (siteHostname === "nibzard.com" || siteHostname === "www.nibzard.com");
 
 // Generate schema markup
 const websiteSchema = createWebsiteSchema();

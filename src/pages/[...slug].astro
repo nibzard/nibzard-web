@@ -24,6 +24,11 @@ if (slug) {
   }
 }
 
+if (entry?.data.draft && !import.meta.env.DEV) {
+  entry = undefined;
+  Astro.response.status = 404;
+}
+
 if (entry) {
   const rendered = await entry.render();
   ContentComponent = rendered.Content;

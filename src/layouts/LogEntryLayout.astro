@@ -16,6 +16,7 @@ import { getDiverseRelatedArticles } from '../utils/articleMatching';
 import RelatedArticles from '../components/RelatedArticles.astro';
 import ReadingProgress from '../components/ReadingProgress.astro';
 import GiscusComments from '../components/GiscusComments.jsx';
+import { resolveSiteOrigin, toSiteUrl } from '../utils/siteUrls';
 
 interface Frontmatter {
   title: string;
@@ -25,7 +26,9 @@ interface Frontmatter {
   tags?: string[];
   tldr?: string;
   author?: string;
-  // Add any other frontmatter properties you expect
+  topics?: string[];
+  entities?: string[];
+  draft?: boolean;
 }
 
 interface Props {
@@ -37,8 +40,8 @@ const sortedTags = frontmatter.tags ? sortTags(frontmatter.tags) : [];
 const hasSlop = frontmatter.tags?.some(tag => tag.toUpperCase() === 'SLOP');
 
 // Get the current URL for schema markup
-const currentUrl = Astro.url.href;
-const siteUrl = Astro.site ? Astro.site.toString() : Astro.url.origin;
+const currentUrl = toSiteUrl(Astro.site, Astro.url, Astro.url.pathname);
+const siteUrl = resolveSiteOrigin(Astro.site, Astro.url);
 
 // Get the slug from the URL path for dynamic OG image
 const urlPath = Astro.url.pathname;
