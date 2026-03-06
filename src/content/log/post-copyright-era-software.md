@@ -54,7 +54,7 @@ Cloudflare is also explicit that `vinext` is experimental and not battle-tested 
 
 Once implementation gets cheap enough, software enters an abundance dynamic: old projects get revived, abandoned tools get reimagined, slow libraries get rewritten, and compatible alternatives show up much faster than before.
 
-Some of that output will be slop. But the cheapness of writing code does not remove the difficulty of making software trustworthy, durable, and worth depending on.
+Some of that output will be slop. But abundance also creates selection pressure. The cheapness of writing code does not remove the difficulty of making software trustworthy, durable, correct, lovable, and worth depending on. Once raw implementation is less scarce, the market starts caring more about the layers above it: editorial taste, architecture, validation, governance, and product judgment. That is not the death of software. That is software becoming more abundant, more contested, and in many ways more alive.
 
 ## Software Was Never Well-Protected by Copyright
 
@@ -106,7 +106,9 @@ This is why I keep coming back to the same conclusion: the future of software le
 
 That also means better norms, not fewer: attribution, disclosure of AI-assisted rewrites, fork etiquette, namespace continuity, governance transitions, and supply-chain transparency all matter more in a world where equivalent implementations can appear quickly.
 
-## The Post-Copyright Era of Software
+## The Software Renaissance
+
+This is what a renaissance looks like. More rewrites, more redesigns, more spiritual successors, more niche optimizations that were never economically worth attempting before. More weird experiments that survive long enough to become useful.
 
 Software is not becoming lawless. It is becoming abundant.
 
