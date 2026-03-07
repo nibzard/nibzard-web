@@ -1,17 +1,13 @@
 ---
-title: "Minimum Viable PR vs. Eager Agents: Stop Touching 10 Files"
+title: "Eager Agents"
 description: "Agents over-deliver. They write tests, update docs, refactor nearby code—when all you wanted was a surgical fix."
 tldr: "LLMs are eager by nature. Give them an inch, they'll take 10 files. Here's how to scope agent work and prevent PR bloat."
 date: 2026-02-24
 tags: [AI, AGENTS, WORKFLOW]
-draft: true
+draft: false
 author: "Nikola Balić"
 topics: [AI Agents, Software Development, Code Review]
 entities: [GitHub, Vercel, Claude]
-answers_questions:
-  - Why do AI agents touch too many files?
-  - How do I scope agent changes to just what's needed?
-  - What is a "minimum viable PR"?
 ---
 
 Here's a phenomenon you'll recognize if you've worked with AI coding agents:
@@ -20,9 +16,13 @@ You ask for a small fix. The agent delivers a small fix... plus tests, plus docu
 
 **Ten files changed.** When you needed one.
 
-I saw this clearly when my agent pushed a PR to Vercel's agent-browser project. Comparing it to the three existing provider integrations, ours was notably more thorough. Tests. Docs. The works.
+I learned this the hard way. I had an agent running in "yolo mode" (auto-commit, auto-push) and it opened [a PR to Vercel's agent-browser project](https://github.com/vercel-labs/agent-browser/pull/532). I came back to find **10 files changed, 454 additions**. Tests. Docs. CLI help. Skill documentation. Changelog. The works.
 
-Was that better? Sort of. But it also wasn't what was asked for.
+Was the code good? Actually, yes. But comparing it to the three existing provider integrations in that repo, ours was *way* more thorough. The maintainers had added tests and docs later, incrementally. My agent did it all at once.
+
+Was that better? Sort of. But here's the kicker: the commit history tells the real story. One big commit from the agent. Then **five follow-up commits from me**—removing files it shouldn't have added, simplifying docs it overwrote, refactoring code that worked but was verbose.
+
+The agent did the work. Then I did the cleanup.
 
 ## Why LLMs Overreach
 
@@ -30,10 +30,7 @@ This isn't a bug. It's a feature of how language models work.
 
 **They're eager.** Not in a malicious way, but in a "I want to be helpful" way. If you give an agent access to a codebase and ask it to solve a problem, it will solve *every related problem it can find.*
 
-Different models have different personalities:
-- Claude is famously eager
-- Codex is a bit more reserved
-- But at their core, they all want to "complete" the task
+Different models have different personalities—some are more cautious, some more enthusiastic—but at their core, they all want to "complete" the task.
 
 The problem is: **your definition of complete and the model's definition of complete are different.**
 
