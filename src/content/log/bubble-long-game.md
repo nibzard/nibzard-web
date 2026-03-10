@@ -85,6 +85,8 @@ Here's the insight that changed how I think about my own FOMO: the durable winne
 
 With LLMs, the strongest opportunities for early adopters are likely to be in the complements around the models, not the models themselves.
 
+![Diagram showing generic model access on one side of a seesaw and complements like context, workflow, and trust compounding into larger value accrual on the other](/images/20260310_complements.jpg)
+
 **The context layer.** Firms that organize internal knowledge, permissions, metadata, and retrieval well will get much more reliable AI than firms with messy data. The moat is not the model—it's the context layer around the model. Companies like [Glean](https://glean.com) and [Pinecone](https://www.pinecone.io) are building this infrastructure.
 
 **Vertical workflow software.** The best businesses will be domain-specific: legal review, tax preparation, underwriting, clinical documentation, procurement. Generic chat is easy to copy; domain workflow is harder. Look at [Harvey.ai](https://harvey.ai) in legal, or how [Tempus](https://www.tempus.com) is transforming clinical workflows.
