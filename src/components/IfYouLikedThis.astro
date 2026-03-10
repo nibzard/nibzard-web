@@ -6,7 +6,7 @@ import { formatTagForDisplay } from '../utils/tagUtils';
 
 interface Props {
   similarEntries: Array<{
-    slug: string;
+    id: string;
     data: {
       title: string;
       description?: string;
@@ -34,7 +34,7 @@ const filteredEntries = similarEntries.filter(
     <div class="if-you-liked-grid">
       {filteredEntries.map((entry) => (
         <article class="if-you-liked-card">
-          <a href={`/${entry.slug}`}>
+          <a href={`/${entry.id}`}>
             <h3>{entry.data.title}</h3>
             {entry.data.description && (
               <p class="if-you-liked-description">{entry.data.description}</p>

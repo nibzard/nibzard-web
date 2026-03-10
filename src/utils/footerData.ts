@@ -46,8 +46,8 @@ export async function getFooterData(
   topicCount: number = 8
 ): Promise<FooterData> {
   // Get all published log entries
-  const allPosts = await getCollection('log', ({ data, slug }) => {
-    return data.draft !== true && slug !== 'claude' && data.title;
+  const allPosts = await getCollection('log', ({ data, id }) => {
+    return data.draft !== true && id !== 'claude' && data.title;
   });
 
   // Sort by date (newest first)
@@ -59,7 +59,7 @@ export async function getFooterData(
 
   // Get recent posts
   const recentPosts: FooterPost[] = allPosts.slice(0, recentCount).map(post => ({
-    slug: post.slug,
+    slug: post.id,
     title: post.data.title,
     date: new Date(post.data.updated || post.data.date)
   }));
@@ -69,7 +69,7 @@ export async function getFooterData(
     .filter(post => post.data.featured === true)
     .slice(0, featuredCount)
     .map(post => ({
-      slug: post.slug,
+      slug: post.id,
       title: post.data.title,
       date: new Date(post.data.updated || post.data.date)
     }));

@@ -1,6 +1,6 @@
 ---
 export const prerender = false;
-import { getCollection, getEntry, type CollectionEntry } from 'astro:content';
+import { getCollection, getEntry, render, type CollectionEntry } from 'astro:content';
 import LogEntryLayout from '../layouts/LogEntryLayout.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import NotFoundContent from '../components/NotFoundContent.astro';
@@ -30,7 +30,7 @@ if (entry?.data.draft && !import.meta.env.DEV) {
 }
 
 if (entry) {
-  const rendered = await entry.render();
+  const rendered = await render(entry);
   ContentComponent = rendered.Content;
 } else {
   // For unknown slugs, mark response as 404

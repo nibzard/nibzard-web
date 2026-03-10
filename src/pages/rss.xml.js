@@ -23,8 +23,8 @@ export async function GET(context) {
 		items: publishedPosts.map((post) => ({
 			title: post.data.title,
 			description: post.data.description,
-			link: `/${post.slug}/`,
-			guid: `${context.site}${post.slug}/`,
+			link: `/${post.id}/`,
+			guid: `${context.site}${post.id}/`,
 			pubDate: post.data.date,
 			author: post.data.author || 'Nikola Balić',
 			categories: post.data.tags,

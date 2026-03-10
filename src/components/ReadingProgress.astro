@@ -4,7 +4,7 @@
 
 interface Props {
   suggestedArticles: Array<{
-    slug: string;
+    id: string;
     data: {
       title: string;
       description?: string;
@@ -22,7 +22,7 @@ const { suggestedArticles } = Astro.props;
     <div class="suggestions-content">
       <div class="suggestion-text">
         <span class="suggestion-label">Read next:</span>
-        <a href={`/${suggestedArticles[0].slug}`} class="suggestion-link">
+        <a href={`/${suggestedArticles[0].id}`} class="suggestion-link">
           {suggestedArticles[0].data.title}
         </a>
       </div>

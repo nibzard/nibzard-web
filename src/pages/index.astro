@@ -20,8 +20,8 @@ const currentPage = parseInt(searchParams.get('page') || '1', 10);
 const pageSize = 10; // Number of entries per page
 
 // Get all log entries that aren't drafts and aren't CLAUDE.md
-const logEntries = await getCollection('log', ({ data, slug }) => {
-  return data.draft !== true && slug !== 'claude' && data.title;
+const logEntries = await getCollection('log', ({ data, id }) => {
+  return data.draft !== true && id !== 'claude' && data.title;
 });
 
 // Sort entries: featured first, then by date (newest first)
@@ -112,13 +112,13 @@ const { paginatedEntries: feedEntries, totalPages } = paginateFeed(
             <FadeIn client:visible delay={index * 0.01} yOffset={5}>
               {(() => {
                 const logEntry = item.entry;
-                const { isDoubleWidth, borderStyle } = calculateDoubleWidth(logEntry.slug, feedEntries);
+                const { isDoubleWidth, borderStyle } = calculateDoubleWidth(logEntry.id, feedEntries);
 
                 return (
                   <article
                     class={`log-entry ${isDoubleWidth ? 'double-width' : ''}`}
                     style={borderStyle}
-                    data-href={`/${logEntry.slug}`}
+                    data-href={`/${logEntry.id}`}
                     role="button"
                     tabIndex="0"
                     aria-label={`Read article: ${'title' in logEntry.data ? logEntry.data.title : 'Log Entry'}`}

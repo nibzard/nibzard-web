@@ -1,6 +1,6 @@
 ---
 export const prerender = false;
-import { getEntry, type CollectionEntry } from 'astro:content';
+import { getEntry, render, type CollectionEntry } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import NotFoundContent from '../../components/NotFoundContent.astro';
 import ThoughtEntry from '../../components/ThoughtEntry.astro';
@@ -26,7 +26,7 @@ if (!entry) {
 let ContentComponent: any;
 
 if (entry) {
-  const rendered = await entry.render();
+  const rendered = await render(entry);
   ContentComponent = rendered.Content;
 }
 ---

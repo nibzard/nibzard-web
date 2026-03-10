@@ -3,13 +3,14 @@
  * NowItemRenderer Component
  * Renders a now entry with proper markdown processing
  */
+import { render } from 'astro:content';
 
 interface Props {
   entry: any;
 }
 
 const { entry } = Astro.props;
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 
 // Get all headings from the markdown content
 const headingMatches = entry.body.matchAll(/##\s+(.+)/g);

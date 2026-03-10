@@ -53,7 +53,7 @@ export function calculateDoubleWidth(
 
   // Find the index of the current log entry
   const currentLogIndex = logEntriesInPage.findIndex(
-    (feedItem) => feedItem.entry.slug === logEntrySlug
+    (feedItem) => feedItem.entry.id === logEntrySlug
   );
 
   const isFirstLogEntry = currentLogIndex === 0;

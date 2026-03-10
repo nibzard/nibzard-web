@@ -19,7 +19,7 @@ export default function SearchFeed({ feedEntries }) {
       'entry.data.content',
       'entry.data.caption',
       'entry.data.body',
-      'entry.slug',
+      'entry.id',
     ],
     threshold: 0.4,
     ignoreLocation: true,

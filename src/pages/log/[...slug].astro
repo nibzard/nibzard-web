@@ -1,27 +1,14 @@
 ---
-export const prerender = true;
+export const prerender = false;
 // This file handles redirects from the old /log/entry-x paths to the new /entry-x paths
-import { getCollection, type CollectionEntry } from 'astro:content';
+const { slug } = Astro.params;
 
-export async function getStaticPaths() {
-  const logEntries = await getCollection('log', ({ data }) => {
-    return data.draft !== true;
-  });
-
-  return logEntries.map((entry: CollectionEntry<'log'>) => ({
-    params: { slug: entry.slug },
-    props: { entry },
-  }));
+if (!slug || slug.toLowerCase() === 'claude') {
+  Astro.response.status = 404;
 }
-
-interface Props {
-  entry: CollectionEntry<'log'>;
-}
-
-const { entry } = Astro.props;
 ---
 
-<meta http-equiv="refresh" content={`0;url=/${entry.slug}`} />
-<script is:inline define:vars={{ slug: entry.slug }}>
+<meta http-equiv="refresh" content={`0;url=/${slug}`} />
+<script is:inline define:vars={{ slug }}>
   window.location.href = `/${slug}`;
 </script>

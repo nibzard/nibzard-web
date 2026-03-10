@@ -16,7 +16,7 @@ export default function SearchResults({ feedEntries, initialQuery = '' }) {
 
   const fuse = useMemo(() => new Fuse(feedEntries, {
     keys: [
-      'title', 'tldr', 'tags', 'text', 'caption', 'slug', 'imageUrl'
+      'title', 'tldr', 'tags', 'text', 'caption', 'href', 'imageUrl'
     ],
     threshold: 0.4,
     ignoreLocation: true,
@@ -39,7 +39,7 @@ export default function SearchResults({ feedEntries, initialQuery = '' }) {
         if (item.type === 'log') {
           return (
             <li className="search-result" key={index}>
-              <a href={`/${item.slug}`}>{item.title}</a>
+              <a href={item.href}>{item.title}</a>
               <div className="search-result-meta">
                 {date} · Log{item.tldr ? ` · ${item.tldr}` : ''}
               </div>
@@ -48,21 +48,21 @@ export default function SearchResults({ feedEntries, initialQuery = '' }) {
         } else if (item.type === 'thought') {
           return (
             <li className="search-result" key={index}>
-              <a href={`/${item.slug}`}>{item.text || 'Thought'}</a>
+              <a href={item.href}>{item.text || 'Thought'}</a>
               <div className="search-result-meta">{date} · Thought</div>
             </li>
           );
         } else if (item.type === 'now') {
           return (
             <li className="search-result" key={index}>
-              <a href={`/${item.slug}`}>{item.title || item.text || 'Now'}</a>
+              <a href={item.href}>{item.title || item.text || 'Now'}</a>
               <div className="search-result-meta">{date} · Now</div>
             </li>
           );
         } else if (item.type === 'image') {
           return (
             <li className="search-result" key={index}>
-              <a href={`/${item.slug}`}>{item.caption || 'Image'}</a>
+              <a href={item.href}>{item.caption || 'Image'}</a>
               <div className="search-result-meta">{date} · Image</div>
             </li>
           );

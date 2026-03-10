@@ -5,8 +5,8 @@ import FadeIn from '../../components/animations/FadeIn.jsx';
 import LogItem from '../../components/LogItem.astro';
 
 // Get all log entries that aren't drafts and aren't CLAUDE.md
-const logEntries = await getCollection('log', ({ data, slug }) => {
-  return data.draft !== true && slug !== 'claude' && data.title;
+const logEntries = await getCollection('log', ({ data, id }) => {
+  return data.draft !== true && id !== 'claude' && data.title;
 });
 
 // Sort entries by date (newest first)

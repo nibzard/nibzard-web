@@ -3,13 +3,14 @@
  * ThoughtRenderer Component
  * Renders a thought entry with proper markdown processing
  */
+import { render } from 'astro:content';
 
 interface Props {
   entry: any;
 }
 
 const { entry } = Astro.props;
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 
 // Generate slug from entry ID (filename: YYMMDD.md)
 const slug = entry.id.split('/').pop().replace('.md', '');

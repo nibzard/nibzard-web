@@ -24,7 +24,7 @@ function estimateTextTokens(content: string): string {
  */
 async function getAllContent(): Promise<ProcessedContent> {
   const [logs, thoughts, nowUpdates, images, ideas] = await Promise.all([
-    getCollection('log', ({ data, slug }) => !data.draft && slug !== 'claude'),
+    getCollection('log', ({ data, id }) => !data.draft && id !== 'claude'),
     getCollection('thoughts', (entry) => !entry.data.draft),
     getCollection('now', (entry) => !entry.data.draft),
     getCollection('images', (entry) => !entry.data.draft),
@@ -80,7 +80,7 @@ function generateTableOfContents(content: ProcessedContent): string {
     sections.push(`### Log Articles (${content.logs.length})`);
     content.logs.forEach((log) => {
       const date = log.data.date.toISOString().split('T')[0];
-      sections.push(`- [${log.data.title}](/${log.slug}): ${log.data.description}`);
+      sections.push(`- [${log.data.title}](/${log.id}): ${log.data.description}`);
     });
     sections.push('');
   }
@@ -90,7 +90,7 @@ function generateTableOfContents(content: ProcessedContent): string {
     content.ideas.forEach((idea) => {
       const date = idea.data.date.toISOString().split('T')[0];
       const subtitle = idea.data.subtitle ? ` - ${idea.data.subtitle}` : '';
-      sections.push(`- [${idea.data.title}](/idea/${idea.slug}): ${idea.data.subtitle || 'Project concept'}${subtitle}`);
+      sections.push(`- [${idea.data.title}](/idea/${idea.id}): ${idea.data.subtitle || 'Project concept'}${subtitle}`);
     });
     sections.push('');
   }
@@ -99,7 +99,7 @@ function generateTableOfContents(content: ProcessedContent): string {
     sections.push(`### Thoughts (${content.thoughts.length})`);
     content.thoughts.forEach((thought) => {
       const date = thought.data.date.toISOString().split('T')[0];
-      sections.push(`- [Thought from ${date}](/thoughts/${thought.slug}): Personal reflection`);
+      sections.push(`- [Thought from ${date}](/thoughts/${thought.id}): Personal reflection`);
     });
     sections.push('');
   }
@@ -108,7 +108,7 @@ function generateTableOfContents(content: ProcessedContent): string {
     sections.push(`### Now Updates (${content.nowUpdates.length})`);
     content.nowUpdates.forEach((now) => {
       const date = now.data.date.toISOString().split('T')[0];
-      sections.push(`- [Now Update - ${date}](/now/${now.slug}): Current activities and projects`);
+      sections.push(`- [Now Update - ${date}](/now/${now.id}): Current activities and projects`);
     });
     sections.push('');
   }
@@ -117,7 +117,7 @@ function generateTableOfContents(content: ProcessedContent): string {
     sections.push(`### Images (${content.images.length})`);
     content.images.forEach((image) => {
       const date = image.data.date.toISOString().split('T')[0];
-      sections.push(`- [Image from ${date}](/images/${image.slug}): Visual content`);
+      sections.push(`- [Image from ${date}](/images/${image.id}): Visual content`);
     });
     sections.push('');
   }
@@ -130,7 +130,7 @@ function generateTableOfContents(content: ProcessedContent): string {
  */
 async function renderLogEntry(entry: CollectionEntry<'log'>): Promise<string> {
   // Read the raw markdown file (handle both .md and .mdx extensions)
-  const basePath = join(process.cwd(), 'src', 'content', 'log', entry.slug);
+  const basePath = join(process.cwd(), 'src', 'content', 'log', entry.id);
   let filePath = `${basePath}.md`;
   try {
     readFileSync(filePath, 'utf-8');
@@ -157,7 +157,7 @@ ${entry.data.tldr ? `**TL;DR:** ${entry.data.tldr}\n\n` : ''}${contentWithoutFro
  */
 async function renderIdeaEntry(entry: CollectionEntry<'idea'>): Promise<string> {
   // Read the raw markdown file
-  const filePath = join(process.cwd(), 'src', 'content', 'idea', `${entry.slug}.md`);
+  const filePath = join(process.cwd(), 'src', 'content', 'idea', `${entry.id}.md`);
   const rawContent = readFileSync(filePath, 'utf-8');
 
   // Remove frontmatter (everything between first two --- lines)
@@ -175,7 +175,7 @@ ${entry.data.subtitle ? `> ${entry.data.subtitle}\n\n` : ''}${contentWithoutFron
  */
 async function renderThoughtEntry(entry: CollectionEntry<'thoughts'>): Promise<string> {
   // Read the raw markdown file
-  const filePath = join(process.cwd(), 'src', 'content', 'thoughts', `${entry.slug}.md`);
+  const filePath = join(process.cwd(), 'src', 'content', 'thoughts', `${entry.id}.md`);
   const rawContent = readFileSync(filePath, 'utf-8');
 
   // Remove frontmatter (everything between first two --- lines)
@@ -193,7 +193,7 @@ ${contentWithoutFrontmatter.trim()}
  */
 async function renderNowEntry(entry: CollectionEntry<'now'>): Promise<string> {
   // Read the raw markdown file
-  const filePath = join(process.cwd(), 'src', 'content', 'now', `${entry.slug}.md`);
+  const filePath = join(process.cwd(), 'src', 'content', 'now', `${entry.id}.md`);
   const rawContent = readFileSync(filePath, 'utf-8');
 
   // Remove frontmatter (everything between first two --- lines)
@@ -211,7 +211,7 @@ ${contentWithoutFrontmatter.trim()}
  */
 async function renderImageEntry(entry: CollectionEntry<'images'>): Promise<string> {
   // Read the raw markdown file
-  const filePath = join(process.cwd(), 'src', 'content', 'images', `${entry.slug}.md`);
+  const filePath = join(process.cwd(), 'src', 'content', 'images', `${entry.id}.md`);
   const rawContent = readFileSync(filePath, 'utf-8');
 
   // Remove frontmatter (everything between first two --- lines)

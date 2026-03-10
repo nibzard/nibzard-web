@@ -18,12 +18,21 @@ function estimateMarkdownTokens(markdown: string): string {
   return Math.max(1, Math.ceil(markdown.length / 4)).toString();
 }
 
-function readMarkdownFile(collection: SupportedCollection, entryId: string): string | null {
-  const markdownPath = path.resolve(process.cwd(), 'src', 'content', collection, entryId);
-  if (!fs.existsSync(markdownPath)) {
-    return null;
+function readMarkdownFile(collection: SupportedCollection, entryId: string, filePath?: string): string | null {
+  const candidatePaths = filePath
+    ? [path.resolve(process.cwd(), filePath)]
+    : [
+        path.resolve(process.cwd(), 'src', 'content', collection, `${entryId}.md`),
+        path.resolve(process.cwd(), 'src', 'content', collection, `${entryId}.mdx`),
+      ];
+
+  for (const markdownPath of candidatePaths) {
+    if (fs.existsSync(markdownPath)) {
+      return fs.readFileSync(markdownPath, 'utf-8');
+    }
   }
-  return fs.readFileSync(markdownPath, 'utf-8');
+
+  return null;
 }
 
 async function findEntryBySlug(slug: string): Promise<MatchedEntry | null> {
@@ -33,33 +42,33 @@ async function findEntryBySlug(slug: string): Promise<MatchedEntry | null> {
     getCollection('idea', ({ data }) => data.draft !== true),
   ]);
 
-  const logEntry = logEntries.find((entry) => entry.slug === slug);
+  const logEntry = logEntries.find((entry) => entry.id === slug);
   if (logEntry) {
     return {
       collection: 'log',
       entry: logEntry,
-      canonicalPath: `/${logEntry.slug}`,
-      markdownPath: `/${logEntry.slug}.md`,
+      canonicalPath: `/${logEntry.id}`,
+      markdownPath: `/${logEntry.id}.md`,
     };
   }
 
-  const thoughtEntry = thoughtEntries.find((entry) => entry.slug === slug);
+  const thoughtEntry = thoughtEntries.find((entry) => entry.id === slug);
   if (thoughtEntry) {
     return {
       collection: 'thoughts',
       entry: thoughtEntry,
-      canonicalPath: `/thoughts/${thoughtEntry.slug}`,
-      markdownPath: `/thoughts/${thoughtEntry.slug}.md`,
+      canonicalPath: `/thoughts/${thoughtEntry.id}`,
+      markdownPath: `/thoughts/${thoughtEntry.id}.md`,
     };
   }
 
-  const ideaEntry = ideaEntries.find((entry) => entry.slug === slug);
+  const ideaEntry = ideaEntries.find((entry) => entry.id === slug);
   if (ideaEntry) {
     return {
       collection: 'idea',
       entry: ideaEntry,
-      canonicalPath: `/idea/${ideaEntry.slug}`,
-      markdownPath: `/idea/${ideaEntry.slug}.md`,
+      canonicalPath: `/idea/${ideaEntry.id}`,
+      markdownPath: `/idea/${ideaEntry.id}.md`,
     };
   }
 
@@ -80,7 +89,7 @@ export const GET: APIRoute = async ({ params, site }) => {
       return new Response('Markdown entry not found', { status: 404 });
     }
 
-    const markdownContent = readMarkdownFile(matchedEntry.collection, matchedEntry.entry.id);
+    const markdownContent = readMarkdownFile(matchedEntry.collection, matchedEntry.entry.id, matchedEntry.entry.filePath);
 
     if (!markdownContent) {
       return new Response('Markdown file not found', { status: 404 });

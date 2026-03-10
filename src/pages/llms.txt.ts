@@ -51,32 +51,32 @@ For the complete concatenated content of all articles, visit [${baseUrl}/llms-fu
 
     // Add log articles
     sortedLogs.forEach((log) => {
-      content += `- [${log.data.title}](${baseUrl}/${log.slug}): ${log.data.description}\n`;
+      content += `- [${log.data.title}](${baseUrl}/${log.id}): ${log.data.description}\n`;
     });
 
     content += `\n## Ideas\n`;
     sortedIdeas.forEach((idea) => {
       const subtitle = idea.data.subtitle ? ` - ${idea.data.subtitle}` : '';
-      content += `- [${idea.data.title}](${baseUrl}/idea/${idea.slug}): ${idea.data.subtitle || 'Project concept'}${subtitle}\n`;
+      content += `- [${idea.data.title}](${baseUrl}/idea/${idea.id}): ${idea.data.subtitle || 'Project concept'}${subtitle}\n`;
     });
 
     content += `\n## Thoughts\n`;
     sortedThoughts.forEach((thought) => {
       const date = thought.data.date.toISOString().split('T')[0];
-      content += `- [Thought from ${date}](${baseUrl}/thoughts/${thought.slug}): Personal reflection\n`;
+      content += `- [Thought from ${date}](${baseUrl}/thoughts/${thought.id}): Personal reflection\n`;
     });
 
     content += `\n## Now Updates\n`;
     sortedNowUpdates.forEach((now) => {
       const date = now.data.date.toISOString().split('T')[0];
-      content += `- [Now Update - ${date}](${baseUrl}/now/${now.slug}): Current activities and projects\n`;
+      content += `- [Now Update - ${date}](${baseUrl}/now/${now.id}): Current activities and projects\n`;
     });
 
     content += `\n## Images\n`;
     sortedImages.forEach((image) => {
       const date = image.data.date.toISOString().split('T')[0];
       const fullImageUrl = image.data.imageUrl.startsWith('http') ? image.data.imageUrl : `${baseUrl}${image.data.imageUrl}`;
-      content += `- [Image from ${date}](${baseUrl}/images/${image.slug}): Visual content - ${fullImageUrl}\n`;
+      content += `- [Image from ${date}](${baseUrl}/images/${image.id}): Visual content - ${fullImageUrl}\n`;
     });
 
     content += `\n## Optional

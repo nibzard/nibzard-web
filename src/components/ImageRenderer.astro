@@ -3,13 +3,14 @@
  * ImageRenderer Component
  * Renders an image entry with description
  */
+import { render } from 'astro:content';
 
 interface Props {
   entry: any;
 }
 
 const { entry } = Astro.props;
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 ---
 
 <div class="image-item">

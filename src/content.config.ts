@@ -1,7 +1,8 @@
 import { defineCollection, z } from 'astro:content';
+import { glob } from 'astro/loaders';
 
 const logCollection = defineCollection({
-  type: 'content', // 'content' for Markdown files
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/log' }),
   schema: z.object({
     title: z.string().max(60, "Title must be 60 characters or less").optional(),
     description: z.string().max(130, "Description must be 130 characters or less").optional(),
@@ -19,7 +20,7 @@ const logCollection = defineCollection({
 });
 
 const nowCollection = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/now' }),
   schema: z.object({
     date: z.date(),
     draft: z.boolean().optional().default(false),
@@ -28,7 +29,7 @@ const nowCollection = defineCollection({
 });
 
 const thoughtsCollection = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/thoughts' }),
   schema: z.object({
     date: z.date(),
     draft: z.boolean().optional().default(false),
@@ -37,7 +38,7 @@ const thoughtsCollection = defineCollection({
 });
 
 const imagesCollection = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/images' }),
   schema: z.object({
     date: z.date(),
     imageUrl: z.string(),
@@ -47,7 +48,7 @@ const imagesCollection = defineCollection({
 });
 
 const ideaCollection = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/idea' }),
   schema: z.object({
     title: z.string().max(80, "Title must be 80 characters or less"),
     subtitle: z.string().max(120, "Subtitle must be 120 characters or less").optional(),

@@ -3,13 +3,14 @@
  * IdeaRenderer Component
  * Renders an idea entry with Mad Men inspired advertising aesthetics
  */
+import { render } from 'astro:content';
 
 interface Props {
   entry: any;
 }
 
 const { entry } = Astro.props;
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 
 // Category color mapping for Mad Men aesthetic - muted palette
 const categoryColors = {

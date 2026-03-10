@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import FadeIn from '../components/animations/FadeIn.jsx';
 import NowEntry from '../components/NowEntry.astro';
 
@@ -18,7 +18,7 @@ const latestEntry = nowEntries.length > 0 ? nowEntries[0] : null;
 // Get the rendered content
 let Content;
 if (latestEntry) {
-  const rendered = await latestEntry.render();
+  const rendered = await render(latestEntry);
   Content = rendered.Content;
 }
 ---

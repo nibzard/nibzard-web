@@ -278,11 +278,18 @@ function buildMarkdownErrorResponse(status: number, title: string, description: 
 }
 
 function readMarkdownFile(collectionDir: string, entryId: string): string | null {
-  const markdownPath = path.resolve(process.cwd(), 'src', 'content', collectionDir, entryId);
-  if (!fs.existsSync(markdownPath)) {
-    return null;
+  const candidatePaths = [
+    path.resolve(process.cwd(), 'src', 'content', collectionDir, `${entryId}.md`),
+    path.resolve(process.cwd(), 'src', 'content', collectionDir, `${entryId}.mdx`),
+  ];
+
+  for (const markdownPath of candidatePaths) {
+    if (fs.existsSync(markdownPath)) {
+      return fs.readFileSync(markdownPath, 'utf-8');
+    }
   }
-  return fs.readFileSync(markdownPath, 'utf-8');
+
+  return null;
 }
 
 function sortByDateDesc<T extends { data: { date?: Date } }>(entries: T[]): T[] {
@@ -312,13 +319,6 @@ export const onRequest = defineMiddleware(async (context, next) => {
 
   const isMdUrl = pathname.endsWith('.md');
 
-  // Keep regular browser page navigations on HTML by default.
-  // Explicit `.md` URLs still opt into markdown.
-  const fetchDest = request.headers.get('sec-fetch-dest');
-  if (!isMdUrl && fetchDest === 'document') {
-    return next();
-  }
-
   if (
     pathname.startsWith('/api/') ||
     pathname.startsWith('/_astro/') ||
@@ -331,6 +331,13 @@ export const onRequest = defineMiddleware(async (context, next) => {
     pathname === '/' ||
     (pathname.includes('.') && !isMdUrl)
   ) {
+    return next();
+  }
+
+  // Keep regular browser page navigations on HTML by default.
+  // Explicit `.md` URLs still opt into markdown.
+  const fetchDest = request.headers.get('sec-fetch-dest');
+  if (!isMdUrl && fetchDest === 'document') {
     return next();
   }
 
@@ -349,7 +356,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
   try {
     if (target.collection === 'log') {
       const logEntries = await getCollection('log', ({ data }) => data.draft !== true);
-      const entry = logEntries.find((candidate) => candidate.slug === target.slug);
+      const entry = logEntries.find((candidate) => candidate.id === target.slug);
       if (!entry) {
         return buildMarkdownErrorResponse(404, 'Not Found', `No published log entry exists for \`${target.slug}\`.`);
       }
@@ -360,9 +367,9 @@ export const onRequest = defineMiddleware(async (context, next) => {
       }
 
       const relatedPaths = sortByDateDesc(logEntries)
-        .filter((candidate) => candidate.slug !== entry.slug)
+        .filter((candidate) => candidate.id !== entry.id)
         .slice(0, 2)
-        .map((candidate) => `/${candidate.slug}`);
+        .map((candidate) => `/${candidate.id}`);
 
       const metadata = generateAgentMetadata({
         collection: 'log',
@@ -380,7 +387,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
 
     if (target.collection === 'thoughts') {
       const thoughtsEntries = await getCollection('thoughts', ({ data }) => data.draft !== true);
-      const entry = thoughtsEntries.find((candidate) => candidate.slug === target.slug);
+      const entry = thoughtsEntries.find((candidate) => candidate.id === target.slug);
       if (!entry) {
         return buildMarkdownErrorResponse(404, 'Not Found', `No published thought exists for \`${target.slug}\`.`);
       }
@@ -403,7 +410,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
 
     if (target.collection === 'idea') {
       const ideaEntries = await getCollection('idea', ({ data }) => data.draft !== true);
-      const entry = ideaEntries.find((candidate) => candidate.slug === target.slug);
+      const entry = ideaEntries.find((candidate) => candidate.id === target.slug);
       if (!entry) {
         return buildMarkdownErrorResponse(404, 'Not Found', `No published idea exists for \`${target.slug}\`.`);
       }

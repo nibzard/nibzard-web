@@ -3,10 +3,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import SearchResults from '../components/SearchResults.jsx';
 
-const { searchParams } = new URL(import.meta.env.SITE + Astro.request.url);
+const { searchParams } = Astro.url;
 const initialQuery = searchParams.get('q') || '';
 
-const logEntries = await getCollection('log', ({ data, slug }) => data.draft !== true && slug !== 'claude' && data.title);
+const logEntries = await getCollection('log', ({ data, id }) => data.draft !== true && id !== 'claude' && data.title);
 const thoughts = await getCollection('thoughts', ({ data }) => data.draft !== true);
 const nowEntries = await getCollection('now', ({ data }) => data.draft !== true);
 const imageEntries = await getCollection('images', ({ data }) => data.draft !== true);
@@ -18,7 +18,7 @@ const a = (val: any, def = []) => Array.isArray(val) ? val : def;
 const clientFeedEntries = [
   ...logEntries.map(entry => ({
     type: 'log',
-    slug: s(entry.slug),
+    href: s(`/${entry.id}`),
     date: entry.data.date.toISOString(),
     title: s(entry.data.title),
     tldr: s(entry.data.tldr),
@@ -26,14 +26,14 @@ const clientFeedEntries = [
   })),
   ...thoughts.map(entry => ({
     type: 'thought',
-    slug: s(entry.slug),
+    href: s(`/thoughts/${entry.id}`),
     date: entry.data.date.toISOString(),
     text: s((entry.data as any)?.text),
     tags: a((entry.data as any)?.tags),
   })),
   ...nowEntries.map(entry => ({
     type: 'now',
-    slug: s(entry.slug),
+    href: s('/now'),
     date: entry.data.date.toISOString(),
     title: s((entry.data as any)?.title),
     text: s((entry.data as any)?.text),
@@ -41,7 +41,7 @@ const clientFeedEntries = [
   })),
   ...imageEntries.map(entry => ({
     type: 'image',
-    slug: s(entry.slug),
+    href: s(`/images/${entry.id}`),
     date: entry.data.date.toISOString(),
     caption: s((entry.data as any)?.caption),
     imageUrl: s((entry.data as any)?.image?.src),

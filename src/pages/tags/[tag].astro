@@ -6,24 +6,34 @@ import FadeIn from '../../components/animations/FadeIn.jsx';
 import LogItem from '../../components/LogItem.astro';
 
 export async function getStaticPaths() {
-  const logEntries = await getCollection('log', ({ data, slug }) => data.draft !== true && slug !== 'claude' && data.title);
+  const logEntries = await getCollection('log', ({ data, id }) => data.draft !== true && id !== 'claude' && data.title);
   const allTags = logEntries.flatMap((entry: any) => entry.data.tags || []);
-  const uniqueTags = [...new Set(allTags)];
+  const uniqueTags = Array.from(
+    allTags.reduce((tagMap: Map<string, string>, currentTag: string) => {
+      const normalizedTag = currentTag.toLowerCase();
+      if (!tagMap.has(normalizedTag)) {
+        tagMap.set(normalizedTag, currentTag);
+      }
+      return tagMap;
+    }, new Map<string, string>())
+  );
 
-  return uniqueTags.map((tag: string) => ({
-    params: { tag: tag.toLowerCase() }, // Ensure params are lowercase for URL consistency
-    props: { tagName: tag }, // Pass original tag name for display
+  return uniqueTags.map(([normalizedTag, originalTag]) => ({
+    params: { tag: normalizedTag },
+    props: {
+      tagName: originalTag,
+      normalizedTag,
+    },
   }));
 }
 
-const { tag } = Astro.params; // This will be the lowercase tag from the URL
-const { tagName } = Astro.props; // This is the original casing tag name for display
+const { tagName, normalizedTag: tag } = Astro.props; // Use static props to avoid request-derived route access during prerender
 
 // Get all log entries with this tag
-const allLogEntries = await getCollection('log', ({ data, slug }) => {
+const allLogEntries = await getCollection('log', ({ data, id }) => {
   // Ensure tag matching is case-insensitive and handles undefined tags array
   const entryTags = (data.tags || []).map((t: string) => t.toLowerCase());
-  return data.draft !== true && slug !== 'claude' && data.title && entryTags.includes(tag);
+  return data.draft !== true && id !== 'claude' && data.title && entryTags.includes(tag);
 });
 
 // Sort entries by date (newest first)

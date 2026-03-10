@@ -1,6 +1,6 @@
 // ABOUTME: Utilities for processing content collections into llms.txt format
 
-import { getCollection, type CollectionEntry } from 'astro:content';
+import { getCollection, render, type CollectionEntry } from 'astro:content';
 
 interface ProcessedContent {
   logs: CollectionEntry<'log'>[];
@@ -82,7 +82,7 @@ function generateTableOfContents(content: ProcessedContent): string {
     sections.push(`### Log Articles (${content.logs.length})`);
     content.logs.forEach((log) => {
       const date = log.data.date.toISOString().split('T')[0];
-      sections.push(`- [${log.data.title}](/${log.slug}): ${log.data.description}`);
+      sections.push(`- [${log.data.title}](/${log.id}): ${log.data.description}`);
     });
     sections.push('');
   }
@@ -92,7 +92,7 @@ function generateTableOfContents(content: ProcessedContent): string {
     content.ideas.forEach((idea) => {
       const date = idea.data.date.toISOString().split('T')[0];
       const subtitle = idea.data.subtitle ? ` - ${idea.data.subtitle}` : '';
-      sections.push(`- [${idea.data.title}](/idea/${idea.slug}): ${idea.data.subtitle || 'Project concept'}${subtitle}`);
+      sections.push(`- [${idea.data.title}](/idea/${idea.id}): ${idea.data.subtitle || 'Project concept'}${subtitle}`);
     });
     sections.push('');
   }
@@ -101,7 +101,7 @@ function generateTableOfContents(content: ProcessedContent): string {
     sections.push(`### Thoughts (${content.thoughts.length})`);
     content.thoughts.forEach((thought) => {
       const date = thought.data.date.toISOString().split('T')[0];
-      sections.push(`- [Thought from ${date}](/thoughts/${thought.slug}): Personal reflection`);
+      sections.push(`- [Thought from ${date}](/thoughts/${thought.id}): Personal reflection`);
     });
     sections.push('');
   }
@@ -110,7 +110,7 @@ function generateTableOfContents(content: ProcessedContent): string {
     sections.push(`### Now Updates (${content.nowUpdates.length})`);
     content.nowUpdates.forEach((now) => {
       const date = now.data.date.toISOString().split('T')[0];
-      sections.push(`- [Now Update - ${date}](/now/${now.slug}): Current activities and projects`);
+      sections.push(`- [Now Update - ${date}](/now/${now.id}): Current activities and projects`);
     });
     sections.push('');
   }
@@ -119,7 +119,7 @@ function generateTableOfContents(content: ProcessedContent): string {
     sections.push(`### Images (${content.images.length})`);
     content.images.forEach((image) => {
       const date = image.data.date.toISOString().split('T')[0];
-      sections.push(`- [Image from ${date}](/images/${image.slug}): Visual content`);
+      sections.push(`- [Image from ${date}](/images/${image.id}): Visual content`);
     });
     sections.push('');
   }
@@ -131,7 +131,7 @@ function generateTableOfContents(content: ProcessedContent): string {
  * Renders the full content of a log entry
  */
 async function renderLogEntry(entry: CollectionEntry<'log'>): Promise<string> {
-  const { Content } = await entry.render();
+  const { Content } = await render(entry);
   const frontmatter = [
     `**Published:** ${entry.data.date.toISOString().split('T')[0]}`,
     `**Author:** ${entry.data.author}`,
@@ -155,7 +155,7 @@ ${Content}
  * Renders the full content of an idea entry
  */
 async function renderIdeaEntry(entry: CollectionEntry<'idea'>): Promise<string> {
-  const { Content } = await entry.render();
+  const { Content } = await render(entry);
   const frontmatter = [
     `**Published:** ${entry.data.date.toISOString().split('T')[0]}`,
     `**Author:** ${entry.data.author}`,
@@ -176,7 +176,7 @@ ${Content}
  * Renders the full content of a thought entry
  */
 async function renderThoughtEntry(entry: CollectionEntry<'thoughts'>): Promise<string> {
-  const { Content } = await entry.render();
+  const { Content } = await render(entry);
   const frontmatter = [
     `**Date:** ${entry.data.date.toISOString().split('T')[0]}`,
     `**Author:** ${entry.data.author}`,
@@ -194,7 +194,7 @@ ${Content}
  * Renders the full content of a now entry
  */
 async function renderNowEntry(entry: CollectionEntry<'now'>): Promise<string> {
-  const { Content } = await entry.render();
+  const { Content } = await render(entry);
   const frontmatter = [
     `**Date:** ${entry.data.date.toISOString().split('T')[0]}`,
     `**Author:** ${entry.data.author}`,
@@ -212,7 +212,7 @@ ${Content}
  * Renders the full content of an image entry
  */
 async function renderImageEntry(entry: CollectionEntry<'images'>): Promise<string> {
-  const { Content } = await entry.render();
+  const { Content } = await render(entry);
   const frontmatter = [
     `**Date:** ${entry.data.date.toISOString().split('T')[0]}`,
     `**Author:** ${entry.data.author}`,
