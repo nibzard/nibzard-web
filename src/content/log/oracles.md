@@ -1,7 +1,7 @@
 ---
-title: "What Pretext Taught Me About AI Loops"
-description: "Pretext shows what serious AI-assisted engineering looks like: hard constraints, real oracles, tiny repros, rejection."
-tldr: "The real lesson from Pretext isn't text layout. It's the loop: lock the architecture, measure against reality, isolate the miss, classify it, and use AI for throughput instead of authority."
+title: "What Pretext Reinforced About AI Loops"
+description: "Pretext reinforces what serious AI-assisted engineering looks like: hard constraints, real oracles, tiny repros, rejection."
+tldr: "Pretext didn't introduce the loop to me. It reinforced the stricter version: lock the architecture, measure against reality, isolate the miss, classify it, and use AI for throughput instead of authority."
 date: 2026-03-29
 tags: [AI, AGENTS, WORKFLOW, TOOLS]
 draft: false
@@ -15,6 +15,8 @@ answers_questions:
 ---
 
 The interesting thing about Pretext is not text layout. It is the loop.
+
+And to be clear, this is not some brand new revelation for me. I already wrote a broader version of that argument in [The Agent is The Loop](/theloop). What Pretext did was reinforce a stricter version of it, one that is much less romantic and a lot more useful.
 
 Pretext is, as [Cheng Lou described it](https://x.com/_chenglou/status/2037713766205608234?s=46&t=2kH6NEAzM04KicGZW68bSg), a fast, accurate, comprehensive text measurement algorithm in pure TypeScript that can lay out web pages without leaning on DOM measurement and reflow. You can see the actual work in the [Pretext repository](https://github.com/chenglou/pretext). Fine. That is the obvious part. The part I keep coming back to is what it shows about using AI coding agents on problems that are messy, empirical, and dangerously easy to overfit.
 
@@ -30,7 +32,7 @@ The smartest move in Pretext happened before any clever algorithmic work.
 
 They locked in one rule: `prepare()` can be expensive, but `layout()` has to stay arithmetic-only and cheap.
 
-That sounds small until you realize it decides what kind of project this is. Once that line exists, a lot of bad AI suggestions die instantly. If a patch sneaks measurement, DOM reads, or string rebuilding back into the hot path, it is wrong. You do not need a philosophical debate about it.
+That sounds small until you realize it decides what kind of project this is. Once that line exists, a lot of bad AI suggestions die instantly. If a patch sneaks measurement, DOM reads, or string rebuilding back into the hot path, it is wrong. You do not need a philosophical debate about it. It is the same reason hard scope matters in [Eager Agents](/eager-agents): once the boundary is real, the model has less room to improvise its way into a mess.
 
 That is the first lesson I'd steal for AI-heavy work: do not start with "make it better." Start with "what is not allowed to move?"
 
@@ -76,7 +78,7 @@ That is not where the best leverage is.
 
 In a project like this, the agent is most useful as an engine for throughput. Let it build probes, wire diagnostics, run checks, compare outputs, refresh snapshots, and test narrow hypotheses quickly. That is already a lot.
 
-But the acceptance standard has to come from somewhere sturdier than the model itself. In Pretext, that bar comes from the architecture and the browser oracle. The human still has to decide whether a fix is semantic or accidental, durable or flattering, broad or obviously overfit.
+But the acceptance standard has to come from somewhere sturdier than the model itself. In Pretext, that bar comes from the architecture and the browser oracle. The human still has to decide whether a fix is semantic or accidental, durable or flattering, broad or obviously overfit. That is basically the harness argument again, just in a harsher environment than the one I wrote about in [What Makes a Great Coding Agent](/great-coding-agent).
 
 That division of labor feels right to me. The agent speeds up the science. The human still owns the bar.
 
