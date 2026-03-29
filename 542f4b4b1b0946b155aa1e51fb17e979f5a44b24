@@ -1,0 +1,14 @@
+# Context
+
+## Background
+Added a new log post about what Pretext teaches about AI-assisted engineering loops, then revised the draft to match the site's house style more closely.
+
+## Why This Way
+The article argues for constraint-first, oracle-driven iteration and now cites Cheng Lou's X post plus the Pretext repository directly in the intro so the setup is grounded in primary sources.
+
+## Gotchas
+Build passes with `corepack pnpm run build`, but OG image generation is skipped in this environment because Puppeteer Chrome is not installed.
+
+## Related
+- src/content/log/oracles.md
+- LESSONS_LEARNED.md
