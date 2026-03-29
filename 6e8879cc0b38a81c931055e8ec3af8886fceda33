@@ -1,0 +1,17 @@
+# Context
+
+## Background
+Follow-up edit to the new Pretext article after reviewing nearby posts in the log for internal linking opportunities and adjusting the framing.
+
+## Why This Way
+The earlier title implied the loop idea was newly discovered. The revised framing makes it clear Pretext reinforced an existing thesis, and the internal links point to prior posts exactly where the arguments overlap.
+
+## Gotchas
+Build had already passed for this content shape via `corepack pnpm run build`; OG image generation remains skipped in this environment because Puppeteer Chrome is not installed.
+
+## Related
+- src/content/log/oracles.md
+- src/content/log/theloop.md
+- src/content/log/eager-agents.md
+- src/content/log/great-coding-agent.md
+- LESSONS_LEARNED.md
