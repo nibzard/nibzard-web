@@ -43,6 +43,11 @@ export default defineConfig({
 
   // Vite build optimizations
   vite: {
+    server: {
+      watch: {
+        ignored: ['**/.vercel/output/**'],
+      },
+    },
     build: {
       minify: 'terser',
       terserOptions: {
