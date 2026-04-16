@@ -4,7 +4,8 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "node scripts/prebuild-og.js && astro build",
+    "tinacms:dev": "tinacms dev -c \"pnpm dev\"",
+    "build": "pnpm exec tinacms build --local --skip-cloud-checks && node scripts/prebuild-og.js && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "pipe:img": "node scripts/screenshot-content.js",
@@ -30,10 +31,13 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "resend": "^4.5.1",
+    "tinacms": "^3.7.2",
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
     "@astrojs/mdx": "^5.0.0",
+    "@tinacms/cli": "^2.2.2",
+    "@types/node": "^25.6.0",
     "less": "^4.3.0",
     "puppeteer": "^24.10.0",
     "sharp": "^0.34.2",
