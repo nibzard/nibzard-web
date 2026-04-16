@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "tinacms:dev": "tinacms dev -c \"pnpm dev\"",
-    "build": "pnpm exec tinacms build --local --skip-cloud-checks && node scripts/prebuild-og.js && astro build",
+    "build": "pnpm exec tinacms build --local --skip-cloud-checks && node scripts/prebuild-og.js && astro build && pnpm exec tinacms search-index",
     "preview": "astro preview",
     "astro": "astro",
     "pipe:img": "node scripts/screenshot-content.js",
@@ -44,5 +44,10 @@
     "terser": "^5.44.0",
     "tsx": "^4.19.4",
     "wrangler": "^4.66.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "better-sqlite3"
+    ]
   }
 }
