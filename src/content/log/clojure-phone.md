@@ -27,7 +27,19 @@ It felt right.
 
 ## The setup
 
-Qwen3-8B. SFT on 2,459 verified Clojure pairs. Then RLVR with GRPO. [Full training code here](https://github.com/nibzard/clojure-llm).
+I ran three frontier models (GPT-5.4, GPT-5.4-mini, Opus 4.7) on the full 558 MultiPL-E Clojure tasks. Each candidate goes through three verification gates: syntax check via `clojure.core/read`, clj-kondo lint, then clojure.test with timeouts. If it clears all three, it's in.
+
+415 out of 558 tasks had at least one passing solution. One solution per task, best model wins. No over-representation.
+
+The remaining 115 tasks—all three models failed—got recovered with a fix loop. Take the best failing candidate, send it back to GPT-5.4-mini with the error message, iterate up to 3 rounds. That produced both direct pairs and fix-mode pairs (prompt + broken code + error → fixed code).
+
+Then I padded it out with synthetic data: multi-sample pairs from best-of-K runs (~1,440), evol-instruct rewrites (~425), and 52 4Clojure problems. Same bar—must pass verification.
+
+The core dataset is 2,459 pairs. After holding out 111 tasks for evaluation (matched by function name, both kebab and snake case to prevent leakage), the training set was 2,059 pairs.
+
+How selective? Not very. Pure functional correctness—syntax + lint + tests pass. No code quality scoring, no style filtering, no manual review, no redundancy pruning beyond one-solution-per-task dedup. If the tests passed, it went in.
+
+LoRA rank 32 on Qwen3-8B-Base, 3 epochs, cosine schedule, max seq 2048. Nothing exotic. Then RLVR with GRPO on top. [Full training code here](https://github.com/nibzard/clojure-llm).
 
 Baselines: Opus 4.7 at 45% pass@1. GPT-5.4 at 64% pass@1.
 
