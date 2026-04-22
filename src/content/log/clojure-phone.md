@@ -23,6 +23,8 @@ Firing off an 8B fine-tune on [Thinking Machines Tinker](https://www.thinkingmac
 
 It felt right.
 
+![Tinker dashboard](/images/20260421_tinker.png)
+
 ## The setup
 
 Qwen3-8B. SFT on 2,459 verified Clojure pairs. Then RLVR with GRPO. [Full training code here](https://github.com/nibzard/clojure-llm).
