@@ -1,5 +1,5 @@
 import rss from '@astrojs/rss';
-import { getCollection, render } from 'astro:content';
+import { getCollection } from 'astro:content';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 export async function GET(context) {
@@ -10,22 +10,16 @@ export async function GET(context) {
 		.filter(post => !post.data.draft)
 		.sort((a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf());
 
-	const items = await Promise.all(
-		publishedPosts.map(async (post) => {
-			const { Content } = await render(post);
-			const { html } = await Content();
-			return {
-				title: post.data.title,
-				description: post.data.description,
-				link: `/${post.id}/`,
-				guid: `${context.site}${post.id}/`,
-				pubDate: post.data.date,
-				author: post.data.author || 'Nikola Balić',
-				categories: post.data.tags,
-				content: html,
-			};
-		}),
-	);
+	const items = publishedPosts.map((post) => ({
+		title: post.data.title,
+		description: post.data.description,
+		link: `/${post.id}/`,
+		guid: `${context.site}${post.id}/`,
+		pubDate: post.data.date,
+		author: post.data.author || 'Nikola Balić',
+		categories: post.data.tags,
+		content: post.rendered?.html,
+	}));
 
 	return rss({
 		title: SITE_TITLE,
