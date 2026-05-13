@@ -112,3 +112,21 @@
     font-size: 0.7rem;
   }
 }
+
+.home-heading {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  margin: var(--space-md) auto var(--space-md);
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 var(--space-md);
+}
+
+@media (max-width: 640px) {
+  .home-heading {
+    text-align: center;
+  }
+}
