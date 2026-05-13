@@ -44,6 +44,10 @@ main {
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
+.site-header .inner-container {
+  max-width: 1200px;
+}
+
 .header-content {
   display: flex;
   justify-content: space-between;
