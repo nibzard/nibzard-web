@@ -1,0 +1,188 @@
+# SEO Sprint — nibzard.com
+
+> Persistent plan. Lives at `docs/seo-sprint.md`. Updated after every phase. **Do not delete.**
+
+**Created:** 2026-05-13
+**Last updated:** 2026-05-13
+**Domain:** https://nibzard.com
+**Domain Rating (Ahrefs Free):** STUBBED — Ahrefs Free Authority Checker was Cloudflare-CAPTCHA-blocked under the hobby-tier Steel session (no CAPTCHA solving on hobby plan). Ubersuggest and Open PageRank also gated. **Action required:** Niko has Ahrefs access from past Daytona work — please paste DR here, OR sign up for a free Open PageRank API key (https://www.domcop.com/openpagerank/) and re-run Recipe A. Heuristic estimate based on age + activity: DR ~10-25 (do not act on this number).
+**Persona:** AI engineers + indie devs shipping production agent systems; secondary growth marketers in dev-tools / AI infra.
+**Free tier:** N/A (free content site)
+**Adaptation note:** This is a personal site, not a SaaS product. Phase 1 (alternatives) and Phase 2 (compare) are **N/A** for this site shape — covered in `.seo/brand.md`.
+
+---
+
+## Phase tracker
+
+### Phase 0 — Technical foundations
+
+**Status:** pending (real findings from `scripts/tech_audit.py`)
+**Why first:** content phases on a broken technical base waste effort.
+**Acceptance:** every item below resolved.
+
+- [ ] **Homepage has no `<h1>` tag** — `src/pages/index.astro` renders content collections but no top-level H1. Add `<h1>nibzard</h1>` or similar above the feed. Otherwise Google has no obvious topical anchor on the most-linked page.
+- [ ] **Meta description on homepage is 41 chars** — "all things AI agents, growth and startups". Expand to 140-160 chars. Suggest: "Detailed writeups on multi-agent orchestration, AI engineering patterns, and what actually works in production. From Nikola Balić (nibzard) — 50+ shipped AI projects."
+- [ ] **`og:description` missing on homepage** — add it to `BaseLayout.astro`'s OG block. Without it, link previews on social are blank/auto-filled.
+- [ ] **HTTPS check FAIL** — flagged by `tech_audit.py` ("HTTP works without redirecting to HTTPS"). May be a script false positive (Vercel handles HTTP→HTTPS at the edge, our script doesn't follow Vercel-style edge redirects perfectly). **Verify manually**: `curl -I http://nibzard.com` and confirm response is 301/308 → https://. If yes, this is the script's gap, not a real issue.
+- [ ] **101 broken internal links** — from `scripts/link_audit.py`. Run cleanup pass: `python3 /Users/nikola/.claude/skills/seo-sprint/scripts/link_audit.py /Users/nikola/dev/nibzard-web --base-host nibzard.com --broken-only`. Fix each (correct slug or remove link). Examples: `/log/architecture` links to `/some-article` (placeholder); `/log/hn-hug` references several `/images/...` files that don't exist in `public/images/`.
+
+### Phase 1 — Alternatives pages
+
+**Status:** **N/A — skipped for personal blog**
+**Reason:** No SaaS competitors. Adaptation captured in `.seo/brand.md`.
+
+### Phase 2 — Comparison pages
+
+**Status:** **N/A — skipped for personal blog**
+**Reason:** No "X vs Y" purchase intent for a personal blog.
+
+### Phase 3 — Use-case / `/for/` pages
+
+**Status:** optional (low priority for personal blogs; revisit after pillars ship)
+
+If pursued later, candidate pages:
+- `/for/ai-engineers` — landing the AI-engineer audience explicitly
+- `/for/growth-marketers` — bridging Niko's growth + AI lanes (rare positioning)
+
+Skip until Phase 4 has shipped 3+ pillars.
+
+### Phase 4 — Pillar + cluster playbooks **(MAIN PLAY)**
+
+**Status:** pending
+**Pattern:** `references/patterns/playbooks.md`
+**Why this is the main play:** for a content site, long-form authority pillars + cluster posts are the SEO engine. Niko already has ~50+ log posts that can be re-organized into clusters around 3-4 pillars. Each pillar absorbs the topical authority of its cluster.
+
+**Pillar candidates** (with real Google Autocomplete signal from Recipe C):
+
+| Pillar URL | Target keyword | Autocomplete signal | Status |
+|---|---|---|---|
+| `/playbooks/multi-agent-orchestration` | multi-agent orchestration patterns | strong (autocomplete: "patterns", "frameworks", "claude") | pending |
+| `/playbooks/claude-code-skills` | claude code skills guide | strong (autocomplete: "marketplace", "examples", "library", "directory", "folder") | pending |
+| `/playbooks/ai-agent-design-patterns` | ai agent design patterns | moderate (autocomplete: "github", "anthropic", "book", "react") | pending |
+| `/playbooks/agent-loop-architecture` | agent loop architecture | niche (autocomplete: "diagram", "claude code", "anthropic", "design") | pending |
+
+**Acceptance per pillar:**
+- ≥1500 words
+- TL;DR callout in first 100 words
+- Table of contents with anchor links
+- 5-10 H2 sections, each 200-300 words minimum
+- Links to 5+ existing log posts (as the cluster supporting it)
+- Schema.org Article (or HowTo where applicable) + FAQPage + BreadcrumbList
+- ≥5 inbound links from existing log posts within 30 days of shipping
+
+**Cluster identification:**
+
+Run `git ls-files src/content/log/` and group by pillar. Approximate clusters (verify by reading post titles):
+
+- **Multi-agent orchestration cluster** (~15-20 posts): theloop, transformer-orchestration, self-healing-agents, yolo-agents, structure, wrappers, search-translator, etc.
+- **Claude Code skills cluster** (~5-10 posts): unified-skills, "one skill to rule them all", related Claude Code writing
+- **AI engineering / production cluster** (~10-15 posts): startup-moat, embeddings-vs-structure, demos-vs-production, vacuum, etc.
+- **AI agent design patterns cluster** (~5-10 posts): agentic-ai-handbook material, agent design patterns
+- **AI startup growth cluster** (~5-10 posts): 20-year-playbook, developer-trust, 10-touchpoint-rule
+
+### Ongoing — Striking-distance boosts
+
+**Status:** pending — gated on GSC connection.
+**Pattern:** `references/striking-distance.md`
+**Why this matters most for a content site:** once you have ~50 posts indexed (which Niko already does), the highest-ROI continuous SEO work is moving pos-5-20 queries to pos-1-3 via targeted boosts, not creating new content.
+
+**Action required:** Niko, connect Google Search Console for nibzard.com (or paste a CSV export of queries with position 5-20 over the last 90 days). Then run Recipe E from `references/free-research-recipes.md`. Until that's done, **this section is empty** but should become the dominant ongoing work after Phase 4 ships.
+
+| Page | Query | Current pos | Boost action | Status |
+|------|-------|-------------|--------------|--------|
+| _empty until GSC connected_ | | | | |
+
+---
+
+## Keyword research snapshot
+
+### Recipe A — Domain Rating
+- **STUBBED** — see roadmap header. Hobby-tier Steel hit Cloudflare CAPTCHA on Ahrefs Free; Ubersuggest gates results behind sign-in. Pull real DR via Niko's existing Ahrefs access or Open PageRank free API key.
+
+### Recipe B — Competitor reverse-lookup
+- **N/A** — personal blog, no SaaS competitors. See `.seo/brand.md` "Competitors" section for the comparable-blogs list (Simon Willison, Eugene Yan, Lilian Weng, Latent.Space, Hamel Husain).
+
+### Recipe C — Topic cluster discovery (Google Autocomplete, real)
+
+Pulled live via `suggestqueries.google.com` on 2026-05-13. Top suggestions per seed:
+
+- **"multi-agent orchestration"** → patterns, frameworks, system, platform, **claude**, copilot studio, github
+- **"claude code skills"** → marketplace, github, examples, repo, library, directory, folder
+- **"ai agent patterns"** → github, anthropic, book, google, react, **design patterns**, **architecture patterns**
+- **"ai engineering production"** → polluted by manufacturing-context results; pivot to "ai engineering patterns" or "ai engineering blog" as future seeds
+- **"agent loop"** → diagram, ai, **claude**, **claude code**, **architecture**, anthropic, design
+- **"ai startup moat"** → mostly informational ("most profitable", "most successful"); not a strong commercial-intent target
+
+**Implication:** the cluster names should align with what people actually search. Use "patterns" and "architecture" and "design" as anchor words in pillar URLs/titles. "claude code skills" autocomplete strongly suggests there's a real audience searching for what Niko already writes about.
+
+### Recipe D — Comparison volume
+- **N/A** — personal blog has no comparison-purchase intent.
+
+### Recipe E — Striking distance (GSC pos 5-20)
+- **Pending GSC connection.** This will be the highest-ROI section of the roadmap once populated.
+
+---
+
+## Technical foundations findings
+
+From `scripts/tech_audit.py` run on 2026-05-13 against https://nibzard.com:
+
+| Check | Status | Detail |
+|---|---|---|
+| robots.txt | PASS | references sitemap |
+| sitemap.xml | PASS | found at /sitemap-index.xml |
+| HTTPS redirect | FAIL (likely script false positive) | needs manual verification |
+| Homepage title | PASS | 14 chars, "nibzard - Home" |
+| Meta description | WARN | 41 chars (under 140) |
+| Canonical | PASS | self-referencing |
+| Mobile viewport | PASS | width=device-width |
+| H1 | **FAIL** | no `<h1>` on homepage (real issue) |
+| Schema | PASS | WebSite, Person |
+| OG tags | WARN | og:description missing |
+
+**Phase 0 items derived from this audit** are listed at the top of the Phase tracker.
+
+---
+
+## Off-page checklist
+
+See `references/off-page.md` for the full playbook. Personal-blog adaptation:
+
+- [x] Sitemap exists at `/sitemap-index.xml` (Astro sitemap integration is wired)
+- [ ] Submit sitemap to Google Search Console + Bing Webmaster Tools
+- [ ] Brand citations: nibzard.com is already linked from Niko's other profiles (about.astro shows X, GitHub, LinkedIn). Add Substack, dev.to, HackerNoon profile bio links if applicable.
+- [ ] Strategic outreach (Phase 4 dependency): once a pillar ships, reach out to one of the comparable-blog authors (Simon Willison, Eugene Yan, etc.) — not for a link beg, but with a relevant data point that complements something they're writing about. 1-2 of these per quarter is plenty.
+- [ ] Consider repurposing top log posts as guest posts on dev.to / HackerNoon / Medium with canonical link back to nibzard.com (passes SEO juice without losing the readership).
+
+---
+
+## What this skill did and didn't do (dogfood notes for the skill itself)
+
+**Worked well:**
+- Stack detection (Astro 5) — clean
+- Brand context inference from README + about/bio pages — produced a coherent `.seo/brand.md` without `AskUserQuestion`, all inferences tagged `[INFERRED]`
+- Google Autocomplete (Recipe C) — no auth, no browser, real signal
+- `scripts/tech_audit.py` — surfaced **real** issues (missing H1, short meta description, missing og:description). This is the script earning its keep.
+- Personal-blog adaptation handled gracefully — the skill correctly identified that Phase 1/2 don't apply, instead of force-fitting them
+
+**Hit real-world limits:**
+- **Recipe A (DR) blocked by Cloudflare CAPTCHA** under hobby-tier Steel. Marked STUBBED per skill's "never fabricate" rule. Recommendation: Niko has Ahrefs access from past work; pull DR manually, or use Open PageRank free API.
+- **Recipe B and D** correctly skipped as N/A for a personal blog.
+- **Recipe E (striking-distance)** correctly deferred — depends on GSC connection.
+
+**Surfaced skill limitations (worth filing for iteration 3):**
+- `link_audit.py` treats every `.astro` file as a routable URL → many false-positive orphan reports for components/layouts. Fix: scope orphan detection to `src/pages/` and `src/content/` only.
+- `tech_audit.py`'s HTTPS check uses `urllib` which doesn't follow Vercel-style edge redirects accurately. Either improve the check, or label the WARN clearly as "verify manually."
+- Skill doesn't have a "personal blog" mode in references/methodology.md. The adaptation here was inferred. Worth adding a personal-blog playbook (or a "non-SaaS" branch in methodology).
+
+---
+
+## Next steps for Niko
+
+In order of priority:
+
+1. **Fix Phase 0 items** — especially the missing H1 and short meta description on the homepage. 30-60 minutes of work, immediate SEO benefit.
+2. **Run broken-link cleanup** — `link_audit.py --broken-only` and fix the 101 broken links. Half-day of work.
+3. **Pull real DR** — paste it into the roadmap header.
+4. **Connect GSC** — single highest unlock for ongoing work. Even before pillars ship, current posts will reveal striking-distance opportunities.
+5. **Pick the first pillar** — recommend `/playbooks/claude-code-skills` (autocomplete signal is strong + Niko has the most-recent material to cluster around). Single pillar in 1-2 weeks, then re-evaluate before starting the next.

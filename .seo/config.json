@@ -1,0 +1,26 @@
+{
+  "stack": "astro",
+  "astro_version": "5",
+  "routing": "file-based",
+  "component_language": "astro+tsx",
+  "pages_dir": "src/pages",
+  "content_dir": "src/content",
+  "content_collections": ["log", "thoughts", "now", "images", "idea"],
+  "marketing_pages": [
+    "src/pages/index.astro",
+    "src/pages/about.astro",
+    "src/pages/bio.astro",
+    "src/pages/cv.astro",
+    "src/pages/projects.astro",
+    "src/pages/log/[...slug].astro",
+    "src/pages/now.astro",
+    "src/pages/thoughts/[slug].astro"
+  ],
+  "site_url": "https://nibzard.com",
+  "deploy_target": "vercel",
+  "cms": "tina",
+  "gsc_site_url": null,
+  "roadmap_path": "docs/seo-sprint.md",
+  "research_mode": "live",
+  "notes": "Personal site + blog (not a SaaS product). Alternatives/compare patterns do not apply — competitor reverse-lookup is N/A. Skill is being adapted: Phase 0 (technical), Phase 4 (pillar/cluster) and ongoing striking-distance are the relevant phases."
+}
