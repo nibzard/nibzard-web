@@ -82,15 +82,65 @@ Run `git ls-files src/content/log/` and group by pillar. Approximate clusters (v
 
 ### Ongoing — Striking-distance boosts
 
-**Status:** pending — gated on GSC connection.
+**Status:** **active — GSC data analyzed 2026-05-13**
 **Pattern:** `references/striking-distance.md`
-**Why this matters most for a content site:** once you have ~50 posts indexed (which Niko already does), the highest-ROI continuous SEO work is moving pos-5-20 queries to pos-1-3 via targeted boosts, not creating new content.
+**Source:** `.seo/gsc-snapshots/2026-05-13/` (last 90 days, Web search)
+**Why this is the #1 priority now:** the GSC data reveals **~1,500 clicks/quarter on the table** — current ~450 clicks could be ~1,950 if striking-distance pages move from pos 5-10 to pos 1-3. That's 3-4x traffic from work on pages that **already rank**, no new content needed.
 
-**Action required:** Niko, connect Google Search Console for nibzard.com (or paste a CSV export of queries with position 5-20 over the last 90 days). Then run Recipe E from `references/free-research-recipes.md`. Until that's done, **this section is empty** but should become the dominant ongoing work after Phase 4 ships.
+#### Critical Phase 0 prerequisite (do BEFORE the boosts)
 
-| Page | Query | Current pos | Boost action | Status |
-|------|-------|-------------|--------------|--------|
-| _empty until GSC connected_ | | | | |
+**`www.nibzard.com` vs `nibzard.com` split.** GSC data shows multiple URLs appearing twice — once as `www.nibzard.com/claude-zhipu/` (51 clicks, 13,527 imp, pos 6.9) and once as `nibzard.com/claude-zhipu/` (0 clicks, 270 imp, pos 9.1). **Google is splitting authority between the two hostnames.** Until this is fixed, striking-distance work is leaking value. **Fix:** verify both versions in GSC, pick one as canonical (suggest non-www, more common in dev tooling), and redirect the other with a 301 in `vercel.json`:
+
+```json
+{
+  "redirects": [
+    { "source": "/(.*)", "has": [{"type": "host", "value": "www.nibzard.com"}], "destination": "https://nibzard.com/$1", "permanent": true }
+  ]
+}
+```
+
+#### The boost backlog (sorted by clicks-on-the-table, top 12)
+
+Methodology: current clicks vs estimated clicks at pos 1-3 (assuming 4% CTR top-3). "Lost" = unrealized clicks per quarter.
+
+| Page | Top query | Pos | Impr | CTR | Lost | Suggested boost |
+|------|-----------|-----|------|-----|------|----------------|
+| `/claude-zhipu/` | zhipu claude code | 6.9 | 13,527 | 0.4% | **~490** | Rewrite title — CTR is 1/10 of normal. Likely competing with a featured snippet or stronger result. Try title: "Zhipu GLM via Claude Code — setup, gotchas, and what works (2026)". Add a TL;DR table. Verify schema. |
+| `/claude-code` | mastering claude code | 7.5 | 9,412 | 1.3% | ~250 | Multiple queries hitting this (Boris Cherny talk-related). Add an H2 with exact phrase "Mastering Claude Code in 30 minutes (Boris Cherny)" if relevant, plus FAQ entries on the top 5 specific questions. Add internal links from `/log/unified-skills` and `/log/theloop`. |
+| `/ssh-tunnel-cloudflare` | ssh tunnel cloudflare | 8.6 | 6,814 | 0.6% | ~235 | Title + meta likely too generic. Try: "SSH Tunneling via Cloudflare Tunnels — the 2026 setup that actually works". Add a code block at top (people skim for the command). |
+| `/x-grok-algorithm` | x grok algorithm | 7.0 | 2,422 | **0.1%** | ~95 | **Disaster CTR — 2 clicks on 2,422 imp.** Title/meta failing entirely. Rewrite both. Try: "X's Grok Algorithm: how the January 2026 rewrite works (full breakdown)". Add a date in title — algorithm queries want freshness. |
+| `/agentic-handbook` | agentic ai handbook | 6.5 | 4,896 | 2.1% | ~91 | Already converting. Add author markup, ratings/social proof, and an H2 for "is it free / where to read it" (queries suggest informational intent). |
+| `/berghain/` | berghain challenge | 7.9 | 2,223 | 0.6% | ~76 | Multiple Berghain queries — game / challenge / listen labs. Audience is broader than expected. Add an H2 "What is the Berghain challenge?" with a 100-word direct answer, then your detailed take below. |
+| `/ampcode` | ampcode | 9.5 | 1,152 | 0.2% | ~44 | Audit what people expect from this query — probably the AmpCode tool. Make sure post title contains "AmpCode" prominently. |
+| `/looper-article` | looper ai | 10.2 | 1,254 | 1.0% | ~38 | Add FAQ schema. Title might need year ("Looper: my autonomous coding system (2026)"). |
+| `/dotfiles/` | nibzard dotfiles | 10.8 | 1,495 | 1.5% | ~38 | Lower-priority pos 10+ ranks. Add internal links from `/about` and `/projects`. |
+| `/projects` | nikola balic projects | 5.6 | 840 | 0.5% | ~30 | Title should include "Nikola Balić" — brand search behavior. Add a recent-projects block at the top (right now it may be stale-looking). |
+| `/log` | nikola balic blog | 5.7 | 555 | 0.2% | ~21 | Add H1 "Nikola Balić's blog — AI engineering, agents, growth". Surface 3 most-recent + 3 most-popular posts above the fold. |
+| `/about` | nikola balic about | 4.7 | 369 | 1.9% | ~9 | Already near top-3. Tighten the lede to win the snippet — "Nikola Balić builds AI systems and writes about what works in production." First 160 chars should be punchy. |
+
+**Brand-name issue worth noting:** "nikola balic" search puts nibzard.com at pos 9.6 (83 imp, 7.2% CTR). Someone else with the same name is outranking you on your own name. Add structured Person schema to homepage with name variations (already done on /bio per audit). Build a few external citations (LinkedIn About link to nibzard, X bio link, GitHub bio link — all already there per about.astro). Should self-correct over 4-6 weeks.
+
+#### High-CTR-anomaly queries (already converting, just need a small push)
+
+Different category — these are **already converting well at striking-distance positions**. Easiest wins.
+
+| Query | Page (likely) | Pos | CTR | Action |
+|-------|---------------|-----|-----|--------|
+| awesome agentic ai | `/awesome-agentic-patterns`? | 6.7 | 5.6% | Add 2 internal links to this page from related log posts |
+| awesome agentic | same | 7.3 | 7.5% | Same boost lifts both queries |
+| nibzard awesome agentic patterns | same | 2.0 | 6.0% | Already top-3; just keep it indexed |
+| agentic ai handbook | `/agentic-handbook` | 5.4 | 4.4% | Already covered in main backlog |
+| nikola balic | `/about` or `/` | 9.6 | 7.2% | Brand-name fix per above |
+
+#### Action sequence
+
+1. **Fix www vs non-www redirect first** (Phase 0 prerequisite — without this, boosts leak value)
+2. **Pick 3 highest-leverage pages** for the first boost session: `/claude-zhipu/`, `/claude-code`, `/x-grok-algorithm`. Together: ~835 clicks/quarter on the table.
+3. **Per page, 30-60 min**: rewrite title + meta description, add a TL;DR or H2 matching the top query, verify schema. Don't do anything else (surgical edits only — wholesale rewrites lose existing ranking signal).
+4. **Wait 2-4 weeks** for re-indexing + rank stabilization. Track position changes in GSC.
+5. **Re-export GSC** and update this section. Repeat.
+
+Re-pull cadence: every 4-6 weeks on a content site this active.
 
 ---
 
@@ -119,7 +169,7 @@ Pulled live via `suggestqueries.google.com` on 2026-05-13. Top suggestions per s
 - **N/A** — personal blog has no comparison-purchase intent.
 
 ### Recipe E — Striking distance (GSC pos 5-20)
-- **Pending GSC connection.** This will be the highest-ROI section of the roadmap once populated.
+- **Active.** Analyzed 2026-05-13 from `.seo/gsc-snapshots/2026-05-13/`. **30 striking-distance queries** with impressions ≥30; **12 pages with ≥100 impressions** account for an estimated 1,500 clicks/quarter on the table. See Phase tracker → "Ongoing — Striking-distance boosts" for the full backlog.
 
 ---
 
