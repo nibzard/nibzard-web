@@ -5,9 +5,9 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #FFFFFF;
-  color: #2D3032;
-  font-family: 'Monaspace Argon', 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+  background-color: var(--color-background, #111111);
+  color: var(--color-text, #e8e8e8);
+  font-family: var(--font-sans-stack, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif);
   line-height: 1.5;
   font-size: 16px;
 }
@@ -29,12 +29,12 @@ main {
 
 /* Critical typography for above-the-fold content */
 h1 {
-  font-family: 'Monaspace Xenon', 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+  font-family: var(--font-serif, "Newsreader", Georgia, "Times New Roman", serif);
   font-size: 2.25rem;
   line-height: 1.2;
   margin: 0 0 1rem 0;
-  font-weight: 600;
-  color: #2D3032;
+  font-weight: 400;
+  color: var(--color-text-heading, #f0f0f0);
 }
 
 /* Critical styles for first image (LCP candidate) */
@@ -52,7 +52,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
-  background: #FFFFFF;
+  background: var(--color-subtle-bg, #151515);
 }
 
 /* Critical loading states */
@@ -65,7 +65,7 @@ nav {
   main {
     padding: 16px 12px;
   }
-  
+
   h1 {
     font-size: 1.8rem;
   }

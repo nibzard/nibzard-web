@@ -1,6 +1,7 @@
 ---
 import Navigation from './Navigation.astro';
 import MobileMenu from './MobileMenu.jsx';
+import ThemeToggle from './ThemeToggle.jsx';
 ---
 
 <header class="site-header full-width">
@@ -9,6 +10,7 @@ import MobileMenu from './MobileMenu.jsx';
       <span class="accent1">Niko</span>la Balic
     </a>
     <Navigation />
+    <ThemeToggle client:idle />
     <MobileMenu client:load />
   </div>
 </header>

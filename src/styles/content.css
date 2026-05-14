@@ -101,7 +101,7 @@ article img + * {
 
 /* Heading anchor styles */
 .heading-anchor {
-  color: #2d3748 !important;
+  color: var(--color-text-muted) !important;
   text-decoration: none !important;
   font-weight: 400;
   margin-right: var(--space-sm);
@@ -141,13 +141,13 @@ article img + * {
 
 /* Pre blocks */
 .log-content pre {
-  background-color: #2d3748;
-  border: 1px solid #4a5568;
+  background-color: var(--color-code-bg);
+  border: 1px solid var(--color-code-border);
   border-radius: var(--border-radius);
   padding: var(--space-md);
   overflow-x: auto;
   margin: var(--space-md) 0;
-  color: #e2e8f0;
+  color: var(--color-code-text);
   font-family: var(--font-mono);
   font-size: var(--font-size-sm);
   line-height: 1.5;
@@ -338,50 +338,50 @@ article img + * {
 
 /* Featured quote color variants */
 .featured-quote.primary {
-  background-color: #E3F2FD;
-  color: #0D47A1;
+  background-color: var(--color-quote-primary-bg);
+  color: var(--color-quote-primary-text);
 }
 
 .featured-quote.secondary {
-  background-color: #F3E5F5;
-  color: #4A148C;
+  background-color: var(--color-quote-secondary-bg);
+  color: var(--color-quote-secondary-text);
 }
 
 .featured-quote.accent {
-  background-color: #FFF3E0;
-  color: #C43E00;
+  background-color: var(--color-quote-accent-bg);
+  color: var(--color-quote-accent-text);
 }
 
 .featured-quote.unattributed {
-  background-color: #E8EAF6;
-  color: #1A237E;
+  background-color: var(--color-quote-unattributed-bg);
+  color: var(--color-quote-unattributed-text);
   border-left: 3px solid var(--color-accent2);
   padding-left: calc(var(--space-lg) - 3px);
 }
 
 /* Log content featured quote variants */
 .log-content .featured-quote.primary {
-  background-color: #E3F2FD;
-  color: #0D47A1;
-  border-left-color: #0D47A1;
+  background-color: var(--color-quote-primary-bg);
+  color: var(--color-quote-primary-text);
+  border-left-color: var(--color-quote-primary-text);
 }
 
 .log-content .featured-quote.secondary {
-  background-color: #F3E5F5;
-  color: #4A148C;
-  border-left-color: #4A148C;
+  background-color: var(--color-quote-secondary-bg);
+  color: var(--color-quote-secondary-text);
+  border-left-color: var(--color-quote-secondary-text);
 }
 
 .log-content .featured-quote.accent {
-  background-color: #FFF3E0;
-  color: #C43E00;
-  border-left-color: #C43E00;
+  background-color: var(--color-quote-accent-bg);
+  color: var(--color-quote-accent-text);
+  border-left-color: var(--color-quote-accent-text);
 }
 
 .log-content .featured-quote.unattributed {
-  background-color: #E8EAF6;
-  color: #1A237E;
-  border-left-color: #1A237E;
+  background-color: var(--color-quote-unattributed-bg);
+  color: var(--color-quote-unattributed-text);
+  border-left-color: var(--color-quote-unattributed-text);
 }
 
 /* Alert callouts in log content */
@@ -458,7 +458,7 @@ a[href*="://"] {
 
 /* === CodeBlock Styles === */
 .code-block {
-  background-color: #1e1e1e;
+  background-color: var(--color-code-bg);
   border-radius: var(--border-radius);
   overflow: hidden;
   margin: var(--space-md) 0;
@@ -468,17 +468,17 @@ a[href*="://"] {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333;
+  background-color: var(--color-code-header-bg);
   padding: var(--space-xs) var(--space-sm);
-  color: #ccc;
+  color: var(--color-code-text);
   font-family: var(--font-mono);
   font-size: 0.8rem;
 }
 
 .copy-button {
   background: none;
-  border: 1px solid #555;
-  color: #ccc;
+  border: 1px solid var(--color-code-border);
+  color: var(--color-code-text);
   padding: 2px var(--space-xs);
   border-radius: 3px;
   font-size: 0.7rem;
@@ -492,7 +492,7 @@ a[href*="://"] {
 }
 
 .code-block code {
-  color: #ccc;
+  color: var(--color-code-text);
   font-family: var(--font-mono);
   font-size: 0.9rem;
   line-height: 1.5;

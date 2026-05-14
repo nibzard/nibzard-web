@@ -41,10 +41,22 @@ const websiteSchema = createWebsiteSchema();
 const personSchema = createPersonSchema();
 ---
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
+  <script is:inline>
+    (function() {
+      var t = localStorage.getItem('theme');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Font: Newsreader for serif headlines -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
 
   <!-- Comprehensive author meta tags -->
   <meta name="author" content="Nikola Balić">
@@ -98,7 +110,7 @@ const personSchema = createPersonSchema();
       meta: [
         { name: "viewport", content: "width=device-width, initial-scale=1.0" },
         { name: "charset", content: "UTF-8" },
-        { name: "theme-color", content: "#ffffff" }
+        { name: "theme-color", content: "#111111" }
       ]
     }}
   />

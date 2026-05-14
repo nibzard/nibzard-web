@@ -600,9 +600,9 @@ a.tag:not(.tag-standardized).active {
 }
 
 /* Border colors by type */
-.log-entry { border-left-color: var(--color-accent2); }
-.thought-item { border-left-color: var(--color-accent3); }
-.now-item { border-left-color: var(--color-accent2); }
+.log-entry { border-left-color: var(--color-accent1); }
+.thought-item { border-left-color: var(--color-accent2); }
+.now-item { border-left-color: var(--color-accent-green); }
 
 /* Hover effects */
 .log-entry:hover,

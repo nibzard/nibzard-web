@@ -92,7 +92,7 @@ main {
 
 .site-nav a {
   font-family: var(--font-mono-krypton);
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: 500;
   text-decoration: none;
   color: var(--color-text);
@@ -101,7 +101,8 @@ main {
   border-bottom: 2px solid transparent;
   position: relative;
   font-feature-settings: 'liga' 1, 'calt' 1;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .site-nav a:hover,
@@ -110,6 +111,33 @@ main {
   color: var(--color-accent1);
   border-bottom: 2px solid var(--color-accent1);
   text-decoration: none;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  background: transparent;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: color var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.theme-toggle:hover {
+  color: var(--color-text);
+  border-color: var(--color-border-strong);
+  background: var(--color-background-raised);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--color-accent1);
+  outline-offset: 2px;
 }
 
 /* === Footer Styles === */

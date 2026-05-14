@@ -1,99 +1,68 @@
-:root {
-  /*
-   * Color System
-   * Consistent naming convention for better maintainability
-   */
+/* ABOUTME: Design tokens for nibzard design system
+ * ABOUTME: Structural tokens in :root, color tokens split by [data-theme] selector */
 
-  /* Base colors */
+:root {
+  /* Base colors (shared, not theme-dependent) */
   --color-white: #FFFFFF;
   --color-black: #000000;
 
-  /* Background colors */
-  --color-background: var(--color-white);
-  --color-background-alt: #FAFAFA;
-
-  /* Text colors */
-  --color-text: #2D3032;       /* Dark charcoal, not pure black */
-  --color-text-heading: #2D3032; /* Same as text for consistency */
-  --color-text-muted: #5A646F; /* Darker for 4.5:1 contrast ratio */
-  --color-text-light: #9CA3AF;
-
-  /* Accent colors */
-  --color-accent1: #E45B5F;    /* Soft red accent */
-  --color-accent1-muted: #A8595C; /* Muted red for subtle emphasis */
-  --color-accent2: #2D7A9C;    /* Darker blue accent for better contrast */
-  --color-accent3: #FFB865;    /* Warm amber accent */
-
-  /* UI colors */
-  --color-border: #f0f0f0;     /* Very subtle light grey border */
-  --color-subtle-bg: var(--color-white);  /* Pure white background */
-  --color-subtle: var(--primary-focus);
-  --color-form: rgba(249, 196, 215, 0.0825);
-  --color-newsletter-bg: #c4f2f980; /* Light cyan with transparency for newsletter card */
-
-  /*
-   * Typography System
-   * Consistent font families and sizes with Monaspace integration
-   */
+  /* Typography System */
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --font-serif: Georgia, 'Times New Roman', serif;
-  
+  --font-serif: "Newsreader", Georgia, "Times New Roman", serif;
+
   /* System font stack for faster page loads */
   --font-sans-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-mono-stack: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
 
   /* Primary font assignments - using system fonts */
-  --font-body: var(--font-sans-stack); /* Main body text - system sans-serif */
-  --font-heading: var(--font-sans-stack); /* Headings - system sans-serif */
-  --font-emphasis: var(--font-sans-stack); /* Quotes, emphasis - system sans-serif */
-  --font-metadata: var(--font-sans-stack); /* Dates, bylines - system sans-serif */
-  --font-code: var(--font-mono-stack); /* Code blocks - system monospace */
-  --font-ui: var(--font-sans-stack); /* UI elements - system sans-serif */
+  --font-body: var(--font-sans-stack);
+  --font-heading: var(--font-sans-stack);
+  --font-emphasis: var(--font-sans-stack);
+  --font-metadata: var(--font-sans-stack);
+  --font-code: var(--font-mono-stack);
+  --font-ui: var(--font-sans-stack);
 
   /* Backward compatibility */
-  --font-mono: var(--font-mono-stack); /* Default monospace for existing elements */
+  --font-mono: var(--font-mono-stack);
   --font-mono-fallback: var(--font-mono-stack);
+  --font-mono-krypton: var(--font-mono-stack);
 
-  /* Font sizes - increased for better readability */
-  --font-size-xs: 0.8rem;    /* 12.8px */
-  --font-size-sm: 0.9rem;    /* 14.4px */
-  --font-size-base: 1rem;    /* 16px */
-  --font-size-md: 1.125rem;  /* 18px */
-  --font-size-lg: 1.25rem;   /* 20px */
-  --font-size-xl: 1.5rem;    /* 24px */
-  --font-size-2xl: 1.875rem; /* 30px */
-  --font-size-3xl: 2.25rem;  /* 36px */
+  /* Font sizes */
+  --font-size-xs: 0.8rem;
+  --font-size-sm: 0.9rem;
+  --font-size-base: 1rem;
+  --font-size-md: 1.125rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 1.875rem;
+  --font-size-3xl: 2.25rem;
 
   /* Line heights */
   --line-height-tight: 1.2;
   --line-height-normal: 1.5;
   --line-height-relaxed: 1.75;
+  --line-height: var(--line-height-normal);
+  --line-height-headings: var(--line-height-tight);
 
-  /*
-   * Spacing System
-   * Consistent spacing values
-   */
-  --space-3xs: 0.125rem; /* 2px */
-  --space-2xs: 0.25rem;  /* 4px */
-  --space-xs: 0.375rem;  /* 6px */
-  --space-sm: 0.5rem;    /* 8px */
-  --space-md: 0.75rem;   /* 12px */
-  --space-lg: 1rem;      /* 16px */
-  --space-xl: 1.5rem;    /* 24px */
-  --space-2xl: 2rem;     /* 32px */
-  --space-3xl: 3rem;     /* 48px */
+  /* Spacing System */
+  --space-3xs: 0.125rem;
+  --space-2xs: 0.25rem;
+  --space-xs: 0.375rem;
+  --space-sm: 0.5rem;
+  --space-md: 0.75rem;
+  --space-lg: 1rem;
+  --space-xl: 1.5rem;
+  --space-2xl: 2rem;
+  --space-3xl: 3rem;
 
-  /*
-   * UI Elements
-   * Consistent values for UI components
-   */
+  /* Border Radius */
   --border-radius-sm: 2px;
   --border-radius: 4px;
   --border-radius-md: 6px;
   --border-radius-lg: 8px;
   --border-radius-full: 9999px;
 
-  /* Pico CSS Custom Properties */
+  /* Pico CSS Custom Properties (non-color) */
   --font-family: var(--font-body);
   --font-family-heading: var(--font-heading);
   --font-family-monospace: var(--font-code);
@@ -102,36 +71,132 @@
   --form-element-spacing-vertical: 0.75rem;
   --form-element-spacing-horizontal: 0.75rem;
 
-  /* Pico CSS Colors */
-  --primary: var(--color-accent1);
-  --primary-hover: #c8484c; /* Slightly darker red */
-  --primary-focus: #f5d4d5; /* Very light red for focus rings */
-  --secondary: var(--color-accent2);
-  --secondary-hover: #3d8aa6; /* Slightly darker blue */
-  --secondary-focus: #daeef5; /* Very light blue for focus rings */
-  --contrast: var(--color-text);
-  --contrast-hover: #000000; /* Pure black on hover */
-  --contrast-focus: #ECEEF2; /* Very light gray for focus rings */
-  --muted: var(--color-border);
-
-  /*
-   * Animation and Transitions
-   * Consistent timing functions and durations
-   */
+  /* Animation and Transitions */
   --transition-fast: 0.15s ease-out;
   --transition-normal: 0.3s ease;
   --transition-slow: 0.5s ease;
-
   --animation-duration-fast: 0.15s;
   --animation-duration-normal: 0.3s;
   --animation-duration-slow: 0.5s;
-
-  /* Easing functions */
   --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
   --ease-in: cubic-bezier(0.4, 0, 1, 1);
   --ease-out: cubic-bezier(0, 0, 0.2, 1);
+}
 
-  /* Legacy variables - kept for compatibility */
-  --line-height: var(--line-height-normal);
-  --line-height-headings: var(--line-height-tight);
+/* === Dark Theme (Default) === */
+[data-theme="dark"] {
+  /* Background colors */
+  --color-background: #111111;
+  --color-background-alt: #1a1a1a;
+  --color-background-raised: #222222;
+  --color-subtle-bg: #151515;
+
+  /* Text colors */
+  --color-text: #e8e8e8;
+  --color-text-heading: #f0f0f0;
+  --color-text-muted: #9a9a9a;
+  --color-text-light: #6b6b6b;
+
+  /* Accent colors */
+  --color-accent1: #E45B5F;
+  --color-accent1-muted: #b8484b;
+  --color-accent2: #5B9FD4;
+  --color-accent3: #E8914F;
+  --color-accent-green: #5BAF7A;
+  --color-accent-purple: #9B7BD4;
+
+  /* UI colors */
+  --color-border: #2a2a2a;
+  --color-border-strong: #3a3a3a;
+  --color-subtle: #252525;
+  --color-form: rgba(255, 255, 255, 0.05);
+  --color-newsletter-bg: rgba(91, 159, 212, 0.1);
+
+  /* Code block colors (always dark) */
+  --color-code-bg: #1e1e1e;
+  --color-code-header-bg: #2a2a2a;
+  --color-code-text: #d4d4d4;
+  --color-code-border: #3a3a3a;
+  --color-code-muted: #808080;
+
+  /* Pico CSS Colors */
+  --primary: #E8914F;
+  --primary-hover: #d07d3a;
+  --primary-focus: rgba(232, 145, 79, 0.2);
+  --secondary: #5B9FD4;
+  --secondary-hover: #4a8dc0;
+  --secondary-focus: rgba(91, 159, 212, 0.2);
+  --contrast: var(--color-text);
+  --contrast-hover: #ffffff;
+  --contrast-focus: #333333;
+  --muted: var(--color-border);
+
+  /* Featured quote variants */
+  --color-quote-primary-bg: #1a2a3a;
+  --color-quote-primary-text: #7ab3e0;
+  --color-quote-secondary-bg: #2a1a3a;
+  --color-quote-secondary-text: #b89ae0;
+  --color-quote-accent-bg: #3a2a1a;
+  --color-quote-accent-text: #e8b070;
+  --color-quote-unattributed-bg: #1a1a3a;
+  --color-quote-unattributed-text: #9090d0;
+}
+
+/* === Light Theme === */
+[data-theme="light"] {
+  /* Background colors */
+  --color-background: #fafaf8;
+  --color-background-alt: #f0efed;
+  --color-background-raised: #ffffff;
+  --color-subtle-bg: #f5f4f2;
+
+  /* Text colors */
+  --color-text: #1f1f1f;
+  --color-text-heading: #1f1f1f;
+  --color-text-muted: #5a5a5a;
+  --color-text-light: #9a9a9a;
+
+  /* Accent colors */
+  --color-accent1: #E45B5F;
+  --color-accent1-muted: #A8595C;
+  --color-accent2: #2D7A9C;
+  --color-accent3: #E8914F;
+  --color-accent-green: #4A9A66;
+  --color-accent-purple: #7B5FBF;
+
+  /* UI colors */
+  --color-border: #e0ded8;
+  --color-border-strong: #c8c6c0;
+  --color-subtle: #e8e6e0;
+  --color-form: rgba(0, 0, 0, 0.03);
+  --color-newsletter-bg: rgba(91, 159, 212, 0.08);
+
+  /* Code block colors (always dark) */
+  --color-code-bg: #1e1e1e;
+  --color-code-header-bg: #2a2a2a;
+  --color-code-text: #d4d4d4;
+  --color-code-border: #3a3a3a;
+  --color-code-muted: #808080;
+
+  /* Pico CSS Colors */
+  --primary: #E8914F;
+  --primary-hover: #d07d3a;
+  --primary-focus: #fde8d8;
+  --secondary: #2D7A9C;
+  --secondary-hover: #3d8aa6;
+  --secondary-focus: #daeef5;
+  --contrast: var(--color-text);
+  --contrast-hover: #000000;
+  --contrast-focus: #ECEEF2;
+  --muted: var(--color-border);
+
+  /* Featured quote variants */
+  --color-quote-primary-bg: #E3F2FD;
+  --color-quote-primary-text: #0D47A1;
+  --color-quote-secondary-bg: #F3E5F5;
+  --color-quote-secondary-text: #4A148C;
+  --color-quote-accent-bg: #FFF3E0;
+  --color-quote-accent-text: #C43E00;
+  --color-quote-unattributed-bg: #E8EAF6;
+  --color-quote-unattributed-text: #1A237E;
 }

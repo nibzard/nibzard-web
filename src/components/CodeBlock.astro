@@ -108,11 +108,11 @@ const languageDisplay = language === "text" ? "code" : language;
 
 <style>
   .code-block {
-    background-color: #2d3748;
+    background-color: var(--color-code-bg);
     border-radius: var(--border-radius);
     overflow: hidden;
     margin: var(--space-md) 0;
-    border: 1px solid #4a5568;
+    border: 1px solid var(--color-code-border);
     font-family: var(--font-mono);
   }
 
@@ -120,13 +120,13 @@ const languageDisplay = language === "text" ? "code" : language;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #1a202c;
+    background-color: var(--color-code-header-bg);
     padding: var(--space-xs) var(--space-md);
-    border-bottom: 1px solid #4a5568;
+    border-bottom: 1px solid var(--color-code-border);
   }
 
   .language-label {
-    color: #a0aec0;
+    color: var(--color-code-muted);
     font-size: var(--font-size-xs);
     font-weight: 500;
     text-transform: uppercase;
@@ -138,8 +138,8 @@ const languageDisplay = language === "text" ? "code" : language;
     align-items: center;
     gap: var(--space-xs);
     background: none;
-    border: 1px solid #4a5568;
-    color: #a0aec0;
+    border: 1px solid var(--color-code-border);
+    color: var(--color-code-muted);
     padding: var(--space-xs) var(--space-sm);
     border-radius: var(--border-radius);
     font-size: var(--font-size-xs);
@@ -149,9 +149,9 @@ const languageDisplay = language === "text" ? "code" : language;
   }
 
   .copy-button:hover {
-    background-color: #4a5568;
-    color: #e2e8f0;
-    border-color: #718096;
+    background-color: var(--color-code-border);
+    color: var(--color-code-text);
+    border-color: var(--color-code-muted);
   }
 
   .copy-button:active {
@@ -164,7 +164,7 @@ const languageDisplay = language === "text" ? "code" : language;
     overflow-x: auto;
     background: transparent;
     border: none;
-    color: #e2e8f0;
+    color: var(--color-code-text);
     font-size: var(--font-size-sm);
     line-height: 1.5;
   }
