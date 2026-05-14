@@ -132,12 +132,11 @@ const paginationItems: (number | string)[] = totalPages > 1
             <FadeIn client:visible delay={index * 0.01} yOffset={5}>
               {(() => {
                 const logEntry = item.entry;
-                const { isDoubleWidth, borderStyle } = calculateDoubleWidth(logEntry.id, feedEntries);
+                const { isDoubleWidth } = calculateDoubleWidth(logEntry.id, feedEntries);
 
                 return (
                   <article
                     class={`log-entry ${isDoubleWidth ? 'double-width' : ''} ${index === 0 ? 'featured' : ''}`}
-                    style={borderStyle}
                     data-href={`/${logEntry.id}`}
                     role="button"
                     tabIndex="0"
@@ -244,6 +243,7 @@ const paginationItems: (number | string)[] = totalPages > 1
     const logEntries = document.querySelectorAll('.log-entry');
     const thoughtItems = document.querySelectorAll('.thought-item');
     const nowItems = document.querySelectorAll('.now-item');
+    const ideaCards = document.querySelectorAll('.idea-card');
 
     // Function to handle clickable cards
     const makeCardClickable = (card) => {
@@ -280,6 +280,9 @@ const paginationItems: (number | string)[] = totalPages > 1
 
     // Make now items clickable
     nowItems.forEach(makeCardClickable);
+
+    // Make idea cards clickable
+    ideaCards.forEach(makeCardClickable);
 
     // Newsletter form handling
     const newsletterForm = document.querySelector('.newsletter-form');

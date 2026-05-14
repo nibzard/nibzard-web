@@ -7,25 +7,25 @@
   --color-black: #000000;
 
   /* Typography System */
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --font-serif: "Newsreader", Georgia, "Times New Roman", serif;
+  --font-sans: "Saans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-serif: "Tobias", Georgia, "Times New Roman", serif;
 
-  /* System font stack for faster page loads */
+  /* System font fallback stacks */
   --font-sans-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-mono-stack: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
 
-  /* Primary font assignments - using system fonts */
-  --font-body: var(--font-sans-stack);
-  --font-heading: var(--font-sans-stack);
-  --font-emphasis: var(--font-sans-stack);
-  --font-metadata: var(--font-sans-stack);
-  --font-code: var(--font-mono-stack);
-  --font-ui: var(--font-sans-stack);
+  /* Primary font assignments */
+  --font-body: var(--font-sans);
+  --font-heading: "Tobias", var(--font-sans-stack);
+  --font-emphasis: var(--font-sans);
+  --font-metadata: var(--font-sans);
+  --font-code: "Saans Mono", var(--font-mono-stack);
+  --font-ui: var(--font-sans);
 
   /* Backward compatibility */
-  --font-mono: var(--font-mono-stack);
+  --font-mono: "Saans Mono", var(--font-mono-stack);
   --font-mono-fallback: var(--font-mono-stack);
-  --font-mono-krypton: var(--font-mono-stack);
+  --font-mono-krypton: "Saans Mono", var(--font-mono-stack);
 
   /* Font sizes */
   --font-size-xs: 0.8rem;
@@ -86,31 +86,38 @@
 /* === Dark Theme (Default) === */
 [data-theme="dark"] {
   /* Background colors */
-  --color-background: #111111;
-  --color-background-alt: #1a1a1a;
-  --color-background-raised: #222222;
-  --color-subtle-bg: #151515;
+  --color-background: #12110f;
+  --color-background-alt: #1b1a17;
+  --color-background-raised: #22201c;
+  --color-subtle-bg: #171613;
 
   /* Text colors */
-  --color-text: #e8e8e8;
-  --color-text-heading: #f0f0f0;
-  --color-text-muted: #9a9a9a;
-  --color-text-light: #6b6b6b;
+  --color-text: #ebe7df;
+  --color-text-heading: #f4efe6;
+  --color-text-muted: #a49d92;
+  --color-text-light: #746d62;
 
   /* Accent colors */
-  --color-accent1: #E45B5F;
-  --color-accent1-muted: #b8484b;
-  --color-accent2: #5B9FD4;
-  --color-accent3: #E8914F;
-  --color-accent-green: #5BAF7A;
-  --color-accent-purple: #9B7BD4;
+  --color-accent1: #B9785F;
+  --color-accent1-muted: #9E6651;
+  --color-accent2: #79A8C7;
+  --color-accent3: #D99A5E;
+  --color-accent-green: #78A985;
+  --color-accent-purple: #A38BC8;
+  --color-accent-red-tint: #30241f;
+  --color-accent-blue-tint: #1f2b32;
+  --color-accent-green-tint: #202c24;
+  --color-accent-purple-tint: #292331;
+  --color-accent-warm-tint: #342719;
+  --color-cream: #f6f0e5;
+  --color-cream-deep: #ded3c1;
 
   /* UI colors */
-  --color-border: #2a2a2a;
-  --color-border-strong: #3a3a3a;
-  --color-subtle: #252525;
+  --color-border: #302d28;
+  --color-border-strong: #474137;
+  --color-subtle: #26231f;
   --color-form: rgba(255, 255, 255, 0.05);
-  --color-newsletter-bg: rgba(91, 159, 212, 0.1);
+  --color-newsletter-bg: rgba(217, 154, 94, 0.09);
 
   /* Code block colors (always dark) */
   --color-code-bg: #1e1e1e;
@@ -120,12 +127,12 @@
   --color-code-muted: #808080;
 
   /* Pico CSS Colors */
-  --primary: #E8914F;
-  --primary-hover: #d07d3a;
-  --primary-focus: rgba(232, 145, 79, 0.2);
-  --secondary: #5B9FD4;
-  --secondary-hover: #4a8dc0;
-  --secondary-focus: rgba(91, 159, 212, 0.2);
+  --primary: #D99A5E;
+  --primary-hover: #C78649;
+  --primary-focus: rgba(217, 154, 94, 0.22);
+  --secondary: #79A8C7;
+  --secondary-hover: #6597B8;
+  --secondary-focus: rgba(121, 168, 199, 0.2);
   --contrast: var(--color-text);
   --contrast-hover: #ffffff;
   --contrast-focus: #333333;
@@ -145,31 +152,38 @@
 /* === Light Theme === */
 [data-theme="light"] {
   /* Background colors */
-  --color-background: #fafaf8;
-  --color-background-alt: #f0efed;
-  --color-background-raised: #ffffff;
-  --color-subtle-bg: #f5f4f2;
+  --color-background: #fbfaf7;
+  --color-background-alt: #f3efe7;
+  --color-background-raised: #fffdf9;
+  --color-subtle-bg: #f6f2ea;
 
   /* Text colors */
-  --color-text: #1f1f1f;
-  --color-text-heading: #1f1f1f;
-  --color-text-muted: #5a5a5a;
-  --color-text-light: #9a9a9a;
+  --color-text: #24211c;
+  --color-text-heading: #211e18;
+  --color-text-muted: #686156;
+  --color-text-light: #9a9286;
 
   /* Accent colors */
-  --color-accent1: #E45B5F;
-  --color-accent1-muted: #A8595C;
-  --color-accent2: #2D7A9C;
-  --color-accent3: #E8914F;
-  --color-accent-green: #4A9A66;
-  --color-accent-purple: #7B5FBF;
+  --color-accent1: #A96E58;
+  --color-accent1-muted: #8F5E4D;
+  --color-accent2: #4E84A5;
+  --color-accent3: #C98143;
+  --color-accent-green: #5F946B;
+  --color-accent-purple: #8069A8;
+  --color-accent-red-tint: #fbf0ea;
+  --color-accent-blue-tint: #eef6f9;
+  --color-accent-green-tint: #eef7ef;
+  --color-accent-purple-tint: #f5f0fa;
+  --color-accent-warm-tint: #fff5ea;
+  --color-cream: #f6f0e5;
+  --color-cream-deep: #ded3c1;
 
   /* UI colors */
-  --color-border: #e0ded8;
-  --color-border-strong: #c8c6c0;
-  --color-subtle: #e8e6e0;
+  --color-border: #e5ddd0;
+  --color-border-strong: #cec2b0;
+  --color-subtle: #ebe4d8;
   --color-form: rgba(0, 0, 0, 0.03);
-  --color-newsletter-bg: rgba(91, 159, 212, 0.08);
+  --color-newsletter-bg: rgba(201, 129, 67, 0.08);
 
   /* Code block colors (always dark) */
   --color-code-bg: #1e1e1e;
@@ -179,12 +193,12 @@
   --color-code-muted: #808080;
 
   /* Pico CSS Colors */
-  --primary: #E8914F;
-  --primary-hover: #d07d3a;
-  --primary-focus: #fde8d8;
-  --secondary: #2D7A9C;
-  --secondary-hover: #3d8aa6;
-  --secondary-focus: #daeef5;
+  --primary: #C98143;
+  --primary-hover: #B06F39;
+  --primary-focus: #f8e5d2;
+  --secondary: #4E84A5;
+  --secondary-hover: #406f8c;
+  --secondary-focus: #dcebf2;
   --contrast: var(--color-text);
   --contrast-hover: #000000;
   --contrast-focus: #ECEEF2;

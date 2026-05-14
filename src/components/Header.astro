@@ -1,16 +1,15 @@
 ---
 import Navigation from './Navigation.astro';
 import MobileMenu from './MobileMenu.jsx';
-import ThemeToggle from './ThemeToggle.jsx';
 ---
 
 <header class="site-header full-width">
   <div class="inner-container header-content">
-    <a href="/" class="logo">
-      <span class="accent1">Niko</span>la Balic
+    <a href="/" class="logo" aria-label="Nikola Balić writings home">
+      <span class="logo-name"><span class="accent1">Nikola</span> Balić</span>
+      <span class="logo-kicker">Writings</span>
     </a>
     <Navigation />
-    <ThemeToggle client:idle />
     <MobileMenu client:load />
   </div>
 </header>

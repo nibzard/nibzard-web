@@ -9,7 +9,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-family: "Newsreader", Georgia, "Times New Roman", serif;
+  font-family: "Tobias", Georgia, "Times New Roman", serif;
   font-size: var(--font-size-2xl);
   font-weight: 400;
   letter-spacing: -0.02em;

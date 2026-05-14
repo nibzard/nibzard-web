@@ -14,7 +14,6 @@ export interface TagColors {
 
 export interface DoubleWidthResult {
   isDoubleWidth: boolean;
-  borderStyle: string;
 }
 
 /**
@@ -60,13 +59,7 @@ export function calculateDoubleWidth(
   const isLastLogEntry = currentLogIndex === logEntriesInPage.length - 1;
   const isDoubleWidth = (isFirstLogEntry || isLastLogEntry) && logEntriesInPage.length > 1;
 
-  // Get tag colors for border styling
-  const logEntry = logEntriesInPage[currentLogIndex]?.entry;
-  const firstTag = 'tags' in logEntry?.data ? logEntry.data.tags?.[0] || null : null;
-  const tagColor = firstTag ? getTagColors(firstTag) : null;
-  const borderStyle = tagColor ? `border-left-color: ${tagColor.borderColor}` : '';
-
-  return { isDoubleWidth, borderStyle };
+  return { isDoubleWidth };
 }
 
 /**

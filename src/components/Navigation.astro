@@ -1,3 +1,7 @@
+---
+import ThemeToggle from './ThemeToggle.jsx';
+---
+
 <nav class="site-nav">
   <ul>
     <li><a href="/" aria-label="Home">~/</a></li>
@@ -17,6 +21,9 @@
           <line x1="16.5" y1="16.5" x2="21" y2="21" stroke-width="2"/>
         </svg>
       </button>
+    </li>
+    <li>
+      <ThemeToggle client:idle />
     </li>
   </ul>
 </nav>

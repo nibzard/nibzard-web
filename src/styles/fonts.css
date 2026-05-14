@@ -1,0 +1,117 @@
+/* ABOUTME: @font-face declarations for self-hosted Tobias, Saans, and Saans Mono
+ * ABOUTME: Tobias for display/headlines, Saans for body/UI, Saans Mono for code */
+
+/* === Tobias (Display/Headlines) === */
+@font-face {
+  font-family: "Tobias";
+  src: url("/assets/fonts/Tobias/TobiasVF.woff2") format("woff2-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Tobias";
+  src: url("/assets/fonts/Tobias/Tobias-RegularItalic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Tobias";
+  src: url("/assets/fonts/Tobias/Tobias-MediumItalic.woff2") format("woff2");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Tobias";
+  src: url("/assets/fonts/Tobias/Tobias-SemiBoldItalic.woff2") format("woff2");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Tobias";
+  src: url("/assets/fonts/Tobias/Tobias-BoldItalic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* === Saans (Body/UI) === */
+@font-face {
+  font-family: "Saans";
+  src: url("/assets/fonts/Saans/SaansCollectionVF.woff2") format("woff2-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Saans";
+  src: url("/assets/fonts/Saans/Saans/Saans-RegularItalic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Saans";
+  src: url("/assets/fonts/Saans/Saans/Saans-MediumItalic.woff2") format("woff2");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Saans";
+  src: url("/assets/fonts/Saans/Saans/Saans-SemiBoldItalic.woff2") format("woff2");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Saans";
+  src: url("/assets/fonts/Saans/Saans/Saans-BoldItalic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* === Saans Mono (Code) === */
+@font-face {
+  font-family: "Saans Mono";
+  src: url("/assets/fonts/Saans/Saans Mono/SaansMono-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Saans Mono";
+  src: url("/assets/fonts/Saans/Saans Mono/SaansMono-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Saans Mono";
+  src: url("/assets/fonts/Saans/Saans Mono/SaansMono-RegularItalic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Saans Mono";
+  src: url("/assets/fonts/Saans/Saans Mono/SaansMono-BoldItalic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
