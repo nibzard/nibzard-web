@@ -4285,8 +4285,8 @@ footer.full-width {
   padding-top: var(--space-lg);
 }
 
-.tag,
-.tag.tag-standardized,
+a.tag:not(.tag-standardized),
+a.tag.tag-standardized,
 .card-tag {
   display: inline-flex !important;
   align-items: center;
@@ -4294,10 +4294,10 @@ footer.full-width {
   min-height: 24px;
   padding: 3px 10px !important;
   margin: 0 var(--space-xs) var(--space-xs) 0 !important;
-  border: 1px solid color-mix(in srgb, var(--color-border-strong) 70%, transparent) !important;
+  border: 1px solid color-mix(in srgb, var(--color-border-strong) 78%, transparent) !important;
   border-radius: var(--border-radius-full) !important;
-  background-color: color-mix(in srgb, var(--color-background-raised) 72%, var(--color-accent-warm-tint)) !important;
-  color: var(--color-text-muted) !important;
+  background-color: color-mix(in srgb, var(--color-background-raised) 60%, var(--color-accent-warm-tint)) !important;
+  color: var(--color-text) !important;
   font-family: var(--font-mono) !important;
   font-size: 0.6875rem !important;
   font-weight: 500 !important;
@@ -4308,32 +4308,43 @@ footer.full-width {
   opacity: 1 !important;
 }
 
-.tag:hover,
-.tag:focus,
-.tag.tag-standardized:hover,
-.tag.tag-standardized:focus {
-  color: #111111 !important;
+a.tag:not(.tag-standardized):hover,
+a.tag:not(.tag-standardized):focus,
+a.tag.tag-standardized:hover,
+a.tag.tag-standardized:focus,
+.card-tag:hover,
+.card-tag:focus {
+  color: var(--color-text-heading) !important;
   background-color: var(--color-accent3) !important;
   border-color: var(--color-accent3) !important;
   text-decoration: none !important;
 }
 
-.log-entry .tag:hover,
-.log-entry .tag:focus {
+.log-entry a.tag:hover,
+.log-entry a.tag:focus {
   background-color: var(--color-accent1) !important;
   border-color: var(--color-accent1) !important;
 }
 
-.thought-item .tag:hover,
-.thought-item .tag:focus {
+.thought-item a.tag:hover,
+.thought-item a.tag:focus {
   background-color: var(--color-accent2) !important;
   border-color: var(--color-accent2) !important;
 }
 
-.now-item .tag:hover,
-.now-item .tag:focus {
+.now-item a.tag:hover,
+.now-item a.tag:focus {
   background-color: var(--color-accent-green) !important;
   border-color: var(--color-accent-green) !important;
+}
+
+.log-entry a.tag:hover,
+.log-entry a.tag:focus,
+.thought-item a.tag:hover,
+.thought-item a.tag:focus,
+.now-item a.tag:hover,
+.now-item a.tag:focus {
+  color: var(--color-text-heading) !important;
 }
 
 .idea-card {
