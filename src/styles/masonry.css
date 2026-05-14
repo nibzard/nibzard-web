@@ -112,3 +112,42 @@
     font-size: 0.7rem;
   }
 }
+
+/* Compact hero zone above the masonry grid */
+.hero-compact {
+  text-align: center;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-md) var(--space-md);
+}
+
+.hero-compact h1 {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 var(--space-sm) 0;
+}
+
+.hero-compact p {
+  font-size: var(--font-size-md);
+  color: var(--color-text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+@media (max-width: 640px) {
+  .hero-compact {
+    padding: var(--space-md) var(--space-md) var(--space-sm);
+  }
+
+  .hero-compact h1 {
+    font-size: var(--font-size-lg);
+  }
+}
+
+/* Featured (first) card accent */
+.masonry-grid .log-entry.featured {
+  border-left: 3px solid var(--color-accent1);
+}

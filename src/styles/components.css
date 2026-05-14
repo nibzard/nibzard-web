@@ -440,6 +440,8 @@ a.tag:not(.tag-standardized).active {
 
 .pagination-ellipsis {
   color: var(--color-text-muted);
+  padding: var(--space-xs) var(--space-sm);
+  user-select: none;
 }
 
 /* === Content Entries (log, thought, now) === */

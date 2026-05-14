@@ -83,10 +83,29 @@ const { paginatedEntries: feedEntries, totalPages } = paginateFeed(
   currentPage,
   pageSize
 );
+
+// Build truncated pagination items: first 3, ellipsis, last 2, ±1 around current
+const paginationItems: (number | string)[] = totalPages > 1
+  ? Array.from({ length: totalPages }, (_, i) => i + 1).reduce(
+      (acc: (number | string)[], page: number) => {
+        const showPage = page <= 3 || page > totalPages - 2 || Math.abs(page - currentPage) <= 1;
+        if (showPage) {
+          acc.push(page);
+        } else if (acc[acc.length - 1] !== '...') {
+          acc.push('...');
+        }
+        return acc;
+      },
+      []
+    )
+  : [];
 ---
 
 <BaseLayout title="nibzard - Home" description="Detailed writeups on multi-agent orchestration, AI engineering patterns, and what actually works in production. By Nikola Balić — 50+ shipped AI projects." fullWidth={true} showNewsletterModal={false}>
-  <h1 class="visually-hidden">nibzard — AI Agents, Growth & Startups</h1>
+  <section class="hero-compact">
+    <h1>AI Agents, Growth & Startups</h1>
+    <p>Detailed writeups on multi-agent orchestration, AI engineering patterns, and what actually works in production.</p>
+  </section>
   <div class="masonry-grid">
     {feedEntries.map((item, index) => {
       return (
@@ -117,7 +136,7 @@ const { paginatedEntries: feedEntries, totalPages } = paginateFeed(
 
                 return (
                   <article
-                    class={`log-entry ${isDoubleWidth ? 'double-width' : ''}`}
+                    class={`log-entry ${isDoubleWidth ? 'double-width' : ''} ${index === 0 ? 'featured' : ''}`}
                     style={borderStyle}
                     data-href={`/${logEntry.id}`}
                     role="button"
@@ -173,14 +192,18 @@ const { paginatedEntries: feedEntries, totalPages } = paginateFeed(
       {currentPage > 1 && (
         <a href={`/?page=${currentPage - 1}`} class="pagination-prev" aria-label="Previous page">←</a>
       )}
-      {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
-        <a
-          href={`/?page=${page}`}
-          class={`pagination-page ${page === currentPage ? 'pagination-active' : ''}`}
-          aria-current={page === currentPage ? 'page' : undefined}
-        >
-          {page}
-        </a>
+      {paginationItems.map((item, i) => (
+        typeof item === 'string' ? (
+          <span class="pagination-ellipsis">...</span>
+        ) : (
+          <a
+            href={`/?page=${item}`}
+            class={`pagination-page ${item === currentPage ? 'pagination-active' : ''}`}
+            aria-current={item === currentPage ? 'page' : undefined}
+          >
+            {item}
+          </a>
+        )
       ))}
       {currentPage < totalPages && (
         <a href={`/?page=${currentPage + 1}`} class="pagination-next" aria-label="Next page">→</a>
