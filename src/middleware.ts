@@ -39,6 +39,16 @@ interface AgentMetadataOptions {
 
 const CONTENT_SIGNAL = 'ai-input=yes, ai-train=yes, search=yes';
 
+// Known AI agents and crawlers. When such a UA hits a content URL with an
+// unspecific Accept header (missing or `*/*` only), we serve markdown instead
+// of HTML so they get a cleaner payload without needing to know about `.md`.
+const AI_BOT_UA_PATTERN = /\b(GPTBot|ChatGPT-User|OAI-SearchBot|Claude-Web|ClaudeBot|anthropic-ai|PerplexityBot|Perplexity-User|Google-Extended|CCBot|Bytespider|Applebot-Extended|Meta-ExternalAgent|Diffbot|cohere-ai|YouBot|Amazonbot|FacebookBot|DuckAssistBot|Kagibot)\b/i;
+
+function isAiAgent(userAgent: string | null): boolean {
+  if (!userAgent) return false;
+  return AI_BOT_UA_PATTERN.test(userAgent);
+}
+
 const RESERVED_ROOT_SEGMENTS = new Set([
   'about',
   'api',
@@ -132,10 +142,20 @@ function scoreMediaType(acceptEntries: AcceptEntry[], supported: string): MediaS
   return best;
 }
 
-function prefersMarkdownResponse(acceptHeader: string, isMdUrl: boolean): boolean {
+function prefersMarkdownResponse(acceptHeader: string, isMdUrl: boolean, isAiAgentRequest: boolean): boolean {
   if (isMdUrl) return true;
 
   const parsedAccept = parseAcceptHeader(acceptHeader);
+
+  // AI agents often send no Accept or only `*/*`. Treat that as a markdown
+  // preference for known bots so they get clean payloads by default. If a bot
+  // sends a specific Accept header, fall through to standard negotiation.
+  if (isAiAgentRequest) {
+    const hasOnlyWildcards = parsedAccept.length === 0 ||
+      parsedAccept.every((entry) => entry.mediaType === '*/*');
+    if (hasOnlyWildcards) return true;
+  }
+
   if (parsedAccept.length === 0) return false;
 
   const markdownScore = scoreMediaType(parsedAccept, 'text/markdown');
@@ -308,6 +328,39 @@ function buildSiteUrls(site: URL | undefined, canonicalPath: string, markdownPat
   };
 }
 
+async function passThroughWithMarkdownAlternate(
+  next: () => Promise<Response>,
+  target: MarkdownTarget | null,
+  site: URL | undefined
+): Promise<Response> {
+  const response = await next();
+  if (!target || response.status < 200 || response.status >= 300) {
+    return response;
+  }
+
+  const contentType = response.headers.get('content-type') || '';
+  if (!contentType.includes('text/html')) {
+    return response;
+  }
+
+  const { canonicalUrl, markdownUrl } = buildSiteUrls(site, target.canonicalPath, target.markdownPath);
+  const alternateLink = `<${markdownUrl}>; rel="alternate"; type="text/markdown"`;
+  const existingLink = response.headers.get('link');
+  response.headers.set('Link', existingLink ? `${existingLink}, ${alternateLink}` : alternateLink);
+
+  const existingVary = response.headers.get('vary');
+  if (!existingVary) {
+    response.headers.set('Vary', 'Accept, User-Agent');
+  } else if (!/\baccept\b/i.test(existingVary) || !/\buser-agent\b/i.test(existingVary)) {
+    const parts = new Set(existingVary.split(',').map((part) => part.trim()).filter(Boolean));
+    parts.add('Accept');
+    parts.add('User-Agent');
+    response.headers.set('Vary', Array.from(parts).join(', '));
+  }
+
+  return response;
+}
+
 export const onRequest = defineMiddleware(async (context, next) => {
   const { request, site } = context;
   const url = new URL(request.url);
@@ -334,19 +387,21 @@ export const onRequest = defineMiddleware(async (context, next) => {
     return next();
   }
 
+  const target = resolveMarkdownTarget(pathname);
+
   // Keep regular browser page navigations on HTML by default.
   // Explicit `.md` URLs still opt into markdown.
   const fetchDest = request.headers.get('sec-fetch-dest');
   if (!isMdUrl && fetchDest === 'document') {
-    return next();
+    return passThroughWithMarkdownAlternate(next, target, site);
   }
 
   const acceptHeader = request.headers.get('accept') || '';
-  if (!prefersMarkdownResponse(acceptHeader, isMdUrl)) {
-    return next();
+  const isBot = isAiAgent(request.headers.get('user-agent'));
+  if (!prefersMarkdownResponse(acceptHeader, isMdUrl, isBot)) {
+    return passThroughWithMarkdownAlternate(next, target, site);
   }
 
-  const target = resolveMarkdownTarget(pathname);
   if (!target) {
     return next();
   }

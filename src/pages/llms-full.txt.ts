@@ -1,9 +1,12 @@
 // ABOUTME: API endpoint that serves all content as a single concatenated markdown file
+// ABOUTME: Prerendered at build time so the path resolves as a static file for AI agents
 
 import { type APIRoute } from 'astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { readFileSync } from 'fs';
 import { join } from 'path';
+
+export const prerender = true;
 
 interface ProcessedContent {
   logs: CollectionEntry<'log'>[];

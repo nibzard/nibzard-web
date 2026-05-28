@@ -1,7 +1,10 @@
 // ABOUTME: llms.txt endpoint following the specification with metadata and links
+// ABOUTME: Prerendered at build time so the path resolves as a static file for AI agents
 
 import { type APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
+
+export const prerender = true;
 
 const CONTENT_SIGNAL = 'ai-input=yes, ai-train=yes, search=yes';
 
