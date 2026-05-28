@@ -50,7 +50,7 @@ export default function rehypeExternalLinks(options = {}) {
           if (utmSource) {
             try {
               const url = new URL(linkUrl);
-              url.searchParams.append('utm_source', utmSource);
+              url.searchParams.set('utm_source', utmSource);
               node.properties.href = url.toString();
             } catch (e) {
               console.error(`Failed to append UTM source to ${linkUrl}`, e);
