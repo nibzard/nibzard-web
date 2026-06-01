@@ -74,12 +74,22 @@ const aiPlatforms = [
 
 <style>
   .ai-summary-section {
+    --ai-summary-icon-filter: brightness(0);
+
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
     padding: 4rem 0 var(--space-lg) 0;
     text-align: center;
+  }
+
+  :global([data-theme="dark"]) .ai-summary-section {
+    --ai-summary-icon-filter: brightness(0) invert(1);
+  }
+
+  :global(.article-shell) .ai-summary-section {
+    --ai-summary-icon-filter: brightness(0);
   }
 
   .ai-summary-label {
@@ -125,7 +135,7 @@ const aiPlatforms = [
     width: 100%;
     height: 100%;
     object-fit: contain;
-    filter: brightness(0);
+    filter: var(--ai-summary-icon-filter);
     opacity: 0.8;
     transition: opacity var(--transition-fast);
   }

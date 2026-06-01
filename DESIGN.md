@@ -2,51 +2,52 @@
 version: alpha
 name: nibzard
 description: >
-  A personal AI engineering publication. Dark canvas by default — developer-native,
-  easy on the eyes at midnight. Warm amber accents carry the brand through both modes.
-  Tobias headlines give publication gravitas; Saans and Saans Mono handle body and code.
-  Cards sit on a masonry grid with type-coded left rails, not shadows. The feel is
-  "developer media outlet meets technical zine" — editorial energy filtered through
-  warmth and restraint.
+  A personal AI engineering publication with a bento-box brutalist interface.
+  Dark purple canvas by default, hard rectangular modules, loud electric accents,
+  and zero rounded corners. Saans Mono pushes the page toward labels, grids, and
+  machine-readable structure; Tobias remains available for article-scale editorial
+  moments. Cards sit on a masonry grid with type-coded left rails and hard borders.
+  The feel is "developer zine meets brutalist dashboard" — technical, angular,
+  high-contrast, and deliberately unsmoothed.
 
 colors:
   # ── Primary ────────────────────────────────────────────────────────
-  primary: "#D99A5E"
-  primary-deep: "#C78649"
+  primary: "#E4FF30"
+  primary-deep: "#BEDA24"
   on-primary: "#111111"
 
   # ── Dark mode (default) ──────────────────────────────────────────
-  dark-canvas: "#12110f"
-  dark-surface: "#1b1a17"
-  dark-surface-raised: "#22201c"
-  dark-border: "#302d28"
-  dark-border-strong: "#474137"
-  dark-text: "#ebe7df"
-  dark-text-secondary: "#a49d92"
-  dark-text-muted: "#746d62"
+  dark-canvas: "#171323"
+  dark-surface: "#362F4F"
+  dark-surface-raised: "#433A63"
+  dark-border: "#5B23FF"
+  dark-border-strong: "#E4FF30"
+  dark-text: "#F7F5FF"
+  dark-text-secondary: "#C7BEDD"
+  dark-text-muted: "#8F84AD"
 
   # ── Light mode ────────────────────────────────────────────────────
-  light-canvas: "#fbfaf7"
-  light-surface: "#fffdf9"
-  light-surface-raised: "#fffdf9"
-  light-border: "#e5ddd0"
-  light-border-strong: "#cec2b0"
-  light-text: "#24211c"
-  light-text-secondary: "#686156"
-  light-text-muted: "#9a9286"
+  light-canvas: "#F7F5FF"
+  light-surface: "#E9E4FF"
+  light-surface-raised: "#FFFFFF"
+  light-border: "#362F4F"
+  light-border-strong: "#5B23FF"
+  light-text: "#171323"
+  light-text-secondary: "#51486C"
+  light-text-muted: "#766C91"
 
   # ── Semantic accents (card rails, tags, category markers) ─────────
-  accent-red: "#B9785F"
-  accent-red-tint: "#30241f"
-  accent-blue: "#79A8C7"
-  accent-blue-tint: "#1f2b32"
-  accent-green: "#78A985"
-  accent-green-tint: "#202c24"
-  accent-purple: "#A38BC8"
-  accent-purple-tint: "#292331"
-  accent-warm-tint: "#342719"
-  cream: "#f6f0e5"
-  cream-deep: "#ded3c1"
+  accent-red: "#E4FF30"
+  accent-red-tint: "#3A4319"
+  accent-blue: "#008BFF"
+  accent-blue-tint: "#102F5A"
+  accent-green: "#E4FF30"
+  accent-green-tint: "#3A4319"
+  accent-purple: "#5B23FF"
+  accent-purple-tint: "#25135A"
+  accent-warm-tint: "#3A4319"
+  cream: "#F7F5FF"
+  cream-deep: "#C7BEDD"
 
   # ── Code ───────────────────────────────────────────────────────────
   code-bg: "#1c1c1e"
@@ -121,13 +122,13 @@ typography:
     lineHeight: 1.50
 
 rounded:
-  xs: "4px"
-  sm: "6px"
-  md: "8px"
-  lg: "12px"
-  xl: "16px"
-  xxl: "20px"
-  pill: "9999px"
+  xs: "0"
+  sm: "0"
+  md: "0"
+  lg: "0"
+  xl: "0"
+  xxl: "0"
+  pill: "0"
 
 spacing:
   3xs: "2px"
@@ -291,71 +292,71 @@ components:
 nibzard is Nikola Balić's technical publication — a content site, not a SaaS product. The design language borrows from two reference poles:
 
 - **The Verge** (editorial energy): dark canvas, color-as-elevation, mono-uppercase metadata, timeline/feed rhythm, publication-scale typography hierarchy
-- **Mistral AI** (editorial warmth): warm amber palette, generous body leading, cream surfaces in light mode
+- **Brutalist bento systems** (interface posture): hard rectangles, exposed borders, grid rhythm, zero corner softening, loud utilitarian accents
 
-The result is "developer media outlet" — a site that feels like opening a technical magazine, not a portfolio template. Dark by default (developer-native), with a warm light mode that uses cream and off-white instead of stark hospital white.
+The result is "developer zine meets brutalist dashboard" — a site that feels technical, angular, and intentionally unsmoothed. Dark by default, with a light mode that keeps the same purple/blue/lime system instead of reverting to paper warmth.
 
 **Key characteristics:**
 
-- Dark canvas (`#12110f`) as the default — warm enough to feel like newsprint, not an OLED void
-- Warm amber (`#D99A5E`) as the primary accent — distinctive without being neon
+- Dark purple canvas (`#171323`) as the default, with `#362F4F` as the primary bento surface
+- Electric lime (`#E4FF30`) as the primary accent — intentionally neon and confrontational
+- Electric blue (`#008BFF`) and violet (`#5B23FF`) for links, rails, borders, focus, and secondary states
 - Tobias headlines for publication gravitas; Saans for body, Saans Mono for code and labels
 - Mono-uppercase labels for metadata, timestamps, tags, nav — The Verge's "hazard label" rhythm
-- Color-coded card rails instead of shadows — elevation through hue, not drop-shadow
+- Color-coded card rails and hard borders instead of soft shadows
 - Masonry card grid with timeline energy — content stacks like a feed, not a gallery
-- Quiet cream surfaces (`#f6f0e5`) in light mode — warm paper, not yellow panels
+- No rounded corners. Cards, pills, controls, images, and code blocks are rectangular.
 
 ## Colors
 
 ### Brand Accent
 
-- **Primary (`#D99A5E`):** Warm amber. The visual anchor. CTAs, active states, link hovers, card rails.
-- **Primary Deep (`#C78649`):** Pressed-state CTA, hover emphasis. Darker and more saturated.
+- **Primary (`#E4FF30`):** Electric lime. The loud visual anchor. CTAs, active states, link hovers, featured rails.
+- **Primary Deep (`#BEDA24`):** Pressed-state CTA, hover emphasis. Darker and more controlled.
 - **On Primary (`#111111`):** Text on primary backgrounds. Near-black for maximum contrast.
 
 ### Semantic Accents (card rails, tags, category markers)
 
-- **Accent Red (`#B9785F`):** Log entries, featured content, alerts.
-- **Accent Blue (`#79A8C7`):** External links, thoughts, references.
-- **Accent Green (`#78A985`):** Now entries, success states, "shipped" signals.
-- **Accent Purple (`#A38BC8`):** Reserved for experiments and occasional supporting accents.
-- **Cream (`#f6f0e5`):** Light mode surface accent, especially footer band. Quiet cream, not saturated yellow.
-- **Cream Deep (`#ded3c1`):** Light mode borders on cream surfaces.
+- **Accent Lime (`#E4FF30`):** Log entries, featured content, active states.
+- **Accent Blue (`#008BFF`):** External links, thoughts, references.
+- **Accent Violet (`#5B23FF`):** Ideas, borders, focus states, secondary actions.
+- **Deep Purple (`#362F4F`):** Bento surfaces and structural panels.
+- **Pale Violet (`#F7F5FF`):** Light mode canvas and high-contrast text support.
 
 Tinted background variants (used for tag pills and hover states) are the dark-surface-blended equivalents:
-- `accent-red-tint` (`#30241f`), `accent-blue-tint` (`#1f2b32`), `accent-green-tint` (`#202c24`), `accent-purple-tint` (`#292331`), `accent-warm-tint` (`#342719`)
+- `accent-blue-tint` (`#102F5A`), `accent-green-tint` (`#3A4319`), `accent-purple-tint` (`#25135A`), `accent-warm-tint` (`#3A4319`)
 
 ### Dark Mode Palette
 
-- **Dark Canvas (`#12110f`):** Page background. Not pure black — has warmth for extended reading.
-- **Dark Surface (`#1b1a17`):** Card backgrounds, raised panels. One step above canvas.
-- **Dark Surface Raised (`#22201c`):** Hover states, active panels, code block backgrounds.
-- **Dark Border (`#302d28`):** Hairline borders between cards and sections.
-- **Dark Border Strong (`#474137`):** Emphasized borders, focused inputs.
-- **Dark Text (`#ebe7df`):** Primary text. Off-white to reduce screen glare.
-- **Dark Text Secondary (`#a49d92`):** Bylines, timestamps, metadata.
-- **Dark Text Muted (`#746d62`):** Disabled states, placeholder text.
+- **Dark Canvas (`#171323`):** Page background.
+- **Dark Surface (`#362F4F`):** Card backgrounds and bento panels.
+- **Dark Surface Raised (`#433A63`):** Hover states and active panels.
+- **Dark Border (`#5B23FF`):** Structural borders between modules.
+- **Dark Border Strong (`#E4FF30`):** Emphasized borders, focus states, selected modules.
+- **Dark Text (`#F7F5FF`):** Primary text.
+- **Dark Text Secondary (`#C7BEDD`):** Bylines, timestamps, metadata.
+- **Dark Text Muted (`#8F84AD`):** Disabled states, placeholder text.
 
 ### Light Mode Palette
 
-- **Light Canvas (`#fbfaf7`):** Page background. Warm off-white, not clinical.
-- **Light Surface (`#fffdf9`):** Card backgrounds.
-- **Light Border (`#e5ddd0`):** Hairline borders. Warm gray, not cool.
-- **Light Border Strong (`#cec2b0`):** Emphasized borders.
-- **Light Text (`#24211c`):** Primary text.
-- **Light Text Secondary (`#686156`):** Secondary text, metadata.
-- **Light Text Muted (`#9a9286`):** Disabled, placeholder.
+- **Light Canvas (`#F7F5FF`):** Page background.
+- **Light Surface (`#E9E4FF`):** Card backgrounds and bento panels.
+- **Light Border (`#362F4F`):** Structural borders.
+- **Light Border Strong (`#5B23FF`):** Emphasized borders.
+- **Light Text (`#171323`):** Primary text.
+- **Light Text Secondary (`#51486C`):** Secondary text, metadata.
+- **Light Text Muted (`#766C91`):** Disabled, placeholder.
 
 ### Color-as-Elevation
 
-nibzard uses color, not shadow, for visual hierarchy in dark mode. A card doesn't lift — it separates via a `1px solid` border and a slightly raised surface color. Only light mode uses subtle shadows (because the contrast model is inverted).
+nibzard uses color, hard borders, and positional offset for visual hierarchy. A card does not become soft or rounded; on hover it can shift against a hard black shadow, like a printed block moving on a grid.
 
 | Depth | Dark Treatment | Light Treatment |
 |-------|---------------|-----------------|
 | 0 | Canvas — no border | Canvas — no border |
-| 1 | `dark-surface` + `1px dark-border` | `light-surface` + `1px light-border` |
-| 2 | `dark-surface-raised` + `1px dark-border-strong` | `light-surface` + subtle shadow |
-| 3 | Accent border (red, blue, green, purple, warm) | Same accent border logic |
+| 1 | `dark-surface` + `2px dark-border` | `light-surface` + `2px light-border` |
+| 2 | `dark-surface-raised` + `2px dark-border-strong` | `light-surface-raised` + `2px light-border-strong` |
+| 3 | Thick accent rail (lime, blue, violet) | Same accent rail logic |
 | 4 | Accent tint fill background | Same accent fill logic |
 
 ## Typography
@@ -402,108 +403,102 @@ The feed reads like a timeline — the mono-uppercase timestamps on each card cr
 
 ### Whitespace Philosophy
 
-Whitespace carries rhythm, not elegance. In dark mode, even `16px` of `#12110f` between cards acts as a palette cleanser. The page is paced — accent-colored card rails and neutral tag pills interrupt stretches of near-black. Whitespace is the silence between beats, not the luxury.
+Whitespace carries rhythm, not elegance. In dark mode, even `16px` of `#171323` between cards acts as a grid gutter. The page is paced by rectangular modules, thick rails, and loud accents. Whitespace is functional separation, not softness.
 
 ## Elevation & Depth
 
-nibzard uses **color-as-elevation** in dark mode — no drop shadows. Hierarchy is carried by surface color graduation and accent-colored borders.
+nibzard uses **color-as-elevation** and hard offset states. Hierarchy is carried by surface color graduation, accent-colored borders, and occasional blocky black hover offsets.
 
 | Depth | Dark Treatment | Light Treatment |
 |-------|---------------|-----------------|
 | 0 | `dark-canvas` — no border, no shadow | `light-canvas` — no border, no shadow |
-| 1 | `dark-surface` + `1px solid dark-border` | `light-surface` + `1px solid light-border` |
-| 2 | `dark-surface-raised` + `1px solid dark-border-strong` | `light-surface` + `box-shadow: 0 2px 8px rgba(0,0,0,0.06)` |
-| 3 | `4px solid` left rail in accent color (red, blue, green, purple, warm) | Same rail logic |
-| 4 | Accent-tint fill (`accent-*-tint`) for tag pills and hover states | Same tint logic at lighter opacity |
+| 1 | `dark-surface` + `2px solid dark-border` | `light-surface` + `2px solid light-border` |
+| 2 | `dark-surface-raised` + `2px solid dark-border-strong` | `light-surface-raised` + `2px solid light-border-strong` |
+| 3 | `10px solid` left rail in accent color (lime, blue, violet) | Same rail logic |
+| 4 | Accent-tint fill plus hard black offset on hover | Same tint logic at lighter opacity |
 
-No gradients. No glows. No atmospheric blurs. The warm amber system would break if anything faded softly.
+No rounded corners. No glows. No atmospheric blurs. Gradients are only allowed for mechanical grid backgrounds or code syntax treatments, never for soft decoration.
 
 ## Shapes
 
-All interactive and content containers use rounded corners. The radius scale creates a nested hierarchy:
+All interactive and content containers use square corners.
 
 | Level | Radius | Use |
 |-------|--------|-----|
-| `xs` | 4px | Inline code, small badges |
-| `sm` | 6px | Nested card images |
-| `md` | 8px | Buttons, code blocks, inputs |
-| `lg` | 12px | Cards, panels |
-| `xl` | 16px | Feature cards, large panels |
-| `xxl` | 20px | Pill buttons, hero cards |
-| `pill` | 9999px | Tag pills, status badges |
+| All | 0 | Cards, buttons, inputs, tags, images, code blocks, panels |
 
-No square corners on interactive or content containers. The rounded language is consistent with The Verge's pill-card approach, but with a warmer, less aggressive radius distribution.
+Rounded pills are banned. Status badges and tags are rectangular labels. Circular icon buttons are only acceptable when the icon itself requires a circular glyph; the container remains square.
 
 ## Components
 
 ### Buttons
 
-**Primary (`button-primary`):** Warm amber fill (`primary`), near-black text (`on-primary`), `8px` radius, mono-label uppercase typography. Hover (`button-primary-hover`) deepens to `primary-deep`.
+**Primary (`button-primary`):** Electric lime fill (`primary`), near-black text (`on-primary`), square corners, mono-label uppercase typography. Hover (`button-primary-hover`) deepens to `primary-deep`.
 
-**Secondary (`button-secondary`):** Dark surface fill, amber text (`primary`), `8px` radius. Hover (`button-secondary-hover`) shifts to `accent-warm-tint` background.
+**Secondary (`button-secondary`):** Electric blue or violet fill depending on context, square corners, mono-label uppercase typography. Hover states use hard border/fill changes.
 
-**Pill (`button-pill`):** Same as primary but with `20px` pill radius. Used for nav CTAs and inline actions.
+**Pill (`button-pill`):** Deprecated. Use square label buttons instead.
 
 ### Cards (Masonry Grid Items)
 
-Each content type has a color-coded `4px solid` left border rail:
+Each content type has a color-coded thick left border rail:
 
 | Component | Rail Color |
 |-----------|-----------|
-| `card-log` | `accent-red` |
+| `card-log` | `accent-lime` / `primary` |
 | `card-thought` | `accent-blue` |
 | `card-now` | `accent-green` |
-| `card-idea` | `primary` / `accent3` (warm amber) |
+| `card-idea` | `accent-purple` / violet |
 
-Dark mode cards use `dark-surface` background, `dark-border` hairline, `12px` radius, `24px` padding. Hover (`card-dark-hover`) shifts to `dark-surface-raised`. Light mode cards (`card-light`) use `light-surface` + `light-border`.
+Dark mode cards use `dark-surface` background, `2px` borders, `10px` left rails, `0` radius, and `24px` padding. Hover shifts to `dark-surface-raised` with a hard black offset. Light mode cards mirror the same rectangular grammar.
 
-**Card metadata:** Timestamp in `mono-caption` uppercase, title in `heading-2`, TLDR in `body-sm`, tags as mono-caption uppercase pills.
+**Card metadata:** Timestamp in `mono-caption` uppercase, title in mono-heavy uppercase for feed cards, TLDR in `body-sm`, tags as rectangular mono-caption labels.
 
 ### Tags
 
-Tags are neutral by default so the card type rail carries the main color signal. On hover or focus, tags may pick up the warm tint/text treatment. `tag-red`, `tag-blue`, `tag-green`, and `tag-purple` remain available for deliberate semantic states, but cards should not derive their rail color from arbitrary tags. All tags use `pill` radius (9999px) and `mono-caption` uppercase typography.
+Tags are neutral rectangular labels by default so the card type rail carries the main color signal. On hover or focus, tags may pick up the lime fill treatment. `tag-blue`, `tag-green`, and `tag-purple` remain available for deliberate semantic states, but cards should not derive their rail color from arbitrary tags. All tags use `0` radius and `mono-caption` uppercase typography.
 
 ### Code Blocks
 
-`code-block` uses `#1c1c1e` background (same in both light and dark modes — code blocks are always dark), `#e2e8f0` text, `code-md` typography (14px mono, 1.50 leading), `8px` radius. Header bar is slightly darker, filename in `mono-caption`. Copy button top-right with `primary` on hover.
+`code-block` uses `#1c1c1e` background (same in both light and dark modes — code blocks are always dark), `#e2e8f0` text, `code-md` typography (14px mono, 1.50 leading), and `0` radius. Header bar is slightly darker, filename in `mono-caption`. Copy button top-right with `primary` on hover.
 
 ### Navigation
 
-`nav-header` spans full width with the page canvas background and no shadow, so the header feels integrated rather than boxed. Logo (`logo`) is a wordmark: `Nikola Balić`, with "Nikola" in the warm accent and a desktop-only `Writings` mono kicker separated by a thin border. Do not expand the wordmark into a full sentence in the nav; it should remain compact.
+`nav-header` spans full width with a hard bottom border and no soft shadow. Logo (`logo`) is a wordmark: `Nikola Balić`, with "Nikola" in the active accent and a desktop-only `Writings` mono kicker separated by a thin border. Do not expand the wordmark into a full sentence in the nav; it should remain compact.
 
-Nav links use `mono-label` uppercase, `dark-text-secondary` color, hover to `primary`. Active state: `2px solid primary` bottom border. Max-width `1200px`, centered. Search and theme toggle controls live inside the same `<nav class="site-nav">` list as the links; both are borderless 40px square icon buttons with centered icons and no persistent outline.
+Nav links use `mono-label` uppercase, `dark-text-secondary` color, hover to `primary`. Active state: `2px solid primary` bottom border. Max-width `1200px`, centered. Search and theme toggle controls live inside the same `<nav class="site-nav">` list as the links; both are 40px square icon buttons with centered icons.
 
 ### Footer
 
-Dark mode: `footer-dark` with `dark-surface` background, `dark-border` top border. Light mode: `footer-light` with quiet `cream` background, `cream-deep` top border. The footer must read as warm paper, not saturated yellow. Content centered, links in `accent-blue`, ASCII divider ornament.
+Dark mode: `footer-dark` with `dark-surface` background and a hard `dark-border` top border. Light mode: `footer-light` with pale violet surfaces and strong borders. Content centered, links in `accent-blue`, ASCII divider ornament.
 
 ### Inputs
 
-`input-dark`: `dark-surface` background, `dark-text` text, `8px` radius. Focus (`input-dark-focus`) gets `primary` amber border. `input-light` / `input-light-focus` mirror the pattern in light mode.
+`input-dark`: `dark-surface` background, `dark-text` text, `0` radius. Focus (`input-dark-focus`) gets `primary` lime border. `input-light` / `input-light-focus` mirror the pattern in light mode.
 
 ## Do's and Don'ts
 
 ### Do
 
-- **Do** use `#12110f` as the default canvas. It's warm enough for extended reading.
-- **Do** use warm amber (`#D99A5E`) as the primary accent — CTAs, active states, link hovers.
+- **Do** use `#171323` as the default canvas and `#362F4F` as the main bento surface.
+- **Do** use electric lime (`#E4FF30`) as the primary accent — CTAs, active states, link hovers.
 - **Do** use Tobias for headlines at `heading-1` (30px) and above. It signals "publication."
 - **Do** use mono-uppercase for nav links, timestamps, tags, and eyebrow labels. The tracking (0.06–0.08em) is the voice.
-- **Do** use color-coded card rails (red, blue, green, purple, amber) to distinguish content types.
-- **Do** use quiet cream (`#f6f0e5`) for the light-mode footer and occasional panels. It's warm paper, not yellow.
-- **Do** use `primary` (`#D99A5E`) as a consistent hover response for all interactive elements.
+- **Do** use color-coded card rails (lime, blue, violet) to distinguish content types.
+- **Do** use hard borders and square modules everywhere.
+- **Do** use `primary` (`#E4FF30`) as a consistent hover response for key interactive elements.
 - **Do** keep generous body leading (1.55–1.60) for long-form technical reading.
 
 ### Don't
 
-- **Don't** use pure black (`#000000`) as a background. It's too harsh for reading sessions.
-- **Don't** use drop shadows in dark mode. Borders and color fills are the elevation system.
+- **Don't** use pure black (`#000000`) as the page background. It is reserved for hard offset shadows and text on lime.
+- **Don't** use soft drop shadows in dark mode. Borders, fills, and hard offsets are the elevation system.
 - **Don't** use Tobias for UI elements (buttons, labels, nav, metadata). Tobias is for display only.
 - **Don't** use lowercase mono for labels. Mono labels are always uppercase with positive tracking.
-- **Don't** use neon/saturated accents (`#3cffd0`, `#5200ff`, etc.). This is a warm amber system, not a hazard-tape system.
-- **Don't** use gradients. The system is solid color blocks and borders.
-- **Don't** use pure white (`#FFFFFF`) as a light-mode canvas. Use warm off-white (`#fbfaf7`).
-- **Don't** introduce new accent colors outside the declared palette (warm, red, blue, green, purple).
+- **Don't** add rounded corners, including pills.
+- **Don't** add soft decorative gradients. The system is solid color blocks, hard grid lines, and borders.
+- **Don't** use pure white (`#FFFFFF`) as a light-mode canvas. Use pale violet (`#F7F5FF`).
+- **Don't** introduce new accent colors outside the declared purple/blue/lime palette.
 - **Don't** make mono labels smaller than 11px. They become unreadable.
 - **Don't** let tags determine card rail colors. Rail color comes from content type.
 - **Don't** place the theme toggle outside the nav list on desktop. It should align with search and menu links.

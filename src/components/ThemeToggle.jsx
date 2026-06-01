@@ -17,7 +17,7 @@ export default function ThemeToggle() {
 
     const meta = document.querySelector('meta[name="theme-color"]');
     if (meta) {
-      meta.setAttribute('content', next === 'dark' ? '#12110f' : '#fbfaf7');
+      meta.setAttribute('content', next === 'dark' ? '#171323' : '#F7F5FF');
     }
 
     setTheme(next);
