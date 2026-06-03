@@ -5,6 +5,7 @@ tldr: "Anthropic named the three ways long agent runs fail: agentic laziness, se
 date: 2026-06-03
 tags: [HUMAN, OPINION, AI, AGENTS]
 draft: false
+featured: true
 author: "Nikola Balić"
 topics: [Dynamic workflows, agent orchestration, browser agents, agent failure modes, prompt injection, verification, multi-agent systems]
 entities: [Anthropic, Claude Code, Wire, Steel, Opus 4.8, trq212]
