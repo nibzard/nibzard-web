@@ -3,7 +3,6 @@ title: The Human Web Is Becoming Agent Web
 description: I'm joining Steel as founding growth lead. The web is shifting from human clicks to agent-run workflows.
 date: 2026-02-02
 tags: [Agents, AI, Growth, Steel]
-featured: true
 draft: false
 tldr: "I'm joining Steel as founding growth lead. The web is shifting from human clicks to agent-run workflows. Steel aims to be the execution layer that makes agents reliable via traces + trust."
 author: Nikola Balić
