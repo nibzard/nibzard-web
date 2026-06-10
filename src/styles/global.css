@@ -236,6 +236,21 @@ article img:hover {
   border-color: rgba(0, 0, 0, 0.12);
 }
 
+/* Theme-aware article images: show the variant matching the active theme.
+   Default theme is dark, so the light variant is hidden until [data-theme="light"]. */
+article img.img-light {
+  display: none;
+}
+article img.img-dark {
+  display: block;
+}
+[data-theme="light"] article img.img-light {
+  display: block;
+}
+[data-theme="light"] article img.img-dark {
+  display: none;
+}
+
 /* Ensure proper spacing after images */
 article img + * {
   margin-top: var(--space-lg) !important;

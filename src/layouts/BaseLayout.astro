@@ -19,6 +19,7 @@ export interface Props {
   ogImage?: string;
   fullWidth?: boolean;
   showNewsletterModal?: boolean;
+  canonical?: string;
 }
 
 const {
@@ -26,10 +27,12 @@ const {
   description = "all things AI agents, growth and startups",
   ogImage,
   fullWidth = false,
-  showNewsletterModal = true
+  showNewsletterModal = true,
+  canonical
 } = Astro.props;
 const siteUrl = resolveSiteOrigin(Astro.site, Astro.url);
-const canonicalUrl = toSiteUrl(Astro.site, Astro.url, Astro.url.pathname);
+// Cross-posted articles can declare an external canonical; otherwise point at this page.
+const canonicalUrl = canonical ?? toSiteUrl(Astro.site, Astro.url, Astro.url.pathname);
 const defaultOgImage = new URL("/og-nibzard.jpeg", siteUrl).toString();
 const siteHostname = new URL(siteUrl).hostname;
 const enableAnalytics =

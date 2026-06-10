@@ -16,6 +16,8 @@ const logCollection = defineCollection({
     featured: z.boolean().optional().default(false),
     draft: z.boolean().optional().default(false),
     author: z.string().optional().default("Nikola Balić"),
+    // External canonical URL for cross-posted articles whose original lives elsewhere.
+    canonical: z.string().url().optional(),
   }),
 });
 

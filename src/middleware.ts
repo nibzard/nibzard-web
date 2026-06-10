@@ -426,9 +426,12 @@ export const onRequest = defineMiddleware(async (context, next) => {
         .slice(0, 2)
         .map((candidate) => `/${candidate.id}`);
 
+      // Cross-posted articles point canonical at their external original.
+      const logCanonicalUrl = entry.data.canonical ?? canonicalUrl;
+
       const metadata = generateAgentMetadata({
         collection: 'log',
-        canonicalUrl,
+        canonicalUrl: logCanonicalUrl,
         markdownUrl,
         author: entry.data.author,
         published: toDateString(entry.data.date),
@@ -437,7 +440,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
         relatedPaths,
       });
 
-      return buildMarkdownResponse(`${metadata}${markdownContent}`, canonicalUrl, markdownUrl, 'log');
+      return buildMarkdownResponse(`${metadata}${markdownContent}`, logCanonicalUrl, markdownUrl, 'log');
     }
 
     if (target.collection === 'thoughts') {

@@ -47,7 +47,8 @@ async function findEntryBySlug(slug: string): Promise<MatchedEntry | null> {
     return {
       collection: 'log',
       entry: logEntry,
-      canonicalPath: `/${logEntry.id}`,
+      // Cross-posted articles point canonical at their external original.
+      canonicalPath: logEntry.data.canonical ?? `/${logEntry.id}`,
       markdownPath: `/${logEntry.id}.md`,
     };
   }

@@ -29,6 +29,7 @@ interface Frontmatter {
   topics?: string[];
   entities?: string[];
   draft?: boolean;
+  canonical?: string;
 }
 
 interface Props {
@@ -85,7 +86,7 @@ const relatedArticlesEntries = getDiverseRelatedArticles(
 
 // Note: Article-specific Open Graph tags are added conditionally in <head> when date exists
 ---
-<BaseLayout title={`${frontmatter.title} - Log - nibzard`} description={frontmatter.description || `Log entry: ${frontmatter.title}`} ogImage={ogImageUrl}>
+<BaseLayout title={`${frontmatter.title} - Log - nibzard`} description={frontmatter.description || `Log entry: ${frontmatter.title}`} ogImage={ogImageUrl} canonical={frontmatter.canonical}>
   <!-- Additional meta tags in head -->
   <Fragment slot="head">
     <!-- Open Graph article author -->
