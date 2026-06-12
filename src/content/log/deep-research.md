@@ -178,7 +178,7 @@ The frontier is not more width. It is a disciplined second hop: **knowing when t
 
 The harness proved its own ceiling for me. I watched it research this exact question, fan my prompt five ways, and never look back at what it found.
 
-So I built the deep version: a research agent that routes before it searches, browses before it loops, and verifies its own claims. It got worse before it got better. The verifier I was proudest of dropped my report quality, and it took me a while to work out why. That is the next piece: *Durable Researcher: building a research agent that survives its own failures*.
+So I built the deep version: a research agent that routes before it searches, browses before it loops, and verifies its own claims. It got worse before it got better. The verifier I was proudest of dropped my report quality, and it took me a while to work out why. That is the next piece: [*Durable Researcher: building a research agent that survives its own failures*](/durable-researcher).
 
 I'm still thinking about the second hop. But now I have one.
 
