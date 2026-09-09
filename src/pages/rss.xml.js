@@ -2,6 +2,9 @@ import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
+// The feed changes only when content is deployed; serve it without a function invocation.
+export const prerender = true;
+
 export async function GET(context) {
 	const posts = await getCollection('log');
 
