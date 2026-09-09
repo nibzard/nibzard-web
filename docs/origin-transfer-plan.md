@@ -1,6 +1,6 @@
 # Reduce Nibzard's Vercel origin transfer
 
-Investigated and RSS fix deployed 2026-09-09. The optional Cloudflare rule and broader page changes remain deferred.
+Investigated and RSS fix deployed 2026-09-09. The optional Cloudflare rule remains deferred. Follow-up page and article-cache work is recorded below.
 
 ## Recommendation
 
@@ -73,3 +73,17 @@ Cloudflare now documents configurable Vary support on all plans; assumptions fro
 6. Compare RSS function invocations and daily usage over 24–48 hours. Existing rolling-window usage will not disappear immediately; do not promise that this change resets the exhausted quota.
 
 Rollback: revert the small RSS/header patch and redeploy; disable the specific Cloudflare rule if added. No hosting migration, global cache override, feed-content reduction, or paid-plan upgrade is required by this proposal.
+
+
+## Follow-up: static public pages and article caching
+
+Implemented on 2026-09-09:
+
+- Prerender `/about`, `/bio`, `/cv`, `/projects`, `/log`, `/tags`, and `/thoughts`. Their content and canonical URLs are build-time data. Skip request-dependent middleware for prerendered routes.
+- Keep article, thought, idea, and now detail responses dynamic, with a one-hour Vercel cache for successful public HTML and Markdown. Include `/api/raw/:slug` under the public Markdown cache policy.
+- Use identical, sorted `Vary: accept, accept-encoding, sec-fetch-dest, user-agent` on both negotiated formats. Browser document requests keep HTML; explicit `.md` URLs retain Markdown; quality-weighted Accept headers and wildcard bot behavior are preserved.
+- Use `Vercel-CDN-Cache-Control: public, s-maxage=3600`, `CDN-Cache-Control: no-store`, and `Cache-Control: public, max-age=0, must-revalidate`. This enables only Vercel's shared cache and prevents enabling Cloudflare storage without inspecting its rules.
+- Never make authenticated/range requests, mutations, errors, Set-Cookie responses, existing private/no-store/no-cache responses, or wildcard-Vary responses cacheable. Public content does not personalize from cookies, so ordinary analytics cookies do not unnecessarily fragment its cache.
+- Preserve other response types and the existing policies for images. Homepage pagination, search, newsletter APIs/actions, and unsubscribe remain outside this cache policy.
+
+Validation includes `node --import tsx --test tests/content-cache.test.ts`, the full production build, static artifact/route inspection, and alternating live HTTP requests covering browser and bot wildcards, HTML/Markdown Accept preferences, document requests, `.md`, raw Markdown, auth, errors, analytics cookies, and excluded routes. Header-based variants still fragment the cache by user-agent value; this preserves current behavior without introducing another edge router.

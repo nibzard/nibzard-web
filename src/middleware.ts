@@ -1,6 +1,7 @@
 // ABOUTME: Middleware for content negotiation with robust Accept parsing
 // ABOUTME: Serves markdown for log, thoughts, idea, and now pages when markdown is preferred
-import { defineMiddleware } from 'astro:middleware';
+import { defineMiddleware, sequence } from 'astro:middleware';
+import { applyContentCache } from './utils/content-cache';
 import { getCollection } from 'astro:content';
 import fs from 'fs';
 import path from 'path';
@@ -348,20 +349,12 @@ async function passThroughWithMarkdownAlternate(
   const existingLink = response.headers.get('link');
   response.headers.set('Link', existingLink ? `${existingLink}, ${alternateLink}` : alternateLink);
 
-  const existingVary = response.headers.get('vary');
-  if (!existingVary) {
-    response.headers.set('Vary', 'Accept, User-Agent');
-  } else if (!/\baccept\b/i.test(existingVary) || !/\buser-agent\b/i.test(existingVary)) {
-    const parts = new Set(existingVary.split(',').map((part) => part.trim()).filter(Boolean));
-    parts.add('Accept');
-    parts.add('User-Agent');
-    response.headers.set('Vary', Array.from(parts).join(', '));
-  }
 
   return response;
 }
 
-export const onRequest = defineMiddleware(async (context, next) => {
+const contentMiddleware = defineMiddleware(async (context, next) => {
+  if (context.isPrerendered) return next();
   const { request, site } = context;
   const url = new URL(request.url);
   const pathname = url.pathname;
@@ -516,3 +509,19 @@ export const onRequest = defineMiddleware(async (context, next) => {
     return buildMarkdownErrorResponse(500, 'Internal Server Error', 'Unable to serve markdown content right now.');
   }
 });
+
+
+// Wrap both negotiated Markdown and rendered HTML with the same cache policy.
+const cacheMiddleware = defineMiddleware(async (context, next) => {
+  if (context.isPrerendered) return next();
+
+  const target = resolveMarkdownTarget(context.url.pathname);
+  const isRawMarkdown = /^\/api\/raw\/[^/]+\/?$/.test(context.url.pathname);
+  const response = await next();
+  if (target || isRawMarkdown) {
+    applyContentCache(context.request, response, Boolean(target));
+  }
+  return response;
+});
+
+export const onRequest = sequence(cacheMiddleware, contentMiddleware);
