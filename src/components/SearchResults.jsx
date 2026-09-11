@@ -36,12 +36,12 @@ export default function SearchResults({ feedEntries, initialQuery = '' }) {
       {results.map((item, index) => {
         const date = item.date ? formatDate(item.date) : '';
 
-        if (item.type === 'log') {
+        if (item.type === 'log' || item.type === 'idea') {
           return (
             <li className="search-result" key={index}>
               <a href={item.href}>{item.title}</a>
               <div className="search-result-meta">
-                {date} · Log{item.tldr ? ` · ${item.tldr}` : ''}
+                {date} · {item.type === 'idea' ? 'Idea' : 'Article'}{item.tldr ? ` · ${item.tldr}` : ''}
               </div>
             </li>
           );

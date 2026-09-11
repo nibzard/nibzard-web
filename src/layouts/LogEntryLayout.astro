@@ -1,7 +1,5 @@
 ---
 import BaseLayout from './BaseLayout.astro';
-import AnimatedTag from '../components/animations/AnimatedTag.jsx';
-import AnimatedTagsContainer from '../components/animations/AnimatedTagsContainer.jsx';
 import { formatTagForDisplay, sortTags } from '../utils/tagUtils';
 import { getCollection, type CollectionEntry } from 'astro:content';
 import CSSFadeIn from '../components/animations/CSSFadeIn.astro';
@@ -14,7 +12,6 @@ import { createBlogPostSchema, createBreadcrumbSchema } from '../utils/schemaUti
 import AIWarning from '../components/AIWarning.astro';
 import { getDiverseRelatedArticles } from '../utils/articleMatching';
 import RelatedArticles from '../components/RelatedArticles.astro';
-import ReadingProgress from '../components/ReadingProgress.astro';
 import GiscusComments from '../components/GiscusComments.jsx';
 import { resolveSiteOrigin, toSiteUrl } from '../utils/siteUrls';
 
@@ -109,67 +106,23 @@ const relatedArticlesEntries = getDiverseRelatedArticles(
   <SchemaMarkup schema={blogPostSchema} />
   <SchemaMarkup schema={breadcrumbSchema} />
 
-  <article class="fade-in article-shell">
+  <article class="article-shell">
     <header class="log-entry-header">
-      {frontmatter.date && (
-        <div class="article-header-tools">
-          <div class="publication-meta">
-            Published on <time datetime={frontmatter.date.toISOString()}>
-              {new Date(frontmatter.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-            </time>
-            {frontmatter.updated && (
-              <>
-                {' • '}Updated on <time datetime={frontmatter.updated.toISOString()}>
-                  {new Date(frontmatter.updated).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-                </time>
-              </>
-            )}
-          </div>
-          <div class="article-actions">
-            <CopyMarkdownButton client:idle slug={slug} />
-            <ChatGPTButton client:idle slug={slug} title={frontmatter.title} />
-            <ShareButton client:idle slug={slug} title={frontmatter.title} />
-          </div>
-        </div>
-      )}
+      <a class="back-link" href="/log">← Writing</a>
       <h1>{frontmatter.title}</h1>
-      {frontmatter.author && (
-        <p class="log-entry-meta">
-          <span class="author-meta">
-            by <a href="/bio" class="author-link">{frontmatter.author}</a>
-          </span>
-        </p>
-      )}
-      {frontmatter.tldr && (
-        <p class="log-entry-tldr">TL;DR &gt;&gt; {frontmatter.tldr} &lt;&lt;</p>
-      )}
+      {(frontmatter.description || frontmatter.tldr) && <p class="article-description">{frontmatter.description || frontmatter.tldr}</p>}
+      <div class="article-header-tools">
+        <p class="publication-meta"><a href="/about">{frontmatter.author || 'Nikola Balić'}</a> · <time datetime={frontmatter.date.toISOString()}>{frontmatter.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>{frontmatter.updated && <> · Updated <time datetime={frontmatter.updated.toISOString()}>{frontmatter.updated.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</time></>}</p>
+        <details class="article-utilities"><summary>Share and tools</summary><div class="article-actions"><CopyMarkdownButton client:idle slug={slug} /><ChatGPTButton client:idle slug={slug} title={frontmatter.title} /><ShareButton client:idle slug={slug} title={frontmatter.title} /></div></details>
+      </div>
     </header>
-
-    {sortedTags.length > 0 && (
-      <section class="article-tags-section">
-        <div class="tags-header">
-          <span class="tags-label">Topics:</span>
-          <AnimatedTagsContainer client:visible className="tags-inline">
-            {sortedTags.map((tag: string) => {
-              const formattedTag = formatTagForDisplay(tag);
-              return (
-                <AnimatedTag
-                  client:visible
-                  href={`/tags/${tag.toLowerCase()}`}
-                  tagText={formattedTag}
-                />
-              );
-            })}
-          </AnimatedTagsContainer>
-        </div>
-      </section>
-    )}
 
     {hasSlop && <AIWarning />}
     <div class="log-content">
       <slot /> {/* Content from the Markdown file will be rendered here */}
     </div>
 
+    {sortedTags.length > 0 && <nav class="article-tags-section" aria-label="Article topics">{sortedTags.map(tag => <a href={`/tags/${tag.toLowerCase()}`}>{formatTagForDisplay(tag)}</a>)}</nav>}
     <NewsletterSubscribe />
 
     {relatedArticlesEntries.length > 0 && (
@@ -196,7 +149,7 @@ const relatedArticlesEntries = getDiverseRelatedArticles(
         <div class="author-container">
           <div class="author-info">
             <h3 class="author-name">
-              <a href="/bio" class="author-link" itemprop="url">
+              <a href="/about" class="author-link" itemprop="url">
                 <span itemprop="name">Nikola Balić</span>
               </a>
             </h3>
@@ -230,6 +183,6 @@ const relatedArticlesEntries = getDiverseRelatedArticles(
 
     <div class="section-spacer"></div>
 
-    <ReadingProgress suggestedArticles={relatedArticlesEntries} />
+
   </article>
 </BaseLayout>

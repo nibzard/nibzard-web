@@ -16,17 +16,11 @@ const { Content } = await render(entry);
 const slug = entry.id.split('/').pop().replace('.md', '');
 ---
 
-<div
-  class="thought-item"
-  data-href={`/thoughts/${slug}`}
-  role="button"
-  tabIndex="0"
-  aria-label={`Read thought from ${new Date(entry.data.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}`}
->
+<div class="thought-item">
   <div class="entry-meta">
-    <time datetime={entry.data.date.toISOString()}>
+    <a href={`/thoughts/${slug}`}><time datetime={entry.data.date.toISOString()}>
       {new Date(entry.data.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
-    </time>
+    </time></a>
     <span class="entry-type">Thought</span>
   </div>
   <div class="thought-content">

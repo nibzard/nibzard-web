@@ -2,14 +2,14 @@
 // Import our main CSS file which includes all styles
 import '../styles/global.css';
 // Import critical CSS for inlining
-import criticalCSS from '../styles/critical.css?inline';
+
 import { SEO } from "astro-seo";
 
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import SchemaMarkup from '../components/SchemaMarkup.astro';
-import SearchOverlay from '../components/SearchOverlay.jsx';
-import NewsletterModal from '../components/NewsletterModal.jsx';
+
+
 import { createWebsiteSchema, createPersonSchema } from '../utils/schemaUtils';
 import { resolveSiteOrigin, toSiteUrl } from '../utils/siteUrls';
 
@@ -27,7 +27,7 @@ const {
   description = "all things AI agents, growth and startups",
   ogImage,
   fullWidth = false,
-  showNewsletterModal = true,
+  showNewsletterModal = false,
   canonical
 } = Astro.props;
 const siteUrl = resolveSiteOrigin(Astro.site, Astro.url);
@@ -44,12 +44,12 @@ const websiteSchema = createWebsiteSchema();
 const personSchema = createPersonSchema();
 ---
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
   <script is:inline>
     (function() {
-      var t = localStorage.getItem('theme');
-      if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      var t = 'light';
+      try { var saved = localStorage.getItem('theme'); if (saved === 'dark' || saved === 'light') t = saved; } catch {}
       document.documentElement.setAttribute('data-theme', t);
     })();
   </script>
@@ -62,7 +62,7 @@ const personSchema = createPersonSchema();
   <meta name="dc.creator" content="Nikola Balić (Nikola Balic)">
   <meta name="article:author" content="Nikola Balić">
   <meta name="twitter:creator" content="@nibzard">
-  <link rel="author" href="https://nibzard.com/bio">
+  <link rel="author" href="https://nibzard.com/about">
   <link rel="me" href="https://x.com/nibzard">
   <link rel="me" href="https://www.linkedin.com/in/nikolabalic/">
   <link rel="me" href="https://github.com/nibzard">
@@ -108,7 +108,7 @@ const personSchema = createPersonSchema();
       meta: [
         { name: "viewport", content: "width=device-width, initial-scale=1.0" },
         { name: "charset", content: "UTF-8" },
-        { name: "theme-color", content: "#171323" }
+        { name: "theme-color", content: "#fcfcfc" }
       ]
     }}
   />
@@ -143,7 +143,7 @@ const personSchema = createPersonSchema();
   <!-- Using system fonts - no external font loading needed -->
 
   <!-- Critical CSS inlined for faster first paint -->
-  <style set:html={criticalCSS}></style>
+
 
   <!-- Schema.org Structured Data -->
   <SchemaMarkup schema={websiteSchema} />
@@ -156,23 +156,16 @@ const personSchema = createPersonSchema();
   <meta name="view-transition" content="same-origin" />
 </head>
 <body>
-  <Header />
-  <main class="content-container">
-    {fullWidth ? (
-      <slot />
-    ) : (
-      <div class="inner-container">
-        <slot /> <!-- Page content will be injected here -->
-      </div>
-    )}
-  </main>
-  <Footer />
-
-  <!-- Search Overlay -->
-  <SearchOverlay client:idle />
-
-  <!-- Newsletter Modal -->
-  {showNewsletterModal !== false && <NewsletterModal client:idle />}
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="site-shell">
+    <Header />
+    <div class="site-body">
+      <main id="main" class:list={['content-container', { 'content-wide': fullWidth }]} tabindex="-1">
+        {fullWidth ? <slot /> : <div class="inner-container"><slot /></div>}
+      </main>
+      <Footer />
+    </div>
+  </div>
 
   <!-- Enhanced code blocks with copy functionality -->
   <script is:inline>
@@ -286,46 +279,6 @@ const personSchema = createPersonSchema();
           }
         });
       });
-    });
-  </script>
-
-  <!-- Search Overlay Management -->
-  <script is:inline>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Create a global search overlay manager
-      window.searchOverlay = {
-        isOpen: false,
-        component: null,
-
-        open() {
-          this.isOpen = true;
-          this.updateComponent();
-        },
-
-        close() {
-          this.isOpen = false;
-          this.updateComponent();
-        },
-
-        updateComponent() {
-          if (this.component) {
-            this.component.setState({ isOpen: this.isOpen });
-          }
-        },
-
-        registerComponent(component) {
-          this.component = component;
-        }
-      };
-
-      // Handle search trigger button click
-      const searchTrigger = document.getElementById('search-trigger');
-      if (searchTrigger) {
-        searchTrigger.addEventListener('click', function(e) {
-          e.preventDefault();
-          window.searchOverlay.open();
-        });
-      }
     });
   </script>
 

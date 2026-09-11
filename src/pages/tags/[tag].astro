@@ -2,7 +2,6 @@
 export const prerender = true;
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import FadeIn from '../../components/animations/FadeIn.jsx';
 import LogItem from '../../components/LogItem.astro';
 
 export async function getStaticPaths() {
@@ -40,76 +39,31 @@ const allLogEntries = await getCollection('log', ({ data, id }) => {
 const logEntries = allLogEntries.sort((a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf());
 ---
 
-<style>
-  .tag-highlight {
-    color: var(--color-accent1);
-  }
 
-  /* Copied from src/styles/tags-tag.css */
-  .log-header {
-    margin-bottom: var(--space-lg);
-    border-bottom: 1px solid var(--color-border-muted);
-    padding-bottom: var(--space-sm);
-  }
-
-  .log-header h1 {
-    font-size: var(--font-size-xl);
-    margin-bottom: var(--space-xs);
-  }
-
-  .log-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .no-entries {
-    text-align: center;
-    color: var(--color-text-muted);
-    margin-top: var(--space-xl);
-    font-style: italic;
-  }
-
-  .back-link-container {
-    margin-top: var(--space-lg);
-    text-align: center;
-  }
-
-  .back-link {
-    color: var(--color-accent2);
-    text-decoration: none;
-    font-family: var(--font-mono);
-    font-size: var(--font-size-sm);
-  }
-
-  .back-link:hover {
-    text-decoration: underline;
-  }
-</style>
 
 <BaseLayout title={`Tag: ${tagName} - nibzard`} description={`Log entries tagged with "${tagName}".`}>
   {/* The <style> tag has been removed */}
-  <FadeIn client:visible>
+
     <section class="log-header">
       <h1>Entries tagged with: <span class="tag-highlight">{tagName}</span></h1>
     </section>
-  </FadeIn>
+
 
   <ul class="log-list">
     {logEntries.length === 0 && (
-      <FadeIn client:visible delay={0.1}>
+
         <p class="no-entries">No log entries found for this tag.</p>
-      </FadeIn>
+
     )}
     {logEntries.map((entry, index) => (
-      <FadeIn client:visible delay={0.05 * (index + 1)}>
+
         <LogItem entry={entry} currentTag={tag} />
-      </FadeIn>
+
     ))}
   </ul>
-  <FadeIn client:visible delay={0.05 * (logEntries.length + 1)}>
+
     <div class="back-link-container">
       <a href="/tags" class="back-link">&larr; All Tags</a>
     </div>
-  </FadeIn>
+
 </BaseLayout>

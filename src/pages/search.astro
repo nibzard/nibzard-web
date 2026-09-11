@@ -9,6 +9,7 @@ const initialQuery = searchParams.get('q') || '';
 const logEntries = await getCollection('log', ({ data, id }) => data.draft !== true && id !== 'claude' && data.title);
 const thoughts = await getCollection('thoughts', ({ data }) => data.draft !== true);
 const nowEntries = await getCollection('now', ({ data }) => data.draft !== true);
+const ideas = await getCollection('idea', ({ data }) => data.draft !== true);
 const imageEntries = await getCollection('images', ({ data }) => data.draft !== true);
 
 // Define helper functions s and a in the frontmatter scope as well
@@ -16,6 +17,7 @@ const s = (val: any, def = '') => (val === null || typeof val === 'undefined') ?
 const a = (val: any, def = []) => Array.isArray(val) ? val : def;
 
 const clientFeedEntries = [
+  ...ideas.map(entry => ({ type: 'idea', href: `/idea/${entry.id}`, title: entry.data.title, text: entry.data.subtitle || '', date: entry.data.date.toISOString() })),
   ...logEntries.map(entry => ({
     type: 'log',
     href: s(`/${entry.id}`),
@@ -28,23 +30,23 @@ const clientFeedEntries = [
     type: 'thought',
     href: s(`/thoughts/${entry.id}`),
     date: entry.data.date.toISOString(),
-    text: s((entry.data as any)?.text),
+    text: s(entry.body?.replace(/[#*_>`]/g, '').slice(0, 240)),
     tags: a((entry.data as any)?.tags),
   })),
   ...nowEntries.map(entry => ({
     type: 'now',
-    href: s('/now'),
+    href: s(`/now/${entry.id}`),
     date: entry.data.date.toISOString(),
     title: s((entry.data as any)?.title),
-    text: s((entry.data as any)?.text),
+    text: s(entry.body?.replace(/[#*_>`]/g, '').slice(0, 240)),
     tags: a((entry.data as any)?.tags),
   })),
   ...imageEntries.map(entry => ({
     type: 'image',
     href: s(`/images/${entry.id}`),
     date: entry.data.date.toISOString(),
-    caption: s((entry.data as any)?.caption),
-    imageUrl: s((entry.data as any)?.image?.src),
+    caption: s(entry.body?.replace(/[#*_>`]/g, '').slice(0, 180)),
+    imageUrl: s(entry.data.imageUrl),
     tags: a((entry.data as any)?.tags),
   })),
 ];
@@ -53,7 +55,8 @@ const clientFeedEntries = [
 
 <BaseLayout title={`Search Results for "${initialQuery}" | nibzard`} description={`Search results for "${initialQuery}" on nibzard.`}>
   <div class="search-page-container">
-    <h1>Search Results{initialQuery && `: "${initialQuery}"`}</h1>
+    <header class="page-header"><h1>Search</h1><p>Find an article, thought, or experiment.</p></header>
+    <form class="search-form" action="/search" method="get"><label class="sr-only" for="site-query">Search the site</label><input id="site-query" type="search" name="q" value={initialQuery} placeholder="Search tools, topics, and ideas" /><button type="submit">Search</button></form>
 
     <SearchResults feedEntries={clientFeedEntries} initialQuery={initialQuery} client:load />
   </div>

@@ -1,0 +1,15 @@
+---
+import { getEntry, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import NowEntry from '../../components/NowEntry.astro';
+import NotFoundContent from '../../components/NotFoundContent.astro';
+const { slug } = Astro.params;
+const candidate = slug ? await getEntry('now', slug) : undefined;
+const entry = candidate && !candidate.data.draft ? candidate : undefined;
+if (!entry) Astro.response.status = 404;
+const rendered = entry ? await render(entry) : undefined;
+const Content = rendered?.Content;
+---
+<BaseLayout title="Now — nibzard">
+  {entry ? <><a class="back-link" href="/?page=1">← All activity</a><NowEntry entry={entry}>{Content && <Content />}</NowEntry></> : <NotFoundContent />}
+</BaseLayout>

@@ -1,15 +1,31 @@
 ---
 import Navigation from './Navigation.astro';
-import MobileMenu from './MobileMenu.jsx';
 ---
-
-<header class="site-header full-width">
-  <div class="inner-container header-content">
-    <a href="/" class="logo" aria-label="Nikola Balić writings home">
-      <span class="logo-name"><span class="accent1">Nikola</span> Balić</span>
-      <span class="logo-kicker">Writings</span>
-    </a>
-    <Navigation />
-    <MobileMenu client:load />
+<header class="site-header">
+  <a href="/" class="identity" aria-label="Nikola Balić home">Nikola Balić<span>nibzard</span></a>
+  <Navigation />
+  <div class="rail-utilities">
+    <a href="/search">Search <span aria-hidden="true">↗</span></a>
+    <a href="https://github.com/nibzard">GitHub <span aria-hidden="true">↗</span></a>
+    <a href="/rss.xml">RSS feed <span aria-hidden="true">↗</span></a>
+    <button class="theme-toggle" type="button" aria-pressed="false">Dark appearance</button>
   </div>
 </header>
+<script>
+  const button = document.querySelector<HTMLButtonElement>('.theme-toggle');
+  function updateThemeButton() {
+    const dark = document.documentElement.dataset.theme === 'dark';
+    if (button) {
+      button.textContent = dark ? 'Light appearance' : 'Dark appearance';
+      button.setAttribute('aria-pressed', String(dark));
+    }
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', dark ? '#191919' : '#fcfcfc');
+  }
+  updateThemeButton();
+  button?.addEventListener('click', () => {
+    const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+    document.documentElement.dataset.theme = next;
+    try { localStorage.setItem('theme', next); } catch {}
+    updateThemeButton();
+  });
+</script>

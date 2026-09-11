@@ -5,14 +5,16 @@
   "scripts": {
     "dev": "astro dev",
     "tinacms:dev": "tinacms dev -c \"pnpm dev\"",
-    "build": "pnpm exec tinacms build --local --skip-cloud-checks && node scripts/prebuild-og.js && astro build && pnpm exec tinacms search-index",
+    "build": "pnpm run projects:sync && pnpm exec tinacms build --local --skip-cloud-checks --port ${TINA_PORT:-4001} --datalayer-port ${TINA_DATALAYER_PORT:-9000} && node scripts/prebuild-og.js && astro build && node scripts/index-tina-search.mjs",
     "preview": "astro preview",
     "astro": "astro",
     "pipe:img": "node scripts/screenshot-content.js",
     "pipe:tweet": "tsx scripts/pipe_tweet.ts",
     "validate:schema": "tsx scripts/validate-schema.ts",
     "generate:og": "node scripts/generate-og-images.js",
-    "generate:og:force": "node scripts/generate-og-images.js --force"
+    "generate:og:force": "node scripts/generate-og-images.js --force",
+    "projects:sync": "node scripts/sync-projects.mjs",
+    "test:projects": "node --test tests/projects.test.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.52.0",

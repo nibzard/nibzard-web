@@ -1,22 +1,23 @@
 ---
+import LogItem from '../components/LogItem.astro';
+import { featuredProjects, homepageProjects } from '../utils/projects';
+const featuredProject = featuredProjects[0];
+
 import BaseLayout from '../layouts/BaseLayout.astro';
-import FadeIn from '../components/animations/FadeIn.jsx';
 import { getCollection } from 'astro:content';
-import tagColors, { getTagColors } from '../config/tagColors';
 import ThoughtRenderer from '../components/ThoughtRenderer.astro';
 import NowItemRenderer from '../components/NowItemRenderer.astro';
 import ImageRenderer from '../components/ImageRenderer.astro';
 import IdeaRenderer from '../components/IdeaRenderer.astro';
 import NewsletterSubscribe from '../components/NewsletterSubscribe.astro';
-import AISummaryButtons from '../components/AISummaryButtons.astro';
-import AnimatedTag from '../components/animations/AnimatedTag.jsx';
 import { createInterleavedFeed, paginateFeed } from '../utils/contentFeed';
-import { calculateDoubleWidth } from '../utils/cardUtils';
 // import '../styles/index.css';
 
 // Get current page and page size
 const { searchParams } = Astro.url;
-const currentPage = parseInt(searchParams.get('page') || '1', 10);
+const parsedPage = Number(searchParams.get('page') || '1');
+const currentPage = Number.isSafeInteger(parsedPage) && parsedPage > 0 ? parsedPage : 1;
+const showFeed = searchParams.has('page');
 const pageSize = 10; // Number of entries per page
 
 // Get all log entries that aren't drafts and aren't CLAUDE.md
@@ -29,7 +30,7 @@ logEntries.sort((a, b) => {
   // Featured articles always come first
   if (a.data.featured && !b.data.featured) return -1;
   if (!a.data.featured && b.data.featured) return 1;
-  
+
   // If both featured or both not featured, sort by date
   const aDate = a.data.updated || a.data.date;
   const bDate = b.data.updated || b.data.date;
@@ -99,208 +100,51 @@ const paginationItems: (number | string)[] = totalPages > 1
       []
     )
   : [];
+
+const selectedIds = [logEntries[0]?.id, 'orchestration-era', 'agentprobe'];
+const selectedEntries = [...new Set(selectedIds)].map(id => logEntries.find(entry => entry.id === id)).filter(Boolean);
 ---
-
-<BaseLayout title="nibzard - Home" description="Detailed writeups on multi-agent orchestration, AI engineering patterns, and what actually works in production. By Nikola Balić — 50+ shipped AI projects." fullWidth={true} showNewsletterModal={false}>
-  <section class="hero-compact">
-    <h1>AI Agents, Growth & Startups</h1>
-    <p>Detailed writeups on multi-agent orchestration, AI engineering patterns, and what actually works in production.</p>
-  </section>
-  <div class="masonry-grid">
-    {feedEntries.map((item, index) => {
-      return (
-        <>
-          {item.type === 'thought' ? (
-            <FadeIn client:visible delay={index * 0.01} yOffset={5}>
-              <ThoughtRenderer entry={item.entry} />
-            </FadeIn>
-          ) : item.type === 'now' ? (
-            <FadeIn client:visible delay={index * 0.01} yOffset={5}>
-              <NowItemRenderer entry={item.entry} />
-            </FadeIn>
-          ) : item.type === 'image' ? (
-            <FadeIn client:visible delay={index * 0.01} yOffset={5}>
-              <div class="image-container">
-                <ImageRenderer entry={item.entry} />
-              </div>
-            </FadeIn>
-          ) : item.type === 'idea' ? (
-            <FadeIn client:visible delay={index * 0.01} yOffset={5}>
-              <IdeaRenderer entry={item.entry} />
-            </FadeIn>
-          ) : (
-            <FadeIn client:visible delay={index * 0.01} yOffset={5}>
-              {(() => {
-                const logEntry = item.entry;
-                const { isDoubleWidth } = calculateDoubleWidth(logEntry.id, feedEntries);
-
-                return (
-                  <article
-                    class={`log-entry ${isDoubleWidth ? 'double-width' : ''} ${index === 0 ? 'featured' : ''}`}
-                    data-href={`/${logEntry.id}`}
-                    role="button"
-                    tabIndex="0"
-                    aria-label={`Read article: ${'title' in logEntry.data ? logEntry.data.title : 'Log Entry'}`}
-                  >
-                    <div class="entry-meta">
-                      <time datetime={(logEntry.data.updated || logEntry.data.date).toISOString()}>
-                        {logEntry.data.updated ? (
-                          <>
-                            <span class="updated-indicator">Updated</span>{' '}
-                            {new Date(logEntry.data.updated).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
-                          </>
-                        ) : (
-                          new Date(logEntry.data.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
-                        )}
-                      </time>
-                    </div>
-                    <div class="log-entry-content">
-                      <h2>{'title' in logEntry.data ? logEntry.data.title : 'Log Entry'}</h2>
-                      {'tldr' in logEntry.data && logEntry.data.tldr && (
-                        <p class="log-entry-tldr">{logEntry.data.tldr}</p>
-                      )}
-                    </div>
-                    <div class="entry-tags">
-                      {'tags' in logEntry.data && logEntry.data.tags && logEntry.data.tags.length > 0 && (
-                        <div class="tag-container">
-                          {logEntry.data.tags.map((tag: string) => {
-                              const formattedTag = tag;
-                              return (
-                                <AnimatedTag
-                                  client:visible
-                                  href={`/tags/${tag.toLowerCase()}`}
-                                  tagText={formattedTag}
-                                />
-                              );
-                            })}
-                          </div>
-                        )}
-                      </div>
-                  </article>
-                );
-              })()}
-            </FadeIn>
-          )}
-        </>
-      );
-    })}
-  </div>
-
-  {totalPages > 1 && (
-    <nav class="pagination" aria-label="Pagination" style="margin-top: var(--space-lg); margin-bottom: var(--space-lg);">
-      {currentPage > 1 && (
-        <a href={`/?page=${currentPage - 1}`} class="pagination-prev" aria-label="Previous page">←</a>
-      )}
-      {paginationItems.map((item, i) => (
-        typeof item === 'string' ? (
-          <span class="pagination-ellipsis">...</span>
-        ) : (
-          <a
-            href={`/?page=${item}`}
-            class={`pagination-page ${item === currentPage ? 'pagination-active' : ''}`}
-            aria-current={item === currentPage ? 'page' : undefined}
-          >
-            {item}
-          </a>
-        )
-      ))}
-      {currentPage < totalPages && (
-        <a href={`/?page=${currentPage + 1}`} class="pagination-next" aria-label="Next page">→</a>
-      )}
-    </nav>
-  )}
-  {/* Insert newsletter at the bottom */}
-  <FadeIn client:visible delay={0} yOffset={5}>
-    <div class="newsletter-section">
-      <NewsletterSubscribe showButton={true} />
+<BaseLayout title="Nikola Balić — Tools for agents. Notes for humans." description="I build AI systems and write about what I learn. Experiments, useful tools, and the details that make them work." fullWidth={true}>
+  {!showFeed ? <>
+    <div class="intro-note"><span>A working collection of tools and ideas.</span><span class="mono">Build → test → write</span></div>
+    <section class="workbench-hero" aria-labelledby="intro-heading">
+      <div><h1 id="intro-heading">Tools for agents.<br />Notes for humans.</h1>
+        <p>I build AI systems and write about what I learn. Experiments, useful tools, and the details that make them work.</p>
+        <div class="hero-links"><a class="button-primary" href="#writing">Explore the writing ↓</a><a href="/projects">See my projects ↗</a></div>
+      </div>
+      {featuredProject && <figure class="project-specimen">
+        <div class="specimen-heading"><strong>Inside {featuredProject.title}</strong><span>{featuredProject.attribution || 'Featured project'}</span></div>
+        {featuredProject.image && <a href={featuredProject.article || featuredProject.url}><img src={featuredProject.image.src} width={featuredProject.image.width} height={featuredProject.image.height} alt={featuredProject.image.alt} fetchpriority="high" /></a>}
+        {featuredProject.example && <pre class="project-example"><code>{featuredProject.example}</code></pre>}
+        <figcaption>{featuredProject.description}<a href={featuredProject.article || featuredProject.url}>{featuredProject.article ? 'Read the experiment' : 'View the source'} ↗</a></figcaption>
+      </figure>}
+    </section>
+    <section id="writing"><div class="section-heading"><h2>Selected writing</h2><a href="/log">Browse the archive ↗</a></div>
+      <ul class="log-list">{selectedEntries.map(entry => entry && <LogItem entry={entry} />)}</ul>
+    </section>
+    <div class="home-secondary">
+      <section><h2>Small tools. Specific problems.</h2>
+        {homepageProjects.map(project => <a class="small-project" href={project.url}><strong>{project.title} ↗</strong><span>{project.description}</span></a>)}
+      </section>
+      <section><h2>An ongoing practice</h2><p>Building, testing, and writing in public. My now page keeps track of what has my attention.</p><a href="/now">See what I’m working on ↗</a><p><a href="/?page=1">Browse all activity ↗</a></p></section>
     </div>
-  </FadeIn>
-
-  {/* AI Summary buttons */}
-  <FadeIn client:visible delay={0} yOffset={5}>
-    <AISummaryButtons />
-  </FadeIn>
+  </> : <>
+    <header class="page-header"><a href="/">← Overview</a><h1>All activity</h1><p>Articles, thoughts, images, ideas, and updates.</p></header>
+    <div class="activity-feed">
+      {feedEntries.map(item => <div class="activity-item">
+        {item.type === 'log' ? <ul class="log-list"><LogItem entry={item.entry as any} /></ul>
+          : item.type === 'thought' ? <ThoughtRenderer entry={item.entry} />
+          : item.type === 'now' ? <NowItemRenderer entry={item.entry} />
+          : item.type === 'image' ? <ImageRenderer entry={item.entry} />
+          : <IdeaRenderer entry={item.entry} />}
+      </div>)}
+      {!feedEntries.length && <p>No entries on this page. <a href="/?page=1">Return to the first page.</a></p>}
+    </div>
+    <nav class="pagination" aria-label="Activity pages">
+      {currentPage > 1 && <a href={`/?page=${currentPage - 1}`} aria-label="Previous page">←</a>}
+      {paginationItems.map(item => typeof item === 'string' ? <span>…</span> : <a href={`/?page=${item}`} aria-current={item === currentPage ? 'page' : undefined}>{item}</a>)}
+      {currentPage < totalPages && <a href={`/?page=${currentPage + 1}`} aria-label="Next page">→</a>}
+    </nav>
+  </>}
+  <NewsletterSubscribe />
 </BaseLayout>
-
-<script>
-  // @ts-nocheck
-  // Render feed entries dynamically (client-side)
-  window.renderFeed = function(entries, container) {
-    // This function should clear and re-render the feedTimeline div
-    // For brevity, we'll just reload the page if search is cleared, or show a message if no results
-    if (!entries.length) {
-      container.innerHTML = '<div style="text-align:center;color:var(--color-text-muted);padding:2rem;">No results found.</div>';
-      return;
-    }
-    // Optionally, you can render a simplified version or re-use server-rendered HTML snippets
-    // For now, reload page if search is cleared (fallback)
-    location.reload();
-  };
-  // @ts-nocheck
-  // Initialize functionality for the interactive elements
-  document.addEventListener('DOMContentLoaded', () => {
-    // Handle card clicks and keyboard navigation for log entries
-    const logEntries = document.querySelectorAll('.log-entry');
-    const thoughtItems = document.querySelectorAll('.thought-item');
-    const nowItems = document.querySelectorAll('.now-item');
-    const ideaCards = document.querySelectorAll('.idea-card');
-
-    // Function to handle clickable cards
-    const makeCardClickable = (card) => {
-      // Handle card clicks
-      card.addEventListener('click', (e) => {
-        // Check if click is on a tag link (only for log entries)
-        const isTagClick = e.target.closest('.entry-tags .tag');
-        if (!isTagClick) {
-          // Navigate to destination
-          const href = card.getAttribute('data-href');
-          if (href) {
-            window.location.href = href;
-          }
-        }
-      });
-
-      // Handle keyboard navigation
-      card.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          const href = card.getAttribute('data-href');
-          if (href) {
-            window.location.href = href;
-          }
-        }
-      });
-    };
-
-    // Make log entries clickable
-    logEntries.forEach(makeCardClickable);
-
-    // Make thought items clickable
-    thoughtItems.forEach(makeCardClickable);
-
-    // Make now items clickable
-    nowItems.forEach(makeCardClickable);
-
-    // Make idea cards clickable
-    ideaCards.forEach(makeCardClickable);
-
-    // Newsletter form handling
-    const newsletterForm = document.querySelector('.newsletter-form');
-    if (newsletterForm) {
-      newsletterForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        // In a real implementation, this would send the form data to a server
-        const emailInput = newsletterForm.querySelector('input[type="email"]');
-        if (emailInput && emailInput.value) {
-          // Show success message (replace alert with better UX)
-          const successMsg = document.createElement('div');
-          successMsg.textContent = 'Thank you for subscribing!';
-          successMsg.style.cssText = 'color: var(--color-accent1); font-size: 0.9rem; margin-top: 0.5rem;';
-          emailInput.parentNode.appendChild(successMsg);
-          setTimeout(() => successMsg.remove(), 3000);
-          emailInput.value = '';
-        }
-      });
-    }
-  });
-</script>

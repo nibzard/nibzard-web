@@ -35,6 +35,7 @@ if (latestEntry) {
           <p>No updates available at the moment. Check back soon!</p>
         </div>
       )}
+      {nowEntries.length > 1 && <details class="now-archive"><summary>Earlier updates</summary><ul>{nowEntries.slice(1).map(entry => <li><a href={`/now/${entry.id}`}>{entry.data.date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</a></li>)}</ul></details>}
     </section>
   </FadeIn>
 </BaseLayout>

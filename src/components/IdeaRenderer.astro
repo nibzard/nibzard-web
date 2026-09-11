@@ -14,13 +14,7 @@ const { Content } = await render(entry);
 const slug = entry.id.split('/').pop().replace('.md', '');
 ---
 
-<article
-  class="idea-card"
-  data-href={`/idea/${slug}`}
-  role="button"
-  tabIndex="0"
-  aria-label={`Read idea: ${entry.data.title}`}
->
+<article class="idea-card">
   <div class="entry-meta">
     <time datetime={entry.data.date.toISOString()}>
       {new Date(entry.data.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
@@ -30,7 +24,7 @@ const slug = entry.id.split('/').pop().replace('.md', '');
 
   <div class="idea-content">
     <p class="idea-category">{entry.data.category || 'Idea'}</p>
-    <h2 class="idea-title">{entry.data.title}</h2>
+    {Astro.url.pathname.startsWith('/idea/') ? <h1 class="idea-title">{entry.data.title}</h1> : <h2 class="idea-title"><a href={`/idea/${slug}`}>{entry.data.title}</a></h2>}
     {entry.data.subtitle && <p class="idea-subtitle">{entry.data.subtitle}</p>}
     <div class="idea-description">
       <Content />

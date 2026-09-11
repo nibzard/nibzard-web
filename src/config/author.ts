@@ -1,3 +1,5 @@
+import { profile } from './career';
+
 export interface AuthorInfo {
   "@type": "Person";
   name: string;
@@ -33,29 +35,24 @@ export interface AuthorInfo {
 
 export const AUTHOR_INFO: AuthorInfo = {
   "@type": "Person",
-  name: "Nikola Balić",
+  name: profile.name,
   alternateName: [
     "Nikola Balic",
     "Nikola Balic (nibzard)",
     "Nikola Balić (nibzard)",
     "nibzard"
   ],
-  url: "https://nibzard.com",
+  url: "https://nibzard.com/about",
   image: "https://nibzard.com/avatar/avatar-nibzard.png",
-  description: "Building go-to-market engines for AI-driven products with purpose. Expert in scaling innovation ecosystems and digital transformation.",
-  jobTitle: "Growth Marketing Leader & AI Strategy Consultant",
+  description: profile.description,
+  jobTitle: profile.currentRole,
   worksFor: {
     "@type": "Organization",
-    name: "Independent Consultant",
+    name: profile.employer.name,
+    url: profile.employer.url,
   },
-  sameAs: [
-    "https://x.com/nibzard",
-    "https://www.linkedin.com/in/nikolabalic/",
-    "https://github.com/nibzard",
-    "https://scholar.google.com/citations?user=JT3JHokAAAAJ&hl=en&oi=ao",
-    "https://www.researchgate.net/profile/Nikola_Balic",
-    "https://orcid.org/0000-0002-4405-1470"
-  ],
+  sameAs: [...profile.links, ...profile.researchLinks].map(link => link.url),
+  email: profile.email,
   knowsAbout: [
     "Go-to-Market Strategy",
     "Product Market Fit",

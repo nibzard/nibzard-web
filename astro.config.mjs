@@ -17,8 +17,8 @@ const siteUrl = 'https://nibzard.com';
 export default defineConfig({
   integrations: [mdx(), react(), sitemap({
     filter: (page) => {
-      // Include all pages by default
-      return true;
+      // The retired biography has a permanent redirect.
+      return new URL(page).pathname.replace(/\/$/, '') !== '/bio';
     },
     serialize: (item) => {
       // Set priority based on page type
@@ -30,6 +30,8 @@ export default defineConfig({
     }
   })],
   site: siteUrl,
+  server: { allowedHosts: ['claude-code-vm.tailef8c96.ts.net'] },
+  devToolbar: { enabled: false },
   // output: 'static',
   output: 'server',
 

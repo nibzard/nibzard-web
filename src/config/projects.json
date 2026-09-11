@@ -1,0 +1,168 @@
+{
+  "$schema": "./projects.schema.json",
+  "owner": "nibzard",
+  "defaults": {
+    "visibility": "hidden"
+  },
+  "repos": {
+    "nibzard/riftkit": {
+      "visibility": "visible"
+    },
+    "nibzard/ctxt": {
+      "visibility": "visible",
+      "description": "Turn any webpage into perfect LLM input with shareable, permanent links"
+    },
+    "nibzard/langchain-steel": {
+      "visibility": "visible",
+      "description": "AI-first browser automation and web scraping tools for LangChain with advanced document loading capabilities"
+    },
+    "nibzard/berghain-colab": {
+      "visibility": "visible",
+      "description": "Train a 4.8M parameter dual-head transformer on Google Colab to optimize nightclub admission strategies"
+    },
+    "nibzard/hn-karma-tracker": {
+      "visibility": "visible",
+      "description": "Automatically tracks and visualizes a Hacker News user's karma points over time using GitHub Actions"
+    },
+    "nibzard/ospec": {
+      "visibility": "visible"
+    },
+    "nibzard/toneadjuster": {
+      "visibility": "visible"
+    },
+    "nibzard/agentprobe": {
+      "visibility": "visible",
+      "title": "AgentProbe",
+      "description": "Test how AI agents use command-line tools. Inspect the steps, find the friction, and compare runs.",
+      "article": "/agentprobe",
+      "image": {
+        "src": "/images/20250728_agentprobe.jpeg",
+        "alt": "An AgentProbe deployment report with review findings.",
+        "width": 1954,
+        "height": 1248
+      }
+    },
+    "nibzard/claude-threads": {
+      "visibility": "visible"
+    },
+    "nibzard/awesome-agentic-patterns": {
+      "visibility": "visible"
+    },
+    "nibzard/llmdb": {
+      "visibility": "visible"
+    },
+    "nibzard/bucket": {
+      "visibility": "visible",
+      "description": "Simple storage and organization tool"
+    },
+    "nibzard/lmdb-mcp": {
+      "visibility": "visible"
+    },
+    "nibzard/lmdb-tui": {
+      "visibility": "visible"
+    },
+    "nibzard/llm-loop": {
+      "visibility": "visible"
+    },
+    "nibzard/agent-perceptions": {
+      "visibility": "visible",
+      "description": "Research on how AI agents perceive and process information"
+    },
+    "nibzard/labruno-agent": {
+      "visibility": "visible"
+    },
+    "nibzard/ai-sandbox-benchmark-2": {
+      "visibility": "visible"
+    },
+    "nibzard/countgpt": {
+      "visibility": "visible"
+    },
+    "nibzard/scananas": {
+      "visibility": "visible"
+    },
+    "nibzard/slidegauge": {
+      "visibility": "visible"
+    },
+    "nibzard/openruntime": {
+      "visibility": "visible"
+    },
+    "nibzard/devcontainer-generator": {
+      "visibility": "visible"
+    },
+    "nibzard/scribe": {
+      "visibility": "visible"
+    },
+    "nibzard/demig": {
+      "visibility": "visible",
+      "description": "Multi-agent co-emergence experiment exploring how identities emerge through constrained communication"
+    },
+    "nibzard/anytime": {
+      "visibility": "visible",
+      "description": "Peeking-safe streaming inference for A/B tests and online metrics"
+    },
+    "nibzard/oas": {
+      "visibility": "visible"
+    },
+    "nibzard/plandb": {
+      "visibility": "visible",
+      "description": "Database built from scratch in Zig as an educational project with benchmarks as source of truth"
+    },
+    "daytona/ai-enablement-stack": {
+      "visibility": "visible",
+      "title": "AI Enablement Stack"
+    },
+    "nibzard/skills": {
+      "visibility": "visible"
+    },
+    "steel-experiments/wire": {
+      "visibility": "visible",
+      "title": "Wire",
+      "description": "Turn a browser task into a recorded run and a reusable script.",
+      "featured": true,
+      "homepage": true,
+      "order": 1,
+      "attribution": "At Steel",
+      "example": "wire run --objective \"Go to example.com and return the heading text\"\n\nwire craft --run-id <run-id> --standalone --out replay.mjs"
+    },
+    "nibzard/skillctl": {
+      "visibility": "visible",
+      "title": "skillctl",
+      "description": "Manage skills across coding agents. Install, sync, and inspect what each agent uses.",
+      "featured": true,
+      "homepage": true,
+      "order": 2
+    },
+    "steel-experiments/durable-researcher": {
+      "visibility": "visible",
+      "title": "Durable Researcher",
+      "description": "Research the web, save progress, and resume interrupted work to produce sourced reports.",
+      "featured": true,
+      "homepage": true,
+      "order": 3,
+      "attribution": "At Steel"
+    },
+    "steel-experiments/linkripper": {
+      "visibility": "visible",
+      "title": "Linkripper",
+      "description": "Keep a personal web archive with page captures, Markdown, and screenshots.",
+      "featured": true,
+      "homepage": false,
+      "order": 4,
+      "attribution": "At Steel"
+    },
+    "nibzard/openapi-agent-lab": {
+      "visibility": "visible",
+      "title": "OpenAPI Agent Lab",
+      "description": "Build local mock environments and reproducible evaluations for AI agents from an OpenAPI document."
+    },
+    "steel-dev/pi-steel": {
+      "visibility": "visible",
+      "title": "Pi Steel",
+      "description": "Official Steel browser tools for the Pi coding agent.",
+      "attribution": "At Steel"
+    }
+  },
+  "organizations": [
+    "steel-experiments"
+  ]
+}

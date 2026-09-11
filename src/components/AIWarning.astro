@@ -12,47 +12,7 @@
 </div>
 
 <style>
-  .ai-warning {
-    display: flex;
-    align-items: flex-start;
-    gap: var(--space-sm);
-    background-color: #FFF3E0;
-    border: 2px solid #FF9800;
-    border-radius: var(--border-radius);
-    padding: var(--space-md);
-    margin: var(--space-lg) 0;
-    font-family: var(--font-sans);
-    box-shadow: 0 2px 4px rgba(255, 152, 0, 0.1);
-  }
-
-  .ai-warning-icon {
-    font-size: 1.5rem;
-    flex-shrink: 0;
-    margin-top: 0.1rem;
-  }
-
-  .ai-warning-content {
-    flex: 1;
-  }
-
-  .ai-warning-content strong {
-    color: #E65100;
-    font-weight: 600;
-    display: block;
-    margin-bottom: var(--space-xs);
-  }
-
-  .ai-warning-content p {
-    margin: 0;
-    color: #E65100;
-    line-height: 1.4;
-    font-size: 0.9rem;
-  }
-
-  /* Ensure it's prominent on mobile */
-  @media (max-width: 768px) {
-    .ai-warning {
-      margin: var(--space-md) 0;
-    }
-  }
+  .ai-warning { display: flex; gap: 12px; padding: 20px; margin: 24px 0; background: var(--color-background-alt); border-radius: 4px; }
+  .ai-warning-content strong { display: block; margin-bottom: 6px; }
+  .ai-warning-content p { margin: 0; font-size: 14px; color: var(--color-text-muted); }
 </style>

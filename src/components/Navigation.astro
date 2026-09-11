@@ -1,29 +1,12 @@
 ---
-import ThemeToggle from './ThemeToggle.jsx';
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const writingRoute = path.startsWith('/tags') || path.startsWith('/thoughts') || (!['/', '/projects', '/about', '/bio', '/cv', '/now', '/search', '/styles', '/unsubscribe', '/404'].includes(path) && !path.startsWith('/now/') && !path.startsWith('/images/') && !path.startsWith('/idea/'));
+const items = [
+  { href: '/', label: 'Overview' }, { href: '/log', label: 'Writing' },
+  { href: '/projects', label: 'Projects' }, { href: '/now', label: 'Now' },
+  { href: '/about', label: 'About' },
+];
 ---
-
-<nav class="site-nav">
-  <ul>
-    <li><a href="/" aria-label="Home">~/</a></li>
-    <li><a href="/log" aria-label="Log">log</a></li>
-    <li><a href="/about" aria-label="About">about</a></li>
-    <li><a href="/projects" aria-label="Projects">projects</a></li>
-    <li><a href="/now" aria-label="Now">now</a></li>
-    <li>
-      <button 
-        id="search-trigger" 
-        class="search-icon-button"
-        aria-label="Open search"
-        type="button"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="20" height="20">
-          <circle cx="11" cy="11" r="7" stroke-width="2"/>
-          <line x1="16.5" y1="16.5" x2="21" y2="21" stroke-width="2"/>
-        </svg>
-      </button>
-    </li>
-    <li>
-      <ThemeToggle client:idle />
-    </li>
-  </ul>
+<nav class="site-nav" aria-label="Main navigation">
+  {items.map(({ href, label }) => <a href={href} aria-current={path === href || (href === '/log' && writingRoute) || (href === '/now' && path.startsWith('/now/')) || (href === '/about' && ['/bio', '/cv'].includes(path)) ? 'page' : undefined}>{label}</a>)}
 </nav>

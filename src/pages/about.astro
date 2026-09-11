@@ -1,72 +1,60 @@
 ---
 export const prerender = true;
 import BaseLayout from '../layouts/BaseLayout.astro';
-import FadeIn from '../components/animations/FadeIn.jsx';
+import { profile } from '../config/career';
 ---
-
-<BaseLayout title="About - nibzard" description="Nikola Balić - I build AI systems and write about what I learn">
-  <FadeIn client:visible>
-    <section>
-      <h1>Nikola Balić</h1>
-      <p>I build AI systems and write about what I learn.</p>
-
-      <h2>What I Build</h2>
-      <p>I ship AI experiments and production systems. Recent work:</p>
-      <ul>
-        <li><strong>Looper</strong> – Autonomous coding system with review gates and deterministic workflows</li>
-        <li><strong>AgentProbe</strong> – Open-source tool for testing AI agent CLI interactions</li>
-        <li><strong>Agentic AI Handbook</strong> – 113 production-ready patterns for multi-agent systems</li>
-        <li><strong>This site</strong> – Built and maintained with AI coding agents</li>
-      </ul>
-      <p>I've shipped 50+ AI projects in the past year, documenting what actually works in production.</p>
-
-      <h2>Current Focus</h2>
-      <ul>
-        <li><strong>Multi-agent orchestration</strong> – How autonomous agents coordinate at scale</li>
-        <li><strong>Agent-friendly infrastructure</strong> – Type safety, CLIs, machine-readable docs</li>
-        <li><strong>Performance patterns</strong> – 5x improvements through strategic coordination</li>
-        <li><strong>AI-native development</strong> – What changes when AI is your primary collaborator</li>
-      </ul>
-
-      <h2>Writing & Research</h2>
-      <p>I write detailed technical analysis:</p>
-      <ul>
-        <li><a href="/agentic-ai-handbook">"The Agentic AI Handbook"</a> – 113 battle-tested patterns</li>
-        <li>Infrastructure deep-dives – Serverless costs, caching strategies</li>
-        <li>AI development patterns – What Sourcegraph learned, bottleneck analysis</li>
-        <li>Technology adoption – 20-year cycles and AI's acceleration</li>
-      </ul>
-      <p>Everything at <a href="/log">/log</a> – no fluff, just detailed technical writeups.</p>
-
-      <h2>Work</h2>
-      <p>I've worked with:</p>
-      <ul>
-        <li><strong>Daytona</strong> – AI runtimes for agentic workflows, open source tooling</li>
-        <li><strong>Codeanywhere</strong> – Cloud development environments</li>
-        <li><strong>Steel</strong> – Developer infrastructure</li>
-        <li><strong>Numarics</strong> – Early-stage fintech</li>
-      </ul>
-      <p>Growth roles, finding PMF through PLG and GTM strategies for developer tools and AI infrastructure.</p>
-
-      <h2>Background</h2>
-      <ul>
-        <li>Lecturer in Data Science – NoSQL, Complex Network Analysis, SWE 101, Scientific Programming</li>
-        <li>Doctoral research – Digital Transformation (published academic work)</li>
-        <li>14 years in tech – Started as engineer, stayed technical</li>
-      </ul>
-      <p>For formal credentials: <a href="/bio">/bio</a></p>
-
-      <h2>Right Now</h2>
-      <p>Experimenting with autonomous agents that run for hours without human intervention, content delivery systems that serve both humans and AI agents, and performance optimization for AI-native workflows.</p>
-      <p>I write about what works, what doesn't, and why.</p>
-
-      <h2>Connect</h2>
-      <p>
-        <a href="https://x.com/nibzard" target="_blank" rel="noopener noreferrer me">X</a> ·
-        <a href="https://github.com/nibzard" target="_blank" rel="noopener noreferrer me">GitHub</a> ·
-        <a href="https://www.linkedin.com/in/nikolabalic/" target="_blank" rel="noopener noreferrer me">LinkedIn</a> ·
-        <a href="/log">/log</a>
-      </p>
+<BaseLayout title="About — Nikola Balić" description={profile.description}>
+  <article class="about-page">
+    <header class="about-header">
+      <div><p class="eyebrow">About</p><h1>{profile.name}</h1><p class="location">{profile.handle} · {profile.location}</p></div>
+      <img src="/images/nikola-balic-large.jpg" alt="Portrait of Nikola Balić" width="112" height="140" />
+    </header>
+    <p class="about-lead">I build tools, work on how people find and use them, and write about what I learn.</p>
+    <div class="about-prose">
+      <p>I’m the {profile.currentRole.toLowerCase()} at <a href={profile.employer.url}>{profile.employer.name}</a>, working on browser infrastructure for AI agents. Before that, I led growth at Daytona and worked with Codeanywhere.</p>
+      <p>Much of my earlier career was at the University of Split, helping researchers turn their work into something people could use. My background also includes teaching data science and researching digital transformation.</p>
+      <p>I still spend a lot of time building. <a href="/agentprobe">AgentProbe</a> started with a question: how well can an agent actually use a command-line tool? This site is where I share those experiments, including the parts that go wrong.</p>
+      <p>Away from the computer, I fish. Sometimes I come back with fewer sinkers.</p>
+    </div>
+    <nav class="about-destinations" aria-label="More about Nikola">
+      <a href="/cv"><span>Curriculum vitae</span><span>Experience, teaching, and research <span aria-hidden="true">↗</span></span></a>
+      <a href="/now"><span>Now</span><span>What I’m working on <span aria-hidden="true">↗</span></span></a>
+      <a href="/projects"><span>Projects</span><span>Tools and experiments <span aria-hidden="true">↗</span></span></a>
+    </nav>
+    <section class="about-contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Get in touch</h2>
+      <p><a href={`mailto:${profile.email}`}>{profile.email}</a></p>
+      <div class="profile-links">{profile.links.map(link => <a href={link.url} rel="me">{link.label}</a>)}</div>
     </section>
-  </FadeIn>
+    <details class="speaker-details">
+      <summary>For talks and events</summary>
+      <p>{profile.speakerBio}</p>
+      <a href="/images/nikola-balic-large.jpg" download="nikola-balic.jpg">Download a headshot</a>
+    </details>
+  </article>
 </BaseLayout>
+<style>
+  .about-header { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-bottom: 38px; }
+  .eyebrow { color: var(--color-text-muted); font-size: 13px; margin: 0 0 18px; }
+  .about-header h1 { margin-bottom: 12px; }
+  .location { color: var(--color-text-muted); font-size: 14px; margin: 0; }
+  .about-header img { width: 112px; height: 140px; object-fit: cover; border-radius: 3px; }
+  .about-lead { font-size: clamp(23px, 2.5vw, 29px); line-height: 1.45; letter-spacing: -.02em; max-width: 40ch; margin-bottom: 30px; }
+  .about-prose { font-size: 18px; line-height: 1.75; max-width: 62ch; }
+  .about-destinations { margin: 38px 0; border-top: 1px solid var(--color-border); }
+  .about-destinations a { display: grid; grid-template-columns: 180px 1fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--color-border); text-decoration: none; }
+  .about-destinations a > span:last-child { color: var(--color-text-muted); font-size: 14px; }
+  .about-destinations a:hover > span:first-child { text-decoration: underline; }
+  .about-contact h2 { font-size: 22px; }
+  .about-contact p { margin-bottom: 10px; }
+  .profile-links { display: flex; flex-wrap: wrap; gap: 22px; font-size: 14px; }
+  .speaker-details { margin-top: 38px; border-top: 1px solid var(--color-border); padding-top: 20px; font-size: 14px; }
+  .speaker-details summary { cursor: pointer; color: var(--color-text-muted); }
+  .speaker-details p { margin-top: 20px; max-width: 65ch; }
+  @media (max-width: 500px) {
+    .about-header { gap: 16px; }
+    .about-header img { width: 76px; height: 96px; }
+    .about-header h1 { font-size: 36px; }
+    .about-destinations a { grid-template-columns: 1fr; gap: 4px; }
+  }
+</style>

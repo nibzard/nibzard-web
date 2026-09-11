@@ -2,7 +2,6 @@
 export const prerender = true;
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
-import FadeIn from '../../components/animations/FadeIn.jsx';
 import LogItem from '../../components/LogItem.astro';
 
 // Get all log entries that aren't drafts and aren't CLAUDE.md
@@ -13,20 +12,20 @@ const logEntries = await getCollection('log', ({ data, id }) => {
 // Sort entries by date (newest first)
 logEntries.sort((a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf());
 ---
-<BaseLayout title="Log - nibzard" description="A collection of thoughts, updates, and project logs.">
-  <FadeIn client:visible>
+<BaseLayout title="Writing - nibzard" description="A collection of thoughts, updates, and project logs.">
+
     <section class="log-header">
-      <h1>Log</h1>
-      <p>Chronicles of development, ideas, and musings.</p>
+      <h1>Writing</h1>
+      <p>Experiments, useful tools, and what I learn from building them.</p>
     </section>
-  </FadeIn>
+
 
   <ul class="log-list">
     {logEntries.length === 0 && <p>No log entries yet. Stay tuned!</p>}
     {logEntries.map((entry, index) => (
-      <FadeIn client:visible delay={0.05 * index}>
+
         <LogItem entry={entry} />
-      </FadeIn>
+
     ))}
   </ul>
 </BaseLayout>

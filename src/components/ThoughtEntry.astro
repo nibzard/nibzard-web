@@ -27,36 +27,3 @@ const { entry } = Astro.props;
     </p>
   </div>
 </div>
-
-<style>
-  .thought-entry {
-    margin-bottom: 2rem;
-  }
-
-  .thought-meta {
-    margin-top: 2rem;
-    font-style: italic;
-    color: var(--color-text-muted);
-  }
-
-  .thought-date {
-    font-size: 0.9rem;
-  }
-
-  .thought-content {
-    margin-top: var(--space-lg);
-  }
-
-  .thought-content :global(blockquote) {
-    font-size: 1.25rem;
-    line-height: 1.7;
-    font-style: italic;
-    color: var(--color-text);
-    margin: 0;
-    padding: var(--space-xl) 0;
-  }
-
-  .thought-content :global(blockquote p) {
-    margin-bottom: var(--space-md);
-  }
-</style>

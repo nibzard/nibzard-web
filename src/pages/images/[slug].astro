@@ -1,0 +1,15 @@
+---
+import { getEntry, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ImageRenderer from '../../components/ImageRenderer.astro';
+import NotFoundContent from '../../components/NotFoundContent.astro';
+const { slug } = Astro.params;
+const candidate = slug ? await getEntry('images', slug) : undefined;
+const entry = candidate && !candidate.data.draft ? candidate : undefined;
+if (!entry) Astro.response.status = 404;
+const rendered = entry ? await render(entry) : undefined;
+const Content = rendered?.Content;
+---
+<BaseLayout title="Image — nibzard">
+  {entry ? <><a class="back-link" href="/?page=1">← All activity</a><h1>Image notes</h1><ImageRenderer entry={entry}>{Content && <Content />}</ImageRenderer></> : <NotFoundContent />}
+</BaseLayout>

@@ -1,0 +1,122 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Project editorial settings",
+  "type": "object",
+  "required": [
+    "owner",
+    "defaults",
+    "repos"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "owner": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9-]+$"
+    },
+    "defaults": {
+      "type": "object",
+      "required": [
+        "visibility"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "visibility": {
+          "enum": [
+            "hidden",
+            "visible"
+          ]
+        }
+      }
+    },
+    "repos": {
+      "type": "object",
+      "propertyNames": {
+        "pattern": "^[a-zA-Z0-9-]+/[a-zA-Z0-9._-]+$"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "visibility": {
+            "enum": [
+              "hidden",
+              "visible"
+            ]
+          },
+          "featured": {
+            "type": "boolean",
+            "default": false
+          },
+          "homepage": {
+            "type": "boolean",
+            "default": false
+          },
+          "order": {
+            "type": "number"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "topics": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "article": {
+            "type": "string",
+            "pattern": "^/(?!/)[^\\s]*$"
+          },
+          "image": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "src",
+              "alt",
+              "width",
+              "height"
+            ],
+            "properties": {
+              "src": {
+                "type": "string",
+                "pattern": "^/(?!/)[^\\s]*$"
+              },
+              "alt": {
+                "type": "string",
+                "minLength": 1
+              },
+              "width": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "height": {
+                "type": "integer",
+                "minimum": 1
+              }
+            }
+          },
+          "attribution": {
+            "type": "string"
+          },
+          "example": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "organizations": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-zA-Z0-9-]+$"
+      }
+    }
+  }
+}

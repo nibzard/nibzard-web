@@ -1,90 +1,17 @@
 ---
 name: add-project
-description: Add new GitHub projects to nibzard-web projects page. Fetches repo metadata via gh CLI, generates appropriate topics, and formats entries for src/pages/projects.astro. Use when user says "add project", "add to projects page", or mentions adding GitHub repos to the site.
+description: Add or curate GitHub projects on nibzard-web using the project sidecar and GitHub metadata sync.
 allowed-tools: Bash, Read, Edit
 ---
 
-# Add Project to nibzard-web
+# Add a project to nibzard-web
 
-## Prerequisites
+GitHub metadata is synced automatically. Do not add repository arrays to Astro pages.
 
-Ensure you have the `gh` CLI installed and authenticated:
-```bash
-gh auth status
-```
+1. Read `src/config/projects.json` and `docs/projects.md`.
+2. Add the full `owner/repository` key to `repos` with `"visibility": "visible"`. Organization repositories are supported. Add an organization to `organizations` for automatic public discovery; its new projects still use the default visibility.
+3. Add only needed editorial overrides. Use `featured`, `order`, `homepage`, `title`, `description`, `topics`, `article`, `image`, `attribution`, and `example` as documented. Hidden projects must remain hidden everywhere.
+4. Run `pnpm run projects:sync --strict` to verify the public repository and refresh the snapshot. If a repository moved, update its key to the current name. Never make a private repository visible.
+5. Run `pnpm run test:projects` and `pnpm run build`.
 
-If not authenticated, run `gh auth login` first.
-
-## Quick workflow
-
-For each GitHub repo to add:
-
-1. **Fetch metadata** using gh CLI:
-   ```bash
-   gh repo view OWNER/REPO --json name,description,repositoryTopics,primaryLanguage,languages,createdAt,updatedAt
-   ```
-
-   If this fails with "repository not found", verify the repo exists and is accessible.
-
-2. **Fetch README** if description is empty or missing:
-   ```bash
-   gh api repos/OWNER/REPO/readme | jq -r '.content' | base64 -d | head -50
-   ```
-
-3. **Generate topics** if `repositoryTopics` is null:
-   - Derive from: repo description, README content, primary language
-   - Use 3-5 relevant lowercase tags (e.g., "ai", "database", "zig", "embedded")
-
-4. **Read the projects file** to understand current format:
-   ```bash
-   src/pages/projects.astro
-   ```
-
-5. **Add the entry** to the `projects` array using this format:
-   ```javascript
-   {
-     title: "repo-name",
-     url: "https://github.com/OWNER/REPO",
-     description: "Brief description from gh or README",
-     topics: ["topic1", "topic2", "topic3"],
-     date: "YYYY-MM-DD"  // use createdAt date
-   }
-   ```
-
-6. **Insert before** the closing `].sort(...)` line
-
-## Date format
-
-Use `createdAt` from gh CLI, formatted as `YYYY-MM-DD` (extract from ISO date like "2026-01-12T11:00:03Z").
-
-## Verification
-
-After adding, run:
-```bash
-pnpm run build
-```
-
-## Example
-
-```bash
-# Fetch repo info
-gh repo view nibzard/scribe --json name,description,repositoryTopics,primaryLanguage,languages,createdAt,updatedAt
-
-# Result: description="Distraction-Free Writing firmware for the M5stack ESP32 based Tab5 device", createdAt="2026-01-12T11:00:03Z"
-
-# Entry to add:
-{
-  title: "scribe",
-  url: "https://github.com/nibzard/scribe",
-  description: "Distraction-Free Writing firmware for the M5stack ESP32 based Tab5 device",
-  topics: ["firmware", "embedded", "esp32", "writing", "m5stack"],
-  date: "2026-01-12"
-}
-```
-
-## Notes
-
-- The array is auto-sorted by date (newest first)
-- Use kebab-case for title matching repo name
-- Keep descriptions under ~100 characters
-- Topics should be single words or hyphenated terms
+New repositories stay hidden by default. Source metadata lives in `src/data/github-projects.json`. Do not manually edit the generated snapshot. No authenticated GitHub CLI session is required; the sync can read public repositories without a token.
