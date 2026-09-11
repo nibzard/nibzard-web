@@ -1,0 +1,14 @@
+The user approved the personal workbench redesign and requested all
+changes be committed and pushed. About is the concise introduction;
+CV is the detailed record; Bio redirects permanently to About.
+
+Project metadata is synced at build time. Editorial settings control
+visibility and features, including Steel Experiments discovery. New
+repositories remain hidden. Failed refreshes keep the saved snapshot.
+
+The build passes with PROJECTS_OFFLINE=1 and TINA_SKIP_SEARCH_INDEX=1.
+The latter skips only the Tina Cloud search upload during local checks.
+Project tests and browser checks passed before this commit.
+
+Career details still needing confirmation are recorded in
+docs/career-sources.md. Preview runs on Tailscale port 8443.
