@@ -30,6 +30,12 @@ export default defineConfig({
     }
   })],
   site: siteUrl,
+  // Old /log/entry-x paths must 301 to the canonical /entry-x route, so search
+  // engines consolidate signals on one URL instead of indexing duplicates.
+  // One segment only: a rest param would also capture /log itself.
+  redirects: {
+    '/log/:slug': '/:slug',
+  },
   server: { allowedHosts: ['claude-code-vm.tailef8c96.ts.net'] },
   devToolbar: { enabled: false },
   // output: 'static',
