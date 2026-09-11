@@ -12,6 +12,7 @@ import { createBlogPostSchema, createBreadcrumbSchema } from '../utils/schemaUti
 import AIWarning from '../components/AIWarning.astro';
 import { getDiverseRelatedArticles } from '../utils/articleMatching';
 import RelatedArticles from '../components/RelatedArticles.astro';
+import InlineCTA from '../components/InlineCTA.astro';
 import GiscusComments from '../components/GiscusComments.jsx';
 import { resolveSiteOrigin, toSiteUrl } from '../utils/siteUrls';
 
@@ -122,8 +123,9 @@ const relatedArticlesEntries = getDiverseRelatedArticles(
       <slot /> {/* Content from the Markdown file will be rendered here */}
     </div>
 
+    <InlineCTA />
+
     {sortedTags.length > 0 && <nav class="article-tags-section" aria-label="Article topics">{sortedTags.map(tag => <a href={`/tags/${tag.toLowerCase()}`}>{formatTagForDisplay(tag)}</a>)}</nav>}
-    <NewsletterSubscribe />
 
     {relatedArticlesEntries.length > 0 && (
       <CSSFadeIn delay={0.1}>
@@ -133,6 +135,8 @@ const relatedArticlesEntries = getDiverseRelatedArticles(
         />
       </CSSFadeIn>
     )}
+
+    <NewsletterSubscribe />
 
     <section class="comments-section" id="comments">
       <GiscusComments
