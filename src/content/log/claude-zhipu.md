@@ -1,9 +1,9 @@
 ---
-title: "Claude-Zhipu Parallel CLI Setup"
-description: "Complete setup guide for running Claude Code CLI with Zhipu API alongside your existing Anthropic installation"
+title: "Claude Code + Zhipu GLM: Parallel CLI Setup Guide"
+description: "Install Claude Code CLI with a Zhipu GLM API key and run it beside your Anthropic setup. Steps, env vars, and pitfalls."
 tldr: "This setup allows you to use Claude Code CLI with Zhipu's API (api.z.ai) in parallel with your existing Claude Max / Anthropic CLI installation using a separate command called claude-zhipu."
 date: 2025-12-23
-tags: [CHEATSHEET, Claude, CLI, API, featured]
+tags: [CHEATSHEET, Claude, CLI, API]
 draft: false
 author: "Nikola Balić"
 topics: [Multi-API setup, Claude Code configuration, parallel CLI installations, API provider switching]

@@ -3,7 +3,7 @@ title: "The Agentic AI Handbook: Production-Ready Patterns"
 description: "A comprehensive guide to 113 production-informed patterns for building reliable AI agents."
 tldr: "113 patterns collected from public write-ups of real systems. Learn the workflows, guardrails, and architecture that make agents useful beyond demos."
 date: 2026-01-15
-last_updated: 2026-01-21
+updated: 2026-01-21
 tags: [AI, AGENTS, PATTERNS, PRODUCTION, ENGINEERING]
 draft: false
 featured: true
@@ -37,6 +37,23 @@ This post is a **production-minded guide** to the pattern library behind:
 - Not a promise that you can bolt an "agent mode" onto any workflow and instantly ship faster.
 
 If you've tried agents and felt like it was "banging rocks together," you're not alone. A recurring theme in developer discussions is that tooling and workflow often fail before the model does: confusing "change stacks," context management friction, and agents making the same edit repeatedly. This post explicitly addresses those failure modes.
+
+---
+
+## Awesome Agentic Patterns: the short version
+
+If you want the pattern names before the full walkthrough, here is the whole library in eight moves. Each one links to its section below.
+
+1. [Orchestration & control](#1-orchestration--control) — who decides the next step, and when the loop stops.
+2. [Tool use & environment](#2-tool-use--environment) — how tools are given, sandboxed, and shown to the agent.
+3. [Context & memory](#3-context--memory) — what the model sees each turn, and what it does not.
+4. [Feedback loops](#4-feedback-loops) — signals that tell the agent it is done, or that it is wrong.
+5. [UX & collaboration](#5-ux--collaboration) — where the human sits in the loop.
+6. [Reliability & eval](#6-reliability--eval) — how you know it still works next week.
+7. [Learning & adaptation](#7-learning--adaptation) — what the system keeps between runs.
+8. [Security & safety](#8-security--safety) — blast radius, secrets, and failure containment.
+
+If you keep only two of these, make them orchestration and feedback loops. Most production incidents trace back to one of the two.
 
 ---
 
