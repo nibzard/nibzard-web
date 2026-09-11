@@ -37,8 +37,8 @@ The engagement signal hierarchy has changed. The ranking logic is different. Eve
 - Why niche posts are getting buried under low-quality recommendations
 - What creators can actually do about it
 
-Same Edward Tufte design—ET Book typography, sidenotes, print-first layout—but with completely fresh content based on the January 2026 release.
+Same Edward Tufte design, with ET Book typography, sidenotes, and a print-first layout, but with completely fresh content based on the January 2026 release.
 
-Technical documentation should show you what's real. Not what marketing claims.
+Technical documentation should show you what's real, not what marketing claims.
 
 **GitHub:** https://github.com/nibzard/twitter-algorithm-tufte

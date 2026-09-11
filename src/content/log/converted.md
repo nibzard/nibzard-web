@@ -22,18 +22,16 @@ So he decided to prove it. Build an [OAuth library](https://github.com/cloudflar
 
 Plot twist: The code was actually good.
 
-Here's what matters--this wasn't some vibe-coding experiment where you trust the machine blindly. Every line was reviewed by security experts. Cross-referenced with RFCs. When Claude made mistakes (and it did), humans caught them and guided the fix.
+This wasn't a vibe-coding experiment where you trust the machine blindly. Every line was reviewed by security experts and cross-referenced with RFCs. When Claude made mistakes (and it did), humans caught them and guided the fix.
 
-The real insight? This isn't about AI replacing humans. It's about the combination of AI speed and human expertise creating something neither could achieve alone.
+This isn't a story about AI replacing humans. It's about AI speed and human expertise combining into something neither could achieve alone.
 
 We keep asking the wrong question: "Will AI take my job?"
 
-The better question: **"How do I become the kind of human that makes AI more powerful?"**
+The better question: "How do I become the kind of human that makes AI more powerful?"
 
 The landscape is moving fast. Token economics are shifting. Interfaces are commoditizing. The flywheel effect is spinning up for the big players.
 
 And somewhere in this chaos, a skeptic just got converted.
-
-The future belongs to experts who learned to work with machines.
 
 Your move.

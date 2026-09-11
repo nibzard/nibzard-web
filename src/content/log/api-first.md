@@ -18,15 +18,15 @@ answers_questions:
     If something only works in the UI, the abstraction is broken.
 </blockquote>
 
-We're building products for a future where AI agents are the primary users. Not humans clicking buttons—agents making HTTP requests.
+We're building products for a future where the primary users are AI agents making HTTP requests, not humans clicking buttons.
 
-## The UI is Optional
+## The UI is optional
 
 AI agents can't click "Advanced Settings" buttons. They can't navigate multi-step wizards. They can't interpret hover tooltips. If your product only works through a web interface, you've already lost the agentic future.
 
-Every feature must be accessible via HTTP APIs. If there's a capability that exists only in the UI, that's not a feature—that's a leak in your platform abstraction.
+Every feature must be accessible via HTTP APIs. If there's a capability that exists only in the UI, that's a leak in your platform abstraction, not a feature.
 
-## Speak User, Not Infrastructure
+## Speak user, not infrastructure
 
 Most platforms get this wrong: their APIs echo internal architecture. You see endpoints named after database tables, concepts borrowed from microservice boundaries, workflows that mirror internal implementation details.
 
@@ -36,13 +36,13 @@ Most platforms get this wrong: their APIs echo internal architecture. You see en
 
 An agent doesn't care about your service mesh or your sharding strategy. It cares about *resources* it can manipulate, *workflows* it can trigger, and *limits* it can query. The API should be a clean abstraction layer that hides implementation complexity while exposing complete functionality.
 
-## UI for Clarity, Not Completeness
+## UI for clarity, not completeness
 
-The UI still matters—for visualization, onboarding, moments when a human needs to understand what's happening. But the UI is no longer the primary interface, and not the *complete* interface.
+The UI still matters for visualization, onboarding, and moments when a human needs to understand what's happening. But the UI is no longer the primary interface, or the *complete* one.
 
 When something fails, the UI shouldn't echo the API error. It should explain *why* it failed in human terms, surfacing context that an agent infers but a human needs spelled out. The UI becomes a teacher, not just a controller.
 
-## The Agentic Litmus Test
+## The agentic litmus test
 
 Can a reasonably intelligent AI agent discover and use every feature your product offers without ever opening a browser?
 

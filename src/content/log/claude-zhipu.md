@@ -14,22 +14,22 @@ answers_questions:
   - How can you maintain parallel AI coding environments without conflicts?
 ---
 
-> **📡 Updated Guide**: This article has been updated to reflect the release of **GLM-4.7**, which introduces **interleaved thinking** — a new reasoning pattern that interleaves thoughts with actions and responses. See the [What's New in GLM-4.7](#whats-new-in-glm-47) section below.
+> **Updated guide**: this article now covers GLM-4.7, which introduces interleaved thinking, a reasoning pattern that interleaves thoughts with actions and responses. See the [What's new in GLM-4.7](#whats-new-in-glm-47) section below.
 
 ---
 
-This setup allows you to use **Claude Code CLI** with **Zhipu's API** (`api.z.ai`) **in parallel** with your existing Claude Max / Anthropic CLI installation.
+This setup lets you use Claude Code CLI with Zhipu's API (`api.z.ai`) in parallel with your existing Claude Max / Anthropic CLI installation.
 The new command is called `claude-zhipu` and it won't interfere with your normal `claude`.
 
-Zhipu AI recently launched their [GLM-4.7](https://z.ai/blog/glm-4.7) model with native support for Claude's API format, making it seamless to use existing Claude tools with their infrastructure.
+Zhipu AI recently launched their [GLM-4.7](https://z.ai/blog/glm-4.7) model with native support for Claude's API format, so existing Claude tools work with their infrastructure.
 
-Zhipu is running [**50% off** your first GLM Coding Plan purchase](https://z.ai/subscribe?ic=61HSE9HVY6) this December.
+Zhipu is running [50% off your first GLM Coding Plan purchase](https://z.ai/subscribe?ic=61HSE9HVY6) this December.
 
 ![Zhipu AI GLM-4.7 Architecture](https://z-cdn-media.chatglm.cn/prompts-rich-media-resources/4.7-blog/20251223-004432.png)
 
 ---
 
-## 📦 Installation Steps
+## Installation steps
 
 ### 1. Prerequisites
 - Node.js v18+ and npm installed:
@@ -46,7 +46,7 @@ If missing, install via [nvm](https://github.com/nvm-sh/nvm) or your system pack
   echo $PATH | tr ':' '\n' | grep -x "$HOME/bin" || echo 'export PATH="$HOME/bin:$PATH"' >> ~/.bashrc
   ```
 
-### 2. Create a Local Install Folder
+### 2. Create a local install folder
 
 ```bash
 mkdir -p ~/claude-zhipu
@@ -55,7 +55,7 @@ npm init -y
 npm install @anthropic-ai/claude-code
 ```
 
-### 3. Create a Separate Config Folder
+### 3. Create a separate config folder
 
 ```bash
 mkdir -p ~/.claude-zhipu
@@ -76,7 +76,7 @@ JSON
 chmod 600 ~/.claude-zhipu/settings.json
 ```
 
-### 4. Create a Wrapper Script
+### 4. Create a wrapper script
 
 ```bash
 cat > ~/bin/claude-zhipu <<'BASH'
@@ -102,7 +102,7 @@ chmod +x ~/bin/claude-zhipu
 
 ---
 
-## ▶️ Usage
+## Usage
 
 Run the Zhipu-connected CLI with:
 
@@ -117,12 +117,12 @@ Your original Anthropic/Max subscription CLI is still available as:
 claude
 ```
 
-So you now have **two parallel Claude CLIs**:
+So you now have two parallel Claude CLIs:
 
 * `claude` → uses your existing Anthropic account / subscription
 * `claude-zhipu` → uses Zhipu API with your custom key
 
-### 💬 My Experience with the Max Plan
+### My experience with the Max plan
 
 I treated myself to the Max yearly plan for Christmas since they're running a promo. After 24 hours with three parallel agents running, I'd used about 40% of the 5-hour quota window—plenty for my workflow.
 
@@ -130,11 +130,11 @@ The speed is the real difference: GLM-4.7 does 55+ tokens/second. The Max Plan g
 
 ---
 
-## 🆕 What's New in GLM-4.7
+## What's new in GLM-4.7
 
-GLM-4.7 introduces **interleaved thinking** — a new reasoning pattern that interleaves thoughts with actions and responses. Instead of generating all thinking at once, the model can now reason iteratively, interacting with tools and refining its approach in real-time.
+GLM-4.7 introduces interleaved thinking, a reasoning pattern that interleaves thoughts with actions and responses. Instead of generating all thinking at once, the model can now reason iteratively and refine its approach in real time as it interacts with tools.
 
-### Interleaved Thinking
+### Interleaved thinking
 
 The key improvement is the ability to interleave reasoning with tool calls and responses across multiple turns:
 
@@ -160,7 +160,7 @@ See the [official GLM-4.7 announcement](https://z.ai/blog/glm-4.7) for full tech
 
 ---
 
-## 🔄 Updating
+## Updating
 
 To update the Zhipu CLI:
 
@@ -171,7 +171,7 @@ npm update @anthropic-ai/claude-code
 
 ---
 
-## 🗑️ Uninstall
+## Uninstall
 
 Remove everything with:
 
@@ -183,7 +183,7 @@ rm -rf ~/.claude-zhipu
 
 ---
 
-## ⚠️ Security
+## Security
 
 * Keep your API key secret. The wrapper file contains it in plain text.
 * Restrict permissions if needed:
@@ -196,7 +196,7 @@ For better security, consider using [`pass`](https://www.passwordstore.org/) to 
 
 ---
 
-## 📚 Additional Resources
+## Additional resources
 
 - [Official Zhipu Claude Development Guide](https://docs.z.ai/scenario-example/develop-tools/claude) - Complete documentation for developing with Claude-compatible APIs
 - [GLM-4.7 Model Announcement](https://z.ai/blog/glm-4.7) - Technical details about Zhipu's latest model with interleaved thinking

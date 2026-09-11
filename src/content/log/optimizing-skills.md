@@ -20,17 +20,15 @@ answers_questions:
 
 I spent the last two weeks benchmarking agent skills, and I came out of it with an answer I wasn't expecting.
 
-**The answer wasn't really about prompts.**
+The answer wasn't really about prompts.
 
 It started there, of course. Skills are having a moment. Anthropic pushed `SKILL.md` into the conversation, people started sharing their playbooks, and at AI Engineer NYC the whole vibe was basically: skills, skills, skills. Which makes sense. We are somewhere near the top of that hype curve right now.
 
 But when you actually sit down and run the evals, over and over, on real tasks, something more interesting shows up.
 
-**The real problem is not that models are dumb.**
+The problem is not that models are dumb. It's that agents start from zero every single time.
 
-**The real problem is that agents start from zero every single time.**
-
-## The New Employee Problem
+## The new employee problem
 
 The simplest way to think about skills is as onboarding.
 
@@ -44,19 +42,19 @@ Working with agents feels exactly like that, except you are hiring a brand new e
 
 Run the exact same task ten times and you don't get one trajectory. You get ten. One run decides to read every help page before it touches anything. Another gets impatient and starts guessing. Another hallucinated command happens to almost work, so the agent keeps digging in the wrong direction. Another gets 80% of the way there and then burns ten minutes recovering from one bad assumption.
 
-That's the part people miss when they talk about agents abstractly. **The problem isn't just quality. It's variance.**
+That's the part people miss when they talk about agents abstractly. The problem isn't just quality. It's variance.
 
 A skill is codified knowledge. It is the employee handbook, the onboarding doc, the nudge that stops the new hire from spending two days exploring the wrong cave.
 
-## Variance Is a Cost Problem
+## Variance is a cost problem
 
-**The models are already good enough.**
+The models are already good enough.
 
 If you give frontier models enough time, they can usually find their way around a problem. In my runs, GPT-5.4 with extra-high reasoning and Opus 4.6 could usually grind toward an answer eventually.
 
 But "eventually" is not free.
 
-**Time is tokens. Time is compute.** Time is browser sessions waiting around. Time is proxy time, storage, memory, retries, idle states, and underlying services doing expensive things while the agent reasons about the mess it just created.
+Time is tokens. Time is compute. Time is browser sessions waiting around. Time is proxy time, storage, memory, retries, idle states, and underlying services doing expensive things while the agent reasons about the mess it just created.
 
 So when I say variance, I don't mean some abstract ML cleanliness metric. I mean money.
 
@@ -66,7 +64,7 @@ That is enough to make an agent feel viable or feel ridiculous.
 
 This is why I think a lot of prompt discourse misses the point. People talk as if the question is whether the model can solve the task at all. In production, that's not the only question. The more important question is: how many expensive wrong turns are you paying for on the way there?
 
-**Good skills reduce those wrong turns.**
+Good skills reduce those wrong turns.
 
 <blockquote class="featured-quote secondary">
 Variance is not just a quality problem. It's a budget problem.
@@ -74,7 +72,7 @@ Variance is not just a quality problem. It's a budget problem.
 
 And once you see that clearly, skills stop looking like a prompt hobby and start looking like cost control.
 
-## Browsing Makes the Pain Obvious
+## Browsing makes the pain obvious
 
 Most of my benchmarks were browsing-heavy tasks: filling forms, registering accounts, finding information, working through flows with real page state underneath.
 
@@ -96,15 +94,15 @@ That was also the moment I realized manual tweaking wasn't going to cut it. My f
 
 If you want to know what helped, you need tracking. You need batches. You need reports. You need to benchmark the thing properly.
 
-## Skill Overlays and Progressive Disclosure
+## Skill overlays and progressive disclosure
 
 The first idea that really clicked for me was skill overlays.
 
 Instead of writing one massive monolithic skill that tries to encode everything, you create a generic base layer with the fundamentals:
 
-- **how the service works**
-- **what the common failure modes are**
-- **what general rules should always hold**
+- how the service works
+- what the common failure modes are
+- what general rules should always hold
 
 Then, for very specific flows, you inject an overlay.
 
@@ -122,9 +120,9 @@ Less wandering. Less re-evaluating. Less "let me inspect the environment again j
 
 The agent just does the thing.
 
-## Halfway Through, the CLI Became the Story
+## Halfway through, the CLI became the story
 
-**Then came the part I didn't expect.**
+Then came the part I didn't expect.
 
 Halfway through this project, I realized the bigger bottleneck wasn't the skills. It was the CLI itself.
 
@@ -138,7 +136,7 @@ Hussuf jumped on it first and reworked a big part of the CLI into something much
 
 That's when the pattern became undeniable.
 
-**The CLI and the skill had to improve together.**
+The CLI and the skill had to improve together.
 
 As the CLI got better, the skill got smaller. A lot of the hyper-specific instructions I'd added earlier were not actually deep agent wisdom. They were workarounds for a rough interface. Once the interface improved, that scaffolding became unnecessary.
 
@@ -146,13 +144,13 @@ This is an important lesson if you're building agent systems: the environment ca
 
 And lean skills are easier to maintain, easier to benchmark, and easier to trust.
 
-## Claude and Codex Don't Fail the Same Way
+## Claude and Codex don't fail the same way
 
 I ran the benchmark harness across Claude and Codex, and they do not fail the same way.
 
-**Codex tends to dig deep before acting.** It wants to understand the whole surface, read the help pages, inspect the options, build a local mental model, and then move. That can be excellent. It can also be overthinking.
+Codex tends to dig deep before acting. It wants to understand the whole surface, read the help pages, inspect the options, build a local mental model, and then move. That can be excellent. It can also be overthinking.
 
-**Claude is more eager. It goes.**
+Claude is more eager. It goes.
 
 In a messy environment, that eagerness creates chaos. In a cleaner environment, it becomes an advantage. It feels a bit like working with a junior engineer who ships fast: if the codebase is organized and the task is clear, that energy is fantastic. If the environment is ambiguous, it turns into random motion.
 
@@ -164,9 +162,9 @@ The frontier models are thoughtful. Sometimes that thoughtfulness is overkill. I
 
 A smaller, faster model with enough context often just does that.
 
-This is why I increasingly think "which model is best?" is the wrong question. The real question is: which model is the right fit for this workflow, in this environment, with this level of guidance?
+This is why I increasingly think "which model is best?" is the wrong question. The useful question is which model fits this workflow, in this environment, with this level of guidance.
 
-## The Benchmark Is the Product
+## The benchmark is the product
 
 We ended up with six major skill versions through iteration. After `v6`, I think we're close enough that the next meaningful gains probably come from another round of CLI improvements rather than more prompt massage.
 
@@ -180,29 +178,27 @@ And this part matters: if your task is small, or you need a prototype quickly, u
 
 Across those twenty-task runs, total browsing time was usually somewhere between fifty minutes and an hour. Fifty minutes meant the run was probably okay. Over an hour usually meant something had gone wrong. With proper overlays that detect known flow patterns and attach the matching instructions automatically, I think you cut that down again.
 
-That is why I keep saying **the benchmark is the real product**. Without the loop, you are just narrating your intuitions. With the loop, you can watch the system teach you what it needs next.
+That is why I keep saying the benchmark is the real product. Without the loop, you are just narrating your intuitions. With the loop, you can watch the system teach you what it needs next.
 
-## The Bigger Question
+## The bigger question
 
 After two weeks of benchmarking, breaking flows, redesigning surfaces, comparing models, and reading way too many agent reports, I ended up somewhere I didn't expect.
 
-**The underlying question is not "how do I write a better prompt?"**
+The underlying question is not "how do I write a better prompt?"
 
-**The question is: what is the right primitive?**
+The question is: what is the right primitive?
 
 Once you've run enough traces on a problem, you can hand those logs back to an agent and ask it to codify what it learned. Maybe the output is a skill overlay. Maybe it's a bundle of overlays. Maybe it's a bash script that sequences the right commands. Maybe it's a Ralph loop with feedback. Maybe it's whatever we're calling autoresearch this week.
 
 And once you see that, another uncomfortable question appears.
 
-**Do we actually need agent frameworks?**
+Do we actually need agent frameworks?
 
 Frameworks make sense in a world where humans are writing and maintaining every layer manually. You build abstractions because abstractions help humans manage complexity.
 
 But if agents are writing more of the code, and if the best-performing systems increasingly look like a tight loop around prompts, tools, traces, and evals, then maybe the old instinct to reach for a framework is not always the right one.
 
-**Maybe the thing we need is not more scaffolding.**
-
-**Maybe we mostly need better environments and better skills.**
+Maybe the thing we need is not more scaffolding. Maybe we mostly need better environments and better skills.
 
 I don't know if that's the final answer.
 

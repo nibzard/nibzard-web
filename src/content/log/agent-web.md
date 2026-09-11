@@ -14,13 +14,13 @@ I almost didn't join [Steel](https://steel.dev/).
 
 Not because I wasn’t sold. The opposite. I was _too_ convinced, and that's a dangerous state. When you’re convinced, your brain starts treating decisions like inevitabilities. You stop stress‑testing your own narrative. You stop asking what you’re missing. You start buying your own pitch.
 
-So I did what I always do when I’m not sure if I’m about to make a great decision or a stupid one: **I tried to slow time down.**
+So I did what I always do when I’m not sure if I’m about to make a great decision or a stupid one: I tried to slow time down.
 
 I dictated a messy note into ChatGPT, half thinking, half arguing with myself, about what Steel _really_ is, what the browser means in the agent era, and what happens when the web stops being a place humans click… and becomes a place agents act.
 
 The next morning, I had a calendar invite from [Huss](https://x.com/hussufo) (Steel co-founder and CEO).
 
-He didn’t mince words: **we should work together**. I pasted him the ChatGPT transcript. And we had one of those rare moments where two different paths converge on the same idea in the same spacetime.
+He didn’t mince words: we should work together. I pasted him the ChatGPT transcript. And we had one of those rare moments where two different paths converge on the same idea in the same spacetime.
 
 Convergence on mechanism beats convergence on vibes.
 
@@ -32,8 +32,6 @@ This is the thesis that made it obvious:
 
 That’s a mouthful. It’s also the whole game.
 
-Let me unpack it.
-
 ---
 
 ## Agents aren’t chat. They’re labor.
@@ -44,7 +42,7 @@ OpenAI’s own framing is much closer to the truth: agents are “**systems that
 
 Those lines are polite, corporate ways of saying something that makes people uncomfortable:
 
-**Software is turning into labor.**
+Software is turning into labor.
 
 Not metaphorically. Economically.
 
@@ -86,13 +84,7 @@ This is why “computer use” matters. OpenAI’s computer-using agent is expli
 
 This is the correct direction because it aligns with how the world actually works. But OpenAI’s own evals also show the hard truth: current general agents are simultaneously impressive and far from production-grade reliability in messy environments (e.g., results like **38.1%** on OSWorld and **58.1%** on WebArena are both proof-of-viability _and_ a loud alarm bell). ([OpenAI CUA](https://openai.com/index/computer-using-agent/))
 
-So the bottleneck isn’t “can the model see pixels.”
-
-The bottleneck is: **can the system execute reliably in the world we already have.**
-
-That is not a model problem. That is a loop problem. An orchestration problem. A trust problem.
-
-It’s a systems problem.
+So the bottleneck isn’t whether the model can see pixels. It’s whether the system can execute reliably in the world we already have. That’s not a model problem; it’s a systems problem: the loop, the orchestration, the trust.
 
 ---
 
@@ -120,7 +112,7 @@ This is the same pattern we’ve seen in every platform shift: capability arrive
 
 Steel’s positioning means it gets to sit _inside_ the transition instead of chasing it.
 
-And that’s why Steel is an agent lab disguised as infrastructure. ([As I've written before](/agent-labs), agent labs ship product first and work their way down—turning traces into compounding reliability.)
+And that’s why Steel is an agent lab disguised as infrastructure. ([As I've written before](/agent-labs), agent labs ship product first and work their way down, turning traces into compounding reliability.)
 
 Not because “agent lab” is a better buzzword.
 
@@ -138,7 +130,7 @@ I want to anchor the rest of this piece on one diagram, because it captures what
 
 It’s a loop with a simple claim:
 
-### **Traces → Reliability → Autonomy**
+### Traces → Reliability → Autonomy
 
 At the center is the _translation layer_: **human intent → executable actions**.
 
@@ -156,7 +148,7 @@ This is the part most people miss.
 
 They think the product is the agent UI.
 
-In the agent era, **execution is the product**.
+In the agent era, execution is the product.
 
 And traces are what make execution improve.
 
@@ -186,7 +178,7 @@ Anthropic stated the core law plainly:
 
 This is the unsexy truth behind most agent hype.
 
-The browser is the richest tool surface humans ever built. Which means browser infrastructure is not “headless browsing.” It’s **agent tooling**.
+The browser is the richest tool surface humans ever built. Which means browser infrastructure is not “headless browsing.” It’s agent tooling.
 
 And tooling quality becomes agent quality.
 
@@ -235,7 +227,7 @@ You ship product first because product generates:
 
 Then you “work your way down” because only then do you understand what you should even train, fine-tune, evaluate, or harden.
 
-Cursor forked VSCode, spent two years understanding users, then built the model.([latent.space](https://www.latent.space/p/agent-labs))
+Cursor forked VSCode, spent two years understanding users, then built the model. ([latent.space](https://www.latent.space/p/agent-labs))
 
 Agent labs don’t win by having a model.
 
@@ -286,7 +278,7 @@ Once you see the loop, the endgame becomes obvious.
 
 If you run enough browser sessions, you stop seeing sessions.
 
-You start seeing **patterns**.
+You start seeing patterns.
 
 Repeated actions. Repeated failures. Repeated drift. Repeated verification checks. Repeated approvals.
 
@@ -301,7 +293,7 @@ We can call this the UI → AX transition:
 - UI is human experience
 - AX is agent experience
 
-The UX of the next decade will not just be designed for humans. It will be designed so agents can operate it reliably, with humans supervising where needed.
+The UX of the next decade will serve humans, but it will be designed so agents can operate it reliably, with humans supervising where needed.
 
 And as traces compound, you get the possibility of **action models**: narrow, execution-focused models trained not on internet text, but on successful task completions and verified workflows.
 
@@ -325,17 +317,17 @@ I first met the Steel founders and we clicked immediately. What was meant to be 
 
 It felt eerily familiar. I’ve learned to recognize that pivotal moment: the perfect storm before the story snaps into place.[^1]
 
-After that first call, I joined Steel in a semi-formal advisory capacity, helping think through growth levers, positioning, and what the product wants to become. But the real signal wasn't the market; it was the **cadence**.
+After that first call, I joined Steel in a semi-formal advisory capacity, helping think through growth levers, positioning, and what the product wants to become. But the real signal wasn't the market; it was the cadence.
 
-Daily standups. Weekly demos. Discord debates. The kind of engineering taste that’s hard to fake: **fast iteration without magical thinking.** A love for clean primitives. A refusal to lie to ourselves about the state of things.
+Daily standups. Weekly demos. Discord debates. The kind of engineering taste that’s hard to fake: fast iteration without magical thinking. A love for clean primitives. A refusal to lie to ourselves about the state of things.
 
 Over the time before and through holidays I tried to take a step back for health, family, a bit of recovery. But the question wouldn't leave:
 
-**What’s the cost of not joining?**
+What’s the cost of not joining?
 
-When the answer became “the cost is missing **the most important loop of the decade**,” the decision was already made.
+When the answer became “the cost is missing the most important loop of the decade,” the decision was already made.
 
-I also made the decision under a constraint I can’t pretend isn’t real: I’m now effectively **locked in** for 2026. My job at Steel will be to help set up growth, team, and momentum. Not to dabble. That constraint is clarifying. It forces me to choose a thesis that can compound, not a project that needs constant reinvention.
+I also made the decision under a constraint I can’t pretend isn’t real: I’m now effectively locked in for 2026. My job at Steel will be to help set up growth, team, and momentum. Not to dabble. That constraint is clarifying. It forces me to choose a thesis that can compound, not a project that needs constant reinvention.
 
 ---
 
@@ -343,9 +335,9 @@ I also made the decision under a constraint I can’t pretend isn’t real: I’
 
 I’m joining Steel as a foundational growth lead, but I don’t mean “growth” in the vanity-metrics sense.
 
-I’ve said it bluntly before: **growth is value flow, not dashboards.**
+I’ve said it bluntly before: growth is value flow, not dashboards.
 
-In the agent era, distribution is not “channels.” It’s **trust design + community + proof**.
+In the agent era, distribution is not “channels.” It’s trust design + community + proof.
 
 Content shifts too: less keyword SEO, more ‘citation-worthiness.’ You win by becoming the thing agents and humans reference as the reliable path.
 
@@ -377,7 +369,7 @@ Every legacy interface becomes an API once an agent can operate it reliably. Eve
 
 Steel is an agent lab disguised as infrastructure because the fastest path to the lab is through the infrastructure.
 
-And 2026 is the year we stop asking “do agents work?” and start asking the only question that matters:
+And 2026 is the year we stop asking “do agents work?” and start asking:
 
 **Who owns the loops that make them reliable?**
 

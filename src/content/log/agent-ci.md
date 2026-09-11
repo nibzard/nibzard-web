@@ -17,7 +17,7 @@ So I started where boring people start: the OpenAPI JSON. Steel already has it. 
   <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/Lv0s9THuwnY" title="Making CLIs Agent-Friendly with Loops and Schemas" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-The loop's output isn't just code. The main artifact is a todo JSON file that becomes the project's living backlog. The agent scaffolds tasks from a spec you give it (I began with a SPECS.md brain dump referencing the official Steel.dev API), then it picks what to do next. Crucially, it can add tasks as it discovers missing pieces. The list snowballed to ~140 tasks. That's not scope creep; that's reality being more detailed than your first draft.
+Beyond the code, the loop's main artifact is a todo JSON file that becomes the project's living backlog. The agent scaffolds tasks from a spec you give it (I began with a SPECS.md brain dump referencing the official Steel.dev API), then it picks what to do next. Crucially, it can add tasks as it discovers missing pieces. The list snowballed to ~140 tasks. That's not scope creep; that's reality being more detailed than your first draft.
 
 Observability matters. A loop that produces "some code" isn't enough. A loop that produces a verifiable task graph is useful. To keep the agent from turning the backlog into a mess, I added a schema file that the agent maintains and validates against. Boring constraint, huge payoff: less randomness, more determinism, consistent re-runs.
 
@@ -25,4 +25,4 @@ Then I let it run. For two to three days. Codex 5.3 Spark (the super fast OpenAI
 
 Finally, the third loop: Steel Web Loop. This one is a verification harness disguised as chaos. Each run, the agent picks a random useful web action—read headlines, scrape a page, navigate Wikipedia, whatever—and executes it end to end using the CLI it just built. After each run, it updates a lessons file: task chosen, commands used, what succeeded, what failed, what was learned. Fifty runs per loop. Some succeed, some eat glass, all leave a paper trail.
 
-And that's the point. Iteration beats perfection. Every time. Agent reliability isn't a philosophical stance. It's loops, logs, schemas, and your tooling getting bullied into competence. Your opinion about AI won't matter. Your competitor's cycle time will. See the [tweet](https://x.com/nibzard/status/2023807296095076773).
+And that's the point. Iteration beats perfection. Every time. Agent reliability isn't a philosophical stance; it's loops, logs, schemas, and your tooling getting bullied into competence. Your opinion about AI won't matter. Your competitor's cycle time will. See the [tweet](https://x.com/nibzard/status/2023807296095076773).

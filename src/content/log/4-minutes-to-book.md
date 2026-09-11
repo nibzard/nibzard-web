@@ -20,7 +20,7 @@ First run: **11 minutes.**
 Second run: **8 minutes.**
 Third run: **4 minutes.**
 
-Same task. Better result. Here's what changed.
+Same task, better result.
 
 ## The Baseline
 
@@ -80,9 +80,9 @@ Result: **4 minutes.**
 
 ## What Didn't Move the Needle
 
-**Model selection.** I tried faster models (Spark for exploration) but for this task, the bottleneck wasn't token speed—it was decision quality. A faster model making wrong decisions doesn't help.
+**Model selection.** I tried faster models (Spark for exploration) but for this task, the bottleneck wasn't token speed; it was decision quality. A faster model making wrong decisions doesn't help.
 
-**More context.** Adding more documentation about the sites didn't help. The agent didn't need more information; it needed clearer instructions.
+**More context.** Adding more documentation about the sites didn't help. The agent had plenty of information; the instructions just weren't clear enough.
 
 **Additional tools.** I considered adding screenshot analysis tools, but that would have added overhead. The text-based snapshot was sufficient.
 
@@ -97,7 +97,7 @@ This optimization loop is repeatable:
 5. **Measure improvement**
 6. **Repeat until diminishing returns**
 
-The key insight: **the prompt is the code.** I didn't change any implementation. I just refined the instructions the agent follows.
+The takeaway: the prompt is the code. I didn't change any implementation. I just refined the instructions the agent follows.
 
 ## What's Next
 
@@ -112,6 +112,6 @@ It's meta-optimization: an agent optimizing an agent.
 
 The 4-minute version isn't the ceiling. With better selectors and more workflow compression, I suspect we can get under 2 minutes.
 
-But here's the thing: **the first version shipped.** 11 minutes was slow, but it worked. The optimization came after, not before.
+The first version shipped. 11 minutes was slow, but it worked. The optimization came after.
 
 Don't let perfect be the enemy of shipped. Start with something that works. Then make it fast.

@@ -14,27 +14,27 @@ answers_questions:
   - How do you balance AI speed with long-term code maintainability?
 ---
 
-AI coding assistants excel at one thing: **making code that compiles**.
+AI coding assistants excel at one thing: making code that compiles.
 
 But compiling isn't the same as sustainable.
 
 Every developer who's worked with AI tools knows this moment, you ask for a feature, get working code in seconds, then spend hours refactoring because it's duplicated across five files, mixed concerns, and looks like it was written by someone who's never heard of future maintenance.
 
-The problem isn't the AI. Well, sorta it is, context limitations. But most importantly AI optimizes for the immediate goal: generating code. Human developers optimize for a different goal: **code that works and keeps working**.
+The problem isn't the AI. Well, sorta it is, context limitations. But mostly AI optimizes for the immediate goal: generating code. Human developers optimize for a different goal: code that works and keeps working.
 
-This gap creates the most important skill in AI-assisted development: **knowing when to nudge**.
+This gap creates the most important skill in AI-assisted development: knowing when to nudge.
 
-## The Default AI Approach vs. Sustainable Code
+## The default AI approach vs. sustainable code
 
 Run any AI assistant without specific guidance, and you'll get predictable patterns:
 
-**What AI Does Well:**
+What AI does well:
 - Generates syntactically correct code fast
 - Handles boilerplate and repetitive tasks
 - Follows explicit instructions precisely
 - Integrates with existing patterns it can see
 
-**What AI Misses:**
+What AI misses:
 - Long-term maintainability concerns
 - Architectural decisions that matter in 6 months
 - The "why" behind coding principles
@@ -46,11 +46,11 @@ Ask AI to add user authentication to three different pages, and you can honestly
 
 AI sees the task. Humans see the system.
 
-## The Nudge Framework: Four Intervention Points
+## The nudge framework: four intervention points
 
 The most effective human-AI collaboration happens when you intervene at specific moments:
 
-### 1. **Clarity Nudges** - Before Implementation
+### 1. Clarity nudges (before implementation)
 *"Solve today's problem, but make it readable."*
 
 Instead of: *"Add a login form"*
@@ -58,7 +58,7 @@ Try: *"Create a reusable login component that follows our existing component pat
 
 The AI needs explicit instruction to prioritize maintainability over speed.
 
-### 2. **Architecture Nudges** - During Planning
+### 2. Architecture nudges (during planning)
 *"Think systems, not features."*
 
 Instead of: *"Update the user profile page"*
@@ -66,7 +66,7 @@ Try: *"Separate the UI logic from data handling, and ensure this works with our 
 
 Point the AI toward separation of concerns before it starts mixing them.
 
-### 3. **Quality Nudges** - During Review
+### 3. Quality nudges (during review)
 *"Will this survive contact with reality?"*
 
 Key questions to ask when reviewing AI-generated code:
@@ -76,7 +76,7 @@ Key questions to ask when reviewing AI-generated code:
 
 These questions reveal where the AI optimized for expedient rather than sustainable.
 
-### 4. **Context Nudges** - For Missing Pieces
+### 4. Context nudges (for missing pieces)
 *"Remember the bigger picture."*
 
 AI forgets context between conversations. Remind it of:
@@ -85,22 +85,22 @@ AI forgets context between conversations. Remind it of:
 - Error handling patterns you use
 - Testing approaches your team follows
 
-## The Engineering Principles Cheat Sheet
+## The engineering principles cheat sheet
 
 When you need to nudge AI toward better decisions, reference these core principles:
 
-| **Principle** | **AI Nudge** | **Self-Check Question** |
+| Principle | AI nudge | Self-check question |
 |---------------|-------------|------------------------|
-| **Keep It Simple** | "Use the simplest approach that solves today's problem" | *Could a new teammate understand this quickly?* |
-| **Don't Repeat Yourself** | "Extract this into a reusable function/component" | *Will one edit update all similar code?* |
-| **Single Responsibility** | "Keep each function/module focused on one job" | *Can I summarize its purpose in one sentence?* |
-| **Separation of Concerns** | "Keep UI, logic, and data separate" | *Is any layer doing another layer's job?* |
-| **Fail Fast** | "Add clear error handling and validation" | *Will problems surface immediately with context?* |
-| **Test Coverage** | "Include tests that verify this actually works" | *Can automated tests catch regressions?* |
+| Keep it simple | "Use the simplest approach that solves today's problem" | *Could a new teammate understand this quickly?* |
+| Don't repeat yourself | "Extract this into a reusable function/component" | *Will one edit update all similar code?* |
+| Single responsibility | "Keep each function/module focused on one job" | *Can I summarize its purpose in one sentence?* |
+| Separation of concerns | "Keep UI, logic, and data separate" | *Is any layer doing another layer's job?* |
+| Fail fast | "Add clear error handling and validation" | *Will problems surface immediately with context?* |
+| Test coverage | "Include tests that verify this actually works" | *Can automated tests catch regressions?* |
 
-## Example: The Footer Duplication Case
+## Example: the footer duplication case
 
-**The AI Approach:**
+The AI approach:
 ```html
 <!-- page1.html -->
 <footer>© 2025 Company. All rights reserved.</footer>
@@ -112,10 +112,10 @@ When you need to nudge AI toward better decisions, reference these core principl
 <footer>© 2025 Company. All rights reserved.</footer>
 ```
 
-**The Human Nudge:**
+The human nudge:
 *"Extract the footer into a reusable component that all pages can import."*
 
-**The Result:**
+The result:
 ```jsx
 // components/Footer.jsx
 export const Footer = () => (
@@ -128,43 +128,39 @@ import { Footer } from '../components/Footer'
 
 The AI solved the immediate problem. The human nudge solved the systemic problem.
 
-## Pre-Ship Reality Check
+## Pre-ship reality check
 
 Before accepting AI-generated code, run through this five-point checklist:
 
-1. **Run automated checks** (linters, formatters, tests)
-2. **Verify it handles errors gracefully**
-3. **Confirm it follows existing patterns**
-4. **Check if it creates technical debt**
-5. **Ask: "Will future-me thank present-me for this?"**
+1. Run automated checks (linters, formatters, tests)
+2. Verify it handles errors gracefully
+3. Confirm it follows existing patterns
+4. Check if it creates technical debt
+5. Ask: "Will future-me thank present-me for this?"
 
 This isn't about perfect code, it's about sustainable code.
 
-## The Collaboration Sweet Spot
+## The collaboration sweet spot
 
 The most productive AI-assisted development happens when you:
 
-- **Set clear architectural boundaries** before the AI starts
-- **Provide rich context** about existing patterns and constraints
-- **Review outputs** with maintainability in mind
-- **Iterate based on feedback** rather than trying to perfect initial prompts
+- Set clear architectural boundaries before the AI starts
+- Provide rich context about existing patterns and constraints
+- Review outputs with maintainability in mind
+- Iterate based on feedback rather than trying to perfect initial prompts
 
 AI handles the typing. You handle the thinking.
 
-AI generates the code. You guide the decisions.
+## What this means for your workflow
 
-AI optimizes for working. You optimize for sustainable.
+The future of development is AI amplifying developers who know how to guide it effectively.
 
-## What This Means for Your Workflow
+The skill to develop is systems thinking.
 
-The future of development isn't AI replacing developers, it's AI amplifying developers who know how to guide it effectively.
-
-The skill to develop isn't prompt engineering. It's **systems thinking**.
-
-Understanding when to let AI run freely and when to step in with strategic nudges. Knowing which principles matter for your specific context. Building intuition for what makes code sustainable versus just functional.
+That means understanding when to let AI run freely and when to step in with strategic nudges, knowing which principles matter for your specific context, and building intuition for what makes code sustainable rather than just functional.
 
 The developers who master this collaboration will build better software faster than either humans or AI could alone.
 
 The ones who don't will be debugging AI-generated spaghetti code for years to come.
 
-**The choice is yours, but make it consciously.**
+The choice is yours. Make it consciously.

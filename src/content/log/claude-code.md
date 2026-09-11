@@ -23,7 +23,7 @@ answers_questions:
   - How can you script and automate Claude Code using the SDK?
 ---
 
-**Claude Code** is a powerful, flexible, **terminal-first AI coding assistant** designed to integrate deeply with existing developer workflows and tools.
+Claude Code is a terminal-first AI coding assistant that integrates with the developer tools and workflows you already use.
 
 Effective use involves understanding its agentic nature, providing rich context, and learning to guide its tool use through prompting and configuration. Its capabilities are continuously expanding, especially with the [SDK](https://docs.anthropic.com/en/docs/claude-code/sdk) for programmatic access and scripting.
 
@@ -54,8 +54,8 @@ Once installed, you can start Claude Code by running `claude` in your terminal.
 
 ## II. Getting Started: Codebase Q&A
 
-*   **Easiest way for new users to start.**
-*   **Powerful Onboarding Tool:** Anthropic uses it to significantly reduce technical onboarding time for new hires (from weeks to 2-3 days).
+*   Easiest way for new users to start.
+*   **Onboarding tool:** Anthropic uses it to cut technical onboarding time for new hires from weeks to 2-3 days.
 *   **How it Works:** Ask questions about your codebase. Claude explores the code locally to answer.
 *   **Example Prompts for Q&A:**
     *   "How is `@RoutingController.py` used?"

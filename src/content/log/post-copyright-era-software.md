@@ -40,9 +40,9 @@ I think that partly because I spent about a decade working close to Europe's IP 
 Software was already a bad fit for copyright. AI does not create that mismatch. It makes it impossible to ignore.
 </blockquote>
 
-## AI Changes the Cost Curve
+## AI changes the cost curve
 
-What AI changes is not the moral status of copying. What it changes is the **cost of reimplementation**.
+What AI changes is the **cost of reimplementation**, not the moral status of copying.
 
 Before AI, a rewrite was expensive. A redesign was expensive. A compatible implementation was expensive. Even when legally allowed, these things required a lot of human time, coordination, and patience.
 
@@ -50,13 +50,13 @@ Now a spec, a test suite, a benchmark target, a wire protocol, an API contract, 
 
 If you want a concrete example, look at [Cloudflare's `vinext`](https://blog.cloudflare.com/vinext/). In February 2026, Cloudflare described using one engineer plus AI to reimplement most of the Next.js API surface on top of Vite, retargeting a dominant framework toward Cloudflare Workers instead of merely adapting it after the fact.
 
-Cloudflare is also explicit that `vinext` is experimental and not battle-tested at serious scale. That matters. As [Gergely Orosz noted](https://newsletter.pragmaticengineer.com/p/the-pulse-cloudflare-rewrites-nextjs), the important signal is not that `vinext` is already production-perfect. It is that a major reimplementation like this is now suddenly plausible.
+Cloudflare is also explicit that `vinext` is experimental and not battle-tested at serious scale. That matters. As [Gergely Orosz noted](https://newsletter.pragmaticengineer.com/p/the-pulse-cloudflare-rewrites-nextjs), the important signal is that a major reimplementation like this is now suddenly plausible.
 
 Once implementation gets cheap enough, software enters an abundance dynamic: old projects get revived, abandoned tools get reimagined, slow libraries get rewritten, and compatible alternatives show up much faster than before.
 
-Some of that output will be slop. But abundance also creates selection pressure. The cheapness of writing code does not remove the difficulty of making software trustworthy, durable, correct, lovable, and worth depending on. Once raw implementation is less scarce, the market starts caring more about the layers above it: editorial taste, architecture, validation, governance, and product judgment. That is not the death of software. That is software becoming more abundant, more contested, and in many ways more alive.
+Some of that output will be slop. But abundance also creates selection pressure. The cheapness of writing code does not remove the difficulty of making software trustworthy, durable, correct, lovable, and worth depending on. Once raw implementation is less scarce, the market starts caring more about the layers above it: editorial taste, architecture, validation, governance, and product judgment. This is not the death of software; it is software becoming more abundant, more contested, and in many ways more alive.
 
-## Software Was Never Well-Protected by Copyright
+## Software was never well protected by copyright
 
 Software was always an awkward object for copyright. Yes, source code is written text. But software is also behavior, interfaces, protocols, tests, architectures, and expected outputs. It is part text, part machine, part agreement.
 
@@ -68,7 +68,7 @@ That is also why copyright never really explained most software defensibility. W
 
 Once software can be regenerated from behavior and constraints with enough fidelity, "who owns this text?" stops being the master question. The master questions become who users trust, who maintains it well, who can prove quality, who controls the namespace, and who can operate responsibly at scale.
 
-## The Legal Categories Start to Slip
+## The legal categories start to slip
 
 The classic categories still exist: original work, derivative work, clean room, independent implementation, substantial similarity. But AI makes them much harder to apply with confidence.
 
@@ -76,9 +76,9 @@ If a model was trained on public code, what counts as contamination? If a team r
 
 To steelman the other side: copyright still matters where distribution rights, license compatibility, and litigation risk shape behavior. If you are shipping GPL-incompatible code, negotiating enterprise contracts, or raising money around messy provenance, legal exposure still changes choices. It just matters less as a barrier to functional substitution.
 
-My friend Mladen Vukmir, a veteran IP lawyer and founding partner of VUKMIR + ASSOCIATES, makes a similar point in [The Copyright Dilemma with Claude](https://platforum9.com/the-copyright-dilemma-with-claude/). His argument is that the **current copyright framework may struggle to survive the AI era in its existing form**, and that the harder question is how the economic value created by AI gets distributed. That is exactly the right reframing. The legal argument does not disappear, but it stops being sufficient on its own.
+My friend Mladen Vukmir, a veteran IP lawyer and founding partner of VUKMIR + ASSOCIATES, makes a similar point in [The Copyright Dilemma with Claude](https://platforum9.com/the-copyright-dilemma-with-claude/). His argument is that the **current copyright framework may struggle to survive the AI era in its existing form**, and that the harder question is how the economic value created by AI gets distributed. That is exactly the right reframing. The legal argument sticks around, but it is no longer sufficient on its own.
 
-## What Matters Instead
+## What matters instead
 
 If copyright becomes less central, something else has to carry more weight. For maintainers, founders, and open-source communities, that means a new legitimacy stack:
 
@@ -88,7 +88,7 @@ People adopt software they believe will not betray them.
 
 ### 2. Provenance
 
-Not perfect token ancestry, but practical traceability: how it was built, what it depends on, what was reviewed, and what can be audited.
+Practical traceability, not perfect token ancestry: how it was built, what it depends on, what was reviewed, and what can be audited.
 
 ### 3. Governance
 
@@ -102,20 +102,20 @@ Benchmarks, tests, evals, and operational evidence. In the age of cheap generati
 
 Someone still ships the thing, answers when it breaks, and absorbs the consequences.
 
-This is why I keep coming back to the same conclusion: the future of software legitimacy is not textual purity. It is **operational legitimacy**.
+This is why I keep coming back to the same conclusion: the future of software legitimacy is **operational legitimacy**, not textual purity.
 
 That also means better norms, not fewer: attribution, disclosure of AI-assisted rewrites, fork etiquette, namespace continuity, governance transitions, and supply-chain transparency all matter more in a world where equivalent implementations can appear quickly.
 
-## The Software Renaissance
+## The software renaissance
 
 This is what a renaissance looks like. More rewrites, more redesigns, more spiritual successors, more niche optimizations that were never economically worth attempting before. More weird experiments that survive long enough to become useful.
 
-Software is not becoming lawless. It is becoming abundant.
+Software is becoming abundant, not lawless.
 
-For years, we treated copyright as if it were the natural center of software ownership. It never really was. AI does not invent that truth. It just accelerates it beyond plausible denial.
+For years, we treated copyright as if it were the natural center of software ownership. It never really was. AI did not invent that truth; it just accelerates it beyond plausible denial.
 
-So yes, we are going to see more rewrites, more ports, more compatible reimplementations, and more conflicts over lineage. That is the software renaissance.
+So yes: more rewrites, more ports, more compatible reimplementations, and more conflicts over lineage.
 
-The people who win in that world will not be the ones clinging hardest to textual ownership. They will be the ones who build trust, govern well, verify aggressively, and give users something more valuable than exclusive access to source text.
+The people who win in that world will be the ones who build trust, govern well, verify aggressively, and give users something more valuable than exclusive access to source text.
 
 They will give them confidence.

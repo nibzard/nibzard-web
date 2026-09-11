@@ -19,19 +19,19 @@ I was staring at my server logs, watching as AI agents crawled my site alongside
 
 That's when I realized: content delivery architecture needed an upgrade for the AI era.
 
-## The Problem With Traditional Content Delivery
+## The problem with traditional content delivery
 
 Most websites today make a fundamental mistake: they optimize content for one audience and hope others adapt. Either you serve beautiful HTML for humans (making AI parsing difficult) or you serve plain text for machines (making the human experience sterile).
 
 But what if you could serve the perfect format for each audience while maintaining complete content parity?
 
-No hidden content. No restricted endpoints. No cloaking. Just smart delivery based on what each visitor actually needs.
+Nothing is hidden: no restricted endpoints, no cloaking, just delivery based on what each visitor actually needs.
 
-## The Dual-Format Solution
+## The dual-format solution
 
 My solution was surprisingly simple: serve the same underlying content in two different formats, letting each audience choose what works best for them.
 
-### HTML Version: The Human Experience
+### HTML version: the human experience
 
 When you visit `/some-article`, you get:
 
@@ -44,7 +44,7 @@ When you visit `/some-article`, you get:
 
 Everything you'd expect from a modern web experience.
 
-### Markdown Version: The AI Experience
+### Markdown version: the AI experience
 
 When an AI agent requests `/some-article.md` or sends an `Accept: text/markdown` header, it gets:
 
@@ -57,9 +57,9 @@ When an AI agent requests `/some-article.md` or sends an `Accept: text/markdown`
 
 The underlying content is identical. Only the presentation changes.
 
-## The Technical Architecture
+## The technical architecture
 
-### Content Organization
+### Content organization
 
 First, I structured everything as markdown files in organized collections:
 
@@ -74,7 +74,7 @@ First, I structured everything as markdown files in organized collections:
 
 Each file includes rich metadata: title, description, date, tags, tldr, author, and update dates. Draft entries are automatically filtered from all public views.
 
-### The Middleware Magic
+### The middleware magic
 
 The secret sauce is in the middleware (`src/middleware.ts`). It analyzes each request and decides the best format:
 
@@ -91,7 +91,7 @@ It looks at three things:
 2. `Accept` header preferences
 3. Priority ordering if multiple formats are requested
 
-### Content Loading and Filtering
+### Content loading and filtering
 
 All content queries exclude draft entries automatically:
 
@@ -101,11 +101,11 @@ const posts = await getCollection('log', ({ data }) => {
 });
 ```
 
-This ensures consistency across all endpoints - no content accidentally slips through.
+This ensures consistency across all endpoints; no content accidentally slips through.
 
-## Accessibility and Crawlability: No Hidden Content
+## Accessibility and crawlability: no hidden content
 
-Here's the crucial principle: **everything is discoverable**.
+The principle is simple: everything is discoverable.
 
 - HTML content: All `/{slug}` URLs with rich formatting
 - Markdown content: Direct access via `/{slug}.md` URLs
@@ -114,9 +114,9 @@ Here's the crucial principle: **everything is discoverable**.
 - Structured data: `/llms.txt`, `/llms-full.txt`, `/rss.xml`
 - API endpoints: `/api/raw/[slug]`, `/api/og/[slug]`
 
-No authentication. No cloaking. No user agent discrimination. Format based on capabilities, not identity.
+There's no authentication, no cloaking, no user agent discrimination. Format is based on capabilities, not identity.
 
-## SEO Implementation: Both Formats Canonicalized
+## SEO implementation: both formats canonicalized
 
 Both HTML and markdown versions declare the HTML version as canonical:
 
@@ -128,7 +128,7 @@ This tells search engines which version to index while still allowing AI agents 
 
 The sitemap includes all content, robots.txt is permissive (`Allow: /`), and structured data includes both BlogPost and Breadcrumb schemas.
 
-## Content Parity Analysis
+## Content parity analysis
 
 The core content is identical across both formats:
 
@@ -140,7 +140,7 @@ The core content is identical across both formats:
 
 No content is restricted or hidden between formats. Every piece of information is available in both versions.
 
-## Performance Optimization
+## Performance optimization
 
 The system includes smart caching:
 
@@ -151,7 +151,7 @@ The system includes smart caching:
 
 This means fast delivery for humans and efficient parsing for AI agents.
 
-## Standards Compliance
+## Standards compliance
 
 The implementation follows industry standards:
 
@@ -161,7 +161,7 @@ The implementation follows industry standards:
 - Schema.org for structured data
 - Open Graph for social media
 
-## Why This Matters for the AI Era
+## Why this matters for the AI era
 
 As AI agents become more sophisticated readers of web content, we need to rethink how we deliver information. The old model of "optimize for humans, let machines figure it out" is no longer sufficient.
 
@@ -179,27 +179,27 @@ Humans still need:
 
 My architecture delivers both without compromise.
 
-## Lessons Learned
+## Lessons learned
 
-### Start With Content Parity
+### Start with content parity
 
 The most important principle is identical core content across all formats. Don't create different information for different audiences. Create different presentations of the same information.
 
-### Be Explicit About Format Detection
+### Be explicit about format detection
 
 Don't rely on user agent strings. Use standard HTTP mechanisms like Accept headers and URL patterns. This makes your system more predictable and standards-compliant.
 
-### Think About Attribution
+### Think about attribution
 
 AI agents need to know who created content and how to cite it properly. The academic citation format and comprehensive metadata header make this straightforward.
 
-### Don't Forget Performance
+### Don't forget performance
 
 Content negotiation can add complexity, but it shouldn't slow down delivery. Proper caching headers and build-time optimization keep everything fast.
 
-## The Future of Content Delivery
+## The future of content delivery
 
-This architecture isn't just about serving AI agents today. It's about preparing for a future where content consumption is increasingly diverse and multi-format.
+This architecture also prepares for a future where content consumption is increasingly diverse and multi-format.
 
 Imagine:
 - Voice assistants requesting structured data
@@ -209,21 +209,21 @@ Imagine:
 
 By building a flexible content negotiation system now, you're future-proofing your content delivery strategy.
 
-## Getting Started
+## Getting started
 
 If you want to implement similar architecture:
 
-1. **Organize content in structured collections** with rich metadata
-2. **Implement content negotiation middleware** that respects HTTP standards
-3. **Maintain content parity** across all formats
-4. **Think about attribution and citations** for AI consumption
-5. **Optimize for both discoverability and performance**
+1. Organize content in structured collections with rich metadata
+2. Implement content negotiation middleware that respects HTTP standards
+3. Maintain content parity across all formats
+4. Think about attribution and citations for AI consumption
+5. Optimize for both discoverability and performance
 
 The code is all open source and the patterns are transferable to any static site generator or content management system.
 
-## Beyond Technical Architecture
+## Beyond technical architecture
 
-What's really interesting about this approach is how it changes the relationship between content creators and their audiences.
+This approach also changes the relationship between content creators and their audiences.
 
 When you optimize for both humans and AI agents, you're forced to be more intentional about:
 - Clear structure and organization
@@ -231,14 +231,12 @@ When you optimize for both humans and AI agents, you're forced to be more intent
 - Consistent information delivery
 - Accessibility across different consumption methods
 
-These aren't just technical improvements—they make your content better for everyone, regardless of how they're accessing it.
+These changes go beyond the technical. They make your content better for everyone, regardless of how they're accessing it.
 
-## The Human Element
+## The human element
 
-At the end of the day, this is still about connecting with people. Whether they're reading your content directly through a browser or having an AI agent summarize it for them, the goal is the same: share valuable ideas and insights.
+This is still about connecting with people. Whether they're reading your content directly through a browser or having an AI agent summarize it for them, the goal is the same: share valuable ideas and insights.
 
-The architecture I've built removes the friction between these consumption methods. The same ideas, the same stories, the same insights—delivered in the format that works best for each reader, human or machine.
+The architecture I've built removes the friction between these consumption methods. The same ideas, the same stories, the same insights, delivered in the format that works best for each reader, human or machine.
 
 And isn't that what the web has always been about? Making information accessible to everyone, in whatever way they need to consume it.
-
-The technology changes, but the mission stays the same.

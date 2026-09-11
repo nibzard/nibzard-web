@@ -20,35 +20,35 @@ I want a deterministic, auditable teammate that ships one task at a time, leaves
 
 This obsession started last June. I built [llm-loop](https://github.com/nibzard/llm-loop), a plugin for [Simon Willison's LLM CLI](https://llm.datasette.io/) that gave it the one thing it was missing: the ability to keep going. Published to PyPI, it turned a single-turn tool into something that could iterate autonomously.
 
-Around the same time, I had a great chat with [Geoffrey Huntley](https://ghuntley.com/). We'd converged in the same universe—he was pioneering what he called the **Ralph Wiggum Loop**: autonomous agents that maintain codebases indefinitely. Geoff saw the future before most of us even knew there was a problem to solve.
+Around the same time, I had a great chat with [Geoffrey Huntley](https://ghuntley.com/). We'd converged in the same universe. He was pioneering what he called the **Ralph Wiggum Loop**: autonomous agents that maintain codebases indefinitely. Geoff saw the future before most of us even knew there was a problem to solve.
 
-In September, when [Z.ai released GLM-4.5](https://z.ai/subscribe?ic=61HSE9HVY6) (referral link that feeds my loops), I built `loop.sh`—the first version of a simple looping script that used skills to move work forward. It worked, but it was still missing something.
+In September, when [Z.ai released GLM-4.5](https://z.ai/subscribe?ic=61HSE9HVY6) (referral link that feeds my loops), I built `loop.sh`: the first version of a simple looping script that used skills to move work forward. It worked, but it was still missing something.
 
-Now, with **Codex 5.2 in xhigh mode**, everything clicked. The new Looper is built entirely around it—harnessing the power of observability through logs, traceability through a JSON task list, and script flags for tail and status. It's not just an autonomous coder anymore. It's an auditable workflow.
+Now, with **Codex 5.2 in xhigh mode**, everything clicked. The new Looper is built entirely around it: observability through logs, traceability through a JSON task list, and script flags for tail and status. It's an auditable workflow, not just an autonomous coder.
 
-Look, I know how this sounds. Others are off building entire orchestrations systems—Steve Yegge's Gas Town is basically Kubernetes mated with Temporal, with seven worker roles, a tmux UI, and concepts called "Beads" and "Molecules." It's designed for running 20–30 Claude Code instances at once. That's cool, but I wanted something very simple: true to the rough idea of just running a loop, but with some fancy bells and whistles.
+Look, I know how this sounds. Others are off building entire orchestration systems. Steve Yegge's Gas Town is basically Kubernetes mated with Temporal, with seven worker roles, a tmux UI, and concepts called "Beads" and "Molecules." It's designed for running 20–30 Claude Code instances at once. That's cool, but I wanted something very simple: true to the rough idea of just running a loop, but with some fancy bells and whistles.
 
-There's a deeper reason for building small wrappers instead of full orchestrators: the model makers themselves are building the best harnesses. Codex CLI comes from OpenAI; Claude Code from Anthropic. They know their models' token patterns, thinking styles, and tool preferences better than anyone else. Even third-party models like GLM-4.7 on Z.ai feel eerily native in Claude Code—like they were trained or reinforced on Claude Code workflows itself.
+There's also a simpler reason to build small wrappers instead of full orchestrators: the model makers themselves are building the best harnesses. Codex CLI comes from OpenAI; Claude Code from Anthropic. They know their models' token patterns, thinking styles, and tool preferences better than anyone else. Even third-party models like GLM-4.7 on Z.ai feel eerily native in Claude Code, like they were trained or reinforced on Claude Code workflows itself.
 
-Other companies are building their own harnesses too: Charm's [Crush](https://github.com/charmbracelet/crush) brings glamorous terminal-native AI coding, while OpenCode and Pi Code offer their own takes. But none of this invites me to build a *better* harness. The ideal form is a small wrapper around something that already works—nothing extra, just structure on top.
+Other companies are building their own harnesses too: Charm's [Crush](https://github.com/charmbracelet/crush) brings glamorous terminal-native AI coding, while OpenCode and Pi Code offer their own takes. But none of this invites me to build a *better* harness. The ideal form is a small wrapper around something that already works: nothing extra, just structure on top.
 
 Most AI coding tools give you a chatty assistant that's helpful but forgetful, that re-explains context you've already established, that drifts when tasks get complex.
 
 I wanted something else. So I built Looper.
 
-## What Looper Actually Is
+## What Looper actually is
 
 At its core, Looper is a tiny bash wrapper around Codex that enforces a strict loop:
 
-- **One task per iteration**—no partial work, no multitasking, no drift
-- **JSON backlog as source of truth**—the plan and the audit surface are the same file
-- **Schema-driven updates**—every change flows through jq, so nothing is implicit
-- **JSONL logging**—replay, diff, and measure every run
-- **Forced review pass**—a senior-style gate that either adds work or marks the project done
+- **One task per iteration**: no partial work, no multitasking, no drift
+- **JSON backlog as source of truth**: the plan and the audit surface are the same file
+- **Schema-driven updates**: every change flows through jq, so nothing is implicit
+- **JSONL logging**: replay, diff, and measure every run
+- **Forced review pass**: a senior-style gate that either adds work or marks the project done
 
 The rule is boring on purpose. **Boring scales.**
 
-## The Speed You Can Still Intervene At
+## The speed you can still intervene at
 
 Here's what Gas Town and the 20-agent swarms miss: humans become the bottleneck.
 
@@ -58,9 +58,9 @@ I want to move at a speed where I can *still intervene* while the system runs in
 
 Slow enough to follow. Fast enough to ship.
 
-This speed mirrors the **flow state** formula: too fast causes anxiety and loss of control; too slow causes boredom and disengagement. A successful looper keeps the challenge level just barely above your ability to intervene manually—which is precisely where optimal experience lives.
+This speed mirrors the **flow state** formula: too fast causes anxiety and loss of control; too slow causes boredom and disengagement. A successful looper keeps the challenge level just barely above your ability to intervene manually, which is precisely where optimal experience lives.
 
-## Why a Backlog Changes Everything
+## Why a backlog changes everything
 
 <blockquote class="featured-quote primary">
 Most AI tools make you the bottleneck—constantly feeding them the next instruction. A backlog removes you from the critical path.
@@ -68,13 +68,13 @@ Most AI tools make you the bottleneck—constantly feeding them the next instruc
 
 Here's the problem with free-form AI coding: you become the project manager. You're breaking down tasks, checking completeness, deciding what's next. The AI is smart, but you're doing the orchestration.
 
-A backlog inverts this. The AI pulls tasks, completes them, and then—crucially—*runs a review pass* that either adds new work or marks the project complete.
+A backlog inverts this. The AI pulls tasks, completes them, and then, crucially, *runs a review pass* that either adds new work or marks the project complete.
 
 The review pass behaves like a senior dev: read the whole repo, check against source specs, decide what's missing. Only the review pass can append the `project-done` marker.
 
 This means the system can run indefinitely, but still has a hard stop when the backlog is truly exhausted.
 
-## The Shape of the Loop
+## The shape of the loop
 
 From my local `~/.looper` logs:
 
@@ -85,7 +85,7 @@ From my local `~/.looper` logs:
 
 These are local test runs, not production. But they show the shape: short, consistent loops with predictable tool usage.
 
-## The Anti-Magic Approach
+## The anti-magic approach
 
 <blockquote class="featured-quote secondary">
 The gap between AI that demos well and AI that ships is in observability, not capability. Structure is how you bridge it.
@@ -97,48 +97,48 @@ You can always answer: what changed, why, and in which iteration?
 
 It's honest.
 
-## From Prototype to Production
+## From prototype to production
 
-The first Looper prototype was built with Claude—you can see the [original gist here](https://gist.github.com/nibzard/a97ef0a1919328bcbc6a224a5d2cfc78). The [live repo is on GitHub](https://github.com/nibzard/looper).
+The first Looper prototype was built with Claude. You can see the [original gist here](https://gist.github.com/nibzard/a97ef0a1919328bcbc6a224a5d2cfc78). The [live repo is on GitHub](https://github.com/nibzard/looper).
 
 I wrapped the release flow into a project skill and a helper script so the whole process is repeatable: test, bump version, tag, push, publish release, update the Homebrew formula.
 
 Because production is what you ship, not what you demo.
 
-## What This All Means
+## What this all means
 
 If you're building with AI, don't give it free-form leeway. Give it:
 
-- **A backlog**—so the work is explicit
-- **A schema**—so the updates are mechanical
-- **A review gate**—so completion is honest
+- **A backlog**: so the work is explicit
+- **A schema**: so the updates are mechanical
+- **A review gate**: so completion is honest
 
 Looper is the smallest working proof that this style is not only possible, it's reliable.
 
-The magic isn't in the model. The magic is in the constraints.
+The magic is in the constraints.
 
-## What's Next: Model Interleaving
+## What's next: model interleaving
 
-Here's something becoming increasingly clear: **iteration beats perfection**.
+It's increasingly clear that **iteration beats perfection**.
 
 A non-SOTA model that can iterate will outperform a SOTA model that can't. The loop matters more than the model.
 
-[GLM-4.7](https://z.ai/subscribe?ic=61HSE9HVY6) (referral link) is impressive—the speed, the interleaved thinking pattern, the token efficiency. I'm adding a feature to let you choose: use GLM for task iterations, then run the review pass with Codex xhigh.
+[GLM-4.7](https://z.ai/subscribe?ic=61HSE9HVY6) (referral link) is impressive: the speed, the interleaved thinking pattern, the token efficiency. I'm adding a feature to let you choose: use GLM for task iterations, then run the review pass with Codex xhigh.
 
 This maps to the **Oracle-Worker pattern** from [agentic-patterns.com](https://agentic-patterns.com/patterns/oracle-and-worker-multi-model/): cheap models handle bulk work while an expensive model handles planning and review. It's cost-effective because most compute happens on workers, but quality is preserved because the oracle sets the direction.
 
-But there's something deeper here. Cursor 2.0's multi-model ensemble approach shows that **combining predictions from multiple models significantly improves final output, especially for harder tasks**. Different models have different failure modes, different strengths. When you alternate them, those blind spots cancel out.
+Cursor 2.0's multi-model ensemble approach points the same way: **combining predictions from multiple models significantly improves final output, especially for harder tasks**. Different models have different failure modes, different strengths. When you alternate them, those blind spots cancel out.
 
-The future of Looper isn't just one model looping. It's multiple models, interleaved strategically, each covering the others' weaknesses.
+The future of Looper is multiple models, interleaved strategically, each covering the others' weaknesses.
 
-Because reliability isn't about having the best model. It's about having the best *system*.
+Because reliability comes from having the best *system*, not the best model.
 
-## Looper Go: The Next Iteration
+## Looper Go: the next iteration
 
 I'm now porting Looper to [Go](https://github.com/nibzard/looper-go).
 
-Why Go? The bash wrapper proved the concept, but it's starting to hit its limits. I want to make Looper more flexible—add proper concurrency, better error handling, plugin-style agent support—while preserving the dead-simple loop structure that makes it work.
+Why Go? The bash wrapper proved the concept, but it's starting to hit its limits. I want to make Looper more flexible (proper concurrency, better error handling, plugin-style agent support) while preserving the dead-simple loop structure that makes it work.
 
 A bit fancier under the hood, but the same DNA: one task, one iteration, honest review.
 
-The Go port isn't a rewrite for rewrite's sake. It's about making Looper something I can grow with—more reliable, easier to extend, still boring enough to trust.
+The Go port is about making Looper something I can grow with: more reliable, easier to extend, still boring enough to trust.

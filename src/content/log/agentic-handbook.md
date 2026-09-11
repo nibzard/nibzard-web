@@ -16,10 +16,10 @@ answers_questions:
 ---
 
 <blockquote class="featured-quote primary">
-Agentic AI isn't a new model capability so much as a new software shape: an LLM inside a loop, with tools, state, and stopping conditions. The hard part isn't getting a demo—it's making the loop reliable.
+Agentic AI isn't a new model capability so much as a new software shape: an LLM inside a loop, with tools, state, and stopping conditions. The hard part isn't getting a demo; it's making the loop reliable.
 </blockquote>
 
-## Before We Start: What This Post Is (and Isn't)
+## Before we start: what this post is (and isn't)
 
 This post is a **production-minded guide** to the pattern library behind:
 
@@ -27,7 +27,7 @@ This post is a **production-minded guide** to the pattern library behind:
 - the companion site: [agentic-patterns.com](https://agentic-patterns.com/)
 
 **What this is**
-- A **synthesis** of patterns that show up repeatedly across public write-ups, repos, papers, and talks.
+- A synthesis of patterns that show up repeatedly across public write-ups, repos, papers, and talks.
 - A practical map of the "demo-to-production gap": what breaks, why it breaks, and what teams do about it.
 
 **What this isn't**
@@ -35,11 +35,11 @@ This post is a **production-minded guide** to the pattern library behind:
 - Not a claim that every pattern is universally correct, necessary, or stable.
 - Not a promise that you can bolt an "agent mode" onto any workflow and instantly ship faster.
 
-If you've tried agents and felt like it was "banging rocks together," you're not alone. A recurring theme in developer discussions is that **tooling and workflow** often fail before the model does: confusing "change stacks," context management friction, and agents making the same edit repeatedly. This post explicitly addresses those failure modes.
+If you've tried agents and felt like it was "banging rocks together," you're not alone. A recurring theme in developer discussions is that tooling and workflow often fail before the model does: confusing "change stacks," context management friction, and agents making the same edit repeatedly. This post explicitly addresses those failure modes.
 
 ---
 
-## Start Here If Agents Have Felt Unusable
+## Start here if agents have felt unusable
 
 If your current workflow is "copy/paste into chat, copy/paste back," you're not behind. That workflow still works for many tasks.
 
@@ -48,7 +48,7 @@ But "agentic" workflows only start paying off when you adopt two habits:
 1. **Diff-first**: every change is reviewed as a diff (git, patch view, PR)
 2. **Loop-first**: the agent runs a loop with clear exit conditions (tests pass, lint clean, eval threshold met)
 
-Here's a simple on-ramp you can run in **30 minutes** on a real repo.
+Here's a simple on-ramp you can run in 30 minutes on a real repo.
 
 ### A 30-minute agent workflow that actually works
 
@@ -80,11 +80,11 @@ Then do this:
 - "Run tests."
 - Repeat until green.
 
-If you do only this—and nothing else—you'll already be practicing the core of production agent design: **bounded actions + deterministic checks + reviewable outputs**.
+If you do only this and nothing else, you'll already be practicing the core of production agent design: bounded actions + deterministic checks + reviewable outputs.
 
 ---
 
-## Cost, Limits, and When Agents Are Not Worth It
+## Cost, limits, and when agents are not worth it
 
 A production agent is not "free." It trades one cost for another:
 
@@ -103,35 +103,32 @@ Agents are usually worth it when:
 - the work is repetitive (migrations, boilerplate updates, large renames)
 - you can constrain scope (tools, files, permissions)
 
-Keep this framing in mind as you read the patterns below. Most "agent failures" are not model failures—they're **loop design failures**.
+Keep this framing in mind as you read the patterns below. Most "agent failures" are not model failures, they're loop design failures.
 
 ---
 
-## Why Interest Spiked in Late December 2025
+## Why interest spiked in late December 2025
 
 The "Awesome Agentic Patterns" repo accelerated sharply during the holiday season and reached roughly the low-thousands of stars by January 2026. (As of mid-January 2026 it sits around ~2.8k stars.) The companion site traffic appeared to mirror that attention.
 
-It's tempting to turn that into a single-cause story ("the holidays changed everything"), but in reality spikes like this usually come from multiple factors:
+It's tempting to turn that into a single-cause story ("the holidays changed everything"), but spikes like this usually come from multiple factors:
 - visibility on Hacker News and social feeds
 - a maturing ecosystem of CLI/IDE agent tools
 - more people finally spending enough uninterrupted hours to build muscle memory
 
 The most defensible conclusion is simple:
 
-**Agents reward time-in-seat.** They have a learning curve—especially around constraints, context, and review loops.
+Agents reward time-in-seat. They have a learning curve, especially around constraints, context, and review loops.
 
 ---
 
-## Public Signals: Serious Developers Took Agents Seriously (With Caveats)
+## Public signals: serious developers took agents seriously (with caveats)
 
 Four public signals helped "normalize" agentic workflows:
 
 ### Linus Torvalds: AI-assisted coding for a hobby project, not for critical systems
 
-Torvalds experimented with AI-assisted "vibe coding" on a personal audio-related project (AudioNoise) over the holidays, while also expressing skepticism about using these techniques in the Linux kernel. The takeaway isn't "Linus loves agents." The takeaway is:
-
-- AI assistance can be useful in **low-risk, self-contained contexts**
-- even enthusiasts draw a hard line at **high-stakes infrastructure**
+Torvalds experimented with AI-assisted "vibe coding" on a personal audio-related project (AudioNoise) over the holidays, while also expressing skepticism about using these techniques in the Linux kernel. The takeaway isn't "Linus loves agents." It's that AI assistance can be useful in low-risk, self-contained contexts, and even enthusiasts draw a hard line at high-stakes infrastructure.
 
 ### Tobias Lütke (Shopify): AI usage as a baseline expectation
 
@@ -139,17 +136,17 @@ Lütke published an internal memo externally arguing that reflexive AI usage is 
 
 ### Armin Ronacher: engaged, critical, and explicitly recommending "holiday time" to try it
 
-Ronacher has been both enthusiastic and sharply critical in public posts about agentic coding. Notably, he explicitly suggested that AI hold-outs who have time off during Christmas should try a paid Claude Code subscription as a "gift" to themselves—directly aligning with the "time-in-seat" adoption curve.
+Ronacher has been both enthusiastic and sharply critical in public posts about agentic coding. Notably, he explicitly suggested that AI hold-outs who have time off during Christmas should try a paid Claude Code subscription as a "gift" to themselves, directly aligning with the "time-in-seat" adoption curve.
 
 ### Ryan Dahl: "the era of humans writing code is over"
 
-Dahl, creator of Node.js and cofounder of Deno, declared that while SWEs still have work, "writing syntax directly is not it." This represents a stronger-than-most stance—even within the AI-positive community—that the fundamental activity of software engineering has shifted.
+Dahl, creator of Node.js and cofounder of Deno, declared that while SWEs still have work, "writing syntax directly is not it." This represents a stronger-than-most stance, even within the AI-positive community, that the fundamental activity of software engineering has shifted.
 
-The takeaway isn't that everyone agrees. The takeaway is that serious, respected engineers are publicly articulating a worldview where code authorship is no longer the primary human activity—even as they acknowledge judgment, architecture, and oversight remain essential.
+Not everyone agrees. But serious, respected engineers are publicly articulating a worldview where code authorship is no longer the primary human activity, even as they acknowledge judgment, architecture, and oversight remain essential.
 
 ---
 
-## What Are Agentic Patterns?
+## What are agentic patterns?
 
 A useful definition:
 
@@ -159,7 +156,7 @@ A useful definition:
 
 ### The demo-to-production gap (why patterns matter)
 
-Demos cheat—usually unintentionally:
+Demos cheat, usually unintentionally:
 - curated inputs
 - happy paths
 - no permission boundaries
@@ -190,11 +187,11 @@ The pattern library aims for:
 
 ---
 
-## The Eight Categories of Agentic Patterns
+## The eight categories of agentic patterns
 
 The patterns cluster into eight categories. Treat these as a map of problem types.
 
-### 1. Orchestration & Control
+### 1. Orchestration & control
 How the loop decides what to do, when to stop, and how to recover.
 
 Examples:
@@ -204,7 +201,7 @@ Examples:
 - [Language Agent Tree Search (LATS)](https://agentic-patterns.com/patterns/language-agent-tree-search-lats/)
 - [Tree of Thoughts](https://agentic-patterns.com/patterns/tree-of-thought-reasoning/)
 
-### 2. Tool Use & Environment
+### 2. Tool use & environment
 How the agent interacts with systems without making a mess.
 
 Examples:
@@ -213,7 +210,7 @@ Examples:
 - [Egress Lockdown](https://agentic-patterns.com/patterns/egress-lockdown-no-exfiltration-channel/)
 - [Code-Over-API](https://agentic-patterns.com/patterns/code-over-api-pattern/)
 
-### 3. Context & Memory
+### 3. Context & memory
 How to operate under context limits while staying grounded.
 
 Examples:
@@ -222,7 +219,7 @@ Examples:
 - [Episodic Memory Retrieval](https://agentic-patterns.com/patterns/episodic-memory-retrieval-injection/)
 - [Context Window Anxiety Management](https://agentic-patterns.com/patterns/context-window-anxiety-management/)
 
-### 4. Feedback Loops
+### 4. Feedback loops
 How to get better outputs through iteration and checks.
 
 Examples:
@@ -231,7 +228,7 @@ Examples:
 - [Rich Feedback Loops > Perfect Prompts](https://agentic-patterns.com/patterns/rich-feedback-loops/)
 - [Graph of Thoughts](https://agentic-patterns.com/patterns/graph-of-thoughts/)
 
-### 5. UX & Collaboration
+### 5. UX & collaboration
 How humans and agents share control without chaos.
 
 Examples:
@@ -240,21 +237,21 @@ Examples:
 
 > Note: Patterns that imply "monitor chain-of-thought" should be interpreted as **monitor action traces and intermediate artifacts** (tool calls, diffs, test output), not as relying on hidden reasoning text.
 
-### 6. Reliability & Eval
-How you know it's working—and detect regressions.
+### 6. Reliability & eval
+How you know it's working, and how you detect regressions.
 
 Examples:
 - [Workflow Evals with Mocked Tools](https://agentic-patterns.com/patterns/workflow-evals-with-mocked-tools/)
 - [Anti-Reward-Hacking Grader Design](https://agentic-patterns.com/patterns/anti-reward-hacking-grader-design/)
 
-### 7. Learning & Adaptation
+### 7. Learning & adaptation
 How the system improves over time.
 
 Examples:
 - [Skill Library Evolution](https://agentic-patterns.com/patterns/skill-library-evolution/)
 - [Agent Reinforcement Fine-Tuning (Agent RFT)](https://agentic-patterns.com/patterns/agent-reinforcement-fine-tuning/)
 
-### 8. Security & Safety
+### 8. Security & safety
 How to prevent the agent from becoming a data leak or incident generator.
 
 Examples:
@@ -264,7 +261,7 @@ Examples:
 
 ---
 
-## Foundational Patterns You Can Use Immediately
+## Foundational patterns you can use immediately
 
 If you ignore everything else and adopt four ideas, start here.
 
@@ -274,7 +271,7 @@ If you ignore everything else and adopt four ideas, start here.
 When an agent sees untrusted content (user input, web pages, email, logs), that content can steer the agent's next actions. Tool outputs can become a prompt-injection vector.
 
 **The production-grade solution**
-Split work into **plan**, **controlled execution**, and **replan gates**:
+Split work into plan, controlled execution, and replan gates:
 
 1. **Plan phase**
    - The agent proposes a plan: goals, steps, expected tools, constraints, and "done" checks.
@@ -304,7 +301,7 @@ Split work into **plan**, **controlled execution**, and **replan gates**:
 
 ---
 
-### 2) Inversion of Control
+### 2) Inversion of control
 
 **The problem**
 If you micromanage every step, you become the bottleneck and you prevent the agent from exploring.
@@ -326,10 +323,10 @@ Inversion of control without constraints becomes "agent runs wild." This pattern
 
 ---
 
-### 3) Reflection Loop (with real checks, not vibes)
+### 3) Reflection loop (with real checks, not vibes)
 
 **The problem**
-One-shot generation is brittle. But "self-critique" without objective checks is also brittle—models can rationalize.
+One-shot generation is brittle. But "self-critique" without objective checks is also brittle: models can rationalize.
 
 **The solution**
 Reflection loops should be anchored to a signal:
@@ -357,7 +354,7 @@ for attempt in range(max_iters):
 
 ---
 
-### 4) Action Trace Monitoring & Interruption
+### 4) Action trace monitoring & interruption
 
 **The problem**
 Agents drift. By the time you see the final output, you've already paid for the drift.
@@ -379,11 +376,11 @@ Add explicit "kill switches":
 * stop on failing tests twice without narrowing scope
 
 **Key idea**
-You don't need to read private reasoning to keep control. You need **observable behavior** and **hard gates**.
+You don't need to read private reasoning to keep control. You need observable behavior and hard gates.
 
 ---
 
-## Tooling Reality: Why "Agent Mode" Often Feels Broken
+## Tooling reality: why "agent mode" often feels broken
 
 A pattern library won't help if the *interface* makes you fight the tool. Three practical fixes cover most frustration:
 
@@ -414,7 +411,7 @@ This is often the difference between "magic" and "merge-hell."
 
 ---
 
-## The "Ralph Wiggum" Drift Trap
+## The "Ralph Wiggum" drift trap
 
 Geoffrey Huntley coined a useful label for a common failure mode: an agent looks productive early, then gradually drifts as it misses implicit context and constraints.
 
@@ -430,7 +427,7 @@ You don't fix this with a smarter prompt. You fix it with:
 
 ---
 
-## The Architecture of Multi-Agent Systems (and When to Avoid Them)
+## The architecture of multi-agent systems (and when to avoid them)
 
 Multi-agent systems can help when:
 
@@ -444,7 +441,7 @@ They hurt when:
 * shared context is essential
 * you don't have strong tests/evals
 
-### Swarm Migration Pattern (practical version)
+### Swarm migration pattern (practical version)
 
 **Use case**
 Large, mostly-mechanical migrations:
@@ -472,7 +469,7 @@ Large, mostly-mechanical migrations:
 
 ### LATS (Language Agent Tree Search): strong, expensive
 
-LATS combines tree search (MCTS-like exploration) with LLM evaluation/reflection to explore multiple reasoning paths. This can outperform linear "one-path" approaches on hard decision-making tasks—but it costs more compute and complexity.
+LATS combines tree search (MCTS-like exploration) with LLM evaluation/reflection to explore multiple reasoning paths. This can outperform linear "one-path" approaches on hard decision-making tasks, but it costs more compute and complexity.
 
 Use it when:
 
@@ -486,7 +483,7 @@ Skip it when:
 
 ---
 
-## The Human–Agent Collaboration Spectrum
+## The human–agent collaboration spectrum
 
 A lot of "agents will replace humans" rhetoric collapses in practice. Production success usually looks like:
 
@@ -495,7 +492,7 @@ A lot of "agents will replace humans" rhetoric collapses in practice. Production
 * humans review and approve risk
 * systems enforce safety boundaries
 
-### Spectrum of Control (Blended Initiative)
+### Spectrum of control (blended initiative)
 
 Design for smooth control transfer:
 
@@ -510,7 +507,7 @@ A good UI exposes:
 * what it ran
 * what it's unsure about
 
-### Abstracted Code Representation for Review
+### Abstracted code representation for review
 
 For large diffs, ask for:
 
@@ -523,9 +520,9 @@ Then review the diff.
 
 ---
 
-## Security Patterns That Actually Matter
+## Security patterns that actually matter
 
-### The Lethal Trifecta
+### The lethal trifecta
 
 A practical security model for agentic systems: the risky overlap of
 
@@ -542,7 +539,7 @@ The production move is not "better prompting." It's removing at least one circle
 * strict input separation and sandboxing
 * tool capability compartmentalization
 
-### PII Tokenization (representation over restriction)
+### PII tokenization (representation over restriction)
 
 Instead of placing raw PII into the model context, replace it with tokens:
 
@@ -552,7 +549,7 @@ Instead of placing raw PII into the model context, replace it with tokens:
 
 ---
 
-## Production Reality Check: The Bottleneck Is Judgment (and Agents Don't Remove It)
+## Production reality check: the bottleneck is judgment (and agents don't remove it)
 
 A common failure pattern is "slop gravity":
 
@@ -578,7 +575,7 @@ Think of agents as a power tool:
 
 ---
 
-## A Practical Path to Adoption
+## A practical path to adoption
 
 ### Step 1: Pick three patterns
 
@@ -616,7 +613,7 @@ This is the highest ROI thing most teams skip:
 ### Step 4: Stay current, but don't chase every trend
 
 Some patterns will be absorbed into tools and become invisible.
-Your advantage isn't knowing a pattern name—it's knowing:
+Your advantage isn't knowing a pattern name; it's knowing:
 
 * when to use it
 * what to measure
@@ -625,7 +622,7 @@ Your advantage isn't knowing a pattern name—it's knowing:
 
 ---
 
-## Methodology and Maturity (How to Interpret the Library)
+## Methodology and maturity (how to interpret the library)
 
 Not all patterns are equally validated. Treat maturity labels as guidance, and define criteria.
 
@@ -644,7 +641,7 @@ If you're building production systems, bias toward:
 
 ---
 
-## Conclusion: Patterns Don't Ship—Loops Do
+## Conclusion: patterns don't ship, loops do
 
 The reason agentic work feels "magical" for some people and "useless" for others is rarely the model. It's the loop.
 

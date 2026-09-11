@@ -16,25 +16,23 @@ answers_questions:
 
 We’re past the point where “AI coding agents” means a single category. The ecosystem has fractured into multiple agents, each with strengths and quirks.
 
-# The Niche Map
+# The niche map
 
-* **Cloud Code** → first to innovate, MAX tokens, sub-agents, hooks.
-* **Amp Code** → best code search + shareable threads.
-* **OpenCode** → clean UI + model flexibility.
-* **Codex CLI** → GPT-5 scalpel precision.
-* **Gemini CLI** → huge context, free brute-force QA with Playwright MCP.
-* **Charm Crush** → epileptical TUI assault.
+* **Cloud Code**: first to innovate, MAX tokens, sub-agents, hooks.
+* **Amp Code**: best code search + shareable threads.
+* **OpenCode**: clean UI + model flexibility.
+* **Codex CLI**: GPT-5 scalpel precision.
+* **Gemini CLI**: huge context, free brute-force QA with Playwright MCP.
+* **Charm Crush**: epileptical TUI assault.
 
-# Why This Matters
+# Why this matters
 
 It’s tempting to chase the “best agent.” But in practice, it’s the *fit* that matters: context window for QA, precision for surgical CLI work, UI and formatting for in-terminal workflows, interfaces that don’t get in your way.
 
-# The Pattern
+# The pattern
 
-Every generation of tools doesn’t converge, it diverges.
+Every generation of tools diverges instead of converging.
 
-Innovation happens in the edges: someone solves formatting, someone tools, others scale, someone nails interaction design. Together, they form a toolkit, not a monolith.
+Innovation happens in the edges: someone solves formatting, another builds tools, others scale, someone nails interaction design. Together, they form a toolkit, not a monolith.
 
-The winners won’t be those who just stack the strongest all inclusive offer, but those who orchestrate across niches.
-
-That’s the play.
+The winners won’t be the ones stacking the strongest all-inclusive offer. They’ll be the ones who orchestrate across niches.

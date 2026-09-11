@@ -16,15 +16,15 @@ answers_questions:
 
 I checked our onboarding flow for the last seven days.
 
-Exactly 40% of new signups came through AI recommendations—that's not just traffic source, that's what users told us during onboarding when asked how they found us. Someone asked ChatGPT, Perplexity, or Claude for a browser automation solution, and the AI pointed them to us.
+Exactly 40% of new signups came through AI recommendations. That number comes from users themselves, not analytics: we ask during onboarding how they found us. Someone asked ChatGPT, Perplexity, or Claude for a browser automation solution, and the AI pointed them to us.
 
-No surprises here. It's not some AI-has-arrived moment. It's just data. A pattern in a real product, with real users, over a real week.
+No surprises here, and no AI-has-arrived moment. It's just data from a real product, with real users, over one week.
 
-But here's what makes it interesting: for dev tools, 40% from AI recommendations is a signal of changing surfaces. The people building AI agents are discovering infrastructure through AI assistants. The channel matches the customer.
+For dev tools, 40% from AI recommendations is a signal of changing surfaces. The people building AI agents are discovering infrastructure through AI assistants. The channel matches the customer.
 
 We still position ourselves as browser infrastructure. But the majority of actual use cases? Giving browsers to agents. [The web isn't being replaced; it's being operated](/agent-web). The product positioning catches up slowly, but the users are already there.
 
-Here's the part I'm thinking about more: **if today's users find us by asking AI, tomorrow's users might not ask at all.**
+The part I'm thinking about more: if today's users find us by asking AI, tomorrow's users might not ask at all.
 
 Their agents will decide.
 

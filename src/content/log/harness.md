@@ -29,9 +29,9 @@ Here's what it nails, what shipping against it this week cost us, and three thin
 
 The sharpest thing in the post isn't the API. It's the taxonomy. Long single-context runs fail in three specific ways:
 
-- **Agentic laziness** — the agent declares victory after partial progress. Twenty of fifty review items, then "done."
-- **Self-preferential bias** — ask it to grade its own work against a rubric and it grades on a curve it set.
-- **Goal drift** — enough turns plus one compaction and the "don't do X" constraint quietly evaporates.
+- **Agentic laziness**: the agent declares victory after partial progress. Twenty of fifty review items, then "done."
+- **Self-preferential bias**: ask it to grade its own work against a rubric and it grades on a curve it set.
+- **Goal drift**: enough turns plus one compaction and the "don't do X" constraint quietly evaporates.
 
 I didn't have these names. I had the bugs. Our commit log from the last two weeks is a running fight with the first two:
 
@@ -78,7 +78,7 @@ The post is written for an agent whose tools are mostly cheap and mostly safe: r
 
 In Claude Code, another subagent costs tokens and a worktree. In Wire, every subagent is a real browser session: a Steel VM, dollars a minute, a fresh or warmed auth profile, another roll of the dice against anti-bot. Parallelism has a blast radius measured in money and identity, not just context.
 
-We can run it wide — [Wire driving dozens of concurrent sessions at once](https://x.com/steeldotdev/status/2052676916109574545), the fan-out made literal: a prompt fanning out across many agents, many browsers, many screens, each making its own plan against the same task while you watch and step in.
+We can run it wide. [Wire driving dozens of concurrent sessions at once](https://x.com/steeldotdev/status/2052676916109574545), the fan-out made literal: a prompt fanning out across many agents, many browsers, many screens, each making its own plan against the same task while you watch and step in.
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border-radius: 8px; margin-bottom: 1.5rem;">
   <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/mNGW1WIb5D4" title="Running Browser Agents in Parallel With Minority Report UI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -106,19 +106,19 @@ So we're pulling quarantine up the stack, from triage trick to default posture. 
 
 The boldest claim in the post is that Opus 4.8 is now smart enough to write a custom harness per task, on the fly. I believe it. I also refuse, for now, to let that harness be disposable.
 
-The manifesto's rule: store the map, not the diary. A workflow that runs once and vanishes is a diary — no durable, inspectable record of how the problem got decomposed. Our compromise, and our proposal: let the model propose the experiment matrix, then promote the good ones into saved, inspectable artifacts, the same skill-promotion path we already use for durable site knowledge. The post points the same way when it ships a workflow file inside a skill folder next to `SKILL.md`. A proven harness for a recurring task should outlive the run that found it, in a file a human can read and diff.
+The manifesto's rule: store the map, not the diary. A workflow that runs once and vanishes is a diary: no durable, inspectable record of how the problem got decomposed. Our compromise, and our proposal: let the model propose the experiment matrix, then promote the good ones into saved, inspectable artifacts, the same skill-promotion path we already use for durable site knowledge. The post points the same way when it ships a workflow file inside a skill folder next to `SKILL.md`. A proven harness for a recurring task should outlive the run that found it, in a file a human can read and diff.
 
 One smaller thing in the same spirit. The post's "one verifier per rule" diagram has a step I missed at first: a skeptic that re-reads each flagged violation and asks "real, or false positive?" before anything's confirmed. Verifier-per-rule without a skeptic over-fires; it'll fail honest runs on a technicality. If you default verification on, like we just did, you owe it a skeptic. Adversarial verification needs its own adversary.
 
 ## The fine line
 
-None of this makes the browser easy. It makes failure useful, which is the only thing we've ever promised. Dynamic workflows aren't the win. They're a means. The win is what it always was: a run is complete not because the agent says so, but because the evidence proves what happened. And when it didn't happen, the evidence says why, and what to try next.
+None of this makes the browser easy. It makes failure useful, which is the only thing we've ever promised. Dynamic workflows are a means to that. A run is complete not because the agent says so, but because the evidence proves what happened. And when it didn't happen, the evidence says why, and what to try next.
 
 The post gave that instinct a vocabulary and an API. We gave it a substrate that doesn't forgive sloppiness. Put together, the position is simple:
 
 > Make the browser real. Make the core small. Make actions inspectable. Make failures useful. Make lessons durable.
 
-And when a task is parallel, adversarial, or long — when one more run can answer a real question — don't make one context carry all of it.
+And when a task is parallel, adversarial, or long, when one more run can answer a real question, don't make one context carry all of it.
 
 Branch. Compare. Reject. Keep the receipts.
 

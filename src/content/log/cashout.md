@@ -25,11 +25,11 @@ Agents can write code, reason through ambiguity, and call tools. But point them 
 
 A five-minute human task becomes a twenty-minute agent debugging session.
 
-A lot of this came from real pain while working on the Steel CLI release. I was experimenting heavily with how agents browse the web, including OpenClaw runs where I tried to get the agent to do something actually useful — like obtain an email for itself.
+A lot of this came from real pain while working on the Steel CLI release. I was experimenting heavily with how agents browse the web, including OpenClaw runs where I tried to get the agent to do something actually useful, like obtaining an email for itself.
 
 In my tests at the time, OpenClaw failed every end-to-end flow. That pressure pushed us to redesign the CLI and skill from scratch.
 
-That pressure forced a hard lesson: CLIs are a good surface for coding agents like Claude Code and Codex because they are native to terminal workflows. With a strong model, a capable coding agent, and an agent-friendly CLI contract, you can overcome most web-flow chaos once and codify the winning path into a repeatable script. I wrote more about this in [Making CLIs Agent-Friendly with Loops and Schemas](/agent-ci).
+The hard lesson: CLIs are a good surface for coding agents like Claude Code and Codex because they are native to terminal workflows. With a strong model, a capable coding agent, and an agent-friendly CLI contract, you can overcome most web-flow chaos once and codify the winning path into a repeatable script. I wrote more about this in [Making CLIs Agent-Friendly with Loops and Schemas](/agent-ci).
 
 A pattern that worked for me:
 
@@ -153,7 +153,7 @@ Two important details:
 - `e15` was the textbox ref in that specific snapshot. In a new session it may be `e7`, `e42`, whatever.
 - "Stop streaming" is a useful completion signal. The run polls snapshots until that UI affordance disappears.
 
-The **`e15` detail is where an "agent run" becomes automation**: you harden variable refs before rerunning.
+The `e15` detail is where an "agent run" becomes automation: you harden variable refs before rerunning.
 
 ### Turn it into a reusable script
 
@@ -192,8 +192,6 @@ The output isn't a transcript. It's a deterministic, reviewable procedure with a
 
 ## Skill overlays: the next layer
 
-The next layer is what I call skill overlays.
-
 - Base skill: a strong generic skill that works across many sites and communicates CLI usage clearly to the agent.
 - Skill overlay: domain-specific or domain-plus-action-specific guidance that captures the website's quirks.
 - Codified run: the deterministic bash procedure exported from a successful run.
@@ -202,7 +200,7 @@ In practice, `base skill + skill overlay + codified run` is more deterministic t
 
 - We are experimenting with skill overlays as first-class artifacts.
 - Early internal runs suggest up to 10x fewer tokens and about 2x faster execution when overlays are combined with a codified bash run (roughly 10+ runs).
-- These numbers are directional — not formally benchmarked — but outcome quality is noticeably better.
+- These numbers are directional, not formally benchmarked, but outcome quality is noticeably better.
 
 
 ## From bash runbook to reusable Node CLI
@@ -216,7 +214,7 @@ That gave me three layers:
 - The agent can execute the CLI, observe failures, and self-heal by adjusting steps when the site changes.
 
 I also used Steel credentials so authenticated state could be reused safely across runs, instead of hardcoding account details in scripts.
-With that in place, I can use my ChatGPT subscription through the CLI and hand it to agents for repeatable research workflows like search and optimization workflows tied to content ranking, as covered in [The Hidden Language of Search](/search-translator).
+With that in place, I can use my ChatGPT subscription through the CLI and hand it to agents for repeatable research and content-ranking optimization workflows, as covered in [The Hidden Language of Search](/search-translator).
 
 ![Node CLI screenshot showing the ChatGPT query flow automation](/images/20260303-ask-chatgpt.png)
 

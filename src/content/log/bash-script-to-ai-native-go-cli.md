@@ -19,19 +19,19 @@ I had `scribe.sh`. It worked, mostly. But every time someone asked "how do I run
 
 So I opened a fresh AI session and said: let's make this real.
 
-## The Shift
+## The shift
 
-**AI collapsed the build cost for tooling.**
+AI collapsed the build cost for tooling.
 
 > The old path: keep script forever, maybe rewrite later, maybe never ship.
 >
 > The new path: keep script as behavior spec, pair with AI, ship now.
 
-In one session, we turned `scribe.sh` into [`scriby`](https://github.com/nibzard/scriby)—a Go CLI with explicit commands, deterministic JSON output, proper exit codes, and a release pipeline.
+In one session, we turned `scribe.sh` into [`scriby`](https://github.com/nibzard/scriby): a Go CLI with explicit commands, deterministic JSON output, proper exit codes, and a release pipeline.
 
 > That's the difference between "a script on my machine" and "a tool agents and humans can trust."
 
-## One Binary, Done
+## One binary, done
 
 The requirement: you install one binary. No README archaeology, no dependency hell.
 
@@ -43,7 +43,7 @@ The requirement: you install one binary. No README archaeology, no dependency he
 
 ggerganov's [whisper.cpp](https://github.com/ggerganov/whisper.cpp) did the heavy lifting. We wrapped it in something you can call without reading a wiki.
 
-## The Gotcha
+## The gotcha
 
 First release shipped. Users got:
 
@@ -63,7 +63,7 @@ The fix: bundle fully self-contained binaries. First-run just works now.
 scriby run --model medium --language en ./meeting.wav
 ```
 
-## The Takeaway
+## The takeaway
 
 Look at your `~/bin`. Find the script you keep copying between machines.
 

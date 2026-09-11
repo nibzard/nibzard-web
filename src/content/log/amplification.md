@@ -19,15 +19,13 @@ answers_questions:
     <cite>— Mike Krieger</cite>
 </blockquote>
 
-When you make one part of a system dramatically faster, you don't just speed up the whole system.
+When you make one part of a system dramatically faster, you reveal where it was actually broken.
 
-**You reveal where it was actually broken.**
-
-At Anthropic, 90% of code is now written by AI. Engineering--once the primary constraint--has been obliterated as a bottleneck.
+At Anthropic, 90% of code is now written by AI. Engineering, once the primary constraint, has been obliterated as a bottleneck.
 
 What emerged in its place?
 
-## The New Constraints
+## The new constraints
 
 **Decision-making.** What should we build? Who decides? How do we align? When code generation becomes instantaneous, the time spent debating requirements and priorities suddenly dominates the development cycle.
 
@@ -35,23 +33,21 @@ What emerged in its place?
 
 **Context.** The difference between knowing your internal documents, Slack conversations, and domain expertise versus starting from scratch is "entirely the difference between a good answer and a bad answer."
 
-This is the pattern of progress: **solve one constraint, amplify the next**.
+This is the pattern of progress: solve one constraint, amplify the next.
 
-## Historical Echoes
+## Historical echoes
 
-The printing press didn't just make books faster to produce. It revealed that **literacy** was the real bottleneck. Suddenly, the ability to read became more valuable than the ability to physically copy text.
+The printing press made books faster to produce, and literacy suddenly became the bottleneck: the ability to read grew more valuable than the ability to physically copy text.
 
-The internet didn't just make information faster to access. It revealed that **attention** was the real bottleneck. The limiting factor shifted from information scarcity to information filtering.
+The internet made information faster to access, and attention became the bottleneck: the limiting factor shifted from information scarcity to information filtering.
 
-Steam engines didn't just make transportation faster. They revealed that **logistics** and **supply chains** were the real constraints on industrial growth.
+Steam engines made transportation faster, and logistics and supply chains turned out to be the real constraints on industrial growth.
 
-Each breakthrough follows the same pattern: eliminate the obvious limitation, discover the hidden one.
+## The context revolution
 
-## The Context Revolution
+AI makes coding faster, and clarity becomes everything.
 
-AI doesn't just make coding faster. It reveals that **clarity is everything**.
-
-Mike Krieger's equation captures this perfectly:
+Mike Krieger's equation for this:
 
 <blockquote class="featured-quote accent">
     <p>Model Intelligence + Context & Memory + Interface = Utility</p>
@@ -59,9 +55,9 @@ Mike Krieger's equation captures this perfectly:
 
 From his [recent guest appearance](https://www.youtube.com/watch?v=DKrBGOFs0GY) on Lenny's Podcast.
 
-The competitive advantage doesn't come from having the best AI--it comes from giving AI the best context.
+The competitive advantage doesn't come from having the best AI. It comes from giving AI the best context.
 
-## What This Means for Organizations
+## What this means for organizations
 
 Every company using AI will face this amplification effect. The question isn't whether it will happen, but which constraint will emerge first.
 
@@ -80,23 +76,23 @@ Every company using AI will face this amplification effect. The question isn't w
 - Literature review → Hypothesis generation
 - Methodology execution → Interpretation skills
 
-## The Preparation Problem
+## The preparation problem
 
 Most organizations aren't ready for their new bottlenecks.
 
 They're still optimizing for the old constraint. Hiring more engineers when the real need is better product managers. Investing in faster hardware when the real need is clearer communication protocols.
 
-The winners will be those who **anticipate the amplification**.
+The winners will be those who anticipate the amplification.
 
 Instead of just implementing AI tools, they'll ask: "When this constraint disappears, what becomes the new limitation? How do we strengthen that now?"
 
-## The Meta-Pattern
+## The meta-pattern
 
-This reveals something deeper about progress itself.
+The pattern has another layer.
 
-Every breakthrough isn't just an acceleration--it's a **reorganization** of constraints. The system doesn't just get faster; it gets fundamentally different.
+Every breakthrough reorganizes constraints. The system doesn't just get faster; it gets fundamentally different.
 
-The organizations that thrive aren't those that get the best AI tools first. They're those that **redesign their systems** around the new constraint landscape.
+The organizations that thrive aren't those that get the best AI tools first. They're those that redesign their systems around the new constraint landscape.
 
 When everyone can generate code instantly, competitive advantage flows to those who know what code to generate and why.
 
@@ -104,15 +100,13 @@ When everyone can create content at scale, advantage flows to those who understa
 
 When everyone can analyze data automatically, advantage flows to those who know which questions to ask.
 
-## The Strategic Question
+## The strategic question
 
-The question isn't whether AI will make your work faster.
+So the question isn't whether AI will make your work faster. It's what bottleneck it will reveal in your organization.
 
-The question is: **what bottleneck will it reveal in your organization?**
+Are you ready for it?
 
-And are you ready for it?
-
-The organizations that answer this question correctly--and prepare accordingly--will have overwhelming advantages in the AI-native economy.
+The organizations that answer this question correctly and prepare accordingly will have overwhelming advantages in the AI-native economy.
 
 The rest will find themselves optimizing for constraints that no longer exist while struggling with limitations they never saw coming.
 

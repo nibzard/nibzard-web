@@ -16,7 +16,7 @@ answers_questions:
 
 There's a cliché investors love because it's true: *time kills deals*.
 
-But here's what nobody tells you about runway: you live under **two clocks** now.
+But you live under **two clocks** now.
 
 The first clock is the one you know: burn rate, payroll, infrastructure, runway. The second clock is newer and faster: the outside world changing so fast your "plan" degrades like fruit on the counter.
 
@@ -24,15 +24,15 @@ In the stable world we're exiting, the burn clock dominated. If you had 18 month
 
 In this world we're entering, you can have 18 months of runway and 6 weeks of relevance.
 
-This is what **disequilibrium** feels like. Not "behind," not "failing"—but stuck in the half-light where everything feels slippery.
+This is what **disequilibrium** feels like. You're not behind and you're not failing; you're stuck in the half-light where everything feels slippery.
 
-The wrong response is to grip harder. The right response is to recognize what's actually happening: disequilibrium isn't stress to manage. It's leverage to use.
+The wrong response is to grip harder. Disequilibrium isn't stress to manage; it's leverage to use.
 
-## AI Amplifies Everything, Including Your Bottlenecks
+## AI amplifies everything, including your bottlenecks
 
 Most people talk about AI like it's a better hammer. A better hammer makes you hit nails faster.
 
-But that's not what's happening. AI is turning effort into a **multiplier**. Not in a vague "leverage" sense—in the concrete sense that you can now run more experiments per week, explore more branches of a decision tree, and ship more variants of a thing.
+But that's not what's happening. AI is turning effort into a **multiplier**, in a concrete sense: you can now run more experiments per week, explore more branches of a decision tree, and ship more variants of a thing.
 
 And when you multiply, you don't just get "more good." You get more *bad* (faster mistakes), more *noise* (more output that feels like progress), more *fragility* (more surface area), more *variance* (wildly different outcomes from similar inputs).
 
@@ -45,17 +45,17 @@ You can feel it in every domain:
 - In product, features are cheaper, so the bottleneck shifts to *taste* and *outcome reliability*.
 - In startups, MVPs are cheaper, so the bottleneck shifts to *finding something worth building* and *proving it quickly*.
 
-What AI is really doing is turning the world into a system where constraints reveal themselves faster. That's the opportunity. And that's why most people feel overwhelmed: they're still trying to solve the old constraint.
+AI is turning the world into a system where constraints reveal themselves faster. That's the opportunity. And that's why most people feel overwhelmed: they're still trying to solve the old constraint.
 
-## Why Speed Without Structure Is Fragility
+## Why speed without structure is fragility
 
 Most teams are still running ["assistant era"](/ai-bottleneck) processes with ["orchestration era"](/ai-bottleneck) tools.
 
-In the assistant era, you're still doing the work. AI is a power tool—one human, one agent, one linear process. In the orchestration era, you're designing the system that does the work. AI is labor.
+In the assistant era, you're still doing the work. AI is a power tool: one human, one agent, one linear process. In the orchestration era, you're designing the system that does the work. AI is labor.
 
 That's a psychological shift as much as a technical one. And it explains why so many companies feel "stressed" around AI. They're trying to bolt on assistants while still running assistant-era processes: human-sized sprints, human-sized reviews, human-sized planning. Meanwhile, the work is trying to become parallel.
 
-When code is "cheap" in the new sense—when you can get a working feature stub in a day, not a month—something else happens. The team doesn't ship 10× faster. They ship maybe 2× faster. Or they ship 10× more stuff but only 1× more *impact*.
+When code is "cheap" in the new sense, when you can get a working feature stub in a day instead of a month, something else happens. The team doesn't ship 10× faster. They ship maybe 2× faster. Or they ship 10× more stuff but only 1× more *impact*.
 
 Why? Because the bottleneck moved.
 
@@ -65,7 +65,7 @@ This is also why you see a new bottleneck emerge: **observability** (as I've [wr
 
 AI makes "doing" cheaper, but it makes "knowing what happened" more expensive. The winners will solve that paradox.
 
-## The Translators Win
+## The translators win
 
 We live inside translation gaps:
 
@@ -77,23 +77,23 @@ We live inside translation gaps:
 
 In older eras, you could be bad at translation and still survive because the environment changed slowly. Misunderstandings had time to heal. In disequilibrium, misunderstandings compound.
 
-The core niche—if you strip away the metaphors—is simple: **build translators that let you move at the new speed without becoming fragile**.
+Strip away the metaphors and the core niche is simple: **build translators that let you move at the new speed without becoming fragile**.
 
 That's a market niche. It's also a strategy. And it's why ["anti-playbooks"](/anti-playbook-ai-dev-tools-growth-strategy) are emerging: because playbooks are basically translation layers for stable markets, and stable markets are not what we have.
 
-When AI is involved, the gap between users and approvers widens. Usage is easier (so more people try), but the downside is scarier (because the system can act, not just suggest). So the most important GTM move isn't a funnel—it's **trust design**.
+When AI is involved, the gap between users and approvers widens. Usage is easier (so more people try), but the downside is scarier (because the system can act, not just suggest). So the most important GTM move isn't a funnel. It's **trust design**.
 
 Trust design is measurable value quickly, clear boundaries, visible failure modes, reliable curves. In the agent era, your competitor is not "another tool." Your competitor is the default: "we don't need this, and it might leak our code."
 
-## Building Reliable Curves
+## Building reliable curves
 
 In equilibrium, you optimize. In disequilibrium, you **re-find the bottleneck, then flip it**.
 
-If you're a funded founder at T-minus-18 months—burn ticking, investors wanting graphs—your job is to produce **reliable curves**. Not vibes. Not demos. Curves.
+If you're a funded founder at T-minus-18 months, burn ticking, investors wanting graphs, your job is to produce **reliable curves**. Not vibes, not demos.
 
-Here's what to do on Monday:
+What to do on Monday:
 
-**Pick one bottleneck to kill this month.** Market, product, or message—don't pick all three. If you can't name your bottleneck in one sentence, your bottleneck is "decision-making." Start there.
+**Pick one bottleneck to kill this month.** Market, product, or message. Don't pick all three. If you can't name your bottleneck in one sentence, your bottleneck is "decision-making." Start there.
 
 **Build one loop that runs without you.** Onboarding → activation → retention. Spec → build → test → deploy. Content → distribution → feedback. If you are still the loop, you are the bottleneck. (The [loop is where the magic is](/theloop).)
 
@@ -101,13 +101,13 @@ Here's what to do on Monday:
 
 **Instrument outcomes, not activity.** Outcome metrics should answer: *did the system behave as intended?* Not: *did we ship something?*
 
-## The Moment We're In
+## The moment we're in
 
 Acceleration is terrifying because it compresses mistakes into the present. Acceleration is exhilarating because it compresses learning into the present too.
 
 Many companies built in stable times struggle because their processes assume stability: quarterly roadmaps, single-lane execution, static teams, slow feedback. But we're not in that world anymore.
 
-In stable worlds, incumbents win. In disequilibrium, speed wins—because disequilibrium makes the world plastic.
+In stable worlds, incumbents win. In disequilibrium, speed wins, because disequilibrium makes the world plastic.
 
 Plastic worlds reward speed, translation, loops, trust, assurance. The winners won't be the ones with the best models. They'll be the ones who enable speed *without becoming fragile*.
 

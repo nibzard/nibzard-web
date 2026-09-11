@@ -19,9 +19,9 @@ answers_questions:
 
 The autonomous AI coding is here. But it doesn't look like what most people think.
 
-While the tech world obsesses over benchmark scores and whether GitHub Copilot will replace programmers, a team at Sourcegraph has been quietly building something different. An AI coding agent that actually works. Not just in demos. In practice.
+While the tech world obsesses over benchmark scores and whether GitHub Copilot will replace programmers, a team at Sourcegraph has been building something different: an AI coding agent that works in practice, not just in demos.
 
-I've been listening to Quinn Slack and Thorsten Ball document their journey in [**"Raising an Agent"**](https://www.youtube.com/watch?v=Cor-t9xC1ck&list=PL6zLuuRVa1_iUNbel-8MxxpqKIyesaubA)--a real-time diary of building an AI-powered coding assistant. And what emerges challenges everything we think we know about AI tools.
+I've been listening to Quinn Slack and Thorsten Ball document their journey in [**"Raising an Agent"**](https://www.youtube.com/watch?v=Cor-t9xC1ck&list=PL6zLuuRVa1_iUNbel-8MxxpqKIyesaubA), a real-time diary of building an AI-powered coding assistant. And what emerges runs against the usual assumptions about AI tools.
 
 Most AI coding products feel like expensive toys. Here's why theirs doesn't.
 
@@ -31,13 +31,13 @@ Most AI coding products feel like expensive toys. Here's why theirs doesn't.
 
 ![Amp Code](/images/250528_ampcode.jpg)
 
-## The Inversion of Control: Stop Micromanaging Your AI
+## The inversion of control: stop micromanaging your AI
 
-The biggest shift isn't technical. It's psychological.
+The biggest shift is psychological.
 
 Most developers approach AI like fancy autocomplete: craft the perfect prompt, get the perfect code. This is backwards.
 
-There's a significant mindset shift from traditional prompting to an agentic approach," Thorsten observes.
+"There's a significant mindset shift from traditional prompting to an agentic approach," Thorsten observes.
 
 <div class="featured-quote primary">
 <p>It's a big bird, it can catch its own food... you just have to present it with the food somehow.</p>
@@ -51,19 +51,19 @@ The difference is profound.
 
 **Agentic model:** You're a product manager setting objectives and letting your team figure out execution.
 
-The AI doesn't just generate code--it decides which files to examine, what tools to use, how to self-correct when things go wrong.
+The AI decides which files to examine, what tools to use, how to self-correct when things go wrong.
 
 This requires genuine trust. Which most developers aren't ready for.
 
-We're control freaks by nature. Trained to distrust magic. But the magic isn't in perfect prompts--it's in rich feedback loops and iterative correction.
+We're control freaks by nature. Trained to distrust magic. But the magic is in rich feedback loops and iterative correction.
 
 Blink, and you might miss it.
 
-## Context Is Sacred, But Not How You Think
+## Context is sacred, but not how you think
 
 Every AI discussion eventually devolves into context windows and token limits.
 
-But the real insight isn't about cramming more information into the context. It's about curating what goes in.
+But the insight is curation: what goes into the context matters more than how much.
 
 <div class="featured-quote secondary">
 <p>Whatever is in the agent's context window heavily biases its output... irrelevant or misleading information can derail it.</p>
@@ -73,9 +73,7 @@ This led them to create specialized sub-agents with their own context windows. P
 
 Think of context like a surgical operating room: sterile, purposeful, containing exactly what's needed for the procedure.
 
-Most AI tools dump everything they can find into context. Hoping more information equals better results.
-
-In practice?
+Most AI tools dump everything they can find into context, hoping more information equals better results.
 
 <div class="featured-quote unattributed">
 <p>Curated context beats comprehensive context. Every time.</p>
@@ -83,9 +81,9 @@ In practice?
 
 The best AI coding experiences feel less like feeding a hungry model and more like briefing a competent colleague. You provide essential background, point to relevant examples, trust them to ask good questions.
 
-## The "No Token Limit Magic" Is Real
+## The "no token limit magic" is real
 
-Here's an uncomfortable truth that threatens the entire pricing model of AI tools:
+An uncomfortable truth threatens the entire pricing model of AI tools:
 
 The prototype that Quinn and Thorsten built, now a product called [Amp](https://ampcode.com/manual), works so well partly because they ignored cost optimization entirely.
 
@@ -99,7 +97,7 @@ This creates a business model crisis.
 
 How do you offer flat-rate pricing when your best experience costs $5-15 per generated pull request?
 
-Quinn spent $1000 in a month of prototype usage. Which mirrors my own experience over the past few months, with average spending hovering around a $500. Costs that would be prohibitive for most consumer AI products but trivial compared to developer salaries.
+Quinn spent $1000 in a month of prototype usage. Which mirrors my own experience over the past few months, with average spending hovering around $500. Costs that would be prohibitive for most consumer AI products but trivial compared to developer salaries.
 
 <div class="featured-quote accent">
 <p>The implication is stark: usage-based pricing isn't a bug, it's a feature.</p>
@@ -107,11 +105,11 @@ Quinn spent $1000 in a month of prototype usage. Which mirrors my own experience
 
 The most powerful AI coding tools will cost real money because they do real work. The $20/month subscription model works for chat interfaces and simple autocomplete. But breaks down when AI agents start replacing hours of human labor.
 
-## The Oracle and the Worker: A Multi-Model Approach
+## The oracle and the worker: a multi-model approach
 
-The Sourcegraph team's latest breakthrough isn't a single, better model—it's a system for using multiple models strategically. They've implemented an ["Oracle" pattern](https://agentic-patterns.com/patterns/oracle-and-worker-multi-model/) that challenges the idea of a one-size-fits-all AI.
+The Sourcegraph team's latest breakthrough is a system for using multiple models strategically. They've implemented an ["Oracle" pattern](https://agentic-patterns.com/patterns/oracle-and-worker-multi-model/) that challenges the idea of a one-size-fits-all AI.
 
-The architecture is simple but powerful:
+The architecture is simple:
 
 **The Worker (Claude Sonnet 4):** A fast, capable, and cost-effective agent that handles the bulk of the tool use and code generation.
 
@@ -123,21 +121,19 @@ The main agent can be explicitly told to "Ask the oracle" when it gets stuck or 
 <p>The Oracle sub-agent reviews the main agent's work and suggests a better solution. This allows for high-level course correction without polluting the main agent's context with extensive exploration.</p>
 </div>
 
-This is a profound shift. Instead of relying on a single model's strengths, this approach creates a team of specialized AIs. It allows for sophisticated problem-solving while managing the high cost of frontier models, reserving them for tasks where their advanced reasoning is most impactful.
+The approach creates a team of specialized AIs instead of leaning on one model's strengths. Frontier models stay reserved for the tasks where their advanced reasoning matters most, which keeps the cost manageable.
 
-## The Grain of the Model: Why AI Lab Philosophies Matter
+## The grain of the model: why AI lab philosophies matter
 
-Not all AI models are created equal. And the differences run deeper than benchmarks suggest.
-
-The latest insights from Sourcegraph's journey reveal something crucial: each major AI lab embeds distinct philosophies into their models through intentional choices during training and reinforcement learning.
+The differences between AI models run deeper than benchmarks suggest. Sourcegraph's journey shows that each major AI lab embeds distinct philosophies into their models through intentional choices during training and reinforcement learning.
 
 <div class="featured-quote primary">
 <p>The specific capabilities and behavioral tendencies of an LLM—its "grain"—are shaped by intentional choices during pre-training, fine-tuning, and RL.</p>
 </div>
 
-**Anthropic's Philosophy:** Building "practical iterative agents" that excel at figuring things out through environmental feedback. Think of Claude Sonnet 4 as a coding partner that tries, fails, learns, and tries again—rather than a one-shot code generator.
+**Anthropic's Philosophy:** Building "practical iterative agents" that excel at figuring things out through environmental feedback. Think of Claude Sonnet 4 as a coding partner that tries, fails, learns, and tries again, rather than a one-shot code generator.
 
-**The Alternative Approach:** Other models may be optimized more for zero-shot, single-turn generation—impressive in demos, but less adaptable when things go wrong.
+**The Alternative Approach:** Other models may be optimized more for zero-shot, single-turn generation: impressive in demos, less adaptable when things go wrong.
 
 This philosophical difference shows up in practice. Thorsten notes that Claude Sonnet 4 is significantly more "eager" to use tools, especially spawning sub-agents for complex tasks. When editing YAML frontmatter across 36 blog posts, it intelligently used `glob` then *spawned four separate sub-agents* to distribute the workload.
 
@@ -145,9 +141,9 @@ This philosophical difference shows up in practice. Thorsten notes that Claude S
 <p>Each sub-agent operates within its own context window. The main agent doesn't get overwhelmed by processing all 36 files—it only needs to manage the sub-tasks.</p>
 </div>
 
-Understanding a model's "grain" becomes critical for choosing the right tool for the job. The future isn't about one AI model ruling them all—it's about matching model philosophies to specific use cases.
+Understanding a model's "grain" matters for choosing the right tool. The future is matching model philosophies to specific use cases, not one model to rule them all.
 
-## Emergent Behaviors Trump Engineered Features
+## Emergent behaviors trump engineered features
 
 The most exciting capabilities weren't planned.
 
@@ -155,9 +151,9 @@ They emerged from giving the AI sufficient autonomy and feedback.
 
 When Thorsten asked the agent to build a recording feature, it didn't just generate the code. It provided a testing plan. When an edit failed, the agent tried alternative approaches, added debug statements, fixed its own bugs.
 
-### The Sub-Agent Revolution
+### The sub-agent revolution
 
-But the real breakthrough came with sub-agents—AI systems spawning other AI systems to handle parallel work.
+But the real breakthrough came with sub-agents: AI systems spawning other AI systems to handle parallel work.
 
 This wasn't an engineered feature. It emerged when the AI realized it could decompose complex tasks and distribute them across multiple context windows.
 
@@ -179,19 +175,19 @@ The tension between these approaches will define the next generation of developm
 
 The lesson: build platforms, not products. Create environments where AI can surprise you, rather than rigid workflows that constrain it.
 
-## The Background Agent: AI That Works While You Sleep
+## The background agent: AI that works while you sleep
 
-The next frontier isn't faster AI—it's asynchronous AI.
+The next frontier is asynchronous AI.
 
-Quinn and the Sourcegraph team are building something revolutionary: background agents that can work on complex, long-running tasks (10-15+ minutes) without requiring constant supervision.
+Quinn and the Sourcegraph team are building background agents that can work on complex, long-running tasks (10-15+ minutes) without requiring constant supervision.
 
-Picture this: You're at your kid's soccer game. You pull out your phone, describe a feature you want built, kick off a background agent, and get results when you're ready to look.
+You're at your kid's soccer game. You pull out your phone, describe a feature you want built, kick off a background agent, and get results when you're ready to look.
 
 <div class="featured-quote primary">
 <p>The ability to delegate longer-running, complex tasks to an agent that works asynchronously represents a fundamental shift in how we think about development work.</p>
 </div>
 
-**The Feedback Loop Problem**
+**The feedback loop problem**
 
 But how do you give an AI rich feedback when you're not actively supervising it?
 
@@ -205,17 +201,17 @@ Background agents push code, CI runs tests and linters, and the agent uses this 
 
 This approach mirrors a broader insight about agent environments: perfect replication is less important than effective feedback loops.
 
-**The Cloud IDE Analogy**
+**The cloud IDE analogy**
 
 Quinn draws a telling parallel to Cloud IDEs. In theory, they offer perfect, consistent environments accessible anywhere. In practice, adoption has been limited outside of tech giants like Meta and Google.
 
-The problem isn't technical capability—it's the "long tail" of issues: missing extensions, flaky language servers, incompatibility with local tools. Cloud IDEs often become the neglected third wheel in development workflows.
+The problem isn't technical capability. It's the "long tail" of issues: missing extensions, flaky language servers, incompatibility with local tools. Cloud IDEs often become the neglected third wheel in development workflows.
 
-The implication for AI agents is clear: rather than trying to replicate perfect development environments for every interaction, focus on pragmatic feedback mechanisms that actually work.
+The implication for AI agents: focus on pragmatic feedback mechanisms that actually work, rather than trying to replicate perfect development environments for every interaction.
 
 Background agents represent the evolution from "AI as a better autocomplete" to "AI as a remote team member."
 
-## The Human as Strategist, Not Just Prompter
+## The human as strategist, not just prompter
 
 As the agents become more capable, the human's role evolves. The [latest videos](https://youtu.be/hAEmt-FMyHA?si=LOAy9xZZSLLKjP6B) show Thorsten moving beyond simply assigning tasks to actively directing the agent's strategy.
 
@@ -229,29 +225,29 @@ He now gives meta-instructions that shape the problem-solving process itself:
 <p>This is the next level of human-AI collaboration. The developer becomes an architect and a manager, guiding a team of agents, choosing the right tools (and models) for the job, and intervening at strategic moments.</p>
 </div>
 
-The goal is no longer to craft the perfect initial prompt. It's to build an intuition for when to let the agent work autonomously, when to nudge it with a suggestion, and when to bring in a specialist "oracle" to rethink the entire approach. This is the learnable skill of "Raising an Agent."
+The goal shifts from crafting the perfect initial prompt to building an intuition for when to let the agent work autonomously, when to nudge it with a suggestion, and when to bring in a specialist "oracle" to rethink the entire approach. This is the learnable skill of "Raising an Agent."
 
-## The Evolution of Human-Agent Collaboration
+## The evolution of human-agent collaboration
 
 Thorsten's workflow has evolved significantly since the early days of letting the agent "rip" on entire features.
 
 His new collaborative model reveals how human-AI partnerships actually work in practice:
 
-1. **Agent implements a rough version** of Thorsten's architectural idea
-2. **Human manually refines and "moves the guardrails"**—a nuanced process that's hard to capture in a single prompt
-3. **Agent handles focused tasks** like UI components or type fixing
+1. The agent implements a rough version of Thorsten's architectural idea
+2. The human manually refines and "moves the guardrails," a nuanced process that's hard to capture in a single prompt
+3. The agent handles focused tasks like UI components or type fixing
 
 <div class="featured-quote accent">
 <p>The most effective human-agent collaboration isn't about perfect prompts—it's about iterative refinement and clear division of labor.</p>
 </div>
 
-This pattern suggests that the future of AI coding isn't replacement—it's sophisticated collaboration where humans handle high-level architecture and nuanced refinement, while AI handles implementation and focused tasks.
+This pattern suggests that the future of AI coding is collaboration rather than replacement: humans handle high-level architecture and nuanced refinement, while AI handles implementation and focused tasks.
 
-The key insight: humans are still better at "moving guardrails"—those subtle adjustments that emerge from deep understanding of context, user needs, and system constraints.
+Humans are still better at "moving guardrails": the subtle adjustments that emerge from deep understanding of context, user needs, and system constraints.
 
-## The Death of Perfect Code
+## The death of perfect code
 
-Perhaps the most profound shift is how AI changes our relationship with code quality itself.
+AI also changes our relationship with code quality itself.
 
 When code becomes "cheaper" to generate, the value equation changes fundamentally.
 
@@ -259,13 +255,13 @@ When code becomes "cheaper" to generate, the value equation changes fundamentall
 <p>Code exists on a spectrum from beautifully handwritten to large, autogenerated files. AI will push more code towards the generated end, but it's generated by an agent and modifiable by an agent.</p>
 </div>
 
-This doesn't mean embracing sloppiness. It means redefining what matters.
+This doesn't mean embracing sloppiness; it means redefining what matters.
 
 Worrying about camel case versus kebab-case becomes irrelevant when you're operating at the level of architectural decisions and system design. The developer's role shifts from "typing code" to "drawing the lines" for the AI to fill in.
 
-Traditional "bad code" concerns stem from human misunderstanding that could be repeated and scaled. AI-generated "bad code" is different--more random than systematic, often easily fixed with better instruction rather than fundamental rethinking.
+Traditional "bad code" concerns stem from human misunderstanding that could be repeated and scaled. AI-generated "bad code" is different: more random than systematic, often easily fixed with better instruction rather than fundamental rethinking.
 
-## Rich Feedback Beats Perfect Prompts
+## Rich feedback beats perfect prompts
 
 The AI coding tools that work in practice prioritize feedback loops over prompt engineering.
 
@@ -279,9 +275,9 @@ This mirrors how human developers actually work. We rarely get things right the 
 
 The best AI coding experiences feel conversational rather than transactional. The AI proposes, you respond, it adjusts, you clarify, it refines.
 
-This requires patience and a different mental model than traditional tools. But produces dramatically better results.
+It requires patience and a different mental model than traditional tools, but produces dramatically better results.
 
-## The Future Belongs to Agent-Native Workflows
+## The future belongs to agent-native workflows
 
 Current codebases and development workflows were designed for human limitations: linear thinking, limited working memory, sequential task execution.
 
@@ -291,7 +287,7 @@ AI agents have different constraints and capabilities. Which means our tooling a
 <p>Codebases will adapt to agents. The incentive to create an agent-friendly environment is high because agents can potentially provide massive productivity gains.</p>
 </div>
 
-This isn't just about better documentation or cleaner APIs. It's about fundamental changes to how we structure projects, manage dependencies, define interfaces.
+This means changes to how we structure projects, manage dependencies, and define interfaces, not just better documentation or cleaner APIs.
 
 Agent-native development might include:
 - Richer diagnostic tooling that AI can interpret
@@ -301,7 +297,7 @@ Agent-native development might include:
 
 Models are improving so quickly that investing heavily in a specific UI paradigm might lead to it becoming outdated as model capabilities change how users want to interact.
 
-## The Social Layer Matters More Than the Technical Layer
+## The social layer matters more than the technical layer
 
 One of the most surprising insights from the Sourcegraph team's journey: adoption depends on social proof and shared learning more than technical capability.
 
@@ -313,13 +309,13 @@ Developers need to see other developers using these tools successfully before th
 
 This mirrors the early days of Git. Shared workflows and best practices mattered as much as the underlying technology.
 
-**The implication:** AI coding tools succeed or fail based on community and culture, not just technical capability.
+The implication: AI coding tools succeed or fail on community and culture as much as technical capability.
 
 The best tools will be those that facilitate learning and knowledge sharing, not just code generation.
 
-## What This Means for Developers
+## What this means for developers
 
-These lessons paint a picture of a near future where AI isn't replacing developers but fundamentally changing what development work looks like.
+These lessons point to a near future where AI fundamentally changes what development work looks like.
 
 The successful developers of tomorrow won't be those who can type code fastest or memorize the most APIs. They'll be those who can effectively guide and collaborate with AI systems.
 
@@ -333,9 +329,9 @@ The transition won't be comfortable. It requires abandoning deeply held beliefs 
 
 But the productivity gains are too significant to ignore. The competitive advantage too large to cede to others.
 
-## The Uncomfortable Truth
+## The uncomfortable truth
 
-Here's what the AI coding revolution actually looks like:
+What the AI coding revolution actually looks like:
 
 <div class="featured-quote unattributed">
 <p>Not the replacement of programmers. The transformation of programming into something closer to product management and system design.</p>
@@ -347,13 +343,11 @@ This is simultaneously liberating and terrifying.
 
 Liberating because it frees us from the drudgery of boilerplate and syntax errors. Terrifying because it challenges core assumptions about what makes a good developer and what programming work is worth paying for.
 
-We're witnessing the fastest consolidation in the history of developer tooling. Seriously, it's never moved this fast before.
+We're witnessing the fastest consolidation in the history of developer tooling.
 
-The teams and companies that embrace this shift early--accepting higher costs for better outcomes, building agent-native workflows, developing new collaboration patterns--will have significant advantages over those clinging to traditional approaches.
+The teams and companies that embrace this shift early (accepting higher costs for better outcomes, building agent-native workflows, developing new collaboration patterns) will have significant advantages over those clinging to traditional approaches.
 
-The AI coding revolution isn't coming.
-
-It's here.
+The AI coding revolution is already here.
 
 The question isn't whether it will change how we work, but whether we'll adapt quickly enough to benefit from it rather than be displaced by it.
 
@@ -365,9 +359,9 @@ The question isn't whether it will change how we work, but whether we'll adapt q
 
 *Blink, and you might miss it.*
 
-## Practical Tips for AI-Driven Development
+## Practical tips for AI-driven development
 
-From Sourcegraph's real-world experience building with AI agents, here are actionable insights for developers ready to embrace this shift:
+From Sourcegraph's real-world experience building with AI agents:
 
 **Browser Interactions**
 Use a Playwright MCP (Multi-Client Proxy) server to allow agents to take screenshots and iterate on UI changes in real-time. This creates a rich feedback loop for visual development.

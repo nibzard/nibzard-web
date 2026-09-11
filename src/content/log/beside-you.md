@@ -17,7 +17,7 @@ answers_questions:
 
 You already know the best agent interface ever shipped. Open a Google Doc, share the link, and within seconds someone else's cursor appears, one of the [anonymous animals](https://support.google.com/docs/answer/2494822?hl=en), moving through the same page you're in. They're typing. You're typing. Neither of you is waiting on the other.
 
-That feature is [over a decade old](https://evert.meulie.net/faqwd/complete-list-anonymous-animals-on-google-drive-docs-sheets-slides/). It's still the cleanest mental model for what an AI agent in your work should feel like. So here's the question I keep turning over: **why isn't the agent just one of the animals?**
+That feature is [over a decade old](https://evert.meulie.net/faqwd/complete-list-anonymous-animals-on-google-drive-docs-sheets-slides/). It's still the cleanest mental model for what an AI agent in your work should feel like. So here's the question I keep turning over: why isn't the agent just one of the animals?
 
 The title isn't mine. Three days before I started drafting, [Sunil Pai](https://sunilpai.dev/about) published [*one document, two hands*](https://sunilpai.dev/posts/one-document-two-hands/), about Pizzo, his collaborative music app, and the subtitle is the whole argument:
 
@@ -39,7 +39,7 @@ The good pattern collapses it into co-presence:
 
 `you + your agent → application → your thing`
 
-The relay is the default because it's the easiest thing to build: wrap a model in a background job, hand it a goal, wait. Cursor, [Devin](https://www.cognition.ai/blog), [Claude Code's subagents](https://code.claude.com/docs/en/sub-agents), [OpenAI Codex](https://github.com/openai/codex): every serious coding tool ships some version of "the agent goes away and comes back with the answer." Capability isn't the problem. The problem is that that every run through the relay widens a gap, and the gap is the expensive part. I'll get to the gap.
+The relay is the default because it's the easiest thing to build: wrap a model in a background job, hand it a goal, wait. Cursor, [Devin](https://www.cognition.ai/blog), [Claude Code's subagents](https://code.claude.com/docs/en/sub-agents), [OpenAI Codex](https://github.com/openai/codex): every serious coding tool ships some version of "the agent goes away and comes back with the answer." Capability isn't the problem. The problem is that every run through the relay widens a gap, and the gap is the expensive part. I'll get to the gap.
 
 ## The canvas is where co-presence gets real
 
@@ -77,7 +77,7 @@ Then there's the awkward number. [METR's randomized trial](https://metr.org/rese
 
 Here's why I hold the thesis as a prediction anyway. [Cursor](https://cursor.com/blog), the company held up as proof that autonomy wins, is drifting toward beside. "Demos, not diffs" (March 2026): the agent shows you what it will build instead of handing you a diff to reverse-engineer. Design Mode (June 2026): "point, draw, or narrate UI changes… while agents edit the code underneath." You point, the agent edits, you watch. The canvas pattern, smuggled into the autonomy leader.
 
-So the strongest version of this argument isn't "beside wins." It's convergence: the products that stick will do the work asynchronously while keeping you oriented. Between for the throughput. Beside for the comprehension. Even when the agent goes away, it leaves a cursor in your document, and the cursor comes back having shown you move.
+So the strongest version of this argument isn't "beside wins." It's convergence: the products that stick will do the work asynchronously while keeping you oriented. Between for the throughput. Beside for the comprehension. Even when the agent goes away, it leaves a cursor in your document, and the cursor comes back having shown you the move.
 
 Google Docs shipped this a decade ago. Matt Webb's [poet, painter, and maker](https://blog.partykit.io/posts/ai-interactions-with-tldraw) raised their hands in 2023. Sunil named it last week. Somebody just has to make it the default: not a demo mode, not a curiosity, the thing you reach for first.
 

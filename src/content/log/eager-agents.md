@@ -10,7 +10,7 @@ topics: [AI Agents, Software Development, Code Review]
 entities: [GitHub, Vercel, Claude]
 ---
 
-Here's a phenomenon you'll recognize if you've worked with AI coding agents:
+You'll recognize this if you've worked with AI coding agents:
 
 You ask for a small fix. The agent delivers a small fix... plus tests, plus documentation updates, plus some refactoring it noticed "would be nice," plus—
 
@@ -20,21 +20,21 @@ I learned this the hard way. I had an agent running in "yolo mode" (auto-commit,
 
 Was the code good? Actually, yes. But comparing it to the three existing provider integrations in that repo, ours was *way* more thorough. The maintainers had added tests and docs later, incrementally. My agent did it all at once.
 
-Was that better? Sort of. But here's the kicker: the commit history tells the real story. One big commit from the agent. Then **five follow-up commits from me**—removing files it shouldn't have added, simplifying docs it overwrote, refactoring code that worked but was verbose.
+Was that better? Sort of. But the commit history tells the real story. One big commit from the agent. Then **five follow-up commits from me**: removing files it shouldn't have added, simplifying docs it overwrote, refactoring code that worked but was verbose.
 
 The agent did the work. Then I did the cleanup.
 
-## Why LLMs Overreach
+## Why LLMs overreach
 
 This isn't a bug. It's a feature of how language models work.
 
 **They're eager.** Not in a malicious way, but in a "I want to be helpful" way. If you give an agent access to a codebase and ask it to solve a problem, it will solve *every related problem it can find.*
 
-Different models have different personalities—some are more cautious, some more enthusiastic—but at their core, they all want to "complete" the task.
+Different models have different personalities (some are more cautious, some more enthusiastic), but at their core, they all want to "complete" the task.
 
 The problem is: **your definition of complete and the model's definition of complete are different.**
 
-## Minimum Viable PR
+## Minimum viable PR
 
 What I wanted in that agent-browser case was a minimum viable PR:
 
@@ -51,9 +51,9 @@ What I got was:
 
 The other three integrations in that repo? They did the minimum. Tests and docs were added later by maintainers.
 
-My agent did more work. But more work isn't always better work.
+My agent did more work. The extra work is what my five cleanup commits were for.
 
-## Definition-of-Done Contracts
+## Definition-of-done contracts
 
 The fix isn't to make agents less eager. It's to give them clearer contracts.
 
@@ -85,7 +85,7 @@ Out of scope:
 
 This is the kind of constraint that makes eager agents useful rather than overwhelming.
 
-## Change Budgets
+## Change budgets
 
 Another pattern: **change budgets.**
 
@@ -98,7 +98,7 @@ The agent works within the budget. If it hits the limit, it surfaces what it acc
 
 This is harder to enforce technically but creates the right mental model: **agents work within constraints, not unlimited scope.**
 
-## PR Scope Policy
+## PR scope policy
 
 For teams, this becomes a **PR scope policy:**
 
@@ -108,9 +108,9 @@ For teams, this becomes a **PR scope policy:**
 
 This isn't about limiting agents. It's about making their work predictable. A 10-file PR is fine if you expected a 10-file PR. It's a problem when you expected a 1-file PR.
 
-## The Hard Part
+## The hard part
 
-Here's the honest truth: **in software, everything is one-off.**
+**In software, everything is one-off.**
 
 You're solving a specific problem that probably won't be repeated in the same shape. That makes it hard to have general policies.
 
@@ -119,6 +119,6 @@ The best you can do:
 - Review changes against scope before merging
 - Give feedback to the agent (or adjust your prompts) when scope drifts
 
-And remember: **an agent that touches 10 files when you asked for 1 is trying to help.** It's not being malicious. It just has a different definition of done than you do.
+And remember: **an agent that touches 10 files when you asked for 1 is trying to help.** It just has a different definition of done than you do.
 
 Your job is to align those definitions.

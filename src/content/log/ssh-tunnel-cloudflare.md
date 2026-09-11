@@ -17,13 +17,13 @@ answers_questions:
 Imagine having a powerful AI coding assistant running in your pocket, ehm homelab, that you can access from anywhere. This guide shows you how to set up Claude Code in an Ubuntu VM and access it securely through Cloudflare Tunnel, turning your mobile device into a surprisingly capable coding workstation.
 
 **Why this setup rocks:**
-- ✨ **Code with AI anywhere**: Access Claude Code from your phone, tablet, or any device
-- 🔒 **Zero open ports**: Completely secure with Cloudflare Zero Trust authentication
-- 🏠 **Homelab powered**: Leverage your existing VM infrastructure
-- 📱 **Mobile-first**: Perfect for coding on-the-go or from the couch
-- 🚀 **Always available**: Your AI assistant runs 24/7 in your homelab
+- **Code with AI anywhere**: Access Claude Code from your phone, tablet, or any device
+- **Zero open ports**: Completely secure with Cloudflare Zero Trust authentication
+- **Homelab powered**: Leverage your existing VM infrastructure
+- **Mobile-first**: Perfect for coding on-the-go or from the couch
+- **Always available**: Your AI assistant runs 24/7 in your homelab
 
-The secret sauce? We'll create a secure tunnel to your VM using Cloudflare, then install Claude Code inside it. No VPN, no port forwarding, no security headaches.
+The short version: we create a secure tunnel to your VM using Cloudflare, then install Claude Code inside it. No VPN and no port forwarding, which also means fewer security headaches.
 
 **Prerequisites**
 
@@ -34,9 +34,9 @@ The secret sauce? We'll create a secure tunnel to your VM using Cloudflare, then
 - (Recommended) Identity provider configured in Cloudflare Access (or use One‑Time PIN if you prefer).
 
 ---
-## **Part 1: Create and Configure the Cloudflare Tunnel**
+## Part 1: Create and configure the Cloudflare Tunnel
 
-This section covers creating the tunnel and routing traffic to your VM. These steps are performed in your Cloudflare dashboard and on a dedicated machine/LXC that will run the tunnel connector.
+These steps are performed in your Cloudflare dashboard and on a dedicated machine/LXC that will run the tunnel connector.
 
 1.  **Create a New Tunnel:**
     *   Log in to the Cloudflare Zero Trust dashboard.
@@ -78,7 +78,7 @@ This section covers creating the tunnel and routing traffic to your VM. These st
 
 ---
 
-## **Part 2: Connecting from a Desktop (macOS / Linux)**
+## Part 2: Connecting from a desktop (macOS / Linux)
 
 1.  **Install the Cloudflare Helper:**
     *   **macOS:** `brew install cloudflared`
@@ -113,7 +113,7 @@ I did have some small hick up as I am using Ghostty so I had to run this line to
 
 ---
 
-## **Part 3: Connecting from an Android Phone**
+## Part 3: Connecting from an Android phone
 
 The best method is using **Termux** with a **Debian proot** environment. My primary device is Iphone but sadly after some battle with iSH and cloudflared I gave up and charged my backup Samsung.
 
@@ -158,7 +158,7 @@ The best method is using **Termux** with a **Debian proot** environment. My prim
 
 ---
 
-## **Part 4: Post-Connection Setup (Installing Claude Code)**
+## Part 4: Post-connection setup (installing Claude Code)
 
 After you have successfully connected to your Ubuntu VM via SSH, follow these steps *inside the VM* to install `claude-code`.
 

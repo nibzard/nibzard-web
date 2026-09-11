@@ -15,7 +15,7 @@ answers_questions:
 
 *Part 2: How we built a strategy controller that coordinates algorithmic approaches and learned to compete with the best is a continuation of the ["Vibe Coding Through the Berghain Challenge"](/berghain) article.*
 
-## From RBCR to Transformer: The Next Evolution
+## From RBCR to transformer: the next evolution
 
 After achieving 781 rejections with our RBCR algorithm, most rational people would have stopped. We had a mathematically elegant solution that dominated 30,000 competitors. But rationality and optimization addiction don't mix well.
 
@@ -23,7 +23,7 @@ After achieving 781 rejections with our RBCR algorithm, most rational people wou
 
 **Claude**: "You're thinking about a meta-strategy? Something that decides when to use RBCR versus Ultimate3H versus the LSTM approaches?"
 
-This was the birth of our transformer-based strategy controller—a system that would orchestrate our existing algorithmic champions rather than trying to replace them.
+This was the birth of our transformer-based strategy controller: a system that would orchestrate our existing algorithmic champions instead of trying to replace them.
 
 ```mermaid
 graph TD
@@ -38,11 +38,11 @@ graph TD
     style G fill:#4caf50
 ```
 
-## The Paradigm Shift: Orchestration Over Replacement
+## The paradigm shift: orchestration over replacement
 
 Traditional AI approaches try to learn the entire decision-making process from scratch. But we had something more valuable: a collection of proven algorithmic strategies that each excelled in different scenarios.
 
-**The Insight**: Instead of learning to be a bouncer, learn to be a bouncer manager. Decide which expert to trust for each decision.
+The insight: instead of learning to be a bouncer, learn to be a bouncer manager. Decide which expert to trust for each decision.
 
 ```python
 # The core concept: Strategy orchestration
@@ -61,7 +61,7 @@ class StrategyControllerTransformer(nn.Module):
 
 This wasn't about replacing human expertise with machine learning. This was about using machine learning to coordinate human expertise at superhuman speed.
 
-## Building the Training Data: Learning from Success
+## Building the training data: learning from success
 
 The first challenge: how do you train a system to coordinate strategies when you don't have ground truth labels?
 
@@ -82,9 +82,9 @@ class StrategicDecision:
     performance_weight: float  # how good was this game?
 ```
 
-**The Innovation**: We weighted training examples by performance. Games with 750 rejections got 3x more weight than games with 840 rejections. The transformer would learn more from our best performances.
+The innovation: we weighted training examples by performance. Games with 750 rejections got 3x more weight than games with 840 rejections. The transformer would learn more from our best performances.
 
-## The Architecture: 4.76 Million Parameters of Coordination
+## The architecture: 4.76 million parameters of coordination
 
 ```python
 class StrategyControllerTransformer(nn.Module):
@@ -110,18 +110,18 @@ class StrategyControllerTransformer(nn.Module):
         })
 ```
 
-**The Beauty**: The transformer doesn't just pick strategies—it fine-tunes their parameters in real-time. It might say "Use RBCR2, but lower the threshold by 0.2 because we're in emergency mode."
+The transformer also fine-tunes strategy parameters in real time. It might say "Use RBCR2, but lower the threshold by 0.2 because we're in emergency mode."
 
-## Training Phase 1: The Disappointing Reality Check
+## Training phase 1: the disappointing reality check
 
 Our first training attempt was humbling:
 
 **Original transformer** (untrained): 884-956 rejections, 0% success rate
 **RBCR2 baseline**: 869-948 rejections, 92% success rate
 
-The untrained transformer was making random strategy selections and failing catastrophically. But there was a glimmer of hope—when it did work, it was coordinating strategies in interesting ways.
+The untrained transformer was making random strategy selections and failing catastrophically. But there was a glimmer of hope: when it did work, it was coordinating strategies in interesting ways.
 
-## The Elite Data Revolution
+## The elite data revolution
 
 **Me**: "We're training on mediocre examples. What if we only learn from the absolute best games?"
 
@@ -138,14 +138,14 @@ def filter_elite_games(max_rejections=850):
     return elite_games
 ```
 
-**The Breakthrough**: We discovered that:
+The breakthrough came from measuring each strategy alone:
 - **Ultra Elite LSTM**: 798.2 average rejections (best performer)
 - **RBCR2**: 810.2 average rejections (second best)
 - **RBCR**: 829.7 average rejections (most consistent)
 
 The transformer needed to learn when each approach excelled.
 
-## Training Phase 2: Performance-Weighted Learning
+## Training phase 2: performance-weighted learning
 
 ```python
 def calculate_performance_weight(rejections):
@@ -159,14 +159,14 @@ def calculate_performance_weight(rejections):
         return 1.0  # Standard weight
 ```
 
-We implemented a sophisticated loss function that weighted examples by their performance. The transformer would learn 3x more from a 750-rejection game than an 850-rejection game.
+We implemented a loss function that weighted examples by their performance. The transformer would learn 3x more from a 750-rejection game than an 850-rejection game.
 
 **Results after elite training**:
 - **Training loss**: 0.0135 (excellent convergence)
 - **Validation loss**: 0.0026 (no overfitting)
 - **Training time**: 25 epochs with early stopping
 
-## The Hybrid Strategy: Best of Both Worlds
+## The hybrid strategy: best of both worlds
 
 Instead of pure neural decision-making, we built a hybrid system:
 
@@ -187,9 +187,9 @@ class HybridTransformerStrategy:
         return accept, f"hybrid_transformer[{strategy_name}]_{reasoning}"
 ```
 
-**The Magic**: The transformer makes high-level strategic decisions (which algorithm to use), while proven mathematical algorithms make tactical decisions (accept/reject this person).
+The transformer makes the high-level strategic decisions (which algorithm to use), while proven mathematical algorithms make the tactical ones (accept or reject this person).
 
-## Performance Results: Speed vs Reliability Tradeoffs
+## Performance results: speed vs reliability tradeoffs
 
 **Latest Batch Results (100 games)**:
 - **Success Rate**: 61/100 (61.0%) vs RBCR2's 92%
@@ -198,16 +198,16 @@ class HybridTransformerStrategy:
 - **Speed**: 5x faster than RBCR2 (0.3s vs 1.5s per game)
 - **Duration**: 55.7s for 100 games vs 280s for RBCR2
 
-**The Core Challenge**: The transformer shows competitive peak performance but struggles with reliability. While it averages 958 rejections (worse than RBCR2), its best performances (855 historical, 790 recent batch) demonstrate the potential of learned coordination, though it only succeeds 61% of the time versus RBCR2's 92% consistency.
+The core challenge: the transformer shows competitive peak performance but struggles with reliability. It averages 958 rejections (worse than RBCR2), and its best performances (855 historical, 790 recent batch) show what learned coordination can do, but it succeeds only 61% of the time versus RBCR2's 92%.
 
-**Speed Achievement**: The 5x performance improvement makes the transformer viable for real-time applications where RBCR2's computational overhead becomes prohibitive.
+The 5x speed improvement makes the transformer viable for real-time applications where RBCR2's computational overhead becomes prohibitive.
 
 **Historical Comparison**:
 - **Phase 1 - Untrained**: 943.6 ± 56.6 rejections, 0% success rate
 - **Phase 2 - Elite Training**: 958.0 ± 56.6 rejections average, improved success rate
 - **Phase 3 - Latest Results**: 958 average, 790 best in recent batch, 61% success rate
 
-## The Conservative Improvements That Worked
+## The conservative improvements that worked
 
 Based on our analysis of failed approaches, we made conservative improvements:
 
@@ -243,17 +243,17 @@ def weighted_loss(strategy_logits, targets, weights):
     return (loss * weights).mean()
 ```
 
-## What We Learned: The Orchestration Advantage
+## What we learned: the orchestration advantage
 
-The transformer approach revealed something profound about AI coordination:
+The transformer approach taught us something about AI coordination:
 
 **Single Strategy Ceiling**: Even our best algorithmic approach (RBCR at 781 rejections, RBCR2 at 887 rejections) had limitations.
 
 **Orchestration Potential**: By learning when to use each strategy, the transformer could theoretically achieve the best of all approaches.
 
-**Real-World Evidence**: The 855-rejection game proved the concept worked—the transformer had learned to select strategies more intelligently, achieving performance between RBCR2 and the original RBCR champion.
+**Real-world evidence**: The 855-rejection game proved the concept worked: the transformer had learned to select strategies more intelligently, achieving performance between RBCR2 and the original RBCR champion.
 
-## The Technical Deep Dive: How Strategy Selection Works
+## The technical deep dive: how strategy selection works
 
 ```python
 def _build_state_representation(self, person, game_state):
@@ -275,7 +275,7 @@ The transformer analyzes 20+ features to make strategy decisions:
 - **Person value**: Does this person help our constraints?
 - **Strategy performance**: Which approaches are working well?
 
-## The Future: Scenario-Specific Specialists
+## The future: scenario-specific specialists
 
 We built infrastructure for the next evolution:
 
@@ -288,9 +288,9 @@ class ScenarioSpecialistTrainer:
         # Scenario 3: multiple constraint optimization
 ```
 
-**The Vision**: Instead of one general controller, have specialists trained for each game scenario. Scenario 1 specialist might prefer RBCR2 heavily, while Scenario 2 specialist might favor constraint-focused approaches.
+The vision: instead of one general controller, have specialists trained for each game scenario. Scenario 1 specialist might prefer RBCR2 heavily, while Scenario 2 specialist might favor constraint-focused approaches.
 
-## Parameter Optimization: Bayesian Fine-Tuning
+## Parameter optimization: Bayesian fine-tuning
 
 We also built a parameter optimization system:
 
@@ -302,9 +302,9 @@ class ParameterOptimizer:
         # For LSTM: temperature, confidence thresholds, etc.
 ```
 
-**The Goal**: Not just coordinate strategies, but optimize their parameters for specific scenarios. A perfectly tuned RBCR2 might achieve 850 rejections instead of 887.
+The goal: optimize each strategy's parameters for its scenario, beyond just coordinating them. A perfectly tuned RBCR2 might achieve 850 rejections instead of 887.
 
-## Lessons Learned: When Transformers Work vs. Don't
+## Lessons learned: when transformers work vs. don't
 
 **Transformers Excel When**:
 - You have multiple proven approaches to coordinate
@@ -318,11 +318,11 @@ class ParameterOptimizer:
 - Training data is sparse or low-quality
 - The problem has clear optimal mathematical solutions
 
-**Our Approach Hit the Sweet Spot**: We weren't trying to learn bouncer decisions from scratch. We were learning to coordinate expert bouncers.
+Our approach hit the sweet spot: we weren't learning bouncer decisions from scratch, we were learning to coordinate expert bouncers.
 
-## The Meta-Lesson: AI Orchestrating AI
+## The meta-lesson: AI orchestrating AI
 
-This project demonstrated a new paradigm for AI systems:
+This project points to a different way to build AI systems:
 
 **Instead of**: One large model learns everything
 **Try**: Multiple specialized models coordinated by a learned controller
@@ -333,7 +333,7 @@ This project demonstrated a new paradigm for AI systems:
 **Instead of**: Learn from scratch with massive data
 **Try**: Learn from successful examples with performance weighting
 
-## Performance Summary: The Speed vs Reliability Matrix
+## Performance summary: the speed vs reliability matrix
 
 | System | Best Performance | Success Rate | Speed (per game) | Key Innovation |
 |--------|-----------------|--------------|------------------|----------------|
@@ -342,13 +342,13 @@ This project demonstrated a new paradigm for AI systems:
 | **Latest Transformer** | 790 best | 61% | 0.3s | Strategic orchestration + speed |
 | **Untrained Transformer** | 943.6 | 0% | 0.3s | Random coordination |
 
-**The Achievement**: The transformer has achieved competitive peak performance (855 historical best, 790 latest batch best vs RBCR2's 887 average) while being 5x faster than RBCR2. However, it trades reliability for speed, succeeding only 61% of the time versus RBCR2's 92% consistency.
+The transformer achieved competitive peak performance (855 historical best, 790 latest batch best vs RBCR2's 887 average) while being 5x faster than RBCR2. However, it trades reliability for speed, succeeding only 61% of the time versus RBCR2's 92% consistency.
 
-**Performance Breakthrough**: When successful, the transformer can exceed RBCR2's performance (855 best vs 887 average), proving that learned strategy coordination can compete with mathematical approaches, though the overall average remains worse at 958 rejections.
+When successful, the transformer can exceed RBCR2's performance (855 best vs 887 average), proving that learned strategy coordination can compete with mathematical approaches, though the overall average remains worse at 958 rejections.
 
-**The Reliability Gap**: The primary failure mode involves getting trapped near success—games that reach 591/600 young people but hit the 966 rejection limit while being tantalizingly close to completion.
+The reliability gap: the primary failure mode involves getting trapped near success, in games that reach 591/600 young people but hit the 966 rejection limit while being tantalizingly close to completion.
 
-## Code and Implementation
+## Code and implementation
 
 The complete transformer implementation is available in the repository:
 - `berghain/training/strategy_controller.py` - Core transformer architecture
@@ -357,11 +357,11 @@ The complete transformer implementation is available in the repository:
 - `berghain/training/parameter_optimizer.py` - Bayesian optimization
 - `berghain/training/scenario_specialist.py` - Scenario-specific variants
 
-**Total Impact**: 4.76M parameters learning to coordinate 8 algorithmic strategies, trained on 648 elite examples from 196 high-performance games.
+Total: 4.76M parameters learning to coordinate 8 algorithmic strategies, trained on 648 elite examples from 196 high-performance games.
 
-## The Rejection Limit Problem: So Close, Yet So Far
+## The rejection limit problem: so close, yet so far
 
-**The Failure Pattern**: Analysis of failed games reveals a consistent issue—the transformer occasionally gets "unlucky" with person sequences and approaches the rejection limit (966) while being very close to success.
+The failure pattern: analysis of failed games reveals a consistent issue, the transformer occasionally gets "unlucky" with person sequences and approaches the rejection limit (966) while being very close to success.
 
 **Specific Example**: Games reaching 591/600 young people but running out of rejections before finding the final 9 needed. The mathematical strategies like RBCR2 are better at managing this risk through more conservative early-game decisions.
 
@@ -372,9 +372,9 @@ The complete transformer implementation is available in the repository:
 - **Risk-Aware State Encoding**: Add remaining rejection budget as a critical state feature
 - **Hybrid Fallback**: Switch to RBCR2 when approaching rejection limit
 
-## The Future of AI Coordination
+## The future of AI coordination
 
-The transformer results reveal a new paradigm for AI system design:
+The transformer results suggest a different way to think about AI system design:
 
 **Speed vs Reliability Tradeoffs**: Sometimes 5x faster with 61% reliability beats 100% reliable but slow, depending on the application context.
 
@@ -384,17 +384,17 @@ The transformer results reveal a new paradigm for AI system design:
 
 **Real-Time Viability**: The 0.3s execution time makes transformer-based approaches viable for applications where RBCR2's 1.5s latency is prohibitive.
 
-The future isn't just about more powerful AI—it's about AI systems that can navigate speed-reliability tradeoffs intelligently.
+The future of AI is systems that can navigate speed-reliability tradeoffs intelligently, not just more powerful models.
 
 ---
 
-## Conclusion: The Dance of Algorithmic Coordination
+## Conclusion: the dance of algorithmic coordination
 
-We started with RBCR at 781 rejections—a mathematical masterpiece that captured the essence of constrained optimization. But even perfection has room for meta-perfection.
+We started with RBCR at 781 rejections, a mathematical masterpiece in constrained optimization. But even perfection has room for meta-perfection.
 
-The transformer learned something profound: **when to trust which expert**. It discovered that Ultra Elite LSTM excels in certain constraint patterns, RBCR2 dominates in balanced scenarios, and Perfect solver shines in endgame situations.
+The transformer learned when to trust which expert. It discovered that Ultra Elite LSTM excels in certain constraint patterns, RBCR2 dominates in balanced scenarios, and Perfect solver shines in endgame situations.
 
-Most importantly, it proved that the future of AI isn't about building one superintelligent system. It's about building systems that intelligently coordinate multiple forms of expertise—mathematical, learned, heuristic, and intuitive.
+Most importantly, it suggested that AI's future is systems that intelligently coordinate multiple forms of expertise, mathematical, learned, heuristic, and intuitive, rather than one superintelligent system.
 
 The hybrid transformer showed us a path toward strategic coordination. While it averaged worse than RBCR2, its best performance (855 rejections) demonstrated that AI orchestration could potentially bridge the gap between different algorithmic approaches.
 
@@ -404,18 +404,16 @@ The dance continues.
 
 ---
 
-## Epilogue: When AI Writes About AI (The Meta-Meta Story)
+## Epilogue: when AI writes about AI (the meta-meta story)
 
-After publishing Part 1 of this series, something interesting happened on Hacker News. The community immediately identified the AI-generated writing style—the lists, the "not just X but Y" patterns, the rhythmic repetition that Claude loves. Comments ranged from dismissive ("two minutes of my life back") to curious about the experiment itself.
+After publishing Part 1 of this series, something interesting happened on Hacker News. The community immediately identified the AI-generated writing style: the lists, the "not just X but Y" patterns, the rhythmic repetition that Claude loves. Comments ranged from dismissive ("two minutes of my life back") to curious about the experiment itself.
 
-But the most fascinating part? **This article is also Claude analyzing Claude's work.** I asked the AI to reconstruct the transformer development from git history, performance logs, and code evolution. The AI literally went through its own fossil record and wrote about what it found.
+The most fascinating part: this article is also Claude analyzing Claude's work. I asked the AI to reconstruct the transformer development from git history, performance logs, and code evolution. The AI literally went through its own fossil record and wrote about what it found.
 
 It's AI writing about AI coordination strategies, trained on data from AI-human collaboration, published in a world where AI writing is increasingly detectable and debated. Meta-collaboration all the way down, as the original article said.
 
-The HN discussion revealed something important: transparency isn't just about disclosure tags. It's about building systems where the collaborative process itself is visible, traceable, and valuable. The future isn't hiding AI use—it's making AI-human collaboration so transparent that readers can follow the entire creative process.
+The HN discussion made the point sharper: transparency is more than a disclosure tag. The collaborative process itself has to be visible, traceable, and valuable. The way forward is AI-human collaboration transparent enough that readers can follow the entire creative process, not hiding AI use.
 
 This transformer project became a perfect case study: mathematical algorithms coordinated by learned systems, guided by human strategic direction, documented through AI analysis, and shared in a community that immediately recognized the collaborative nature of the work.
 
-**The Real Achievement**: Not just the 855-rejection breakthrough game, but demonstrating that AI orchestration—of strategies, of ideas, of writing itself—works best when the process is transparent and the human contribution is clear.
-
-The meta-lesson continues to evolve.
+The 855-rejection breakthrough game was the headline, but the real achievement was showing that AI orchestration, of strategies and of writing itself, works best when the process is transparent and the human contribution is clear.

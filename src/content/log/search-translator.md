@@ -14,7 +14,7 @@ answers_questions:
   - What's the connection between AI prompt rewriting and SEO?
 ---
 
-Here's a search query that showed up in Google Search Console recently:
+A search query showed up in Google Search Console recently:
 
 > "browser-use open source agentic ai framework github repository technical documentation showing dependencies, foundation models supported, playwright integration, python libraries, and implementation architecture"
 
@@ -26,16 +26,16 @@ This demo shows Claude Code running **parallel browser sessions** with ChatGPT s
 
 <https://www.youtube.com/watch?v=eKkAwi8vt4Q>
 
-That's not a search query. That's a *translated* search query - the output of an AI rewriting someone's prompt into something a search engine can understand.
+That string is a *translated* search query: the output of an AI rewriting someone's prompt into something a search engine can understand.
 
 And it's showing up in GSC because somewhere, an AI answer engine sent that exact string to Google.
 
-## Two Languages, One Problem
+## Two languages, one problem
 
 When you ask an AI tool a question, there are *two different languages* involved:
 
-1. **Human language** - your prompt: messy, contextual, conversational
-2. **Retrieval language** - search queries: short, explicit, keyword-heavy
+1. **Human language**: your prompt (messy, contextual, conversational)
+2. **Retrieval language**: search queries (short, explicit, keyword-heavy)
 
 Most AI answer engines solve this by inserting a translation layer:
 
@@ -43,7 +43,7 @@ Most AI answer engines solve this by inserting a translation layer:
 
 OpenAI explicitly confirms this for ChatGPT Search: it "typically rewrites your query into one or more targeted queries" and may do follow-up queries after seeing initial results.
 
-This isn't speculation. It's documented behavior.
+This is documented behavior, not speculation.
 
 ### Why rewrite at all?
 
@@ -56,9 +56,7 @@ Because raw prompts are terrible search queries:
 
 This is well-studied in RAG research: rewriting, decomposition, and disambiguation improve retrieval quality.
 
-## What the Translation Looks Like
-
-Let me show you what's happening under the hood.
+## What the translation looks like
 
 ### Step 1: Interpret intent
 
@@ -68,7 +66,7 @@ ChatGPT Search automatically searches when your question benefits from web info.
 
 ### Step 2: Rewrite into queries ("fan-out")
 
-This is where the magic happens. One prompt becomes one or more search queries.
+One prompt becomes one or more search queries.
 
 **Example from OpenAI's docs:**
 
@@ -98,18 +96,18 @@ If evidence is missing? It iterates with another rewrite.
 
 Finally, it writes a natural-language response grounded in what it retrieved.
 
-## The Evidence in Your GSC
+## The evidence in your GSC
 
-Now here's where it gets interesting for SEOs.
+Now the SEO-relevant part.
 
 That 31-word query I showed you? It has clear signatures of AI origin:
 
-- **Tool/code-like vocabulary** - "github repository", "implementation architecture"
-- **Long structured text** - 31 words, comma-separated clauses
-- **Multi-line/quoted snippet style** - reads like pasted context
-- **Connector tokens** - "showing", "and" chaining multiple requirements
+- **Tool/code-like vocabulary**: "github repository", "implementation architecture"
+- **Long structured text**: 31 words, comma-separated clauses
+- **Multi-line/quoted snippet style**: reads like pasted context
+- **Connector tokens**: "showing", "and" chaining multiple requirements
 
-This isn't a human searching. This is an AI *fan-out* query - the kind ChatGPT Search generates when someone asks a multi-part question about browser-use.
+This is an AI *fan-out* query, the kind ChatGPT Search generates when someone asks a multi-part question about browser-use.
 
 And it's not alone. Here are more examples from real GSC data:
 
@@ -120,9 +118,9 @@ And it's not alone. Here are more examples from real GSC data:
 | "playwright connect_over_cdp documentation python" | Underscore method name + language, very specific |
 | "which headless browser api should i integrate if i want an http endpoint my bots and llm agents can call on demand?" | Full question as query, 24 words |
 
-These queries have **zero clicks** but **impressions**. Why? Because they're so specific, they match few pages - but when they do match, your page shows up.
+These queries have **zero clicks** but **impressions**. Why? Because they're so specific, they match few pages, but when they do match, your page shows up.
 
-## Why This Matters for SEO
+## Why this matters for SEO
 
 There are three practical implications here.
 
@@ -156,23 +154,23 @@ Before you dismiss strange queries as noise, check:
 - Is it structured like an AI rewrite? (long, comma-separated, specific)
 - Does it have zero clicks but impressions? (high specificity = low volume)
 
-If yes, it might be AI-driven traffic - and worth optimizing for.
+If yes, it might be AI-driven traffic, and worth optimizing for.
 
-## The Other Explanation: Security Issues
+## The other explanation: security issues
 
 Not all weird queries are AI-generated. Some are warning signs.
 
 If you're seeing porn, pharma, or streaming keywords that have *nothing* to do with your site, check for:
 
-1. **Hacked content** - page injection, content injection, cloaking
-2. **Spammy URLs** - infinite parameter variants returning 200/OK
-3. **The Japanese keyword hack** - auto-generated spam pages in random directories
+1. **Hacked content**: page injection, content injection, cloaking
+2. **Spammy URLs**: infinite parameter variants returning 200/OK
+3. **The Japanese keyword hack**: auto-generated spam pages in random directories
 
 Google documents these patterns explicitly. They're real, and they show up in GSC as unrelated queries.
 
 The difference: AI queries are *topically relevant* but weirdly structured. Spam queries are *topically irrelevant* entirely.
 
-## The Bigger Picture
+## The bigger picture
 
 AI answer engines aren't replacing search. They're becoming a translation layer on top of it.
 
@@ -182,7 +180,7 @@ When you ask ChatGPT a question, it doesn't just "know" the answer. It:
 3. Reads the results
 4. Synthesizes an answer
 
-Your content can appear in step 2 - even if the human never visited Google directly.
+Your content can appear in step 2, even if the human never visited Google directly.
 
 This is the new SEO frontier: **optimizing for AI rewriters**, not just human searchers.
 
