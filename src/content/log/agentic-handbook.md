@@ -6,6 +6,7 @@ date: 2026-01-15
 last_updated: 2026-01-21
 tags: [AI, AGENTS, PATTERNS, PRODUCTION, ENGINEERING]
 draft: false
+featured: true
 author: "Nikola Balić"
 topics: [AI Engineering, Software Architecture, Production Systems, Design Patterns]
 entities: [Anthropic, Linus Torvalds, Tobias Lütke, Armin Ronacher, Ryan Dahl, GitHub, agentic-patterns.com]

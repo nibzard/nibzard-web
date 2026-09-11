@@ -5,7 +5,6 @@ tldr: "After analyzing hundreds of AI sessions, the successful ones shared clear
 date: 2025-10-30
 tags: [HUMAN, AI, AGENTS, LESSONS, SLOP]
 draft: false
-featured: true
 author: "Nikola Balić"
 topics: [AI orchestration, agent workflows, delegation patterns, human-AI collaboration, production lessons]
 entities: [Claude, Claude Code, Anthropic]

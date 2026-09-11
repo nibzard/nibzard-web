@@ -5,7 +5,6 @@ tldr: "Built AgentProbe to test how AI agents interact with CLI tools. Even simp
 date: 2025-07-26
 tags: [HUMAN, AI, AGENTS, DEVELOPER-TOOLS, OPEN-SOURCE]
 draft: false
-featured: true
 author: "Nikola Balić"
 topics: [CLI testing for AI agents, agent experience (AX), tool friction analysis, command-line interface design, developer tool quality]
 entities: [Vercel, Claude, AgentProbe, Mathias Biilmann, OAuth, Claude Code MAX]

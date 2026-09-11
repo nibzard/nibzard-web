@@ -5,6 +5,7 @@ tldr: "Agent labs ship product first and build infrastructure later. They turn L
 date: 2025-10-28
 tags: [AI, STARTUPS, AGENTS, STRATEGY, PRODUCT]
 draft: false
+featured: true
 author: "Nikola Balić"
 topics: [AI agent labs vs model labs, product-first development, agentic systems, outcome-based software, AI startup strategy]
 entities: [Swyx, Cognition Labs, Devin, Cursor, OpenAI, Anthropic, Akash Bajwa, Andrej Karpathy]
