@@ -3,7 +3,6 @@ import BaseLayout from './BaseLayout.astro';
 import { formatTagForDisplay, sortTags } from '../utils/tagUtils';
 import { getCollection, type CollectionEntry } from 'astro:content';
 import CSSFadeIn from '../components/animations/CSSFadeIn.astro';
-import NewsletterSubscribe from '../components/NewsletterSubscribe.astro';
 import SchemaMarkup from '../components/SchemaMarkup.astro';
 import CopyMarkdownButton from '../components/CopyMarkdownButton.jsx';
 import ChatGPTButton from '../components/ChatGPTButton.jsx';
@@ -125,7 +124,7 @@ const relatedArticlesEntries = getDiverseRelatedArticles(
 
     <InlineCTA />
 
-    {sortedTags.length > 0 && <nav class="article-tags-section" aria-label="Article topics">{sortedTags.map(tag => <a href={`/tags/${tag.toLowerCase()}`}>{formatTagForDisplay(tag)}</a>)}</nav>}
+    {sortedTags.length > 0 && <nav class="article-tags-section after-cta" aria-label="Article topics">{sortedTags.map(tag => <a href={`/tags/${tag.toLowerCase()}`}>{formatTagForDisplay(tag)}</a>)}</nav>}
 
     {relatedArticlesEntries.length > 0 && (
       <CSSFadeIn delay={0.1}>
@@ -135,8 +134,6 @@ const relatedArticlesEntries = getDiverseRelatedArticles(
         />
       </CSSFadeIn>
     )}
-
-    <NewsletterSubscribe />
 
     <section class="comments-section" id="comments">
       <GiscusComments

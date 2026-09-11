@@ -9,7 +9,7 @@ interface Props {
 }
 
 const message = Astro.props.message ?? "Enjoying this?";
-const emphasis = Astro.props.emphasis ?? "Get more like this in your inbox.";
+const emphasis = Astro.props.emphasis ?? "Get more like this in your inbox. Unsubscribe anytime.";
 const buttonText = Astro.props.buttonText ?? "Subscribe";
 ---
 
@@ -72,14 +72,22 @@ const buttonText = Astro.props.buttonText ?? "Subscribe";
 
 <style>
   .inline-cta {
-    padding: var(--space-md) 0;
-    margin: var(--space-lg) auto;
-    max-width: 420px;
+    border-top: 1px solid var(--color-border);
+    padding: var(--space-xl) 0 var(--space-md);
+    margin: 40px 0 0;
     text-align: center;
   }
 
+  .inline-cta-text,
+  .inline-cta-form,
+  .inline-cta-message-box {
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .inline-cta-text {
-    margin: 0 0 var(--space-sm) 0;
+    margin-bottom: var(--space-sm);
     font-size: 0.9375rem;
     line-height: 1.5;
   }
@@ -162,8 +170,7 @@ const buttonText = Astro.props.buttonText ?? "Subscribe";
 
   @media (max-width: 768px) {
     .inline-cta {
-      padding: var(--space-sm);
-      max-width: 100%;
+      padding: var(--space-lg) 0 var(--space-sm);
     }
 
     .inline-cta-text {
