@@ -452,7 +452,7 @@
       "description": "A curated catalogue of awesome agentic AI patterns",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-09-11T02:38:08Z",
+      "updatedAt": "2026-09-12T10:58:48Z",
       "pushedAt": "2026-08-25T21:28:11Z",
       "archived": false,
       "fork": false
@@ -1353,7 +1353,7 @@
       "topics": [],
       "language": "HTML",
       "updatedAt": "2026-03-06T09:16:38Z",
-      "pushedAt": "2026-03-06T09:17:19Z",
+      "pushedAt": "2026-09-12T10:51:00Z",
       "archived": false,
       "fork": false
     },
@@ -1700,8 +1700,8 @@
       "description": "",
       "topics": [],
       "language": "Python",
-      "updatedAt": "2026-09-11T04:11:07Z",
-      "pushedAt": "2026-09-11T04:11:04Z",
+      "updatedAt": "2026-09-12T04:10:32Z",
+      "pushedAt": "2026-09-12T04:10:29Z",
       "archived": false,
       "fork": false
     },
@@ -2006,8 +2006,8 @@
       "description": "",
       "topics": [],
       "language": "Shell",
-      "updatedAt": "2026-04-13T13:37:04Z",
-      "pushedAt": "2026-04-13T13:37:00Z",
+      "updatedAt": "2026-09-11T21:44:25Z",
+      "pushedAt": "2026-09-11T21:44:21Z",
       "archived": false,
       "fork": false
     },
@@ -2342,8 +2342,8 @@
       "description": "Personal blog discussing AI, growth and startups",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-09-11T18:55:11Z",
-      "pushedAt": "2026-09-11T18:55:07Z",
+      "updatedAt": "2026-09-11T20:21:10Z",
+      "pushedAt": "2026-09-11T20:21:06Z",
       "archived": false,
       "fork": false
     },
@@ -3514,6 +3514,18 @@
       "fork": false
     },
     {
+      "fullName": "steel-experiments/cassandra-discord",
+      "name": "cassandra-discord",
+      "url": "https://github.com/steel-experiments/cassandra-discord",
+      "description": "Cassandra for Discord: a quiet organizational-memory agent for one Discord server",
+      "topics": [],
+      "language": "TypeScript",
+      "updatedAt": "2026-09-11T22:09:23Z",
+      "pushedAt": "2026-09-11T22:09:18Z",
+      "archived": false,
+      "fork": false
+    },
+    {
       "fullName": "steel-experiments/Competitive-Intelligence-Agent",
       "name": "Competitive-Intelligence-Agent",
       "url": "https://github.com/steel-experiments/Competitive-Intelligence-Agent",
@@ -3556,8 +3568,8 @@
       "description": "A map and learning exchange for companies building proprietary internal AI agents — catalog, patterns, and adoption lessons.",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-09-11T14:20:01Z",
-      "pushedAt": "2026-09-11T14:19:57Z",
+      "updatedAt": "2026-09-11T21:43:13Z",
+      "pushedAt": "2026-09-11T21:43:09Z",
       "archived": false,
       "fork": false
     },
