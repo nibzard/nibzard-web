@@ -32,8 +32,8 @@
       "description": "",
       "topics": [],
       "language": "Jupyter Notebook",
-      "updatedAt": "2026-02-23T09:02:26Z",
-      "pushedAt": "2026-02-23T09:02:22Z",
+      "updatedAt": "2026-09-12T15:55:35Z",
+      "pushedAt": "2026-09-12T15:55:28Z",
       "archived": false,
       "fork": false
     },
@@ -108,6 +108,30 @@
       "pushedAt": "2025-10-27T17:29:23Z",
       "archived": false,
       "fork": true
+    },
+    {
+      "fullName": "nibzard/agentbox",
+      "name": "agentbox",
+      "url": "https://github.com/nibzard/agentbox",
+      "description": "One-shot setup script: Claude Code + Codex on a fresh Steel sandbox VM (non-root agent user, modern CLI, dotfiles, tailcat)",
+      "topics": [],
+      "language": "Shell",
+      "updatedAt": "2026-09-12T21:45:05Z",
+      "pushedAt": "2026-09-12T21:45:01Z",
+      "archived": false,
+      "fork": false
+    },
+    {
+      "fullName": "nibzard/agentchaos",
+      "name": "agentchaos",
+      "url": "https://github.com/nibzard/agentchaos",
+      "description": "",
+      "topics": [],
+      "language": "Go",
+      "updatedAt": "2026-09-12T17:17:35Z",
+      "pushedAt": "2026-09-12T17:17:25Z",
+      "archived": false,
+      "fork": false
     },
     {
       "fullName": "nibzard/agentlab",
@@ -452,7 +476,7 @@
       "description": "A curated catalogue of awesome agentic AI patterns",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-09-12T10:58:48Z",
+      "updatedAt": "2026-09-13T08:37:39Z",
       "pushedAt": "2026-08-25T21:28:11Z",
       "archived": false,
       "fork": false
@@ -1353,7 +1377,7 @@
       "topics": [],
       "language": "HTML",
       "updatedAt": "2026-03-06T09:16:38Z",
-      "pushedAt": "2026-09-12T10:51:00Z",
+      "pushedAt": "2026-09-12T11:30:41Z",
       "archived": false,
       "fork": false
     },
@@ -1700,8 +1724,8 @@
       "description": "",
       "topics": [],
       "language": "Python",
-      "updatedAt": "2026-09-12T04:10:32Z",
-      "pushedAt": "2026-09-12T04:10:29Z",
+      "updatedAt": "2026-09-13T04:22:26Z",
+      "pushedAt": "2026-09-13T04:22:23Z",
       "archived": false,
       "fork": false
     },
@@ -2342,8 +2366,8 @@
       "description": "Personal blog discussing AI, growth and startups",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-09-11T20:21:10Z",
-      "pushedAt": "2026-09-11T20:21:06Z",
+      "updatedAt": "2026-09-12T11:00:00Z",
+      "pushedAt": "2026-09-12T10:59:57Z",
       "archived": false,
       "fork": false
     },
@@ -2591,6 +2615,18 @@
       "language": "Python",
       "updatedAt": "2025-10-28T08:16:14Z",
       "pushedAt": "2025-10-28T08:16:11Z",
+      "archived": false,
+      "fork": false
+    },
+    {
+      "fullName": "nibzard/porta",
+      "name": "porta",
+      "url": "https://github.com/nibzard/porta",
+      "description": "",
+      "topics": [],
+      "language": "TypeScript",
+      "updatedAt": "2026-09-12T22:11:39Z",
+      "pushedAt": "2026-09-12T22:11:36Z",
       "archived": false,
       "fork": false
     },
