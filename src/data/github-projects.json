@@ -116,8 +116,8 @@
       "description": "One-shot setup script: Claude Code + Codex on a fresh Steel sandbox VM (non-root agent user, modern CLI, dotfiles, tailcat)",
       "topics": [],
       "language": "Python",
-      "updatedAt": "2026-09-14T12:51:06Z",
-      "pushedAt": "2026-09-14T12:51:01Z",
+      "updatedAt": "2026-09-14T14:59:58Z",
+      "pushedAt": "2026-09-14T14:59:50Z",
       "archived": false,
       "fork": false
     },
@@ -476,7 +476,7 @@
       "description": "A curated catalogue of awesome agentic AI patterns",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-09-13T08:37:39Z",
+      "updatedAt": "2026-09-15T02:23:02Z",
       "pushedAt": "2026-08-25T21:28:11Z",
       "archived": false,
       "fork": false
@@ -1724,8 +1724,8 @@
       "description": "",
       "topics": [],
       "language": "Python",
-      "updatedAt": "2026-09-14T04:29:01Z",
-      "pushedAt": "2026-09-14T04:28:57Z",
+      "updatedAt": "2026-09-15T04:29:16Z",
+      "pushedAt": "2026-09-15T04:29:12Z",
       "archived": false,
       "fork": false
     },
@@ -2366,8 +2366,8 @@
       "description": "Personal blog discussing AI, growth and startups",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-09-13T12:06:34Z",
-      "pushedAt": "2026-09-13T12:06:30Z",
+      "updatedAt": "2026-09-14T13:04:11Z",
+      "pushedAt": "2026-09-14T13:04:04Z",
       "archived": false,
       "fork": false
     },
@@ -2465,8 +2465,8 @@
         "typescript"
       ],
       "language": "TypeScript",
-      "updatedAt": "2026-09-07T10:27:26Z",
-      "pushedAt": "2026-09-07T10:27:16Z",
+      "updatedAt": "2026-09-14T21:46:36Z",
+      "pushedAt": "2026-09-14T21:46:32Z",
       "archived": false,
       "fork": false
     },
@@ -3603,9 +3603,9 @@
       "url": "https://github.com/steel-experiments/internal-agents-map",
       "description": "A map and learning exchange for companies building proprietary internal AI agents — catalog, patterns, and adoption lessons.",
       "topics": [],
-      "language": "HTML",
-      "updatedAt": "2026-09-11T21:43:13Z",
-      "pushedAt": "2026-09-11T21:43:09Z",
+      "language": "Python",
+      "updatedAt": "2026-09-15T11:07:52Z",
+      "pushedAt": "2026-09-15T11:07:48Z",
       "archived": false,
       "fork": false
     },
