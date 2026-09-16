@@ -1,6 +1,6 @@
 ---
 name: illustrate-cli
-description: "Generate CLI-style PNG images from structured data. Use when the user wants to create terminal-looking tables, command output visualizations, or any data rendered as a CLI screenshot. Triggers on: 'make a table image', 'render as CLI', 'terminal style table', 'screenshot of table', 'CLI visualization', 'illustrate this data', or when user wants to turn tabular data or command output into a shareable image. Also use when creating images for blog posts or articles that show benchmark results, comparison tables, or structured data in terminal style."
+description: Render structured data as a terminal-style PNG when the user requests a CLI screenshot or terminal image. Do not use for ordinary text tables or command output.
 ---
 
 # illustrate-cli
@@ -97,10 +97,10 @@ The most common use case. Structure it like this:
 
 ## Runner script pattern
 
-Create a `.mjs` file that imports the render script and builds the HTML:
+Resolve `scripts/render.mjs` from this skill's actual directory. Replace `<absolute-skill-directory>` with that absolute path when you create the runner:
 
 ```javascript
-import { render } from '/Users/nikola/.claude/skills/illustrate-cli/scripts/render.mjs';
+import { render } from '<absolute-skill-directory>/scripts/render.mjs';
 
 const html = `
 <div class="cli-header">$ your-command --here</div>
