@@ -1298,6 +1298,24 @@
       "fork": true
     },
     {
+      "fullName": "nibzard/decision-model-benchmark",
+      "name": "decision-model-benchmark",
+      "url": "https://github.com/nibzard/decision-model-benchmark",
+      "description": "Independent, reproducible benchmark: a decision model (jev), eight constrained LLMs, and deterministic baselines on typed decisions - accuracy, calibration, latency, cost, failure modes",
+      "topics": [
+        "benchmark",
+        "calibration",
+        "decision-models",
+        "llm-evaluation",
+        "reproducibility"
+      ],
+      "language": "Python",
+      "updatedAt": "2026-09-18T22:30:55Z",
+      "pushedAt": "2026-09-19T07:11:11Z",
+      "archived": false,
+      "fork": false
+    },
+    {
       "fullName": "nibzard/demig",
       "name": "demig",
       "url": "https://github.com/nibzard/demig",
@@ -1724,8 +1742,8 @@
       "description": "",
       "topics": [],
       "language": "Python",
-      "updatedAt": "2026-09-18T04:15:41Z",
-      "pushedAt": "2026-09-18T04:15:37Z",
+      "updatedAt": "2026-09-19T04:12:10Z",
+      "pushedAt": "2026-09-19T04:12:07Z",
       "archived": false,
       "fork": false
     },
@@ -2366,8 +2384,8 @@
       "description": "Personal blog discussing AI, growth and startups",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-09-17T11:53:52Z",
-      "pushedAt": "2026-09-17T11:53:48Z",
+      "updatedAt": "2026-09-18T11:29:50Z",
+      "pushedAt": "2026-09-18T11:29:46Z",
       "archived": false,
       "fork": false
     },
@@ -2555,6 +2573,18 @@
       "language": "TypeScript",
       "updatedAt": "2026-01-31T07:20:46Z",
       "pushedAt": "2026-01-31T07:20:42Z",
+      "archived": false,
+      "fork": false
+    },
+    {
+      "fullName": "nibzard/personal-mail-hub",
+      "name": "personal-mail-hub",
+      "url": "https://github.com/nibzard/personal-mail-hub",
+      "description": "A self-hosted personal mail hub.",
+      "topics": [],
+      "language": "TypeScript",
+      "updatedAt": "2026-09-19T10:42:21Z",
+      "pushedAt": "2026-09-19T10:42:19Z",
       "archived": false,
       "fork": false
     },
@@ -3017,6 +3047,18 @@
       "language": "Python",
       "updatedAt": "2026-04-17T16:40:01Z",
       "pushedAt": "2025-10-15T19:31:08Z",
+      "archived": false,
+      "fork": false
+    },
+    {
+      "fullName": "nibzard/smelt",
+      "name": "smelt",
+      "url": "https://github.com/nibzard/smelt",
+      "description": "",
+      "topics": [],
+      "language": "JavaScript",
+      "updatedAt": "2026-09-18T17:05:34Z",
+      "pushedAt": "2026-09-08T20:13:49Z",
       "archived": false,
       "fork": false
     },
@@ -3604,8 +3646,8 @@
       "description": "A map and learning exchange for companies building proprietary internal AI agents — catalog, patterns, and adoption lessons.",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-09-17T19:44:20Z",
-      "pushedAt": "2026-09-17T19:44:15Z",
+      "updatedAt": "2026-09-18T15:37:30Z",
+      "pushedAt": "2026-09-18T15:37:26Z",
       "archived": false,
       "fork": false
     },
