@@ -476,7 +476,7 @@
       "description": "A curated catalogue of awesome agentic AI patterns",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-09-21T10:52:52Z",
+      "updatedAt": "2026-09-22T09:22:17Z",
       "pushedAt": "2026-08-25T21:28:11Z",
       "archived": false,
       "fork": false
@@ -998,6 +998,18 @@
       "fork": false
     },
     {
+      "fullName": "nibzard/clarity-mcp-server",
+      "name": "clarity-mcp-server",
+      "url": "https://github.com/nibzard/clarity-mcp-server",
+      "description": "A Model Context Protocol (MCP) server for Microsoft Clarity",
+      "topics": [],
+      "language": "TypeScript",
+      "updatedAt": "2026-09-22T11:01:58Z",
+      "pushedAt": "2026-09-22T11:01:54Z",
+      "archived": false,
+      "fork": true
+    },
+    {
       "fullName": "nibzard/claude-threads",
       "name": "claude-threads",
       "url": "https://github.com/nibzard/claude-threads",
@@ -1310,7 +1322,7 @@
         "reproducibility"
       ],
       "language": "Python",
-      "updatedAt": "2026-09-21T04:44:01Z",
+      "updatedAt": "2026-09-22T07:15:29Z",
       "pushedAt": "2026-09-19T07:11:11Z",
       "archived": false,
       "fork": false
@@ -1742,8 +1754,8 @@
       "description": "",
       "topics": [],
       "language": "Python",
-      "updatedAt": "2026-09-21T04:29:19Z",
-      "pushedAt": "2026-09-21T04:29:16Z",
+      "updatedAt": "2026-09-22T04:25:34Z",
+      "pushedAt": "2026-09-22T04:25:29Z",
       "archived": false,
       "fork": false
     },
@@ -2227,9 +2239,9 @@
       "url": "https://github.com/nibzard/minimal",
       "description": "Build Software You Can Trust. Isolated, reproducible development environments and a secure package manager that give your whole team identical environments, while keeping AI agents off the laptop.",
       "topics": [],
-      "language": null,
-      "updatedAt": "2026-08-24T20:00:49Z",
-      "pushedAt": "2026-08-24T18:51:27Z",
+      "language": "Rust",
+      "updatedAt": "2026-09-22T10:04:40Z",
+      "pushedAt": "2026-09-22T10:04:20Z",
       "archived": false,
       "fork": true
     },
@@ -2384,8 +2396,8 @@
       "description": "Personal blog discussing AI, growth and startups",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-09-20T11:37:49Z",
-      "pushedAt": "2026-09-20T11:37:46Z",
+      "updatedAt": "2026-09-21T13:02:37Z",
+      "pushedAt": "2026-09-21T13:02:33Z",
       "archived": false,
       "fork": false
     },
@@ -2583,8 +2595,8 @@
       "description": "A self-hosted personal mail hub.",
       "topics": [],
       "language": "TypeScript",
-      "updatedAt": "2026-09-20T21:22:49Z",
-      "pushedAt": "2026-09-21T12:39:53Z",
+      "updatedAt": "2026-09-21T22:51:37Z",
+      "pushedAt": "2026-09-21T22:51:50Z",
       "archived": false,
       "fork": false
     },
@@ -2901,9 +2913,9 @@
       "url": "https://github.com/nibzard/rome",
       "description": "Rome is the agentic OS.",
       "topics": [],
-      "language": null,
-      "updatedAt": "2026-08-24T08:20:24Z",
-      "pushedAt": "2026-08-23T23:55:34Z",
+      "language": "TypeScript",
+      "updatedAt": "2026-09-22T10:03:59Z",
+      "pushedAt": "2026-09-22T10:04:10Z",
       "archived": false,
       "fork": true
     },
@@ -3644,10 +3656,16 @@
       "name": "internal-agents-map",
       "url": "https://github.com/steel-experiments/internal-agents-map",
       "description": "A map and learning exchange for companies building proprietary internal AI agents — catalog, patterns, and adoption lessons.",
-      "topics": [],
-      "language": "HTML",
-      "updatedAt": "2026-09-21T12:41:14Z",
-      "pushedAt": "2026-09-21T12:41:10Z",
+      "topics": [
+        "ai-agents",
+        "astro",
+        "catalog",
+        "dataset",
+        "internal-tools"
+      ],
+      "language": "TypeScript",
+      "updatedAt": "2026-09-22T09:30:50Z",
+      "pushedAt": "2026-09-22T09:30:45Z",
       "archived": false,
       "fork": false
     },
