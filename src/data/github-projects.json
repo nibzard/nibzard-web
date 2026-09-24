@@ -476,7 +476,7 @@
       "description": "A curated catalogue of awesome agentic AI patterns",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-09-23T03:04:50Z",
+      "updatedAt": "2026-09-24T03:44:48Z",
       "pushedAt": "2026-08-25T21:28:11Z",
       "archived": false,
       "fork": false
@@ -1058,6 +1058,18 @@
       "fork": false
     },
     {
+      "fullName": "nibzard/clua",
+      "name": "clua",
+      "url": "https://github.com/nibzard/clua",
+      "description": "",
+      "topics": [],
+      "language": "HTML",
+      "updatedAt": "2026-09-23T21:18:57Z",
+      "pushedAt": "2026-09-23T21:18:52Z",
+      "archived": false,
+      "fork": false
+    },
+    {
       "fullName": "nibzard/club-admission-simulator",
       "name": "club-admission-simulator",
       "url": "https://github.com/nibzard/club-admission-simulator",
@@ -1322,7 +1334,7 @@
         "reproducibility"
       ],
       "language": "Python",
-      "updatedAt": "2026-09-22T16:04:39Z",
+      "updatedAt": "2026-09-23T14:42:34Z",
       "pushedAt": "2026-09-19T07:11:11Z",
       "archived": false,
       "fork": false
@@ -1406,8 +1418,8 @@
       "description": "",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-03-06T09:16:38Z",
-      "pushedAt": "2026-09-12T11:30:41Z",
+      "updatedAt": "2026-09-23T19:18:22Z",
+      "pushedAt": "2026-09-23T19:18:17Z",
       "archived": false,
       "fork": false
     },
@@ -1754,8 +1766,8 @@
       "description": "",
       "topics": [],
       "language": "Python",
-      "updatedAt": "2026-09-23T04:21:56Z",
-      "pushedAt": "2026-09-23T04:21:52Z",
+      "updatedAt": "2026-09-24T04:18:40Z",
+      "pushedAt": "2026-09-24T04:18:36Z",
       "archived": false,
       "fork": false
     },
@@ -1828,6 +1840,18 @@
       "language": "JavaScript",
       "updatedAt": "2026-01-15T10:46:28Z",
       "pushedAt": "2025-09-10T22:01:59Z",
+      "archived": false,
+      "fork": false
+    },
+    {
+      "fullName": "nibzard/jevditor",
+      "name": "jevditor",
+      "url": "https://github.com/nibzard/jevditor",
+      "description": "",
+      "topics": [],
+      "language": "TypeScript",
+      "updatedAt": "2026-09-24T10:37:57Z",
+      "pushedAt": "2026-09-24T10:37:54Z",
       "archived": false,
       "fork": false
     },
@@ -2060,8 +2084,8 @@
       "description": "",
       "topics": [],
       "language": "Shell",
-      "updatedAt": "2026-09-11T21:44:25Z",
-      "pushedAt": "2026-09-11T21:44:21Z",
+      "updatedAt": "2026-09-24T09:37:47Z",
+      "pushedAt": "2026-09-24T09:37:44Z",
       "archived": false,
       "fork": false
     },
@@ -2396,8 +2420,8 @@
       "description": "Personal blog discussing AI, growth and startups",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-09-22T11:52:46Z",
-      "pushedAt": "2026-09-22T11:52:39Z",
+      "updatedAt": "2026-09-23T11:52:21Z",
+      "pushedAt": "2026-09-23T11:52:16Z",
       "archived": false,
       "fork": false
     },
@@ -3664,8 +3688,8 @@
         "internal-tools"
       ],
       "language": "HTML",
-      "updatedAt": "2026-09-22T19:17:57Z",
-      "pushedAt": "2026-09-23T08:46:54Z",
+      "updatedAt": "2026-09-23T18:38:57Z",
+      "pushedAt": "2026-09-23T18:38:52Z",
       "archived": false,
       "fork": false
     },
