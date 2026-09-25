@@ -476,7 +476,7 @@
       "description": "A curated catalogue of awesome agentic AI patterns",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-09-24T03:44:48Z",
+      "updatedAt": "2026-09-25T07:48:59Z",
       "pushedAt": "2026-08-25T21:28:11Z",
       "archived": false,
       "fork": false
@@ -1484,6 +1484,18 @@
       "fork": false
     },
     {
+      "fullName": "nibzard/emditor",
+      "name": "emditor",
+      "url": "https://github.com/nibzard/emditor",
+      "description": "",
+      "topics": [],
+      "language": "TypeScript",
+      "updatedAt": "2026-09-24T18:03:54Z",
+      "pushedAt": "2026-09-24T18:03:51Z",
+      "archived": false,
+      "fork": false
+    },
+    {
       "fullName": "nibzard/engram-lite",
       "name": "engram-lite",
       "url": "https://github.com/nibzard/engram-lite",
@@ -1516,6 +1528,18 @@
       "language": "Rust",
       "updatedAt": "2026-01-15T10:46:48Z",
       "pushedAt": "2026-04-15T11:41:48Z",
+      "archived": false,
+      "fork": false
+    },
+    {
+      "fullName": "nibzard/escher",
+      "name": "escher",
+      "url": "https://github.com/nibzard/escher",
+      "description": "Isometric Escher-style labyrinth game: procedural seeded levels, illusion paths, and automated playtests",
+      "topics": [],
+      "language": "JavaScript",
+      "updatedAt": "2026-09-24T17:56:47Z",
+      "pushedAt": "2026-09-24T17:56:42Z",
       "archived": false,
       "fork": false
     },
@@ -1766,8 +1790,8 @@
       "description": "",
       "topics": [],
       "language": "Python",
-      "updatedAt": "2026-09-24T04:18:40Z",
-      "pushedAt": "2026-09-24T04:18:36Z",
+      "updatedAt": "2026-09-25T04:30:11Z",
+      "pushedAt": "2026-09-25T04:30:07Z",
       "archived": false,
       "fork": false
     },
@@ -1850,7 +1874,7 @@
       "description": "",
       "topics": [],
       "language": "TypeScript",
-      "updatedAt": "2026-09-24T10:37:57Z",
+      "updatedAt": "2026-09-24T12:26:21Z",
       "pushedAt": "2026-09-24T10:37:54Z",
       "archived": false,
       "fork": false
@@ -2420,8 +2444,8 @@
       "description": "Personal blog discussing AI, growth and startups",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-09-23T11:52:21Z",
-      "pushedAt": "2026-09-23T11:52:16Z",
+      "updatedAt": "2026-09-24T11:59:28Z",
+      "pushedAt": "2026-09-24T11:59:23Z",
       "archived": false,
       "fork": false
     },
@@ -3399,8 +3423,8 @@
         "terminal"
       ],
       "language": "Rust",
-      "updatedAt": "2026-09-17T13:02:24Z",
-      "pushedAt": "2026-09-17T13:04:28Z",
+      "updatedAt": "2026-09-24T13:26:51Z",
+      "pushedAt": "2026-09-24T13:26:46Z",
       "archived": false,
       "fork": false
     },
@@ -3687,9 +3711,9 @@
         "dataset",
         "internal-tools"
       ],
-      "language": "HTML",
-      "updatedAt": "2026-09-23T18:38:57Z",
-      "pushedAt": "2026-09-23T18:38:52Z",
+      "language": "TypeScript",
+      "updatedAt": "2026-09-25T11:56:31Z",
+      "pushedAt": "2026-09-25T11:56:33Z",
       "archived": false,
       "fork": false
     },
