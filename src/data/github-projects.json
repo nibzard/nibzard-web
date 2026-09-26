@@ -476,7 +476,7 @@
       "description": "A curated catalogue of awesome agentic AI patterns",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-09-25T07:48:59Z",
+      "updatedAt": "2026-09-26T07:16:43Z",
       "pushedAt": "2026-08-25T21:28:11Z",
       "archived": false,
       "fork": false
@@ -1334,7 +1334,7 @@
         "reproducibility"
       ],
       "language": "Python",
-      "updatedAt": "2026-09-23T14:42:34Z",
+      "updatedAt": "2026-09-26T10:33:41Z",
       "pushedAt": "2026-09-19T07:11:11Z",
       "archived": false,
       "fork": false
@@ -1490,8 +1490,8 @@
       "description": "",
       "topics": [],
       "language": "TypeScript",
-      "updatedAt": "2026-09-24T18:03:54Z",
-      "pushedAt": "2026-09-24T18:03:51Z",
+      "updatedAt": "2026-09-25T20:52:56Z",
+      "pushedAt": "2026-09-25T21:17:16Z",
       "archived": false,
       "fork": false
     },
@@ -1790,8 +1790,8 @@
       "description": "",
       "topics": [],
       "language": "Python",
-      "updatedAt": "2026-09-25T04:30:11Z",
-      "pushedAt": "2026-09-25T04:30:07Z",
+      "updatedAt": "2026-09-26T04:34:42Z",
+      "pushedAt": "2026-09-26T04:34:39Z",
       "archived": false,
       "fork": false
     },
@@ -1874,8 +1874,8 @@
       "description": "",
       "topics": [],
       "language": "TypeScript",
-      "updatedAt": "2026-09-24T12:26:21Z",
-      "pushedAt": "2026-09-24T10:37:54Z",
+      "updatedAt": "2026-09-25T20:47:26Z",
+      "pushedAt": "2026-09-25T20:47:22Z",
       "archived": false,
       "fork": false
     },
@@ -2246,6 +2246,18 @@
       "fork": true
     },
     {
+      "fullName": "nibzard/measuretwice",
+      "name": "measuretwice",
+      "url": "https://github.com/nibzard/measuretwice",
+      "description": "Readable AI checks, measured decision policies, and inspectable reports.",
+      "topics": [],
+      "language": "TypeScript",
+      "updatedAt": "2026-09-25T14:30:42Z",
+      "pushedAt": "2026-09-25T13:04:28Z",
+      "archived": false,
+      "fork": false
+    },
+    {
       "fullName": "nibzard/mermaid-ascii",
       "name": "mermaid-ascii",
       "url": "https://github.com/nibzard/mermaid-ascii",
@@ -2444,8 +2456,8 @@
       "description": "Personal blog discussing AI, growth and startups",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-09-24T11:59:28Z",
-      "pushedAt": "2026-09-24T11:59:23Z",
+      "updatedAt": "2026-09-25T12:00:39Z",
+      "pushedAt": "2026-09-25T12:00:35Z",
       "archived": false,
       "fork": false
     },
@@ -3712,8 +3724,8 @@
         "internal-tools"
       ],
       "language": "TypeScript",
-      "updatedAt": "2026-09-25T11:56:31Z",
-      "pushedAt": "2026-09-25T11:56:33Z",
+      "updatedAt": "2026-09-25T20:44:54Z",
+      "pushedAt": "2026-09-25T20:44:50Z",
       "archived": false,
       "fork": false
     },
