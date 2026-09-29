@@ -127,3 +127,13 @@ Add new entries at the bottom of the table.
 - **2026-09-26: Humanize research drafts without erasing evidence limits.** Remove repeated hypothetical-scene staging, paragraphs about the writing process, and redundant section closers. Keep qualifications that distinguish observational evidence, task-specific experiments, and vendor examples from broader claims. For prose-only edits, compare frontmatter, link destinations, inline code, and numeric claims before and after.
 
 - **2026-09-26: Keep Markdown escaping out of YAML frontmatter.** Escaped opening brackets turn tag, topic, and entity arrays into strings; an escaped underscore changes `answers_questions` into an unrecognized key. Restore YAML punctuation and the exact schema key while preserving values.
+
+- **2026-09-29: Build without mise when it is not installed.** Only Homebrew Node 26 was available. `npx -y -p node@22 which node` gives a Node 22 binary; put its directory first in PATH, then run `PROJECTS_OFFLINE=1 TINA_SKIP_SEARCH_INDEX=1 pnpm run build`. The build skips OG images when Puppeteer Chrome is missing. Run `pnpm exec puppeteer browsers install chrome` and then `node scripts/prebuild-og.js`.
+
+- **2026-09-29: Keep a useful formula when cutting repeated launch analysis.** In `jev-launch.md`, the user's project and the other first-week experiments show how sharing happened. Cut the extra loop diagram and repeated explanation, but keep the five-step formula as a concise closing takeaway.
+
+- **2026-09-29: Preserve the onboarding mechanism when tightening prose.** In `jev-launch.md`, the yes-or-no question matters because it qualifies users and aligns their expectations before use. Keep that explanation explicit when shortening the passage; describing it only as preventing a mistake loses the point about onboarding and growth.
+
+- **2026-09-29: Check structural cuts against the author's original argument.** Tightening `jev-launch.md` removed the launch loop, the early builder's opportunity to grow an audience, and the speed from seeing value to trying and sharing it. The quick-start rewrite also shifted meaningful first outcomes into reusable examples. Restore those distinct ideas while keeping the accepted sentence edits; a concise framework can carry an argument that examples alone leave implicit.
+
+- **2026-09-29: Allow X widget origins when embedding launch posts.** The site had no X embed support, and its production CSP in `vercel.json` excluded the widget scripts and frames. Use the official `twitter-tweet` blockquote and async widget script with a fallback post link, and allow the specific platform and syndication origins. Verified the launch post and video rendered in Chromium with the production CSP applied; the production build passed.
