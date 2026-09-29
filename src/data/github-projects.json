@@ -476,7 +476,7 @@
       "description": "A curated catalogue of awesome agentic AI patterns",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-09-28T13:21:20Z",
+      "updatedAt": "2026-09-29T08:54:54Z",
       "pushedAt": "2026-09-28T13:21:09Z",
       "archived": false,
       "fork": false
@@ -1334,8 +1334,8 @@
         "reproducibility"
       ],
       "language": "HTML",
-      "updatedAt": "2026-09-27T09:44:02Z",
-      "pushedAt": "2026-09-27T09:43:58Z",
+      "updatedAt": "2026-09-29T12:06:40Z",
+      "pushedAt": "2026-09-29T12:06:36Z",
       "archived": false,
       "fork": false
     },
@@ -1490,8 +1490,8 @@
       "description": "",
       "topics": [],
       "language": "TypeScript",
-      "updatedAt": "2026-09-28T12:02:45Z",
-      "pushedAt": "2026-09-28T12:02:40Z",
+      "updatedAt": "2026-09-28T15:26:52Z",
+      "pushedAt": "2026-09-28T15:25:55Z",
       "archived": false,
       "fork": false
     },
@@ -1790,8 +1790,8 @@
       "description": "",
       "topics": [],
       "language": "Python",
-      "updatedAt": "2026-09-28T04:55:11Z",
-      "pushedAt": "2026-09-28T04:55:07Z",
+      "updatedAt": "2026-09-29T05:20:31Z",
+      "pushedAt": "2026-09-29T05:20:26Z",
       "archived": false,
       "fork": false
     },
@@ -2252,8 +2252,8 @@
       "description": "Readable AI checks, measured decision policies, and inspectable reports.",
       "topics": [],
       "language": "TypeScript",
-      "updatedAt": "2026-09-27T19:05:02Z",
-      "pushedAt": "2026-09-27T19:04:59Z",
+      "updatedAt": "2026-09-29T11:26:07Z",
+      "pushedAt": "2026-09-29T11:26:03Z",
       "archived": false,
       "fork": false
     },
@@ -2456,8 +2456,8 @@
       "description": "Personal blog discussing AI, growth and startups",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-09-27T12:14:32Z",
-      "pushedAt": "2026-09-27T12:14:28Z",
+      "updatedAt": "2026-09-29T10:49:21Z",
+      "pushedAt": "2026-09-29T10:49:17Z",
       "archived": false,
       "fork": false
     },
@@ -2650,8 +2650,8 @@
         "telemetry"
       ],
       "language": "Rust",
-      "updatedAt": "2026-09-28T13:21:40Z",
-      "pushedAt": "2026-09-28T13:21:36Z",
+      "updatedAt": "2026-09-29T12:06:22Z",
+      "pushedAt": "2026-09-29T12:06:16Z",
       "archived": false,
       "fork": false
     },
@@ -3604,6 +3604,18 @@
       "fork": true
     },
     {
+      "fullName": "nibzard/zodiac",
+      "name": "zodiac",
+      "url": "https://github.com/nibzard/zodiac",
+      "description": "Autoresearch loop on the unsolved Zodiac ciphers: solver, frozen cipher data, experiment log, and an interactive demo",
+      "topics": [],
+      "language": "Python",
+      "updatedAt": "2026-09-29T10:24:06Z",
+      "pushedAt": "2026-09-29T10:24:14Z",
+      "archived": false,
+      "fork": false
+    },
+    {
       "fullName": "steel-dev/pi-steel",
       "name": "pi-steel",
       "url": "https://github.com/steel-dev/pi-steel",
@@ -3731,8 +3743,8 @@
         "internal-tools"
       ],
       "language": "TypeScript",
-      "updatedAt": "2026-09-28T12:52:17Z",
-      "pushedAt": "2026-09-28T12:54:59Z",
+      "updatedAt": "2026-09-29T07:32:30Z",
+      "pushedAt": "2026-09-29T07:32:26Z",
       "archived": false,
       "fork": false
     },
