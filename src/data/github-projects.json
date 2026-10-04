@@ -476,7 +476,7 @@
       "description": "A curated catalogue of awesome agentic AI patterns",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-10-02T19:51:57Z",
+      "updatedAt": "2026-10-04T12:23:29Z",
       "pushedAt": "2026-09-28T13:21:09Z",
       "archived": false,
       "fork": false
@@ -1154,6 +1154,18 @@
       "fork": true
     },
     {
+      "fullName": "nibzard/conjevture",
+      "name": "conjevture",
+      "url": "https://github.com/nibzard/conjevture",
+      "description": "Exact logic for uncertain answers. A small TypeScript library with explicit probability models and Jev converters.",
+      "topics": [],
+      "language": "TypeScript",
+      "updatedAt": "2026-10-03T19:07:27Z",
+      "pushedAt": "2026-10-03T17:00:11Z",
+      "archived": false,
+      "fork": false
+    },
+    {
       "fullName": "nibzard/content-scorer",
       "name": "content-scorer",
       "url": "https://github.com/nibzard/content-scorer",
@@ -1790,8 +1802,8 @@
       "description": "",
       "topics": [],
       "language": "Python",
-      "updatedAt": "2026-10-03T04:53:40Z",
-      "pushedAt": "2026-10-03T04:53:36Z",
+      "updatedAt": "2026-10-04T05:26:14Z",
+      "pushedAt": "2026-10-04T05:26:11Z",
       "archived": false,
       "fork": false
     },
@@ -2264,8 +2276,8 @@
       "description": "Readable AI checks, measured decision policies, and inspectable reports.",
       "topics": [],
       "language": "TypeScript",
-      "updatedAt": "2026-10-02T15:02:34Z",
-      "pushedAt": "2026-09-29T11:26:03Z",
+      "updatedAt": "2026-10-03T17:09:50Z",
+      "pushedAt": "2026-10-03T17:10:30Z",
       "archived": false,
       "fork": false
     },
@@ -2468,8 +2480,8 @@
       "description": "Personal blog discussing AI, growth and startups",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-10-02T12:52:40Z",
-      "pushedAt": "2026-10-02T12:52:35Z",
+      "updatedAt": "2026-10-03T11:51:53Z",
+      "pushedAt": "2026-10-03T11:51:50Z",
       "archived": false,
       "fork": false
     },
