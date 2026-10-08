@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 348" role="img" aria-labelledby="tb db">
+<style>
+.t{font:600 15px system-ui,-apple-system,"Segoe UI",sans-serif;fill:#0b0b0b}
+.s{font:12px system-ui,-apple-system,"Segoe UI",sans-serif;fill:#52514e}
+.m{font:12px system-ui,-apple-system,"Segoe UI",sans-serif;fill:#898781;font-variant-numeric:tabular-nums}
+.v{font:600 12px system-ui,-apple-system,"Segoe UI",sans-serif;fill:#0b0b0b;font-variant-numeric:tabular-nums}
+.g{stroke:#e1e0d9;stroke-width:1}.b{stroke:#c3c2b7;stroke-width:1}
+.s1{fill:#2a78d6}.s2{fill:#eb6834}.l1{stroke:#2a78d6;stroke-width:2;fill:none}
+.bg{fill:#fcfcfb}
+@media (prefers-color-scheme: dark){
+.t,.v{fill:#ffffff}.s{fill:#c3c2b7}.g{stroke:#2c2c2a}.b{stroke:#383835}
+.s1{fill:#3987e5}.s2{fill:#d95926}.l1{stroke:#3987e5}.bg{fill:#1a1a19}}
+</style>
+<title id="tb">Share of AI-assistant traffic: analytics vs server logs</title>
+<desc id="db">ChatGPT: analytics 93.4%, server logs 18.4%; Claude: analytics 0.9%, server logs 81.6%; Other assistants: analytics 5.7%, server logs 0.0%.</desc>
+<rect class="bg" width="720" height="348" rx="8"/>
+<text class="t" x="24" y="30">Who sends AI traffic? It depends on where you look.</text>
+<rect class="s1" x="24" y="46" width="12" height="12" rx="2"/><text class="s" x="42" y="57">Analytics: clicks from AI assistants</text>
+<rect class="s2" x="290" y="46" width="12" height="12" rx="2"/><text class="s" x="308" y="57">Server logs: fetches by agents for a user</text>
+<line class="b" x1="150.0" x2="150.0" y1="84" y2="268"/>
+<text class="m" x="150.0" y="286" text-anchor="middle">0%</text>
+<line class="g" x1="275.0" x2="275.0" y1="84" y2="268"/>
+<text class="m" x="275.0" y="286" text-anchor="middle">25%</text>
+<line class="g" x1="400.0" x2="400.0" y1="84" y2="268"/>
+<text class="m" x="400.0" y="286" text-anchor="middle">50%</text>
+<line class="g" x1="525.0" x2="525.0" y1="84" y2="268"/>
+<text class="m" x="525.0" y="286" text-anchor="middle">75%</text>
+<line class="g" x1="650.0" x2="650.0" y1="84" y2="268"/>
+<text class="m" x="650.0" y="286" text-anchor="middle">100%</text>
+<text class="s" x="138" y="117" text-anchor="end">ChatGPT</text>
+<path class="s1" d="M150,96 H613.0 Q617.0,96 617.0,100 V108 Q617.0,112 613.0,112 H150 Z"/>
+<text class="v" x="623.0" y="109">93%</text>
+<path class="s2" d="M150,114 H238.0 Q242.0,114 242.0,118 V126 Q242.0,130 238.0,130 H150 Z"/>
+<text class="v" x="248.0" y="127">18%</text>
+<text class="s" x="138" y="179" text-anchor="end">Claude</text>
+<path class="s1" d="M150,158 H150.5 Q154.5,158 154.5,162 V170 Q154.5,174 150.5,174 H150 Z"/>
+<text class="v" x="160.5" y="171">&lt;1%</text>
+<path class="s2" d="M150,176 H554.0 Q558.0,176 558.0,180 V188 Q558.0,192 554.0,192 H150 Z"/>
+<text class="v" x="564.0" y="189">82%</text>
+<text class="s" x="138" y="241" text-anchor="end">Other assistants</text>
+<path class="s1" d="M150,220 H174.5 Q178.5,220 178.5,224 V232 Q178.5,236 174.5,236 H150 Z"/>
+<text class="v" x="184.5" y="233">6%</text>
+<path class="s2" d="M150,238 H150 Q152,238 152,240 V252 Q152,254 150,254 H150 Z"/>
+<text class="v" x="158" y="251">0%</text>
+<text class="m" x="24" y="316">Analytics: 90 days of sessions. Shares of each source's AI total.</text>
+<text class="m" x="24" y="334">Server logs: 24 hours, main site, only agents that identify themselves.</text>
+</svg>
