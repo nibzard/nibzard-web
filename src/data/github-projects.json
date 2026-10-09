@@ -476,7 +476,7 @@
       "description": "A curated catalogue of awesome agentic AI patterns",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-10-08T12:01:28Z",
+      "updatedAt": "2026-10-08T23:18:14Z",
       "pushedAt": "2026-09-28T13:21:09Z",
       "archived": false,
       "fork": false
@@ -1802,8 +1802,8 @@
       "description": "",
       "topics": [],
       "language": "Python",
-      "updatedAt": "2026-10-08T05:37:33Z",
-      "pushedAt": "2026-10-08T05:37:29Z",
+      "updatedAt": "2026-10-09T05:41:50Z",
+      "pushedAt": "2026-10-09T05:41:46Z",
       "archived": false,
       "fork": false
     },
@@ -1854,6 +1854,18 @@
       "pushedAt": "2026-02-07T21:28:06Z",
       "archived": false,
       "fork": false
+    },
+    {
+      "fullName": "nibzard/internal-agents-map",
+      "name": "internal-agents-map",
+      "url": "https://github.com/nibzard/internal-agents-map",
+      "description": "A map and learning exchange for companies building proprietary internal AI agents — catalog, patterns, and adoption lessons.",
+      "topics": [],
+      "language": null,
+      "updatedAt": "2026-10-09T12:46:42Z",
+      "pushedAt": "2026-10-09T12:46:50Z",
+      "archived": false,
+      "fork": true
     },
     {
       "fullName": "nibzard/IronCalc",
@@ -2480,8 +2492,8 @@
       "description": "Personal blog discussing AI, growth and startups",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-10-08T09:22:42Z",
-      "pushedAt": "2026-10-08T09:22:37Z",
+      "updatedAt": "2026-10-08T13:44:42Z",
+      "pushedAt": "2026-10-08T13:44:37Z",
       "archived": false,
       "fork": false
     },
@@ -3767,8 +3779,8 @@
         "internal-tools"
       ],
       "language": "TypeScript",
-      "updatedAt": "2026-10-08T13:30:40Z",
-      "pushedAt": "2026-10-08T13:31:26Z",
+      "updatedAt": "2026-10-08T18:00:57Z",
+      "pushedAt": "2026-10-08T18:07:31Z",
       "archived": false,
       "fork": false
     },
