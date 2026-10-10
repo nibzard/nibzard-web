@@ -37,7 +37,7 @@ For context: that single day's traffic consumed more than half of Vercel's Hobby
 
 On the Hobby plan, which includes a generous 1M edge requests and 100GB of bandwidth per month. (After that, projects get paused, not billed, on the free tier. But I was watching the numbers climb with some nervousness.)
 
-## The Setup
+## The setup
 
 Here's what I thought I had:
 
@@ -49,7 +49,7 @@ I assumed "static hosting" meant "Vercel serves the file once, caches it everywh
 
 I was wrong about half of that.
 
-## The Twist
+## The twist
 
 Cloudflare was *not* proxying my traffic. The "Proxied" orange cloud was turned off in my DNS settings.
 
@@ -61,9 +61,7 @@ So every request looked like this:
 User → DNS lookup (Cloudflare) → User connects directly to Vercel Edge → Static File
 ```
 
-Vercel's edge network was handling every single request. And here's the thing I missed: **Vercel *is* a CDN that caches at the edge.** The problem wasn't that there was no caching.
-
-The problem was that **"cached" doesn't mean "unmetered."**
+Vercel's edge network was handling every single request. And here's the thing I missed: **Vercel *is* a CDN that caches at the edge.** So caching was happening. What bit me is that **"cached" doesn't mean "unmetered."**
 
 Vercel serves traffic through its CDN/edge network. It can cache content at the edge, but Edge Requests count both cache hits and misses, and data transfer is metered by bytes moved. So caching reduces origin work, not necessarily request or bandwidth charges.
 
@@ -73,7 +71,7 @@ On Hacker News frontpage day? **Problem.**
 
 ![Vercel edge requests dashboard](/images/20260121-vercel-edge-requests.jpg)
 
-## The Redirect Confusion
+## The redirect confusion
 
 While I was watching the bandwidth graphs, I noticed something else: my site was issuing 308 redirects.
 
@@ -83,7 +81,7 @@ Here's where I need to be honest: since Cloudflare was in DNS-only mode at the t
 
 I spent some quality time with `curl -IL` tracing redirect chains and verifying which hop was issuing what. Spoiler: when you see redirect weirdness, *actually trace the headers* before you invent elaborate theories about which system is doing what.
 
-## The "Static"... Sort Of
+## The "static"... sort of
 
 Here's where I need to eat some crow.
 
@@ -97,11 +95,11 @@ This is exactly the kind of thing that's easy to miss when AI agents are doing m
 
 The lesson: "static" frameworks can still execute compute at the edge through API routes, and those add up fast when they're not cached.
 
-## The AI Meta
+## The AI meta
 
 Here's something I haven't mentioned yet: this entire site was built and is maintained using AI coding agents.
 
-The architecture, the component structure, even this article you're reading—all of it emerged from a collaboration between me and various AI tools. It's been incredibly productive. Features get implemented fast, patterns stay consistent, and I can iterate at a pace that would be impossible solo.
+The architecture, the component structure, even this article you're reading: all of it emerged from a collaboration between me and various AI tools. It's been incredibly productive. Features get implemented fast, patterns stay consistent, and I can iterate at a pace that would be impossible solo.
 
 But there's a tradeoff.
 
@@ -113,7 +111,7 @@ This is the double-edged sword of AI-assisted development: you move faster, but 
 
 I wrote more about this approach in my [architecture](http://nibzard.com/architecture) article, including the agent-friendly stack choices that make this workflow possible. The short version: AI agents are force multipliers, but you still need to understand your infrastructure. Sometimes painfully.
 
-## The Fix
+## The fix
 
 Okay, two problems:
 
@@ -122,7 +120,7 @@ Okay, two problems:
 
 Here's what I did:
 
-### Step 1: Enable Cloudflare Proxy
+### Step 1: Enable Cloudflare proxy
 
 Flipped the orange cloud on in DNS settings. Now requests flow through Cloudflare's network:
 
@@ -132,11 +130,11 @@ User → Cloudflare → Vercel Edge (if cache miss)
 
 Important caveat: **Cloudflare doesn't cache HTML by default.** Their default cache behavior skips HTML and JSON files. You need Cache Rules or appropriate `Cache-Control` headers to make that happen. So enabling proxy is step zero, not the whole solution.
 
-### Step 2: Fix the Redirects
+### Step 2: Fix the redirects
 
 Cleaned up the trailing slash configuration in Vercel. No more 308 redirect chains.
 
-### Step 3: Actually Configure Caching
+### Step 3: Actually configure caching
 
 Here's the thing: "static hosting" doesn't mean "automatically cached." You have to configure it.
 
@@ -152,17 +150,17 @@ After enabling the proxy, Cloudflare showed ~44k requests with about 70% served 
 
 So the proxy helped, but it wasn't a magic bullet. My HTML was still passing through to Vercel on most requests.
 
-But here's the reality check: MS Clarity showed about 18,761 sessions with ~1.25 pages per session—roughly 23,451 actual pageviews. Compare that to 700,000 Vercel edge requests, and you're looking at ~30 edge requests per pageview.
+But here's the reality check: MS Clarity showed about 18,761 sessions with ~1.25 pages per session, roughly 23,451 actual pageviews. Compare that to 700,000 Vercel edge requests, and you're looking at ~30 edge requests per pageview.
 
 ![MS Clarity analytics showing sessions and pageviews](/images/20260121-ms-clarity.png)
 
-This is actually normal for modern sites. Edge requests count every CDN hit—fonts, CSS, JS, images, API calls—not just the HTML page load. The ratio looks alarming, but it's how serverless platforms meter traffic.
+This is actually normal for modern sites. Edge requests count every CDN hit (fonts, CSS, JS, images, API calls), not just the HTML page load. The ratio looks alarming, but it's how serverless platforms meter traffic.
 
 <blockquote class="featured-quote secondary">
 "The day I learned: 'static' describes your build process, not your caching strategy."
 </blockquote>
 
-## The Meta
+## The meta
 
 So I did what any self-respecting developer would do: I posted about my failure on X.
 
@@ -178,7 +176,7 @@ My expectations were wrong, not Vercel's billing.
 
 That said, the conversation reinforced something I'd been realizing:
 
-## Own Your Request Path
+## Own your request path
 
 Here's my hot take:
 
@@ -191,13 +189,11 @@ Here's my hot take:
 
 "Static hosting" is a lie. Or at least, it's a half-truth.
 
-Your site might generate static files. But *serving* those files is dynamic. Request routing, TLS termination, cache decisions, redirect logic—all of it happens on every request.
+Your site might generate static files. But *serving* those files is dynamic. Request routing, TLS termination, cache decisions, redirect logic: all of it happens on every request.
 
-Either your platform handles that efficiently, or you configure it to handle it efficiently.
+Either your platform handles that efficiently, or you configure it to handle it efficiently. It doesn't happen by magic.
 
-But it doesn't happen by magic.
-
-## The Architecture
+## The architecture
 
 Here's what I should have had from day one:
 
@@ -222,11 +218,11 @@ graph LR
 
 With DNS-only mode, Cloudflare resolves the domain and steps aside. The browser connects directly to Vercel, which serves the content (or issues redirects). Every request hits Vercel's edge and counts toward your quota.
 
-## The Lesson
+## The lesson
 
 Hacker News gave my site a hug. It was warm and welcoming and absolutely terrifying.
 
-But it also taught me something valuable:
+It also taught me something:
 
 **Your infrastructure is a garden, not an appliance.**
 

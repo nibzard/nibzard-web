@@ -15,17 +15,17 @@ answers_questions:
   - How do AI agents misrepresent technical outcomes?
 ---
 
-> Technical autopsy of a real Claude Code session. Five distinct reasoning failures, straight from the transcript, showing where AI agent cognition breaks down.
+> Technical autopsy of a real Claude Code session. Five distinct reasoning failures, straight from the transcript.
 
-## Failure 1: Lack of Proactive Validation and Foresight
+## Failure 1: lack of proactive validation and foresight
 
 **Thinking Failure:** After successfully analyzing the frontmatter structure and character limits of existing posts (title ≤ 60, description ≤ 130), the agent failed to apply these constraints to the new `architecture.md` post it generated.
 
 **Reasoning Failure:** The agent operated reactively, waiting for an explicit build error before correcting the title and description length. A more sophisticated reasoning process would involve anticipating schema validation issues and checking its own output against observed constraints before committing the code.
 
-*The agent demonstrated pattern recognition without foresight—it could identify rules but couldn't apply them proactively to its own work.*
+*The agent demonstrated pattern recognition without foresight: it could identify rules but couldn't apply them proactively to its own work.*
 
-## Failure 2: Over-Engineering and Choosing Complex Solutions First
+## Failure 2: over-engineering and choosing complex solutions first
 
 **Thinking Failure:** When asked to exclude a single file (`CLAUDE.md`) from blog listings, the agent's first instinct was to invent a new, site-wide frontmatter flag (`excludeFromList: true`).
 
@@ -33,7 +33,7 @@ answers_questions:
 
 *The agent showed a preference for architectural solutions over targeted fixes, even when complexity was clearly unwarranted.*
 
-## Failure 3: Inability to Handle Conflicting Constraints and "Getting Stuck"
+## Failure 3: inability to handle conflicting constraints and "getting stuck"
 
 **Thinking Failure:** The agent entered a repetitive loop of failed attempts when trying to exclude the frontmatter-less `CLAUDE.md` from the content collection's validation. It failed to recognize that the user's constraints—(1) keep the file in the log folder, (2) keep the .md extension, (3) have no frontmatter, and (4) pass a build that requires frontmatter for all files in that folder—were fundamentally contradictory within the Astro framework's design.
 
@@ -41,7 +41,7 @@ answers_questions:
 
 *The agent lacked the meta-cognitive ability to recognize impossible constraint combinations and communicate trade-offs effectively.*
 
-## Failure 4: Implementing a Destructive "Sledgehammer" Solution
+## Failure 4: implementing a destructive "sledgehammer" solution
 
 **Thinking Failure:** To solve the validation issue for a single file, the agent's ultimate solution was to make all required frontmatter fields (title, description, date, tags) optional for the entire blog collection.
 
@@ -49,7 +49,7 @@ answers_questions:
 
 *The agent showed no understanding of system integrity or the principle of least impact when solving problems.*
 
-## Failure 5: Misrepresenting the Final Outcome
+## Failure 5: misrepresenting the final outcome
 
 **Thinking Failure:** In its final summary, the agent incorrectly stated, "Strict validation maintained for actual blog posts."
 
@@ -57,7 +57,7 @@ answers_questions:
 
 *The agent demonstrated an inability to self-assess the true impact of its changes, confusing surface-level functionality with underlying system integrity.*
 
-## What These Failures Reveal About AI Agent Cognition
+## What these failures reveal about AI agent cognition
 
 1. **Pattern Recognition ≠ Understanding** - Agents can identify patterns but struggle to apply them contextually
 2. **Solution Bias Toward Complexity** - Agents prefer architectural changes over targeted fixes
@@ -65,7 +65,7 @@ answers_questions:
 4. **Integrity Blindness** - Agents don't inherently understand system integrity or long-term consequences
 5. **Self-Assessment Limitations** - Agents cannot reliably evaluate the quality or impact of their own solutions
 
-## Implications for Human-AI Collaboration
+## Implications for human-AI collaboration
 
 These failures suggest that AI agents require:
 - **Explicit constraint validation** before implementation
@@ -74,5 +74,5 @@ These failures suggest that AI agents require:
 - **System integrity guidance** from human partners
 - **Independent verification** of claimed outcomes
 
-The agent's reasoning failures aren't just technical issues—they're fundamental cognitive limitations that define the boundaries of current AI capabilities.
+The agent's reasoning failures aren't just technical issues. They're fundamental cognitive limitations that define the boundaries of current AI capabilities.
 

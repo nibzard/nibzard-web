@@ -24,9 +24,9 @@ This isn't theoretical. I've watched agents struggle with tools that humans love
 
 The same deployment with `--json` output and clear exit codes? The agent nails it every time.
 
-## What Makes a Good CLI for Agents
+## What makes a good CLI for agents
 
-Your `--help` text is your API contract with agents. Here's what works:
+Your `--help` text is your API contract with agents:
 
 **Clear command structure:**
 ```
@@ -55,7 +55,7 @@ Exit codes:
 - Clear exit code meanings
 - Output format options
 
-## Why CLI Beats MCP
+## Why CLI beats MCP
 
 [Mario Zechner tested this](https://mariozechner.at/posts/2025-08-15-mcp-vs-cli/). He compared MCP servers against CLI tools across multiple tasks, measuring token usage, time, and success rates. The results were clear: CLIs often outperform MCPs.
 
@@ -70,11 +70,11 @@ Exit codes:
 
 The agent doesn't get frustrated. It just burns your budget.
 
-## Token Efficiency Matters
+## Token efficiency matters
 
 Every word in your help text takes context space. Verbose documentation pollutes the agent's working memory, leaving less room for actual problem-solving. Concise help text means the agent can focus on the task, not parsing unnecessary fluff.
 
-## Three Rules for Agent-Friendly CLIs
+## Three rules for agent-friendly CLIs
 
 **1. Make success explicit**
 ```bash
@@ -110,21 +110,21 @@ Exit codes:
 
 Agents parse exit codes faster than text. Use them.
 
-## Common Agent Failures
+## Common agent failures
 
 Testing CLI tools with agents reveals these patterns:
 
-**Authentication flows** - Browser redirects kill agents. Provide API keys or token-based auth instead.
+**Authentication flows:** Browser redirects kill agents. Provide API keys or token-based auth instead.
 
-**Progress indicators** - Spinners and progress bars are invisible to agents. Use `--verbose` with line-by-line updates.
+**Progress indicators:** Spinners and progress bars are invisible to agents. Use `--verbose` with line-by-line updates.
 
-**Interactive prompts** - "Do you want to continue? (y/n)" breaks agent workflows. Add `--yes` flags.
+**Interactive prompts:** "Do you want to continue? (y/n)" breaks agent workflows. Add `--yes` flags.
 
-**Ambiguous errors** - "Something went wrong" tells agents nothing. Return specific error codes and messages.
+**Ambiguous errors:** "Something went wrong" tells agents nothing. Return specific error codes and messages.
 
-**Context-aware help** - Show different help based on current state. A CI environment might expose different flags than a local development setup.
+**Context-aware help:** Show different help based on current state. A CI environment might expose different flags than a local development setup.
 
-## Design for Both
+## Design for both
 
 You don't have to choose between human and agent users:
 
@@ -141,31 +141,31 @@ $ deploy --json
 
 Add `--json`, `--quiet`, and `--yes` flags to existing tools. Agents will use them. Humans will stick with the defaults.
 
-## The CLI Advantage
+## The CLI advantage
 
-Mario's evaluation revealed a crucial insight: many MCPs produce "much worse results than just letting the agent run the command line tool directly." This isn't surprising when you consider:
+Mario's evaluation found that many MCPs produce "much worse results than just letting the agent run the command line tool directly." This isn't surprising when you consider:
 
-**CLIs are already in training data** - Models learned CLI patterns from millions of examples. They understand `git status`, `docker ps`, and `npm install` without explanation.
+**CLIs are already in training data:** Models learned CLI patterns from millions of examples. They understand `git status`, `docker ps`, and `npm install` without explanation.
 
-**MCPs create abstraction overhead** - Each MCP introduces new tool names, schemas, and behaviors. Agents must learn these from scratch in every conversation.
+**MCPs create abstraction overhead:** Each MCP introduces new tool names, schemas, and behaviors. Agents must learn these from scratch in every conversation.
 
-**Single purpose wins** - A focused CLI tool beats a Swiss Army knife MCP with dozens of functions. Fewer choices mean better decisions.
+**Single purpose wins:** A focused CLI tool beats a Swiss Army knife MCP with dozens of functions. Fewer choices mean better decisions.
 
-## The Competitive Edge
+## The competitive edge
 
-Companies with agent-friendly CLIs have an advantage. When agents can use your tools reliably on the first try, you capture more automation workflows. When they struggle with unclear interfaces, they move to competitors with better documentation.
+When agents can use your tools reliably on the first try, you capture more automation workflows. When they struggle with unclear interfaces, they move to competitors with better documentation.
 
-## Security for Agent Workflows
+## Security for agent workflows
 
 Design CLIs with agent access patterns in mind:
 
-**API-first authentication** - Use tokens instead of browser flows. Agents can't click through OAuth screens.
+**API-first authentication:** Use tokens instead of browser flows. Agents can't click through OAuth screens.
 
-**Scoped permissions** - Let agents authenticate with limited access. A deployment agent doesn't need billing permissions.
+**Scoped permissions:** Let agents authenticate with limited access. A deployment agent doesn't need billing permissions.
 
-**Audit trails** - Log agent actions differently from human actions. You need to know what automated tools are doing.
+**Audit trails:** Log agent actions differently from human actions. You need to know what automated tools are doing.
 
-## When MCP Makes Sense
+## When MCP makes sense
 
 MCPs aren't always wrong. They work when:
 - No CLI tool exists
@@ -175,7 +175,7 @@ MCPs aren't always wrong. They work when:
 
 But most of the time, a well-designed CLI is simpler, faster, and more reliable.
 
-## The Bottom Line
+## The bottom line
 
 Good `--help` text isn't just documentation. It's your agent API. Models already know how to use CLI tools. Don't force them to learn a new abstraction layer when the command line works perfectly.
 

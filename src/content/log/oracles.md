@@ -16,7 +16,7 @@ answers_questions:
 
 The interesting thing about Pretext is not text layout. It is the loop.
 
-And to be clear, this is not some brand new revelation for me. I already wrote a broader version of that argument in [The Agent is The Loop](/theloop). What Pretext did was reinforce a stricter version of it, one that is much less romantic and a lot more useful.
+This is not some brand new revelation for me. I already wrote a broader version of that argument in [The Agent is The Loop](/theloop). What Pretext did was reinforce a stricter version of it, one that is much less romantic and a lot more useful.
 
 Pretext is, as [Cheng Lou described it](https://x.com/_chenglou/status/2037713766205608234?s=46&t=2kH6NEAzM04KicGZW68bSg), a fast, accurate, comprehensive text measurement algorithm in pure TypeScript that can lay out web pages without leaning on DOM measurement and reflow. You can see the actual work in the [Pretext repository](https://github.com/chenglou/pretext). Fine. That is the obvious part. The part I keep coming back to is what it shows about using AI coding agents on problems that are messy, empirical, and dangerously easy to overfit.
 
@@ -46,7 +46,7 @@ It does not trust theory alone. It does not trust Unicode neatness. It definitel
 
 That changes the role of the model completely. The agent is no longer trying to derive the correct text engine from first principles. It is working inside an empirical loop: suggest a change, run the browser check, inspect the mismatch, keep it or throw it away.
 
-That is a much healthier setup. The AI is not the authority. It is a speed layer wrapped around evidence.
+That is a much healthier setup. The AI is a speed layer wrapped around evidence, not the authority.
 
 I think most teams still get this backwards. They let the model optimize for plausibility when they should be forcing it to answer to something external and stubborn.
 
@@ -114,7 +114,7 @@ Pretext points to a better loop:
 
 `constrain -> measure -> isolate -> classify -> test -> reject -> keep only what survives broad pressure`
 
-That is the part I would copy. Not the specific text rules. Not the browser quirks. The loop itself.
+That is the part I would copy: the loop itself, not the specific text rules or the browser quirks.
 
 If I had to boil the whole thing down into one sentence, it would be this:
 

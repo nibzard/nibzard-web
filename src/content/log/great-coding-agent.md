@@ -14,49 +14,43 @@ answers_questions:
   - What's the difference between permission gates and review gates for agent safety?
 ---
 
-I've been working with AI coding agents non-stop for over a year now. After building hundreds of projects and watching the ecosystem explode, a pattern has emerged.
+I've been working with AI coding agents non-stop for over a year now, building hundreds of projects and watching the ecosystem explode. The agents that stick are the ones with the best *harness*, not the smartest models.
 
-The agents that stick aren't the ones with the smartest models. They're the ones with the best *harness*.
-
-Here's what actually matters.
-
-## 1) Treat It as a Harness, Not Magic
+## 1) Treat it as a harness, not magic
 
 The agent isn't special. The leverage is in three things:
 
 **Good defaults.** A prompt that knows what it's doing, a tool set that covers the basics, and safety rails that prevent disaster without being annoying.
 
-**Excellent UX for inspection and control.** You need to see what the agent is doing, pause it, redirect it, and understand *why* it made a choice. This is what I wrote about in [designing CLI tools for AI agents](/agent-ci)—the interface is the contract.
+**Excellent UX for inspection and control.** You need to see what the agent is doing, pause it, redirect it, and understand *why* it made a choice. This is what I wrote about in [designing CLI tools for AI agents](/agent-ci): the interface is the contract.
 
 **Tight feedback loops.** Fast iteration, minimal friction between "I want this" and "here's the result." As I learned building [agent-friendly stacks](/agent-stack), the tools that survive are the ones that make iteration painless.
 
-Here's the thing though: **the harness is increasingly for you, not the model.**
+**The harness is increasingly for you, not the model.**
 
-The models are getting scarily good. A year ago, we needed careful prompting, chained steps, error recovery logic—all these training wheels because the model would confidently walk off a cliff. Now? The latest models just figure it out. They self-correct. They notice when something's wrong and try a different approach.
+The models are getting scarily good. A year ago, we needed careful prompting, chained steps, error recovery logic: all these training wheels because the model would confidently walk off a cliff. Now? The latest models just figure it out. They self-correct. They notice when something's wrong and try a different approach.
 
-The harness isn't there to compensate for model stupidity anymore. It's there so *you* can understand what happened, trust the result, and intervene when you need to. The model doesn't need hand-holding. You need visibility.
+The harness's job now is to help *you* understand what happened, trust the result, and intervene when you need to. The model doesn't need hand-holding. You need visibility. The system around the model is built for human confidence.
 
-The magic isn't in the model. It's in the system around the model—and that system is now designed for human confidence, not model competence.
-
-## 2) Make Customization First-Class (But Optional)
+## 2) Make customization first-class (but optional)
 
 The winning pattern is **minimal core + extensions/hooks**.
 
-Let users add "skills" without forking the whole project. I wrote about this in [unified skills](/unified-skills)—one source of truth for agent capabilities that works across different tools. No more drift between Claude skills and Codex skills.
+Let users add "skills" without forking the whole project. I wrote about this in [unified skills](/unified-skills): one source of truth for agent capabilities that works across different tools. No more drift between Claude skills and Codex skills.
 
 Hooks at key stages matter: before and after tool calls, during planning, in summarization and compaction, when reading or writing memory, on errors, when formatting output. These hooks let power users customize behavior without forcing everyone else to care.
 
-But here's the key: **avoid forcing features on everyone.** Subagents, plan mode, multi-file editing—these should be installable extensions, not mandatory complexity.
+But here's the key: **avoid forcing features on everyone.** Subagents, plan mode, multi-file editing: these should be installable extensions, not mandatory complexity.
 
 As I argued in [scaffolding is a tax](/scaffolding-tax), every layer of abstraction between your agent and the model becomes a liability when new models drop. Opinionated workflows age like wine. Agent frameworks age like milk.
 
-## 3) Radical Transparency Beats "Trust Me" Guardrails
+## 3) Radical transparency beats "trust me" guardrails
 
 People love tools that show their work.
 
-Show what files were read. Show what commands will run. Show tool call parameters. Show streaming output and thinking traces—at least in a developer-visible mode.
+Show what files were read. Show what commands will run. Show tool call parameters. Show streaming output and thinking traces, at least in a developer-visible mode.
 
-This isn't just about debugging. It's about trust. If users can't see what's happening, they'll distrust the tool—or feel like it's fighting them.
+It's also about trust: if users can't see what's happening, they'll distrust the tool or feel like it's fighting them.
 
 In [agents just need good --help](/agent-experience), I wrote about how AI agents succeed or fail based on your help text and output structure. The same principle applies to the agent itself: an agent that shows its reasoning builds confidence. One that hides behind "trust me" creates anxiety.
 
@@ -64,21 +58,19 @@ In [agents just need good --help](/agent-experience), I wrote about how AI agent
 If users can't see what's happening, they'll distrust it—or feel it's fighting them.
 </blockquote>
 
-## 4) Security: Prompts Aren't a Sandbox
+## 4) Security: prompts aren't a sandbox
 
 Permission popups degrade into muscle memory. Click enough "allow" dialogs and you stop reading them. That's not security—it's theater.
 
 Better approaches assume **real sandboxing**: containers, VMs, bwrap, landlock. Technical boundaries that the agent literally cannot cross.
 
-Route tool execution through a **policy layer**: allow/deny rules, audit logging, provenance tracking. But here's the distinction that matters—this is about *unrecoverable* harm prevention, not day-to-day permission gates.
+Route tool execution through a **policy layer**: allow/deny rules, audit logging, provenance tracking. But here's the distinction that matters: this is about *unrecoverable* harm prevention, not day-to-day permission gates.
 
 For recoverable mistakes, use **review gates** instead. This is what I wrote about in [YOLO is the only honest agent mode](/yolo-agents): let the agent act, but require review before changes become permanent. PRs instead of direct commits. Rollbacks instead of prevention.
 
 The design principle: **the agent should be incapable of causing unrecoverable harm, but free to make recoverable mistakes.**
 
-Not "asked nicely not to exceed boundaries." *Incapable.*
-
-## 5) Build for Branching Work, Not One Linear Chat
+## 5) Build for branching work, not one linear chat
 
 Coding work isn't linear. You try approach A, realize it won't work, roll back, try approach B. The best agents support this workflow natively.
 
@@ -90,9 +82,9 @@ Coding work isn't linear. You try approach A, realize it won't work, roll back, 
 
 This is more useful than subagents for most workflows. Subagents are great for parallel execution, but session forking handles the more common case: serial exploration with backtracking.
 
-I touched on this in [self-healing agents](/self-healing-agents)—the value of traces as a durable substrate. Your session history isn't just a log; it's the foundation for rollback and replay.
+I touched on this in [self-healing agents](/self-healing-agents): the value of traces as a durable substrate. Your session history isn't just a log; it's the foundation for rollback and replay.
 
-## 6) Planning Should Exist, But as a Workflow You Can Shape
+## 6) Planning should exist, but as a workflow you can shape
 
 Two good patterns exist:
 
@@ -104,15 +96,15 @@ The [agentic handbook](/agentic-handbook) covers Plan-Then-Execute extensively, 
 
 Don't hard-code a single ideology. Some users want "always plan first." Others want "just do it, ask if you're stuck." Let the workflow shape the planning, not the other way around.
 
-## 7) Tooling > Bigger Model (Surprisingly Often)
+## 7) Tooling > bigger model (surprisingly often)
 
 Agents feel "smart" when their tools are reliable, deterministic, and well-scoped. When they get structured tool results. When they have fast search, good repo navigation, clean diffs, and a responsive test runner.
 
 A mediocre model with great tools often beats a great model with janky tools.
 
-I saw this play out with Codex Spark. It's the "fast" variant—cheaper, quicker, but not as smart as regular Codex. Runs on ~1000 tokens. On paper, it's the inferior model. I wrote about [letting Spark rip for days on agent-friendly CLIs](/agent-ci)—it just kept going.
+I saw this play out with Codex Spark. It's the "fast" variant: cheaper, quicker, but not as smart as regular Codex. Runs on ~1000 tokens. On paper, it's the inferior model. I wrote about [letting Spark rip for days on agent-friendly CLIs](/agent-ci). It just kept going.
 
-But paired with sharp, well-scoped tools? It's mind-bogglingly good for the right tasks. File reads, targeted edits, running tests, checking lints—the mechanical stuff that doesn't require deep reasoning but needs to happen fast. Spark doesn't sit there pondering the architecture. It just executes.
+But paired with sharp, well-scoped tools? It's mind-bogglingly good for the right tasks. File reads, targeted edits, running tests, checking lints: the mechanical stuff that doesn't require deep reasoning but needs to happen fast. Spark doesn't sit there pondering the architecture. It just executes.
 
 The lesson: speed + great tools carves out a real purpose, even for a "lesser" model. Spark isn't trying to be smart. It's trying to be fast at things that don't need smarts. That's a legitimate niche.
 
@@ -122,7 +114,7 @@ This is the core insight from [the agent-friendly stack](/agent-stack): winners 
 Agents feel "smart" when their tools are reliable, deterministic, and well-scoped.
 </blockquote>
 
-## 8) Headless/RPC Mode Is a Superpower
+## 8) Headless/RPC mode is a superpower
 
 If you want the "greatest" agent, it should work in three modes:
 
@@ -136,7 +128,7 @@ This third mode is underrated. If you can't test your agent's tool integrations 
 
 Headless mode is also how agents become infrastructure, not just tools. The agent that only works in a terminal is a dead end. The agent that speaks JSON-RPC is a platform.
 
-## 9) Costs + ToS Reality Must Be Designed In
+## 9) Costs + ToS reality must be designed in
 
 People care a lot about:
 
@@ -148,16 +140,16 @@ People care a lot about:
 
 A great agent makes it easy to swap models mid-session and keeps costs visible. You shouldn't be surprised by your bill.
 
-But here's what most people miss: **spending tokens on SOTA models is the competitive advantage right now.** Not saving money. Not waiting for prices to drop. Actually using the best models, a lot, to build the muscle.
+**The competitive advantage right now is spending tokens on SOTA models.** Using the best models a lot, to build the muscle, beats saving money or waiting for prices to drop.
 
 <blockquote class="featured-quote secondary">
 They try AI, but they don't understand that it's a skill. And then you, you pick up the guitar. You're not going to be good at the guitar in the first day...
 <cite><a href="https://xsteindr">Peter Steinberger</a></cite>
 </blockquote>
 
-The teams winning with agents aren't the ones optimizing costs. They're the ones who've put in the hours—learning how to prompt, when to intervene, what workflows actually work. That knowledge compounds. And you only get it by spending tokens.
+The teams winning with agents are the ones who've put in the hours learning how to prompt, when to intervene, and what workflows actually work. That knowledge compounds, and you only get it by spending tokens.
 
-## 10) Default Toolset Should Be Small, Safe, and Sharp
+## 10) Default toolset should be small, safe, and sharp
 
 Start tight:
 
@@ -172,16 +164,16 @@ The [eager agents problem](/eager-agents) shows what happens when tools are too 
 
 Small, safe, sharp. Add complexity only when you need it.
 
-## The North Star Spec
+## The north star spec
 
 Here's the synthesis:
 
 **Minimal core + extension hooks + radical transparency + real sandbox integration + session forking + headless RPC.**
 
-Everything else is implementation detail. Model choice, UI preferences, specific tool integrations—these are downstream decisions. The architecture is what matters.
+Everything else is implementation detail. Model choice, UI preferences, specific tool integrations: these are downstream decisions. The architecture is what matters.
 
-The agents that win won't be the smartest. They'll be the ones that best amplify human intent through disciplined design.
+The agents that win will be the ones that best amplify human intent through disciplined design.
 
 ---
 
-*Building [agent-native CLIs](/agent-ci) and watching the [AI coding agent ecosystem fracture into niches](/ai-coding-agents) taught me this: the fundamental unit of leverage isn't the model. It's the loop around the model. Design that loop well, and any model becomes useful. Design it poorly, and even GPT-7 won't save you.*
+*Building [agent-native CLIs](/agent-ci) and watching the [AI coding agent ecosystem fracture into niches](/ai-coding-agents) taught me this: the fundamental unit of leverage is the loop around the model. Design that loop well, and any model becomes useful. Design it poorly, and even GPT-7 won't save you.*

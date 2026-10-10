@@ -14,13 +14,13 @@ answers_questions:
   - Why do screenshots fail for browser automation?
 ---
 
-I've been obsessed with CLI design for agents. The AI-NATIVE principles I wrote about—structured output, deterministic exit codes, explicit sessions—those are the foundation.
+I've been obsessed with CLI design for agents. The AI-NATIVE principles I wrote about (structured output, deterministic exit codes, explicit sessions) are the foundation.
 
-But what does "agent-friendly" actually mean in practice?
+But what does "agent-friendly" mean in practice?
 
-I built [steel-ai-cli](https://github.com/steel-experiments/steel-ai-cli) to find out. It's a native AI CLI for browser automation. Here's what I learned.
+I built [steel-ai-cli](https://github.com/steel-experiments/steel-ai-cli) to find out. It's a native AI CLI for browser automation.
 
-## The Constraints
+## The constraints
 
 A CLI for agents has different constraints than a CLI for humans:
 
@@ -34,9 +34,9 @@ A CLI for agents has different constraints than a CLI for humans:
 
 **Stateless by default.** Each command should be self-contained. Session state is opt-in, not required.
 
-## Snapshot/Ref Workflow
+## Snapshot/ref workflow
 
-The key insight from Vercel's agent-browser: **don't use screenshots for element identification.**
+The insight from Vercel's agent-browser: don't use screenshots for element identification.
 
 Screenshots are:
 - Large (bandwidth overhead)
@@ -44,7 +44,7 @@ Screenshots are:
 - Fragile (UI changes break them)
 - Opaque (hard to debug when they fail)
 
-Instead, use **text snapshots with semantic refs:**
+Instead, use text snapshots with semantic refs:
 
 ```
 $ steel snapshot
@@ -58,9 +58,9 @@ Clicked element [1]: button#search
 
 The snapshot gives the agent a menu. The agent picks by ref number. No ambiguity, no OCR, no fragile selectors.
 
-This is **repeatable.** The same page produces the same refs (in order). The agent can plan: "click 1, then type in 2, then click 1 again."
+This is repeatable. The same page produces the same refs (in order). The agent can plan: "click 1, then type in 2, then click 1 again."
 
-## What Breaks in Practice
+## What breaks in practice
 
 **Dynamic content.** Pages that change between snapshots. The refs shift. The agent's plan becomes invalid.
 
@@ -78,7 +78,7 @@ Solution: Built-in rate limiting. The CLI enforces delays between requests.
 
 Solution: Detailed error output. Not "command failed" but "element [5] not found; page may have changed. Run `snapshot` to refresh."
 
-## The Design Principles
+## The design principles
 
 From building and using steel-ai-cli:
 
@@ -92,9 +92,9 @@ From building and using steel-ai-cli:
 
 **5. Commands are idempotent.** Running the same command twice should be safe (or at least detectable).
 
-## Schemas and Verification
+## Schemas and verification
 
-The next level: **output schemas.**
+The next level: output schemas.
 
 Each command declares what it will output. The CLI validates before returning. The agent knows exactly what shape to expect.
 
@@ -111,13 +111,13 @@ Each command declares what it will output. The CLI validates before returning. T
 }
 ```
 
-This enables **verification harnesses.** The agent can:
+This enables verification harnesses. The agent can:
 - Parse the output with confidence
 - Check for expected fields
 - Detect unexpected changes
 - Build retry logic around known failure modes
 
-## What's Next
+## What's next
 
 The current steel-ai-cli is an experiment. But the patterns are solid:
 

@@ -18,7 +18,7 @@ I’m increasingly working with coding agents across several machines, both loca
 
 If something is highly involved, I oversee it in real time, but roughly 90% of the work is fairly routine and can simply be pushed to a VM and left to run.
 
-Across these environments, I tend to work with three kinds of agents. One is primarily for planning and reviews. Another is more of a higher-level reasoning and verification layer—useful for conceptualization, planning, reviews, and independently checking the outcomes produced by other agents. Then there is the main workhorse: the agent I use most heavily in VMs, where I can give it a task and largely let it run through to completion.
+Across these environments, I tend to work with three kinds of agents. One is primarily for planning and reviews. Another is more of a higher-level reasoning and verification layer: useful for conceptualization, planning, reviews, and independently checking the outcomes produced by other agents. Then there is the main workhorse: the agent I use most heavily in VMs, where I can give it a task and largely let it run through to completion.
 
 At the moment, I still orchestrate the interchange between these agents manually. When one agent finishes something important, I may ask another to review the result.
 
@@ -48,15 +48,13 @@ For the majority of people, it’s very intuitive and easy to understand. This w
 
 I think there’s a range of agentic applications, from very simple monitoring agents or various shapes of durable agents, asynchronous agents to very proactive, always-running agents.
 
-For always-running agents, when you can afford to observe only the outputs and tolerate some inefficiency, agents inside a computer—or many agents inside computers, agents inside multiple computers, or whatever—are an interesting framing.
+For always-running agents, when you can afford to observe only the outputs and tolerate some inefficiency, agents inside a computer, or many agents spread across several computers, are an interesting framing.
 
 ## The body is not a box
 
 But I don’t know if the computer itself is the product.
 
 Agents need compute, but compute is just one of the resources. You have tokens, compute, and network. Let’s call the environment a sandbox for now. Or, to use the analogy that tools are hands for agents, we are building a body for an agent.
-
-**This vessel is not a box.**
 
 It’s something organic that can change and reshape for the need at hand.
 
@@ -90,11 +88,7 @@ Today, I still do much of that orchestration myself.
 
 I decide when something deserves close supervision and when it can just be pushed to a machine and left to run. I decide when an important result needs independent review. I decide which kind of agent is better suited to planning, implementation, or verification.
 
-That manual interchange feels like one of the clearest hints at what comes next.
-
-Not a better box.
-
-A control plane above the boxes.
+That manual interchange feels like one of the clearest hints at what comes next: a control plane above the boxes, not a better box.
 
 A system where the computers, runtimes, browsers, and other resources underneath can increasingly be commoditized, while the layer above them figures out what the agent needs and drives the whole thing.
 

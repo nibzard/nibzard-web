@@ -165,6 +165,8 @@ th { font-weight: 600; background: var(--color-background-alt); }
 .heading-anchor { margin-left: 8px; font-size: .7em; }
 .article-tags-section { display: flex; flex-wrap: wrap; gap: 12px 20px; border-top: 1px solid var(--color-border); padding-top: 22px; margin-top: 40px; font-size: 13px; }
 .article-tags-section a { color: var(--color-text-muted); text-decoration: none; }
+/* The inline CTA already draws the rule that closes the article, so the tag row that follows it keeps only spacing. */
+.article-tags-section.after-cta { border-top: 0; padding-top: 0; margin-top: var(--space-xl); }
 .related-articles-section, .author-section, .comments-section { margin-top: 48px; }
 .related-articles-title { font-size: 24px; }
 .related-article-card { padding: 22px 0; border-top: 1px solid var(--color-border); }

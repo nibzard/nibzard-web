@@ -70,7 +70,7 @@ So the practical version is:
 
 **Read how it scores a pass.** "Pass" is not a universal word. It barely means the same thing across rows.
 
-**Check who reported the result.** Self-reported, vendor-reported, paper-reported, third-party verified — these are not the same kind of evidence.
+**Check who reported the result.** Self-reported, vendor-reported, paper-reported, third-party verified: these are not the same kind of evidence.
 
 **Then run your own agent and watch where it breaks.**
 
@@ -97,7 +97,7 @@ We also built the update workflow the way we build agents. There's a Claude Code
     The model does the finding. The harness and the human do the judging. Recursion all the way down.
 </blockquote>
 
-One result did jump the line for launch: Claude Opus 4.8 hit #1 on OSWorld at 83.4%, above the 72.36% human baseline. Cool result. Worth knowing. Still not a reason to skip your own evals — especially with browser agents, where the difference between "works" and "lol no" is often one popup, one slow page, one auth edge case, one hidden button, one tiny environment mismatch.
+One result did jump the line for launch: Claude Opus 4.8 hit #1 on OSWorld at 83.4%, above the 72.36% human baseline. Cool result. Worth knowing. Still not a reason to skip your own evals, especially with browser agents, where the difference between "works" and "lol no" is often one popup, one slow page, one auth edge case, one hidden button, one tiny environment mismatch.
 
 ## Where the useful numbers are
 

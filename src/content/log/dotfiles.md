@@ -27,13 +27,13 @@ I was staring at another build failure, this time with a particularly frustratin
 
 All I wanted was a simple instruction file for AI coding agents. A place to document how they should write new articles for my site. I created `CLAUDE.md` in my log folder, dropped in some guidelines, and suddenly my entire static site generator was treating it like a blog post.
 
-This wasn't the first time I'd fought my tools over file naming. But this time, I realized the problem wasn't my tools—it was the `.md` extension itself.
+This wasn't the first time I'd fought my tools over file naming. But this time I realized the `.md` extension itself was the problem.
 
-## The Core Problem: .md Isn't Neutral
+## The core problem: .md isn't neutral
 
-The moment you name a file `*.md`, you're not just creating a text file. You're sending a signal to every tool in your development stack:
+The moment you name a file `*.md`, you're sending a signal to every tool in your development stack:
 
-**Static site generators** see content to be published. Astro, Next.js with MDX, Docusaurus, Jekyll—they all glob `**/*.md` by default and want to turn your instruction file into a web page.
+**Static site generators** see content to be published. Astro, Next.js with MDX, Docusaurus, and Jekyll all glob `**/*.md` by default and want to turn your instruction file into a web page.
 
 **MDX compilers** see potential JSX to execute. In MDX contexts, `.md` can be treated as `.mdx`, meaning innocent code blocks get compiled and break builds.
 
@@ -45,7 +45,7 @@ The moment you name a file `*.md`, you're not just creating a text file. You're 
 
 **Package managers** see files to be included or excluded. Some packaging flows include `.md` by default, others transform them, creating unpredictable behavior across environments.
 
-## What I Wanted vs What I Got
+## What I wanted vs what I got
 
 What I wanted was simple:
 - Folder-specific rules for AI agents
@@ -58,7 +58,7 @@ What I got was a cascade of build failures, content validation errors, and the n
 
 The problem is that `.md` carries implicit assumptions. It says "I'm content meant for humans to read, format, and publish." But AI agent instruction files are operational contracts. They're meant for machines to execute, not for humans to consume as content.
 
-## The Breakage Pattern
+## The breakage pattern
 
 Here's exactly what happened when I added `CLAUDE.md` to my Astro project:
 
@@ -69,9 +69,9 @@ Here's exactly what happened when I added `CLAUDE.md` to my Astro project:
 
 I tried fighting this with exclude globs, schema loopholes, and slug filters. Each solution was brittle, surprising for collaborators, and spread conditional logic across multiple files. The contract became fuzzy, and new tools would inevitably miss my custom exclusions.
 
-## The Simple Solution: Dotfiles
+## The simple solution: dotfiles
 
-The cleanest solution is also the most obvious: stop using `.md` for agent instruction files.
+The cleanest solution is to stop using `.md` for agent instruction files.
 
 Use dotfiles with clear names:
 - `.claude` for Claude-specific instructions
@@ -87,11 +87,11 @@ The benefits are immediate:
 
 **Predictable behavior**: No custom exclude patterns, no conditional logic, no fighting your tools.
 
-## Implementation Details
+## Implementation details
 
 Here's what this looks like in practice:
 
-### File Structure
+### File structure
 ```
 src/
 ├── content/
@@ -104,14 +104,14 @@ src/
 │       └── .claude          # Component-specific instructions
 ```
 
-### Ignore Patterns
+### Ignore patterns
 Add to your `.gitignore` or build ignore patterns:
 ```
 **/.claude
 **/.agents
 ```
 
-### Editor Configuration
+### Editor configuration
 For VS Code, add to your settings:
 ```json
 {
@@ -124,9 +124,7 @@ For VS Code, add to your settings:
 
 This gives you full Markdown syntax highlighting without triggering any of the automatic processing behaviors.
 
-## Why Not Other Extensions?
-
-You might wonder why not use `.txt` or some other neutral extension.
+## Why not other extensions?
 
 **`.txt` is too generic**: It's difficult to target in ignore patterns and doesn't communicate purpose. Tools might still try to process it, and it lacks the semantic clarity of a purpose-built filename.
 
@@ -134,9 +132,9 @@ You might wonder why not use `.txt` or some other neutral extension.
 
 **Dotfiles are universally understood**: Almost every development tool recognizes that dotfiles are meant for configuration and should be left alone by default.
 
-## The Broader Principle
+## The broader principle
 
-This isn't just about AI agent files. The same logic applies to any operational file that shouldn't be treated as content:
+The same logic applies to any operational file that shouldn't be treated as content:
 
 - `README.md` files in subdirectories can trigger the same problems
 - Configuration files that happen to be Markdown
@@ -145,28 +143,28 @@ This isn't just about AI agent files. The same logic applies to any operational 
 
 The key insight is that **file extensions carry intent**. `.md` says "publish me," while `.claude` says "execute these instructions."
 
-## What I Learned
+## What I learned
 
-We're not just writing code anymore, we're configuring complex toolchains. File naming isn't just about organization—it's about communicating intent to both humans and machines.
+We're configuring complex toolchains as much as writing code now. File names are how we communicate intent to both humans and machines.
 
 If we rename `CLAUDE.md` to `.claude`, the build errors should disappear. No more schema validation, no more exclude patterns, no more fighting tools. The file becomes what it was meant to be: operational instructions for AI agents, not content for human consumption.
 
-Sometimes the best solution isn't to add more configuration or workarounds. It's to align with the conventions your tools already understand.
+Sometimes the best solution is to align with the conventions your tools already understand.
 
-## Reader Feedback: The Case for `.filename.md`
+## Reader feedback: the case for `.filename.md`
 
 After publishing this article, I received an interesting email proposing an alternative: use `.filename.md` instead of just `.filename`.
 
-The logic is appealing - dot prefixes give automatic exclusion while `.md` extensions declare the content format. This creates a "Markdown dotfile" convention that's both stackable and semantically clear.
+The logic is appealing: dot prefixes give automatic exclusion while `.md` extensions declare the content format. This creates a "Markdown dotfile" convention that's both stackable and semantically clear.
 
 It's an elegant approach if we think of agent instructions as Markdown content. But I'm hesitating because these files aren't really blog posts or documentation. They're evolving toward becoming multi-format containers that might hold Markdown alongside JSON schemas, code examples, or structured metadata.
 
 The question becomes: are we writing Markdown files that happen to contain instructions, or instruction files that happen to use Markdown syntax? I'm leaning toward the latter.
 
-## Bottom Line
+## Bottom line
 
 `.md` is not a neutral container for text. It's a signal that triggers a cascade of automatic processing: publishing, formatting, compiling, and indexing.
 
 AI agent instruction files need the opposite. They should be predictable, stable, and left alone by default.
 
-Give them a distinct filename or use a dotfile. Keep the content readable and Markdown-like for editors, but let the filename communicate their true purpose. Your tools will thank you, your builds will be more reliable, and your AI agents will have clear, unambiguous instructions to follow.
+Give them a distinct filename or use a dotfile. Keep the content readable and Markdown-like for editors, but let the filename communicate their true purpose.

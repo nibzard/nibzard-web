@@ -39,21 +39,17 @@ You get:
 
 And it actually does it. File by file. Until it's done.
 
-This is the difference between a calculator and a mathematician.
-
-Between a typewriter and a writer.
-
-Between asking for directions and having a guide.
+This is the difference between a typewriter and a writer, between asking for directions and having a guide.
 
 The magic isn't in the AI model. The magic is in the loop. (well, truth be told, it is in the model)
 
-The ability to persist. To iterate. To work autonomously toward a goal rather than just respond to prompts.
+The ability to persist, to iterate, to work toward a goal instead of waiting for the next prompt.
 
-Most AI tools make you the bottleneck--constantly feeding them the next instruction.
+Most AI tools make you the bottleneck, constantly feeding them the next instruction.
 
 The loop removes you from the critical path.
 
-It lets the AI be what it was meant to be: not just intelligent, but **agentic**.
+It lets the AI be what it was meant to be: agentic.
 
 Install the [llm-loop-plugin](https://pypi.org/project/llm-loop-plugin/) and give your [LLM CLI](https://llm.datasette.io/) superpowers:
 

@@ -190,8 +190,8 @@ X-Content-Type-Options: nosniff
 
 Two routes in `src/pages/`:
 
-- `llms.txt.ts` — index per the [llms.txt spec](https://llmstxt.org/): a title, a blurb, sectioned links to every post.
-- `llms-full.txt.ts` — the full dump: TOC plus every post body inlined, frontmatter stripped.
+- `llms.txt.ts`: index per the [llms.txt spec](https://llmstxt.org/), a title, a blurb, sectioned links to every post.
+- `llms-full.txt.ts`: the full dump, TOC plus every post body inlined, frontmatter stripped.
 
 Both flagged static:
 
@@ -222,11 +222,9 @@ For this site, `llms-full.txt` is ~743 KB. Prerendering it means it never hits t
 
 Beyond the in-band content negotiation, make your markdown surface easy to find:
 
-- `robots.txt` open by default — `User-agent: *` / `Allow: /` with `Sitemap:` pointing to `/sitemap-index.xml`. If you block agents here, none of this matters.
-- `llms.txt` at the root — agents that follow the convention find it automatically.
-- `Link: rel="alternate"; type="text/markdown"` on every HTML page — agents that don't know your URL convention discover it from the response itself.
-
-Three signals, layered. Belt, suspenders, and one more belt for luck.
+- `robots.txt` open by default: `User-agent: *` / `Allow: /` with `Sitemap:` pointing to `/sitemap-index.xml`. If you block agents here, none of this matters.
+- `llms.txt` at the root: agents that follow the convention find it automatically.
+- `Link: rel="alternate"; type="text/markdown"` on every HTML page: agents that don't know your URL convention discover it from the response itself.
 
 ## The smoke test
 

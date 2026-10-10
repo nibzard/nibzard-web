@@ -23,17 +23,17 @@ answers_questions:
   - How can developers manage unpredictable AI agent costs?
 ---
 
-## The Credit Burn Problem
+## The credit burn problem
 
 My recent experience with [AMP](https://ampcode.com/) illustrates a fundamental pricing problem. After bootstrapping an Astro project with `pnpm create astro@latest` and generating specifications through OpenAI's o3 model, I let AMP implement the spec. The results were impressive enough that I immediately purchased credits after exhausting the free tier. However, this revealed how rapidly credits disappear.
 
-AMP operates on a [credit system](https://ampcode.com/manual#usage-credits) covering all cost-incurring operations: web searches, LLM inference, and tool usage. While they claim to pass through costs without markup, the burn rate is concerning. The core issue is misaligned incentives—agents make decisions about tool calls and iterations, but users bear the financial consequences.
+AMP operates on a [credit system](https://ampcode.com/manual#usage-credits) covering all cost-incurring operations: web searches, LLM inference, and tool usage. While they claim to pass through costs without markup, the burn rate is concerning. The core issue is misaligned incentives: agents make decisions about tool calls and iterations, but users bear the financial consequences.
 
 ![AMP Code credits stats](/images/amp-credits-spent.jpg)
 
 Cursor takes a different approach, charging per LLM request regardless of token consumption, with token-based pricing only for their premium MAX options using cutting-edge models.
 
-My experience with Claude Code wasn’t cheap—but when viewed through the lens of value delivered, the pricing starts to make sense. Compared to hiring a junior developer (and skipping the intermediate step of translating requirements), the efficiency gains become clear. Even with top-tier, SOTA models, the cost to ship a significant feature ranged from $20 to $200—surprisingly reasonable when measured against actual output.
+My experience with Claude Code wasn't cheap, but measured by the value delivered, the pricing starts to make sense. Compared to hiring a junior developer (and skipping the intermediate step of translating requirements), the efficiency gains become clear. Even with top-tier, SOTA models, the cost to ship a significant feature ranged from $20 to $200, surprisingly reasonable when measured against actual output.
 
 This misalignment creates several problems:
 - Agents over-iterate by design, exploring multiple solution paths
@@ -44,7 +44,7 @@ This misalignment creates several problems:
 
 The user experience suffers when pricing becomes the primary selection criterion for AI agents. The ideal solution would involve outcome-based pricing or better alignment between user intent and resource consumption. This mirrors challenges with human developers, where salary costs don't always correlate with output quality.
 
-## Market Forces at Play
+## Market forces at play
 
 The current race-to-the-bottom pricing, with everyone claiming "cost pass-through," isn't sustainable long-term. Once VC-subsidized market prices end, successful companies will need to:
 
@@ -52,9 +52,9 @@ The current race-to-the-bottom pricing, with everyone claiming "cost pass-throug
 - Create differentiated value justifying premium pricing
 - Build competitive moats through specialized domain knowledge and proprietary models (as seen with Vercel's v0 model for Next.js)
 
-## Alternative Pricing Models
+## Alternative pricing models
 
-### Fair-Use Architecture
+### Fair-use architecture
 Drawing from telecommunications models that mirror actual usage patterns:
 
 - **Base allocation**: X successful completions included monthly
@@ -64,7 +64,7 @@ Drawing from telecommunications models that mirror actual usage patterns:
 
 This approach solves the "agent inefficiency tax" by providing predictable costs for normal usage while charging premiums only for extraordinary consumption.
 
-### Temporal Arbitrage Pricing
+### Temporal arbitrage pricing
 Batch processing and off-peak inference create interesting opportunities, especially with remote agents like Augment Code's recent preview. Background agents could handle non-urgent tasks during low-demand periods.
 
 **Priority-based tiers:**
@@ -73,7 +73,7 @@ Batch processing and off-peak inference create interesting opportunities, especi
 - **Batch**: Hours/overnight processing with 50-70% discounts
 - **Background**: Multi-day large refactors with 80%+ discounts
 
-### Hybrid Local/Remote Pricing
+### Hybrid local/remote pricing
 As edge computing capabilities improve:
 
 - **Local-first**: Smaller models run locally, complex tasks use cloud resources
@@ -81,7 +81,7 @@ As edge computing capabilities improve:
 - **Progressive enhancement**: Start local, escalate to cloud when needed
 - **User-controlled**: Explicit triggers for expensive model usage
 
-### Outcome-Based Evolution
+### Outcome-based evolution
 Pure outcome pricing will likely start narrow and expand:
 
 - **Feature-complete components**: Fixed price per working component
@@ -91,15 +91,15 @@ Pure outcome pricing will likely start narrow and expand:
 
 This resembles open-source bounty models and bug-hunting reward systems.
 
-### Caching Economics
-An underexplored area with significant potential:
+### Caching economics
+An underexplored area:
 
 - **Pattern libraries**: Pre-computed common implementations
 - **Project fingerprinting**: Similar codebases share cached solutions
 - **Community effects**: Popular patterns become cheaper over time
 - **Negative pricing**: Users earn credits for contributing to cache hits
 
-## Market Evolution Timeline
+## Market evolution timeline
 
 The progression will likely follow this path:
 
@@ -110,6 +110,6 @@ The progression will likely follow this path:
 
 Success will belong to whoever first creates a pricing model that feels "fair" to developers while capturing the value being generated.
 
-The interesting question remains: How quickly must local model capabilities improve before hybrid local/remote pricing becomes viable?
+How quickly must local model capabilities improve before hybrid local/remote pricing becomes viable?
 
 ![Market Evolution Timeline](/images/agent-pricing-market-evolution.png)

@@ -14,15 +14,13 @@ answers_questions:
   - What's the difference between growth mindset and growth at all costs?
 ---
 
-After shipping a bunch of different projects, I've seen a pattern emerge: **teams focus endlessly on metrics that look good but mean nothing.**
+After shipping a bunch of different projects, I've seen a pattern: teams focus endlessly on metrics that look good but mean nothing.
 
 More signups, more impressions, more "engagement" - but are these users actually getting value?
 
 This obsession with vanity metrics is why growth has become a dirty word in many circles. Worse, it creates perverse incentives that can corrupt even the purest souls.
 
-We're optimizing for the wrong things.
-
-## Why "Growth" Got a Bad Reputation
+## Why "growth" got a bad reputation
 
 When you hear "growth" in startup circles, you probably think:
 
@@ -36,7 +34,7 @@ We all have been there. That world treats growth as "make the graph go up," even
 The problem isn't growth. The problem is optimizing metrics that don't matter.
 </blockquote>
 
-## A Better Definition: Growth as Value Discovery
+## A better definition: growth as value discovery
 
 Here's what I've learned through painful experience:
 
@@ -52,9 +50,9 @@ This framing changes everything:
 
 When the product is bad, growth *surfaces* that—it can't compensate. When the product is good but invisible, growth fixes discovery and distribution. When acquisition is great but retention sucks, growth focuses on onboarding and value delivery.
 
-## The Growth Mindset vs "Growth at All Costs"
+## The growth mindset vs "growth at all costs"
 
-We tend to equate growth mindset with relentless optimization. Turns out, it's something else entirely:
+We tend to equate growth mindset with relentless optimization. It's something more specific:
 
 > **A growth mindset is a commitment to reality over ego: relentlessly testing how, where, and for whom the product creates sustainable value—and then aligning the whole company around what's true.**
 
@@ -64,7 +62,7 @@ Let me share the principles:
 
 Metrics aren't there to make investors happy; they're there to tell you if users actually care. Bad news (churn, low activation) is *data*, not a personal failure.
 
-I've seen maany times how metrics can be deceiving, e.g.: a high signup rate means nothing if users aren't getting real value.
+I've seen many times how metrics can be deceiving. A high signup rate means nothing if users aren't getting real value.
 
 ### 2. System thinking over isolated tactics
 
@@ -96,21 +94,21 @@ Growth isn't "the marketing team." It's everyone asking:
 
 Yes, growth cares about this quarter's metrics. But it also cares whether those metrics come from building a *stronger engine* or from one-off tricks.
 
-## How This Changes the Role of Growth
+## How this changes the role of growth
 
 Instead of "the team that runs experiments on the signup form," growth becomes:
 
-### The Sense-Making Function
+### The sense-making function
 
 Growth maps the user journey end-to-end. It identifies bottlenecks ("We don't have an awareness problem, we have a 'confusing value prop' problem"). It translates messy cross-functional data into: *"Given everything we're seeing, the highest-leverage bets right now are X, Y, Z."*
 
-### The PMF Barometer
+### The PMF barometer
 
 Pre–product-market fit, growth asks: "Who *really* gets value from this? What is the sharpest, most painful problem we're solving?" You're not optimizing funnels yet; you're discovering *who* you're for and *what* actually works.
 
 Post–product-market fit, growth asks: "How do we systematically find more people like our best users, get them to value faster, and help them form habits?"
 
-### The Integrator of Content, Product, and Distribution
+### The integrator of content, product, and distribution
 
 If you have a good product but no content, no one will know. If you have great content but no product, you'll disappoint everyone. A growth mindset sees:
 
@@ -123,12 +121,10 @@ If you have a good product but no content, no one will know. If you have great c
 Growth is the discipline that checks: "Does the value we promise, the value we deliver, and the value we measure all match?"
 </blockquote>
 
-## What I've Learned
+## What I've learned
 
-The biggest insight is that we need to shift from "how do we grow?" to "what is value and how does it flow?"
+The shift that matters is from "how do we grow?" to "what is value and how does it flow?"
 
-When teams stop trying to hack growth and start trying to understand value, everything changes. Metrics improve because understanding improves. Acquisition becomes more efficient because they know who they're serving. Retention increases because they focus on what matters.
+When teams stop trying to hack growth and start trying to understand value, everything changes. Metrics improve because understanding improves. Acquisition gets more efficient because teams know who they're serving, and retention climbs because they focus on what matters.
 
-Growth isn't about tricks. It's not about optimizing every last conversion point. It's about building something people want, understanding why they want it, and making it accessible to more people who need it.
-
-The rest is just noise.
+Growth is about building something people want, understanding why they want it, and making it accessible to more people who need it. The tricks and the conversion-point squeezing are the small part.

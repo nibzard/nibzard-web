@@ -23,7 +23,7 @@ answers_questions:
   - How can you script and automate Claude Code using the SDK?
 ---
 
-**Claude Code** is a powerful, flexible, **terminal-first AI coding assistant** designed to integrate deeply with existing developer workflows and tools.
+Claude Code is a terminal-first AI coding assistant that integrates with the developer tools and workflows you already use.
 
 Effective use involves understanding its agentic nature, providing rich context, and learning to guide its tool use through prompting and configuration. Its capabilities are continuously expanding, especially with the [SDK](https://docs.anthropic.com/en/docs/claude-code/sdk) for programmatic access and scripting.
 
@@ -54,8 +54,8 @@ Once installed, you can start Claude Code by running `claude` in your terminal.
 
 ## II. Getting Started: Codebase Q&A
 
-*   **Easiest way for new users to start.**
-*   **Powerful Onboarding Tool:** Anthropic uses it to significantly reduce technical onboarding time for new hires (from weeks to 2-3 days).
+*   Easiest way for new users to start.
+*   **Onboarding tool:** Anthropic uses it to cut technical onboarding time for new hires from weeks to 2-3 days.
 *   **How it Works:** Ask questions about your codebase. Claude explores the code locally to answer.
 *   **Example Prompts for Q&A:**
     *   "How is `@RoutingController.py` used?"
@@ -109,12 +109,21 @@ Once installed, you can start Claude Code by running `claude` in your terminal.
 
 *   **Shift+Tab:** Auto-accept edits. Bash commands will still require explicit approval, but file edits can be auto-accepted.
 *   **`#` (Pound/Hash sign):** Create a memory. The current interaction or a summary will be added to the relevant `CLAUDE.md` file.
-*   **`!` (Exclamation mark):** Enter Bash mode. Allows you to run a shell command locally. The command and its output are added to Claude's context.
 *   **`@` (At sign):** Add a file or folder to the current session's context.
 *   **`Esc`:** Cancel the current operation Claude is performing.
 *   **`Double-Esc`:** Jump back in history. You can then use `--resume` to continue a previous session.
 *   **`Ctrl+R`:** Show verbose output. This reveals Claude's "thought process," including which tools it's considering or using.
 *   **`/vibe`**: (Audience mentioned, presenter skipped).
+
+### Run shell commands with ! (bang mode)
+
+Type `!` at the prompt and Claude Code changes to bash mode. The command runs on your machine, without a model call, and the command with its output is added to the session context. Use it for quick checks that you do not need Claude to do, only to see:
+
+```bash
+! git status
+```
+
+The output stays in context, so your next prompt can ask about it.
 
 ## VI. Scripting Claude: Claude Code SDK
 
@@ -148,3 +157,5 @@ Once installed, you can start Claude Code by running `claude` in your terminal.
     *   A single checkout using Git worktrees for branch isolation.
     *   SSH sessions combined with TMUX for managing multiple remote Claude instances.
     *   GitHub Actions to launch Claude Code jobs in parallel for CI/automation.
+
+If you want to see these habits under pressure, read [how Claude Code fared on the Berghain bouncer challenge](/berghain) — one day, one optimization problem, and a long queue of rejections.

@@ -26,9 +26,7 @@ answers_questions:
   - Where are defensible moats strongest in an AI-first market?
 ---
 
-Software is getting cheaper.
-
-Not discounted. Structurally cheaper.
+Software is getting structurally cheaper.
 
 Code generation, reusable components, managed infra, and AI coding agents are collapsing the cost of shipping something decent. The old SaaS halo was simple: we wrote the software, therefore we win.
 
@@ -36,11 +34,11 @@ That halo is fading.
 
 If features can be cloned in weeks, what still defends a business?
 
-The answer is the **meat moat**: advantage rooted in the parts of the product that stay stubbornly human. Permission. Trust. Accountability. Verifiability. Multi-party coordination.
+The answer is the **meat moat**: advantage rooted in the parts of the product that stay stubbornly human. Permission, trust, accountability, verifiability, multi-party coordination.
 
-The hard problem is no longer writing code. The hard problem is getting humans and institutions to treat your system as legitimate, canonical, and safe to depend on.
+The hard problem is getting humans and institutions to treat your system as legitimate, canonical, and safe to depend on.
 
-## The Clone Test
+## The clone test
 
 Use this practical test:
 
@@ -55,9 +53,9 @@ Can they still win without:
 
 If the answer is no, you are looking at a meat moat.
 
-## Institutional Gates Are Product Surface Area
+## Institutional gates are product surface area
 
-In markets like payments, payroll, healthcare admin, and security/compliance, the product is not just UI + API.
+In markets like payments, payroll, healthcare admin, and security/compliance, the product is more than UI + API.
 
 The product includes:
 
@@ -71,9 +69,9 @@ Automation can execute a workflow. It cannot shortcut institutional memory.
 
 You still have to pass procurement. Survive audits. Operate safely at scale. Show up when something breaks at 2 a.m.
 
-That is not a feature set. That is operating history.
+That is operating history.
 
-## Liability Is the Real API
+## Liability is the real API
 
 Agents can fill forms, reconcile ledgers, and push diffs.
 
@@ -93,19 +91,17 @@ A vibe-coded clone can copy workflows. It cannot instantly copy risk-bearing cap
 
 Zero marginal code cost is not zero marginal risk.
 
-## Systems of Record Are Social Truth Machines
+## Systems of record are social truth machines
 
 A system of record is valuable because people agree it is true.
 
 Accounting close, cap tables, claims, clinical records, security case management, compliance attestations. These systems encode conventions, approvals, and shared narratives across teams.
 
-That social agreement is hard to migrate.
+That social agreement is hard to migrate. The stickiness is the alignment, not the interface.
 
-The stickiness is not the interface. The stickiness is alignment.
+Replacing a system of record means renegotiating who gets to declare reality inside an institution.
 
-You are not just replacing a tool. You are renegotiating who gets to declare reality inside an institution.
-
-## Human Networks Compound
+## Human networks compound
 
 Some products depend on dense human networks:
 
@@ -118,7 +114,7 @@ You can copy the surface. You cannot copy network trust overnight.
 
 Distribution, incentives, governance, and reputation are all meat.
 
-## Where Meat Moats Are Weak (And Strong)
+## Where meat moats are weak (and strong)
 
 Meat moats are weakest when output is purely digital, low-stakes, and easy to auto-verify:
 
@@ -137,9 +133,7 @@ Meat moats are strongest where real-world consequences attach and verification i
 
 If a task has high cost-of-error, delayed ground truth, and multiple stakeholders defining "correct," moat strength compounds fast.
 
-This is where cheap code collides with expensive reality.
-
-## Operator Playbook for SaaS Founders
+## Operator playbook for SaaS founders
 
 If you run a SaaS business in 2026, the implication is direct:
 
@@ -156,13 +150,11 @@ Invest in:
 
 Then price around outcomes and risk absorption, not seats and clicks.
 
-## Final Thought
+## Final thought
 
 Meat moat is not the only moat. Running intelligence can be one too.
 
-But it is the reminder most people need right now:
-
-Even in an AI-first world, credibility is still earned in human institutions.
+But most people need the reminder: even in an AI-first world, credibility is still earned in human institutions.
 
 Code got cheaper.
 

@@ -18,9 +18,9 @@ We're speedrunning through a Cambrian explosion.
 
 Fifty-plus projects pushed to GitHub in just a few months. Different tech stack each time. All while testing AI agents in the wild. What a ride.
 
-The dust is settling, and the pattern is crystal clear: **winners won't be the most powerful tools. They'll be the most agent-friendly ones.**
+The dust is settling, and the pattern is crystal clear: winners won't be the most powerful tools. They'll be the most agent-friendly ones.
 
-## The Great Duality
+## The great duality
 
 CLI tools sit at an inflection point that most developers haven't fully grasped yet.
 
@@ -34,19 +34,19 @@ The tools that survive will master this duality.
 
 This isn't about dumbing down interfaces for AI. It's about creating tools sophisticated enough to serve both masters, expressive for humans, deterministic for machines.
 
-## Type Safety Isn't Just for Humans Anymore
+## Type safety isn't just for humans anymore
 
-Here's something that surprised me: **type safety has become how agents understand your intent**.
+Here's something that surprised me: type safety has become how agents understand your intent.
 
-When Claude Code generates a FastAPI endpoint, it's not just writing Python, it's crafting a contract that other agents can parse, validate, and build upon. The OpenAPI spec that gets generated automatically becomes the lingua franca for agent collaboration.
+When Claude Code generates a FastAPI endpoint, the Python it writes is also a contract that other agents can parse, validate, and build upon. The OpenAPI spec that gets generated automatically becomes the lingua franca for agent collaboration.
 
 React 19 with TypeScript? Perfect guardrails for agents. They know exactly what props are expected, what events are available, what can break.
 
 SQLite with WAL mode? Agents can iterate rapidly without stepping on each other's transactions.
 
-The type system has evolved from a developer productivity tool to an **inter-agent communication protocol**.
+The type system has evolved from a developer productivity tool to an inter-agent communication protocol.
 
-## Documentation Is Evolving Into a New Species
+## Documentation is evolving into a new species
 
 We're building a parallel universe of machine-readable documentation:
 
@@ -57,9 +57,9 @@ We're building a parallel universe of machine-readable documentation:
 
 As Netlify's [Mathias Biilmann](https://biilmann.blog/articles/introducing-ax/) calls it: **AX (Agent Experience)**.
 
-This isn't replacing human documentation, it's augmenting it. The same way we have both human-readable RESTful URLs and machine-readable JSON APIs.
+This augments human documentation rather than replacing it, the same way we have both human-readable RESTful URLs and machine-readable JSON APIs.
 
-## The Stack That Adapts Fast
+## The stack that adapts fast
 
 Some frameworks are naturals at this game:
 
@@ -69,9 +69,9 @@ Some frameworks are naturals at this game:
 
 **React with TypeScript** gives agents the guardrails they need while preserving the flexibility developers demand.
 
-**SQLite**  with wal mode? perfect for agent iteration cycles without breaking things.
+**SQLite** with WAL mode? Perfect for agent iteration cycles without breaking things.
 
-## The Black Holes Are Real
+## The black holes are real
 
 But others remain stuck in the past, creating friction that kills agent productivity:
 
@@ -87,9 +87,9 @@ Watched agents spiral for hours on stupid issues. Like Claude playing Pokemon an
 
 These friction points will kill frameworks faster than any performance benchmark.
 
-## Agents Don't Care About Your Favorite Paradigms
+## Agents don't care about your favorite paradigms
 
-Biggest surprise from all this experimentation? **Agents optimize for working code, not elegant abstractions.**
+Biggest surprise from all this experimentation? Agents optimize for working code, not elegant abstractions.
 
 They'll mix procedural, functional, and OOP patterns in ways that make purists weep. They don't have religious preferences about Redux vs. Zustand or tabs vs. spaces.
 
@@ -101,10 +101,10 @@ The future stack will be radically simple at the surface, deeply sophisticated u
 
 Winners will embrace workflows where agents can operate with minimal human intervention:
 
-- **Deployments that agents spin up instantly**
-- **APIs they wire together without permission**
-- **Databases they scaffold and seed**
-- **Break them. Fix them. Iterate fast.**
+- Deployments that agents spin up instantly
+- APIs they wire together without permission
+- Databases they scaffold and seed
+- Break them. Fix them. Iterate fast.
 
 Then humans step in for the polish pass, refactoring with the agent, optimizing together, adding the human touch where it matters.
 
@@ -112,9 +112,9 @@ Then humans step in for the polish pass, refactoring with the agent, optimizing 
 The workflow flips: agents do the heavy lifting, humans do the crafting.
 </blockquote>
 
-## What This Means for Your Next Project
+## What this means for your next project
 
-We're not just choosing tech stacks anymore. **We're choosing which tools will amplify human creativity through agent collaboration.**
+Choosing a tech stack is now choosing which tools will amplify human creativity through agent collaboration.
 
 The frameworks that get this right won't just survive, they'll define the next decade of development.
 
@@ -124,10 +124,8 @@ When evaluating your next tool, ask:
 - Can agents iterate on it without breaking things?
 - Does it embrace the "let agents rip" workflow?
 
-The Cambrian explosion is far from over. But the selection pressure is already clear: **adapt to agents, or become extinct**.
-
-The future belongs to tools that understand they're serving two kinds of intelligence, human and artificial, and excel at both.
+The Cambrian explosion is far from over. But the selection pressure is already clear: adapt to agents, or become extinct.
 
 ---
 
-*The revolution isn't just in what we're building. It's in who, or what, is helping us build it.*
+*The revolution is as much about who, or what, is helping us build as about what we're building.*

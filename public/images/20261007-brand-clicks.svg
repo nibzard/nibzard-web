@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" role="img" aria-labelledby="ta da">
+<style>
+.t{font:600 15px system-ui,-apple-system,"Segoe UI",sans-serif;fill:#0b0b0b}
+.s{font:12px system-ui,-apple-system,"Segoe UI",sans-serif;fill:#52514e}
+.m{font:12px system-ui,-apple-system,"Segoe UI",sans-serif;fill:#898781;font-variant-numeric:tabular-nums}
+.v{font:600 12px system-ui,-apple-system,"Segoe UI",sans-serif;fill:#0b0b0b;font-variant-numeric:tabular-nums}
+.g{stroke:#e1e0d9;stroke-width:1}.b{stroke:#c3c2b7;stroke-width:1}
+.s1{fill:#2a78d6}.s2{fill:#eb6834}.l1{stroke:#2a78d6;stroke-width:2;fill:none}
+.bg{fill:#fcfcfb}
+@media (prefers-color-scheme: dark){
+.t,.v{fill:#ffffff}.s{fill:#c3c2b7}.g{stroke:#2c2c2a}.b{stroke:#383835}
+.s1{fill:#3987e5}.s2{fill:#d95926}.l1{stroke:#3987e5}.bg{fill:#1a1a19}}
+</style>
+<title id="ta">Clicks from searches for "steel browser", growth since July 2025</title>
+<desc id="da">Monthly clicks as a multiple of July 2025. The line grows to about six times the starting level by September 2026.</desc>
+<rect class="bg" width="720" height="360" rx="8"/>
+<text class="t" x="56" y="30">Clicks from searches for "steel browser"</text>
+<text class="s" x="56" y="50">Monthly clicks as a multiple of July 2025. No ad spend at any point.</text>
+<line class="b" x1="56" x2="680" y1="304.0" y2="304.0"/>
+<text class="m" x="48" y="308.0" text-anchor="end">0×</text>
+<line class="g" x1="56" x2="680" y1="228.0" y2="228.0"/>
+<text class="m" x="48" y="232.0" text-anchor="end">2×</text>
+<line class="g" x1="56" x2="680" y1="152.0" y2="152.0"/>
+<text class="m" x="48" y="156.0" text-anchor="end">4×</text>
+<line class="g" x1="56" x2="680" y1="76.0" y2="76.0"/>
+<text class="m" x="48" y="80.0" text-anchor="end">6×</text>
+<text class="m" x="56.0" y="324" text-anchor="middle">Jul</text>
+<text class="m" x="145.14285714285714" y="324" text-anchor="middle">Sep</text>
+<text class="m" x="234.28571428571428" y="324" text-anchor="middle">Nov</text>
+<text class="m" x="323.42857142857144" y="324" text-anchor="middle">Jan</text>
+<text class="m" x="412.57142857142856" y="324" text-anchor="middle">Mar</text>
+<text class="m" x="501.7142857142857" y="324" text-anchor="middle">May</text>
+<text class="m" x="590.8571428571429" y="324" text-anchor="middle">Jul</text>
+<text class="m" x="680.0" y="324" text-anchor="middle">Sep</text>
+<text class="m" x="56.0" y="342" text-anchor="start">2025</text>
+<text class="m" x="323.42857142857144" y="342" text-anchor="middle">2026</text>
+<polyline class="l1" stroke-linejoin="round" points="56.0,266.0 100.6,267.2 145.1,247.3 189.7,258.4 234.3,246.7 278.9,230.9 323.4,207.5 368.0,190.6 412.6,114.6 457.1,127.4 501.7,159.0 546.3,152.6 590.9,143.8 635.4,108.2 680.0,80.7"/>
+<circle class="s1" cx="56.0" cy="266.0" r="4"/>
+<circle class="s1" cx="680.0" cy="80.67692307692306" r="4"/>
+<text class="v" x="64.0" y="256.0">1×</text>
+<text class="v" x="672.0" y="68.67692307692306" text-anchor="end">about 6×</text>
+</svg>

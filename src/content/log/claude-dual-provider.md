@@ -14,16 +14,16 @@ answers_questions:
   - How do you make a portable Claude setup inside dotfiles?
 ---
 
-If you want two Claude Code entry points, one for your normal Claude Team or Enterprise login and one for an alternative API provider like z.ai, the cleanest answer is not two installs.
+If you want two Claude Code entry points, one for your normal Claude Team or Enterprise login and one for an alternative API provider like z.ai, you do not need two installs.
 
 > Tested with **Claude Code 2.1.72**.
 
-What you actually want is one Claude install, one neutral global config, and two explicit commands:
+You need one Claude install, one neutral global config, and two explicit commands:
 
 - `claude-team` for your normal first-party Claude login
 - `claude-zai` for the z.ai gateway using a token sourced outside Claude settings
 
-The names are arbitrary. You could call them `claude-default` and `claude-zai` if you prefer. The important part is the pattern: use **one Claude install** and **one global Claude config**, and select the provider with wrapper scripts instead of swapping config files or maintaining a second install.
+The names are arbitrary. You could call them `claude-default` and `claude-zai` if you prefer. The important part is the pattern: use one Claude install and one global Claude config, and select the provider with wrapper scripts instead of swapping config files or maintaining a second install.
 
 If you want to try z.ai itself, here is the same referral link I used before: [Get GLM Coding Plan](https://z.ai/subscribe?ic=61HSE9HVY6).
 
@@ -44,9 +44,7 @@ If you put this in `~/.claude/settings.json`:
 }
 ```
 
-then every Claude session goes through that gateway.
-
-You have effectively made z.ai the default for every Claude Code session on that machine.
+then every Claude session goes through that gateway, and z.ai becomes the default for every Claude Code session on that machine.
 
 That is the trap most people hit.
 
@@ -107,7 +105,7 @@ If you do not have one yet:
 pass insert api/zhipu
 ```
 
-The broader point is simple: Claude settings should stay clean, and the z.ai credential should only be injected when you intentionally choose the z.ai path.
+Claude settings should stay clean, and the z.ai credential should only be injected when you intentionally choose the z.ai path.
 
 ## Keep global Claude settings boring
 
@@ -299,8 +297,6 @@ Or launch `claude-team` and run:
 
 This matters because the wrapper fixes provider overrides, but your stored first-party account state still determines whether Claude sees you as API, Pro, Team, or Enterprise.
 
-In other words, if `claude-team` still says `Claude API`, that does not automatically mean the wrapper failed. It can also mean you are logged into the wrong first-party account context.
-
 ## Security
 
 - Do not keep the z.ai token in `~/.claude/settings.json`
@@ -315,7 +311,7 @@ The short version is this: one Claude install, one boring global config, two exp
 
 This is the version I would recommend to anyone who wants one Claude Code setup for their normal Claude account and a second explicit path for z.ai.
 
-## Additional Resources
+## Additional resources
 
 - [Official Zhipu Claude Development Guide](https://docs.z.ai/scenario-example/develop-tools/claude)
 - [GLM-4.7 Model Announcement](https://z.ai/blog/glm-4.7)

@@ -17,31 +17,31 @@ answers_questions:
 
 Software is no longer a noun, it's a verb.
 
-This shift changes everything about how we design products. The impulse is no longer "find the right app" but "make the environment do what I need, now." Value isn't in the artifact but in task completion velocity.
+This shift changes everything about how we design products. The impulse is no longer "find the right app" but "make the environment do what I need, now." Value sits in task completion velocity, not in the artifact.
 
 The primary design question becomes: What form does this need to be in to be useful next?
 
 People explore possibilities first, and only later decide whether something "matters." Control, reversibility, and portability matter more than polish. "How was this produced?" becomes as important as "what does it do?"
 
-Think of this as a **2026 design constitution** for AI-native products where agents act as builders, judges, collaborators, or maintainers—not just assistants.
+Think of this as a 2026 design constitution for AI-native products where agents act as builders, judges, collaborators, or maintainers, not just assistants.
 
 <blockquote class="featured-quote primary">
 AI-native products should feel less like machines that answer questions and more like environments that adapt to human intent.
 </blockquote>
 
-## 1. Design for Malleability, Not Features
+## 1. Design for malleability, not features
 
-**The principle**: Assume users will want to reshape the system, not master it.
+*The principle*: Assume users will want to reshape the system, not master it.
 
-Instead of building fixed workflows, enable transformations. Let users express intent—"make this clearer," "compare these"—rather than navigate feature trees. AI agents should propose structural changes, not just content edits.
+Instead of building fixed workflows, enable transformations. Let users express intent ("make this clearer," "compare these") rather than navigate feature trees. AI agents should propose structural changes, not just content edits.
 
 *Anti-pattern*: "Here's the correct way to do this" with rigid pipelines that punish deviation.
 
 *Key question*: How easily can a user bend this system to fit a momentary need?
 
-## 2. Collapse the Boundary Between Using and Making
+## 2. Collapse the boundary between using and making
 
-**The principle**: Every user interaction is potentially a design act.
+*The principle*: Every user interaction is potentially a design act.
 
 Treat outputs as editable prototypes, not final answers. Let users save, tweak, fork, and discard AI outputs with near-zero friction. Coding agents should generate living artifacts, not one-off results.
 
@@ -49,19 +49,19 @@ Treat outputs as editable prototypes, not final answers. Let users save, tweak, 
 
 *Key question*: Can this output become the next input without ceremony?
 
-## 3. Default to Ephemeral, Upgrade to Persistent
+## 3. Default to ephemeral, upgrade to persistent
 
-**The principle**: Assume users don't want commitment until value is proven.
+*The principle*: Assume users don't want commitment until value is proven.
 
-Start interactions as temporary, reversible, low-stakes. Allow persistence—saving, naming, sharing—only when the user signals value. AI agents should ask: "Do you want to keep this?"
+Start interactions as temporary, reversible, low-stakes. Allow persistence (saving, naming, sharing) only when the user signals value. AI agents should ask: "Do you want to keep this?"
 
 *Anti-pattern*: Forced accounts or premature saving, naming, organizing.
 
 *Key question*: How long can a user explore before we ask them to commit?
 
-## 4. Make Provenance a First-Class Interface Element
+## 4. Make provenance a first-class interface element
 
-**The principle**: In a generative world, trust comes from inspectability.
+*The principle*: In a generative world, trust comes from inspectability.
 
 Show how outputs were produced: inputs used, models/agents involved, constraints applied. Let users drill down without forcing them to.
 
@@ -69,9 +69,9 @@ Show how outputs were produced: inputs used, models/agents involved, constraints
 
 *Key question*: If this output is challenged, can the system explain itself?
 
-## 5. Treat AI as a Collaborator, Not an Oracle
+## 5. Treat AI as a collaborator, not an oracle
 
-**The principle**: AI should expand maneuverability, not dictate outcomes.
+*The principle*: AI should expand maneuverability, not dictate outcomes.
 
 Agents should suggest options, tradeoffs, and alternatives. Encourage dialogue with artifacts, not just conversation. Coding agents should expose assumptions and uncertainty.
 
@@ -79,9 +79,9 @@ Agents should suggest options, tradeoffs, and alternatives. Encourage dialogue w
 
 *Key question*: Does the AI invite correction, or does it demand acceptance?
 
-## 6. Optimize for Hand-Offs, Not End States
+## 6. Optimize for hand-offs, not end states
 
-**The principle**: Most work exists in chains of humans and systems.
+*The principle*: Most work exists in chains of humans and systems.
 
 Design outputs to be easily copied, transformed, re-encoded for the next actor. AI agents should ask: "Who is this for next?"
 
@@ -89,9 +89,9 @@ Design outputs to be easily copied, transformed, re-encoded for the next actor. 
 
 *Key question*: How easily can this result move to its next context?
 
-## 7. Local Agency Beats Central Intelligence
+## 7. Local agency beats central intelligence
 
-**The principle**: Users value control, reversibility, and locality over global optimization.
+*The principle*: Users value control, reversibility, and locality over global optimization.
 
 Where possible, run intelligence close to the user (device, session, workspace). Let users decide what leaves their context. Agents should request permission before expanding scope.
 
@@ -99,9 +99,9 @@ Where possible, run intelligence close to the user (device, session, workspace).
 
 *Key question*: Does the user feel the system is working for them or on them?
 
-## 8. Design for Low-Stakes Experimentation
+## 8. Design for low-stakes experimentation
 
-**The principle**: Exploration is the dominant mode of interaction.
+*The principle*: Exploration is the dominant mode of interaction.
 
 Encourage "try and see" behaviors. Make undo, reset, and remix trivial. Agents should suggest experiments, not optimizations.
 
@@ -109,9 +109,9 @@ Encourage "try and see" behaviors. Make undo, reset, and remix trivial. Agents s
 
 *Key question*: How safe does it feel to be wrong here?
 
-## 9. Shift Literacy from "How" to "What and Why"
+## 9. Shift literacy from "how" to "what and why"
 
-**The principle**: The new skill is articulating intent, not executing steps.
+*The principle*: The new skill is articulating intent, not executing steps.
 
 Help users clarify goals, constraints, and success criteria. AI judges should evaluate fit to intent, not correctness alone. Provide scaffolding for intent expression.
 
@@ -119,9 +119,9 @@ Help users clarify goals, constraints, and success criteria. AI judges should ev
 
 *Key question*: Does the system help users understand what they're asking for?
 
-## 10. Encode Ethics and Judgment as Dialogue, Not Rules
+## 10. Encode ethics and judgment as dialogue, not rules
 
-**The principle**: Judgment is contextual and negotiated.
+*The principle*: Judgment is contextual and negotiated.
 
 AI judges should explain reasoning and allow appeals. Provide multiple evaluative lenses (quality, safety, clarity, bias). Make value conflicts visible.
 
@@ -129,9 +129,9 @@ AI judges should explain reasoning and allow appeals. Provide multiple evaluativ
 
 *Key question*: When the system says "no" or "this is risky", does it explain why?
 
-## 11. Design for Remixability as a Core Value
+## 11. Design for remixability as a core value
 
-**The principle**: Value compounds when outputs can be recombined.
+*The principle*: Value compounds when outputs can be recombined.
 
 Every artifact should be referenceable, forkable, adaptable. Agents should actively suggest reuse.
 
@@ -139,9 +139,9 @@ Every artifact should be referenceable, forkable, adaptable. Agents should activ
 
 *Key question*: How easily can this be reused in an unexpected way?
 
-## 12. Let Systems Grow with the User
+## 12. Let systems grow with the user
 
-**The principle**: Power should reveal itself gradually.
+*The principle*: Power should reveal itself gradually.
 
 Start simple, but allow depth to emerge. Advanced controls appear only when needed. Agents should adapt to user sophistication over time.
 
@@ -149,14 +149,12 @@ Start simple, but allow depth to emerge. Advanced controls appear only when need
 
 *Key question*: Can this system grow without ever needing a "relearn" moment?
 
-## The Unifying Design Ethos
+## The unifying design ethos
 
 <blockquote class="featured-quote secondary">
 AI-integral products succeed when users feel more capable, more in control, more articulate, and less constrained—not because the AI is powerful, but because the user's agency has expanded.
 </blockquote>
 
-These Principles aren't about adding AI features to existing products. They're about reimagining products from first Principles in a world where software is a verb, not a noun.
+These principles aren't about adding AI features to existing products; they're about reimagining products from first principles in a world where software is a verb, not a noun.
 
-The shift is fundamental: from designing perfect artifacts to **designing adaptable environments**. From rigid workflows to fluid collaborations. From command interfaces to conversational partnerships.
-
-This is how we design for AI-native products.
+The shift is fundamental: from designing perfect artifacts to designing adaptable environments, from rigid workflows to fluid collaborations, from command interfaces to conversational partnerships.

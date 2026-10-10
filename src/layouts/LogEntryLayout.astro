@@ -4,7 +4,6 @@ import BaseLayout from './BaseLayout.astro';
 import { formatTagForDisplay, sortTags } from '../utils/tagUtils';
 import { getCollection, type CollectionEntry } from 'astro:content';
 import CSSFadeIn from '../components/animations/CSSFadeIn.astro';
-import NewsletterSubscribe from '../components/NewsletterSubscribe.astro';
 import SchemaMarkup from '../components/SchemaMarkup.astro';
 import CopyMarkdownButton from '../components/CopyMarkdownButton.jsx';
 import ChatGPTButton from '../components/ChatGPTButton.jsx';
@@ -13,6 +12,7 @@ import { createBlogPostSchema, createBreadcrumbSchema } from '../utils/schemaUti
 import AIWarning from '../components/AIWarning.astro';
 import { getDiverseRelatedArticles } from '../utils/articleMatching';
 import RelatedArticles from '../components/RelatedArticles.astro';
+import InlineCTA from '../components/InlineCTA.astro';
 import GiscusComments from '../components/GiscusComments.jsx';
 import { resolveSiteOrigin, toSiteUrl } from '../utils/siteUrls';
 
@@ -123,8 +123,9 @@ const relatedArticlesEntries = getDiverseRelatedArticles(
       <slot /> {/* Content from the Markdown file will be rendered here */}
     </div>
 
-    {sortedTags.length > 0 && <nav class="article-tags-section" aria-label="Article topics">{sortedTags.map(tag => <a href={`/tags/${tag.toLowerCase()}`}>{formatTagForDisplay(tag)}</a>)}</nav>}
-    <NewsletterSubscribe />
+    <InlineCTA />
+
+    {sortedTags.length > 0 && <nav class="article-tags-section after-cta" aria-label="Article topics">{sortedTags.map(tag => <a href={`/tags/${tag.toLowerCase()}`}>{formatTagForDisplay(tag)}</a>)}</nav>}
 
     {relatedArticlesEntries.length > 0 && (
       <CSSFadeIn delay={0.1}>

@@ -35,7 +35,7 @@ The evals said it made things worse. I switched it off.
 
 Build what seems right. Test it on real tasks. Read the failures. And when the data turns on you, quarantine your cleverness until you understand it.
 
-## The Durable Research Loop
+## The durable research loop
 
 Durable Researcher takes a topic, plans sub-queries, runs them in parallel against real browser sessions on [Steel](https://steel.dev), takes structured notes, checks its own coverage, fills the gaps, and writes a report.
 
@@ -56,7 +56,7 @@ Campaign mode pushes the same idea further. Long research runs are split into bo
 
 Part one found Claude Code's harness stuck in a single-pass pattern: scope once, search once, never let a finding change the next query. Mine had the same limitation until I taught it to take the second hop, which is most of what follows.
 
-## The Numbers, With the Caveats Up Front
+## The numbers, with the caveats up front
 
 There are two useful academic benchmarks for this kind of system. [ResearchRubrics](https://labs.scale.com/papers/researchrubrics), from Scale AI, has 101 tasks with weighted criteria judged by an LLM. [DRACO](https://huggingface.co/datasets/perplexity-ai/draco), from Perplexity, has 100 tasks with a similar shape.
 
@@ -71,7 +71,7 @@ The judge belongs in the headline of the metric. LLM-as-judge numbers are useful
 
 So the honest claim is narrow: promising on ResearchRubrics, lower-middle on the Gemini-judged DRACO sample. The full 100-task DRACO run still matters most. But for speed of the loop I have opted for a random 10% subsample.
 
-## Sprint One: Make Failure Resumable
+## Sprint one: make failure resumable
 
 The first sprint built the substrate.
 
@@ -106,7 +106,7 @@ I built the eval harness too. It downloads the DRACO and ResearchRubrics benchma
 
 The harness changed how I read metrics. Once I saw how far a score could swing on the judge alone, I stopped trusting any single number.
 
-## The Diagnosis
+## The diagnosis
 
 After the first sprint, I had Codex review the eval outputs on its own. It named the problem better than I had:
 
@@ -125,7 +125,7 @@ The roadmap was:
 
 Acting on it took me weeks. Routing was an architecture change.
 
-## Sprint Two: Route Before You Research
+## Sprint two: route before you research
 
 The second sprint started from one premise: the first turn matters more than another tool.
 
@@ -139,12 +139,12 @@ Synthesis keeps the original report shape.
 
 I added primary-source paths too. Financial and extraction-heavy queries needed a way to reach source documents instead of drifting around the open web. PDF text extraction handles the investor reports that normal scrapers turn to garbage.
 
-It exposed a harder truth: having the path is not enough. The agent has to choose it at the right moment.
+That exposed a harder problem: having the path is not enough. The agent has to choose it at the right moment.
 
 <img src="/images/durable-researcher/durable-researcher-routing-split.png" alt="Without routing, every prompt produces the same five-section report. With routing, the first turn picks the output shape: one number, an evidence table, or a structured report." class="img-light" loading="lazy">
 <img src="/images/durable-researcher/durable-researcher-routing-split-dark.png" alt="Without routing, every prompt produces the same five-section report. With routing, the first turn picks the output shape: one number, an evidence table, or a structured report." class="img-dark" loading="lazy">
 
-## The Citation Verifier That Made Things Worse
+## The citation verifier that made things worse
 
 The verifier was supposed to be the easy quality win.
 
@@ -166,12 +166,12 @@ So I fixed the verifier, not the writer: semantic matching, OR scoring for group
 
 Then I turned it back on by default.
 
-The real lesson is: switching the losing build off gave me room to see why it lost.
+Switching the losing build off gave me room to see why it lost.
 
 <img src="/images/durable-researcher/durable-researcher-verifier-arc.png" alt="The verifier arc: v1 regressed citation quality by 0.22, was quarantined, three bugs were found during autopsy (verbatim matching, multi-cite AND scoring, edit narration), then v2 was re-enabled with semantic matching and OR scoring." class="img-light" loading="lazy">
 <img src="/images/durable-researcher/durable-researcher-verifier-arc-dark.png" alt="The verifier arc: v1 regressed citation quality by 0.22, was quarantined, three bugs were found during autopsy (verbatim matching, multi-cite AND scoring, edit narration), then v2 was re-enabled with semantic matching and OR scoring." class="img-dark" loading="lazy">
 
-## Sprint Three: When The Question Is The Hard Part
+## Sprint three: when the question is the hard part
 
 Routing decided what kind of answer to produce. It did not help when the question itself was hard to interpret.
 
@@ -202,15 +202,15 @@ Survey mode runs several research passes and merges them deterministically into 
 <img src="/images/durable-researcher/durable-researcher-lone-vs-redundant.png" alt="A lone reasoning chain finds the right answer then self-rejects it as too cute. Redundant workers running from different readings let independent agreement accumulate into confidence." class="img-light" loading="lazy">
 <img src="/images/durable-researcher/durable-researcher-lone-vs-redundant-dark.png" alt="A lone reasoning chain finds the right answer then self-rejects it as too cute. Redundant workers running from different readings let independent agreement accumulate into confidence." class="img-dark" loading="lazy">
 
-## Make Agent Work Visible
+## Make agent work visible
 
 At first the CLI was a wall of logs. Long stretches of nothing, and no way to tell whether the agent was thinking, browsing, stuck, or dead.
 
 So I built a terminal UI: findings, activity stream, agent status, a token meter, streamed assistant text between tool calls, per-tool progress, a verification indicator. Once the browser work ran through Steel, the UI had to show those sessions too: searches launched, pages opened, scrapes done, failures returned.
 
-The real win is steering. You can type a redirect mid-run, and it lands as a tagged user message before the next model turn. The system prompt teaches the model how to treat it.
+Steering matters most. You can type a redirect mid-run, and it lands as a tagged user message before the next model turn. The system prompt teaches the model how to treat it.
 
-## The Dogfood Loop
+## The dogfood loop
 
 The most productive workflow was not complicated:
 
@@ -228,7 +228,7 @@ The most productive workflow was not complicated:
 
 That became the discipline: plan, diff, review, fix the review. The agent helps at every step.
 
-## What Stuck
+## What stuck
 
 **Routing beats tooling.** The biggest quality lift I saw came from deciding what kind of task the user asked for before running the loop. Some prompts want a number, some a table, some a report.
 
@@ -238,7 +238,7 @@ That became the discipline: plan, diff, review, fix the review. The agent helps 
 
 **Browser infrastructure is product infrastructure.** For a research agent, the browser is not plumbing. It decides what the model can know, and the evals only matter if they test the system against that reality.
 
-## The Same Discipline Applies
+## The same discipline applies
 
 Building one agent with help from another collapsed the line between product and tool.
 

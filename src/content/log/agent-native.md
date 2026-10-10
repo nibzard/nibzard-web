@@ -19,7 +19,7 @@ I've been thinking about what happens when extensibility stops being about loadi
 
 We've spent decades building plugin systems. Registries, package managers, dependency resolvers, runtime loaders. All solving the same problem: *how do I add new capabilities to an existing application without rewriting it?*
 
-Agents change the question. It's no longer "how do I load this package?" but "how do I teach an agent to adapt this capability into my project?"
+Agents change the question from "how do I load this package?" to "how do I teach an agent to adapt this capability into my project?"
 
 ## Plugins say install. Connectors say adapt.
 
@@ -57,7 +57,7 @@ A plugin wraps one specific provider. A connector recipe describes the *pattern*
 
 ## The agent becomes the installer
 
-A connector isn't just consumed by runtime code. It's consumed by a *coding agent*. Markdown becomes installation intent: what to create, where, when to ask, what not to change, how to handle auth, how to verify.
+Besides runtime code, a connector has another consumer: a *coding agent*. Markdown becomes installation intent: what to create, where, when to ask, what not to change, how to handle auth, how to verify.
 
 The registry doesn't need an npm package per provider. It can host agent instructions. A markdown file. A contract description. A set of steps.
 
@@ -118,6 +118,6 @@ Without those constraints, you've just invented a very expensive way to write ba
 
 ## What this adds up to
 
-I keep coming back to this: the extension is no longer just code. It's the whole process. Understanding project structure, making local changes, installing dependencies, respecting auth models, choosing import paths, running verification, explaining next steps.
+I keep coming back to this: the extension is the whole process. Understanding project structure, making local changes, installing dependencies, respecting auth models, choosing import paths, running verification, explaining next steps.
 
 A future connector registry isn't a package registry. It's a library of capability installation recipes. Plugins extend apps by adding code. Agent connectors extend apps by teaching agents how to adapt capabilities into the app's contracts. I think that distinction is worth getting right early.

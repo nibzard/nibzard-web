@@ -14,13 +14,13 @@ answers_questions:
   - How do you prepare an organization for AI tools?
 ---
 
-I've been helping teams in Croatia—mostly outsourcing shops, 50-100 engineers—figure out AI adoption. These are smart people. Good engineers. Companies you've heard of as clients.
+I've been helping teams in Croatia, mostly outsourcing shops of 50-100 engineers, figure out AI adoption. These are smart people. Good engineers. Companies you've heard of as clients.
 
-And here's what I've learned: **AI doesn't fix culture. It amplifies it.**
+And here's what I've learned: AI doesn't fix culture. It amplifies it.
 
-If your team already has problems—unclear ownership, poor review discipline, cowboy engineering—AI will make them worse. Not because AI is dangerous, but because AI accelerates everything. Including the bad stuff.
+If your team already has problems like unclear ownership, poor review discipline, or cowboy engineering, AI will make them worse. Not because AI is dangerous, but because it accelerates everything, including the bad stuff.
 
-## The Speed Gap
+## The speed gap
 
 The contrast is painful:
 
@@ -30,9 +30,9 @@ The contrast is painful:
 
 This gap is widening. The tools get faster; the orgs stay the same.
 
-The result: **frustration.** Engineers who want to use AI productively but can't get organizational support. Managers who see AI demos but can't figure out how to adopt them safely. Companies that fall further behind every month.
+The result: frustration. Engineers who want to use AI productively but can't get organizational support. Managers who see AI demos but can't figure out how to adopt them safely. Companies that fall further behind every month.
 
-## What's Missing
+## What's missing
 
 The teams that struggle aren't missing AI tools. They're missing the practices that make AI tools useful:
 
@@ -46,9 +46,9 @@ The teams that struggle aren't missing AI tools. They're missing the practices t
 
 **Rollback capability.** When something goes wrong—and it will—can you undo it?
 
-These aren't AI problems. These are engineering problems. AI just makes them visible.
+These are engineering problems, not AI problems. AI just makes them visible.
 
-## Cowboy Engineering, Amplified
+## Cowboy engineering, amplified
 
 Here's the pattern I see:
 
@@ -60,13 +60,13 @@ Then the cracks appear:
 - Technical debt that compounds because agents don't refactor
 - Knowledge silos because the agent "knows" things no human documented
 
-This isn't the AI's fault. This is cowboy engineering at scale. The team was already shipping without process. AI just let them ship *more* without process.
+None of this is the AI's fault. It's cowboy engineering at scale. The team was already shipping without process. AI just let them ship *more* without process.
 
-## The Cultural Forcing Function
+## The cultural forcing function
 
 But there's a positive version too:
 
-Teams with strong practices—clear ownership, good reviews, solid observability—adopt AI and get *better* at those practices. AI becomes a forcing function:
+Teams with strong practices (clear ownership, good reviews, solid observability) adopt AI and get *better* at those practices. AI becomes a forcing function:
 
 - Agents require clear specifications → team gets better at writing specs
 - Agents generate code that needs review → team gets better at reviewing
@@ -75,7 +75,7 @@ Teams with strong practices—clear ownership, good reviews, solid observability
 
 The tool isn't the solution. The tool exposes whether you have a solution.
 
-## What to Do
+## What to do
 
 If you're in a 50-100 person team trying to adopt AI:
 
@@ -89,7 +89,7 @@ If you're in a 50-100 person team trying to adopt AI:
 
 **5. Accept that culture change is slow.** The tools will keep improving. The org will move at org speed. That's okay, as long as you're moving.
 
-## The Hard Truth
+## The hard truth
 
 I can recommend tools, workflows, subscriptions, prompts. But I can't recommend culture.
 

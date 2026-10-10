@@ -20,27 +20,27 @@ That's the lesson I've learned working with AI agents. A single agent thinking h
 
 So I built infrastructure for it: **a Proxmox agent farm that spins up ephemeral VMs on demand.**
 
-## The Setup
+## The setup
 
-Two Proxmox machines in my homelab. An orchestrator that manages them. The ability to spin up isolated VMs in seconds.
+Two Proxmox machines in my homelab, an orchestrator that manages them, and the ability to spin up isolated VMs in seconds.
 
 At any point in time, I might have:
 - Multiple agents working on the same problem, trying different approaches
 - Agents working on different projects entirely
 - Long-running background tasks while I work on something else
-- Experiments that might fail catastrophically—without affecting anything else
+- Experiments that might fail catastrophically without affecting anything else
 
-## Why VMs Instead of Containers?
+## Why VMs instead of containers?
 
 Containers are lighter. But VMs provide **stronger isolation.**
 
-When an agent goes wrong—installs weird packages, modifies system files, fills disk space—I want that contained to the VM. Kill it, spawn a new one. Clean slate.
+When an agent goes wrong (installs weird packages, modifies system files, fills disk space), I want that contained to the VM. Kill it, spawn a new one. Clean slate.
 
 Containers share a kernel. A sufficiently determined agent can escape container isolation. VMs have hypervisor-level boundaries.
 
 For agent workloads, the overhead of VMs is worth it for the isolation guarantee.
 
-## The Orchestrator Design
+## The orchestrator design
 
 The orchestrator is relatively simple:
 
@@ -65,7 +65,7 @@ The orchestrator is relatively simple:
 - Merges partial successes
 - Reports overall status
 
-## Cost and Latency
+## Cost and latency
 
 This isn't free. Each VM has overhead:
 - Memory allocation
@@ -77,7 +77,7 @@ But it's cheaper than you'd think. Most agent tasks are I/O bound (waiting for A
 
 Latency is acceptable. Cloning a VM takes seconds. Boot time is minimal with pre-warmed templates. The agent starts working almost immediately.
 
-## Failure Containment
+## Failure containment
 
 The key advantage: **failures don't cascade.**
 
@@ -85,9 +85,9 @@ If an agent goes into an infinite loop, it hits the time limit and dies. The VM 
 
 If an agent installs conflicting packages or corrupts its environment, that's contained. The next task gets a fresh VM.
 
-If an agent tries something genuinely dangerous—recursive file deletion, system modification, network attacks—the VM is the blast radius.
+If an agent tries something genuinely dangerous (recursive file deletion, system modification, network attacks), the VM is the blast radius.
 
-## What I Run
+## What I run
 
 Typical workloads:
 
@@ -99,15 +99,15 @@ Typical workloads:
 
 **Multi-project work.** Agent working on nibzard-web while another works on agentlab. Isolated, parallel progress.
 
-## The Code
+## The code
 
-The orchestrator is [agentlab](https://github.com/nibzard/agentlab)—a work in progress, but functional. It's designed to be:
+The orchestrator is [agentlab](https://github.com/nibzard/agentlab), a work in progress but functional. It's designed to be:
 
 - **Simple.** No Kubernetes, no complex orchestration. Just a queue and some VMs.
 - **Flexible.** Works with different agent frameworks and models.
 - **Observable.** Every run is logged, traced, and auditable.
 
-## The Future
+## The future
 
 I'm working toward **fully autonomous parallelism:**
 
@@ -119,6 +119,6 @@ I'm working toward **fully autonomous parallelism:**
 
 Not there yet. But the infrastructure is in place.
 
-The models are good enough. The parallelism is available. The question now is: **what do you do with tens of agents at once?**
+The models are good enough. The parallelism is available. **What do you do with tens of agents at once?**
 
 I'm still figuring that out. But having the farm ready means I can find out.

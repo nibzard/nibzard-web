@@ -16,13 +16,11 @@ answers_questions:
 
 I implemented the Frontier Reduction Engine from Duan et al.'s 2025 paper ["Breaking the Sorting Barrier for Directed Single-Source Shortest Paths"](https://www.alphaxiv.org/abs/2504.17033) in production Zig. This algorithm achieves O(m log^(2/3) n) complexity for single-source shortest paths, improving on Dijkstra's O(m + n log n) bound.
 
-Here's what I learned building it for real workloads.
+## Implementation context
 
-## Implementation Context
+The algorithm targets large sparse graphs where n is massive but average degree remains low: road networks, social networks, web graphs. Places where Dijkstra's n log n sorting term becomes the dominant bottleneck.
 
-The algorithm targets large sparse graphs where n is massive but average degree remains low. Road networks, social networks, web graphs. Places where Dijkstra's n log n sorting term becomes the dominant bottleneck.
-
-Zig proved well-suited for this work. Manual memory management without GC overhead. Compile-time safety checks. Direct control over data layout and allocation patterns.
+Zig proved well-suited for this work: manual memory management without GC overhead, compile-time safety checks, and direct control over data layout and allocation patterns.
 
 ```zig
 /// FRE parameters calculated from graph size
@@ -39,9 +37,9 @@ fn updateFREParameters(self: *TrueFrontierReductionEngine) void {
 }
 ```
 
-No runtime overhead. No memory allocations. Pure mathematical computation translated directly to machine code.
+No runtime overhead, no memory allocations, just mathematical computation translated directly to machine code.
 
-## Key Implementation Decisions
+## Key implementation decisions
 
 The paper's "data structure D" requires Insert, BatchPrepend, and Pull operations without full sorting. I implemented this as bucketed partial priority queues:
 
@@ -61,9 +59,9 @@ const FrontierDataStructure = struct {
 
 Each bucket maintains unsorted vertices until pull() requires the minimum. Then I sort only that bucket. This amortizes sorting cost across operations.
 
-## Performance Characteristics
+## Performance characteristics
 
-Benchmark results on 5K-node graphs show mixed results:
+Benchmarks on 5K-node graphs show mixed results:
 - FRE P50: 1.087ms on specific sparse cases
 - Optimized Dijkstra P50: ~138ms on same cases
 - Throughput: 1,045 QPS
@@ -89,7 +87,7 @@ pub fn shouldUseFRE(self: *TrueFrontierReductionEngine) bool {
 
 This handles the common case where developers don't want to think about algorithm selection.
 
-## Practical Applications
+## Practical applications
 
 The algorithm works well for:
 - Large road networks (millions of intersections, sparse connections)
@@ -103,7 +101,7 @@ It's less useful for:
 - Small graphs (< 1000 nodes)
 - Any graph where m approaches n²
 
-## Memory Management Lessons
+## Memory management lessons
 
 The naive implementation allocates constantly during frontier operations. I reduced allocations 50-70% using:
 
@@ -119,7 +117,7 @@ defer allocator.free(vertices);
 
 Cache locality matters more than theoretical complexity for small graphs. I pack vertex data into contiguous arrays and process in batches.
 
-## The Recursive Structure
+## The recursive structure
 
 The algorithm's recursive structure is straightforward but requires careful pivot selection:
 
@@ -156,7 +154,7 @@ fn boundedMultiSourceShortestPath(
 
 Pivot selection is the critical heuristic. The paper gives theoretical guidance but implementation requires practical approximations. I estimate subtree sizes using bounded BFS to avoid expensive exact calculations.
 
-## Implementation Gotchas
+## Implementation gotchas
 
 Several issues weren't obvious from the paper:
 
@@ -168,7 +166,7 @@ Several issues weren't obvious from the paper:
 
 **Parameter calculation**: The paper's k and t parameters assume ideal conditions. Real graphs need practical bounds and overflow protection.
 
-## When Not to Use FRE
+## When not to use FRE
 
 FRE isn't always better. Avoid it for:
 - Graphs under ~1000 nodes (overhead dominates)  
@@ -182,10 +180,10 @@ The automatic selection heuristic helps but isn't perfect. Profile your specific
 
 FRE represents meaningful progress on a fundamental problem. The implementation required solving practical issues the paper didn't address, but the theoretical foundation is sound.
 
-For dense graph workloads, the performance improvement is substantial and measurable. The algorithm deserves wider adoption in graph processing systems.
+For large sparse graph workloads, the performance improvement is substantial and measurable. The algorithm deserves wider adoption in graph processing systems.
 
 <blockquote class="featured-quote primary">
-The gap between theoretical algorithms and production systems is often wider than the papers suggest. FRE bridges that gap for dense graph shortest-path problems.
+The gap between theoretical algorithms and production systems is often wider than the papers suggest. FRE bridges that gap for sparse graph shortest-path problems.
 </blockquote>
 
 *Implementation available at https://github.com/nibzard/agrama-v2 with comprehensive benchmarks.*

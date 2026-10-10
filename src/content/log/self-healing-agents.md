@@ -18,43 +18,43 @@ The problem with "stateless agents" is right there in the name: **they have no m
 
 Every run starts from zero. Every failure is a new failure. The agent makes the same mistakes, hits the same walls, retries the same failed approaches.
 
-But what if the agent could remember? What if it could look at past runs, find similar situations, and adapt?
+But what if the agent could remember: look at past runs, find similar situations, and adapt?
 
-That's what I built. Here's how it works.
+That's what I built.
 
-## Traces as the Durable Substrate
+## Traces as the durable substrate
 
 An agent trace is more than a log. It's:
 
-- **The full context** of what the agent was trying to do
-- **The actions taken** in sequence
-- **The results** of each action (success or failure)
-- **The decision points** where the agent chose one path over another
-- **The outcome** of the entire run
+- The full context of what the agent was trying to do
+- The actions taken in sequence
+- The results of each action (success or failure)
+- The decision points where the agent chose one path over another
+- The outcome of the entire run
 
 This is valuable data. Most agent systems throw it away after the run completes.
 
 I've been capturing traces using Raindrop's tracing system. They have a semantic query API that lets you search traces by meaning, not just keywords. "Show me runs where the agent failed to find a booking button" returns relevant traces regardless of the exact words used.
 
-## The Replay Pattern
+## The replay pattern
 
-Here's the self-healing pattern:
+The self-healing pattern:
 
-**1. Agent starts a task.** It has a goal and an initial plan.
+1. Agent starts a task. It has a goal and an initial plan.
 
-**2. Agent hits a failure.** Something doesn't work. The plan is blocked.
+2. Agent hits a failure. Something doesn't work. The plan is blocked.
 
-**3. Agent queries past traces.** "Has anything like this happened before?"
+3. Agent queries past traces. "Has anything like this happened before?"
 
-**4. Agent finds similar situations.** The semantic search returns runs with analogous failures.
+4. Agent finds similar situations. The semantic search returns runs with analogous failures.
 
-**5. Agent extracts solutions.** What worked in those past runs? What didn't?
+5. Agent extracts solutions. What worked in those past runs? What didn't?
 
-**6. Agent adapts and retries.** Apply the learned approach to the current situation.
+6. Agent adapts and retries. Apply the learned approach to the current situation.
 
 This isn't fine-tuning or model training. It's **runtime adaptation** based on historical data.
 
-## Heuristic Selection
+## Heuristic selection
 
 The tricky part is knowing which past runs are actually relevant.
 
@@ -68,7 +68,7 @@ The heuristic:
 
 The agent does this reasoning automatically. It's not just retrieving traces; it's evaluating which traces are worth learning from.
 
-## Self-Heal Tactics
+## Self-heal tactics
 
 When the agent finds relevant traces, it has several tactics:
 
@@ -80,9 +80,9 @@ When the agent finds relevant traces, it has several tactics:
 
 **Escalation.** Some problems need human input. Recognize when you're stuck and ask for help.
 
-## The Project
+## The project
 
-I built this as a small browsing agent. Maybe 100 lines of actual logic. The magic isn't in the code complexity—it's in the trace reuse.
+I built this as a small browsing agent. Maybe 100 lines of actual logic. The magic is in the trace reuse, not the code complexity.
 
 The agent:
 1. Starts with a basic prompt
@@ -93,15 +93,15 @@ The agent:
 
 Over time, the trace library grows. The agent gets smarter not because the model improves, but because it has more history to learn from.
 
-## Why This Matters
+## Why this matters
 
 Most agent systems are stateless by design. Clean slate, reproducible results.
 
-But **reproducible doesn't mean optimal.** A stateless agent will make the same mistakes forever. A stateful agent—one that learns from traces—gets better over time.
+But **reproducible doesn't mean optimal.** A stateless agent will make the same mistakes forever. A stateful agent (one that learns from traces) gets better over time.
 
-This is also the foundation for observability. Tools like Raindrop aren't just for debugging; they're for **building memory.** The traces you capture today become the training data for tomorrow's self-healing.
+This is also the foundation for observability. Tools like Raindrop do debugging duty, but their real value is **building memory.** The traces you capture today become the training data for tomorrow's self-healing.
 
-## The Future
+## The future
 
 Imagine this pattern scaled up:
 

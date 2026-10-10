@@ -24,16 +24,16 @@ This guide covers installing Basecamp's Once Campfire on Oracle Cloud Infrastruc
 
 **Note**: The Always Free VM.Standard.E2.1.Micro (1/8 OCPU, 1GB memory, 480 Mbps networking) works but is underpowered. Asset compilation will be slow and memory-intensive operations may require patience.
 
-## Key Lessons Learned
-1. **Memory Constraints**: Docker builds fail on low-memory VMs - use direct installation instead
+## Key lessons learned
+1. **Memory Constraints**: Docker builds fail on low-memory VMs, so use direct installation instead
 2. **Database Choice**: Campfire uses SQLite3 by default, not PostgreSQL
 3. **Firewall Layers**: Oracle Cloud has both Security Lists AND instance-level iptables
 4. **Asset Compilation**: Rails assets must be precompiled in production
 5. **SSL Configuration**: Disable SSL forcing for initial HTTP setup
 
-## Step-by-Step Installation
+## Step-by-step installation
 
-### 1. Initial System Setup
+### 1. Initial system setup
 
 ```bash
 # Update system
@@ -43,7 +43,7 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install -y git curl wget build-essential
 ```
 
-### 2. Clone Campfire Repository
+### 2. Clone Campfire repository
 
 ```bash
 cd /opt
@@ -52,7 +52,7 @@ sudo chown -R $USER:$USER once-campfire
 cd once-campfire
 ```
 
-### 3. Install Ruby and Dependencies
+### 3. Install Ruby and dependencies
 
 ```bash
 # Install Ruby, Node.js, and system libraries
@@ -69,7 +69,7 @@ bundle config set --local without 'development test'
 bundle install
 ```
 
-### 4. Install and Configure Services
+### 4. Install and configure services
 
 ```bash
 # Install and start Redis
@@ -81,7 +81,7 @@ sudo systemctl enable redis-server
 sudo apt install -y nginx
 ```
 
-### 5. Create Environment Configuration
+### 5. Create environment configuration
 
 ```bash
 # Create .env file
@@ -104,7 +104,7 @@ Generate secret key:
 openssl rand -hex 64
 ```
 
-### 6. Database Setup
+### 6. Database setup
 
 ```bash
 # Set environment variables
@@ -120,7 +120,7 @@ bundle exec rails db:create
 bundle exec rails db:migrate
 ```
 
-### 7. Compile Assets
+### 7. Compile assets
 
 ```bash
 # Precompile assets (this may take several minutes)
@@ -130,7 +130,7 @@ bundle exec rails assets:precompile
 ls -la public/assets/ | head -10
 ```
 
-### 8. Create Startup Script
+### 8. Create startup script
 
 ```bash
 nano /opt/once-campfire/start_campfire.sh
@@ -157,7 +157,7 @@ exec bundle exec rails server -b 0.0.0.0 -p 3000
 chmod +x /opt/once-campfire/start_campfire.sh
 ```
 
-### 9. Create Systemd Service
+### 9. Create systemd service
 
 ```bash
 sudo nano /etc/systemd/system/campfire.service
@@ -221,9 +221,9 @@ sudo nginx -t
 sudo systemctl restart nginx
 ```
 
-### 11. Configure Oracle Cloud Firewall
+### 11. Configure Oracle Cloud firewall
 
-#### Security List Configuration
+#### Security list configuration
 1. Go to Oracle Cloud Console
 2. Navigate to **Networking** > **Virtual Cloud Networks**
 3. Click your VCN, then your subnet
@@ -232,7 +232,7 @@ sudo systemctl restart nginx
    - **HTTP**: Source CIDR `0.0.0.0/0`, Protocol `TCP`, Port `80`
    - **HTTPS**: Source CIDR `0.0.0.0/0`, Protocol `TCP`, Port `443`
 
-#### Instance-Level Firewall (Critical!)
+#### Instance-level firewall (critical!)
 ```bash
 # Check current iptables rules
 sudo iptables -L -n
@@ -256,7 +256,7 @@ sudo netfilter-persistent save
    - **Proxy status**: DNS only (gray cloud) initially
 4. Set **SSL/TLS mode** to "Off" for initial testing
 
-### 13. Test Installation
+### 13. Test installation
 
 ```bash
 # Test local access
@@ -266,7 +266,7 @@ curl http://localhost/first_run
 curl http://your-domain.com/first_run
 ```
 
-### 14. Complete Setup
+### 14. Complete setup
 
 1. Open browser and navigate to `http://your-domain.com/first_run`
 2. Fill out the setup form:
@@ -278,7 +278,7 @@ curl http://your-domain.com/first_run
 
 ## Troubleshooting
 
-### Common Issues
+### Common issues
 
 **Assets not loading (404 errors):**
 ```bash
@@ -314,7 +314,7 @@ ls -la storage/db/
 bundle exec rails db:drop db:create db:migrate
 ```
 
-### Verification Commands
+### Verification commands
 
 ```bash
 # Check all services
@@ -330,7 +330,7 @@ sudo iptables -L INPUT -n --line-numbers
 sudo journalctl -u campfire -f
 ```
 
-## Security Considerations
+## Security considerations
 
 1. **Change default credentials** immediately after setup
 2. **Enable SSL** for production use
@@ -338,7 +338,7 @@ sudo journalctl -u campfire -f
 4. **Backup database**: Regular backups of `storage/db/production.sqlite3`
 5. **Monitor logs**: Set up log monitoring for security events
 
-## Optional: SSL Setup
+## Optional: SSL setup
 
 After confirming HTTP works:
 
@@ -348,7 +348,7 @@ After confirming HTTP works:
 4. Enable Cloudflare proxy: Change to orange cloud
 5. Set Cloudflare SSL to "Full (strict)"
 
-## Performance Optimization
+## Performance optimization
 
 For production use:
 - Increase VM resources (2GB+ RAM recommended)
@@ -357,7 +357,7 @@ For production use:
 - Enable Gzip compression in Nginx
 - Set up monitoring and alerting
 
-## Key Files and Locations
+## Key files and locations
 
 - **Application**: `/opt/once-campfire/`
 - **Database**: `/opt/once-campfire/storage/db/production.sqlite3`
@@ -366,4 +366,4 @@ For production use:
 - **Nginx**: `/etc/nginx/sites-available/campfire`
 - **Environment**: `/opt/once-campfire/.env`
 
-This guide provides a complete, tested installation process that addresses the common pitfalls encountered during Campfire deployment on Oracle Cloud Infrastructure.
+This process was tested end to end and covers the common pitfalls of Campfire deployment on Oracle Cloud Infrastructure.

@@ -18,7 +18,7 @@ answers_questions:
     AI-native tools win. But everything new is out of weights.
 </blockquote>
 
-A few things I learned last week—or reaffirmed, sometimes the hard way.
+A few things I learned or reaffirmed last week, sometimes the hard way.
 
 I force myself to use a different tool for every project. New stack, new constraints, new problems. It's uncomfortable, but it's how I find the edges.
 
@@ -26,21 +26,21 @@ Lately that's meant Convex for auth, exa.ai for search, ESP32-P4 for hardware. E
 
 The AI agent flailed. It made assumptions. It hallucinated APIs. We burned time debugging things that would have been obvious if the model had ever seen the documentation before.
 
-But some projects worked anyway. And the difference wasn't the tool—it was the workflow.
+But some projects worked anyway. And the difference wasn't the tool. It was the workflow.
 
-## The Chasm
+## The chasm
 
-Convex's CLI uses interactive prompts that don't respond to automated input. The agent can't scaffold the project—it hits a wall immediately.
+Convex's CLI uses interactive prompts that don't respond to automated input. The agent can't scaffold the project. It hits a wall immediately.
 
 ![Convex CLI blocking the AI agent](/images/20260203-convex.png)
 
-That's just the first sign. But here's the thing: Convex has been around for years. It should be in the weights. So maybe that's not the problem.
+That's just the first sign. But Convex has been around for years. It should be in the weights. So maybe that's not the problem.
 
 Fast-moving startups change their products, interfaces, and surfaces constantly. Even if something is in the training data, it might be outdated by the time you use it. And maybe we didn't feed the agent enough context to begin with.
 
-The biggest issue was simply that the CLI expected human input. What we needed was a flow built for agents—a better agent experience.
+The biggest issue was simply that the CLI expected human input. What we needed was a flow built for agents, a better agent experience.
 
-To their credit, Convex gets this. They've since built dedicated AI tooling—downloadable `.cursorrules`, an `LLM Leaderboard`, and AI-specific components for agents. They're not just claiming AI-friendliness; they're **evaluating and publishing results**. That's how you bridge the gap.
+To their credit, Convex gets this. They've since built dedicated AI tooling: downloadable `.cursorrules`, an `LLM Leaderboard`, and AI-specific components for agents. They're not just claiming AI-friendliness; they're evaluating and publishing results. That's how you bridge the gap.
 
 Once the project is bootstrapped and everything works, it becomes easier. But getting there? Painful.
 
@@ -48,21 +48,21 @@ Once the project is bootstrapped and everything works, it becomes easier. But ge
     The bridge across the chasm is simple: strong feedback loops.
 </blockquote>
 
-## Feedback Loops Beat Weights
+## Feedback loops beat weights
 
 I built Scribe, a distraction-free typewriter on an M5Stack Tab 5 device using the ESP32-P4 chip. New hardware, new tooling, definitely not in the training data.
 
 But we had something else: a build-flash-monitor loop.
 
-Every change got compiled, flashed to the device, and monitored via serial logs. The AI could see immediately whether its code worked. The logs didn't lie—either the text appeared on the screen or it didn't.
+Every change got compiled, flashed to the device, and monitored via serial logs. The AI could see immediately whether its code worked. The logs didn't lie: either the text appeared on the screen or it didn't.
 
 The ESP32-P4 is outside the weights. But the **feedback loop** made it irrelevant. The agent learned from reality, not from pre-trained knowledge.
 
 Strong feedback loops beat pre-trained knowledge every time.
 
-## GitHub Issues as Task Management
+## GitHub issues as task management
 
-Here's something that surprised me: using GitHub issues for task management actually works.
+Something that surprised me: using GitHub issues for task management actually works.
 
 I created a skill that takes an idea, analyzes the project's current state, and creates a GitHub issue with all the details. I just dump thoughts into the system and it figures out:
 
@@ -78,13 +78,13 @@ The AI doesn't need to know everything about the project. It just needs to be ab
     Good task management is better than complete documentation.
 </blockquote>
 
-This makes me think more and more about the future of GitHub in AI-driven development. Will it suffer Stack Overflow's fate—becoming a ghost town as AI agents learn to answer questions without ever visiting the site? Or will GitHub manage to redefine itself as the coordination layer for human-AI collaboration?
+This makes me think more and more about the future of GitHub in AI-driven development. Will it suffer Stack Overflow's fate, becoming a ghost town as AI agents learn to answer questions without ever visiting the site? Or will GitHub manage to redefine itself as the coordination layer for human-AI collaboration?
 
 Issues as task management feels like a hint. But is it enough?
 
-## Scraping with Agents
+## Scraping with agents
 
-I needed to research leads—people who had reached out to me. Could have built some complex scraping pipeline. Could have manually clicked through profiles.
+I needed to research leads, people who had reached out to me. Could have built some complex scraping pipeline. Could have manually clicked through profiles.
 
 ![exa.ai search interface](/images/20260203-exaai.png)
 
@@ -94,7 +94,7 @@ No complex flow. No fragile scraping infrastructure. Just an agent with a browse
 
 Agentic scraping beats complex flows because the agent can adapt when the site changes. Complex flows break when the HTML shifts. Agents just look for the new pattern.
 
-## The LESSONS_LEARNED.md Trick
+## The LESSONS_LEARNED.md trick
 
 This one's simple but powerful.
 
@@ -104,15 +104,15 @@ I add one line to my `AGENTS.md` or `CLAUDE.md`:
 Always read LESSONS_LEARNED.md before starting work.
 ```
 
-The file contains a few bullet points about what's been learned on this project—gotchas, patterns that don't work, things to avoid.
+The file contains a few bullet points about what's been learned on this project: gotchas, patterns that don't work, things to avoid.
 
-The agent checks it before every task. It catches mistakes before they happen. It's not a comprehensive documentation file—it's just enough to keep us on the right track.
+The agent checks it before every task. It catches mistakes before they happen. It's not a comprehensive documentation file. It's just enough to keep us on the right track.
 
 <blockquote class="featured-quote unattributed">
     LESSONS_LEARNED.md is gold.
 </blockquote>
 
-## The Configuration Mess
+## The configuration mess
 
 Here's what sucks right now: `.claude` vs `.codex` vs `.agents` vs everything else.
 
@@ -120,24 +120,24 @@ Skills marketplaces are confusing. Vercel has one. There's a skill for finding s
 
 I mostly use agents to create and update skills at this point. I manage different agents with different configurations. It works, but it's messy.
 
-The ecosystem is still figuring itself out. We're in the messy middle—innovation outpaces standardization.
+The ecosystem is still figuring itself out. We're in the messy middle: innovation outpaces standardization.
 
-## What Works
+## What works
 
 After a week of bumping into the edges of what AI knows, here's what I'm taking forward:
 
-**AI-native tools win** when they're designed for agents—especially non-interactive CLIs that don't block automation.
+AI-native tools win when they're designed for agents, especially non-interactive CLIs that don't block automation.
 
-**Everything new is out of weights**—accept this, build feedback loops instead of relying on pre-trained knowledge.
+Everything new is out of weights. Accept this, and build feedback loops instead of relying on pre-trained knowledge.
 
-**Strong feedback loops beat weights**—build-flash-monitor made ESP32-P4 development possible despite zero training data.
+Strong feedback loops beat weights: build-flash-monitor made ESP32-P4 development possible despite zero training data.
 
-**GitHub issues are decent task management**—when paired with skills that can read project state and create structured issues.
+GitHub issues are decent task management when paired with skills that can read project state and create structured issues.
 
-**Agents beat complex flows**—scraping, research, exploration: give an agent a goal and let it figure out the how.
+Agents beat complex flows for scraping, research, and exploration: give an agent a goal and let it figure out the how.
 
-**LESSONS_LEARNED.md is a simple force multiplier**—a few bullet points save hours of wrong turns.
+LESSONS_LEARNED.md is a simple force multiplier: a few bullet points save hours of wrong turns.
 
-**The skills ecosystem is messy**—we're in early days, use agents to create agents until the tooling catches up.
+The skills ecosystem is messy. We're in early days; use agents to create agents until the tooling catches up.
 
 The tools are getting better. The workflows are getting clearer. But the fundamental lesson remains: when you're working outside the weights, build systems that learn from reality rather than relying on what the model already knows.

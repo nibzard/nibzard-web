@@ -14,7 +14,7 @@
     "generate:og": "node scripts/generate-og-images.js",
     "generate:og:force": "node scripts/generate-og-images.js --force",
     "projects:sync": "node scripts/sync-projects.mjs",
-    "test:projects": "node --test tests/projects.test.mjs"
+    "test:projects": "node --test tests/projects.test.mjs tests/redirects.test.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.52.0",
