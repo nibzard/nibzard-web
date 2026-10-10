@@ -1,6 +1,6 @@
 # Career record sources
 
-Reviewed on 11 September 2026. The public record lives in `src/config/career.ts`. About, CV, and author metadata use that record.
+Reviewed on 10 October 2026. The public record lives in `src/config/career.ts`. About, CV, and author metadata use that record.
 
 ## Editorial decisions
 
@@ -12,10 +12,10 @@ The old CV is a source for self-reported responsibilities. It is not independent
 
 | Record | Evidence | Treatment |
 | --- | --- | --- |
-| Steel | `src/content/log/agent-web.md`, 2 February 2026; `src/content/now/260206.md`; [current conference profile](https://innovate-split.com/speakers/) | Founding Growth Lead. February is the announcement month, pending exact start-date confirmation. The joining article also documents prior advisory work. |
+| Steel | `src/content/log/agent-web.md`, 2 February 2026; `src/content/now/260206.md`; [conference profile](https://innovate-split.com/speakers/) | Founding Growth Lead. February is the announcement month, pending exact start-date confirmation. Nikola confirmed on 10 October 2026 that employment has ended as of that date. Record February–October 2026. He also confirmed an advisory role from July to December 2025. |
 | Daytona | Previous `src/pages/cv.astro`; [personal joining article](https://medium.com/@nikola.balic/innovate-obsessively-iterate-relentlessly-cdf1e2103d6e); About history at commit `5f40b0b` | Preserve the self-reported 2023–2025 role and responsibilities. Omit numerical results until reconciled. |
 | Codeanywhere | Previous CV and About at `5f40b0b` | Preserve 2022–2023. Remove conflicting email-volume figures and unsupported acquisition language. |
-| Pulent / Disequi | Previous CV | Established 2018. Do not carry an old “present” date into a new claim of active consulting. |
+| Disequi | Nikola’s confirmation, 10 October 2026; previous CV | Current owner, CEO, and sole employee. Use “Current” until the role start date is confirmed. The previous CV listed Pulent / Disequi as established in 2018; this does not establish the start of the current role. Consolidate the former advisory entry into current experience. |
 | Numarics and Labena Ventures | [Labena interview, 3 May 2023](https://labenaventures.com/blog/nikola-balic-interview/) | Advisory engagement and mentor appointment. No invented engagement dates or company-growth attribution. |
 | University department head | [ResearchGate profile](https://www.researchgate.net/profile/Nikola_Balic); institutional Academy report below | November 2018–May 2023. |
 | Technology transfer | [TTAdria university publication](https://www.oss.unist.hr/sites/default/files/dokumenti/novosti/TTadria_UTT_02.pdf); [university newspaper, May 2013](https://www.unizg.hr/fileadmin/rektorat/Novosti_press/universitas/universitas-42.pdf); [2015 report](https://radio.hrt.hr/radio-split/vijesti/7-milijuna-kuna-za-11-projekata-3696986) | Project management is documented. Do not invent an employment start or end date from project dates. |
@@ -24,7 +24,7 @@ The old CV is a source for self-reported responsibilities. It is not independent
 
 ## Teaching and education
 
-The previous About lists NoSQL, complex network analysis, introductory software engineering, and scientific programming. The previous CV dates the visiting lecturer role from 2023. The February 2026 Now entry confirms teaching that winter.
+The previous About lists NoSQL, complex network analysis, introductory software engineering, and scientific programming. The previous CV dates the visiting lecturer role from 2023. The February 2026 Now entry confirms teaching that winter. Nikola confirmed on 10 October 2026 that the visiting lecturer role remains current.
 
 The ResearchGate profile lists doctoral study at the University of Split from September 2020. It describes digital transformation research. The CV states the research and start date; it does not claim an awarded doctorate. The old CV's casual claim about a doctorate in AI memory systems conflicts with the broader record and is removed.
 
@@ -46,6 +46,7 @@ Publication links in the shared record are the public citations. Check their tit
 
 ## Details still needed from Nikola
 
+- Start date of the current owner and CEO role at Disequi.
 - Exact Steel start date, if different from the announcement month.
 - Full education history, awarding institutions, degree years, and current doctoral status.
 - Exact early employment dates and any roles before the documented technology-transfer work.
@@ -53,3 +54,11 @@ Publication links in the shared record are the public citations. Check their tit
 - Complete conference contributions, professional training, and any omitted employment.
 
 The public CV contains the documented record available during this task. It is not a claim that public sources expose the entire career. These gaps remain here, outside the public reading flow.
+
+## External profile check, 10 October 2026
+
+- GitHub’s [public profile](https://github.com/nibzard) already lists `@disequi` as the organization. The profile README still announces joining Steel and lists Founding Growth Lead at Steel as current work. Replace those two bullets with the current Disequi role and the previous Steel role.
+- LinkedIn and X profile pages could not be retrieved during this check. Their current text remains unverified.
+- Email signatures and upcoming speaker bios are not available in this repository. Use the shared speaker bio for those updates.
+
+No external profiles were changed during this site update.

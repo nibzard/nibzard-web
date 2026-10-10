@@ -25,7 +25,7 @@ What mattered was what I removed. Each improvement stripped away another assumpt
 
 The person had left the room. The furniture was still arranged for them.
 
-*(I work on agent infrastructure at [Steel](https://steel.dev), so read the rest with that in mind.)*
+*(I worked on agent infrastructure at [Steel](https://steel.dev) when I wrote this, so read the rest with that in mind.)*
 
 That work has made the pattern easier to see. Steel has served millions of browser sessions for agents. Human browsing is mostly serial; agent browsing arrives in bursts and fans out around a task. The browser is the first part of the computer where we can already see the shape changing.
 

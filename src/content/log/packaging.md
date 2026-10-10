@@ -38,9 +38,9 @@ The market proves the crowding, and it cuts both ways. [CodeRabbit](https://www.
 
 ## The Lego problem
 
-What I see at Steel: some assembly required.
+What I saw at Steel: some assembly required.
 
-Steel is browser infrastructure for AI agents — an open-source browser API, isolated cloud browser sessions, [and the Atlas research harness](https://steel.dev/blog). "Humans use Chrome, Agents use Steel." (I joined as founding growth lead earlier this year, so I am not a neutral observer here.) To build with an infrastructure product like this, you already need to know what you are building, *plus* every other piece: the agent, the model, the harness, the glue.
+Steel is browser infrastructure for AI agents — an open-source browser API, isolated cloud browser sessions, [and the Atlas research harness](https://steel.dev/blog). "Humans use Chrome, Agents use Steel." (I worked at Steel as founding growth lead when I wrote this, so I am not a neutral observer here.) To build with an infrastructure product like this, you already need to know what you are building, *plus* every other piece: the agent, the model, the harness, the glue.
 
 <blockquote class="featured-quote primary">
 If your product requires assembly instructions, the instructions are the product.

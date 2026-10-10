@@ -20,7 +20,7 @@ Here's a search query that showed up in Google Search Console recently:
 
 Thirty-one words. No human typed that into Google.
 
-I’ve been using our new Steel CLI and `steel-browser` skill to explore this kind of case in practice.
+I’ve been using the new Steel CLI and `steel-browser` skill to explore this kind of case in practice.
 
 This demo shows Claude Code running **parallel browser sessions** with ChatGPT so you can inspect how it reasons and what answers it returns en masse.
 

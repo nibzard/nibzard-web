@@ -91,4 +91,4 @@ Just know which side of the farming you're on. And keep one eye on the silo.
 
 ---
 
-*A note on stakes: I work on agent browser infrastructure at [Steel](https://steel.dev), so I watch inference economics from the demand side — we buy it, we don't sell it. The crunch claim above rests on the cited primary evidence, not on authority.*
+*A note on stakes: I worked on agent browser infrastructure at [Steel](https://steel.dev) when I wrote this. My view of inference economics came from the demand side: we bought it, we didn't sell it. The crunch claim above rests on the cited primary evidence, not on authority.*

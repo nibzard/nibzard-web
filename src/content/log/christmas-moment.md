@@ -78,4 +78,4 @@ If you're building in this space, here's the practical version of all this. Stop
 
 Computer use is fully capable of that moment. It's waiting on the package, and on the break.
 
-I'm biased, obviously — I work on browser infrastructure for agents at [Steel](https://steel.dev/), so I have a horse in this race. But the bias runs toward the thesis, not away from it: the longer the capability sits there underutilized, the more convinced I am that the bottleneck is experience, not intelligence. The model isn't waiting. We are.
+I'm biased, obviously — I worked on browser infrastructure for agents at [Steel](https://steel.dev/) when I wrote this. I had a horse in this race. But the bias runs toward the thesis, not away from it: the longer the capability sits there underutilized, the more convinced I am that the bottleneck is experience, not intelligence. The model isn't waiting. We are.

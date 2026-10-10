@@ -32,7 +32,7 @@ graph LR
     B -->|observations back| A
 ```
 
-The agent process holds the loop. The browser is a puppet. Every observation and action crosses the wire. I do growth work with [Steel](https://steel.dev/) — the cloud-browser company purpose-built for this kind of agent — so I spend a lot of time staring at this architecture, and three things about it genuinely hurt:
+The agent process holds the loop. The browser is a puppet. Every observation and action crosses the wire. When I wrote this, I did growth work with [Steel](https://steel.dev/), the cloud-browser company built for this kind of agent. I spent a lot of time staring at this architecture, and three things about it hurt:
 
 - **Chattiness.** Navigate, wait, snapshot, decide, click, wait, snapshot. The interesting work is interleaved with a constant back-and-forth that taxes you in latency and tokens.
 - **The session's life is coupled to the driver's life.** Kill the agent process and the session becomes an orphan. There's no natural "start it, leave, come back tomorrow" — the thing doing the driving is also the thing keeping the work alive.

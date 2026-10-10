@@ -4,11 +4,12 @@ export const profile = {
   handle: 'nibzard',
   location: 'Split, Croatia',
   email: 'nikola@disequi.com',
-  updated: '2026-09-11',
-  currentRole: 'Founding Growth Lead',
-  employer: { name: 'Steel', url: 'https://steel.dev/' },
-  description: 'Nikola Balić builds developer tools and writes about AI agents. Founding Growth Lead at Steel.',
-  speakerBio: 'Nikola Balić is the founding growth lead at Steel. He builds open-source tools and writes about AI agents and software development. Previously, he led growth at Daytona and worked in technology transfer at the University of Split. His background includes teaching data science and research on digital transformation.',
+  updated: '2026-10-10',
+  currentRole: 'Owner and CEO',
+  employer: { name: 'Disequi', url: 'https://disequi.com' },
+  bio: 'I run Disequi and work as a visiting lecturer at the University of Split. Previously, I led growth at Steel and Daytona.',
+  description: 'Nikola Balić runs Disequi and works as a visiting lecturer at the University of Split. Previously, he led growth at Steel and Daytona.',
+  speakerBio: 'Nikola Balić runs Disequi and works as a visiting lecturer at the University of Split. Previously, he led growth at Steel and Daytona.',
   links: [
     { label: 'GitHub', url: 'https://github.com/nibzard' },
     { label: 'LinkedIn', url: 'https://www.linkedin.com/in/nikolabalic/' },
@@ -33,10 +34,17 @@ export const experience: CareerEntry[] = [
   {
     title: profile.currentRole,
     organization: profile.employer.name,
-    period: 'February 2026–present',
+    period: 'Current',
+    details: ['Own and run Disequi as its CEO and sole employee.'],
+    link: { label: 'Disequi', url: profile.employer.url },
+  },
+  {
+    title: 'Founding Growth Lead',
+    organization: 'Steel',
+    period: 'February–October 2026',
     details: [
-      'Lead growth for browser infrastructure used by AI agents and automation developers.',
-      'Work on product positioning, developer adoption, and the ecosystem around browser automation.',
+      'Led growth for browser infrastructure used by AI agents and automation developers.',
+      'Worked on product positioning, developer adoption, and the ecosystem around browser automation.',
       'Joined full-time after an advisory engagement focused on growth and positioning.',
     ],
     link: { label: 'Joining Steel', url: '/agent-web' },
@@ -82,8 +90,9 @@ export const experience: CareerEntry[] = [
 
 export const advisory: CareerEntry[] = [
   {
-    title: 'Founder', organization: 'Pulent / Disequi', period: 'Established 2018',
-    details: ['Independent advisory practice focused on innovation strategy and bringing technical products to market.'],
+    title: 'Advisor', organization: 'Steel', period: 'July–December 2025',
+    details: ['Advised on growth and product positioning before joining full-time.'],
+    link: { label: 'Joining Steel', url: '/agent-web' },
   },
   {
     title: 'Management advisor', organization: 'Numarics', period: 'Early-stage engagement',
@@ -105,7 +114,7 @@ export const teaching: CareerEntry[] = [
   {
     title: 'Visiting Lecturer', organization: 'University of Split · Faculty of Science', period: 'Since 2023',
     details: [
-      'Teach data science courses, including NoSQL databases and complex network analysis.',
+      'Teach courses in NoSQL databases and complex network analysis.',
       'Teaching also includes introductory software engineering and scientific programming.',
     ],
   },

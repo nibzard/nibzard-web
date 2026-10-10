@@ -108,3 +108,5 @@ Add new entries at the bottom of the table.
 
 - **2026-09-11: Sync the Giscus theme with the site toggle.** `theme="preferred_color_scheme"` makes the Giscus iframe follow the OS `prefers-color-scheme`, not the `data-theme` attribute the site toggle writes, so comments stayed dark while the page was light. Giscus runs in a cross-origin iframe and cannot see `data-theme` or `localStorage`. Mirror the attribute with a `MutationObserver` in `GiscusComments.jsx`; `@giscus/react` v3 re-themes the iframe through a `setConfig` postMessage when the `theme` prop changes. `astro build` passes with the fix, and browser checks confirmed the widget follows light/dark toggles.
 
+
+- **2026-10-10: Keep historical roles separate from the current employer.** The Steel experience entry used the current profile title and employer. Give completed roles explicit values so a new employer does not rename past experience. Article footers also contained a separate bio; they now use the shared profile description.

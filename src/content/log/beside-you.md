@@ -25,7 +25,7 @@ The title isn't mine. Three days before I started drafting, [Sunil Pai](https://
 The agent belongs beside you, not between you and the app.
 </blockquote>
 
-I arrived at the feeling independently; Sunil named it better than I would have. (Disclosure: I work at [Steel](https://steel.dev), browser infrastructure for AI agents. Take the opinion as partisan.)
+I arrived at the feeling independently; Sunil named it better than I would have. (Disclosure: I worked at [Steel](https://steel.dev), browser infrastructure for AI agents, when I wrote this. Take the opinion as partisan.)
 
 ## The agent as a toll booth
 

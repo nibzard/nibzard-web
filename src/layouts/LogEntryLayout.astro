@@ -1,4 +1,5 @@
 ---
+import { profile } from '../config/career';
 import BaseLayout from './BaseLayout.astro';
 import { formatTagForDisplay, sortTags } from '../utils/tagUtils';
 import { getCollection, type CollectionEntry } from 'astro:content';
@@ -154,10 +155,7 @@ const relatedArticlesEntries = getDiverseRelatedArticles(
               </a>
             </h3>
             <p class="author-bio" itemprop="description">
-              Building go-to-market engines for AI-driven products with purpose.
-              Worked with innovative startups like <strong>Numarics</strong>, <strong>Codeanywhere</strong>,
-              <strong>Daytona</strong>, and <strong>Steel</strong> on growth strategies and market positioning.
-              Faculty at University of Split, researching AI adoption patterns and developer tools.
+              {profile.description}
             </p>
             <div class="author-social">
               <a href="https://x.com/nibzard" target="_blank" rel="noopener noreferrer" class="author-social-link" aria-label="Follow on X">
