@@ -476,7 +476,7 @@
       "description": "A curated catalogue of awesome agentic AI patterns",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-10-08T23:18:14Z",
+      "updatedAt": "2026-10-10T06:29:43Z",
       "pushedAt": "2026-09-28T13:21:09Z",
       "archived": false,
       "fork": false
@@ -756,6 +756,18 @@
       "pushedAt": "2026-04-21T21:35:19Z",
       "archived": false,
       "fork": false
+    },
+    {
+      "fullName": "nibzard/beam",
+      "name": "beam",
+      "url": "https://github.com/nibzard/beam",
+      "description": "Beam a coding-agent session up to a sandbox, and down again",
+      "topics": [],
+      "language": null,
+      "updatedAt": "2026-10-09T20:19:38Z",
+      "pushedAt": "2026-10-02T20:24:36Z",
+      "archived": false,
+      "fork": true
     },
     {
       "fullName": "nibzard/beautiful-html-templates",
@@ -1382,8 +1394,8 @@
       "description": "Chrome extension (Manifest V3) that exports the current Discord channel or DM to a Markdown file",
       "topics": [],
       "language": "JavaScript",
-      "updatedAt": "2026-07-08T10:21:04Z",
-      "pushedAt": "2026-07-08T10:21:14Z",
+      "updatedAt": "2026-10-09T22:27:29Z",
+      "pushedAt": "2026-10-09T22:27:25Z",
       "archived": false,
       "fork": false
     },
@@ -1494,6 +1506,18 @@
       "pushedAt": "2026-06-19T20:07:42Z",
       "archived": false,
       "fork": false
+    },
+    {
+      "fullName": "nibzard/durable-researcher",
+      "name": "durable-researcher",
+      "url": "https://github.com/nibzard/durable-researcher",
+      "description": "Self-hosted deep research agent with durable execution. Pi Agent SDK + Absurd + Steel.",
+      "topics": [],
+      "language": null,
+      "updatedAt": "2026-10-09T20:20:25Z",
+      "pushedAt": "2026-06-11T20:04:39Z",
+      "archived": false,
+      "fork": true
     },
     {
       "fullName": "nibzard/emditor",
@@ -1802,8 +1826,8 @@
       "description": "",
       "topics": [],
       "language": "Python",
-      "updatedAt": "2026-10-09T05:41:50Z",
-      "pushedAt": "2026-10-09T05:41:46Z",
+      "updatedAt": "2026-10-10T05:25:17Z",
+      "pushedAt": "2026-10-10T05:25:14Z",
       "archived": false,
       "fork": false
     },
@@ -1861,9 +1885,9 @@
       "url": "https://github.com/nibzard/internal-agents-map",
       "description": "A map and learning exchange for companies building proprietary internal AI agents — catalog, patterns, and adoption lessons.",
       "topics": [],
-      "language": null,
-      "updatedAt": "2026-10-09T12:46:42Z",
-      "pushedAt": "2026-10-09T12:46:50Z",
+      "language": "TypeScript",
+      "updatedAt": "2026-10-10T07:21:42Z",
+      "pushedAt": "2026-10-10T07:21:34Z",
       "archived": false,
       "fork": true
     },
@@ -2354,6 +2378,18 @@
       "fork": false
     },
     {
+      "fullName": "nibzard/mneme",
+      "name": "mneme",
+      "url": "https://github.com/nibzard/mneme",
+      "description": "Mneme for Discord: a quiet organizational-memory agent for one Discord server",
+      "topics": [],
+      "language": null,
+      "updatedAt": "2026-10-09T20:19:00Z",
+      "pushedAt": "2026-10-09T15:51:02Z",
+      "archived": false,
+      "fork": true
+    },
+    {
       "fullName": "nibzard/music-organizer",
       "name": "music-organizer",
       "url": "https://github.com/nibzard/music-organizer",
@@ -2492,8 +2528,8 @@
       "description": "Personal blog discussing AI, growth and startups",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-10-08T13:44:42Z",
-      "pushedAt": "2026-10-08T13:44:37Z",
+      "updatedAt": "2026-10-09T13:29:57Z",
+      "pushedAt": "2026-10-09T13:29:53Z",
       "archived": false,
       "fork": false
     },
@@ -2591,8 +2627,8 @@
         "typescript"
       ],
       "language": "TypeScript",
-      "updatedAt": "2026-09-23T09:06:31Z",
-      "pushedAt": "2026-09-23T09:06:27Z",
+      "updatedAt": "2026-10-09T23:21:05Z",
+      "pushedAt": "2026-10-09T23:21:01Z",
       "archived": false,
       "fork": false
     },
@@ -2659,6 +2695,18 @@
       "pushedAt": "2025-10-28T12:32:52Z",
       "archived": false,
       "fork": false
+    },
+    {
+      "fullName": "nibzard/oss-ai-stack-map",
+      "name": "oss-ai-stack-map",
+      "url": "https://github.com/nibzard/oss-ai-stack-map",
+      "description": "OSS AI stack map pipeline and March 25, 2026 snapshot artifacts",
+      "topics": [],
+      "language": null,
+      "updatedAt": "2026-10-09T20:21:57Z",
+      "pushedAt": "2026-04-01T06:04:01Z",
+      "archived": false,
+      "fork": true
     },
     {
       "fullName": "nibzard/overlays-report",
@@ -3556,6 +3604,18 @@
       "fork": true
     },
     {
+      "fullName": "nibzard/wire",
+      "name": "wire",
+      "url": "https://github.com/nibzard/wire",
+      "description": "",
+      "topics": [],
+      "language": null,
+      "updatedAt": "2026-10-09T20:19:58Z",
+      "pushedAt": "2026-09-10T05:08:50Z",
+      "archived": false,
+      "fork": true
+    },
+    {
       "fullName": "nibzard/WriteHERE",
       "name": "WriteHERE",
       "url": "https://github.com/nibzard/WriteHERE",
@@ -3779,8 +3839,8 @@
         "internal-tools"
       ],
       "language": "TypeScript",
-      "updatedAt": "2026-10-08T18:00:57Z",
-      "pushedAt": "2026-10-08T18:07:31Z",
+      "updatedAt": "2026-10-09T15:42:36Z",
+      "pushedAt": "2026-10-09T15:59:52Z",
       "archived": false,
       "fork": false
     },
@@ -3815,8 +3875,8 @@
       "description": "Mneme for Discord: a quiet organizational-memory agent for one Discord server",
       "topics": [],
       "language": "TypeScript",
-      "updatedAt": "2026-10-07T16:44:33Z",
-      "pushedAt": "2026-10-07T16:44:33Z",
+      "updatedAt": "2026-10-09T15:51:03Z",
+      "pushedAt": "2026-10-09T15:51:02Z",
       "archived": false,
       "fork": false
     },
