@@ -49,7 +49,7 @@ what if they share similar incentives, internal politics, or simply the same ver
 
 you might hear eight consistent stories.
 
-that doesn't necessarily mean you've discovered the truth. it might mean you've discovered the company narrative.
+that doesn't mean you've discovered the truth. it might mean you've discovered the company narrative.
 
 more opinions don't automatically mean more independent information.
 
@@ -84,8 +84,6 @@ and humans are not objective creatures.
 especially when other humans are involved.
 
 ## yesterday's experience, tomorrow's problems.
-
-there's another problem, particularly in ai.
 
 the shelf life of some professional experience is getting short.
 
@@ -125,13 +123,13 @@ a great cto becomes a ceo.
 
 a founder who's brilliant at fundraising is assumed to be brilliant at running a company.
 
-sometimes everyone discovers, rather expensively, that these are completely different jobs.
+sometimes everyone discovers, rather expensively, that these are different jobs.
 
 being a great ceo of a ten-person company doesn't automatically make you a great ceo of a hundred-person company. different scale, different problems, different skills.
 
 the same applies to hiring.
 
-just because someone has hired a lot of people doesn't necessarily mean they're good at hiring.
+just because someone has hired a lot of people doesn't mean they're good at hiring.
 
 including me.
 
@@ -157,7 +155,7 @@ sometimes it does.
 
 sometimes we're just becoming more sophisticated at convincing ourselves we're right.
 
-## the statistical elephant in the interview room.
+## the evidence problem.
 
 it's largely anecdotal.
 
@@ -172,8 +170,6 @@ even 50 hires across different companies, roles, managers, and stages don't tell
 the environment keeps changing. the expectations keep changing. the people doing the hiring keep changing.
 
 and in ai, sometimes the entire job description changes before we've finished debating it.
-
-there's also a fairly obvious problem we rarely discuss.
 
 we only observe the performance of people we actually hire.
 
@@ -245,7 +241,7 @@ people perform within systems.
 
 change the system and you might change the outcome.
 
-we've probably all met someone who struggled in one environment and became great in another.
+we've all met someone who struggled in one environment and became great in another.
 
 the reverse happens too.
 
@@ -263,7 +259,7 @@ we have enough of those.
 
 the right process depends on the company, the role, the risks, and how expensive or reversible a hiring mistake might be.
 
-hiring an intern is different from hiring a cfo. a ten-person startup isn't a multinational corporation. some roles require extensive verification. others benefit much more from seeing someone work.
+hiring an intern is different from hiring a cfo. some roles require extensive verification. others benefit much more from seeing someone work.
 
 but i've increasingly come to appreciate one principle.
 
@@ -335,7 +331,7 @@ i mean observable behavior. keeping commitments. taking responsibility. treating
 
 skills still matter. competence still matters.
 
-but from my experience, those human qualities have been some of the strongest foundations for doing great work together.
+but those human qualities have been some of the strongest foundations for doing great work together.
 
 i can't prove it with a statistically significant sample.
 
@@ -351,6 +347,4 @@ we don't need another hiring religion.
 
 we need a little more humility about what we know, a little more curiosity about what we don't, and a little more humanity in how we make decisions about other humans.
 
-in the end, hire good humans.
-
-the rest is a work in progress.
+hire good humans.
