@@ -16,7 +16,7 @@ answers_questions:
 ---
 
 <blockquote class="featured-quote unattributed">
-    i'm increasingly convinced that a significant part of hiring advice is autobiography dressed up as methodology.
+    hiring advice is autobiography dressed up as methodology.
 </blockquote>
 
 i recently read a thoughtful argument that references might be the single most valuable tool in hiring.
@@ -59,7 +59,7 @@ a manager might think someone was difficult because they constantly challenged d
 
 it happens.
 
-people leave companies for all sorts of reasons. poor performance, different ambitions, management changes, politics, ethical disagreements, restructuring, or simply because life is short and there are other things worth doing.
+people leave companies for all sorts of reasons, or simply because life is short and there are other things worth doing.
 
 now add confidentiality agreements, professional courtesy, personal relationships, bruised egos, and the reasonable desire not to discuss someone else's career with a stranger.
 
@@ -95,7 +95,7 @@ someone who spent the past six months intensely experimenting with new tools, bu
 
 not always.
 
-experience matters. judgment matters. knowing how to build systems, navigate complexity, and work with other people matters enormously. some of those abilities become more valuable as technology changes.
+experience matters. judgment matters. knowing how to build systems, navigate complexity, and work with other people matters. some of those abilities become more valuable as technology changes.
 
 but years of experience, relevant experience, current capability, and the ability to learn are four different things.
 
@@ -124,8 +124,6 @@ a great engineer becomes a team lead.
 a great cto becomes a ceo.
 
 a founder who's brilliant at fundraising is assumed to be brilliant at running a company.
-
-sometimes it works.
 
 sometimes everyone discovers, rather expensively, that these are completely different jobs.
 
@@ -189,7 +187,7 @@ and even when we do hire someone, what exactly are we measuring?
 
 retention? revenue? productivity? innovation? team satisfaction?
 
-someone might leave after six months having created enormous value. someone else might stay five years and contribute very little.
+someone might leave after six months having created value. someone else might stay five years and contribute very little.
 
 someone might be brilliant but fail because their manager was terrible. or because the company changed strategy four times and somehow expected everyone else to remain perfectly consistent.
 
@@ -215,7 +213,7 @@ one is an observation.
 
 the other is a much bigger claim.
 
-i'm increasingly convinced that a significant part of hiring advice is autobiography dressed up as methodology.
+hiring advice is autobiography dressed up as methodology.
 
 usually with a framework attached.
 
@@ -231,15 +229,13 @@ but what about the company?
 
 what about the manager?
 
-what about the clarity of expectations, the available resources, the team's ability to collaborate, or the organization's capacity to recognize and use someone's strengths?
-
 we like to talk about culture fit.
 
 but culture is not an objective standard of quality.
 
 sometimes not fitting into a culture is a sign of good judgment.
 
-sometimes the person asking all those uncomfortable questions is precisely the person the company needs.
+sometimes the person asking all those uncomfortable questions is the person the company needs.
 
 sometimes they're just difficult.
 
@@ -249,7 +245,7 @@ people perform within systems.
 
 change the system and you might change the outcome.
 
-we've probably all met someone who struggled in one environment and became exceptional in another.
+we've probably all met someone who struggled in one environment and became great in another.
 
 the reverse happens too.
 
@@ -277,7 +273,7 @@ give people realistic problems.
 
 see how they approach uncertainty.
 
-see how they communicate, how they use tools, how they respond when something doesn't work, and how quickly they figure out what to do next.
+see how they communicate, how they use tools, how they respond when something doesn't work.
 
 when appropriate, use short, fairly compensated projects or practical assessments rather than endlessly discussing hypothetical situations.
 
@@ -311,13 +307,13 @@ both sides are making a bet.
 
 after hiring more than 50 people, i've noticed something about the ones i remember most fondly.
 
-the people i genuinely enjoyed working with, and who often made the biggest difference, weren't necessarily the ones with the most impressive cvs.
+the people i enjoyed working with, and who often made the biggest difference, weren't necessarily the ones with the most impressive cvs.
 
 or the most experience.
 
 or the longest list of people willing to say wonderful things about them.
 
-they were genuinely good humans.
+they were good humans.
 
 and by that i don't mean people who always agreed with me, avoided conflict, or made everyone feel comfortable.
 
@@ -339,7 +335,7 @@ i mean observable behavior. keeping commitments. taking responsibility. treating
 
 skills still matter. competence still matters.
 
-but from my experience, those human qualities have been some of the strongest foundations for doing exceptional work together.
+but from my experience, those human qualities have been some of the strongest foundations for doing great work together.
 
 i can't prove it with a statistically significant sample.
 
