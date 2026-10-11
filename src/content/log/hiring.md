@@ -25,8 +25,6 @@ not the usual five-minute calls where someone asks whether john was a good emplo
 
 the author proposes something much more rigorous. deeper questions, different perspectives, conversations throughout the hiring process, and as many as 12–15 references for executive positions.
 
-there's a lot of good thinking behind it.
-
 but something bothers me.
 
 not because references are useless. they're not. but because we seem to believe that collecting more information about someone's past makes us significantly better at predicting their future.
@@ -39,19 +37,17 @@ i've learned quite a bit.
 
 mostly how much i still don't know.
 
-and that's where i think the conversation about hiring should start.
-
 ## twelve references. one story.
 
 let's say you're hiring an executive and you speak with 12 people who've worked with them.
 
-sounds thorough, right?
+sounds thorough.
 
 but what if eight of those people worked at the same company, under the same leadership, within the same organizational culture?
 
 what if they share similar incentives, internal politics, or simply the same version of events?
 
-you might hear eight remarkably consistent stories.
+you might hear eight consistent stories.
 
 that doesn't necessarily mean you've discovered the truth. it might mean you've discovered the company narrative.
 
@@ -65,7 +61,7 @@ it happens.
 
 people leave companies for all sorts of reasons. poor performance, different ambitions, management changes, politics, ethical disagreements, restructuring, or simply because life is short and there are other things worth doing.
 
-now add confidentiality agreements, professional courtesy, personal relationships, bruised egos, and the perfectly reasonable desire not to discuss someone else's career with a stranger.
+now add confidentiality agreements, professional courtesy, personal relationships, bruised egos, and the reasonable desire not to discuss someone else's career with a stranger.
 
 good luck getting the complete picture.
 
@@ -73,17 +69,17 @@ and the problem becomes even more interesting with younger candidates or people 
 
 if someone has worked at one company for six months, or two companies over two years, where exactly are we supposed to find 12 meaningful, independent references?
 
-we can certainly find 12 people.
+we can find 12 people.
 
 that's not the same thing.
 
-of course, references can provide useful insights. recurring behavior, how someone handles conflict, whether people trust them, and the circumstances in which they've done their best work.
+references can provide useful insights. recurring behavior, how someone handles conflict, whether people trust them, and the circumstances in which they've done their best work.
 
 but that information needs interpretation.
 
 a reference isn't a camera recording what happened. it's another human remembering what happened, through their own lens.
 
-and humans, as it turns out, are not particularly objective creatures.
+and humans are not objective creatures.
 
 especially when other humans are involved.
 
@@ -91,7 +87,7 @@ especially when other humans are involved.
 
 there's another problem, particularly in ai.
 
-the shelf life of some professional experience is getting remarkably short.
+the shelf life of some professional experience is getting short.
 
 we're hiring people to work with technologies, workflows, and capabilities that barely existed a couple of years ago.
 
@@ -107,8 +103,6 @@ we keep treating them as one.
 
 and then we ask someone who managed the candidate two years ago to evaluate how suitable they are for a job that looks nothing like the one they had.
 
-there's something wonderfully absurd about that.
-
 the challenge isn't just finding people who know how to do the job.
 
 it's finding people who can figure out how to do a job when the job itself keeps changing.
@@ -120,8 +114,6 @@ someone's past is useful information.
 it's just not a particularly reliable map of a future that hasn't been invented yet.
 
 ## everyone is an expert. especially at things they're not experts in.
-
-this brings me to another interesting problem.
 
 the halo effect.
 
@@ -168,8 +160,6 @@ sometimes it does.
 sometimes we're just becoming more sophisticated at convincing ourselves we're right.
 
 ## the statistical elephant in the interview room.
-
-here's where i think most hiring advice becomes questionable.
 
 it's largely anecdotal.
 
@@ -255,8 +245,6 @@ sometimes they're just difficult.
 
 knowing the difference is the hard part.
 
-and this is why i'm uncomfortable with the idea that references can reveal some universal truth about a candidate.
-
 people perform within systems.
 
 change the system and you might change the outcome.
@@ -272,8 +260,6 @@ something you can measure, record, and carry from company to company.
 it isn't that simple.
 
 ## less prediction. more learning.
-
-so what would i do instead?
 
 first, i wouldn't turn any of this into another universal hiring framework.
 
@@ -309,7 +295,7 @@ people aren't software subscriptions.
 
 the goal shouldn't be to maximize turnover. it should be to learn quickly, communicate honestly, make timely decisions, and treat people fairly when things don't work out.
 
-references can absolutely be part of that.
+references can be part of that.
 
 they just shouldn't become a substitute for our own judgment or our responsibility to create an environment where people can succeed.
 
@@ -364,10 +350,6 @@ it's simply what i've observed.
 so yes, do your interviews. check your references. test the work. ask difficult questions. make the best decision you can with the information available.
 
 just remember that no number of references can eliminate uncertainty, and no hiring framework can replace the responsibility of actually getting to know someone.
-
-especially in a world where tools change, skills evolve, and even the definition of expertise keeps moving.
-
-maybe we should spend a little less time trying to predict who will be exceptional, and a little more time understanding how people become exceptional together.
 
 we don't need another hiring religion.
 
