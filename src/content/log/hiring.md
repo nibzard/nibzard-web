@@ -7,7 +7,7 @@ tags: [HIRING, LEADERSHIP, CAREER, OPINION]
 draft: false
 author: "Nikola Balić"
 topics: [Hiring, References, Recruitment, Leadership, Talent assessment]
-entities: []
+entities: [Brett Berson]
 answers_questions:
   - Do more references make hiring decisions better?
   - Why does years of experience predict less in AI roles?
@@ -19,7 +19,7 @@ answers_questions:
     hiring advice is autobiography dressed up as methodology.
 </blockquote>
 
-i recently read a thoughtful argument that references might be the single most valuable tool in hiring.
+i recently read [a thoughtful argument from brett berson](https://x.com/brettberson/status/2107861788557762941) that references might be the single most valuable tool in hiring.
 
 not the usual five-minute calls where someone asks whether john was a good employee and gets the shocking revelation that john was, in fact, wonderful.
 
