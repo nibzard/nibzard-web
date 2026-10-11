@@ -4,7 +4,7 @@ description: "After 50+ hires, I doubt more references mean better predictions. 
 tldr: "References can help, but more of them don't make hiring predictive. References share narratives, experience ages fast in AI, halo effects mislead, and nobody's sample is statistically meaningful. Reduce the gap between what you think someone can do and what you can observe. And hire good humans."
 date: 2026-10-11
 tags: [HIRING, LEADERSHIP, CAREER, OPINION]
-draft: true
+draft: false
 author: "Nikola Balić"
 topics: [Hiring, References, Recruitment, Leadership, Talent assessment]
 entities: []
