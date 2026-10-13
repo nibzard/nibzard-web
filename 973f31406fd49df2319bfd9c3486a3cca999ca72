@@ -1,0 +1,29 @@
+# Design: Close Supervision archive page at /supervision
+
+## Problem
+The newsletter needed a public subscribe + archive surface before the
+first send (scheduled 2026-10-27). The brand decided on the full name
+"Close Supervision" with the sanctioned shorthand "supervision" for
+constrained identifiers.
+
+## Approach
+Static prerendered page at src/pages/supervision.astro reusing the
+existing NewsletterSubscribe component (which posts to the Resend
+Audience via /api/subscribe). Issue metadata lives in typed
+src/data/newsletter-issues.ts; adding an issue is one array entry and
+the list sorts newest-first. No content collection was introduced —
+the repo's collections are implicit (no src/content/config.ts), so a
+plain data module follows the existing src/data idiom with less risk.
+
+## Key Trade-offs
+- Short URL /supervision vs /close-supervision: shorter for sharing
+  and domain use; prose and from-name keep the full name.
+- Archive links to the lead blog article (/4-minutes-to-book) rather
+  than duplicating email bodies in the repo; the article is still
+  draft:true, so the link 404s until launch morning.
+- Brand rules live in ~/newsletter/BRAND.md outside the repo to keep
+  subscriber-analysis references out of the public history.
+
+## References
+- ~/newsletter/plan.md — launch plan and 12-issue backlog
+- ~/newsletter/BRAND.md — naming and voice rules
