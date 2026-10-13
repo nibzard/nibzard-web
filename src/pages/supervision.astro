@@ -1,0 +1,173 @@
+---
+export const prerender = true;
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NewsletterSubscribe from '../components/NewsletterSubscribe.astro';
+import { newsletterIssues } from '../data/newsletter-issues';
+
+const issues = [...newsletterIssues].sort((a, b) => b.number - a.number);
+const formatDate = (iso: string) =>
+  new Date(`${iso}T13:00:00Z`).toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric',
+    timeZone: 'UTC',
+  });
+---
+
+<BaseLayout
+  title="Close Supervision - nibzard"
+  description="Close Supervision is the letter on keeping agents useful. One tested idea, three signals, one question. Every other Tuesday."
+>
+  <section class="letter-header">
+    <p class="kicker">A newsletter by Nikola Balić</p>
+    <h1>Close Supervision</h1>
+    <p class="tagline">The letter on keeping agents useful.</p>
+    <p class="intro">
+      Agents stay useful only under close attention. Every other Tuesday I send
+      one idea I have tested on the bench, three signals worth your time, and
+      one question. Replies come straight to me.
+    </p>
+  </section>
+
+  <section class="letter-subscribe">
+    <NewsletterSubscribe
+      title="Subscribe to Close Supervision"
+      description="One tested idea, three signals, one question. Every other Tuesday. Unsubscribe anytime."
+      buttonText="Subscribe"
+    />
+  </section>
+
+  <section class="letter-format">
+    <h2>What lands in your inbox</h2>
+    <ul>
+      <li>
+        <strong>The idea.</strong> One argument with a concrete example, usually
+        an optimization diary: what I ran, what broke, what moved the needle.
+      </li>
+      <li>
+        <strong>Signals.</strong> Three to five links, each with a take. No
+        link goes in without a comment.
+      </li>
+      <li>
+        <strong>From the bench.</strong> What I am building or measuring right
+        now, with numbers when I have them.
+      </li>
+      <li>
+        <strong>One question.</strong> A real one. The best reader replies show
+        up in the next issue, with credit.
+      </li>
+    </ul>
+  </section>
+
+  <section class="letter-archive">
+    <h2>Archive</h2>
+    {issues.length === 0 && <p>No issues sent yet. The first one is coming.</p>}
+    <ol class="issue-list">
+      {issues.map((issue) => (
+        <li class="issue-item">
+          <div class="issue-meta">
+            <span class="issue-number">#{issue.number}</span>
+            <span class="issue-date">{formatDate(issue.date)}</span>
+            {issue.status === 'scheduled' && <span class="issue-status">scheduled</span>}
+          </div>
+          <a class="issue-subject" href={issue.leadUrl}>{issue.subject}</a>
+          <p class="issue-lead">Lead essay: {issue.leadTitle}</p>
+        </li>
+      ))}
+    </ol>
+  </section>
+</BaseLayout>
+
+<style>
+  .letter-header {
+    max-width: 42rem;
+    margin: var(--space-3xl) auto var(--space-2xl);
+    padding: 0 var(--space-lg);
+    text-align: left;
+  }
+  .kicker {
+    font-family: var(--font-metadata);
+    font-size: var(--font-size-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: var(--space-sm);
+  }
+  .letter-header h1 {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-3xl);
+    line-height: var(--line-height-headings);
+    margin: 0 0 var(--space-sm);
+  }
+  .tagline {
+    font-family: var(--font-emphasis);
+    font-size: var(--font-size-md);
+    margin: 0 0 var(--space-lg);
+  }
+  .intro {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-relaxed);
+    margin: 0;
+  }
+
+  .letter-subscribe {
+    max-width: 42rem;
+    margin: 0 auto var(--space-3xl);
+    padding: 0 var(--space-lg);
+  }
+
+  .letter-format,
+  .letter-archive {
+    max-width: 42rem;
+    margin: 0 auto var(--space-3xl);
+    padding: 0 var(--space-lg);
+  }
+  .letter-format h2,
+  .letter-archive h2 {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-xl);
+    margin: 0 0 var(--space-md);
+  }
+  .letter-format ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .letter-format li {
+    padding: var(--space-sm) 0;
+    line-height: var(--line-height-relaxed);
+  }
+
+  .issue-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .issue-item {
+    padding: var(--space-md) 0;
+    border-top: 1px solid var(--color-black, #000);
+  }
+  .issue-meta {
+    display: flex;
+    gap: var(--space-md);
+    align-items: baseline;
+    font-family: var(--font-metadata);
+    font-size: var(--font-size-xs);
+    margin-bottom: var(--space-2xs);
+  }
+  .issue-status {
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .issue-subject {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-md);
+    text-decoration: none;
+  }
+  .issue-subject:hover {
+    text-decoration: underline;
+  }
+  .issue-lead {
+    font-size: var(--font-size-sm);
+    margin: var(--space-2xs) 0 0;
+  }
+</style>
