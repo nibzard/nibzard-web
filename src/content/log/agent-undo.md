@@ -2,7 +2,7 @@
 title: "Agent Autonomy Starts With Undo"
 description: "Give agents more freedom when they can fix mistakes without erasing other people's work. Recovery should shape autonomy."
 tldr: "An agent should be able to fix its mistake without erasing what everyone else did afterward. The freedom we give it should depend on how well we can recover when it is wrong."
-date: 2026-09-26
+date: 2026-10-14
 updated: 2026-10-14
 tags: ["AI", "AGENTS", "UX"]
 draft: false
