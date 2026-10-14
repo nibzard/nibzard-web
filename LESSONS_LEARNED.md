@@ -140,3 +140,11 @@ Add new entries at the bottom of the table.
 
 
 - **2026-10-10: Keep historical roles separate from the current employer.** The Steel experience entry used the current profile title and employer. Give completed roles explicit values so a new employer does not rename past experience. Article footers also contained a separate bio; they now use the shared profile description.
+
+- **2026-10-14: Simplify a recovery article around one shared-state example.** Keep the contact merge visible through the correction preview, review-time changes, and closing test. Move retry implementation and concurrency infrastructure into separate treatments when they distract from preserving later work. Update summary metadata and question arrays to match the narrower argument.
+
+- **2026-10-14: Retry a stalled Tina local build with Node 22.** The default Node 26 build stayed at local file indexing for over a minute with little CPU activity. After stopping that attempt and prepending the cached Node 22 binary directory to PATH, the same offline build completed. The runtime difference is verified; the underlying cause of the stalled indexing is unknown.
+
+- **2026-10-14: Preserve the reason to care when simplifying an article.** Cutting the undo draft to recovery mechanics weakened its argument. Open with preserving other people's later work, explain why recovery should shape agent autonomy, and return to that decision at the end. A concrete example needs stakes as well as a procedure.
+
+- **2026-10-14: Name the argument in an article title after narrowing its scope.** Retitled the undo draft to connect recovery with agent autonomy, then aligned the description, topic order, and answered questions. A title about every AI app was broader than the revised shared-workspace argument.

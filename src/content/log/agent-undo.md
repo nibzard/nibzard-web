@@ -1,69 +1,76 @@
 ---
-title: "Every AI App Needs an Undo Plan"
-description: "Useful autonomy depends on previews, recovery, and clear boundaries around actions that cannot be reversed."
-tldr: "Design recovery before granting autonomy. Restoring internal state does not reverse every external consequence."
+title: "Agent Autonomy Starts With Undo"
+description: "Give agents more freedom when they can fix mistakes without erasing other people's work. Recovery should shape autonomy."
+tldr: "An agent should be able to fix its mistake without erasing what everyone else did afterward. The freedom we give it should depend on how well we can recover when it is wrong."
 date: 2026-09-26
+updated: 2026-10-14
 tags: ["AI", "AGENTS", "UX"]
-draft: true
+draft: false
 author: "Nikola Balić"
-topics: ["Recovery design", "Concurrent changes", "Agent autonomy"]
-entities: ["Microsoft Research", "Neon", "LangGraph"]
+topics: ["Agent autonomy", "Recovery design", "Concurrent changes", "Approval integrity"]
+entities: ["Git"]
 answers_questions:
-  - "What does meaningful undo require in an AI app?"
-  - "Why is replay different from reversing an action?"
+  - "How should recovery shape agent autonomy?"
+  - "How can undo preserve other people's later work?"
+  - "When does a proposed correction need another review?"
 ---
 
-Suppose an assistant tidying a contact list merges two people who share a surname. Before you fix it, someone else adds a legitimate phone number to the merged record. Restoring yesterday's database would erase that correct update along with the mistake.
+An agent should be able to fix its mistake without erasing what everyone else did afterward.
 
-I would test this hypothetical case before letting an assistant edit real records. Recovery requires understanding which changes belong to whom. If the interface promises undo, it needs a way to preserve the later work.
+Before letting an agent merge your contacts, ask what happens when it merges the wrong two.
 
-## Different actions need different recovery
+"You can undo it" sounds reassuring. But while the agent works, other people and agents keep changing those records. Going back to yesterday may erase something correct that happened today.
 
-A draft can often return to an earlier version. A shared record may require a targeted correction that preserves later work. A sent message may need a follow-up explanation. Information disclosed to an unintended recipient cannot be made undisclosed by restoring your database.
+The amount of freedom we give an agent should depend on how well we can recover from its mistakes.
 
-The interface should reflect those differences before the action. It can show a preview for an edit, explain the affected records for a merge, or state that sending a message has an external consequence. Asking for approval without showing what the approval covers gives the user little help.
+Suppose your agent merges two contacts who share a surname. My agent adds a phone number. A person corrects the address. Then you spot the bad merge.
 
-Microsoft's [human-AI interaction guidelines](https://www.microsoft.com/en-us/research/?p=564561) already recommend efficient correction, recovery from errors, and limiting activity when uncertainty is high. Applying those principles to agents means making recovery part of the workflow before the agent can change things.
+You click undo. Where does the new number go? Does the corrected address survive?
 
-## Try the change somewhere else first
+Yesterday's records cannot tell you where today's phone number belongs.
 
-For the contact-list example, a preview could show the records to be merged, the chosen field values, and the information that would otherwise be lost. The assistant could flag uncertainty about whether the records describe the same person.
+## Undo is another change
 
-An isolated data environment can help test a proposed operation. [Neon's database-branching documentation](https://neon.com/docs/get-started-with-neon/workflow-primer) describes branches whose changes do not affect their parent. A branch can provide a place to inspect a change before applying it to the main database.
+[`git revert`](https://git-scm.com/docs/git-revert) records a new commit that reverses an earlier change while preserving history. Later work can conflict with that reversal.
 
-That isolation has limits. A copied database may still contain sensitive information. An application connected to a test branch might still call a real email service unless its external connections are separately configured. Database branching isolates database changes; external connections need their own configuration.
+I'm building a workspace for people and their agents. A correction becomes a new proposal against the current state, subject to the same permission, review, and validation checks as any other change.
 
-For a toy test, synthetic records and simulated external services make it easier to see the behavior without creating real consequences.
+A proposed undo preview could read:
 
-## Replay can perform the action again
+> Restore the two contacts. Keep the corrected address on the contact it belongs to. Choose where the new phone number goes.
 
-Agent checkpoints let you debug a run or explore another execution path. External actions need separate handling when you replay it.
+If the person cannot place the number or address, keep it unresolved, with its source and history. Being in the same mistakenly merged record does not establish who owns it.
 
-[LangGraph's time-travel documentation](https://docs.langchain.com/oss/python/langgraph/use-time-travel) explains that replay re-executes later nodes, including model calls and API requests. Forking creates another path from a prior state. Neither automatically undoes what the earlier path already did outside the stored execution state.
+Show the resulting records before applying the correction. The person should be able to see which changes will survive and which decisions remain open.
 
-If a replayed node sends a message, it may send another message. The application needs to decide how repeated attempts are identified and whether a previously completed external action should be skipped, reconciled, or explicitly repeated.
+The original merge stays in history. The correction follows it.
 
-In product terms, a button labeled "try again" needs to make that distinction clear. Users should not have to discover that retrying a failed-looking workflow duplicates its successful side effects.
+## Review the correction that will actually happen
 
-## Repair the mistake without erasing other work
+Suppose you approve placing the phone number on Alice's record. The agent then decides it belongs to Alex. That correction needs fresh approval. The interface should show the changed assignment: "This correction changed. Review it again."
 
-Microsoft's [compensating-transaction guidance](https://learn.microsoft.com/en-us/azure/architecture/patterns/compensating-transaction) explains why restoring an old state can overwrite legitimate concurrent changes. Recovery may require application-specific corrective actions, and those actions can fail too.
+The records can change too. While you review the undo, another agent updates one of the contacts. Pause and show what changed before applying the correction.
 
-For our illustrative merge, the system would need a history of the original records, the merge operation, and subsequent edits. It might restore the two identities and ask a reviewer where the new phone number belongs. Yesterday's records cannot tell it where today's phone number belongs.
+The same applies to information used to decide where the number belongs. If that information changes, the agent needs to read it again and reconsider.
 
-The user-facing experience could say which values were restored, which later changes were preserved, and which conflict still needs a decision. The user should be able to inspect the repaired records and any unresolved conflicts.
+Approval covers the correction you saw. Before applying it, the app still needs to check that its inputs and your permissions hold.
 
-Some operations need compensation: correcting an invoice, issuing a refund, or sending a clarification. Those actions address a consequence while leaving a record that the original event happened. Others require escalation because the system lacks enough evidence to repair them safely.
+## Some consequences cannot be undone
 
-## Grant autonomy in proportion to recovery
+Reverting a field called `emailSent` does not unsend the email. Restoring an agent checkpoint does not reverse the effects of an earlier run.
 
-I would test an agent's mistake and its recovery together. Introduce an incorrect edit, add a legitimate concurrent change, then see whether correction preserves that work. Separately, replay a simulated external request and inspect whether it duplicates the effect.
+If the bad merge caused an email to go to the wrong person, restoring the contacts leaves that consequence unresolved. A clarification may address a misleading message. It cannot recall information disclosed to the wrong person.
 
-Until those behaviors are understood, a preview is more useful than a broad promise of reversibility. Once a narrow action has reliable recovery, it can earn more autonomy.
+The interface should make that limit clear when it offers undo.
 
-After recovery, the product should show which changes it restored and explain any consequences that remain.
+## Test what survives
 
-<!-- EDITORIAL NOTES: remove before publication.
-Research checked: 2026-09-26. All contact examples are hypothetical; implement the synthetic-record exercise before adding results. Verify preservation of concurrent changes and non-duplication on simulated replay, including failed compensation. Capture screenshots of the user's preview, history, recovery, and unresolved-conflict experience.
-Brief's original title exceeds schema's 60-character limit; retain its full premise in the deck/body rather than loosening schema. Do not imply branching sanitizes data, checkpoints undo external effects, or every action can be rolled back.
--->
+Start with a bad merge. Let someone add correct information before you undo it.
+
+Does the correction preserve that later work?
+
+Then change a contact while the undo is being reviewed. The app should pause for another review. Anything it cannot confidently assign should remain visible and unresolved.
+
+Before giving the agent more freedom, make sure this recovery works. Let it correct an unambiguous field on its own while leaving a disputed phone number for review. Expand its autonomy as you establish which mistakes it can repair.
+
+Two contacts restored. The later address correction preserved. The phone number assigned or still awaiting a decision. Everyone else's agents keep working.
