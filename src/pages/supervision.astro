@@ -21,11 +21,11 @@ const formatDate = (iso: string) =>
   <section class="letter-header">
     <p class="kicker">A newsletter by Nikola Balić</p>
     <h1>Close Supervision</h1>
-    <p class="tagline">The letter on keeping agents useful.</p>
+    <p class="tagline">Look closer. Make it work.</p>
     <p class="intro">
-      Agents stay useful only under close attention. Every other Tuesday I send
-      one idea I have tested on the bench, three signals worth your time, and
-      one question. Replies come straight to me.
+      The letter on keeping agents useful. Every other Tuesday I send one idea I
+      have tested on the bench, three signals worth your time, and one question.
+      Replies come straight to me.
     </p>
   </section>
 
@@ -49,8 +49,8 @@ const formatDate = (iso: string) =>
         link goes in without a comment.
       </li>
       <li>
-        <strong>From the bench.</strong> What I am building or measuring right
-        now, with numbers when I have them.
+        <strong>From the bench.</strong> What I am building or measuring in
+        Close Supervision Labs right now, with numbers when I have them.
       </li>
       <li>
         <strong>One question.</strong> A real one. The best reader replies show
@@ -78,6 +78,25 @@ const formatDate = (iso: string) =>
   </section>
 </BaseLayout>
 
+<style is:global>
+  /* Close Supervision brand preview (see newsletter/BRAND.md):
+     paper + ink tokens, light theme only. Loads on this page only. */
+  html[data-theme='light'] {
+    --color-background: #f5f3ee;
+    --color-background-alt: #edeae1;
+    --color-background-raised: #e7e3d8;
+    --color-subtle-bg: #efece3;
+    --color-subtle: #eae6db;
+    --color-text: #111111;
+    --color-text-heading: #111111;
+    --color-text-muted: #5a564d;
+    --color-text-light: #5a564d;
+    --color-border: #d8d3c6;
+    --color-border-strong: #111111;
+    --color-form: #fdfcf9;
+    --color-newsletter-bg: #edeae1;
+  }
+</style>
 <style>
   .letter-header {
     max-width: 42rem;
@@ -93,13 +112,15 @@ const formatDate = (iso: string) =>
     margin-bottom: var(--space-sm);
   }
   .letter-header h1 {
-    font-family: var(--font-heading);
+    font-family: var(--font-serif);
     font-size: var(--font-size-3xl);
     line-height: var(--line-height-headings);
+    letter-spacing: -0.01em;
     margin: 0 0 var(--space-sm);
   }
   .tagline {
-    font-family: var(--font-emphasis);
+    font-family: var(--font-serif);
+    font-style: italic;
     font-size: var(--font-size-md);
     margin: 0 0 var(--space-lg);
   }
@@ -123,7 +144,7 @@ const formatDate = (iso: string) =>
   }
   .letter-format h2,
   .letter-archive h2 {
-    font-family: var(--font-heading);
+    font-family: var(--font-serif);
     font-size: var(--font-size-xl);
     margin: 0 0 var(--space-md);
   }
@@ -144,7 +165,7 @@ const formatDate = (iso: string) =>
   }
   .issue-item {
     padding: var(--space-md) 0;
-    border-top: 1px solid var(--color-black, #000);
+    border-top: 1px solid var(--color-text);
   }
   .issue-meta {
     display: flex;
