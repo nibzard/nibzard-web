@@ -141,6 +141,32 @@ Add new entries at the bottom of the table.
 
 - **2026-10-10: Keep historical roles separate from the current employer.** The Steel experience entry used the current profile title and employer. Give completed roles explicit values so a new employer does not rename past experience. Article footers also contained a separate bio; they now use the shared profile description.
 
+- **2026-09-30: Keep article skills aligned with the schema and build's actual guarantees.** `src/content.config.ts` makes log metadata optional; complete-article conventions should be distinguished from schema requirements. `scripts/prebuild-og.js` allows OG failures or missing-browser skips without failing the build, and the generator skips existing images and drafts. Article instructions should check publication assets separately, preserve metadata on revisions, and avoid promising link validation from a successful build. The article-writer refresh also replaces repeated writing recipes with scoped guidance and explicit evidence requirements. Authoring sources reviewed: [OpenAI's September 11 guidance](https://developers.openai.com/blog/rethinking-skills-and-prompts-for-gpt-6-astra), [Codex skills](https://learn.chatgpt.com/docs/build-skills), [Agent Skills specification](https://agentskills.io/specification), and [Anthropic authoring guidance](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices).
+
+- **2026-10-14: Restore local work after syncing main without rolling back generated metadata.** A stashed September project snapshot conflicted with newer October data. Retain the current upstream snapshot, combine both lesson entries, and restore the local skill and article files.
+
+- **2026-10-14: Cut explanation around an example without cutting its recovery constraints.** The undo article's editing pass removes repeated framing and compresses database branching while preserving concurrent edits, external effects, replay behavior, and failed compensation. Concrete examples carry the argument when the technical limits remain explicit.
+
+- **2026-10-14: Ground a learning article in implementation decisions without converting it into a pitch.** The undo draft now draws on the shared workspace specification, acceptance engine, and replay tests. Keep hypothetical examples explicit, distinguish inspected tests from executed tests, and describe design tradeoffs without inventing incidents or user outcomes.
+
+- **2026-10-14: Establish the multi-agent setting before explaining recovery.** The undo article opens with the user's imagined shared-document scene: each human brings several agents whose overlapping work can conflict. Carry that setting into the examples, and distinguish the future scenario from claims about current Google Docs features.
+
+- **2026-10-14: Let the opening scene establish the premise.** The second undo-article cut retains the animal avatars and competing agents, removes the explanation of that same future, and moves the author's building context to the design decision it supports.
+
+- **2026-10-14: Tighten technical prose around actions while retaining design tradeoffs.** The undo article's Hemingway pass replaces abstract approval framing with a changed-deadline example and shortens lost-reply recovery. Preserve the conservative whole-document dependency tradeoff and the distinction between internal retry safety and external effects.
+
+- **2026-10-14: Vary sentence length after a compression pass.** The undo article's Provost pass combines repetitive short beats, removes restated explanations, and turns the closing test list into a progression while preserving every failure scenario and a separate external-service boundary.
+
+- **2026-10-14: Credit established mechanisms before discussing application-specific lessons.** The undo article now explicitly connects correction history to Git revert, then distinguishes a cleanly applicable reversal from one whose dependencies, approval, and authority still hold. Link the official command documentation and avoid treating the underlying idea as new.
+
+- **2026-10-14: Keep an engineering article's example visible through the interface and ending.** The undo draft now shows a proposed correction preview, a review-time conflict, and an uncertain result without claiming a tested UI. Repaired Markdown escapes in YAML arrays and answers_questions so the intended metadata parses correctly. Preserve sentences where possible and cut repeated framing to make room for the concrete flow.
+
+- **2026-10-14: Explain retained replay results and separate convergence from application decisions.** Strengthened the undo article with the implemented REPLAY_BODY_EXPIRED result reference, an inspected lost-reply assertion excerpt, and primary Yjs/ShareDB links. Keep the proposed unresolved-items inbox and review UI distinct from demonstrated features; derive autonomy from the tested action rather than the agent as a whole.
+
+- **2026-10-14: Cut a learning article by removing repeated conclusions, not its guarantees.** The ruthless undo pass keeps the shared-work opening, correction preview, declared-dependency limit, exact approval, replay reference, external compensation, and action-specific autonomy. Cuts remove duplicate framing and the schedule callback in approval; source links and the inspected test excerpt remain.
+
+- **2026-10-14: Connect agent-scale infrastructure evidence to the article's specific claim.** Linked Anthropic's October 13 source-control account beside stale dependencies, using the reported changes during CI to motivate validity checks without implying that its monorepo architecture or recovery tradeoffs apply to every workspace.
+
 - **2026-10-14: Simplify a recovery article around one shared-state example.** Keep the contact merge visible through the correction preview, review-time changes, and closing test. Move retry implementation and concurrency infrastructure into separate treatments when they distract from preserving later work. Update summary metadata and question arrays to match the narrower argument.
 
 - **2026-10-14: Retry a stalled Tina local build with Node 22.** The default Node 26 build stayed at local file indexing for over a minute with little CPU activity. After stopping that attempt and prepending the cached Node 22 binary directory to PATH, the same offline build completed. The runtime difference is verified; the underlying cause of the stalled indexing is unknown.
