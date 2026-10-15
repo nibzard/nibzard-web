@@ -1,0 +1,24 @@
+<svg role="img" aria-label="You build the agent and specify the computer it runs on" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 118"><style>
+svg { background: #fff; }
+.fig-lab, .fig-lab-b, .fig-lab-a { font-family: monospace; font-size: 10px; letter-spacing: .06em; fill: #60605c; }
+.fig-lab-b { fill: #262624; } .fig-lab-a { fill: #0787e0; }
+.fig-num { font-family: monospace; font-size: 14px; fill: #262624; }
+.s-ln, .s-ln-a, .s-hair { fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.s-ln { stroke: #262624; } .s-ln-a { stroke: #0787e0; }
+.s-hair { stroke: #60605c; stroke-width: 1; }
+.s-lnf { fill: #fff; stroke: #262624; stroke-width: 1.5; }
+.s-lnf-a { fill: #fff; stroke: #0787e0; stroke-width: 1.5; }
+.s-dash { fill: none; stroke: #60605c; stroke-width: 1; stroke-dasharray: 3 4; }
+.s-fill { fill: #262624; } .s-fill-a { fill: #0787e0; }
+</style>
+      <text class="fig-lab-b" x="80" y="18" text-anchor="middle">THE AGENT</text>
+      <circle class="s-fill-a" cx="80" cy="58" r="18"></circle>
+      <line class="s-hair" x1="104" y1="58" x2="190" y2="58"></line>
+      <text class="fig-lab-b" x="252" y="18" text-anchor="middle">ITS COMPUTER</text>
+      <rect class="s-ln" x="190" y="30" width="124" height="56" rx="10"></rect>
+      <circle class="s-fill" cx="218" cy="58" r="5"></circle>
+      <circle class="s-fill" cx="252" cy="58" r="5"></circle>
+      <circle class="s-fill" cx="286" cy="58" r="5"></circle>
+      <text class="fig-lab-a" x="80" y="108" text-anchor="middle">YOU BUILD IT</text>
+      <text class="fig-lab" x="252" y="108" text-anchor="middle">YOU SPECIFY IT</text>
+    </svg>

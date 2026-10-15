@@ -1,0 +1,25 @@
+<svg role="img" aria-label="Browser, files, tools, access, and state form the working environment" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 86"><style>
+svg { background: #fff; }
+.fig-lab, .fig-lab-b, .fig-lab-a { font-family: monospace; font-size: 10px; letter-spacing: .06em; fill: #60605c; }
+.fig-lab-b { fill: #262624; } .fig-lab-a { fill: #0787e0; }
+.fig-num { font-family: monospace; font-size: 14px; fill: #262624; }
+.s-ln, .s-ln-a, .s-hair { fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.s-ln { stroke: #262624; } .s-ln-a { stroke: #0787e0; }
+.s-hair { stroke: #60605c; stroke-width: 1; }
+.s-lnf { fill: #fff; stroke: #262624; stroke-width: 1.5; }
+.s-lnf-a { fill: #fff; stroke: #0787e0; stroke-width: 1.5; }
+.s-dash { fill: none; stroke: #60605c; stroke-width: 1; stroke-dasharray: 3 4; }
+.s-fill { fill: #262624; } .s-fill-a { fill: #0787e0; }
+</style>
+      <line class="s-hair" x1="30" y1="38" x2="350" y2="38"></line>
+      <circle class="s-lnf" cx="60" cy="38" r="14"></circle><circle class="s-fill" cx="60" cy="38" r="2.5"></circle>
+      <circle class="s-lnf" cx="125" cy="38" r="14"></circle><circle class="s-fill" cx="125" cy="38" r="2.5"></circle>
+      <circle class="s-lnf" cx="190" cy="38" r="14"></circle><circle class="s-fill" cx="190" cy="38" r="2.5"></circle>
+      <circle class="s-lnf" cx="255" cy="38" r="14"></circle><circle class="s-fill" cx="255" cy="38" r="2.5"></circle>
+      <circle class="s-lnf-a" cx="320" cy="38" r="14"></circle><circle class="s-fill-a" cx="320" cy="38" r="2.5"></circle>
+      <text class="fig-lab" x="60" y="74" text-anchor="middle">BROWSER</text>
+      <text class="fig-lab" x="125" y="74" text-anchor="middle">FILES</text>
+      <text class="fig-lab" x="190" y="74" text-anchor="middle">TOOLS</text>
+      <text class="fig-lab" x="255" y="74" text-anchor="middle">ACCESS</text>
+      <text class="fig-lab-a" x="320" y="74" text-anchor="middle">STATE</text>
+    </svg>

@@ -1,0 +1,26 @@
+<svg role="img" aria-label="Your team decides agent behavior, environment configuration, and service operation; a provider can operate the service layer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 140"><style>
+svg { background: #fff; }
+.fig-lab, .fig-lab-b, .fig-lab-a { font-family: monospace; font-size: 10px; letter-spacing: .06em; fill: #60605c; }
+.fig-lab-b { fill: #262624; } .fig-lab-a { fill: #0787e0; }
+.fig-num { font-family: monospace; font-size: 14px; fill: #262624; }
+.s-ln, .s-ln-a, .s-hair { fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.s-ln { stroke: #262624; } .s-ln-a { stroke: #0787e0; }
+.s-hair { stroke: #60605c; stroke-width: 1; }
+.s-lnf { fill: #fff; stroke: #262624; stroke-width: 1.5; }
+.s-lnf-a { fill: #fff; stroke: #0787e0; stroke-width: 1.5; }
+.s-dash { fill: none; stroke: #60605c; stroke-width: 1; stroke-dasharray: 3 4; }
+.s-fill { fill: #262624; } .s-fill-a { fill: #0787e0; }
+</style>
+      <rect class="s-ln" x="104" y="26" width="172" height="26" rx="5"></rect>
+      <rect class="s-ln" x="104" y="62" width="172" height="26" rx="5"></rect>
+      <rect class="s-ln-a" x="104" y="98" width="172" height="26" rx="5"></rect>
+      <text class="fig-lab" x="114" y="43">AGENT BEHAVIOR</text>
+      <text class="fig-lab" x="114" y="79">ENVIRONMENT CONFIG</text>
+      <text class="fig-lab-a" x="114" y="115">SERVICE OPERATION</text>
+      <path class="s-hair" d="M98 26 H90 V124 H98"></path>
+      <text class="fig-lab-b" x="82" y="69" text-anchor="end">YOUR TEAM</text>
+      <text class="fig-lab-b" x="82" y="81" text-anchor="end">DECIDES</text>
+      <path class="s-hair" d="M276 98 H284 V124 H276"></path>
+      <text class="fig-lab-a" x="292" y="104">PROVIDER</text>
+      <text class="fig-lab-a" x="292" y="116">OPERATES</text>
+    </svg>

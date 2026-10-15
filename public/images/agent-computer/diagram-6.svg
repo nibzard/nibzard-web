@@ -1,0 +1,30 @@
+<svg role="img" aria-label="Three options: buy a managed service, run it in your own cloud through managed BYOC or self-hosting, or build the service yourself" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 138"><style>
+svg { background: #fff; }
+.fig-lab, .fig-lab-b, .fig-lab-a { font-family: monospace; font-size: 10px; letter-spacing: .06em; fill: #60605c; }
+.fig-lab-b { fill: #262624; } .fig-lab-a { fill: #0787e0; }
+.fig-num { font-family: monospace; font-size: 14px; fill: #262624; }
+.s-ln, .s-ln-a, .s-hair { fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.s-ln { stroke: #262624; } .s-ln-a { stroke: #0787e0; }
+.s-hair { stroke: #60605c; stroke-width: 1; }
+.s-lnf { fill: #fff; stroke: #262624; stroke-width: 1.5; }
+.s-lnf-a { fill: #fff; stroke: #0787e0; stroke-width: 1.5; }
+.s-dash { fill: none; stroke: #60605c; stroke-width: 1; stroke-dasharray: 3 4; }
+.s-fill { fill: #262624; } .s-fill-a { fill: #0787e0; }
+</style>
+      <line class="s-ln" x1="190" y1="16" x2="190" y2="40"></line>
+      <path class="s-ln-a" d="M190 40 L70 68"></path>
+      <line class="s-ln" x1="190" y1="40" x2="190" y2="68"></line>
+      <path class="s-ln" d="M190 40 L310 68"></path>
+      <line class="s-ln-a" x1="70" y1="68" x2="70" y2="96"></line>
+      <line class="s-ln" x1="190" y1="68" x2="190" y2="96"></line>
+      <line class="s-ln" x1="310" y1="68" x2="310" y2="96"></line>
+      <path class="s-ln-a" d="M65 90 L70 96 L75 90"></path>
+      <path class="s-ln" d="M185 90 L190 96 L195 90"></path>
+      <path class="s-ln" d="M305 90 L310 96 L315 90"></path>
+      <text class="fig-lab-a" x="70" y="114" text-anchor="middle">BUY</text>
+      <text class="fig-lab" x="70" y="130" text-anchor="middle">THEY RUN IT</text>
+      <text class="fig-lab-b" x="190" y="114" text-anchor="middle">YOUR CLOUD</text>
+      <text class="fig-lab" x="190" y="130" text-anchor="middle">BYOC OR SELF-HOST</text>
+      <text class="fig-lab-b" x="310" y="114" text-anchor="middle">BUILD</text>
+      <text class="fig-lab" x="310" y="130" text-anchor="middle">ALL YOURS</text>
+    </svg>

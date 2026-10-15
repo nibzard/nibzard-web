@@ -1,0 +1,26 @@
+<svg role="img" aria-label="A run is interrupted; the next run resumes from saved state" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 108"><style>
+svg { background: #fff; }
+.fig-lab, .fig-lab-b, .fig-lab-a { font-family: monospace; font-size: 10px; letter-spacing: .06em; fill: #60605c; }
+.fig-lab-b { fill: #262624; } .fig-lab-a { fill: #0787e0; }
+.fig-num { font-family: monospace; font-size: 14px; fill: #262624; }
+.s-ln, .s-ln-a, .s-hair { fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.s-ln { stroke: #262624; } .s-ln-a { stroke: #0787e0; }
+.s-hair { stroke: #60605c; stroke-width: 1; }
+.s-lnf { fill: #fff; stroke: #262624; stroke-width: 1.5; }
+.s-lnf-a { fill: #fff; stroke: #0787e0; stroke-width: 1.5; }
+.s-dash { fill: none; stroke: #60605c; stroke-width: 1; stroke-dasharray: 3 4; }
+.s-fill { fill: #262624; } .s-fill-a { fill: #0787e0; }
+</style>
+      <text class="fig-lab" x="70" y="22" text-anchor="middle">RUN 1</text>
+      <line class="s-ln" x1="36" y1="36" x2="196" y2="36"></line>
+      <path class="s-ln" d="M190 31 L196 36 L190 41"></path>
+      <circle class="s-fill" cx="36" cy="36" r="5"></circle>
+      <text class="fig-lab" x="300" y="22" text-anchor="middle">RUN 2</text>
+      <line class="s-ln-a" x1="256" y1="36" x2="348" y2="36"></line>
+      <path class="s-ln-a" d="M342 31 L348 36 L342 41"></path>
+      <circle class="s-fill-a" cx="256" cy="36" r="5"></circle>
+      <line class="s-dash" x1="196" y1="44" x2="196" y2="68"></line>
+      <line class="s-dash" x1="256" y1="44" x2="256" y2="68"></line>
+      <rect class="s-lnf" x="166" y="68" width="120" height="26" rx="6"></rect>
+      <text class="fig-lab-b" x="226" y="85" text-anchor="middle">SAVED STATE</text>
+    </svg>

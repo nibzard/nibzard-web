@@ -174,3 +174,5 @@ Add new entries at the bottom of the table.
 - **2026-10-14: Preserve the reason to care when simplifying an article.** Cutting the undo draft to recovery mechanics weakened its argument. Open with preserving other people's later work, explain why recovery should shape agent autonomy, and return to that decision at the end. A concrete example needs stakes as well as a procedure.
 
 - **2026-10-14: Name the argument in an article title after narrowing its scope.** Retitled the undo draft to connect recovery with agent autonomy, then aligned the description, topic order, and answered questions. A title about every AI app was broader than the revised shared-workspace argument.
+
+- **2026-10-15: Preserve source assets when cross-posting Steel articles.** Download original images from the paths behind Next.js image URLs. Remove decorative SVG bullet icons before Markdown conversion. Existing `canonical` frontmatter supplies both the HTML canonical link and the raw Markdown canonical header. Add a visible source note separately.
