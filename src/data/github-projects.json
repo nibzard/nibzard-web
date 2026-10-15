@@ -8,7 +8,7 @@
       "description": "A Community-Driven Mapping of AI Development Tools",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-10-05T11:03:14Z",
+      "updatedAt": "2026-10-14T20:14:34Z",
       "pushedAt": "2026-07-24T12:59:23Z",
       "archived": false,
       "fork": false
@@ -290,6 +290,23 @@
       "fork": false
     },
     {
+      "fullName": "nibzard/aie-nyc-2026",
+      "name": "aie-nyc-2026",
+      "url": "https://github.com/nibzard/aie-nyc-2026",
+      "description": "AI Engineer NYC 2026 livestreams processed into session records (transcripts, summaries, speakers, tags) + published site",
+      "topics": [
+        "agents",
+        "ai-engineer",
+        "conference-notes",
+        "transcripts"
+      ],
+      "language": "HTML",
+      "updatedAt": "2026-10-15T08:24:06Z",
+      "pushedAt": "2026-10-15T08:22:26Z",
+      "archived": false,
+      "fork": false
+    },
+    {
       "fullName": "nibzard/ais-anomaly-detection",
       "name": "ais-anomaly-detection",
       "url": "https://github.com/nibzard/ais-anomaly-detection",
@@ -476,8 +493,8 @@
       "description": "A curated catalogue of awesome agentic AI patterns",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-10-14T10:16:55Z",
-      "pushedAt": "2026-10-14T10:16:45Z",
+      "updatedAt": "2026-10-14T23:13:27Z",
+      "pushedAt": "2026-10-14T23:13:20Z",
       "archived": false,
       "fork": false
     },
@@ -764,8 +781,8 @@
       "description": "",
       "topics": [],
       "language": "GDScript",
-      "updatedAt": "2026-10-13T16:15:23Z",
-      "pushedAt": "2026-10-13T16:15:18Z",
+      "updatedAt": "2026-10-14T12:18:06Z",
+      "pushedAt": "2026-10-14T12:18:00Z",
       "archived": false,
       "fork": false
     },
@@ -1850,8 +1867,8 @@
       "description": "",
       "topics": [],
       "language": "Python",
-      "updatedAt": "2026-10-14T04:28:49Z",
-      "pushedAt": "2026-10-14T04:28:45Z",
+      "updatedAt": "2026-10-15T04:11:27Z",
+      "pushedAt": "2026-10-15T04:11:23Z",
       "archived": false,
       "fork": false
     },
@@ -2180,8 +2197,8 @@
       "description": "Run coding agents overnight or for days. Looper plans tasks, checks their work, and keeps progress visible in your terminal.",
       "topics": [],
       "language": "Go",
-      "updatedAt": "2026-10-14T09:28:32Z",
-      "pushedAt": "2026-10-14T09:28:28Z",
+      "updatedAt": "2026-10-14T22:53:45Z",
+      "pushedAt": "2026-10-14T22:53:50Z",
       "archived": false,
       "fork": false
     },
@@ -2552,8 +2569,8 @@
       "description": "Personal blog discussing AI, growth and startups",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-10-14T12:04:11Z",
-      "pushedAt": "2026-10-14T12:04:06Z",
+      "updatedAt": "2026-10-14T12:08:35Z",
+      "pushedAt": "2026-10-14T12:08:30Z",
       "archived": false,
       "fork": false
     },
@@ -3592,6 +3609,18 @@
       "fork": false
     },
     {
+      "fullName": "nibzard/walgit",
+      "name": "walgit",
+      "url": "https://github.com/nibzard/walgit",
+      "description": "",
+      "topics": [],
+      "language": "Rust",
+      "updatedAt": "2026-10-15T06:12:36Z",
+      "pushedAt": "2026-10-15T11:42:35Z",
+      "archived": false,
+      "fork": true
+    },
+    {
       "fullName": "nibzard/Webwright",
       "name": "Webwright",
       "url": "https://github.com/nibzard/Webwright",
@@ -3973,7 +4002,7 @@
       ],
       "language": "Python",
       "updatedAt": "2026-10-08T09:27:00Z",
-      "pushedAt": "2026-10-08T09:26:57Z",
+      "pushedAt": "2026-10-15T09:35:20Z",
       "archived": false,
       "fork": false
     },
