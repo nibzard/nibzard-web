@@ -8,7 +8,7 @@
       "description": "A Community-Driven Mapping of AI Development Tools",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-10-14T20:14:34Z",
+      "updatedAt": "2026-10-15T20:09:01Z",
       "pushedAt": "2026-07-24T12:59:23Z",
       "archived": false,
       "fork": false
@@ -140,8 +140,8 @@
       "description": "Proxmox sandbox orchestration for unattended AI coding agent jobs.",
       "topics": [],
       "language": "Go",
-      "updatedAt": "2026-10-14T10:16:46Z",
-      "pushedAt": "2026-10-14T10:16:44Z",
+      "updatedAt": "2026-10-16T07:31:29Z",
+      "pushedAt": "2026-10-16T07:31:25Z",
       "archived": false,
       "fork": false
     },
@@ -301,8 +301,8 @@
         "transcripts"
       ],
       "language": "HTML",
-      "updatedAt": "2026-10-15T08:24:06Z",
-      "pushedAt": "2026-10-15T08:22:26Z",
+      "updatedAt": "2026-10-15T14:37:09Z",
+      "pushedAt": "2026-10-15T14:37:01Z",
       "archived": false,
       "fork": false
     },
@@ -493,7 +493,7 @@
       "description": "A curated catalogue of awesome agentic AI patterns",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-10-14T23:13:27Z",
+      "updatedAt": "2026-10-15T15:44:48Z",
       "pushedAt": "2026-10-14T23:13:20Z",
       "archived": false,
       "fork": false
@@ -1789,6 +1789,18 @@
       "fork": true
     },
     {
+      "fullName": "nibzard/gitpickle",
+      "name": "gitpickle",
+      "url": "https://github.com/nibzard/gitpickle",
+      "description": "Self-hosted application for independent Git repository recovery",
+      "topics": [],
+      "language": "Python",
+      "updatedAt": "2026-10-15T20:51:42Z",
+      "pushedAt": "2026-10-15T20:52:03Z",
+      "archived": false,
+      "fork": false
+    },
+    {
       "fullName": "nibzard/goose",
       "name": "goose",
       "url": "https://github.com/nibzard/goose",
@@ -1867,8 +1879,8 @@
       "description": "",
       "topics": [],
       "language": "Python",
-      "updatedAt": "2026-10-15T04:11:27Z",
-      "pushedAt": "2026-10-15T04:11:23Z",
+      "updatedAt": "2026-10-16T04:07:25Z",
+      "pushedAt": "2026-10-16T04:07:21Z",
       "archived": false,
       "fork": false
     },
@@ -2266,11 +2278,11 @@
       "fullName": "nibzard/margin",
       "name": "margin",
       "url": "https://github.com/nibzard/margin",
-      "description": "Save and review Markdown edits through ordinary Git history with the Margin CLI.",
+      "description": "A terminal workspace for Markdown writing, agent edits, and passage-by-passage review, backed by Git.",
       "topics": [],
       "language": "Rust",
-      "updatedAt": "2026-10-14T11:27:26Z",
-      "pushedAt": "2026-10-14T11:27:11Z",
+      "updatedAt": "2026-10-16T07:48:45Z",
+      "pushedAt": "2026-10-16T07:48:43Z",
       "archived": false,
       "fork": false
     },
@@ -2569,8 +2581,8 @@
       "description": "Personal blog discussing AI, growth and startups",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-10-14T12:08:35Z",
-      "pushedAt": "2026-10-14T12:08:30Z",
+      "updatedAt": "2026-10-15T20:48:05Z",
+      "pushedAt": "2026-10-15T20:48:01Z",
       "archived": false,
       "fork": false
     },
