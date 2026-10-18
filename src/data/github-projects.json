@@ -493,7 +493,7 @@
       "description": "A curated catalogue of awesome agentic AI patterns",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-10-16T20:58:19Z",
+      "updatedAt": "2026-10-18T10:00:41Z",
       "pushedAt": "2026-10-14T23:13:20Z",
       "archived": false,
       "fork": false
@@ -1879,8 +1879,8 @@
       "description": "",
       "topics": [],
       "language": "Python",
-      "updatedAt": "2026-10-17T03:57:40Z",
-      "pushedAt": "2026-10-17T03:57:37Z",
+      "updatedAt": "2026-10-18T04:04:27Z",
+      "pushedAt": "2026-10-18T04:04:23Z",
       "archived": false,
       "fork": false
     },
@@ -2383,6 +2383,18 @@
       "fork": false
     },
     {
+      "fullName": "nibzard/melt",
+      "name": "melt",
+      "url": "https://github.com/nibzard/melt",
+      "description": "Melt: a declarative language for durable, agent-authored native interfaces",
+      "topics": [],
+      "language": "Python",
+      "updatedAt": "2026-10-18T07:32:32Z",
+      "pushedAt": "2026-10-18T07:32:30Z",
+      "archived": false,
+      "fork": false
+    },
+    {
       "fullName": "nibzard/mermaid-ascii",
       "name": "mermaid-ascii",
       "url": "https://github.com/nibzard/mermaid-ascii",
@@ -2581,8 +2593,8 @@
       "description": "Personal blog discussing AI, growth and startups",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-10-16T11:39:11Z",
-      "pushedAt": "2026-10-16T11:39:07Z",
+      "updatedAt": "2026-10-17T10:59:14Z",
+      "pushedAt": "2026-10-17T10:59:11Z",
       "archived": false,
       "fork": false
     },
