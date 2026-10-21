@@ -493,7 +493,7 @@
       "description": "A curated catalogue of awesome agentic AI patterns",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-10-20T06:51:39Z",
+      "updatedAt": "2026-10-20T15:38:12Z",
       "pushedAt": "2026-10-14T23:13:20Z",
       "archived": false,
       "fork": false
@@ -792,9 +792,9 @@
       "url": "https://github.com/nibzard/beam",
       "description": "Beam a coding-agent session up to a sandbox, and down again",
       "topics": [],
-      "language": null,
-      "updatedAt": "2026-10-09T20:19:38Z",
-      "pushedAt": "2026-10-02T20:24:36Z",
+      "language": "Rust",
+      "updatedAt": "2026-10-20T19:43:46Z",
+      "pushedAt": "2026-10-20T19:43:41Z",
       "archived": false,
       "fork": true
     },
@@ -1795,8 +1795,8 @@
       "description": "Self-hosted application for independent Git repository recovery",
       "topics": [],
       "language": "Python",
-      "updatedAt": "2026-10-16T19:59:23Z",
-      "pushedAt": "2026-10-16T19:59:20Z",
+      "updatedAt": "2026-10-20T20:09:07Z",
+      "pushedAt": "2026-10-20T20:09:02Z",
       "archived": false,
       "fork": false
     },
@@ -1879,8 +1879,8 @@
       "description": "",
       "topics": [],
       "language": "Python",
-      "updatedAt": "2026-10-20T04:25:33Z",
-      "pushedAt": "2026-10-20T04:25:29Z",
+      "updatedAt": "2026-10-21T04:16:28Z",
+      "pushedAt": "2026-10-21T04:16:24Z",
       "archived": false,
       "fork": false
     },
@@ -2389,8 +2389,8 @@
       "description": "Melt: a declarative language for durable, agent-authored native interfaces",
       "topics": [],
       "language": "Python",
-      "updatedAt": "2026-10-19T19:04:37Z",
-      "pushedAt": "2026-10-19T12:51:44Z",
+      "updatedAt": "2026-10-21T03:41:18Z",
+      "pushedAt": "2026-10-20T19:31:45Z",
       "archived": false,
       "fork": false
     },
@@ -2593,8 +2593,8 @@
       "description": "Personal blog discussing AI, growth and startups",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-10-19T13:39:09Z",
-      "pushedAt": "2026-10-19T13:39:05Z",
+      "updatedAt": "2026-10-20T11:52:40Z",
+      "pushedAt": "2026-10-20T11:52:32Z",
       "archived": false,
       "fork": false
     },
@@ -3591,8 +3591,8 @@
         "terminal"
       ],
       "language": "Rust",
-      "updatedAt": "2026-10-12T19:25:51Z",
-      "pushedAt": "2026-10-12T19:25:47Z",
+      "updatedAt": "2026-10-20T19:20:32Z",
+      "pushedAt": "2026-10-20T19:20:28Z",
       "archived": false,
       "fork": false
     },
