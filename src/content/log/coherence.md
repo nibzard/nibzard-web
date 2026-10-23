@@ -12,7 +12,7 @@ We can produce the parts faster than we can understand how they fit together. Ea
 
 Fritjof Capra's [Principles of life](https://www.fritjofcapra.net/principles-of-life/) puts relationships at the center of living systems. Their properties depend on how their parts interact. They renew those parts while preserving the organization that lets them function.
 
-I think this is useful for software. That's my reading of Capra, not his claim about artificial intelligence (AI).
+I think this is useful for software.
 
 Complexity alone isn't a failure. A system can be complex and understandable. It becomes difficult to change when nobody knows what depends on what, or who needs to know about a change.
 
