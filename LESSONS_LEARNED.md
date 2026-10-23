@@ -1,5 +1,7 @@
 # LOG
 
+- **2026-10-23: Separate Capra's systems theory from its software application.** His essay `Principles of life` provides a primary source for networks, feedback, and regeneration. Attribute those ideas directly, then label the software argument as interpretation. Use a hypothetical integration failure to explain coherence without inventing experience or quotations.
+
 ## Instructions
 This log tracks all tasks completed in this project. Use one record per task with the following format:
 - **Timestamp**: Date in YYYY-MM-DD format
@@ -176,3 +178,5 @@ Add new entries at the bottom of the table.
 - **2026-10-14: Name the argument in an article title after narrowing its scope.** Retitled the undo draft to connect recovery with agent autonomy, then aligned the description, topic order, and answered questions. A title about every AI app was broader than the revised shared-workspace argument.
 
 - **2026-10-15: Preserve source assets when cross-posting Steel articles.** Download original images from the paths behind Next.js image URLs. Remove decorative SVG bullet icons before Markdown conversion. Existing `canonical` frontmatter supplies both the HTML canonical link and the raw Markdown canonical header. Add a visible source note separately.
+
+- **2026-10-23: Humanize systems writing through the same concrete failure.** Keep the retry example visible through ownership and feedback. Replace abstract definitions and broad closing lines with decisions the teams must make, while preserving the source link and interpretation boundary.
