@@ -6,18 +6,16 @@ tags: [AI, SOFTWARE, SYSTEMS]
 draft: false
 ---
 
-Writing code is getting cheaper. Understanding what we've built still takes work.
+As code gets cheaper to produce, systemic coherence becomes scarce: the shared understanding and relationships that let the parts function together.
 
-We can produce the parts faster than we can understand how they fit together. Each addition creates dependencies that someone has to understand.
+Complexity is natural. In [Principles of life](https://www.fritjofcapra.net/principles-of-life/), Fritjof Capra describes living systems as networks. Their properties emerge through relationships between their parts. Feedback helps them regulate themselves. They continually renew their components while preserving their organization.
 
-Fritjof Capra's [Principles of life](https://www.fritjofcapra.net/principles-of-life/) puts relationships at the center of living systems. Their properties depend on how their parts interact. They renew those parts while preserving the organization that lets them function.
+That gives us a useful way to think about software. Complexity isn't the enemy. We need to understand what allows a complex system to keep working and adapt when things change.
 
-I think this is useful for software.
+Generating another component adds code. It also changes dependencies and the work of people responsible for them. The ability to produce that component doesn't give everyone a shared understanding of its effects.
 
-Complexity alone isn't a failure. A system can be complex and understandable. It becomes difficult to change when nobody knows what depends on what, or who needs to know about a change.
+Coherence takes continuing work. Teams need agreements they can revise as the system changes. People need to see the consequences of their decisions and have the authority to respond. Lessons from a failure need to reach the people who can act on them.
 
-People need to see the effects of their decisions and have the authority to respond. Otherwise, feedback arrives and nothing happens.
+The cheaper it becomes to produce the parts, the more valuable that work becomes. We can generate code faster while losing the ability to understand the whole.
 
-Ownership means keeping that understanding current. An architectural decision needs to survive the departure of the person who made it. An incident needs to change how the team works.
-
-As code gets cheaper, I'd put more of the time we save into this work. If every saved hour goes into generating more code, when do we learn what we're responsible for?
+Systemic coherence is the scarcity to pay attention to.

@@ -182,3 +182,5 @@ Add new entries at the bottom of the table.
 - **2026-10-23: Humanize systems writing through the same concrete failure.** Keep the retry example visible through ownership and feedback. Replace abstract definitions and broad closing lines with decisions the teams must make, while preserving the source link and interpretation boundary.
 
 - **2026-10-23: Cut contrived examples when the argument can stand directly.** The coherence post now states the dependency and ownership problem without the duplicate-receipt scenario. Apply accepted editorial cuts before publication, and preserve the Capra attribution when shortening the source passage.
+
+- **2026-10-23: Preserve the thesis when cutting a systems article.** The coherence post must center the scarcity of systemic coherence and treat complexity as natural. Maintenance examples should support that argument rather than replace it.
