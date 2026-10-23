@@ -6,22 +6,18 @@ tags: [AI, SOFTWARE, SYSTEMS]
 draft: false
 ---
 
-You can generate another service in minutes. Understanding what it changes across your system takes longer.
+Writing code is getting cheaper. Understanding what we've built still takes work.
 
-Imagine adding a notification service to a product. It passes its tests, but a timeout causes both it and the billing service to retry. A customer gets the same receipt twice. Support asks which team owns the problem. Both teams point to the other's service.
+We can produce the parts faster than we can understand how they fit together. Each addition creates dependencies that someone has to understand.
 
-You can write more code here. You still have to agree on what a retry means.
+Fritjof Capra's [Principles of life](https://www.fritjofcapra.net/principles-of-life/) puts relationships at the center of living systems. Their properties depend on how their parts interact. They renew those parts while preserving the organization that lets them function.
 
-This is where I find Fritjof Capra's systems thinking useful. In [Principles of life](https://www.fritjofcapra.net/principles-of-life/), he describes how the properties of living systems emerge through relationships between their parts. Feedback helps them regulate themselves. They continually replace components while preserving the organization that keeps them functioning.
+I think this is useful for software. That's my reading of Capra, not his claim about artificial intelligence (AI).
 
-The connection to software is my interpretation. Capra isn't making an argument about code generation in that essay.
+Complexity alone isn't a failure. A system can be complex and understandable. It becomes difficult to change when nobody knows what depends on what, or who needs to know about a change.
 
-Complexity alone doesn't explain the duplicate receipt. The services lack an agreement about delivery, and their teams lack an agreement about responsibility. Coherence sounds abstract until you're the person answering that support ticket.
+People need to see the effects of their decisions and have the authority to respond. Otherwise, feedback arrives and nothing happens.
 
-Artificial intelligence (AI) can help implement a shared retry policy. Someone still has to decide what customers should experience when delivery fails, and check whether that happens.
+Ownership means keeping that understanding current. An architectural decision needs to survive the departure of the person who made it. An incident needs to change how the team works.
 
-Requiring a central review for every change might catch the mismatch. It can also leave teams waiting for permission to fix problems they already understand. They need room to act, with feedback that shows what their changes do elsewhere.
-
-Ownership continues after the fix. When one team changes its retry behavior, the other needs to know. When someone new joins, the agreement needs to be somewhere they can find it. That takes time, even if the next implementation is cheap.
-
-Before generating another service, ask who can explain how it behaves with the services already running. Give them time to work through the answer.
+As code gets cheaper, I'd put more of the time we save into this work. If every saved hour goes into generating more code, when do we learn what we're responsible for?

@@ -180,3 +180,5 @@ Add new entries at the bottom of the table.
 - **2026-10-15: Preserve source assets when cross-posting Steel articles.** Download original images from the paths behind Next.js image URLs. Remove decorative SVG bullet icons before Markdown conversion. Existing `canonical` frontmatter supplies both the HTML canonical link and the raw Markdown canonical header. Add a visible source note separately.
 
 - **2026-10-23: Humanize systems writing through the same concrete failure.** Keep the retry example visible through ownership and feedback. Replace abstract definitions and broad closing lines with decisions the teams must make, while preserving the source link and interpretation boundary.
+
+- **2026-10-23: Cut contrived examples when the argument can stand directly.** The coherence post now states the dependency and ownership problem without the duplicate-receipt scenario. Apply accepted editorial cuts before publication, and preserve the Capra attribution when shortening the source passage.
