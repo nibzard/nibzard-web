@@ -1,0 +1,102 @@
+---
+export const prerender = true;
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { profile } from '../config/career';
+const inquiry = `mailto:${profile.email}?subject=${encodeURIComponent('Can an agent use our product?')}&body=${encodeURIComponent('Hi Nikola,\n\nOur product: \nThe customer we serve: \nOne task they should be able to delegate to an agent: \nWhere we think it breaks today: \n\n')}`;
+const steps = [
+  ['Pick a task worth winning.', 'We choose one customer and one commercially important task. What would successful use look like? Why would that customer choose you?'],
+  ['Watch agents try it.', 'Starting from realistic customer requests, we follow the path through discovery, comparison, docs, authentication, and actual use. We keep the failures visible.'],
+  ['Work on what gets in the way.', 'I work with your team on an agreed set of changes. That might mean a clearer use case, a better example, a CLI fix, or a missing product capability.'],
+  ['Run it again.', 'You leave with the scoped improvements, an evaluation you can repeat, and evidence of what still needs work. Your team can check the next release against the same task.'],
+];
+---
+<BaseLayout title="AI agent consulting — Nikola Balić" description="Hands-on product strategy and AI agent consulting for software companies. Find out whether agents can discover, choose, and use your product." fullWidth={true}>
+  <article class="consulting-page">
+    <header class="consulting-hero">
+      <p class="eyebrow">Work with me <span> / </span> Nikola Balić · Disequi</p>
+      <h1>Find your place in<br />the agent economy.</h1>
+      <p class="hero-intro">I help software companies figure out what to build, who to build it for, and how to make it useful when agents are doing more of the choosing and using.</p>
+      <div class="hero-links"><a class="button-primary" href="#start">Bring me a product and a task <span aria-hidden="true">↗</span></a><a href="#work">See how I work ↓</a></div>
+    </header>
+
+    <section class="engagement" aria-labelledby="engagement-title">
+      <div class="section-label"><span class="index">01</span> A place to start</div>
+      <div>
+        <h2 id="engagement-title">Can an agent become<br />your customer?</h2>
+        <p class="section-lead">Someone asks their agent to solve a problem your product handles. What happens next?</p>
+        <p>Does it find you? Understand when to choose you? Get through setup and do something useful? Each step is a product question, and a potential place to lose the customer.</p>
+        <p>This is a focused engagement for founders and teams building developer tools and software that agents can use. We follow one valuable customer task all the way through.</p>
+        <div class="task-path" aria-label="The customer journey we investigate"><span>Find</span><span aria-hidden="true">→</span><span>Choose</span><span aria-hidden="true">→</span><span>Use</span><span aria-hidden="true">→</span><span>Finish the task</span></div>
+      </div>
+    </section>
+
+    <section class="work-section" id="work" aria-labelledby="work-title">
+      <div class="section-label"><span class="index">02</span> The work</div>
+      <div><h2 id="work-title">One real task.<br />Enough depth to learn something.</h2>
+        <ol class="steps">{steps.map(([title, description], i) => <li><span class="step-number" aria-hidden="true">0{i + 1}</span><div><h3>{title}</h3><p>{description}</p></div></li>)}</ol>
+        <p class="scope-note">We agree on the task, scope, and deliverables before starting. If the work points to a bigger product question—who needs this, or what you should build next—we can work through that too.</p>
+      </div>
+    </section>
+
+    <section class="evidence-section" aria-labelledby="evidence-title">
+      <div class="section-label"><span class="index">03</span> Behind the approach</div>
+      <div><h2 id="evidence-title">Built from doing the work.</h2><p>My work sits between product, engineering, and growth. These experiments and essays show how I approach the problems.</p>
+        <div class="evidence-list">
+          <a href="/optimizing-skills"><span class="evidence-type">Benchmarking · Steel</span><h3>What makes an agent better at using a tool? <span aria-hidden="true">↗</span></h3><p>Two weeks of testing skills and tasks, alongside CLI improvements by Hussuf and Junshyoungs. The useful output: a way to keep measuring.</p></a>
+          <a href="/agentprobe"><span class="evidence-type">Tool · Experiment</span><h3>AgentProbe <span aria-hidden="true">↗</span></h3><p>A tool I built to investigate how well agents actually use command-line tools, and where they get stuck.</p></a>
+          <a href="/brand-bids"><span class="evidence-type">Growth · Field notes</span><h3>When the evaluator is an agent <span aria-hidden="true">↗</span></h3><p>What server logs and my experience at Steel suggested about product discovery beyond the browser analytics dashboard.</p></a>
+          <a href="/wedge"><span class="evidence-type">Product strategy · Essay</span><h3>Get opinionated about the first problem <span aria-hidden="true">↗</span></h3><p>Why choosing a specific customer workflow helps you learn what your product is missing.</p></a>
+        </div>
+        <p class="background-link"><a href="/about">More about me</a> <span aria-hidden="true">·</span> <a href="/cv">Experience and background</a></p>
+      </div>
+    </section>
+
+    <section class="contact-section" id="start" aria-labelledby="start-title">
+      <p class="eyebrow">Start with something specific</p>
+      <h2 id="start-title">Send me your product.<br />And one task an agent should be able to do.</h2>
+      <p>Tell me who the customer is and where you think it breaks. We’ll discuss why it matters to the business and whether I can help.</p>
+      <a class="button-primary" href={inquiry}>Let’s look at your product <span aria-hidden="true">↗</span></a>
+      <p class="contact-detail"><a href={`mailto:${profile.email}`}>{profile.email}</a><br />I consult through <a href="https://disequi.com">Disequi</a>.</p>
+    </section>
+  </article>
+</BaseLayout>
+<style>
+  .consulting-page { max-width: 1080px; margin-inline: auto; }
+  .eyebrow, .section-label, .evidence-type { font-size: 12px; color: var(--color-text-muted); }
+  .eyebrow { margin-bottom: 32px; }
+  .eyebrow span { margin-inline: 10px; color: var(--color-border-strong); }
+  .consulting-hero { padding: 20px 0 72px; }
+  .consulting-hero h1 { font-size: clamp(44px, 5.8vw, 82px); line-height: 1.05; letter-spacing: -.045em; margin-bottom: 30px; }
+  .hero-intro { max-width: 47ch; font-size: clamp(19px, 2vw, 23px); color: var(--color-text-muted); line-height: 1.55; }
+  .hero-links { margin-top: 32px; }
+  .engagement, .work-section, .evidence-section { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 32px; padding: 48px 0 56px; border-top: 1px solid var(--color-border); }
+  .section-label { display: flex; align-items: baseline; gap: 12px; padding-top: 8px; }
+  .index { font-family: var(--font-mono); color: var(--color-accent1); }
+  h2 { font-size: clamp(28px, 3vw, 40px); margin: 0 0 24px; line-height: 1.15; }
+  .engagement p, .work-section p, .evidence-section > div > p { max-width: 62ch; color: var(--color-text-muted); }
+  .engagement .section-lead { font-size: 22px; color: var(--color-text); }
+  .task-path { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; padding: 22px 0 0; font-size: 14px; }
+  .task-path span[aria-hidden] { color: var(--color-accent1); }
+  .steps { padding: 0; margin: 32px 0 24px; list-style: none; }
+  .steps li { display: grid; grid-template-columns: 28px 1fr; gap: 16px; border-top: 1px solid var(--color-border); padding: 23px 0; margin: 0; }
+  .step-number { font: 12px var(--font-mono); color: var(--color-text-muted); padding-top: 5px; }
+  .steps h3 { font-size: 20px; margin: 0 0 10px; }
+  .steps p { margin: 0; }
+  .scope-note { font-size: 14px; padding-left: 18px; border-left: 2px solid var(--color-accent1); }
+  .evidence-list { margin-top: 30px; }
+  .evidence-list > a { display: block; padding: 24px 0; border-top: 1px solid var(--color-border); color: var(--color-text); text-decoration: none; }
+  .evidence-list h3 { font-size: 21px; margin: 10px 0; }
+  .evidence-list h3 span { color: var(--color-accent1); }
+  .evidence-list a:hover h3 { color: var(--color-accent1); text-decoration: underline; text-underline-offset: .2em; }
+  .evidence-list p { font-size: 15px; margin: 0; color: var(--color-text-muted); max-width: 60ch; }
+  .background-link { font-size: 14px; margin-top: 20px; }
+  .background-link span { margin-inline: 10px; }
+  .contact-section { padding: clamp(28px, 4vw, 52px); background: var(--color-background-alt); border-top: 3px solid var(--color-accent1); margin: 0 0 48px; }
+  .contact-section .eyebrow { margin-bottom: 24px; }
+  .contact-section h2 { max-width: 25ch; }
+  .contact-section > p:not(.eyebrow) { max-width: 52ch; color: var(--color-text-muted); }
+  .contact-section .button-primary { margin: 10px 0 22px; }
+  .contact-detail { font-size: 13px; margin: 0; line-height: 1.9; }
+  @media (max-width: 1000px) { .engagement, .work-section, .evidence-section { grid-template-columns: 1fr; gap: 24px; } }
+  @media (max-width: 760px) { .consulting-hero { padding: 6px 0 48px; } .consulting-hero h1 { font-size: clamp(40px, 9vw, 64px); } .eyebrow { margin-bottom: 26px; } .engagement, .work-section, .evidence-section { padding: 32px 0 40px; } .task-path { gap: 10px; font-size: 12px; } }
+</style>

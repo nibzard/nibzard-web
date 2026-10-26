@@ -1,5 +1,6 @@
 ---
 export const prerender = true;
+import ConsultingCTA from '../components/ConsultingCTA.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { projects, featuredProjects } from '../utils/projects';
 ---
@@ -18,6 +19,7 @@ import { projects, featuredProjects } from '../utils/projects';
       <div class="project-topics">{project.attribution && <span>{project.attribution}</span>}{project.language && <span>{project.language}</span>}{project.topics.filter(topic => topic.toLowerCase() !== project.language?.toLowerCase()).map(topic => <span>{topic}</span>)}{project.archived && <span>Archived</span>}</div>
     </div></li>)}</ul> : <p>New projects are on the way. You can also browse my work on <a href="https://github.com/nibzard">GitHub</a>.</p>}
   </section>
+  <ConsultingCTA />
 </BaseLayout>
 <style>
   .without-image { grid-template-columns: 1fr; max-width: 65ch; }

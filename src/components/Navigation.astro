@@ -1,10 +1,10 @@
 ---
 const path = Astro.url.pathname.replace(/\/$/, '') || '/';
-const writingRoute = path.startsWith('/tags') || path.startsWith('/thoughts') || (!['/', '/projects', '/about', '/bio', '/cv', '/now', '/search', '/styles', '/unsubscribe', '/404'].includes(path) && !path.startsWith('/now/') && !path.startsWith('/images/') && !path.startsWith('/idea/') && !path.startsWith('/tools'));
+const writingRoute = path.startsWith('/tags') || path.startsWith('/thoughts') || (!['/', '/projects', '/consulting', '/about', '/bio', '/cv', '/now', '/search', '/styles', '/unsubscribe', '/404'].includes(path) && !path.startsWith('/now/') && !path.startsWith('/images/') && !path.startsWith('/idea/') && !path.startsWith('/tools'));
 const items = [
   { href: '/', label: 'Overview' }, { href: '/log', label: 'Writing' },
   { href: '/projects', label: 'Projects' }, { href: '/now', label: 'Now' },
-  { href: '/about', label: 'About' },
+  { href: '/about', label: 'About' }, { href: '/consulting', label: 'Work with me' },
 ];
 ---
 <nav class="site-nav" aria-label="Main navigation">
