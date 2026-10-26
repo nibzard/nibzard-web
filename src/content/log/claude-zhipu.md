@@ -14,16 +14,16 @@ answers_questions:
   - How can you maintain parallel AI coding environments without conflicts?
 ---
 
-> **Updated guide**: this article now covers GLM-4.7, which introduces interleaved thinking, a reasoning pattern that interleaves thoughts with actions and responses. See the [What's new in GLM-4.7](#whats-new-in-glm-47) section below.
+> **Newer setup guide:** see [Claude Code with GLM-5.3: The Setup That Works](/claude-glm), tested on September 9, 2026 with Claude Code 2.1.266. The instructions below describe my December 2025 GLM-4.7 setup; model names, compatibility, and plan terms may have changed.
 
 ---
 
 This setup lets you use Claude Code CLI with Zhipu's API (`api.z.ai`) in parallel with your existing Claude Max / Anthropic CLI installation.
 The new command is called `claude-zhipu` and it won't interfere with your normal `claude`.
 
-Zhipu AI recently launched their [GLM-4.7](https://z.ai/blog/glm-4.7) model with native support for Claude's API format, so existing Claude tools work with their infrastructure.
+At the time of writing in December 2025, Zhipu AI had just launched [GLM-4.7](https://z.ai/blog/glm-4.7) with support for Claude's API format.
 
-Zhipu is running [50% off your first GLM Coding Plan purchase](https://z.ai/subscribe?ic=61HSE9HVY6) this December.
+The 50% first-purchase discount mentioned in this article was a December 2025 promotion. Check [Z.ai's subscription page](https://z.ai/subscribe?ic=61HSE9HVY6) (affiliate link) for current prices and offers; don't assume that discount still applies.
 
 ![Zhipu AI GLM-4.7 Architecture](https://z-cdn-media.chatglm.cn/prompts-rich-media-resources/4.7-blog/20251223-004432.png)
 
@@ -124,7 +124,7 @@ So you now have two parallel Claude CLIs:
 
 ### My experience with the Max plan
 
-I treated myself to the Max yearly plan for Christmas since they're running a promo. After 24 hours with three parallel agents running, I'd used about 40% of the 5-hour quota window—plenty for my workflow.
+I treated myself to the Max yearly plan for Christmas 2025 during that promotion. After 24 hours with three parallel agents running, I'd used about 40% of the 5-hour quota window—plenty for my workflow.
 
 The speed is the real difference: GLM-4.7 does 55+ tokens/second. The Max Plan gets you ~2,400 prompts every 5 hours, or about 3× the Claude Max (20x) allowance.
 
@@ -199,5 +199,5 @@ For better security, consider using [`pass`](https://www.passwordstore.org/) to 
 ## Additional resources
 
 - [Official Zhipu Claude Development Guide](https://docs.z.ai/scenario-example/develop-tools/claude) - Complete documentation for developing with Claude-compatible APIs
-- [GLM-4.7 Model Announcement](https://z.ai/blog/glm-4.7) - Technical details about Zhipu's latest model with interleaved thinking
-- [Get GLM Coding Plan](https://z.ai/subscribe?ic=61HSE9HVY6) — *Affiliate link, gives you additional 10% off*
+- [GLM-4.7 Model Announcement](https://z.ai/blog/glm-4.7) - Technical details about the model used in this December 2025 setup
+- [Get GLM Coding Plan](https://z.ai/subscribe?ic=61HSE9HVY6) — *Affiliate link; check the current offer at checkout.*
