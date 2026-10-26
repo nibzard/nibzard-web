@@ -493,7 +493,7 @@
       "description": "A curated catalogue of awesome agentic AI patterns",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-10-25T09:07:46Z",
+      "updatedAt": "2026-10-26T01:43:55Z",
       "pushedAt": "2026-10-14T23:13:20Z",
       "archived": false,
       "fork": false
@@ -845,18 +845,6 @@
       "pushedAt": "2026-10-12T19:59:21Z",
       "archived": false,
       "fork": true
-    },
-    {
-      "fullName": "nibzard/berghain-challenge-bot",
-      "name": "berghain-challenge-bot",
-      "url": "https://github.com/nibzard/berghain-challenge-bot",
-      "description": "Clean, modular Berghain Challenge bot with real-time monitoring and statistical analysis",
-      "topics": [],
-      "language": "Python",
-      "updatedAt": "2026-05-19T14:45:29Z",
-      "pushedAt": "2026-03-20T12:22:30Z",
-      "archived": false,
-      "fork": false
     },
     {
       "fullName": "nibzard/berghain-colab",
@@ -1243,8 +1231,8 @@
         "typescript"
       ],
       "language": "C++",
-      "updatedAt": "2026-10-24T10:54:10Z",
-      "pushedAt": "2026-10-24T10:54:06Z",
+      "updatedAt": "2026-10-26T12:18:27Z",
+      "pushedAt": "2026-10-26T12:18:22Z",
       "archived": false,
       "fork": false
     },
@@ -1814,7 +1802,7 @@
       "topics": [],
       "language": "Python",
       "updatedAt": "2026-10-20T20:09:07Z",
-      "pushedAt": "2026-10-20T20:09:02Z",
+      "pushedAt": "2026-10-26T12:33:52Z",
       "archived": false,
       "fork": false
     },
@@ -1897,8 +1885,8 @@
       "description": "",
       "topics": [],
       "language": "Python",
-      "updatedAt": "2026-10-25T04:13:37Z",
-      "pushedAt": "2026-10-25T04:13:33Z",
+      "updatedAt": "2026-10-26T04:17:35Z",
+      "pushedAt": "2026-10-26T04:17:31Z",
       "archived": false,
       "fork": false
     },
@@ -2300,7 +2288,7 @@
       "topics": [],
       "language": "Rust",
       "updatedAt": "2026-10-16T07:48:45Z",
-      "pushedAt": "2026-10-16T07:48:43Z",
+      "pushedAt": "2026-10-26T12:33:01Z",
       "archived": false,
       "fork": false
     },
@@ -2611,8 +2599,8 @@
       "description": "Personal blog discussing AI, growth and startups",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-10-24T11:18:39Z",
-      "pushedAt": "2026-10-24T11:18:35Z",
+      "updatedAt": "2026-10-25T11:47:43Z",
+      "pushedAt": "2026-10-25T11:47:40Z",
       "archived": false,
       "fork": false
     },
@@ -3262,7 +3250,7 @@
       "topics": [],
       "language": "Rust",
       "updatedAt": "2026-10-12T20:08:55Z",
-      "pushedAt": "2026-10-12T20:08:51Z",
+      "pushedAt": "2026-10-26T13:14:43Z",
       "archived": false,
       "fork": false
     },
