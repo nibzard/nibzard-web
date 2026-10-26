@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nibzard.com/sitemap-index.xml
+Sitemap: https://www.nibzard.com/sitemap-index.xml

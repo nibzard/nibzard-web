@@ -11,11 +11,13 @@ import remarkMermaidClient from './src/plugins/remark-mermaid-client.mjs';
 // import node from '@astrojs/node';
 import vercel from '@astrojs/vercel';
 
-const siteUrl = 'https://nibzard.com';
+const siteUrl = 'https://www.nibzard.com';
 
 // https://astro.build/config
 export default defineConfig({
   integrations: [mdx(), react(), sitemap({
+    // Server-rendered content routes are not enumerated by the integration.
+    customSitemaps: [`${siteUrl}/sitemap-articles.xml`],
     filter: (page) => {
       // The retired biography has a permanent redirect.
       return new URL(page).pathname.replace(/\/$/, '') !== '/bio';
@@ -30,12 +32,6 @@ export default defineConfig({
     }
   })],
   site: siteUrl,
-  // Old /log/entry-x paths must 301 to the canonical /entry-x route, so search
-  // engines consolidate signals on one URL instead of indexing duplicates.
-  // One segment only: a rest param would also capture /log itself.
-  redirects: {
-    '/log/:slug': '/:slug',
-  },
   server: { allowedHosts: ['claude-code-vm.tailef8c96.ts.net'] },
   devToolbar: { enabled: false },
   // output: 'static',

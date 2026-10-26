@@ -12,7 +12,7 @@ export default function rehypeExternalLinks(options = {}) {
         if (linkUrl.startsWith('http://') || linkUrl.startsWith('https://')) {
           try {
             const url = new URL(linkUrl);
-            if (domain && url.hostname === domain) {
+            if (domain && url.hostname.replace(/^www\./, '') === domain.replace(/^www\./, '')) {
               // Internal link to the same domain specified in options
               isExternal = false;
             } else if (!domain && typeof window !== 'undefined' && url.hostname === window.location.hostname) {

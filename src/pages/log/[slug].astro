@@ -1,0 +1,6 @@
+---
+// Match both trailing-slash variants without capturing the /log archive.
+// Vercel's adapter strips trailing slashes from configured redirect patterns.
+export const prerender = false;
+return Astro.redirect(`/${Astro.params.slug}${Astro.url.search}`, 301);
+---

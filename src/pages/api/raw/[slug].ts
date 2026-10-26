@@ -96,7 +96,7 @@ export const GET: APIRoute = async ({ params, site }) => {
       return new Response('Markdown file not found', { status: 404 });
     }
 
-    const siteUrl = site?.toString() || 'https://nibzard.com';
+    const siteUrl = site?.toString() || 'https://www.nibzard.com';
     const canonicalUrl = new URL(matchedEntry.canonicalPath, siteUrl).toString();
     const markdownUrl = new URL(matchedEntry.markdownPath, siteUrl).toString();
 

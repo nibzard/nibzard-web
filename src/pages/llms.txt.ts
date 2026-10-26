@@ -38,7 +38,7 @@ export const GET: APIRoute = async () => {
     const sortedImages = sortByDate(images);
 
     // Generate llms.txt content following the specification
-    const baseUrl = 'https://nibzard.com';
+    const baseUrl = 'https://www.nibzard.com';
 
     let content = `# Nibzard
 

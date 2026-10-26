@@ -42,8 +42,8 @@ export const AUTHOR_INFO: AuthorInfo = {
     "Nikola Balić (nibzard)",
     "nibzard"
   ],
-  url: "https://nibzard.com/about",
-  image: "https://nibzard.com/avatar/avatar-nibzard.png",
+  url: "https://www.nibzard.com/about",
+  image: "https://www.nibzard.com/avatar/avatar-nibzard.png",
   description: profile.description,
   jobTitle: profile.currentRole,
   worksFor: {
@@ -103,8 +103,8 @@ export const AUTHOR_INFO: AuthorInfo = {
 export const ORGANIZATION_INFO = {
   "@type": "Organization",
   name: "nibzard",
-  url: "https://nibzard.com",
-  logo: "https://nibzard.com/favicon.svg",
+  url: "https://www.nibzard.com",
+  logo: "https://www.nibzard.com/favicon.svg",
   description: "Personal website and insights from Nikola Balić on AI, growth marketing, and innovation",
   founder: AUTHOR_INFO,
   sameAs: [

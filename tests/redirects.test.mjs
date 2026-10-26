@@ -1,14 +1,18 @@
-// ABOUTME: Verifies /log/:slug permanently redirects to /:slug in Astro config
-// ABOUTME: Guards against duplicate-content URLs for log articles returning
+// Set SEO_TEST_URL to a running dev or preview server to verify HTTP behavior.
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import config from '../astro.config.mjs';
 
-test('/log/:slug permanently redirects to /:slug', () => {
-  assert.equal(config.redirects?.['/log/:slug'], '/:slug');
-});
-
-test('/log index route is not redirected', () => {
-  assert.equal(config.redirects?.['/log'], undefined);
-  assert.equal(config.redirects?.['/log/'], undefined);
+const base = process.env.SEO_TEST_URL;
+test('legacy redirects preserve the archive and query string', { skip: !base }, async () => {
+  for (const slug of ['ssh-tunnel-cloudflare', 'agentic-handbook', 'claude-zhipu']) {
+    for (const suffix of ['', '/']) {
+      const response = await fetch(`${base}/log/${slug}${suffix}?ref=test`, { redirect: 'manual' });
+      assert.equal(response.status, 301);
+      assert.equal(response.headers.get('location'), `/${slug}?ref=test`);
+    }
+  }
+  for (const path of ['/log', '/log/']) {
+    const response = await fetch(`${base}${path}`, { redirect: 'manual' });
+    assert.equal(response.status, 200);
+  }
 });

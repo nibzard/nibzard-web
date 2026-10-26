@@ -50,13 +50,13 @@ export function createWebsiteSchema(): Record<string, any> {
   return {
     "@type": "WebSite",
     name: "nibzard",
-    url: "https://nibzard.com",
+    url: "https://www.nibzard.com",
     description: "Personal website and insights from Nikola Balić on AI, growth marketing, and innovation",
     author: AUTHOR_INFO,
     publisher: ORGANIZATION_INFO,
     potentialAction: {
       "@type": "SearchAction",
-      target: "https://nibzard.com/search?q={search_term_string}",
+      target: "https://www.nibzard.com/search?q={search_term_string}",
       "query-input": "required name=search_term_string"
     }
   };

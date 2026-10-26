@@ -46,10 +46,5 @@
     "terser": "^5.44.0",
     "tsx": "^4.19.4",
     "wrangler": "^4.66.0"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "better-sqlite3"
-    ]
   }
 }
