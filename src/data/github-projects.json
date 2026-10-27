@@ -8,7 +8,7 @@
       "description": "A Community-Driven Mapping of AI Development Tools",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-10-25T03:46:52Z",
+      "updatedAt": "2026-10-26T21:58:03Z",
       "pushedAt": "2026-07-24T12:59:23Z",
       "archived": false,
       "fork": false
@@ -140,8 +140,8 @@
       "description": "Proxmox sandbox orchestration for unattended AI coding agent jobs.",
       "topics": [],
       "language": "Go",
-      "updatedAt": "2026-10-16T07:31:29Z",
-      "pushedAt": "2026-10-16T07:31:25Z",
+      "updatedAt": "2026-10-26T17:32:07Z",
+      "pushedAt": "2026-10-26T17:32:03Z",
       "archived": false,
       "fork": false
     },
@@ -493,7 +493,7 @@
       "description": "A curated catalogue of awesome agentic AI patterns",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-10-26T01:43:55Z",
+      "updatedAt": "2026-10-26T16:15:39Z",
       "pushedAt": "2026-10-14T23:13:20Z",
       "archived": false,
       "fork": false
@@ -1231,8 +1231,8 @@
         "typescript"
       ],
       "language": "C++",
-      "updatedAt": "2026-10-26T12:18:27Z",
-      "pushedAt": "2026-10-26T12:18:22Z",
+      "updatedAt": "2026-10-26T23:15:17Z",
+      "pushedAt": "2026-10-26T23:15:13Z",
       "archived": false,
       "fork": false
     },
@@ -1801,8 +1801,8 @@
       "description": "Self-hosted application for independent Git repository recovery",
       "topics": [],
       "language": "Python",
-      "updatedAt": "2026-10-20T20:09:07Z",
-      "pushedAt": "2026-10-26T12:33:52Z",
+      "updatedAt": "2026-10-26T17:31:44Z",
+      "pushedAt": "2026-10-26T17:31:40Z",
       "archived": false,
       "fork": false
     },
@@ -1885,8 +1885,8 @@
       "description": "",
       "topics": [],
       "language": "Python",
-      "updatedAt": "2026-10-26T04:17:35Z",
-      "pushedAt": "2026-10-26T04:17:31Z",
+      "updatedAt": "2026-10-27T04:36:28Z",
+      "pushedAt": "2026-10-27T04:36:23Z",
       "archived": false,
       "fork": false
     },
@@ -2287,8 +2287,8 @@
       "description": "A terminal workspace for Markdown writing, agent edits, and passage-by-passage review, backed by Git.",
       "topics": [],
       "language": "Rust",
-      "updatedAt": "2026-10-16T07:48:45Z",
-      "pushedAt": "2026-10-26T12:33:01Z",
+      "updatedAt": "2026-10-26T16:48:10Z",
+      "pushedAt": "2026-10-26T16:48:06Z",
       "archived": false,
       "fork": false
     },
@@ -2299,8 +2299,8 @@
       "description": "MarginShot - iOS app for document capture and AI-powered note organization",
       "topics": [],
       "language": "Swift",
-      "updatedAt": "2026-01-23T13:52:02Z",
-      "pushedAt": "2026-01-21T12:33:01Z",
+      "updatedAt": "2026-10-26T19:26:25Z",
+      "pushedAt": "2026-10-26T19:26:19Z",
       "archived": false,
       "fork": false
     },
@@ -2599,8 +2599,8 @@
       "description": "Personal blog discussing AI, growth and startups",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-10-25T11:47:43Z",
-      "pushedAt": "2026-10-25T11:47:40Z",
+      "updatedAt": "2026-10-26T19:54:28Z",
+      "pushedAt": "2026-10-26T19:54:23Z",
       "archived": false,
       "fork": false
     },
@@ -2998,6 +2998,18 @@
       "fork": true
     },
     {
+      "fullName": "nibzard/pylemma",
+      "name": "pylemma",
+      "url": "https://github.com/nibzard/pylemma",
+      "description": "Prisoner's Pylemma — a small game about trust between players",
+      "topics": [],
+      "language": "Python",
+      "updatedAt": "2026-10-27T07:58:12Z",
+      "pushedAt": "2026-10-27T07:58:08Z",
+      "archived": false,
+      "fork": false
+    },
+    {
       "fullName": "nibzard/python-jupyter",
       "name": "python-jupyter",
       "url": "https://github.com/nibzard/python-jupyter",
@@ -3249,8 +3261,8 @@
       "description": "Local-first cross-agent skill manager for the open SKILL.md ecosystem",
       "topics": [],
       "language": "Rust",
-      "updatedAt": "2026-10-12T20:08:55Z",
-      "pushedAt": "2026-10-26T13:14:43Z",
+      "updatedAt": "2026-10-26T17:31:51Z",
+      "pushedAt": "2026-10-26T17:31:47Z",
       "archived": false,
       "fork": false
     },
@@ -3597,8 +3609,8 @@
         "terminal"
       ],
       "language": "Rust",
-      "updatedAt": "2026-10-20T19:20:32Z",
-      "pushedAt": "2026-10-20T19:20:28Z",
+      "updatedAt": "2026-10-26T18:10:49Z",
+      "pushedAt": "2026-10-26T18:10:45Z",
       "archived": false,
       "fork": false
     },
