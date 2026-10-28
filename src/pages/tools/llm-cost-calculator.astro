@@ -1,0 +1,107 @@
+---
+export const prerender = true;
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SchemaMarkup from '../../components/SchemaMarkup.astro';
+import LLMCostCalculator from '../../components/llm/LLMCostCalculator.jsx';
+import { popularSnapshot } from '../../utils/llm-prices';
+import { createFaqSchema, createWebAppSchema } from '../../utils/schemaUtils';
+import '../../styles/llm-calculator.css';
+
+const title = 'LLM Cost Calculator | Token Pricing for 1,900+ Models';
+const description = 'Estimate LLM API costs per run, day, and month across 1,900+ models, with cache-read and batch discounts.';
+
+const faqs = [
+  {
+    question: 'How does this LLM cost calculator work?',
+    answer: 'Pick a model and describe one step of your workload: input tokens, output tokens, and cached prompt tokens. Multiply the per-step price by your steps per run, then by runs per day. The calculator shows cost per run, per day, and per month (30 days), using each model\'s published USD price per million tokens.',
+  },
+  {
+    question: 'What are cached tokens, and why do they matter for agents?',
+    answer: 'Agents resend large parts of their prompt every step. Providers such as Anthropic, OpenAI, and Google charge far less for prompt tokens read from a cache than for fresh input. Enter your cached token count per step and the calculator applies the model\'s cache-read price where one is published.',
+  },
+  {
+    question: 'Does the calculator include batch API discounts?',
+    answer: 'Yes, as an optional toggle. Where the dataset publishes exact batch prices (about a hundred models from OpenAI, Google, Anthropic, Mistral, Grok, and xAI), the calculator uses them. For other models from OpenAI, Anthropic, and Google it applies an approximate 50 percent discount, and the toggle is hidden for providers without a known batch program.',
+  },
+  {
+    question: 'How current are the prices?',
+    answer: 'Prices sync weekly from pydantic/genai-prices, an MIT-licensed dataset that aggregates LiteLLM, OpenRouter, and Helicone price lists. The page always shows the date of the last sync. Model prices change often, so treat every number as an estimate.',
+  },
+  {
+    question: 'Why does my actual bill differ from the estimate?',
+    answer: 'Providers bill exact token counts, which differ from your estimates. Some models use tiered pricing above a context threshold, gateways add their own markup, and taxes or free credits can change the total. Use this calculator for planning, and your provider invoice for the truth.',
+  },
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <SchemaMarkup slot="head" schema={createFaqSchema(faqs)} />
+  <SchemaMarkup slot="head" schema={createWebAppSchema({
+    name: 'LLM Cost Calculator',
+    url: 'https://nibzard.com/tools/llm-cost-calculator',
+    description,
+  })} />
+  <div class="tool-page">
+    <header class="page-header">
+      <p class="eyebrow">Tools</p>
+      <h1>LLM cost calculator</h1>
+      <p class="tool-intro">
+        A token cost calculator built for agents. Pick a model, describe one step of the
+        workload, and see what a run costs — and what it costs every month when the agent
+        runs all day. Cache-read and batch pricing included.
+      </p>
+    </header>
+
+    <LLMCostCalculator initialSnapshot={popularSnapshot} client:idle />
+
+    <section class="tool-math" aria-labelledby="math-heading">
+      <h2 id="math-heading">The math behind the estimate</h2>
+      <p>
+        Every model has a published price per million tokens (MTok): one for input, one for
+        output, and usually a cheaper one for prompt tokens read from cache. A run costs:
+      </p>
+      <p class="tool-formula mono">(input&nbsp;×&nbsp;in-price + cached&nbsp;×&nbsp;cache-price + output&nbsp;×&nbsp;out-price) ÷ 1M × steps</p>
+      <p>
+        Multiply by runs per day for the daily cost, and by 30 for the monthly cost. The
+        calculator applies cache-read prices automatically and supports approximate batch
+        discounts where providers publish them.
+      </p>
+    </section>
+
+    <section class="tool-faq" aria-labelledby="faq-heading">
+      <h2 id="faq-heading">Frequently asked questions</h2>
+      {faqs.map(faq => (
+        <details class="tool-faq-item">
+          <summary>{faq.question}</summary>
+          <p>{faq.answer}</p>
+        </details>
+      ))}
+    </section>
+
+    <p class="tool-attribution">
+      Price data from <a href="https://github.com/pydantic/genai-prices">pydantic/genai-prices</a>
+      (MIT), which aggregates LiteLLM, OpenRouter, and Helicone price lists. Built for agent
+      workloads — for more on taming agent costs, see the <a href="/log">writing on this site</a>.
+    </p>
+  </div>
+</BaseLayout>
+<style>
+  .tool-page { max-width: 820px; }
+  .eyebrow { color: var(--color-text-muted); font-size: 13px; margin: 0 0 18px; }
+  .tool-intro { font-size: 17px; line-height: 1.6; max-width: 60ch; color: var(--color-text-muted); }
+  .tool-math, .tool-faq { margin-top: 44px; }
+  .tool-math h2, .tool-faq h2 { font-size: 22px; margin-bottom: 14px; }
+  .tool-math p { max-width: 62ch; line-height: 1.7; }
+  .tool-formula {
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    background: var(--color-subtle-bg);
+    padding: 12px 16px;
+    max-width: max-content;
+    font-size: 14px;
+  }
+  .tool-faq-item { border-bottom: 1px solid var(--color-border); padding: 12px 0; }
+  .tool-faq-item summary { cursor: pointer; font-weight: 600; }
+  .tool-faq-item p { margin: 12px 0 0; color: var(--color-text-muted); line-height: 1.7; max-width: 62ch; }
+  .tool-attribution { margin-top: 40px; font-size: 14px; color: var(--color-text-muted); }
+</style>

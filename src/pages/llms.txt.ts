@@ -84,6 +84,7 @@ For the complete concatenated content of all articles, visit [${baseUrl}/llms-fu
 
     content += `\n## Optional
 
+- [LLM Cost Calculator](${baseUrl}/tools/llm-cost-calculator): Interactive tool that estimates LLM API costs per run, day, and month across 1,900+ models, with cache-read and batch pricing
 - [Complete Content Collection](${baseUrl}/llms-full.txt): Full markdown content of all articles in a single file
 
 ---

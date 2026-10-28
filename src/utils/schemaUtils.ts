@@ -77,3 +77,38 @@ export function createBreadcrumbSchema(items: { name: string; url: string }[]): 
     }))
   };
 }
+
+export function createFaqSchema(faqs: { question: string; answer: string }[]): Record<string, any> {
+  return {
+    "@type": "FAQPage",
+    mainEntity: faqs.map(faq => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer
+      }
+    }))
+  };
+}
+
+export function createWebAppSchema(data: {
+  name: string;
+  url: string;
+  description: string;
+  applicationCategory?: string;
+}): Record<string, any> {
+  return {
+    "@type": "WebApplication",
+    name: data.name,
+    url: data.url,
+    description: data.description,
+    applicationCategory: data.applicationCategory ?? "DeveloperApplication",
+    operatingSystem: "Any",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD"
+    }
+  };
+}

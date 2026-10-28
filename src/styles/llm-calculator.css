@@ -1,0 +1,188 @@
+/* Styles for the LLM cost calculator island. Global (not scoped) because the
+   markup is rendered by React; colors come from the site's design tokens. */
+
+.llm-calc {
+  display: grid;
+  gap: 22px;
+}
+
+.llm-calc-label {
+  display: block;
+  font-size: 13px;
+  color: var(--color-text-muted);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.llm-calc-picker {
+  position: relative;
+}
+
+.llm-calc-picker input {
+  width: 100%;
+}
+
+.llm-calc-picker-hint {
+  margin: 8px 0 0;
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.llm-calc-listbox {
+  position: absolute;
+  z-index: 30;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  max-height: 320px;
+  overflow-y: auto;
+  background: var(--color-form);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  margin: 0;
+  padding: 4px 0;
+  list-style: none;
+  box-shadow: 0 12px 28px rgb(0 0 0 / 12%);
+}
+
+.llm-calc-option {
+  display: grid;
+  gap: 2px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.llm-calc-option[aria-selected='true'],
+.llm-calc-option[data-active],
+.llm-calc-option:hover {
+  background: var(--color-subtle);
+}
+
+.llm-calc-option-id {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+.llm-calc-option-meta {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.llm-calc-inputs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.llm-calc-inputs input {
+  width: 100%;
+  font-variant-numeric: tabular-nums;
+}
+
+.llm-calc-batch {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--color-text-muted);
+  border-top: 1px solid var(--color-border);
+  padding-top: 14px;
+}
+
+.llm-calc-batch input[type='checkbox'] {
+  width: auto;
+  accent-color: var(--color-accent1);
+}
+
+.llm-calc-batch .llm-calc-batch-hint {
+  font-size: 13px;
+}
+
+.llm-calc-results {
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: var(--color-subtle-bg);
+  padding: 20px;
+  display: grid;
+  gap: 16px;
+}
+
+.llm-calc-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.llm-calc-stat span {
+  display: block;
+  font-size: 13px;
+  color: var(--color-text-muted);
+  margin-bottom: 4px;
+}
+
+.llm-calc-stat strong {
+  font-family: var(--font-mono);
+  font-size: clamp(20px, 2.4vw, 27px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.llm-calc-stat-accent strong {
+  color: var(--color-accent1);
+}
+
+.llm-calc-breakdown {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+
+.llm-calc-breakdown div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.llm-calc-breakdown span {
+  color: var(--color-text-muted);
+}
+
+.llm-calc-breakdown strong {
+  font-family: var(--font-mono);
+  font-weight: 500;
+}
+
+.llm-calc-notes {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  font-size: 13px;
+  color: var(--color-text-muted);
+  list-style: none;
+  padding: 0;
+}
+
+.llm-calc-footnote {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.llm-calc-footnote a {
+  color: inherit;
+}
+
+@media (max-width: 640px) {
+  .llm-calc-inputs {
+    grid-template-columns: 1fr;
+  }
+
+  .llm-calc-stats {
+    grid-template-columns: 1fr;
+  }
+}

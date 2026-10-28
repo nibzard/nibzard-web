@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "tinacms:dev": "tinacms dev -c \"pnpm dev\"",
-    "build": "pnpm run projects:sync && pnpm exec tinacms build --local --skip-cloud-checks --port ${TINA_PORT:-4001} --datalayer-port ${TINA_DATALAYER_PORT:-9000} && node scripts/prebuild-og.js && astro build && node scripts/index-tina-search.mjs",
+    "build": "pnpm run projects:sync && pnpm run prices:sync && pnpm exec tinacms build --local --skip-cloud-checks --port ${TINA_PORT:-4001} --datalayer-port ${TINA_DATALAYER_PORT:-9000} && node scripts/prebuild-og.js && astro build && node scripts/index-tina-search.mjs",
     "preview": "astro preview",
     "astro": "astro",
     "pipe:img": "node scripts/screenshot-content.js",
@@ -14,7 +14,9 @@
     "generate:og": "node scripts/generate-og-images.js",
     "generate:og:force": "node scripts/generate-og-images.js --force",
     "projects:sync": "node scripts/sync-projects.mjs",
-    "test:projects": "node --test tests/projects.test.mjs tests/redirects.test.mjs"
+    "prices:sync": "node scripts/sync-llm-prices.mjs",
+    "test:projects": "node --test tests/projects.test.mjs tests/redirects.test.mjs",
+    "test:prices": "node --test tests/llm-prices.test.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.52.0",
