@@ -52,7 +52,6 @@ export const AUTHOR_INFO: AuthorInfo = {
     url: profile.employer.url,
   },
   sameAs: [...profile.links, ...profile.researchLinks].map(link => link.url),
-  email: profile.email,
   knowsAbout: [
     "Go-to-Market Strategy",
     "Product Market Fit",

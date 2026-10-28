@@ -2,6 +2,7 @@
 export const prerender = true;
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { profile } from '../config/career';
+import { obfuscate } from '../utils/obfuscate';
 ---
 <BaseLayout title="About — Nikola Balić" description={profile.description}>
   <article class="about-page">
@@ -23,7 +24,7 @@ import { profile } from '../config/career';
     </nav>
     <section class="about-contact" aria-labelledby="contact-heading">
       <h2 id="contact-heading">Get in touch</h2>
-      <p><a href={`mailto:${profile.email}`}>{profile.email}</a></p>
+      <p set:html={`<a href="mailto:${obfuscate(profile.email)}">${obfuscate(profile.email)}</a>`}></p>
       <div class="profile-links">{profile.links.map(link => <a href={link.url} rel="me">{link.label}</a>)}</div>
     </section>
     <details class="speaker-details">

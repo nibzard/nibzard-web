@@ -3,6 +3,7 @@ export const prerender = true;
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CareerEntries from '../components/CareerEntries.astro';
 import { profile, experience, advisory, teaching, education, programs, publications, software } from '../config/career';
+import { obfuscate } from '../utils/obfuscate';
 const sections = [
   ['experience', 'Experience'], ['advisory', 'Advisory'], ['teaching', 'Teaching'],
   ['education', 'Education'], ['programs', 'Programs'], ['publications', 'Publications'],
@@ -17,7 +18,7 @@ const updated = new Date(`${profile.updated}T12:00:00Z`).toLocaleDateString('en-
       <h1>{profile.name}</h1>
       <p class="career-summary">Developer tools and growth. Research, teaching, and technology transfer.</p>
       <p class="career-location">{profile.location} · {profile.currentRole}, {profile.employer.name} · Visiting lecturer, University of Split</p>
-      <div class="contact-links"><a href={`mailto:${profile.email}`}>{profile.email}</a>{profile.links.map(link => <a href={link.url} rel="me">{link.label}</a>)}</div>
+      <div class="contact-links"><span set:html={`<a href="mailto:${obfuscate(profile.email)}">${obfuscate(profile.email)}</a>`}></span>{profile.links.map(link => <a href={link.url} rel="me">{link.label}</a>)}</div>
       <div class="document-actions">
         <button id="print-cv" hidden>Print / save PDF</button>
         <a href="/about">About me <span aria-hidden="true">↗</span></a>
