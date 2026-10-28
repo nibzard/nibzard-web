@@ -132,7 +132,7 @@ Headless mode is also how agents become infrastructure, not just tools. The agen
 
 People care a lot about:
 
-**Subscription vs API economics.** The $20/month subscription model breaks down when agents do real work. As I wrote in [what Sourcegraph learned](/ampcode), usage-based pricing isn't a bug—it's a feature. Agents that replace hours of human labor will cost real money.
+**Subscription vs API economics.** The $20/month subscription model breaks down when agents do real work. As I wrote in [what Sourcegraph learned](/ampcode), usage-based pricing isn't a bug—it's a feature. Agents that replace hours of human labor will cost real money — [price your workload before you commit](/tools/llm-cost-calculator).
 
 **Provider ToS ambiguity.** Can you use the output commercially? Can you train on the interactions? What happens to your data? These questions matter for production use.
 
