@@ -27,7 +27,7 @@ The person had left the room. The furniture was still arranged for them.
 
 *(I worked on agent infrastructure at [Steel](https://steel.dev) when I wrote this, so read the rest with that in mind.)*
 
-That work has made the pattern easier to see. Steel has served millions of browser sessions for agents. Human browsing is mostly serial; agent browsing arrives in bursts and fans out around a task. The browser is the first part of the computer where we can already see the shape changing.
+Steel has served millions of browser sessions for agents. Human browsing is mostly serial; agent browsing arrives in bursts and fans out around a task. The browser is the first part of the computer where we can already see the shape changing.
 
 ## What I kept removing
 
@@ -65,7 +65,7 @@ The self stays: memory, credentials, live sessions, and the history of what the 
 
 I keep one of these. Cassandra is a memory agent for a Discord server with 367 channels. Several agents built her on top of Pi Agent. She reads what she's permitted to read, tracks what got decided and why, and answers when addressed.
 
-Most of the time Cassandra does almost nothing. She still can't start from zero. Her memories, channel map, and authenticated sessions are the reason she is useful.
+Most of the time Cassandra does almost nothing. Her memories, channel map, and authenticated sessions are the reason she is useful.
 
 Then she blooms. During one run, she spent a day rebuilding an answer path. She forked adversarial copies of herself and told them to break it. They returned with four race conditions she had missed. By evening she was one thing again.
 
@@ -91,7 +91,7 @@ The filesystem is the right unit for identity and the wrong unit for isolation a
 
 I built the cheap half. [AWC](https://nibzard.github.io/awc-docs/) stores a prepared workspace once and lets agents fork it without copying the common data.
 
-The documentation also carries a list of things AWC is not, and sitting on that list is *a sandbox*. The identity layer was a tractable problem and I solved my version of it. The wall and the living state were never on the table.
+AWC is not a sandbox. The identity layer was a tractable problem and I solved my version of it; the wall and the living state were never on the table.
 
 ## The bitter lesson eats half of this
 
@@ -101,7 +101,7 @@ That takes out the cost half of everything above. Cassandra's total spend to dat
 
 The bitter lesson says general computation and search tend to beat systems built around human assumptions. Fixed provisioning is one of those assumptions: a person chooses four cores before the problem has begun.
 
-Forking makes the same case from the other side. Twenty investigators off one checkpoint use *more* compute. That is parallel search. A fixed box caps how much an agent can throw at something hard. You can't spend your way out of a rectangle you picked in advance.
+Forking makes the same case from the other side: it is parallel search. A fixed box caps how much an agent can throw at something hard. You can't spend your way out of a rectangle you picked in advance.
 
 Cheap, disposable machines make autonomy possible because mistakes become reversible. I keep a [map of forty-odd internal agents](https://github.com/steel-experiments/internal-agents-map) at Stripe, Uber, DoorDash, Shopify, GitHub, and elsewhere. Many stop at the same place: a draft reviewed by a person. They stop there because undo is the expensive part.
 
@@ -113,7 +113,7 @@ The first is that if you build this properly, it looks like absolutely nothing. 
 
 The second problem is control. An agent that can fork itself can also fork the bill. Permission does not disappear. Four hundred prompts become a policy envelope: what the agent may touch, what it may spend, and what still needs a human. Mine works because there's exactly one user and I know where he lives.
 
-The hard verbs are checkpoint, fork, merge, mount, wake, and sleep. Filesystems make branching cheap. They do not make the branches agree. Nor do they carry live state and isolation across those moves. Nobody yet has made that half look easy.
+The hard verbs are checkpoint, fork, merge, mount, wake, and sleep. Filesystems make branching cheap. They do not make the branches agree.
 
 Something is running in my house tonight. Its machine is the size I guessed before I knew the job. It works through a desktop it cannot see. When it finishes, the machine will die and leave a folder behind.
 
