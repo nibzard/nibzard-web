@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "fetchedAt": "2026-10-28T14:26:34.276Z",
+  "fetchedAt": "2026-10-30T16:27:34.920Z",
   "source": "pydantic/genai-prices data_slim.json v2 (MIT)",
-  "modelCount": 1983,
+  "modelCount": 1985,
   "providers": [
     [
       "anthropic",
@@ -6351,6 +6351,14 @@
       1.4,
       4.4,
       0.14,
+      null,
+      0
+    ],
+    [
+      "mistral:zai-glm-5-3-flash",
+      0.15,
+      0.5,
+      0.03,
       null,
       0
     ],
@@ -14627,6 +14635,14 @@
       1
     ],
     [
+      "quicksilverpro:gpt-6.1-terra",
+      1,
+      5,
+      0.1,
+      1050000,
+      1
+    ],
+    [
       "quicksilverpro:gpt-oss-120b",
       0.12,
       0.48,
@@ -16992,6 +17008,13 @@
         200000,
         4,
         15
+      ]
+    ],
+    "quicksilverpro:gpt-6.1-terra": [
+      [
+        200000,
+        2,
+        7.5
       ]
     ],
     "quicksilverpro:grok-4.6": [
