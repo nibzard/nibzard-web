@@ -6,13 +6,13 @@ date: 2026-10-30
 tags: [AI, AGENTS, INFRASTRUCTURE, OPINION]
 draft: false
 author: "Nikola Balić"
-topics: [Agent infrastructure, Ephemeral compute, Agent memory, Malleable software]
-entities: [AgentLab, Steel, Proxmox, Claude Code, Omarchy, Cassandra, AWC]
+topics: [Malleable compute, Agent-first infrastructure, Checkpointing and forking, Autonomous agents, Future of computers]
+entities: [AgentLab, Proxmox, DHH, Omarchy, Steel, Claude Code, Cassandra, AWC]
 answers_questions:
-  - Why are human-shaped computers wrong for agents?
-  - What stays durable when agent machines become disposable?
-  - Why does forking beat fixed provisioning for agent work?
-  - What breaks first when you build agent-shaped compute?
+  - What does an agent-first computer actually look like?
+  - Why does the permission prompt exist, and what makes it unnecessary?
+  - How is agent-shaped compute different from a malleable operating system?
+  - What stays hard once environments become disposable?
 ---
 
 Today's computers are built for one person operating one machine. In the agent systems I build and work with, the opposite shape keeps emerging: one person sets outcomes and boundaries for many agents.
@@ -25,7 +25,7 @@ What mattered was what I removed. Each improvement stripped away another assumpt
 
 The person had left the room. The furniture was still arranged for them.
 
-(I work on agent infrastructure at Steel, so read the rest with that in mind.)
+*(I worked on agent infrastructure at [Steel](https://steel.dev) when I wrote this, so read the rest with that in mind.)*
 
 That work has made the pattern easier to see. Steel has served millions of browser sessions for agents. Human browsing is mostly serial; agent browsing arrives in bursts and fans out around a task. The browser is the first part of the computer where we can already see the shape changing.
 
@@ -33,13 +33,15 @@ That work has made the pattern easier to see. Steel has served millions of brows
 
 The first thing to go was the permission prompt.
 
-For me, it went on day one. I made claude and codex aliases for their YOLO modes and have used them that way ever since.
+For me, it went on day one. I made `claude` and `codex` aliases for their YOLO modes and have used them that way ever since.
 
-`--dangerously-skip-permissions` is an honestly named flag. The danger is the laptop. You have one machine, full of state you may never reconstruct. Every rm can be final. So we make a human tap yes four hundred times a day and call it safety.
+`--dangerously-skip-permissions` is an honestly named flag. The danger is the laptop. You have one machine, full of state you may never reconstruct. Every `rm` can be final. So we make a human tap *yes* four hundred times a day and call it safety.
 
 The fix is to make the machine disposable: isolated, rebuilt from a template in under a minute, safe to lose. Once the body costs nothing, the prompt has one less thing to protect. But a disposable machine cannot unsend an email or undo a production write.
 
+<blockquote class="featured-quote primary">
 The agent didn't get safer. The body got cheap.
+</blockquote>
 
 The next thing to go was size.
 
@@ -51,13 +53,13 @@ We handed a human computer to something inhuman, then congratulated it for learn
 
 ## The word is already in the air
 
-I'm not the only one circling this. DHH has been building Omarchy around what he calls the malleable computer. I love the term. Ask the agent and the operating system changes.
+I'm not the only one circling this. DHH has been building [Omarchy](https://omarchy.org) around what he calls the malleable computer. I love the term. Ask the agent and the operating system changes.
 
 I ran my own small experiment on an old laptop. It boots straight into Claude Code. No desktop. No launcher. Claude Code is the only interface. I wanted to see what personal compute feels like when the machine can change through conversation.
 
-But. His computer is malleable to you. You remain the author. The agent carries out the change.
+But. His computer is malleable **to you**. You remain the author. The agent carries out the change.
 
-The malleability I'm describing points the other way. The agent reshapes the machine for itself, in the middle of a task, because the work turned out to need something the box didn't have. No person chooses the machine shape or approves each fork. You find out afterwards, if you read the log at all.
+The malleability I'm describing points the other way. The agent reshapes the machine **for itself**, in the middle of a task, because the work turned out to need something the box didn't have. No person chooses the machine shape or approves each fork. You find out afterwards, if you read the log at all.
 
 ## What's left when nobody is sitting there
 
@@ -91,9 +93,9 @@ Except a filesystem holds no live state. Browser cookies in memory, a half-finis
 
 The filesystem is the right unit for identity and the wrong unit for isolation and for anything still running. The distance between those two is where the real engineering lives.
 
-I built the cheap half. AWC stores a prepared workspace once and lets agents fork it without copying the common data.
+I built the cheap half. [AWC](https://nibzard.github.io/awc-docs/) stores a prepared workspace once and lets agents fork it without copying the common data.
 
-The documentation also carries a list of things AWC is not, and sitting on that list is a sandbox. The identity layer was a tractable problem and I solved my version of it. The wall and the living state were never on the table.
+The documentation also carries a list of things AWC is not, and sitting on that list is *a sandbox*. The identity layer was a tractable problem and I solved my version of it. The wall and the living state were never on the table.
 
 ## The bitter lesson eats half of this
 
@@ -103,9 +105,9 @@ That takes out the cost half of everything above. Cassandra's total spend to dat
 
 The bitter lesson says general computation and search tend to beat systems built around human assumptions. Fixed provisioning is one of those assumptions: a person chooses four cores before the problem has begun.
 
-Forking makes the same case from the other side. Twenty investigators off one checkpoint use more compute. That is parallel search. A fixed box caps how much an agent can throw at something hard. You can't spend your way out of a rectangle you picked in advance.
+Forking makes the same case from the other side. Twenty investigators off one checkpoint use *more* compute. That is parallel search. A fixed box caps how much an agent can throw at something hard. You can't spend your way out of a rectangle you picked in advance.
 
-Cheap, disposable machines make autonomy possible because mistakes become reversible. I keep a map of forty-odd internal agents at Stripe, Uber, DoorDash, Shopify, GitHub, and elsewhere. Many stop at the same place: a draft reviewed by a person. They stop there because undo is the expensive part.
+Cheap, disposable machines make autonomy possible because mistakes become reversible. I keep a [map of forty-odd internal agents](https://github.com/steel-experiments/internal-agents-map) at Stripe, Uber, DoorDash, Shopify, GitHub, and elsewhere. Many stop at the same place: a draft reviewed by a person. They stop there because undo is the expensive part.
 
 ## The part that doesn't work yet
 
