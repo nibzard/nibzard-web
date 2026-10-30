@@ -45,7 +45,7 @@ You choose the machine before you know the work: four cores or eight, GPU or not
 
 Then the screen. Windows, cursor, file manager, tabs. They exist for eyes and hands. An agent thinks in structured calls, yet we make it operate an interface built for a primate. Then we sell that as a feature.
 
-We handed a human computer to something inhuman, then congratulated it for learning our tools.
+The agent absorbs the cost of that mismatch on every action.
 
 ## The word is already in the air
 
@@ -119,4 +119,4 @@ Something is running in my house tonight. Its machine is the size I guessed befo
 
 Every one of those constraints is furniture arranged for someone who isn't in the room.
 
-The box was never for the agent. It was for you.
+Build the machine around the work.
