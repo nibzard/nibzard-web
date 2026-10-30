@@ -7,7 +7,7 @@ tags: [AI, AGENTS, INFRASTRUCTURE, OPINION]
 draft: false
 author: "Nikola Balić"
 topics: [Malleable compute, Agent-first infrastructure, Checkpointing and forking, Autonomous agents, Future of computers]
-entities: [AgentLab, Proxmox, DHH, Omarchy, Steel, Claude Code, Cassandra, AWC]
+entities: [AgentLab, Proxmox, DHH, Omarchy, Steel, Claude Code, Cassandra, AWC, Amp, OpenAI, Cursor]
 answers_questions:
   - What does an agent-first computer actually look like?
   - Why does the permission prompt exist, and what makes it unnecessary?
@@ -41,15 +41,13 @@ The fix is to make the machine disposable: isolated, rebuilt from a template in 
 
 The next thing to go was size.
 
-You choose the machine before you know the work: four cores or eight, GPU or not. People do this because they live with one computer for years. The agent merely inherits the guess.
+You choose the machine before you know the work: four cores or eight, GPU or not. People do this because they live with one computer for years. The agent inherits the guess.
 
 Then the screen. Windows, cursor, file manager, tabs. They exist for eyes and hands. An agent thinks in structured calls, yet we make it operate an interface built for a primate. Then we sell that as a feature.
 
-The agent absorbs the cost of that mismatch on every action.
-
 ## The word is already in the air
 
-I'm not the only one circling this. DHH has been building [Omarchy](https://omarchy.org) around what he calls the malleable computer. I love the term. Ask the agent and the operating system changes.
+DHH has been building [Omarchy](https://omarchy.org) around what he calls the malleable computer. I love the term. Ask the agent and the operating system changes.
 
 I ran my own small experiment on an old laptop. It boots straight into Claude Code. No desktop. No launcher. Claude Code is the only interface. I wanted to see what personal compute feels like when the machine can change through conversation.
 
@@ -61,7 +59,9 @@ The malleability I'm describing points the other way. The agent reshapes the mac
 
 Strip out the prompt, the fixed size, and the screen, and what remains is closer to a body: something a persistent self grows into the shape of the work and then sheds.
 
-The self stays: memory, credentials, live sessions, and the history of what the agent knows and may touch. The machine does not.
+The self stays: memory, credentials, live sessions, and the history of what the agent knows and may touch. The machine is disposable.
+
+Vendors noticed which half matters. OpenAI, Cursor, and Amp all keep the conversation; none of them exports it. Switch tools and your agent starts over, memory empty.
 
 I keep one of these. Cassandra is a memory agent for a Discord server. Several agents built her on top of Pi Agent. She reads what she's permitted to read, tracks what got decided and why, and answers when addressed.
 
@@ -69,17 +69,19 @@ Most of the time Cassandra does almost nothing. Her memories, channel map, and a
 
 Then she blooms. During one run, she spent a day rebuilding an answer path. She forked adversarial copies of herself and told them to break it. They returned with four race conditions she had missed. By evening she was one thing again.
 
-That's an organism's schedule. She lives on a cloud service with a fifty-gigabyte volume, running around the clock, sized by me, in advance, before I had any idea what she'd turn out to need.
+She lives on a cloud service with a fifty-gigabyte volume, running around the clock, sized by me, in advance, before I had any idea what she'd turn out to need.
+
+Amp orbs handle this differently: they sleep for weeks at zero cost and wake with files and services intact. Cassandra has no sleep state; the volume bills either way.
 
 Research sharpens the problem. You ask one question, and answering it opens five more. Today the context window fills, and a person decides whether to start over.
 
 An agent-shaped machine would fork instead. Twenty investigators could leave the same checkpoint, follow separate threads, then merge what they found. Each branch could acquire the tools and authenticated sessions its work required.
 
-The topology is discovered during the work.
+The work discovers the topology.
 
 ## How small can a body get
 
-Push that far enough and the question turns uncomfortable. If the durable part is files and credentials and history, why is there a machine at all? What if the sandbox is just a filesystem?
+Push that far enough and the question turns uncomfortable. Durable state reduces to three things: the log of what happened, the tree of files, and the spec that rebuilds the body. Everything else is cache: the context window, the installed packages, the running processes. If that is the whole durable part, why is there a machine at all? What if the sandbox is just a filesystem?
 
 Most of the hard-sounding verbs turn out to be filesystem operations that are already close to free. A checkpoint is a snapshot. A fork is copy-on-write. A mount is a mount. Git has been doing all three on text for twenty years. ZFS does the same on raw bytes. A container image is already a stack of filesystem layers with a process aimed at it.
 
@@ -87,7 +89,7 @@ So the body might be a tree you can branch, with compute attached to whichever b
 
 Except a filesystem holds no live state. Browser cookies in memory, a half-finished process, an open socket: none of them is a file. The work may depend on all three. A filesystem also enforces no boundary. Isolation is a kernel property. Yolo mode needs a wall, and a tree of files is not a wall.
 
-The filesystem is the right unit for identity and the wrong unit for isolation and for anything still running. The distance between those two is where the real engineering lives.
+The filesystem is the right unit for identity and the wrong unit for isolation and for anything still running. The distance between those two is where the real engineering lives. A checkpoint today holds OAuth tokens. Anyone who can restore it is signed in as you.
 
 I built the cheap half as an experiment. [AWC](https://nibzard.github.io/awc-docs/) stores a prepared workspace once and lets agents fork it without copying the common data.
 
