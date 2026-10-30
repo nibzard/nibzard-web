@@ -15,7 +15,7 @@ answers_questions:
   - What stays hard once environments become disposable?
 ---
 
-Today's computers are built for one person operating one machine. In the agent systems I build and work with, the opposite shape keeps emerging: one person sets outcomes and boundaries for many agents.
+Today's computers are built for one person operating one machine. In the agent systems I build and work with, the opposite shape keeps emerging: **one person sets outcomes and boundaries for many agents**.
 
 There are two Proxmox machines in my house. Most nights something is working on them that I didn't start, and by morning there's a branch pushed, a report in a folder, and a virtual machine that has already deleted itself.
 
@@ -35,7 +35,7 @@ The first thing to go was the permission prompt.
 
 For me, it went on day one. I made `claude` and `codex` aliases for their YOLO modes and have used them that way ever since.
 
-`--dangerously-skip-permissions` is an honestly named flag. The danger is the laptop. You have one machine, full of state you may never reconstruct. Every `rm` can be final. So we make a human tap *yes* four hundred times a day and call it safety.
+`--dangerously-skip-permissions` means it. The danger is the laptop. You have one machine, full of state you may never reconstruct. Every `rm` can be final. So we make a human tap *yes* four hundred times a day and call it safety.
 
 The fix is to make the machine disposable: isolated, rebuilt from a template in under a minute, safe to lose. Once the body costs nothing, the prompt has one less thing to protect. But a disposable machine cannot unsend an email or undo a production write.
 
@@ -63,7 +63,7 @@ Strip out the prompt, the fixed size, and the screen, and what remains is closer
 
 The self stays: memory, credentials, live sessions, and the history of what the agent knows and may touch. The machine does not.
 
-I keep one of these. Cassandra is a memory agent for a Discord server with 367 channels. Several agents built her on top of Pi Agent. She reads what she's permitted to read, tracks what got decided and why, and answers when addressed.
+I keep one of these. Cassandra is a memory agent for a Discord server. Several agents built her on top of Pi Agent. She reads what she's permitted to read, tracks what got decided and why, and answers when addressed.
 
 Most of the time Cassandra does almost nothing. Her memories, channel map, and authenticated sessions are the reason she is useful.
 
@@ -71,7 +71,7 @@ Then she blooms. During one run, she spent a day rebuilding an answer path. She 
 
 That's an organism's schedule. She lives on a cloud service with a fifty-gigabyte volume, running around the clock, sized by me, in advance, before I had any idea what she'd turn out to need.
 
-Research shows the shape most clearly because a question rarely knows its own size. One question becomes five. Today the context window fills and a person decides whether to start over.
+Research sharpens the problem. You ask one question, and answering it opens five more. Today the context window fills, and a person decides whether to start over.
 
 An agent-shaped machine would fork instead. Twenty investigators could leave the same checkpoint, follow separate threads, then merge what they found. Each branch could acquire the tools and authenticated sessions its work required.
 
@@ -89,7 +89,7 @@ Except a filesystem holds no live state. Browser cookies in memory, a half-finis
 
 The filesystem is the right unit for identity and the wrong unit for isolation and for anything still running. The distance between those two is where the real engineering lives.
 
-I built the cheap half. [AWC](https://nibzard.github.io/awc-docs/) stores a prepared workspace once and lets agents fork it without copying the common data.
+I built the cheap half as an experiment. [AWC](https://nibzard.github.io/awc-docs/) stores a prepared workspace once and lets agents fork it without copying the common data.
 
 AWC is not a sandbox. The identity layer was a tractable problem and I solved my version of it; the wall and the living state were never on the table.
 
@@ -103,17 +103,17 @@ The bitter lesson says general computation and search tend to beat systems built
 
 Forking makes the same case from the other side: it is parallel search. A fixed box caps how much an agent can throw at something hard. You can't spend your way out of a rectangle you picked in advance.
 
-Cheap, disposable machines make autonomy possible because mistakes become reversible. I keep a [map of forty-odd internal agents](https://github.com/steel-experiments/internal-agents-map) at Stripe, Uber, DoorDash, Shopify, GitHub, and elsewhere. Many stop at the same place: a draft reviewed by a person. They stop there because undo is the expensive part.
+Cheap, disposable machines make mistakes reversible, and reversible mistakes make autonomy possible. I keep a [map of forty-odd internal agents](https://github.com/steel-experiments/internal-agents-map) at Stripe, Uber, DoorDash, Shopify, GitHub, and elsewhere. Many stop at the same place: a draft reviewed by a person. Undo is the expensive part.
 
 ## The part that doesn't work yet
 
 Two problems.
 
-The first is that if you build this properly, it looks like absolutely nothing. Work goes in. Output comes back. Everything interesting happens where nobody is watching. I still don't know how to make that visible.
+The first is that if you build this properly, it looks like absolutely nothing. Work goes in. Output comes back. Everything interesting happens where nobody is watching.
 
 The second problem is control. An agent that can fork itself can also fork the bill. Permission does not disappear. Four hundred prompts become a policy envelope: what the agent may touch, what it may spend, and what still needs a human. Mine works because there's exactly one user and I know where he lives.
 
-The hard verbs are checkpoint, fork, merge, mount, wake, and sleep. Filesystems make branching cheap. They do not make the branches agree.
+The hard verbs are checkpoint, fork, merge, mount, wake, and sleep. Filesystems make the branching verbs cheap. Merge is the holdout. Even Git, after twenty years, hands the conflicts back to a person.
 
 Something is running in my house tonight. Its machine is the size I guessed before I knew the job. It works through a desktop it cannot see. When it finishes, the machine will die and leave a folder behind.
 
