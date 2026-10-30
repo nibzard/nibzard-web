@@ -39,10 +39,6 @@ For me, it went on day one. I made `claude` and `codex` aliases for their YOLO m
 
 The fix is to make the machine disposable: isolated, rebuilt from a template in under a minute, safe to lose. Once the body costs nothing, the prompt has one less thing to protect. But a disposable machine cannot unsend an email or undo a production write.
 
-<blockquote class="featured-quote primary">
-The agent didn't get safer. The body got cheap.
-</blockquote>
-
 The next thing to go was size.
 
 You choose the machine before you know the work: four cores or eight, GPU or not. People do this because they live with one computer for years. The agent merely inherits the guess.
