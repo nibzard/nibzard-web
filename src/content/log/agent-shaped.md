@@ -19,7 +19,7 @@ Today's computers are built for one person operating one machine. In the agent s
 
 There are two Proxmox machines in my house. Most nights something is working on them that I didn't start, and by morning there's a branch pushed, a report in a folder, and a virtual machine that has already deleted itself.
 
-Most of that work runs through AgentLab, a tool I built with coding agents to run coding agents in dangerous mode. An agent asks for a machine, does the work, returns the artifacts, and kills the machine. That turned out to be the boring part.
+Most of that work runs through [AgentLab](https://github.com/nibzard/agentlab), a tool I built with coding agents to run coding agents in dangerous mode. An agent asks for a machine, does the work, returns the artifacts, and kills the machine. That turned out to be the boring part.
 
 What mattered was what I removed. Each improvement stripped away another assumption that a person was sitting there.
 
