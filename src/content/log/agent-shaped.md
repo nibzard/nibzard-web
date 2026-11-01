@@ -52,7 +52,7 @@ The next thing to go was size.
 
 You choose the machine before you know the work: four cores or eight, GPU or not. People do this because they live with one computer for years. The agent inherits the guess.
 
-Then the screen. Windows, cursor, file manager, tabs. They exist for eyes and hands. An agent thinks in structured calls, yet we make it operate an interface built for a primate. Then we sell that as a feature.
+Then the screen. Windows, cursor, file manager, tabs. They exist for eyes and hands. An agent thinks in structured calls, yet we make it operate an interface built for a primate.
 
 ## The malleable computer is malleable to you
 
@@ -60,7 +60,7 @@ DHH has been building [Omarchy](https://omarchy.org) around what he calls the ma
 
 I ran my own small experiment on an old laptop. It boots straight into Claude Code. No desktop. No launcher. Claude Code is the only interface. I wanted to see what personal compute feels like when the machine can change through conversation.
 
-But. His computer is malleable **to you**. You remain the author. The agent carries out the change.
+But his computer is malleable **to you**. You remain the author. The agent carries out the change.
 
 The malleability I'm describing points the other way. The agent reshapes the machine **for itself**, in the middle of a task, because the work turned out to need something the box didn't have. No person chooses the machine shape or approves each fork. You find out afterwards, if you read the log at all.
 
@@ -86,8 +86,6 @@ Research sharpens the problem. You ask one question, and answering it opens five
 
 An agent-shaped machine would fork instead. Twenty investigators could leave the same checkpoint, follow separate threads, then merge what they found. Each branch could acquire the tools and authenticated sessions its work required.
 
-The work discovers the topology.
-
 ## The body might be a filesystem
 
 Push that far enough and the question turns uncomfortable. Durable state reduces to three things: the log of what happened, the tree of files, and the spec that rebuilds the body. Everything else is cache: the context window, the installed packages, the running processes. If that is the whole durable part, why is there a machine at all? What if the sandbox is just a filesystem?
@@ -98,7 +96,7 @@ So the body might be a tree you can branch, with compute attached to whichever b
 
 Except a filesystem holds no live state. Browser cookies in memory, a half-finished process, an open socket: none of them is a file. The work may depend on all three. A filesystem also enforces no boundary. Isolation is a kernel property. Yolo mode needs a wall, and a tree of files is not a wall.
 
-The filesystem is the right unit for identity and the wrong unit for isolation and for anything still running. The distance between those two is where the real engineering lives. A checkpoint today holds OAuth tokens. Anyone who can restore it is signed in as you.
+The filesystem is the right unit for identity and the wrong unit for isolation and for anything still running. A checkpoint today holds OAuth tokens. Anyone who can restore it is signed in as you.
 
 I built the cheap half as an experiment. [AWC](https://nibzard.github.io/awc-docs/) stores a prepared workspace once and lets agents fork it without copying the common data.
 
@@ -112,9 +110,9 @@ That takes out the cost half of everything above. Cassandra's total spend to dat
 
 The bitter lesson says general computation and search tend to beat systems built around human assumptions. Fixed provisioning is one of those assumptions: a person chooses four cores before the problem has begun.
 
-Forking makes the same case from the other side: it is parallel search. A fixed box caps how much an agent can throw at something hard. You can't spend your way out of a rectangle you picked in advance.
+Forking makes the same case from the other side: it is parallel search. A fixed box caps how much an agent can throw at something hard.
 
-Cheap, disposable machines make mistakes reversible, and reversible mistakes make autonomy possible. I keep a [map of forty-odd internal agents](https://github.com/steel-experiments/internal-agents-map) at Stripe, Uber, DoorDash, Shopify, GitHub, and elsewhere. Many stop at the same place: a draft reviewed by a person. Undo is the expensive part.
+Autonomy becomes possible when mistakes are reversible. I keep a [map of forty-odd internal agents](https://github.com/steel-experiments/internal-agents-map) at Stripe, Uber, DoorDash, Shopify, GitHub, and elsewhere. Many stop at the same place: a draft reviewed by a person. Undo is the expensive part.
 
 ## Observability and control
 
