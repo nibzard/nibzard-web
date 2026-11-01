@@ -25,6 +25,17 @@ What mattered was what I removed. Each improvement stripped away another assumpt
 
 The person had left the room. The furniture was still arranged for them.
 
+<div class="shift-box">
+  <p class="shift-box-label">The shift</p>
+  <ul class="shift-list">
+    <li><span class="shift-from">Personal workstations</span><span class="shift-arrow" aria-hidden="true">→</span><span class="shift-to">Agent execution environments</span></li>
+    <li><span class="shift-from">Fixed infrastructure</span><span class="shift-arrow" aria-hidden="true">→</span><span class="shift-to">Dynamically allocated infrastructure</span></li>
+    <li><span class="shift-from">Sequential work</span><span class="shift-arrow" aria-hidden="true">→</span><span class="shift-to">Parallel agent execution</span></li>
+    <li><span class="shift-from">Permission prompts</span><span class="shift-arrow" aria-hidden="true">→</span><span class="shift-to">Policy-based control</span></li>
+    <li><span class="shift-from">Persistent machines</span><span class="shift-arrow" aria-hidden="true">→</span><span class="shift-to">Persistent agent identity</span></li>
+  </ul>
+</div>
+
 *(I worked on agent infrastructure at [Steel](https://steel.dev) when I wrote this, so read the rest with that in mind.)*
 
 Steel has served millions of browser sessions for agents. Human browsing is mostly serial; agent browsing arrives in bursts and fans out around a task. The browser is the first part of the computer where we can already see the shape changing.
@@ -121,4 +132,14 @@ Something is running in my house tonight. Its machine is the size I guessed befo
 
 Every one of those constraints is furniture arranged for someone who isn't in the room.
 
-Build the machine around the work.
+<div class="paradigm-shift">
+  <p class="paradigm-shift-title">Build the machine around the work.</p>
+  <div class="paradigm-row paradigm-row-old">
+    <p class="paradigm-row-label">Today's paradigm</p>
+    <div class="paradigm-chain"><span>Human</span><span class="paradigm-arrow" aria-hidden="true">→</span><span>Computer</span><span class="paradigm-arrow" aria-hidden="true">→</span><span>AI agent</span></div>
+  </div>
+  <div class="paradigm-row paradigm-row-new">
+    <p class="paradigm-row-label">The proposed paradigm</p>
+    <div class="paradigm-chain"><span>Human</span><span class="paradigm-arrow" aria-hidden="true">→</span><span>Desired outcome and boundaries</span><span class="paradigm-arrow" aria-hidden="true">→</span><span>Agents</span><span class="paradigm-arrow" aria-hidden="true">→</span><span>Dynamically created compute</span><span class="paradigm-arrow" aria-hidden="true">→</span><span>Results</span></div>
+  </div>
+</div>
