@@ -40,9 +40,7 @@ The person had left the room. The furniture was still arranged for them.
 
 Steel has served millions of browser sessions for agents. Human browsing is mostly serial; agent browsing arrives in bursts and fans out around a task. The browser is the first part of the computer where we can already see the shape changing.
 
-## What I kept removing
-
-The first thing to go was the permission prompt.
+## The permission prompt was the first to go
 
 For me, it went on day one. I made `claude` and `codex` aliases for their YOLO modes and have used them that way ever since.
 
@@ -56,7 +54,7 @@ You choose the machine before you know the work: four cores or eight, GPU or not
 
 Then the screen. Windows, cursor, file manager, tabs. They exist for eyes and hands. An agent thinks in structured calls, yet we make it operate an interface built for a primate. Then we sell that as a feature.
 
-## The word is already in the air
+## The malleable computer is malleable to you
 
 DHH has been building [Omarchy](https://omarchy.org) around what he calls the malleable computer. I love the term. Ask the agent and the operating system changes.
 
@@ -90,7 +88,7 @@ An agent-shaped machine would fork instead. Twenty investigators could leave the
 
 The work discovers the topology.
 
-## How small can a body get
+## The body might be a filesystem
 
 Push that far enough and the question turns uncomfortable. Durable state reduces to three things: the log of what happened, the tree of files, and the spec that rebuilds the body. Everything else is cache: the context window, the installed packages, the running processes. If that is the whole durable part, why is there a machine at all? What if the sandbox is just a filesystem?
 
@@ -118,7 +116,7 @@ Forking makes the same case from the other side: it is parallel search. A fixed 
 
 Cheap, disposable machines make mistakes reversible, and reversible mistakes make autonomy possible. I keep a [map of forty-odd internal agents](https://github.com/steel-experiments/internal-agents-map) at Stripe, Uber, DoorDash, Shopify, GitHub, and elsewhere. Many stop at the same place: a draft reviewed by a person. Undo is the expensive part.
 
-## The part that doesn't work yet
+## Observability and control
 
 Two problems.
 
