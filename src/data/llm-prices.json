@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "fetchedAt": "2026-10-30T16:27:34.920Z",
+  "fetchedAt": "2026-11-02T13:50:06.447Z",
   "source": "pydantic/genai-prices data_slim.json v2 (MIT)",
-  "modelCount": 1985,
+  "modelCount": 1988,
   "providers": [
     [
       "anthropic",
@@ -3099,6 +3099,14 @@
       0
     ],
     [
+      "fireworks:ultramarine-1-flash-us",
+      0.225,
+      0.75,
+      0.045,
+      null,
+      0
+    ],
+    [
       "github-copilot:claude-fable-5",
       10,
       50,
@@ -6091,6 +6099,14 @@
       0
     ],
     [
+      "mistral:deepseek-v4-1-flash-1017",
+      0.3,
+      1.2,
+      0.007,
+      null,
+      0
+    ],
+    [
       "mistral:devstral-2512",
       0.4,
       2,
@@ -8000,6 +8016,14 @@
       0.5,
       0.01,
       1050000,
+      1
+    ],
+    [
+      "openai:gpt-6-rosalind",
+      15,
+      75,
+      1.5,
+      null,
       1
     ],
     [
@@ -14350,7 +14374,7 @@
       "quicksilverpro:claude-fable-5",
       8,
       40,
-      null,
+      0.25,
       1000000,
       0
     ],
@@ -14366,7 +14390,7 @@
       "quicksilverpro:claude-haiku-4-5",
       0.8,
       4,
-      null,
+      0.025,
       200000,
       0
     ],
@@ -14390,7 +14414,7 @@
       "quicksilverpro:claude-opus-4-8",
       4,
       20,
-      null,
+      0.125,
       1000000,
       0
     ],
@@ -14398,7 +14422,7 @@
       "quicksilverpro:claude-opus-5",
       4,
       20,
-      null,
+      0.125,
       1000000,
       0
     ],
@@ -14422,7 +14446,7 @@
       "quicksilverpro:claude-sonnet-5",
       2,
       10,
-      null,
+      0.05,
       1000000,
       0
     ],
@@ -16482,6 +16506,13 @@
         0.75
       ]
     ],
+    "openai:gpt-6-rosalind": [
+      [
+        272000,
+        30,
+        112.5
+      ]
+    ],
     "openai:gpt-6-sol": [
       [
         272000,
@@ -17255,8 +17286,8 @@
       0.75
     ],
     "mistral:mistral-large-4": [
-      0.68,
-      2.09
+      0.35,
+      1.05
     ],
     "mistral:mistral-medium-3-5": [
       0.75,
