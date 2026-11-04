@@ -493,7 +493,7 @@
       "description": "A curated catalogue of awesome agentic AI patterns",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-11-03T12:39:03Z",
+      "updatedAt": "2026-11-04T13:10:54Z",
       "pushedAt": "2026-10-14T23:13:20Z",
       "archived": false,
       "fork": false
@@ -1885,8 +1885,8 @@
       "description": "",
       "topics": [],
       "language": "Python",
-      "updatedAt": "2026-11-03T06:12:28Z",
-      "pushedAt": "2026-11-03T06:12:25Z",
+      "updatedAt": "2026-11-04T05:50:04Z",
+      "pushedAt": "2026-11-04T05:50:01Z",
       "archived": false,
       "fork": false
     },
@@ -2215,8 +2215,8 @@
       "description": "Run coding agents overnight or for days. Looper plans tasks, checks their work, and keeps progress visible in your terminal.",
       "topics": [],
       "language": "Go",
-      "updatedAt": "2026-10-14T22:53:45Z",
-      "pushedAt": "2026-10-14T22:53:50Z",
+      "updatedAt": "2026-11-03T15:41:54Z",
+      "pushedAt": "2026-11-03T15:42:10Z",
       "archived": false,
       "fork": false
     },
@@ -2599,8 +2599,8 @@
       "description": "Personal blog discussing AI, growth and startups",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-11-02T16:19:18Z",
-      "pushedAt": "2026-11-02T16:19:12Z",
+      "updatedAt": "2026-11-03T14:29:52Z",
+      "pushedAt": "2026-11-03T14:29:47Z",
       "archived": false,
       "fork": false
     },
@@ -3353,6 +3353,18 @@
       "language": "TypeScript",
       "updatedAt": "2024-05-27T11:32:03Z",
       "pushedAt": "2024-05-27T11:30:55Z",
+      "archived": false,
+      "fork": false
+    },
+    {
+      "fullName": "nibzard/stackfall",
+      "name": "stackfall",
+      "url": "https://github.com/nibzard/stackfall",
+      "description": "An offline deterministic block-stacking game for the Anbernic RG503, built with C++17 and SDL2",
+      "topics": [],
+      "language": "C++",
+      "updatedAt": "2026-11-03T19:12:10Z",
+      "pushedAt": "2026-11-04T13:00:49Z",
       "archived": false,
       "fork": false
     },
@@ -4125,7 +4137,7 @@
       ],
       "language": "TypeScript",
       "updatedAt": "2026-07-29T16:31:53Z",
-      "pushedAt": "2026-10-23T03:04:44Z",
+      "pushedAt": "2026-11-04T12:42:58Z",
       "archived": false,
       "fork": false
     },
