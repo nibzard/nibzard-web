@@ -1,33 +1,35 @@
 ---
 import { server } from '../actions';
-import BaseLayout from '../layouts/BaseLayout.astro'; // Adjust layout import as needed
+import BaseLayout from '../layouts/BaseLayout.astro';
 
-let emailFromQuery = Astro.url.searchParams.get('email');
+const emailFromQuery = Astro.url.searchParams.get('email');
+const sigFromQuery = Astro.url.searchParams.get('sig');
+// A working unsubscribe requires the signed link from a newsletter email;
+// a bare email address is never enough to leave the audience.
+const hasSignedLink = Boolean(emailFromQuery && sigFromQuery);
 let formMessage: string | null = null;
 let formMessageType: 'success' | 'error' | null = null;
 let initialEmail = emailFromQuery || '';
-let isPost = Astro.request.method === "POST";
-
-// If email is in query param, try to unsubscribe automatically on load (via a hidden form submission)
-// This is a conceptual client-side enhancement; Astro actions are server-side.
-// For a true auto-unsubscribe on load, the action would need to be called server-side if email is present.
+let initialSig = sigFromQuery || '';
+const isPost = Astro.request.method === "POST";
 
 if (isPost) {
   const formData = await Astro.request.formData();
-  const result = await server.unsubscribe(formData);
-
-  if (result && result.data?.success) {
-    formMessage = "You have been successfully unsubscribed.";
-    formMessageType = 'success';
-  } else if (result && result.error) {
-    formMessage = result.error.message || "An error occurred. Please try again.";
-    formMessageType = 'error';
-  } else {
-    formMessage = "An unexpected issue occurred. Please try again.";
+  try {
+    const result = await server.unsubscribe(formData);
+    if (result && result.data?.success) {
+      formMessage = "You have been successfully unsubscribed.";
+      formMessageType = 'success';
+    } else {
+      formMessage = "An unexpected error occurred. Please try again.";
+      formMessageType = 'error';
+    }
+  } catch (e: any) {
+    formMessage = e?.message || "This unsubscribe link is not valid. Use the unsubscribe link from a newsletter email.";
     formMessageType = 'error';
   }
-  // Keep the email in the field after submission attempt
   initialEmail = formData.get("email")?.toString() || initialEmail;
+  initialSig = formData.get("sig")?.toString() || initialSig;
 }
 
 const pageTitle = "Unsubscribe from Newsletter";
@@ -37,19 +39,18 @@ const pageDescription = "Manage your subscription preferences.";
   <div class="unsubscribe-container">
     <h1>{pageTitle}</h1>
 
-    {emailFromQuery && !isPost && (
+    {hasSignedLink && !isPost && (
       <>
         <p>Attempting to unsubscribe {emailFromQuery}...</p>
         <form method="POST" id="autoUnsubscribeForm">
           <input type="hidden" name="email" value={emailFromQuery} />
+          <input type="hidden" name="sig" value={sigFromQuery} />
         </form>
         <script is:inline>
-          // Automatically submit the form if email is from query param
-          // This is a client-side script to trigger the POST request for the action
+          // Automatically submit the form when arriving from a signed link
           document.addEventListener('DOMContentLoaded', () => {
             const autoForm = document.getElementById('autoUnsubscribeForm');
             if (autoForm) {
-              // Small delay to ensure page content is visible before potential navigation
               setTimeout(() => {
                 autoForm.requestSubmit ? autoForm.requestSubmit() : autoForm.submit();
               }, 100);
@@ -65,14 +66,22 @@ const pageDescription = "Manage your subscription preferences.";
       </div>
     )}
 
-    <form class="unsubscribe-form" method="POST">
-      <p>If you wish to unsubscribe, please enter your email address below and click "Unsubscribe".</p>
-      <div class="form-group">
-        <label for="email">Email Address:</label>
-        <input type="email" id="email" name="email" class="unsubscribe-input" value={initialEmail} required />
+    {hasSignedLink || initialSig ? (
+      <form class="unsubscribe-form" method="POST">
+        <p>Please confirm that you wish to unsubscribe:</p>
+        <div class="form-group">
+          <label for="email">Email Address:</label>
+          <input type="email" id="email" name="email" class="unsubscribe-input" value={initialEmail} required readonly />
+        </div>
+        <input type="hidden" name="sig" value={initialSig} />
+        <button type="submit" class="unsubscribe-button">Unsubscribe</button>
+      </form>
+    ) : (
+      <div class="unsubscribe-form">
+        <p>For your security, unsubscribing requires the personalized link at the bottom of a newsletter email.</p>
+        <p>If you no longer have that email, reply to any newsletter or reach out from the <a href="/about">contact page</a> and you will be removed promptly.</p>
       </div>
-      <button type="submit" class="unsubscribe-button">Unsubscribe</button>
-    </form>
+    )}
 
     <p style="margin-top: 1rem; text-align: center;">
       <a href="/">Go back to homepage</a>

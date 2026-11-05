@@ -15,6 +15,7 @@
     "generate:og:force": "node scripts/generate-og-images.js --force",
     "projects:sync": "node scripts/sync-projects.mjs",
     "prices:sync": "node scripts/sync-llm-prices.mjs",
+    "test:newsletter": "tsx --test tests/newsletter.test.mjs",
     "test:projects": "node --test tests/projects.test.mjs tests/redirects.test.mjs",
     "test:prices": "node --test tests/llm-prices.test.mjs"
   },
