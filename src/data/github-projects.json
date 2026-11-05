@@ -8,7 +8,7 @@
       "description": "A Community-Driven Mapping of AI Development Tools",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-10-26T21:58:03Z",
+      "updatedAt": "2026-11-05T00:39:59Z",
       "pushedAt": "2026-07-24T12:59:23Z",
       "archived": false,
       "fork": false
@@ -493,7 +493,7 @@
       "description": "A curated catalogue of awesome agentic AI patterns",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-11-04T13:10:54Z",
+      "updatedAt": "2026-11-05T14:05:49Z",
       "pushedAt": "2026-10-14T23:13:20Z",
       "archived": false,
       "fork": false
@@ -1885,8 +1885,8 @@
       "description": "",
       "topics": [],
       "language": "Python",
-      "updatedAt": "2026-11-04T05:50:04Z",
-      "pushedAt": "2026-11-04T05:50:01Z",
+      "updatedAt": "2026-11-05T06:09:40Z",
+      "pushedAt": "2026-11-05T06:09:36Z",
       "archived": false,
       "fork": false
     },
@@ -2599,8 +2599,8 @@
       "description": "Personal blog discussing AI, growth and startups",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-11-03T14:29:52Z",
-      "pushedAt": "2026-11-03T14:29:47Z",
+      "updatedAt": "2026-11-05T14:18:02Z",
+      "pushedAt": "2026-11-05T14:17:57Z",
       "archived": false,
       "fork": false
     },
@@ -3273,8 +3273,8 @@
       "description": "Local-first cross-agent skill manager for the open SKILL.md ecosystem",
       "topics": [],
       "language": "Rust",
-      "updatedAt": "2026-10-26T17:31:51Z",
-      "pushedAt": "2026-10-26T17:31:47Z",
+      "updatedAt": "2026-11-05T14:12:23Z",
+      "pushedAt": "2026-11-05T14:12:18Z",
       "archived": false,
       "fork": false
     },
@@ -3363,8 +3363,8 @@
       "description": "An offline deterministic block-stacking game for the Anbernic RG503, built with C++17 and SDL2",
       "topics": [],
       "language": "C++",
-      "updatedAt": "2026-11-03T19:12:10Z",
-      "pushedAt": "2026-11-04T13:00:49Z",
+      "updatedAt": "2026-11-05T08:53:55Z",
+      "pushedAt": "2026-11-05T08:53:51Z",
       "archived": false,
       "fork": false
     },
@@ -3940,7 +3940,7 @@
       "description": "Self-hosted deep research agent with durable execution. Pi Agent SDK + Absurd + Steel.",
       "topics": [],
       "language": "TypeScript",
-      "updatedAt": "2026-07-18T05:27:14Z",
+      "updatedAt": "2026-11-05T14:13:03Z",
       "pushedAt": "2026-06-11T20:04:39Z",
       "archived": false,
       "fork": false
@@ -4080,7 +4080,7 @@
       ],
       "language": "Python",
       "updatedAt": "2026-10-08T09:27:00Z",
-      "pushedAt": "2026-10-29T09:36:22Z",
+      "pushedAt": "2026-11-05T09:35:50Z",
       "archived": false,
       "fork": false
     },
