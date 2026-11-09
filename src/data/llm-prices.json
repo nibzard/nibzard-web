@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "fetchedAt": "2026-11-02T13:50:06.447Z",
+  "fetchedAt": "2026-11-09T14:19:20.527Z",
   "source": "pydantic/genai-prices data_slim.json v2 (MIT)",
-  "modelCount": 1988,
+  "modelCount": 2037,
   "providers": [
     [
       "anthropic",
@@ -875,6 +875,22 @@
       0
     ],
     [
+      "aws:global.moonshotai.kimi-k3",
+      3,
+      15,
+      0.3,
+      1000000,
+      0
+    ],
+    [
+      "aws:global.moonshotai.kimi-k3.1",
+      4,
+      20,
+      0.2,
+      1000000,
+      0
+    ],
+    [
       "aws:global.openai.gpt-5.6-luna",
       0.2,
       1.2,
@@ -929,6 +945,22 @@
       0.1,
       1000000,
       1
+    ],
+    [
+      "aws:global.openai.gpt-6.1-terra",
+      1,
+      5,
+      0.05,
+      1050000,
+      1
+    ],
+    [
+      "aws:global.zai.glm-5.3",
+      1.68,
+      5.28,
+      0.312,
+      1000000,
+      0
     ],
     [
       "aws:google.gemma-3-12b-it",
@@ -1435,6 +1467,22 @@
       0
     ],
     [
+      "aws:regional.moonshotai.kimi-k3",
+      3.3,
+      16.5,
+      0.33,
+      1000000,
+      0
+    ],
+    [
+      "aws:regional.moonshotai.kimi-k3.1",
+      4.4,
+      22,
+      0.22,
+      1000000,
+      0
+    ],
+    [
       "aws:regional.openai.gpt-5.6-luna",
       1.1,
       6.6,
@@ -1489,6 +1537,22 @@
       0.11,
       1000000,
       1
+    ],
+    [
+      "aws:regional.openai.gpt-6.1-terra",
+      1.1,
+      5.5,
+      0.055,
+      1050000,
+      1
+    ],
+    [
+      "aws:regional.zai.glm-5.3",
+      1.848,
+      5.808,
+      0.3432,
+      1000000,
+      0
     ],
     [
       "aws:writer.palmyra-x4-v1:0",
@@ -1647,6 +1711,14 @@
       0.3,
       1.2,
       0.007,
+      1048000,
+      0
+    ],
+    [
+      "baseten:deepseek-ai/DeepSeek-V4.1-Flash-1017-Fast",
+      0.6,
+      2.4,
+      0.014,
       1048000,
       0
     ],
@@ -2595,6 +2667,14 @@
       0
     ],
     [
+      "doubleword:moonshotai/Kimi-K3.1-Pro",
+      2,
+      10,
+      0.2,
+      null,
+      0
+    ],
+    [
       "doubleword:nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-NVFP4",
       0.3,
       0.75,
@@ -2791,6 +2871,14 @@
       0.3,
       1.2,
       0.006,
+      null,
+      0
+    ],
+    [
+      "fireworks:deepseek-v4p1-flash-1017-ultrafast",
+      2.4,
+      9.6,
+      0.048,
       null,
       0
     ],
@@ -2992,6 +3080,14 @@
       16.5,
       0.33,
       1040000,
+      0
+    ],
+    [
+      "fireworks:kimi-k3p1-pro",
+      2,
+      10,
+      0.2,
+      null,
       0
     ],
     [
@@ -4859,6 +4955,14 @@
       0
     ],
     [
+      "huggingface_novita:MiniMaxAI/MiniMax-M3.1-Flash",
+      0.15,
+      0.6,
+      null,
+      1000000,
+      0
+    ],
+    [
       "huggingface_novita:moonshotai/Kimi-K2-Instruct",
       0.57,
       2.3,
@@ -5435,11 +5539,35 @@
       0
     ],
     [
+      "huggingface_nscale:Qwen/Qwen3.8-27B",
+      0.2,
+      2.5,
+      null,
+      1048576,
+      0
+    ],
+    [
+      "huggingface_nscale:Qwen/Qwen3.8-Flash-Next-FP8",
+      0.15,
+      0.47,
+      null,
+      1048576,
+      0
+    ],
+    [
       "huggingface_nscale:Qwen/QwQ-32B",
       0.18,
       0.2,
       null,
       131072,
+      0
+    ],
+    [
+      "huggingface_nscale:zai-org/GLM-5.3",
+      1.4,
+      4.4,
+      null,
+      1048576,
       0
     ],
     [
@@ -5535,7 +5663,7 @@
       0.2,
       0.4,
       null,
-      null,
+      131072,
       0
     ],
     [
@@ -5543,7 +5671,7 @@
       0.5,
       2,
       null,
-      null,
+      262144,
       0
     ],
     [
@@ -5551,7 +5679,7 @@
       0.25,
       0.5,
       null,
-      null,
+      32000,
       0
     ],
     [
@@ -5559,7 +5687,7 @@
       0.2,
       0.4,
       null,
-      null,
+      262144,
       0
     ],
     [
@@ -5583,7 +5711,7 @@
       0.3,
       0.6,
       null,
-      null,
+      65536,
       0
     ],
     [
@@ -5607,13 +5735,21 @@
       0.82,
       2.92,
       null,
-      null,
+      32768,
       0
     ],
     [
       "huggingface_publicai:swiss-ai/Apertus-8B-Instruct-2509",
       0.1,
       0.2,
+      null,
+      32768,
+      0
+    ],
+    [
+      "huggingface_publicai:swiss-ai/Apertus-v1.5-70B",
+      0.82,
+      2.92,
       null,
       null,
       0
@@ -6408,6 +6544,14 @@
       15,
       0.3,
       1048576,
+      0
+    ],
+    [
+      "modal:moonshotai/Kimi-K3.1-Pro",
+      2,
+      10,
+      0.2,
+      null,
       0
     ],
     [
@@ -7347,6 +7491,14 @@
       0
     ],
     [
+      "novita:tencent/hy4",
+      0.417,
+      1.2505,
+      0.021,
+      1000000,
+      0
+    ],
+    [
       "novita:tencent/hy4-preview",
       0.834,
       2.501,
@@ -7479,6 +7631,14 @@
       0.15,
       0.5,
       0.03,
+      1048576,
+      0
+    ],
+    [
+      "novita:zai-org/glm-5.3-flashX",
+      0.37,
+      1.25,
+      0.075,
       1048576,
       0
     ],
@@ -8009,6 +8169,14 @@
       1,
       1050000,
       1
+    ],
+    [
+      "openai:gpt-6-cyber",
+      20,
+      100,
+      2,
+      null,
+      0
     ],
     [
       "openai:gpt-6-luna",
@@ -9483,6 +9651,14 @@
       0
     ],
     [
+      "openrouter:deepseek/deepseek-v4-flash-0731:batch",
+      0.048,
+      0.144,
+      0.012,
+      1048576,
+      0
+    ],
+    [
       "openrouter:deepseek/deepseek-v4-flash-vision-exp",
       0.2156,
       0.6468,
@@ -9511,6 +9687,14 @@
       0.0448,
       0.08,
       0.0016,
+      1048576,
+      0
+    ],
+    [
+      "openrouter:deepseek/deepseek-v4.1-flash-1017:batch",
+      0.011,
+      0.2,
+      0.002,
       1048576,
       0
     ],
@@ -10075,6 +10259,22 @@
       0
     ],
     [
+      "openrouter:google/gemini-omni-1.1-flash",
+      1.5,
+      9,
+      null,
+      131072,
+      0
+    ],
+    [
+      "openrouter:google/gemini-omni-1.2-flash",
+      1.5,
+      9,
+      null,
+      131072,
+      0
+    ],
+    [
       "openrouter:google/gemini-pro",
       0.5,
       1.5,
@@ -10347,6 +10547,14 @@
       0
     ],
     [
+      "openrouter:inclusionai/ling-3.0-tiny",
+      0.015,
+      0.045,
+      0.003,
+      262144,
+      0
+    ],
+    [
       "openrouter:inclusionai/ling-3.1-flash",
       0.075,
       0.225,
@@ -10483,11 +10691,27 @@
       0
     ],
     [
+      "openrouter:liquid/lfm-2.5-2.6b",
+      0.35,
+      0.5,
+      0.04,
+      128000,
+      0
+    ],
+    [
       "openrouter:liquid/lfm-2.5-24b-a2b",
       0.05,
       0.7,
       0.025,
       128000,
+      0
+    ],
+    [
+      "openrouter:liquid/lfm-3-1.7b",
+      0.08,
+      0.2,
+      0.02,
+      262144,
       0
     ],
     [
@@ -10798,7 +11022,7 @@
       "openrouter:meta-llama/llama-3.3-70b-instruct",
       0.05,
       0.24,
-      null,
+      0.295,
       null,
       0
     ],
@@ -10847,6 +11071,14 @@
       0.3,
       1.2,
       0.04,
+      131072,
+      0
+    ],
+    [
+      "openrouter:meta/muse-glimmer-30b:batch",
+      0.24,
+      0.96,
+      0.032,
       131072,
       0
     ],
@@ -11048,6 +11280,14 @@
       1.2,
       0.06,
       null,
+      0
+    ],
+    [
+      "openrouter:minimax/minimax-m3:batch",
+      0.224,
+      0.88,
+      0.0448,
+      524288,
       0
     ],
     [
@@ -11318,7 +11558,7 @@
       "openrouter:mistralai/mistral-nemo",
       0.01,
       0.019,
-      null,
+      0.015,
       null,
       0
     ],
@@ -11374,7 +11614,7 @@
       "openrouter:mistralai/mistral-small-3.2-24b-instruct",
       0.075,
       0.2,
-      null,
+      0.01,
       null,
       0
     ],
@@ -11539,6 +11779,14 @@
       0
     ],
     [
+      "openrouter:moonshotai/kimi-k3.1-pro",
+      2,
+      10,
+      0.2,
+      1048576,
+      0
+    ],
+    [
       "openrouter:morph/morph-v3-fast",
       0.8,
       1.2,
@@ -11547,9 +11795,25 @@
       0
     ],
     [
+      "openrouter:morph/morph-v3-fast:batch",
+      0.4,
+      0.6,
+      null,
+      81920,
+      0
+    ],
+    [
       "openrouter:morph/morph-v3-large",
       0.9,
       1.9,
+      null,
+      262144,
+      0
+    ],
+    [
+      "openrouter:morph/morph-v3-large:batch",
+      0.45,
+      0.95,
       null,
       262144,
       0
@@ -11670,7 +11934,7 @@
       "openrouter:nousresearch/hermes-4-405b",
       1,
       3,
-      null,
+      0.2,
       131072,
       0
     ],
@@ -11718,7 +11982,7 @@
       "openrouter:nvidia/nemotron-3-nano-30b-a3b",
       0.05,
       0.2,
-      null,
+      0.012,
       262144,
       0
     ],
@@ -12427,6 +12691,30 @@
       1
     ],
     [
+      "openrouter:openai/gpt-6.1-terra",
+      1,
+      5,
+      0.05,
+      1050000,
+      1
+    ],
+    [
+      "openrouter:openai/gpt-6.1-terra-pro:batch",
+      0.5,
+      2.5,
+      0.025,
+      1050000,
+      1
+    ],
+    [
+      "openrouter:openai/gpt-6.1-terra:batch",
+      0.5,
+      2.5,
+      0.025,
+      1050000,
+      1
+    ],
+    [
       "openrouter:openai/gpt-audio",
       2.5,
       10,
@@ -12603,6 +12891,14 @@
       0
     ],
     [
+      "openrouter:particle-ai/particle-1",
+      0.05,
+      0.5,
+      0.003,
+      1048576,
+      0
+    ],
+    [
       "openrouter:perceptron/perceptron-mk1",
       0.15,
       1.5,
@@ -12775,6 +13071,14 @@
       0.075,
       0.5,
       0.0375,
+      262144,
+      0
+    ],
+    [
+      "openrouter:prism-ml/ternary-bonsai-2-9b",
+      0.08,
+      0.13,
+      0.04,
       262144,
       0
     ],
@@ -13022,7 +13326,7 @@
       "openrouter:qwen/qwen3-32b",
       0.1,
       0.3,
-      null,
+      0.09,
       null,
       0
     ],
@@ -13315,6 +13619,14 @@
       0
     ],
     [
+      "openrouter:qwen/qwen3.8-27b:batch",
+      0.16,
+      2,
+      0.04,
+      262144,
+      0
+    ],
+    [
       "openrouter:qwen/qwen3.8-flash",
       0.15,
       0.47,
@@ -13440,6 +13752,14 @@
       3,
       null,
       256000,
+      0
+    ],
+    [
+      "openrouter:ricursiveai/ripple-65b-preview",
+      0.2,
+      0.6,
+      0.05,
+      1048576,
       0
     ],
     [
@@ -13643,6 +13963,14 @@
       0
     ],
     [
+      "openrouter:tencent/hy4",
+      0.417,
+      1.2505,
+      0.021,
+      1048576,
+      0
+    ],
+    [
       "openrouter:thedrummer/anubis-pro-105b-v1",
       0.8,
       1,
@@ -13695,6 +14023,14 @@
       0.45,
       1.2,
       0.1,
+      524288,
+      0
+    ],
+    [
+      "openrouter:thinkingmachines/inkling-small:batch",
+      0.36,
+      0.96,
+      0.08,
       524288,
       0
     ],
@@ -13875,10 +14211,26 @@
       1
     ],
     [
+      "openrouter:x-ai/grok-4.6:batch",
+      1.6,
+      4.8,
+      0.4,
+      500000,
+      1
+    ],
+    [
       "openrouter:x-ai/grok-4.7",
       2,
       6,
       0.5,
+      500000,
+      1
+    ],
+    [
+      "openrouter:x-ai/grok-4.7:batch",
+      1.6,
+      4.8,
+      0.4,
       500000,
       1
     ],
@@ -14067,6 +14419,14 @@
       0
     ],
     [
+      "openrouter:z-ai/glm-5.2:batch",
+      0.623,
+      1.271,
+      0.21,
+      1048576,
+      0
+    ],
+    [
       "openrouter:z-ai/glm-5.3",
       1.4,
       4.4,
@@ -14095,6 +14455,14 @@
       0.37,
       1.25,
       0.09,
+      1048576,
+      0
+    ],
+    [
+      "openrouter:z-ai/glm-5.3-flashx-legal",
+      0.37,
+      1.25,
+      0.075,
       1048576,
       0
     ],
@@ -14707,6 +15075,14 @@
       0
     ],
     [
+      "quicksilverpro:hy4",
+      0.459,
+      1.375,
+      0.0231,
+      1048576,
+      0
+    ],
+    [
       "quicksilverpro:hy4-preview",
       0.6672,
       2.0008,
@@ -15299,6 +15675,14 @@
       0
     ],
     [
+      "together:moonshotai/Kimi-K3.1-Pro",
+      2,
+      10,
+      0.2,
+      1048576,
+      0
+    ],
+    [
       "together:Nexusflow/NexusRaven-V2-13B",
       0.3,
       0.3,
@@ -15488,6 +15872,14 @@
       1.2,
       0.04,
       1048576,
+      0
+    ],
+    [
+      "together:ricursive-ai/Ripple-65B-Preview",
+      0.2,
+      0.6,
+      null,
+      131072,
       0
     ],
     [
@@ -16184,6 +16576,13 @@
         15
       ]
     ],
+    "aws:global.openai.gpt-6.1-terra": [
+      [
+        272000,
+        2,
+        7.5
+      ]
+    ],
     "aws:regional.anthropic.claude-haiku-5-5": [
       [
         100000,
@@ -16238,6 +16637,13 @@
         272000,
         4.4,
         16.5
+      ]
+    ],
+    "aws:regional.openai.gpt-6.1-terra": [
+      [
+        272000,
+        2.2,
+        8.25
       ]
     ],
     "cursor:grok-4.7": [
@@ -16828,6 +17234,27 @@
         7.5
       ]
     ],
+    "openrouter:openai/gpt-6.1-terra": [
+      [
+        272000,
+        2,
+        7.5
+      ]
+    ],
+    "openrouter:openai/gpt-6.1-terra-pro:batch": [
+      [
+        272000,
+        1,
+        3.75
+      ]
+    ],
+    "openrouter:openai/gpt-6.1-terra:batch": [
+      [
+        272000,
+        1,
+        3.75
+      ]
+    ],
     "openrouter:qwen/qwen-plus": [
       [
         256000,
@@ -16950,11 +17377,25 @@
         12
       ]
     ],
+    "openrouter:x-ai/grok-4.6:batch": [
+      [
+        200000,
+        3.2,
+        9.6
+      ]
+    ],
     "openrouter:x-ai/grok-4.7": [
       [
         200000,
         4,
         12
+      ]
+    ],
+    "openrouter:x-ai/grok-4.7:batch": [
+      [
+        200000,
+        3.2,
+        9.6
       ]
     ],
     "openrouter:x-ai/grok-build-0.1": [
