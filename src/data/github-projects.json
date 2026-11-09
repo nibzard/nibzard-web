@@ -493,7 +493,7 @@
       "description": "A curated catalogue of awesome agentic AI patterns",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-11-08T06:51:29Z",
+      "updatedAt": "2026-11-09T10:07:03Z",
       "pushedAt": "2026-10-14T23:13:20Z",
       "archived": false,
       "fork": false
@@ -1441,8 +1441,8 @@
       "description": "",
       "topics": [],
       "language": "Python",
-      "updatedAt": "2026-11-08T11:20:15Z",
-      "pushedAt": "2026-11-08T11:20:10Z",
+      "updatedAt": "2026-11-08T18:59:50Z",
+      "pushedAt": "2026-11-08T19:00:37Z",
       "archived": false,
       "fork": false
     },
@@ -1867,6 +1867,18 @@
       "fork": true
     },
     {
+      "fullName": "nibzard/hatch",
+      "name": "hatch",
+      "url": "https://github.com/nibzard/hatch",
+      "description": "",
+      "topics": [],
+      "language": "TypeScript",
+      "updatedAt": "2026-11-08T16:17:07Z",
+      "pushedAt": "2026-11-08T16:17:02Z",
+      "archived": false,
+      "fork": false
+    },
+    {
       "fullName": "nibzard/hermes-agent",
       "name": "hermes-agent",
       "url": "https://github.com/nibzard/hermes-agent",
@@ -1897,8 +1909,8 @@
       "description": "",
       "topics": [],
       "language": "Python",
-      "updatedAt": "2026-11-08T05:37:44Z",
-      "pushedAt": "2026-11-08T05:37:40Z",
+      "updatedAt": "2026-11-09T05:46:50Z",
+      "pushedAt": "2026-11-09T05:46:46Z",
       "archived": false,
       "fork": false
     },
@@ -2203,8 +2215,8 @@
       "description": "",
       "topics": [],
       "language": "TypeScript",
-      "updatedAt": "2026-10-12T19:48:38Z",
-      "pushedAt": "2026-10-12T19:48:33Z",
+      "updatedAt": "2026-11-09T15:40:51Z",
+      "pushedAt": "2026-11-09T15:40:58Z",
       "archived": false,
       "fork": true
     },
@@ -2611,8 +2623,8 @@
       "description": "Personal blog discussing AI, growth and startups",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-11-07T13:19:54Z",
-      "pushedAt": "2026-11-07T13:19:50Z",
+      "updatedAt": "2026-11-09T14:20:02Z",
+      "pushedAt": "2026-11-09T14:19:57Z",
       "archived": false,
       "fork": false
     },
@@ -3244,7 +3256,7 @@
       "description": "Distraction-Free Writing firmware for the M5stack ESP32 based Tab5 device",
       "topics": [],
       "language": "C",
-      "updatedAt": "2026-10-11T03:58:34Z",
+      "updatedAt": "2026-11-09T00:32:04Z",
       "pushedAt": "2026-08-31T14:12:30Z",
       "archived": false,
       "fork": false
@@ -3285,8 +3297,8 @@
       "description": "Local-first cross-agent skill manager for the open SKILL.md ecosystem",
       "topics": [],
       "language": "Rust",
-      "updatedAt": "2026-11-05T14:12:23Z",
-      "pushedAt": "2026-11-05T14:12:18Z",
+      "updatedAt": "2026-11-09T15:41:10Z",
+      "pushedAt": "2026-11-09T15:41:05Z",
       "archived": false,
       "fork": false
     },
