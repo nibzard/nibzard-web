@@ -493,7 +493,7 @@
       "description": "A curated catalogue of awesome agentic AI patterns",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-11-09T10:07:03Z",
+      "updatedAt": "2026-11-10T13:48:52Z",
       "pushedAt": "2026-10-14T23:13:20Z",
       "archived": false,
       "fork": false
@@ -1909,8 +1909,8 @@
       "description": "",
       "topics": [],
       "language": "Python",
-      "updatedAt": "2026-11-09T05:46:50Z",
-      "pushedAt": "2026-11-09T05:46:46Z",
+      "updatedAt": "2026-11-10T06:53:56Z",
+      "pushedAt": "2026-11-10T06:53:51Z",
       "archived": false,
       "fork": false
     },
@@ -2215,8 +2215,8 @@
       "description": "",
       "topics": [],
       "language": "TypeScript",
-      "updatedAt": "2026-11-09T15:40:51Z",
-      "pushedAt": "2026-11-09T15:40:58Z",
+      "updatedAt": "2026-11-09T21:01:09Z",
+      "pushedAt": "2026-11-09T21:01:19Z",
       "archived": false,
       "fork": true
     },
@@ -2623,8 +2623,8 @@
       "description": "Personal blog discussing AI, growth and startups",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-11-09T14:20:02Z",
-      "pushedAt": "2026-11-09T14:19:57Z",
+      "updatedAt": "2026-11-09T16:40:49Z",
+      "pushedAt": "2026-11-09T16:40:44Z",
       "archived": false,
       "fork": false
     },
@@ -3297,8 +3297,8 @@
       "description": "Local-first cross-agent skill manager for the open SKILL.md ecosystem",
       "topics": [],
       "language": "Rust",
-      "updatedAt": "2026-11-09T15:41:10Z",
-      "pushedAt": "2026-11-09T15:41:05Z",
+      "updatedAt": "2026-11-09T22:48:07Z",
+      "pushedAt": "2026-11-09T22:48:05Z",
       "archived": false,
       "fork": false
     },
