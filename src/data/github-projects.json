@@ -493,7 +493,7 @@
       "description": "A curated catalogue of awesome agentic AI patterns",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-11-11T14:29:53Z",
+      "updatedAt": "2026-11-12T14:52:44Z",
       "pushedAt": "2026-10-14T23:13:20Z",
       "archived": false,
       "fork": false
@@ -793,7 +793,7 @@
       "description": "Beam a coding-agent session up to a sandbox, and down again",
       "topics": [],
       "language": "Rust",
-      "updatedAt": "2026-10-20T19:43:46Z",
+      "updatedAt": "2026-11-11T17:41:28Z",
       "pushedAt": "2026-10-20T19:43:41Z",
       "archived": false,
       "fork": true
@@ -1441,8 +1441,8 @@
       "description": "",
       "topics": [],
       "language": "Python",
-      "updatedAt": "2026-11-08T18:59:50Z",
-      "pushedAt": "2026-11-08T19:00:37Z",
+      "updatedAt": "2026-11-11T23:53:36Z",
+      "pushedAt": "2026-11-11T23:01:16Z",
       "archived": false,
       "fork": false
     },
@@ -1909,8 +1909,8 @@
       "description": "",
       "topics": [],
       "language": "Python",
-      "updatedAt": "2026-11-11T06:43:47Z",
-      "pushedAt": "2026-11-11T05:43:44Z",
+      "updatedAt": "2026-11-12T07:49:56Z",
+      "pushedAt": "2026-11-12T06:49:52Z",
       "archived": false,
       "fork": false
     },
@@ -1923,6 +1923,18 @@
       "language": null,
       "updatedAt": "2025-11-07T21:15:58Z",
       "pushedAt": "2025-08-24T03:14:15Z",
+      "archived": false,
+      "fork": true
+    },
+    {
+      "fullName": "nibzard/humla",
+      "name": "humla",
+      "url": "https://github.com/nibzard/humla",
+      "description": "Open-source AI meeting notes for Mac. Records mic + system audio with no bot, transcribes on-device or via OpenAI / Deepgram / Groq, identifies speakers offline, and writes summaries that fuse your notes with the transcript. Ask your notes and get cited answers. Tauri 2 + Rust + Swift.",
+      "topics": [],
+      "language": null,
+      "updatedAt": "2026-11-12T01:08:49Z",
+      "pushedAt": "2026-11-11T05:50:17Z",
       "archived": false,
       "fork": true
     },
@@ -2623,8 +2635,8 @@
       "description": "Personal blog discussing AI, growth and startups",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-11-10T15:04:10Z",
-      "pushedAt": "2026-11-10T15:04:00Z",
+      "updatedAt": "2026-11-11T15:34:49Z",
+      "pushedAt": "2026-11-11T14:34:45Z",
       "archived": false,
       "fork": false
     },
@@ -3670,7 +3682,7 @@
       ],
       "language": "Rust",
       "updatedAt": "2026-10-26T18:10:49Z",
-      "pushedAt": "2026-10-26T18:10:45Z",
+      "pushedAt": "2026-11-12T14:49:26Z",
       "archived": false,
       "fork": false
     },
@@ -3916,7 +3928,7 @@
       "description": "Beam a coding-agent session up to a sandbox, and down again",
       "topics": [],
       "language": "Rust",
-      "updatedAt": "2026-10-13T18:02:30Z",
+      "updatedAt": "2026-11-11T17:41:34Z",
       "pushedAt": "2026-10-02T20:24:36Z",
       "archived": false,
       "fork": false
@@ -3994,7 +4006,7 @@
         "internal-tools"
       ],
       "language": "TypeScript",
-      "updatedAt": "2026-10-13T03:03:27Z",
+      "updatedAt": "2026-11-11T23:49:18Z",
       "pushedAt": "2026-10-09T15:59:52Z",
       "archived": false,
       "fork": false
@@ -4104,7 +4116,7 @@
       ],
       "language": "Python",
       "updatedAt": "2026-10-08T09:27:00Z",
-      "pushedAt": "2026-11-05T09:35:50Z",
+      "pushedAt": "2026-11-12T09:37:17Z",
       "archived": false,
       "fork": false
     },
