@@ -141,7 +141,7 @@
       "topics": [],
       "language": "Go",
       "updatedAt": "2026-10-30T14:52:31Z",
-      "pushedAt": "2026-10-30T14:52:27Z",
+      "pushedAt": "2026-11-12T22:50:10Z",
       "archived": false,
       "fork": false
     },
@@ -493,7 +493,7 @@
       "description": "A curated catalogue of awesome agentic AI patterns",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-11-12T14:52:44Z",
+      "updatedAt": "2026-11-13T12:29:22Z",
       "pushedAt": "2026-10-14T23:13:20Z",
       "archived": false,
       "fork": false
@@ -1406,7 +1406,7 @@
       ],
       "language": "HTML",
       "updatedAt": "2026-10-21T13:15:57Z",
-      "pushedAt": "2026-10-07T10:38:28Z",
+      "pushedAt": "2026-11-12T16:03:38Z",
       "archived": false,
       "fork": false
     },
@@ -1430,7 +1430,7 @@
       "topics": [],
       "language": "Python",
       "updatedAt": "2026-01-21T06:18:53Z",
-      "pushedAt": "2024-12-08T12:58:22Z",
+      "pushedAt": "2026-11-12T16:03:58Z",
       "archived": false,
       "fork": false
     },
@@ -1442,7 +1442,7 @@
       "topics": [],
       "language": "Python",
       "updatedAt": "2026-11-11T23:53:36Z",
-      "pushedAt": "2026-11-11T23:01:16Z",
+      "pushedAt": "2026-11-13T12:19:28Z",
       "archived": false,
       "fork": false
     },
@@ -1910,7 +1910,7 @@
       "topics": [],
       "language": "Python",
       "updatedAt": "2026-11-12T07:49:56Z",
-      "pushedAt": "2026-11-12T06:49:52Z",
+      "pushedAt": "2026-11-13T06:07:21Z",
       "archived": false,
       "fork": false
     },
@@ -1934,7 +1934,7 @@
       "topics": [],
       "language": null,
       "updatedAt": "2026-11-12T01:08:49Z",
-      "pushedAt": "2026-11-11T05:50:17Z",
+      "pushedAt": "2026-11-12T22:51:46Z",
       "archived": false,
       "fork": true
     },
@@ -2324,7 +2324,7 @@
       "topics": [],
       "language": "Rust",
       "updatedAt": "2026-10-30T15:45:50Z",
-      "pushedAt": "2026-10-30T15:45:45Z",
+      "pushedAt": "2026-11-12T16:03:52Z",
       "archived": false,
       "fork": false
     },
@@ -2635,8 +2635,8 @@
       "description": "Personal blog discussing AI, growth and startups",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-11-11T15:34:49Z",
-      "pushedAt": "2026-11-11T14:34:45Z",
+      "updatedAt": "2026-11-12T16:27:45Z",
+      "pushedAt": "2026-11-12T15:27:40Z",
       "archived": false,
       "fork": false
     },
@@ -2709,6 +2709,18 @@
       "language": "Rust",
       "updatedAt": "2026-01-15T10:46:10Z",
       "pushedAt": "2026-01-07T18:51:59Z",
+      "archived": false,
+      "fork": false
+    },
+    {
+      "fullName": "nibzard/ohya",
+      "name": "ohya",
+      "url": "https://github.com/nibzard/ohya",
+      "description": "Shared, near-real-time, local-first memory for coding agents",
+      "topics": [],
+      "language": "Go",
+      "updatedAt": "2026-11-13T12:17:02Z",
+      "pushedAt": "2026-11-13T14:24:27Z",
       "archived": false,
       "fork": false
     },
@@ -3328,7 +3340,7 @@
       ],
       "language": "Python",
       "updatedAt": "2026-08-10T13:50:08Z",
-      "pushedAt": "2026-08-10T13:48:45Z",
+      "pushedAt": "2026-11-12T16:04:04Z",
       "archived": false,
       "fork": false
     },
@@ -3351,8 +3363,8 @@
       "description": "",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-10-30T17:45:38Z",
-      "pushedAt": "2026-10-30T17:45:33Z",
+      "updatedAt": "2026-11-12T17:03:47Z",
+      "pushedAt": "2026-11-12T16:03:42Z",
       "archived": false,
       "fork": false
     },
@@ -3427,6 +3439,18 @@
       "pushedAt": "2024-08-16T16:08:47Z",
       "archived": false,
       "fork": false
+    },
+    {
+      "fullName": "nibzard/steel_browser_toolset",
+      "name": "steel_browser_toolset",
+      "url": "https://github.com/nibzard/steel_browser_toolset",
+      "description": "Run Claude's browser toolset on Steel cloud browsers.",
+      "topics": [],
+      "language": null,
+      "updatedAt": "2026-11-12T15:28:18Z",
+      "pushedAt": "2026-11-12T09:37:17Z",
+      "archived": false,
+      "fork": true
     },
     {
       "fullName": "nibzard/steel-browser",
@@ -3681,7 +3705,7 @@
         "terminal"
       ],
       "language": "Rust",
-      "updatedAt": "2026-10-26T18:10:49Z",
+      "updatedAt": "2026-11-12T15:49:30Z",
       "pushedAt": "2026-11-12T14:49:26Z",
       "archived": false,
       "fork": false
@@ -3862,7 +3886,7 @@
       "topics": [],
       "language": null,
       "updatedAt": "2026-06-30T19:47:35Z",
-      "pushedAt": "2026-08-04T16:22:02Z",
+      "pushedAt": "2026-11-12T16:04:01Z",
       "archived": false,
       "fork": true
     },
