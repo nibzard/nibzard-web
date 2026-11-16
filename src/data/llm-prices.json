@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "fetchedAt": "2026-11-09T14:19:20.527Z",
+  "fetchedAt": "2026-11-16T13:58:42.576Z",
   "source": "pydantic/genai-prices data_slim.json v2 (MIT)",
-  "modelCount": 2037,
+  "modelCount": 2046,
   "providers": [
     [
       "anthropic",
@@ -267,6 +267,14 @@
       0
     ],
     [
+      "anthropic:claude-fable-5-2",
+      8,
+      40,
+      0.2,
+      1000000,
+      0
+    ],
+    [
       "anthropic:claude-haiku-4-5",
       1,
       5,
@@ -281,6 +289,14 @@
       0.01,
       1000000,
       1
+    ],
+    [
+      "anthropic:claude-mythos-5-2",
+      8,
+      40,
+      0.2,
+      1000000,
+      0
     ],
     [
       "anthropic:claude-opus-4-0",
@@ -763,6 +779,14 @@
       0
     ],
     [
+      "aws:global.anthropic.claude-fable-5-2",
+      8,
+      40,
+      0.2,
+      1000000,
+      0
+    ],
+    [
       "aws:global.anthropic.claude-fable-5-v1:0",
       10,
       50,
@@ -785,6 +809,14 @@
       0.01,
       1000000,
       1
+    ],
+    [
+      "aws:global.anthropic.claude-mythos-5-2",
+      8,
+      40,
+      0.2,
+      1000000,
+      0
     ],
     [
       "aws:global.anthropic.claude-opus-4-5-v1:0",
@@ -1339,6 +1371,14 @@
       0
     ],
     [
+      "aws:regional.anthropic.claude-fable-5-2",
+      8.8,
+      44,
+      0.22,
+      1000000,
+      0
+    ],
+    [
       "aws:regional.anthropic.claude-fable-5-v1:0",
       11,
       55,
@@ -1361,6 +1401,14 @@
       0.011,
       1000000,
       1
+    ],
+    [
+      "aws:regional.anthropic.claude-mythos-5-2",
+      8.8,
+      44,
+      0.22,
+      1000000,
+      0
     ],
     [
       "aws:regional.anthropic.claude-opus-4-1-20250805-v1:0",
@@ -3219,6 +3267,14 @@
       0
     ],
     [
+      "github-copilot:claude-fable-5.2",
+      8,
+      40,
+      0.2,
+      null,
+      0
+    ],
+    [
       "github-copilot:claude-haiku-4.5",
       1,
       5,
@@ -3340,6 +3396,14 @@
     ],
     [
       "github-copilot:gemini-4-argon",
+      2,
+      10,
+      0.1,
+      null,
+      0
+    ],
+    [
+      "github-copilot:gemini-4-carbon",
       2,
       10,
       0.1,
@@ -3583,6 +3647,14 @@
       10,
       50,
       0.25,
+      1000000,
+      0
+    ],
+    [
+      "google:claude-fable-5-2",
+      8,
+      40,
+      0.2,
       1000000,
       0
     ],
@@ -17562,6 +17634,10 @@
       5,
       25
     ],
+    "anthropic:claude-fable-5-2": [
+      4,
+      20
+    ],
     "anthropic:claude-haiku-4-5": [
       0.5,
       2.5
@@ -17569,6 +17645,10 @@
     "anthropic:claude-haiku-5-5": [
       0.05,
       0.25
+    ],
+    "anthropic:claude-mythos-5-2": [
+      4,
+      20
     ],
     "anthropic:claude-opus-4-5": [
       2.5,
@@ -17609,6 +17689,10 @@
     "anthropic:claude-sonnet-5-5": [
       1,
       5
+    ],
+    "google:claude-fable-5-2": [
+      4,
+      20
     ],
     "google:gemini-2.5-flash": [
       0.15,
