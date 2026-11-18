@@ -493,7 +493,7 @@
       "description": "A curated catalogue of awesome agentic AI patterns",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-11-17T12:10:13Z",
+      "updatedAt": "2026-11-18T09:48:58Z",
       "pushedAt": "2026-11-16T21:59:13Z",
       "archived": false,
       "fork": false
@@ -1910,7 +1910,7 @@
       "topics": [],
       "language": "Python",
       "updatedAt": "2026-11-12T07:49:56Z",
-      "pushedAt": "2026-11-17T07:31:33Z",
+      "pushedAt": "2026-11-18T06:55:56Z",
       "archived": false,
       "fork": false
     },
@@ -2252,7 +2252,7 @@
       "topics": [],
       "language": "Go",
       "updatedAt": "2026-11-03T15:41:54Z",
-      "pushedAt": "2026-11-15T18:33:01Z",
+      "pushedAt": "2026-11-18T13:11:39Z",
       "archived": false,
       "fork": false
     },
@@ -2636,7 +2636,7 @@
       "topics": [],
       "language": "HTML",
       "updatedAt": "2026-11-12T16:27:45Z",
-      "pushedAt": "2026-11-16T16:07:40Z",
+      "pushedAt": "2026-11-17T16:16:12Z",
       "archived": false,
       "fork": false
     },
@@ -2720,7 +2720,7 @@
       "topics": [],
       "language": "Go",
       "updatedAt": "2026-11-14T12:32:20Z",
-      "pushedAt": "2026-11-17T13:15:32Z",
+      "pushedAt": "2026-11-17T23:42:15Z",
       "archived": false,
       "fork": false
     },
@@ -2865,8 +2865,8 @@
         "telemetry"
       ],
       "language": "Rust",
-      "updatedAt": "2026-09-29T17:43:18Z",
-      "pushedAt": "2026-09-29T17:43:11Z",
+      "updatedAt": "2026-11-18T10:00:24Z",
+      "pushedAt": "2026-11-18T07:47:16Z",
       "archived": false,
       "fork": false
     },
@@ -3340,7 +3340,7 @@
       ],
       "language": "Python",
       "updatedAt": "2026-08-10T13:50:08Z",
-      "pushedAt": "2026-11-12T16:04:04Z",
+      "pushedAt": "2026-11-18T12:38:56Z",
       "archived": false,
       "fork": false
     },
