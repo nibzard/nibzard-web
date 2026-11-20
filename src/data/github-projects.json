@@ -493,7 +493,7 @@
       "description": "A curated catalogue of awesome agentic AI patterns",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-11-19T01:44:50Z",
+      "updatedAt": "2026-11-20T11:41:02Z",
       "pushedAt": "2026-11-16T21:59:13Z",
       "archived": false,
       "fork": false
@@ -782,7 +782,7 @@
       "topics": [],
       "language": "GDScript",
       "updatedAt": "2026-10-14T12:18:06Z",
-      "pushedAt": "2026-11-19T11:04:49Z",
+      "pushedAt": "2026-11-20T00:52:35Z",
       "archived": false,
       "fork": false
     },
@@ -1015,6 +1015,18 @@
       "fork": true
     },
     {
+      "fullName": "nibzard/chimera-vocal-synth",
+      "name": "chimera-vocal-synth",
+      "url": "https://github.com/nibzard/chimera-vocal-synth",
+      "description": "the ultimate vocal synthesizer - sing, speak, beatbox, and more",
+      "topics": [],
+      "language": null,
+      "updatedAt": "2026-11-19T20:25:13Z",
+      "pushedAt": "2026-11-19T20:25:38Z",
+      "archived": false,
+      "fork": true
+    },
+    {
       "fullName": "nibzard/chroma",
       "name": "chroma",
       "url": "https://github.com/nibzard/chroma",
@@ -1202,7 +1214,7 @@
       "topics": [],
       "language": "Python",
       "updatedAt": "2026-10-07T20:21:38Z",
-      "pushedAt": "2026-10-07T20:21:33Z",
+      "pushedAt": "2026-11-19T20:19:36Z",
       "archived": false,
       "fork": false
     },
@@ -1682,7 +1694,7 @@
       "topics": [],
       "language": "Rust",
       "updatedAt": "2026-10-12T20:02:15Z",
-      "pushedAt": "2026-10-12T20:02:10Z",
+      "pushedAt": "2026-11-19T20:19:52Z",
       "archived": false,
       "fork": false
     },
@@ -1814,7 +1826,7 @@
       "topics": [],
       "language": "Python",
       "updatedAt": "2026-10-26T17:31:44Z",
-      "pushedAt": "2026-10-26T17:31:40Z",
+      "pushedAt": "2026-11-19T20:21:10Z",
       "archived": false,
       "fork": false
     },
@@ -1910,7 +1922,7 @@
       "topics": [],
       "language": "Python",
       "updatedAt": "2026-11-12T07:49:56Z",
-      "pushedAt": "2026-11-19T06:56:47Z",
+      "pushedAt": "2026-11-20T06:48:04Z",
       "archived": false,
       "fork": false
     },
@@ -2018,7 +2030,7 @@
       "topics": [],
       "language": "TypeScript",
       "updatedAt": "2026-09-25T20:47:26Z",
-      "pushedAt": "2026-09-25T20:47:22Z",
+      "pushedAt": "2026-11-19T20:21:04Z",
       "archived": false,
       "fork": false
     },
@@ -2432,7 +2444,7 @@
       "topics": [],
       "language": "Python",
       "updatedAt": "2026-10-21T03:41:18Z",
-      "pushedAt": "2026-10-20T19:31:45Z",
+      "pushedAt": "2026-11-19T20:19:54Z",
       "archived": false,
       "fork": false
     },
@@ -2636,7 +2648,7 @@
       "topics": [],
       "language": "HTML",
       "updatedAt": "2026-11-12T16:27:45Z",
-      "pushedAt": "2026-11-18T15:50:38Z",
+      "pushedAt": "2026-11-19T15:55:08Z",
       "archived": false,
       "fork": false
     },
@@ -2720,7 +2732,7 @@
       "topics": [],
       "language": "Go",
       "updatedAt": "2026-11-14T12:32:20Z",
-      "pushedAt": "2026-11-17T23:42:15Z",
+      "pushedAt": "2026-11-19T20:29:28Z",
       "archived": false,
       "fork": false
     },
@@ -3754,7 +3766,7 @@
       "topics": [],
       "language": "Rust",
       "updatedAt": "2026-10-15T06:12:36Z",
-      "pushedAt": "2026-10-15T11:42:35Z",
+      "pushedAt": "2026-11-19T20:19:57Z",
       "archived": false,
       "fork": true
     },
