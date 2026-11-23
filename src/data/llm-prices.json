@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "fetchedAt": "2026-11-16T13:58:42.576Z",
+  "fetchedAt": "2026-11-23T16:27:26.347Z",
   "source": "pydantic/genai-prices data_slim.json v2 (MIT)",
-  "modelCount": 2046,
+  "modelCount": 2056,
   "providers": [
     [
       "anthropic",
@@ -3411,6 +3411,22 @@
       0
     ],
     [
+      "github-copilot:gemini-4-hydrogen",
+      1.5,
+      7.5,
+      0.075,
+      null,
+      0
+    ],
+    [
+      "github-copilot:gemini-4-neon",
+      3,
+      15,
+      0.15,
+      null,
+      0
+    ],
+    [
       "github-copilot:gpt-5-mini",
       0.25,
       2,
@@ -3991,6 +4007,30 @@
       2,
       10,
       0.1,
+      1048576,
+      0
+    ],
+    [
+      "google:gemini-4-carbon",
+      2,
+      10,
+      0.1,
+      1048576,
+      0
+    ],
+    [
+      "google:gemini-4-hydrogen",
+      1.5,
+      7.5,
+      0.075,
+      1048576,
+      0
+    ],
+    [
+      "google:gemini-4-neon",
+      3,
+      15,
+      0.15,
       1048576,
       0
     ],
@@ -8291,6 +8331,22 @@
       1
     ],
     [
+      "openai:gpt-6.2-astra",
+      8,
+      40,
+      0.4,
+      1050000,
+      1
+    ],
+    [
+      "openai:gpt-6.2-sol",
+      2,
+      10,
+      0.1,
+      1050000,
+      1
+    ],
+    [
       "openai:gpt-audio",
       2.5,
       10,
@@ -10303,6 +10359,22 @@
       1,
       5,
       0.05,
+      1048576,
+      0
+    ],
+    [
+      "openrouter:google/gemini-4-neon",
+      3,
+      15,
+      0.15,
+      1048576,
+      0
+    ],
+    [
+      "openrouter:google/gemini-4-neon:batch",
+      1.5,
+      7.5,
+      0.075,
       1048576,
       0
     ],
@@ -15011,6 +15083,14 @@
       0
     ],
     [
+      "quicksilverpro:gemini-4-neon",
+      3,
+      15,
+      0.15,
+      1048576,
+      0
+    ],
+    [
       "quicksilverpro:glm-5.2",
       1.12,
       3.52,
@@ -17012,6 +17092,20 @@
         7.5
       ]
     ],
+    "openai:gpt-6.2-astra": [
+      [
+        272000,
+        16,
+        60
+      ]
+    ],
+    "openai:gpt-6.2-sol": [
+      [
+        272000,
+        4,
+        15
+      ]
+    ],
     "openrouter:anthropic/claude-haiku-5.5": [
       [
         100000,
@@ -17766,6 +17860,18 @@
       2,
       10
     ],
+    "google:gemini-4-carbon": [
+      2,
+      10
+    ],
+    "google:gemini-4-hydrogen": [
+      0.75,
+      3.75
+    ],
+    "google:gemini-4-neon": [
+      1.5,
+      7.5
+    ],
     "google:gemini-nano-banana-2.1": [
       0.75,
       3.75
@@ -17965,6 +18071,14 @@
     "openai:gpt-6.1-terra": [
       0.5,
       2.5
+    ],
+    "openai:gpt-6.2-astra": [
+      4,
+      20
+    ],
+    "openai:gpt-6.2-sol": [
+      1,
+      5
     ],
     "openai:gpt-image-1": [
       2.5,
