@@ -8,7 +8,7 @@
       "description": "A Community-Driven Mapping of AI Development Tools",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-11-23T07:31:54Z",
+      "updatedAt": "2026-11-24T17:52:18Z",
       "pushedAt": "2026-07-24T12:59:23Z",
       "archived": false,
       "fork": false
@@ -493,8 +493,8 @@
       "description": "A curated catalogue of awesome agentic AI patterns",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-11-23T09:09:49Z",
-      "pushedAt": "2026-11-16T21:59:13Z",
+      "updatedAt": "2026-11-24T03:47:19Z",
+      "pushedAt": "2026-11-23T21:28:44Z",
       "archived": false,
       "fork": false
     },
@@ -1417,7 +1417,7 @@
         "reproducibility"
       ],
       "language": "HTML",
-      "updatedAt": "2026-11-22T01:56:11Z",
+      "updatedAt": "2026-11-24T14:51:11Z",
       "pushedAt": "2026-11-12T16:03:38Z",
       "archived": false,
       "fork": false
@@ -1454,7 +1454,7 @@
       "topics": [],
       "language": "Python",
       "updatedAt": "2026-11-11T23:53:36Z",
-      "pushedAt": "2026-11-16T20:27:06Z",
+      "pushedAt": "2026-11-23T20:52:01Z",
       "archived": false,
       "fork": false
     },
@@ -1922,7 +1922,7 @@
       "topics": [],
       "language": "Python",
       "updatedAt": "2026-11-12T07:49:56Z",
-      "pushedAt": "2026-11-23T07:03:07Z",
+      "pushedAt": "2026-11-24T09:28:12Z",
       "archived": false,
       "fork": false
     },
@@ -2648,7 +2648,7 @@
       "topics": [],
       "language": "HTML",
       "updatedAt": "2026-11-12T16:27:45Z",
-      "pushedAt": "2026-11-23T16:28:00Z",
+      "pushedAt": "2026-11-23T18:30:28Z",
       "archived": false,
       "fork": false
     },
@@ -2713,6 +2713,18 @@
       "fork": false
     },
     {
+      "fullName": "nibzard/oakspec",
+      "name": "oakspec",
+      "url": "https://github.com/nibzard/oakspec",
+      "description": "OAK: a plain-text convention for memory that people and AI agents share",
+      "topics": [],
+      "language": "Python",
+      "updatedAt": "2026-11-24T16:12:50Z",
+      "pushedAt": "2026-11-24T16:25:40Z",
+      "archived": false,
+      "fork": false
+    },
+    {
       "fullName": "nibzard/oas",
       "name": "oas",
       "url": "https://github.com/nibzard/oas",
@@ -2732,7 +2744,7 @@
       "topics": [],
       "language": "Go",
       "updatedAt": "2026-11-14T12:32:20Z",
-      "pushedAt": "2026-11-23T16:06:26Z",
+      "pushedAt": "2026-11-23T21:53:51Z",
       "archived": false,
       "fork": false
     },
