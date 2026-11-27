@@ -5,6 +5,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 // The feed changes only when content is deployed; serve it without a function invocation.
 export const prerender = true;
 
+// Figures come as a light and a dark <img> pair that site CSS switches. Feed readers have no site CSS, so keep the light variant.
+const DARK_IMAGE = /<img\b[^>]*\sclass="[^"]*\bimg-dark\b[^"]*"[^>]*>/g;
+
 export async function GET(context) {
 	const posts = await getCollection('log');
 
@@ -21,7 +24,7 @@ export async function GET(context) {
 		pubDate: post.data.date,
 		author: post.data.author || 'Nikola Balić',
 		categories: post.data.tags,
-		content: post.rendered?.html,
+		content: post.rendered?.html?.replace(DARK_IMAGE, ''),
 	}));
 
 	return rss({

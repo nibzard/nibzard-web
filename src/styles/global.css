@@ -149,6 +149,10 @@ strong { font-weight: 600; }
 .log-content h3 { margin-top: 2rem; }
 .log-content a { overflow-wrap: anywhere; }
 .log-content img { display: block; border-radius: 4px; margin: 2rem auto; }
+/* .img-light and .img-dark mark two variants of one figure. Show the variant for the active theme; the static theme is light. */
+.log-content img.img-dark { display: none; }
+[data-theme="dark"] .log-content img.img-light { display: none; }
+[data-theme="dark"] .log-content img.img-dark { display: block; }
 .log-content :is(iframe, video) { max-width: 100%; }
 blockquote, blockquote.featured-quote { margin: 2rem 0; padding: 20px 24px; background: var(--color-background-alt); border: 0; border-radius: 4px; font-size: inherit; color: var(--color-text); }
 blockquote p:last-child { margin-bottom: 0; }
