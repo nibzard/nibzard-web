@@ -493,7 +493,7 @@
       "description": "A curated catalogue of awesome agentic AI patterns",
       "topics": [],
       "language": "HTML",
-      "updatedAt": "2026-11-26T10:50:25Z",
+      "updatedAt": "2026-11-27T06:16:58Z",
       "pushedAt": "2026-11-26T10:25:16Z",
       "archived": false,
       "fork": false
@@ -1423,6 +1423,18 @@
       "fork": false
     },
     {
+      "fullName": "nibzard/deep-sprinter",
+      "name": "deep-sprinter",
+      "url": "https://github.com/nibzard/deep-sprinter",
+      "description": "Fast, massively parallel, durable web-grounded deep research system",
+      "topics": [],
+      "language": "TypeScript",
+      "updatedAt": "2026-11-27T09:31:44Z",
+      "pushedAt": "2026-11-27T09:31:41Z",
+      "archived": false,
+      "fork": false
+    },
+    {
       "fullName": "nibzard/demig",
       "name": "demig",
       "url": "https://github.com/nibzard/demig",
@@ -1934,7 +1946,7 @@
       "topics": [],
       "language": "Python",
       "updatedAt": "2026-11-12T07:49:56Z",
-      "pushedAt": "2026-11-26T07:51:22Z",
+      "pushedAt": "2026-11-27T07:51:41Z",
       "archived": false,
       "fork": false
     },
@@ -2660,7 +2672,7 @@
       "topics": [],
       "language": "HTML",
       "updatedAt": "2026-11-12T16:27:45Z",
-      "pushedAt": "2026-11-25T17:27:02Z",
+      "pushedAt": "2026-11-27T09:35:26Z",
       "archived": false,
       "fork": false
     },
@@ -2756,7 +2768,7 @@
       "topics": [],
       "language": "Go",
       "updatedAt": "2026-11-14T12:32:20Z",
-      "pushedAt": "2026-11-26T15:12:36Z",
+      "pushedAt": "2026-11-27T11:13:53Z",
       "archived": false,
       "fork": false
     },
